@@ -1,0 +1,18 @@
+<div>
+ This is the index.html
+</div>
+{foreach name=data.content key=value}
+<div>{value}</div>
+{end}
+<script language="javascript">
+$(document).ready(function(){
+    var d = {
+        c: 'index',
+        f: 'getAjax',
+        data: []
+    };
+    $.post('?r=ajax',d,function(d){
+        checkAjaxStatus(d);
+    },'json');
+});
+</script>

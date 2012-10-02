@@ -1,0 +1,143 @@
+body{
+    padding:0px;
+    margin:0px;
+    color:#000000;
+    background:#FFFFFF;
+    font-size:13px;
+    /*font-family:Geneva, Arial, Helvetica, sans-serif;*/
+}
+* {
+    outline: medium none;
+    word-wrap: break-word;
+}
+form, h1, h2, h3, ul, li, p, pre, em {
+    padding:0px;
+    margin:0px;
+    font-style: normal;
+}
+h1 {
+    color: #0099CC;
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+h2 {
+    color: #0099CC;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+h3 {
+    color: #0099CC;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+h4 {
+    color: #0099CC;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+a:link, a:visited{
+    color:#0099CC;
+    text-decoration:none;
+}
+a:hover{
+    color:#f57900;
+    text-decoration:underline;
+}
+div{
+    padding:0px;
+    font-size:13px;
+    border:0px;
+}
+ul, li {
+    list-style:none;
+}
+input{
+    width:100px;
+    height:23px;
+    vertical-align:middle;
+}
+textarea{
+    
+}
+select{
+    position:relative;
+    width:110px;
+    height:23px;
+    line-height:23px;
+    vertical-align:middle;
+}
+p{
+    margin:0px;
+    padding:0px;
+    height:auto;
+}
+table{
+    color: #000000;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size:13px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-decoration: none;
+    padding: 0;
+    margin:auto;
+    border-collapse:collapse;
+}
+img{
+    border:0;
+}
+pre{
+    width:auto;
+    height:auto;
+    line-height:18px;
+}
+input,textarea,select {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: #F9F9F9;
+    border-color: #666666 #CCCCCC #CCCCCC #666666;
+    border-style: solid;
+    border-width: 1px;
+    color: #333333;
+    padding: 2px;
+}
+.input:hover,.input:focus,textarea:hover,textarea:focus {
+    border-color:#0099CC;
+    background:#F5F9FD;
+}
+.input_textarea_hover {
+    border-color:#0099CC;
+    background:#F5F9FD;
+}
+.button{
+    width:auto;
+    height:25px;
+    line-height:23px;
+    background: none repeat scroll 0 0 #DDDDDD;
+    border-color: #DDDDDD #666666 #666666 #DDDDDD;
+    color: #000000;
+    cursor: pointer;
+    margin: 3px 0;
+    padding: 2px 5px;
+    vertical-align: middle;
+}
+.checkbox{
+    width:15px;
+    height:15px;
+    border:0px;
+}
+.clear{
+    clear:both;
+}
+.line{
+    width:90%;
+    height:0px;
+    line-height:1px;
+    margin:auto;
+    margin-top:1px;
+    border:1px solid #333333;
+}

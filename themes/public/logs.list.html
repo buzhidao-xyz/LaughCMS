@@ -1,0 +1,7 @@
+{require logs.head.html}
+
+<ul id="filelist">
+    {foreach name=filelist key=value}
+    <li><a href="?r=logs/index&f={value}">{value}</a></li>
+    {end}
+</ul>

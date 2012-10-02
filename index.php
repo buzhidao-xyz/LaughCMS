@@ -1,0 +1,1 @@
+<?php//引入配置文件require('include/config/config.php');//引入路由器require('route.php');new Route();
