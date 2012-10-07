@@ -12,9 +12,11 @@ class Node extends Base
 
 	/**
 	 * 获取节点树
+	 * @param $groupid int 组id 默认为Null 0:返回所有节点
 	 */
-	public function getNodeTree()
+	public function getNodeTree($groupid=null)
 	{
+		
 		return T('node')->select()->find(1);
 	}
 }

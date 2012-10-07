@@ -8,6 +8,9 @@ class AccessControl extends BaseControl
 	//控制器名
 	static public $_control_name = 'Access Control';
 
+    //超级管理员账户id数组
+    private $_super_admin = array();
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -19,17 +22,17 @@ class AccessControl extends BaseControl
 	 */
 	public function getUserAccess()
 	{
-        if (session('useraccess')) return true;
+        //if (session('useraccess')) return true;
 
         $user = $this->getUser();
-        if (in_array($user['id'], array(1))) {
+        if (in_array($user['id'], $this->_super_admin)) {
             $node = $this->getNode();
             $node = $this->dealNode($node);
         } else {
-            $role = $this->getRole($user['id']);
-            if (empty($role)) return true;
+            $roleids = $this->getRole($user['id']);
+            if (empty($roleids)) return true;
 
-            $roleNode = $this->getRoleNode($role);
+            $roleNode = $this->getRoleNode($roleids);
             if (empty($roleNode)) return true;
 
             $userNode = $this->getUserNode($user['id']);
@@ -37,7 +40,7 @@ class AccessControl extends BaseControl
         }
 
         foreach ($node as $v) {
-            if ($v['pid'] == 0) $groupids[$v['groupid']] = array('id',$v['groupid']);
+            if ($v['pid'] == 0) $groupids[$v['groupid']] = $v['groupid'];
         }
 
         $group = $this->getGroup($groupids);
@@ -55,12 +58,19 @@ class AccessControl extends BaseControl
 	 */
 	protected function getRole($userid)
 	{
-        $where = array(
-            array('userid', $userid)
-        );
-		$res = T('role_user')->select('roleid')->where($where)->find(1);
+        $return = null;
 
-		return empty($res) ? null : $res;
+        $where = array(
+            'userid' => $userid
+        );
+		$res = T('role_user')->field('roleid')->where($where)->select();
+        
+        if (!empty($res) && is_array($res)) {
+            foreach ($res as $v) {
+                $return[] = $v['roleid'];
+            }
+        }
+		return $return;
 	}
 
     /**
@@ -72,32 +82,26 @@ class AccessControl extends BaseControl
         $where = array();
         if ($nodeid) {
             $where = array(
-                array('pid', $nodeid)
+                'pid' => $nodeid
             );
         }
 
-        $res = T('node')->select('*')->where($where)->find(1);
+        $res = T('node')->where($where)->order('id')->select();
 
         return empty($res) ? null : $res;
     }
 
 	/**
      * 获取角色信息的node权限
-     * @param $role array 角色信息
+     * @param $roleids array 角色信息
 	 */
-	protected function getRoleNode($role)
+	protected function getRoleNode($roleids)
     {
-        if (!is_array($role)) return false;
+        if (!is_array($roleids)) return false;
 
-        foreach ($role as $id) {
-            $roleids[] = array('roleid',$id['roleid']);
-        }
-        //dump($roleids);exit;
+        $where['a.roleid'] = array('in',$roleids);
 
-        $on = array(
-            array('a.nodeid', 'b.id')
-        );
-        $res = T('role_access')->join('node')->select('a.nodeid,b.id,b.title,b.control,b.action,b.sort,b.pid,b.level,b.groupid')->on($on)->where($roleids, 'OR')->find(1);
+        $res = T('role_node')->join(' '.TBF.'node as b on a.nodeid=b.id ')->field('a.nodeid,b.id,b.title,b.control,b.action,b.sort,b.pid,b.level,b.groupid')->where($where)->select();
 
         return $res;
     }
@@ -110,12 +114,10 @@ class AccessControl extends BaseControl
     {
         if (!$userid) return false;
 
-        $on = array(
-            array('a.nodeid', 'b.id')
-        );
-        $where = array(array('userid', $userid));
-        $res = T('user_access')->join('node')->select('a.nodeid,b.id,b.title,b.control,b.action,b.sort,b.pid,b.level,b.groupid')->on($on)->where($where)->find(1);
+        $where = array('userid' => $userid);
 
+        $res = T('user_access')->join(' '.TBF.'node as b on a.nodeid=b.id ')->field('a.nodeid,b.id,b.title,b.control,b.action,b.sort,b.pid,b.level,b.groupid')->where($where)->select();
+dump($res);dump(T('role_access')->getSql());exit;
         return $res;
     }
 
@@ -140,7 +142,6 @@ class AccessControl extends BaseControl
             }
         }
 
-        //dump($return);exit;
         return $return;
     }
 
@@ -152,7 +153,8 @@ class AccessControl extends BaseControl
     {
         if (!is_array($groupids)) return false;
 
-        $res = T('group')->select('*')->where($groupids,'OR')->find(1);
+        $groupids = array('id' => array('in', $groupids));
+        $res = T('group')->where($groupids)->order('id')->select();
 
         return $res;
     }

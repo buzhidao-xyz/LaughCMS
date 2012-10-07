@@ -32,6 +32,7 @@ class NodeControl extends CommonControl
      */
     public function newNode()
     {
+        $this->assign("groupTree",$this->_group_model->getGroupTree());
         $this->assign("nodeTree",$this->_node_model->getNodeTree());
         $this->display('node/add.html');
     }

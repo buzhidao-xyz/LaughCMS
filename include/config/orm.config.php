@@ -39,10 +39,9 @@ $orm = array (
         'updatetime'    => 'updatetime',
         'pname'         => 'pname'
     ),
-    'role_access'       => array(
+    'role_node'       => array(
     	'roleid'        => 'roleid',
-    	'nodeid'        => 'nodeid',
-    	'groupid'       => 'groupid',
+    	'nodeid'        => 'nodeid'
     ),
     'role_user'         => array(
     	'roleid'        => 'roleid',
