@@ -15,6 +15,6 @@ class Group extends Base
 	 */
 	public function getGroupTree()
 	{
-		return T('group')->select()->find(1);
+		return Table('group')->select()->find(1);
 	}
 }

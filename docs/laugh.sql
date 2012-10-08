@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2012 年 10 月 08 日 00:46
+-- 生成日期: 2012 年 09 月 25 日 23:15
 -- 服务器版本: 5.5.19
 -- PHP 版本: 5.3.6
 
@@ -336,7 +336,7 @@ CREATE TABLE IF NOT EXISTS `la_role_user` (
 
 INSERT INTO `la_role_user` (`roleid`, `userid`) VALUES
 (1, 1),
-(2, 1),
+(2, 2),
 (3, 3);
 
 -- --------------------------------------------------------

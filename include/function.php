@@ -204,16 +204,12 @@ function runtime($begin_time, $end_time)
 
 /**
  * session方法 存取
- * @param $sessionname string session名
- * @param $sessionvalue mixed session值 默认为'' 值为null则删除该session
  */
 function session($sessionname,$sessionvalue='')
 {
 	$return = true;
 
-    if ($sessionvalue === null) {
-        unset($_SESSION[$sessionname]);
-    } else if (!$sessionvalue) {
+	if (!$sessionvalue) {
 		$return = isset($_SESSION[$sessionname]) ? $_SESSION[$sessionname] : '';
 	} else {
 		$_SESSION[$sessionname] = $sessionvalue;

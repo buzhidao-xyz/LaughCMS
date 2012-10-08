@@ -105,9 +105,9 @@ class LoginControl extends BaseControl
         $password = self::getPassword();
         
         $where = array(
-            'username' => $username
+            array('username', $username)
         );
-        $res = T('user')->field('id,username,password,ukey,ustate')->where($where)->find();
+        $res = T('user')->select('id,username,password,ukey,ustate')->where($where)->find();
         
         if (empty($res) || $username != $res['username'] || md5(md5($password).$res['ukey']) != $res['password']) {
             session('ecode', 1003);

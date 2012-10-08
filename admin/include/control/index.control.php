@@ -51,14 +51,7 @@ class IndexControl extends CommonControl
      */
     public function logout()
     {
-        if (session_id()) {
-            session('vcode',null);
-            session('userInfo',null);
-            session('sstate',null);
-            session('ustate',null);
-            session('useraccess',null);
-            session_destroy();
-        }
+        if (session_id()) session_destroy();
 
         header("location:".__APP__);
     }

@@ -18,14 +18,12 @@ class DBADUS extends DBConnect
     //联合查询表
     static public $_join_table = '';
 
-    private $_field = '*';
-    private $_join = '';
-    private $_where = '';
-    private $_order = '';
-    private $_limit = '';
+    private $_joinStr = '';
     
-    //sql语句
-    private $sql = null;
+    /**
+     * sql语句
+     */
+    private $sql;
     
     static private $_sql;
     
@@ -43,17 +41,42 @@ class DBADUS extends DBConnect
             $pos = strpos($key, ' ');
             $alias = $pos !== false ? substr($key, $pos) : '';
             $key = $pos !== false ? substr($key, 0, $pos) : $key;
-            return 'a.`'.$orm[self::$_table][$key].$alias.'`';
+            return 'a.'.$orm[self::$_table][$key].$alias;
         }
         if (preg_match("/^b\./", $key)) {
             $key = str_replace('b.', '', $key);
             $pos = strpos($key, ' ');
             $alias = $pos !== false ? substr($key, $pos) : '';
             $key = $pos !== false ? substr($key, 0, $pos) : $key;
-            return 'b.`'.$orm[self::$_join_table][$key].$alias.'`';
+            return 'b.'.$orm[self::$_join_table][$key].$alias;
         }
 
-        return '`'.$orm[self::$_table][$key].'`';
+        return $orm[self::$_table][$key];
+    }
+    
+    /**
+     * select查询语法
+     * @param $fields(mixed)
+     * 查询某个字段直接传字段名
+     * 查询多个字段用,隔开或以数组形式传递参数
+     */
+    public function select($fields = '*')
+    {
+        if (!is_array($fields)) {
+            $fields = explode(',', $fields);
+        }
+        
+        foreach ($fields as $k=>$v) {
+            if (isset($field)) {
+                $field .= ','.$this->orm($v);
+            } else {
+                $field = strpos($v,'*') !== false ? $v : $this->orm($v);
+            }
+        }
+        
+        $this->sql = "SELECT ".$field." FROM ".self::$_tbf.self::$_table." as a ";
+
+        return $this;
     }
 
     /**
@@ -61,7 +84,7 @@ class DBADUS extends DBConnect
      * @param $data 要插入的数据
      * @param $m 0:插入一条数据 1:插入多条数据 默认为0
      */
-    public function add($data,$m=0)
+    public function insert($data,$m=0)
     {
         if (isset($m) && $m) {
             return $this->insertAll($data);
@@ -69,7 +92,7 @@ class DBADUS extends DBConnect
             return $this->insertOne($data);
         }
     }
-
+    
     /**
      * insert插入语法
      * @param $data(mixed)
@@ -128,17 +151,7 @@ class DBADUS extends DBConnect
 
         return $this->Execute($this->sql);
     }
-
-    /**
-     * delete删除操作
-     */
-    public function delete()
-    {
-        $this->sql = "DELETE FROM ".self::$_tbf.self::$_table." ";
-        
-        return $this;
-    }
-
+    
     /**
      * update更新sql操作
      * @param $data(mixed) 要更新的字段的键值数组
@@ -161,106 +174,34 @@ class DBADUS extends DBConnect
     }
     
     /**
-     * 设置要查询的字段
-     * @param $field(mixed)
-     * 查询某个字段直接传字段名
-     * 查询多个字段用,隔开或以数组形式传递参数
+     * delete删除操作
      */
-    public function field($fields = '*')
+    public function delete()
     {
-        if (!is_array($fields)) {
-            $fields = explode(',', $fields);
-        }
+        $this->sql = "DELETE FROM ".self::$_tbf.self::$_table." ";
         
-        foreach ($fields as $k=>$v) {
-            if (isset($field)) {
-                $field .= ','.$this->orm($v);
-            } else {
-                $field = strpos($v,'*') !== false ? $v : $this->orm($v);
-            }
-        }
-        
-        $this->_field = $field;
-
         return $this;
-    }
-
-    /**
-     * 计算数据条数
-     */
-    public function count($options=array())
-    {
-        $this->_before_sql($options);
-        $this->sql = "SELECT COUNT(".$this->_field.") FROM ".self::$_tbf.self::$_table." as a ".$this->_where;
-        $this->exec($this->sql);
-        return $this->GetNum();
-    }
-    
-    /**
-     * 查询一条数据
-     * @param $options array 参数数组
-     */
-    public function find($options=array())
-    {
-        $this->_before_sql($options);
-        $this->sql = "SELECT ".$this->_field." FROM ".self::$_tbf.self::$_table." as a ".$this->_join.$this->_where.$this->_order.$this->_limit;
-        $return = $this->GetOne($this->sql);
-        $this->_after_sql();
-        return $return;
-    }
-
-    /**
-     * 查询多条数据
-     * @param $options array 参数数组
-     */
-    public function select($options=array())
-    {
-        $this->_before_sql($options);
-        $this->sql = "SELECT ".$this->_field." FROM ".self::$_tbf.self::$_table." as a ".$this->_join.$this->_where.$this->_order.$this->_limit;
-        $return = $this->GetAll($this->sql);
-        $this->_after_sql();
-        return $return;
-    }
-
-    protected function _before_sql($options)
-    {
-        $this->_parse_options($options);
-    }
-
-    protected function _after_sql()
-    {
-        $this->_field = '*';
-        $this->_join = '';
-        $this->_where = '';
-        $this->_order = '';
-        $this->_limit = '';
-        //$this->sql = null;
-    }
-
-    protected function _parse_options($options)
-    {
-
     }
         
     /**
      * join字句
-     * @param $join 联合查询字符串 
+     * @param $table 表名 
      * @param $flag 联合方式 0左连接 1右连接 默认0
      */
-    public function join($join=null,$flag=0)
+    public function join($table,$flag=0)
     {
-        if (!$join) return $this;
-        $joinArray = explode(" ", $join);
-        self::$_join_table = $joinArray[0] ? $joinArray[0] : $joinArray[1];
-        self::$_join_table = str_replace(self::$_tbf, '', self::$_join_table);
+        if (!$table) return $this;
+        self::$_join_table = $table;
+
+        $joinStr = '';
 
         if (!$flag) {
-            $join = ' LEFT JOIN '.$join.' ';
+            $joinStr = ' LEFT JOIN '.self::$_tbf.$table.' as b ';
         } else {
-            $join = ' RIGHT JOIN '.$join.' ';
+            $joinStr = ' RIGHT JOIN '.self::$_tbf.$table.' as b ';
         }
 
-        $this->_join = $join;
+        $this->_joinStr = $joinStr;
 
         return $this;
     }
@@ -291,41 +232,75 @@ class DBADUS extends DBConnect
     }
 
     /**
-     * where子句构造
-     * @param $where = array('field1'=>value1,'field2'=>valuw2,...,'or'=>array('field3'=>value3,'field4'=>value4,...))
-     *        between操作 array('field'=>array('between',array(value1,value2)))
-     * @param $op 操作符 AND/OR/BETWEEN
+     * on子句构造
+     * @param $on = array(array(field,field))
+     * @param $op 操作符 AND/OR
      */
-    public function where($where,$op='')
+    public function on($on,$op='AND')
     {
-        if (!$where) return $this;
+        if (!$on) return $this;
 
-        if (is_array($where) && !empty($where)) {
-            $whereArray = array();
-            foreach ($where as $k=>$v) {
-                if ($v[0] == 'in') {
-                    $whereArray[] = " ".$this->orm($k)." IN(".implode(',',$v[1]).") ";
-                } else {
-                    $whereArray[] = " ".$this->orm($k)."='".$v."' ";
+        $onStr = '';
+        
+        switch ($op) {
+            case 'AND':
+                foreach ($on as $v) {
+                    if ($onStr) {
+                        $onStr .= " AND ".$this->orm($v[0])."=".$this->orm($v[1])." ";
+                    } else {
+                        $onStr = " ".$this->orm($v[0])."=".$this->orm($v[1])." ";
+                    }
                 }
-            }
-            $where = implode(" AND ",$whereArray);
+                break;
+            case 'OR':
+                foreach ($on as $v) {
+                    if ($onStr) {
+                        $onStr .= " OR ".$this->orm($v[0])."=".$this->orm($v[1])." ";
+                    } else {
+                        $onStr = " ".$this->orm($v[0])."=".$this->orm($v[1])." ";
+                    }
+                }
+                break;
         }
-        $this->_where = " WHERE ".$where;
-
+        
+        $this->sql .= $this->_joinStr." ON ".$onStr;
+        
         return $this;
     }
 
     /**
-     * 排序语句
-     * @param $field string 排序字段
-     * @param $orderway string ASC/DESC ASC 升序排列
+     * where子句构造
+     * @param $where = array(array(field,value))
+     * @param $op 操作符 AND/OR/BETWEEN
      */
-    public function order($field,$way='ASC')
+    public function where($where,$op='AND')
     {
-        if (!$field || !$way) return $this;
+        if (!$where) return $this;
 
-        $this->_order = ' ORDER BY '.$this->orm($field).' '.strtoupper($way).' ';
+        $whereStr = '';
+
+        switch ($op) {
+            case 'AND':
+                foreach ($where as $v) {
+                    if ($whereStr) {
+                        $whereStr .= " AND ".$this->orm($v[0])."='".$v[1]."' ";
+                    } else {
+                        $whereStr = " ".$this->orm($v[0])."='".$v[1]."' ";
+                    }
+                }
+                break;
+            case 'OR':
+                foreach ($where as $v) {
+                    if ($whereStr) {
+                        $whereStr .= " OR ".$this->orm($v[0])."='".$v[1]."' ";
+                    } else {
+                        $whereStr = " ".$this->orm($v[0])."='".$v[1]."' ";
+                    }
+                }
+                break;
+        }
+
+        $this->sql .= " WHERE ".$whereStr;
 
         return $this;
     }
@@ -337,9 +312,18 @@ class DBADUS extends DBConnect
      */
     public function limit($start = 0, $length = 1)
     {
-        $this->_limit = " limit ".$start." , ".$length;
+        $this->sql .= " limit ".$start." , ".$length;
         
         return $this;
+    }
+    
+    /**
+     * 查询一条数据
+     * @param $m 0:查询一条数据 1:查询多条数据 默认为0
+     */
+    public function find($m=0)
+    {
+        return $m ? $this->GetAll($this->sql) : $this->GetOne($this->sql);
     }
 
     /**

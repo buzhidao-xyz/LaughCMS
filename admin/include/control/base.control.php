@@ -32,7 +32,9 @@ class BaseControl
         $sys = Memcacheg::get('sys');
         
         if (!$sys) {
-            $sys = $this->_dealSys(T('system')->select());
+            $sql = "select * from ".TBF."system";
+            $sys = DBConnect::GetAll($sql);
+            $sys = $this->_dealSys($sys);
             if (is_array($sys) && !empty($sys)) {
                 $sys['admin_host'] = $sys['host'].'/'.$sys['admin_path'].'/';
             } else {
