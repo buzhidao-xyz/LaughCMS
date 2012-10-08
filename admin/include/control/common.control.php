@@ -54,6 +54,7 @@ class CommonControl extends BaseControl
         foreach (self::$_useraccess as $g) {
             if ($g['id'] == $groupid) {
                 $return = $g;
+                break;
             }
         }
 
@@ -114,12 +115,12 @@ class CommonControl extends BaseControl
         $return = null;
 
         $where = array(
-            array('control',strtolower($control)),
-            array('action',$action)
+            'control' => strtolower($control),
+            'action'  => $action
         );
-        $return = T('node')->select('id')->where($where)->find();
+        $count = T('node')->field('id')->where($where)->count();
 
-        return count($return);
+        return $count ? true : false;
     }
 
     /**
