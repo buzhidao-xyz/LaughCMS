@@ -72,7 +72,7 @@ $orm = array (
         'lastloginip'   => 'lastloginip',
         'logincount'    => 'logincount'
     ),
-    'user_access'       => array(
+    'admin_access'       => array(
     	'userid'        => 'userid',
     	'nodeid'        => 'nodeid',
     	'groupid'       => 'groupid',

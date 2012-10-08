@@ -100,7 +100,6 @@ class AccessControl extends BaseControl
         if (!is_array($roleids)) return false;
 
         $where['a.roleid'] = array('in',$roleids);
-
         $res = T('role_node')->join(' '.TBF.'node as b on a.nodeid=b.id ')->field('a.nodeid,b.id,b.title,b.control,b.action,b.sort,b.pid,b.level,b.groupid')->where($where)->select();
 
         return $res;
@@ -114,28 +113,45 @@ class AccessControl extends BaseControl
     {
         if (!$userid) return false;
 
-        $where = array('userid' => $userid);
+        $where = array('a.userid' => $userid);
+        $res = T('admin_access')->join(' '.TBF.'node as b on a.nodeid=b.id ')->field('a.nodeid,b.id,b.title,b.control,b.action,b.sort,b.pid,b.level,b.groupid')->where($where)->select();
 
-        $res = T('user_access')->join(' '.TBF.'node as b on a.nodeid=b.id ')->field('a.nodeid,b.id,b.title,b.control,b.action,b.sort,b.pid,b.level,b.groupid')->where($where)->select();
-dump($res);dump(T('role_access')->getSql());exit;
         return $res;
     }
 
     /**
      * 整理节点信息
-     * @param $node array 节点数组
+     * @param $roleNode array 角色节点数组
+     * @param $userNode array 用户单独节点数组
      */
-    protected function dealNode($node)
+    protected function dealNode($roleNode,$userNode)
     {
         $return = array();
 
-        foreach ($node as $v) {
+        $roleNode = array_merge($roleNode,$userNode);
+        foreach ($roleNode as $v) {
             if ($v['pid'] == 0) {
-                $return[] = $v;
+                $m = 0;
+                foreach ($return as $k0=>$v0) {
+                    if ($v0['id'] == $v['id']) {
+                        $m = 1;
+                        break;
+                    }
+                }
+                if (!$m) $return[] = $v;
             } else {
                 foreach ($return as $k1=>$v1) {
                     if ($v['pid'] == $v1['id']) {
-                        $return[$k1]['cnode'][] = $v;
+                        $m = 0;
+                        if (array_key_exists('cnode', $return[$k1])) {
+                            foreach ($return[$k1]['cnode'] as $k2=>$v2) {
+                                if ($v2['id'] == $v['id']) {
+                                    $m = 1;
+                                    break;
+                                }
+                            }
+                        }
+                        if (!$m) $return[$k1]['cnode'][] = $v;
                         break;
                     }
                 }
