@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.9
+-- version 3.4.5
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2012 年 10 月 08 日 00:46
--- 服务器版本: 5.5.19
--- PHP 版本: 5.3.6
+-- 生成日期: 2012 年 10 月 09 日 11:03
+-- 服务器版本: 5.5.16
+-- PHP 版本: 5.3.8
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -65,13 +65,6 @@ CREATE TABLE IF NOT EXISTS `la_admin_access` (
   `nodeid` mediumint(6) NOT NULL,
   KEY `userid` (`userid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- 转存表中的数据 `la_admin_access`
---
-
-INSERT INTO `la_admin_access` (`userid`, `nodeid`) VALUES
-(2, 1);
 
 -- --------------------------------------------------------
 

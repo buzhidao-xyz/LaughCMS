@@ -6,7 +6,7 @@
 class DebugControl extends CommonControl
 {
 	//控制器名
-	static private $_control_name = 'Debug Control';
+	static protected $_control = 'Debug';
 
 	//定义查询字符串
     static private $_query;
@@ -39,6 +39,6 @@ class DebugControl extends CommonControl
 			array('title'=>'全局管理', 'createtime'=>TIMESTAMP, 'updatetime'=>TIMESTAMP, 'sort'=>6, 'isshow'=>1),
 		);
 
-		Table('group')->insert($groups,1);
+		T('group')->add($groups,1);
 	}
 }

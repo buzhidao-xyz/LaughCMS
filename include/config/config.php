@@ -78,6 +78,7 @@ function __autoload($class)
 
 //引入全局方法
 require(C('INCLUDE_DIR').'/function.php');
+require(C('INCLUDE_DIR').'/common.php');
 
 function Error_Handler($errno,$errstr,$errorfile,$errline,$errcontext)
 {

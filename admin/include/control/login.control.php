@@ -5,10 +5,8 @@
  */
 class LoginControl extends BaseControl
 {
-    /**
-     * 控制器类名
-     */
-    static private $_class_name = 'Login Control';
+    //控制器类名
+    static protected $_control = 'Login';
     
     /**
      * 管理中心登录入口启用/停用控制
@@ -26,10 +24,8 @@ class LoginControl extends BaseControl
     public function index()
     {
         if (!self::$_enable) return false;
-        
-        $ecode = session('ecode');
-        
-        $this->assign('ecode', eCode($ecode));
+
+        $this->assign('ecode', eCode(session('ecode')));
         $this->display('login.html');
         
         if (session_id()) session_destroy();
@@ -84,8 +80,7 @@ class LoginControl extends BaseControl
     {
         $vcode = q('vcode');
         
-        $reg = "/^[1-9A-Z]{5}$/";
-        if (preg_match($reg, $vcode) && $vcode == $_SESSION['vcode']) {
+        if (session('vcode') == md5($vcode)) {
             return true;
         } else {
             session('ecode', 1004);

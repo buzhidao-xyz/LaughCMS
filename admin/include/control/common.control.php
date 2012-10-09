@@ -5,14 +5,11 @@
  */
 class CommonControl extends BaseControl
 {
-	//控制器名
-    static private $_control_name = 'Common Control';
-
     //用户权限
-    static protected $_useraccess = null;
+    protected $userAccess;
 
     //缓存当前访问的控制器名
-    static protected $_control = null;
+    static protected $_control;
 
     /**
      * 初始化并读取用户权限信息
@@ -32,7 +29,7 @@ class CommonControl extends BaseControl
      */
     public function getUserAccess()
     {
-         self::$_useraccess = session('useraccess');
+         $this->userAccess = session('userAccess');
     }
 
     /**
@@ -40,7 +37,7 @@ class CommonControl extends BaseControl
      */
     public function setUserAccess()
     {
-        $this->assign('useraccess', self::$_useraccess);
+        $this->assign('userAccess', $this->userAccess);
     }
 
     /**
@@ -51,7 +48,7 @@ class CommonControl extends BaseControl
     {
         $return = array();
 
-        foreach (self::$_useraccess as $g) {
+        foreach ($this->userAccess as $g) {
             if ($g['id'] == $groupid) {
                 $return = $g;
                 break;
@@ -74,7 +71,7 @@ class CommonControl extends BaseControl
         $status = $this->_isDBNode($control,$action);
 
         if ($status) {
-            foreach (self::$_useraccess as $v) {
+            foreach ($this->userAccess as $v) {
                 if (isset($v['cnode']) && is_array($v['cnode']) && !empty($v['cnode'])) {
                     foreach ($v['cnode'] as $v1) {
                         if (isset($v1['cnode']) && is_array($v1['cnode']) && !empty($v1['cnode'])) {
@@ -88,9 +85,7 @@ class CommonControl extends BaseControl
                     }
                 }
             }
-        } else {
-            $return  = true;
-        }
+        } else $return = true;
 
         return $return;
     }
@@ -118,9 +113,8 @@ class CommonControl extends BaseControl
             'control' => strtolower($control),
             'action'  => $action
         );
-        $count = T('node')->field('id')->where($where)->count();
 
-        return $count ? true : false;
+        return T('node')->field('id')->where($where)->count() ? true : false;
     }
 
     /**

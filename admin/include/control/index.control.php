@@ -6,7 +6,7 @@
 class IndexControl extends CommonControl
 {
     //定义类名
-    static private $_class_name = 'Index Control';
+    static protected $_control = 'Index';
     
     //定义缓存有效时间(秒)
     static public $_life_time = 10;
@@ -42,7 +42,6 @@ class IndexControl extends CommonControl
         }
         
         $this->assign('data', $data);
-        
         $this->display('index.html');
     }
  

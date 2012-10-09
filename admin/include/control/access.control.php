@@ -6,23 +6,24 @@
 class AccessControl extends BaseControl
 {
 	//控制器名
-	static public $_control_name = 'Access Control';
+	static protected $_control = 'Access';
 
     //超级管理员账户id数组
-    private $_super_admin = array();
+    private $_super_admin = array(1);
 
 	public function __construct()
 	{
 		parent::__construct();
-		$this->getUserAccess();
+
+		$this->_getUserAccess();
 	}
 
 	/**
 	 * 获取用户的控制访问权限
 	 */
-	public function getUserAccess()
+	private function _getUserAccess()
 	{
-        //if (session('useraccess')) return true;
+        if (session('userAccess')) return true;
 
         $user = $this->getUser();
         if (in_array($user['id'], $this->_super_admin)) {
@@ -46,8 +47,8 @@ class AccessControl extends BaseControl
         $group = $this->getGroup($groupids);
         if (empty($group)) return true;
 
-        $useraccess = $this->dealGroupNode($group, $node);
-        if (is_array($useraccess)) session('useraccess',$useraccess);
+        $userAccess = $this->dealGroupNode($group, $node);
+        if (is_array($userAccess)) session('userAccess',$userAccess);
 
         return true;
 	}
@@ -77,7 +78,7 @@ class AccessControl extends BaseControl
      * 获取某个节点的子节点
      * @param $nodeid 节点id 默认为0 取全部
      */
-    public function getNode($nodeid=0)
+    protected function getNode($nodeid=0)
     {
         $where = array();
         if ($nodeid) {
@@ -124,7 +125,7 @@ class AccessControl extends BaseControl
      * @param $roleNode array 角色节点数组
      * @param $userNode array 用户单独节点数组
      */
-    protected function dealNode($roleNode,$userNode)
+    protected function dealNode($roleNode=array(),$userNode=array())
     {
         $return = array();
 
@@ -157,7 +158,7 @@ class AccessControl extends BaseControl
                 }
             }
         }
-
+        
         return $return;
     }
 
@@ -182,19 +183,19 @@ class AccessControl extends BaseControl
      */
     protected function dealGroupNode($group,$node)
     {
-        $useraccess = array();
+        $userAccess = array();
 
         foreach ($node as $k=>$v) {
             foreach ($group as $k1=>$v1) {
                 if ($v['groupid'] == $v1['id']) {
-                    if (!array_key_exists($v['groupid'], $useraccess)) $useraccess[$v['groupid']] = $v1;
-                    $useraccess[$v['groupid']]['cnode'][] = $v;
+                    if (!array_key_exists($v['groupid'], $userAccess)) $userAccess[$v['groupid']] = $v1;
+                    $userAccess[$v['groupid']]['cnode'][] = $v;
                     break;
                 }
             }
         }
 
-        return $useraccess;
+        return $userAccess;
     }
 
 	/**

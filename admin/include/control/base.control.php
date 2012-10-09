@@ -5,16 +5,19 @@
  */
 class BaseControl
 {
-    static protected $_model = 'Base';
+    static protected $_control = 'Base';
     
-    static protected $_control_suffix = 'Control';
+    protected $_control_suffix = 'Control';
 
-    //模板解析类对象
-    protected $_template = null;
+    protected $_template;   //模板解析类对象
+    protected $_userInfo;   //用户信息
+
+    protected $_system_model = null;
     
     public function __construct()
     {
-        if ($this->_template == null) $this->_template = new Template();
+        if (!$this->_template) $this->_template = new Template();
+        if (!$this->_system_model) $this->_system_model = new System();
 
         $this->userInfo = session('userInfo');
 
@@ -29,35 +32,7 @@ class BaseControl
      */
     private function getSys()
     {
-        $sys = Memcacheg::get('sys');
-        
-        if (!$sys) {
-            $sys = $this->_dealSys(T('system')->select());
-            if (is_array($sys) && !empty($sys)) {
-                $sys['admin_host'] = $sys['host'].'/'.$sys['admin_path'].'/';
-            } else {
-                return false;
-            }
-            
-            Memcacheg::set('sys',$sys,3600);
-        }
-        
-        assign("sys", $sys);
-    }
-
-    /**
-     * 处理sys
-     */
-    private function _dealSys($sys)
-    {
-        if (!is_array($sys) || empty($sys)) return false;
-
-        $return = array();
-        foreach ($sys as $k => $v) {
-            $return[$v['cfgname']] = $v['cfgvalue'];
-        }
-
-        return $return;
+        $this->assign("sys", $this->_system_model->getSys());
     }
     
     /**
@@ -66,13 +41,10 @@ class BaseControl
     private function isLoged()
     {
 		$res = null;
-        $sstate = session('sstate');
-        $ustate = session('ustate');
+        $sstate = session('sstate'); $ustate = session('ustate');
         
         $url = parse_url($_SERVER['REQUEST_URI']);
-		if (isset($url['query'])) {
-			$res = preg_match("/^s=(vcode|login)(\/index)?(\/loginCheck)?(\&w=[1-9][0-9]{1,2})?(\&h=[1-9][0-9]{1,2})?$/",$url['query']);
-        }
+		if (isset($url['query'])) $res = preg_match("/^s=(vcode|login)(\/index)?(\/loginCheck)?(\&w=[1-9][0-9]{1,2})?(\&h=[1-9][0-9]{1,2})?$/",$url['query']);
 
         if (!$res && (empty($this->userInfo) || $sstate != $ustate)) {
             header("location:".__APP__.'/?s=login');

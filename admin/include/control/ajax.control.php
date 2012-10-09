@@ -6,16 +6,12 @@
 class AJAXControl extends BaseControl
 {
     //定义类名
-    static private $_class_name = 'Ajax Control';
+    static protected $_class = 'Ajax';
     
-    /**
-     * 如果请求的控制器不存在 则用此定义的类名
-     */
+    //如果请求的控制器不存在 则用此定义的类名
     static protected $_control = 'AJAX';
     
-    /**
-     * 如果请求的方法不存在 则用此定义的方法
-     */
+    //如果请求的方法不存在 则用此定义的方法
     static protected $_function = 'ajaxData';
     
     /**

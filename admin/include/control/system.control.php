@@ -5,8 +5,8 @@
  */
 class SystemControl extends CommonControl
 {
-    //组名称
-    private $_group = 'system';
+    //控制器
+    static protected $_control = 'System';
 
     private $_system_model = null;
 

@@ -10,6 +10,42 @@ class System extends Base
 		parent::__construct();
 	}
 
+	/**
+     * 获取系统信息
+     */
+    public function getSys()
+    {
+        $sys = Memcacheg::get('sys');
+        
+        if (!$sys) {
+            $sys = $this->_dealSys(T('system')->select());
+            if (is_array($sys) && !empty($sys)) {
+                $sys['admin_host'] = $sys['host'].'/'.$sys['admin_path'].'/';
+            } else {
+                return false;
+            }
+            
+            Memcacheg::set('sys',$sys,3600);
+        }
+
+        return $sys;
+    }
+
+    /**
+     * 处理sys
+     */
+    private function _dealSys($sys=null)
+    {
+        if (!is_array($sys) || empty($sys)) return false;
+
+        $return = array();
+        foreach ($sys as $k => $v) {
+            $return[$v['cfgname']] = $v['cfgvalue'];
+        }
+
+        return $return;
+    }
+
 	/*
 	 * 获取角色信息
 	 * @param $roleid int 角色ID 默认为null 取全部角色信息

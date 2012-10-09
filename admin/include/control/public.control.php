@@ -5,6 +5,8 @@
  */
 class PublicControl extends CommonControl
 {
+    static protected $_control = 'Public';
+
 	public function __construct()
     {
         parent::__construct();

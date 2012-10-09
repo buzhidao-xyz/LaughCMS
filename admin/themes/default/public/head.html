@@ -9,7 +9,7 @@
     <div class="nav">
         <ul class="hmenu">
             <li class="navon"><em><a hidefocus="true" href="__APP__/?s=index/body&groupid=0" target="body">管理中心</a></em></li>
-            {foreach $useraccess as $value}
+            {foreach $userAccess as $value}
             <li><em><a hidefocus="true" href="__APP__/?s=public/body/&groupid={$value.id}" target="body">{$value.title}</a></em></li>
             {/foreach}
         </ul>

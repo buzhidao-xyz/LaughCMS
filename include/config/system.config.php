@@ -2,9 +2,6 @@
 //根目录
 define('ROOT_DIR', str_replace('/include/config', '', str_replace('\\', '/', dirname(__FILE__))));
 
-//网站主文件夹目录
-define('', 'admin');
-
 //admin目录
 define('ADMIN_DIR', ROOT_DIR.'/admin');
 
@@ -25,6 +22,9 @@ define('__APPM__',substr(ROOT_DIR, strripos(ROOT_DIR, '/')));
 
 //当前项目相对网站服务器路径地址
 define('__APP__', __APPM__.str_replace(ROOT_DIR, "", APP_PATH));
+
+//网站include主目录
+define('__INC__', ROOT_DIR.'/include');
 
 //时区
 date_default_timezone_set('Asia/Shanghai');
