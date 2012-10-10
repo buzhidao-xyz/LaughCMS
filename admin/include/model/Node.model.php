@@ -16,7 +16,6 @@ class Node extends Base
 	 */
 	public function getNodeTree($groupid=null)
 	{
-		
-		return T('node')->select()->find(1);
+		return T('node')->select();
 	}
 }

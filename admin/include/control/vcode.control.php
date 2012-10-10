@@ -26,29 +26,39 @@ class VCodeControl
 
     static private $_back_color = array(
         array('0XFF','0XFF','0XFF'),
-        array('0XEE','0XEE','0XEE'),
+        array('0XFF','0XF5','0XEE'),
         array('0XCA','0XE0','0XF6'),
         array('0XFC','0XF8','0XE3'),
         array('0XEB','0XF9','0XE6'),
     );
 
     static private $_front_color = array(
+        array('0XFF','0X30','0X30'),
+        array('0XFF','0X00','0X00'),
+        array('0XB8','0X86','0X0B'),
+        array('0X00','0X00','0XCD'),
+        array('0X00','0X8B','0X00'),
         array('0X33','0X33','0X33'),
-        array('0X02','0X65','0XCF'),
-        array('0X98','0X1B','0X2E'),
-        array('0X12','0X87','0X22'),
-        array('0X87','0X5C','0X12'),
+        array('0X12','0X34','0X56'),
+        array('0X4B','0X00','0X82'),
+        array('0Xff','0X63','0X47'),
+        array('0X99','0X00','0XFF'),
     );
 
     static private $_front_pot_color = array(
-        array('0X33','0X33','0X33'),
+        array('0XFF','0XFF','0XFF'),
+        array('0X66','0X66','0X66'),
+        array('0X12','0X34','0X56'),
+        array('0X83','0X6F','0XFF'),
+        array('0X02','0X65','0XCF'),
     );
 
     static private $_front_line_color = array(
         array('0XFF','0XFF','0XFF'),
         array('0X33','0X33','0X33'),
-        array('0XC1','0XBB','0XF3'),
         array('0X02','0X65','0XCF'),
+        array('0Xff','0X63','0X47'),
+        array('0X00','0X00','0XCD'),
     );
     
     public function __construct()
@@ -104,19 +114,52 @@ class VCodeControl
     	$lpx = ($w - (strlen($code)*8.0))/2;
     	
     	$background = self::_getBackColor($img);
-    	$strcolor = self::_getFrontColor($img);
-    	$linecolor = self::_getFrontLineColor($img);
+    	$frontcolor = self::_getFrontColor($img);
     	
-    	imagerectangle($img,0,0,($width-1),($height-1),$linecolor);
+    	imagerectangle($img,0,0,($width-1),($height-1),$frontcolor);
     	
-    	imageline($img,1,rand(1,($height-1)),($width-1),rand(1,($height-1)),$linecolor);
-    	imageline($img,rand(1,($width-1)),1,rand(1,($width-1)),($height-1),$linecolor);
-    	imageline($img,rand(1,($width-1)),1,rand(1,($width-1)),($height-1),$linecolor);
+        self::_drawPot($img,$width,$height);
+        self::_drawLine($img,$width,$height,1,2);
     	
-    	imagestring($img,5,$lpx,3,$code,$strcolor);
+    	imagestring($img,5,$lpx,3,$code,$frontcolor);
     	
     	imagegif($img);
     	imagedestroy($img);
+    }
+
+    /**
+     * 画噪点 随机
+     * @param $img object 创建的图像对象句柄
+     * @param $width int 图像宽度
+     * @param $height int 图像高度
+     */
+    static private function _drawPot($img,$width=0,$height=0)
+    {
+        $potcount = $width+$height;
+        for ($i= 1; $i< $potcount; $i++) {
+            $potcolor = self::_getFrontPotColor($img);
+            imagesetpixel($img,rand(1,$width),rand(1,$height),$potcolor);
+        }
+    }
+
+    /**
+     * 画噪线 随机
+     * @param $img object 创建的图像对象句柄
+     * @param $width int 图像宽度
+     * @param $height int 图像高度
+     * @param $m int 横向噪线条数 默认为0
+     * @param $n int 纵向噪线条数 默认为0
+     */
+    static private function _drawLine($img,$width=0,$height=0,$m=0,$n=0)
+    {
+        $linecolor = self::_getFrontLineColor($img);
+
+        for ($i= 0; $i< $m; $i++) {
+            imageline($img,1,rand(1,($height-1)),($width-1),rand(1,($height-1)),$linecolor);
+        }
+        for ($i= 0; $i< $n; $i++) {
+            imageline($img,rand(1,($width-1)),1,rand(1,($width-1)),($height-1),$linecolor);
+        }
     }
 
     /**

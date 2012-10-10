@@ -59,15 +59,17 @@ class DBADUS extends DBConnect
     /**
      * 插入数据到数据库中
      * @param $data 要插入的数据
-     * @param $m 0:插入一条数据 1:插入多条数据 默认为0
+     * @param $m false:插入一条数据 true:插入多条数据 默认为false
      */
-    public function add($data,$m=0)
+    public function add($data,$m=false)
     {
-        if (isset($m) && $m) {
+        if ($m === true) {
             return $this->insertAll($data);
-        } else {
+        } else if ($m === false) {
             return $this->insertOne($data);
         }
+
+        return false;
     }
 
     /**
@@ -75,7 +77,7 @@ class DBADUS extends DBConnect
      * @param $data(mixed)
      * 插入一条记录到数据库
      */
-    public function insertOne($data)
+    protected function insertOne($data)
     {
         if (!is_array($data)) return false;
         
@@ -132,18 +134,19 @@ class DBADUS extends DBConnect
     /**
      * delete删除操作
      */
-    public function delete()
+    public function delete($options=array())
     {
-        $this->sql = "DELETE FROM ".self::$_tbf.self::$_table." ";
-        
-        return $this;
+        $this->_before_sql($options);
+        $this->sql = "DELETE FROM ".self::$_tbf.self::$_table." ".$this->_where.$this->_order.$this->_limit;
+        $this->_after_sql();
+        return $this->exec($this->sql);
     }
 
     /**
      * update更新sql操作
      * @param $data(mixed) 要更新的字段的键值数组
      */
-    public function update($data)
+    public function update($data,$options=array())
     {
         if (!is_array($data)) return false;
         
@@ -155,9 +158,10 @@ class DBADUS extends DBConnect
             }
         }
         
-        $this->sql = "UPDATE ".self::$_tbf.self::$_table." SET ".$ups;
-        
-        return $this;
+        $this->_before_sql($options);
+        $this->sql = "UPDATE ".self::$_tbf.self::$_table." SET ".$ups.$this->_where;
+        $this->_after_sql();
+        return $this->exec($this->sql);
     }
     
     /**
@@ -192,6 +196,7 @@ class DBADUS extends DBConnect
     {
         $this->_before_sql($options);
         $this->sql = "SELECT COUNT(".$this->_field.") FROM ".self::$_tbf.self::$_table." as a ".$this->_where;
+        $this->_after_sql();
         $this->exec($this->sql);
         return $this->GetNum();
     }
@@ -204,8 +209,8 @@ class DBADUS extends DBConnect
     {
         $this->_before_sql($options);
         $this->sql = "SELECT ".$this->_field." FROM ".self::$_tbf.self::$_table." as a ".$this->_join.$this->_where.$this->_order.$this->_limit;
-        $return = $this->GetOne($this->sql);
         $this->_after_sql();
+        $return = $this->GetOne($this->sql);
         return $return;
     }
 
@@ -217,8 +222,8 @@ class DBADUS extends DBConnect
     {
         $this->_before_sql($options);
         $this->sql = "SELECT ".$this->_field." FROM ".self::$_tbf.self::$_table." as a ".$this->_join.$this->_where.$this->_order.$this->_limit;
-        $return = $this->GetAll($this->sql);
         $this->_after_sql();
+        $return = $this->GetAll($this->sql);
         return $return;
     }
 

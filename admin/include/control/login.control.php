@@ -80,7 +80,7 @@ class LoginControl extends BaseControl
     {
         $vcode = q('vcode');
         
-        if (session('vcode') == md5($vcode)) {
+        if (session('vcode') == md5(strtoupper($vcode))) {
             return true;
         } else {
             session('ecode', 1004);
