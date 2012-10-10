@@ -222,6 +222,27 @@ function session($sessionname,$sessionvalue='')
 	return $return;
 }
 
+/**
+ * 压缩输出方法 gzip压缩函数
+ * @param $content mixed 要压缩的页面内容
+ */
+function ob_gzip($content) 
+{
+    if(!headers_sent() && // 如果页面头部信息还没有输出
+    extension_loaded("zlib") && // 而且zlib扩展已经加载到PHP中
+    strstr($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip")){ //而且浏览器说它可以接受GZIP的页面
+        //为准备压缩的内容贴上"此页已压缩"的注释标签，然后用zlib提供的gzencode()函数执行级别为9的压缩，这个参数值范围是0-9,0表示无压缩，9表示最大压缩，当然压缩程度越高越费CPU.
+        $content = gzencode($content." 此页已压缩", 9);
+       
+        //然后用header()函数给浏览器发送一些头部信息，告诉浏览器这个页面已经用GZIP压缩过了！
+        header("Content-Encoding: gzip");
+        header("Vary: Accept-Encoding");
+        header("Content-Length: ".strlen($content));
+    }
+
+    return $content; //返回压缩的内容
+}
+
 //-----------------------数据库操作方法-----------------------//
 
 /**
