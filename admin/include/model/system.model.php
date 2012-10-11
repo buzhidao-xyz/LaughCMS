@@ -19,13 +19,8 @@ class System extends Base
         
         if (!$sys) {
             $sys = $this->_dealSys(T('system')->select());
-            if (is_array($sys) && !empty($sys)) {
-                $sys['admin_host'] = $sys['host'].'/'.$sys['admin_path'].'/';
-            } else {
-                return false;
-            }
-            
-            Memcacheg::set('sys',$sys,3600);
+            if (is_array($sys) && !empty($sys)) $sys['admin_host'] = $sys['host'].'/'.$sys['admin_path'].'/';
+            Memcacheg::set('sys',$sys);
         }
 
         return $sys;

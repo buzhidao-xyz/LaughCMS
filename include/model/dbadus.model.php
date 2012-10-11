@@ -161,7 +161,7 @@ class DBADUS extends DBConnect
         $this->_before_sql($options);
         $this->sql = "UPDATE ".self::$_tbf.self::$_table." SET ".$ups.$this->_where;
         $this->_after_sql();
-        return $this->exec($this->sql);
+        return $this->exec();
     }
     
     /**
@@ -197,8 +197,7 @@ class DBADUS extends DBConnect
         $this->_before_sql($options);
         $this->sql = "SELECT COUNT(".$this->_field.") FROM ".self::$_tbf.self::$_table." as a ".$this->_where;
         $this->_after_sql();
-        $this->exec($this->sql);
-        return $this->GetNum();
+        return $this->GetCount($this->sql);
     }
     
     /**
@@ -353,9 +352,9 @@ class DBADUS extends DBConnect
      */
     public function exec($sql=null)
     {
-        $this->sql = !empty($sql)?$sql:$this->sql;
+        $sql = !empty($sql) ? $sql : $this->sql;
         
-        return $this->Execute($this->sql);
+        return $this->Execute($sql);
     }
 
     public function getSql()

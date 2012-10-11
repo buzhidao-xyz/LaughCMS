@@ -12,7 +12,6 @@ $orm = array (
     'group'             => array(
 	    'id'            => 'id',
         'title'         => 'title',
-        'control'       => 'control',
         'createtime'    => 'createtime',
         'updatetime'    => 'updatetime',
 	    'sort'          => 'sort',
@@ -28,6 +27,8 @@ $orm = array (
         'pid'           => 'pid',
         'level'         => 'level',
         'groupid'       => 'groupid',
+        'createtime'    => 'createtime',
+        'updatetime'    => 'updatetime',
     ),
     'role'              => array(
 	    'id'            => 'id',

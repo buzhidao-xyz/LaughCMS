@@ -21,7 +21,7 @@ class Memcacheg
      * 默认缓存数据有效期(S)
      * 0 表示永不过期
      */
-    static private $_time = 60;
+    static private $_time = 3600;
     
     /**
      * 默认缓存服务器配置 host=localhost port=11211
@@ -78,12 +78,12 @@ class Memcacheg
      * @param $t 缓存有效期(秒)
      * @param $p 具体操作 0 不复写已有值 1 复写已有值
      */
-    static public function set($k, $v, $t, $p=0)
+    static public function set($k, $v, $t=null, $p=0)
     {
         if (!self::$_enable) return false;
         
         if (!$k) return false;
-        $t = preg_match("/^0|[1-9][0-9]{0,6}$/", $t)?$t:self::$_time;
+        $t = preg_match("/^0|[1-9][0-9]{0,6}$/", $t) ? $t : self::$_time;
 
         if (self::$memcacheg->get($k) === false) {
             $return = self::$memcacheg->add($k, $v, false, $t);

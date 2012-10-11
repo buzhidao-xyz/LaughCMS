@@ -32,12 +32,24 @@
 				<span>组: </span>
 				<select name="groupid" class="input" style="width:150px;">
 					<option value="" >|-顶级菜单</option>
+										<option value="1">系统管理</option>
+										<option value="2">用户中心</option>
+										<option value="3">文章管理</option>
+										<option value="4">网站设置</option>
+										<option value="5">系统工具</option>
 									</select>
 			</li>
 			<li class="formblock colorblock">
 				<span>父节点: </span>
 				<select name="pid" class="input" style="width:150px;">
 					<option value="" >|-顶级菜单</option>
+										<option value="1">注册与访问控制</option>
+										<option value="5">用户搜索</option>
+										<option value="2">角色管理</option>
+										<option value="3">日志管理</option>
+										<option value="4">节点管理</option>
+										<option value="6">管理员用户管理</option>
+										<option value="7">添加节点</option>
 									</select>
 			</li>
 			<li class="formblock colorblock">

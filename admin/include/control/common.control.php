@@ -110,7 +110,7 @@ class CommonControl extends BaseControl
         $return = null;
 
         $where = array(
-            'control' => strtolower($control),
+            'control' => $control,
             'action'  => $action
         );
 

@@ -39,7 +39,7 @@ class DBConnect implements DBConnect_Interface
      * 通过哪种连接方式连接数据库
      * 默认通过pdo 其他方式为mysqli
      */
-    static private $_flag = "pdo";
+    static private $_flag = "mysqli";
     
     /**
      * insert update delete 所影响的记录数
@@ -163,37 +163,54 @@ class DBConnect implements DBConnect_Interface
     
     private function connect()
     {
-        try {
-			//pdo_mysql connect
-			$dsn = "mysql:host=".$this->host.";dbname=".$this->database;
-
-            if (!(@self::$db = new PDO($dsn, $this->username, $this->password))) {
-                throw new PDOException("The connect is unvaliable", 1);
-            	exit;
-            };
-            self::$_flag = "pdo";
-            
-			self::Execute("SET NAMES 'UTF8'");
-            //return self::$db;
-		} catch(PDOException $e) {
-		    //echo $e;
+        if (self::$_flag == "pdo") {
             try {
-                if (!(@self::$db = new mysqli($this->host, $this->username, $this->password, $this->database))) {
-                	throw new MyException("The connect is unvaliable", 1);
-                	exit;
-                }
-                self::$_flag = "mysqli";
-                
-                self::Execute("SET NAMES 'UTF8'");
-                //return self::$db;
-            } catch(MyException $e) {
-                echo $e;
+                self::$db = $this->_initPDO();
+            } catch(PDOException $e) {
+                self::$db = $this->_initMysqli();
             }
-		}
-        
-        if (self::$db) {
-            $this->setAttributes();
+        } else if (self::$_flag == "mysqli") {
+            self::$db = $this->_initMysqli();
         }
+        // self::Execute("SET NAMES 'UTF8'");
+        
+        if (self::$db) $this->setAttributes();
+    }
+
+    /**
+     * 初始化PDO连接
+     */
+    private function _initPDO()
+    {
+        //pdo_mysql connect
+        $dsn = "mysql:host=".$this->host.";dbname=".$this->database;
+
+        if (!(@self::$db = new PDO($dsn, $this->username, $this->password))) {
+            throw new PDOException("The connect is unvaliable", 1);
+            exit;
+        };
+        self::$_flag = "pdo";
+
+        return self::$db;
+    }
+
+    /**
+     * 初始化Mysqli连接
+     */
+    private function _initMysqli()
+    {
+        try {
+            if (!(self::$db = new mysqli($this->host, $this->username, $this->password, $this->database))) {
+                throw new MyException("The connect is unvaliable", 1);
+                exit;
+            }
+            self::$_flag = "mysqli";
+        } catch(MyException $e) {
+            echo $e;
+        }
+        
+        dump(self::$db->connect_error);exit;
+        return self::$db;
     }
     
     /**
@@ -238,10 +255,8 @@ class DBConnect implements DBConnect_Interface
             default:
                 $count = 0;
 		}
-        
-        self::$_count = $count;
 
-		return $count?true:false;
+		return $count ? true : false;
 	}
 
     /**
@@ -249,9 +264,27 @@ class DBConnect implements DBConnect_Interface
      * @param $sql 要执行的sql语句
      * @return 执行语句所影响的记录数，为空返回0
      */
-	static public function GetNum()
+	static public function GetCount($sql)
 	{
-		return self::$_count?self::$_count:0;
+		$count = 0;
+        $sql = self::tablePR($sql);
+
+        $sth = self::$db->prepare($sql);
+        $sth->execute();
+        
+        switch (self::$_flag) {
+            case 'pdo':
+                $count = $sth->rowCount();
+                break;
+            case 'mysqli':
+                $res = $sth->get_result();
+                $count = $res->num_rows;
+                break;
+            default:
+                break;
+        }
+
+        return $count;
 	}
 
     /**
@@ -298,12 +331,12 @@ class DBConnect implements DBConnect_Interface
         
         switch (self::$_flag) {
             case 'pdo':
-                $return = $sth->rowCount()?$sth->fetchAll():$result;
+                $return = $sth->rowCount() ? $sth->fetchAll() : $result;
                 break;
             case 'mysqli':
                 $res = $sth->get_result();
                 // MYSQLI_ASSOC 以字段/值关联模式返回数据格式
-                $return = $res->num_rows?$res->fetch_all(MYSQLI_ASSOC):$result;
+                $return = $res->num_rows ? $res->fetch_all(MYSQLI_ASSOC) : $result;
                 break;
             default:
                 $return = $result;

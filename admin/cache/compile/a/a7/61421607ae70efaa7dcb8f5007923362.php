@@ -15,7 +15,7 @@
  <tr><td width="160" height="90"></td><td></td></tr>
  <tr>
   <td valign="top">
-   <iframe frameborder="0" id="menu" name="menu" width="160px" height="100%" src="/laugh/admin/?s=public/menu&groupid=0" scrolling="auto" class="iframe"></iframe>
+   <iframe frameborder="0" id="menu" name="menu" width="160px" height="100%" src="/laugh/admin/?s=public/menu&groupid=1" scrolling="auto" class="iframe"></iframe>
   </td>
   <td valign="top">
    <iframe frameborder="0" id="main" name="main" width="100%" height="100%" src="/laugh/admin/?s=public/welcome" scrolling="yes" class="iframe"></iframe>

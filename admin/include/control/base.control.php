@@ -13,6 +13,8 @@ class BaseControl
     protected $_userInfo;   //用户信息
 
     protected $_system_model = null;
+
+    static public $_sys = null;
     
     public function __construct()
     {
@@ -32,7 +34,8 @@ class BaseControl
      */
     private function getSys()
     {
-        $this->assign("sys", $this->_system_model->getSys());
+        self::$_sys = self::$_sys ? self::$_sys : $this->_system_model->getSys();
+        $this->assign("sys", self::$_sys);
     }
     
     /**
