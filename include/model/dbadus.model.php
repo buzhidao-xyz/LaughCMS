@@ -92,8 +92,8 @@ class DBADUS extends DBConnect
         }
         
         $this->sql = "INSERT INTO ".self::$_tbf.self::$_table." (".$keys.") VALUES (".$values.")";
-
-        return $this->Execute($this->sql);
+        if ($this->Execute($this->sql)) return $this->GetInsertID();
+        else return false;
     }
     
     /**
@@ -128,7 +128,8 @@ class DBADUS extends DBConnect
         
         $this->sql = "INSERT INTO ".self::$_tbf.self::$_table." ".$key." VALUES ".$value;
 
-        return $this->Execute($this->sql);
+        if ($this->Execute($this->sql)) return $this->GetInsertID();
+        else return false;
     }
 
     /**
@@ -197,7 +198,9 @@ class DBADUS extends DBConnect
         $this->_before_sql($options);
         $this->sql = "SELECT COUNT(".$this->_field.") FROM ".self::$_tbf.self::$_table." as a ".$this->_where;
         $this->_after_sql();
-        return $this->GetCount($this->sql);
+        $data = $this->GetOne($this->sql);
+
+        return $data['COUNT('.$this->_field.')'];
     }
     
     /**

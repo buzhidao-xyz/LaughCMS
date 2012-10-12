@@ -22,7 +22,7 @@ class System extends Base
             if (is_array($sys) && !empty($sys)) $sys['admin_host'] = $sys['host'].'/'.$sys['admin_path'].'/';
             Memcacheg::set('sys',$sys);
         }
-
+        
         return $sys;
     }
 

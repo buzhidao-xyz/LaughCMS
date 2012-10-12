@@ -93,7 +93,7 @@ class Route
         $_action = self::$_query['action'];
 
         $obj = new $_control(self::$_query);
-
+        
         if (method_exists($_control, 'checkUserAccess') && !$obj->checkUserAccess($_control, $_action)) self::_host();
 
         $obj->$_action();

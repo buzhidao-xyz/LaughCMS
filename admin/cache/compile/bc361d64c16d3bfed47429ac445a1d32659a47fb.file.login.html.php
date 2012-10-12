@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2012-10-11 17:05:48
+<?php /* Smarty version Smarty-3.1.11, created on 2012-10-12 17:26:54
          compiled from "C:\xampp\htdocs\laugh\admin\themes\default\login.html" */ ?>
-<?php /*%%SmartyHeaderCode:437250768bec9fe205-93454170%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:297625077e25e65c496-79122122%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '437250768bec9fe205-93454170',
+  'nocache_hash' => '297625077e25e65c496-79122122',
   'function' => 
   array (
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_50768beca4d183_70810995',
+  'unifunc' => 'content_5077e25e780da7_02323937',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50768beca4d183_70810995')) {function content_50768beca4d183_70810995($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_5077e25e780da7_02323937')) {function content_5077e25e780da7_02323937($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div id="logPanel">
     <div class="login logTop">

@@ -12,10 +12,27 @@ class Node extends Base
 
 	/**
 	 * 获取节点树
-	 * @param $groupid int 组id 默认为Null 0:返回所有节点
+	 * @param $groupid int 组id 默认为Null 返回所有节点
 	 */
 	public function getNodeTree($groupid=null)
 	{
-		return T('node')->select();
+		if ($groupid === 0) return array();
+
+		$where = array(
+			'groupid' => $groupid
+		);
+		$return = T('node')->where($where)->select();
+
+		return $return;
+	}
+
+	/**
+	 * 保存新节点
+	 */
+	public function saveNode($data)
+	{
+		if (!is_array($data) || empty($data)) return false;
+		
+		return T('node')->add($data);
 	}
 }

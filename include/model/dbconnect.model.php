@@ -165,14 +165,15 @@ class DBConnect implements DBConnect_Interface
     {
         if (self::$_flag == "pdo") {
             try {
-                self::$db = $this->_initPDO();
+                $this->_initPDO();
             } catch(PDOException $e) {
-                self::$db = $this->_initMysqli();
+                $this->_initMysqli();
             }
         } else if (self::$_flag == "mysqli") {
-            self::$db = $this->_initMysqli();
+            $this->_initMysqli();
         }
-        // self::Execute("SET NAMES 'UTF8'");
+        self::Execute("SET NAMES 'UTF8'");
+        // dump(self::$db);exit;
         
         if (self::$db) $this->setAttributes();
     }
@@ -190,8 +191,6 @@ class DBConnect implements DBConnect_Interface
             exit;
         };
         self::$_flag = "pdo";
-
-        return self::$db;
     }
 
     /**
@@ -200,7 +199,7 @@ class DBConnect implements DBConnect_Interface
     private function _initMysqli()
     {
         try {
-            if (!(self::$db = new mysqli($this->host, $this->username, $this->password, $this->database))) {
+            if (!(@self::$db = new mysqli($this->host, $this->username, $this->password, $this->database))) {
                 throw new MyException("The connect is unvaliable", 1);
                 exit;
             }
@@ -208,9 +207,6 @@ class DBConnect implements DBConnect_Interface
         } catch(MyException $e) {
             echo $e;
         }
-        
-        dump(self::$db->connect_error);exit;
-        return self::$db;
     }
     
     /**
@@ -303,11 +299,11 @@ class DBConnect implements DBConnect_Interface
         
         switch (self::$_flag) {
             case 'pdo':
-                $return = $sth->rowCount()?$sth->fetch(0):$result;
+                $return = $sth->rowCount() ? $sth->fetch(0) : $result;
                 break;
             case 'mysqli':
                 $res = $sth->get_result();
-                $return = $res->num_rows?$res->fetch_assoc():$result;
+                $return = $res->num_rows ? $res->fetch_assoc() : $result;
                 break;
             default:
                 $return = $result;
@@ -341,7 +337,7 @@ class DBConnect implements DBConnect_Interface
             default:
                 $return = $result;
 		}
-
+        
 		return $return;
 	}
 

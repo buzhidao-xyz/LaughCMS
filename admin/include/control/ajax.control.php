@@ -21,6 +21,7 @@ class AJAXControl extends BaseControl
      */
     static protected $_data = array(
         'status' => 999,
+        'info'   => '',
         'data'   => '请求出错!'
     );
     
@@ -35,19 +36,14 @@ class AJAXControl extends BaseControl
         list($_control, $_function) = self::checkControl($_control, $_function);
         list($_control, $_function) = self::set($_control, $_function);
 
-        $data = $_control::$_function();
-        $return = self::go($data);
-        
-        echo $return;
+        $_obj = new $_control();
+        self::go($_obj->$_function());
     }
     
     static protected function go($data)
     {
-        $return = array();
-        $return['status'] = isset($data['status'])?$data['status']:self::$_data['status'];
-        $return['data'] = isset($data['data'])?$data['data']:self::$_data['data'];
-
-        return json_encode($return);
+        $_data = array_merge(self::$_data, $data);
+        self::ajaxReturn($_data['status'],$_data['info'],$_data['data']);
     }
     
     static protected function get()
@@ -62,8 +58,8 @@ class AJAXControl extends BaseControl
     {
         $return = array();
         
-        $return[0] = $control?$control:self::$_control.self::$_control_suffix;
-        $return[1] = $function?$function:self::$_function;
+        $return[0] = $control ? $control : self::$_control.self::$_control_suffix;
+        $return[1] = $function ? $function : self::$_function;
 
         return $return;
     }

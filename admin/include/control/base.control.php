@@ -7,7 +7,7 @@ class BaseControl
 {
     static protected $_control = 'Base';
     
-    protected $_control_suffix = 'Control';
+    static protected $_control_suffix = 'Control';
 
     protected $_template;   //模板解析类对象
     protected $_userInfo;   //用户信息
@@ -66,12 +66,38 @@ class BaseControl
         $return = array(0=>'', 1=>'');
         
         $control = ucfirst($control).self::$_control_suffix;
-        $control = class_exists($control)?$control:'';
+        $control = class_exists($control) ? $control : '';
         
-        $return[1] = $control&&method_exists($control, $function)?$function:'';
-        $return[0] = $return[1]?$control:'';
+        $return[1] = $control && method_exists($control, $function) ? $function : '';
+        $return[0] = $return[1] ? $control : '';
         
         return $return;
+    }
+
+    /**
+     * ajax返回
+     * @param $status int 状态码 0:正常 1:有错误
+     * @param $info string ajax信息
+     * @param $data mixed 返回数据
+     * @param $type string 数据编码类型 默认为json
+     */
+    static protected function ajaxReturn($status=0,$info='',$data=array(),$type='json')
+    {
+        $return = array(
+            'status' => $status,
+            'info'   => $info,
+            'data'   => $data
+        );
+
+        switch ($type) {
+            case 'json':
+                $return = json_encode($return);
+                break;
+            default:
+                break;
+        }
+
+        echo $return; exit;
     }
 
     /**

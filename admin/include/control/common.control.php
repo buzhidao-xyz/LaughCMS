@@ -91,16 +91,6 @@ class CommonControl extends BaseControl
     }
 
     /**
-     * 检测节点内增删改查操作接口     
-     * @param $control string 要访问的类/控制器
-     * @param $action string 访问的节点/方法名(增删改查等)
-     */
-    protected function _checkNodeAccess($control,$action)
-    {
-        if (!$this->checkUserAccess($control,$action)) $this->_host();
-    }
-
-    /**
      * 检查一个节点是否是有效的数据库节点
      * @param $control string 要访问的类/控制器
      * @param $action string 要访问的节点/方法
@@ -114,7 +104,32 @@ class CommonControl extends BaseControl
             'action'  => $action
         );
 
-        return T('node')->field('id')->where($where)->count() ? true : false;
+        return T('node')->where($where)->count() ? true : false;
+    }
+
+    /**
+     * 判断一个请求是否为AJAX请求
+     */
+    protected function isAjax()
+    {
+        if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) ) {
+            if('xmlhttprequest' == strtolower($_SERVER['HTTP_X_REQUESTED_WITH']))
+                return true;
+        }
+        if(!empty($_POST[C('VAR_AJAX_SUBMIT')]) || !empty($_GET[C('VAR_AJAX_SUBMIT')]))
+            // 判断Ajax方式提交
+            return true;
+        return false;
+    }
+
+    /**
+     * 检测节点内增删改查操作接口     
+     * @param $control string 要访问的类/控制器
+     * @param $action string 访问的节点/方法名(增删改查等)
+     */
+    protected function _checkNodeAccess($control,$action)
+    {
+        if (!$this->checkUserAccess($control,$action)) $this->_host();
     }
 
     /**
