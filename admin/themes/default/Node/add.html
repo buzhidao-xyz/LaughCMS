@@ -11,7 +11,7 @@
 		-->
 	</div>
 	<div class="captitle"><h5>新节点表单</h5></div>
-	<form name="newform" action="__APP__/?s=Node/nodeSave" method="post" id="addajaxform">
+	<form name="newform" action="__APP__/?s=Node/saveNode" method="post" id="addajaxform">
 		<input type="hidden" name="" />
 		<ul class="formbody">
 			<li class="formblock colorblock">
@@ -25,11 +25,8 @@
 			</li>
 			<li class="formblock colorblock">
 				<span>父节点: </span>
-				<select name="pid" class="input" style="width:150px;">
+				<select name="pid" flag="nodepid" class="input" style="width:150px;">
 					<option value="" >|-顶级菜单</option>
-					{foreach $nodeTree as $n}
-					<option value="{$n.id}">{$n.title}</option>
-					{/foreach}
 				</select>
 			</li>
 			<li class="formblock colorblock">

@@ -57,7 +57,7 @@ function __autoload($class)
                include_once($classpath);
             } else {
                 $type = strstr($class, 'Helper') ? 'Helper' : 0;
-                $type = !$type && strstr($class, 'Smarty') ? 'Smarty' : '';
+                $type = !$type && strstr($class, 'Smarty') ? 'Smarty' : $type;
                 switch ($type) {
                     case 'Helper':
                         $classname = str_replace('Helper', '', $class);

@@ -46,12 +46,9 @@ $(document).ready(function() {
             var data = $("#addajaxform").serialize();
             var url = $('#addajaxform').attr('action');
             $.post(url,data,function(data){
-                if (!data.errorcode) {
-                    alert((data.d) ? (data.errormsg + ' ' + data.d) : data.errormsg);
-                } else {
-                    alert(data.errormsg);
+                alert(data.info ? data.info : data.data);
+                if (data.status) {
                     $("#addajaxform input:[type=submit]").removeAttr('disabled');
-                    return false;
                 }
             }, 'json');
             return false;

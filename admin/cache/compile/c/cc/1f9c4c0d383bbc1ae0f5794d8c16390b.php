@@ -8,6 +8,9 @@
 <link type="text/css" rel="stylesheet" href="themes/default/style/global.css" media="screen">
 <script type="text/javascript" src="themes/default/js/jquery.js"></script>
 <title>管理中心</title>
+<script type="text/javascript">
+var JS_APP = '/laugh/admin';
+</script>
 </head>
 
 <body>
@@ -26,6 +29,7 @@
 			<div><a target="main" hidefocus="true" href="javascript:;" class="">节点管理</a></div>
 						<ul class="menusub">
 							<li><a target="main" hidefocus="true" href="/laugh/admin/?s=Node/newNode" class="">添加节点</a></li>
+							<li><a target="main" hidefocus="true" href="/laugh/admin/?s=Node/manageNode" class="">&amp;ccedil;&amp;reg;&amp;iexcl;&amp;ccedil;</a></li>
 						</ul>
 					</li>
         		<li class="menulist">
@@ -41,4 +45,5 @@ $(document).ready(function() {
 </body>
 <script type="text/javascript" src="themes/default/js/public.js"></script>
 <script type="text/javascript" src="themes/default/js/common.js"></script>
+<script type="text/javascript" src="themes/default/js/ajax.js"></script>
 </html>

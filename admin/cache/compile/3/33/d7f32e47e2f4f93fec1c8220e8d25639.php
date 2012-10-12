@@ -8,6 +8,9 @@
 <link type="text/css" rel="stylesheet" href="themes/default/style/global.css" media="screen">
 <script type="text/javascript" src="themes/default/js/jquery.js"></script>
 <title>管理中心</title>
+<script type="text/javascript">
+var JS_APP = '/laugh/admin';
+</script>
 </head>
 
 <body>
@@ -49,4 +52,5 @@ $(document).ready(function(){
 </body>
 <script type="text/javascript" src="themes/default/js/public.js"></script>
 <script type="text/javascript" src="themes/default/js/common.js"></script>
+<script type="text/javascript" src="themes/default/js/ajax.js"></script>
 </html>

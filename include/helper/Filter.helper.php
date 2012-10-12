@@ -25,4 +25,14 @@
 
     	return $return;
     }
+
+    /**
+     * 将html字符转成实体
+     * @param $string string 字符串
+     * @param $flag string 标志
+     */
+    static public function F_htmlentities($string, $flag=ENT_QUOTES)
+    {
+        return htmlentities($string, $flag);
+    }
  }
