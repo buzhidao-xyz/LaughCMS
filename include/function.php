@@ -287,31 +287,36 @@ function p($param)
  */
 function q($param)
 {
-    $return = isset($_REQUEST[$param])?$_REQUEST[$param]:'';
+    $return = isset($_REQUEST[$param]) ? $_REQUEST[$param] : '';
     
     return htmlentities(trim($return));
 }
 
-/**
- * 实例化某个类
- */
-function N($class)
-{
-    $obj = null;
-
-    if (!$obj) $obj = new $class();
-
-    return $obj;
-}
-
+//实例化控制器类
 function D($name='') {
     if(empty($name)) return false;
 
+    static $_control = array();
+    if(isset($_control[$name])) return $_control[$name];
+
+    $control = new $class();
+    $_control[$name] = $control;
+
+    return $control;
+}
+
+/**
+ * 实例化数据模型类
+ */
+function N($class)
+{
+    if(empty($class)) return false;
+
     static $_model = array();
-    if(isset($_model[$name])) return $_model[$name];
+    if(isset($_model[$class])) return $_model[$class];
 
     $model = new $class();
-    $_model[$name] = $model;
+    $_model[$class] = $model;
 
     return $model;
 }

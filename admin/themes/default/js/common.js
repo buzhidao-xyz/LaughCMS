@@ -41,19 +41,19 @@ $(document).ready(function() {
 
     /*添加的FORM ajax提交方法*/
     $('#addajaxform').submit(function(){
-        $("#addajaxform input:[type=submit]").attr('disabled','disabled');
+        // $("#addajaxform input:[type=submit]").attr('disabled','disabled');
         if($('#addajaxform').length>0){
-            var data = $("#addajaxform").serialize();
+            var data = $("#addajaxform").serialize();alert(data);
             var url = $('#addajaxform').attr('action');
             $.post(url,data,function(data){
                 alert(data.info ? data.info : data.data);
                 if (data.status) {
-                    $("#addajaxform input:[type=submit]").removeAttr('disabled');
+                    // $("#addajaxform input:[type=submit]").removeAttr('disabled');
                 }
             }, 'json');
             return false;
         } else {
-            alert('form null');
+            alert('表单为空');
         }
     });
     /*添加的FORM ajax提交方法*/

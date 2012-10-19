@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2012-10-15 09:22:17
+<?php /* Smarty version Smarty-3.1.11, created on 2012-10-19 14:33:00
          compiled from "C:\xampp\htdocs\laugh\admin\themes\default\public\menu.html" */ ?>
-<?php /*%%SmartyHeaderCode:24893507b6549d8c308-83648300%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:148045080f41c534921-37670680%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '066bba77e1bdafa0020e72dd7a26ba8c8608ee6c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\default\\public\\menu.html',
-      1 => 1349574506,
+      1 => 1350624696,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '24893507b6549d8c308-83648300',
+  'nocache_hash' => '148045080f41c534921-37670680',
   'function' => 
   array (
   ),
@@ -23,9 +23,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_507b6549e88d19_19548715',
+  'unifunc' => 'content_5080f41c619156_10782372',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_507b6549e88d19_19548715')) {function content_507b6549e88d19_19548715($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_5080f41c619156_10782372')) {function content_5080f41c619156_10782372($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="menu">
     <ul>
@@ -46,7 +46,7 @@ $_smarty_tpl->tpl_vars['m1']->_loop = true;
 ?>
 				<li><a target="main" hidefocus="true" href="__APP__/?s=<?php echo $_smarty_tpl->tpl_vars['m1']->value['control'];?>
 /<?php echo $_smarty_tpl->tpl_vars['m1']->value['action'];?>
-" class=""><?php echo $_smarty_tpl->tpl_vars['m1']->value['title'];?>
+" class=""><?php echo html_entity_decode($_smarty_tpl->tpl_vars['m1']->value['title']);?>
 </a></li>
 			<?php } ?>
 			</ul>

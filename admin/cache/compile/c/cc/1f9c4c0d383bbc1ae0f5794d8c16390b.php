@@ -29,7 +29,6 @@ var JS_APP = '/laugh/admin';
 			<div><a target="main" hidefocus="true" href="javascript:;" class="">节点管理</a></div>
 						<ul class="menusub">
 							<li><a target="main" hidefocus="true" href="/laugh/admin/?s=Node/newNode" class="">添加节点</a></li>
-							<li><a target="main" hidefocus="true" href="/laugh/admin/?s=Node/manageNode" class="">&amp;ccedil;&amp;reg;&amp;iexcl;&amp;ccedil;</a></li>
 						</ul>
 					</li>
         		<li class="menulist">

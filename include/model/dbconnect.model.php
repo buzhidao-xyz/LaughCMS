@@ -353,6 +353,7 @@ class DBConnect implements DBConnect_Interface
                 $return = self::$db->lastInsertId();
                 break;
             case 'mysqli':
+            dump(self::$db->insert_id());exit;
                 $return = self::$db->insert_id();
                 break;
             default:

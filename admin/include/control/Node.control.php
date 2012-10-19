@@ -48,7 +48,7 @@ class NodeControl extends CommonControl
     }
 
     /**
-     * 获父节点ID
+     * 获取节点名称
      */
     private function _getTitle()
     {
@@ -58,7 +58,7 @@ class NodeControl extends CommonControl
     }
 
     /**
-     * 获父节点ID
+     * 获取节点控制器
      */
     private function _getControl()
     {
@@ -68,7 +68,7 @@ class NodeControl extends CommonControl
     }
 
     /**
-     * 获父节点ID
+     * 获取节点描述
      */
     private function _getRemark()
     {
@@ -78,7 +78,7 @@ class NodeControl extends CommonControl
     }
 
     /**
-     * 获父节点ID
+     * 获取节点方法
      */
     private function _getAction()
     {
@@ -119,7 +119,7 @@ class NodeControl extends CommonControl
     {
         $groupid = $this->_getGroupID();
         $pid = $this->_getPID();
-        $title = $this->_getTitle();
+        $title = $this->_getTitle();dump($title);exit;
         $control = $this->_getControl();
         $remark = $this->_getRemark();
         $action = $this->_getAction();
