@@ -15,6 +15,10 @@ class AccessControl extends BaseControl
 	{
 		parent::__construct();
 
+        $this->_NODE = N('Node');
+        $this->_GROUP = N('Group');
+        $this->_ROLE = N('Role');
+
 		$this->_getUserAccess();
 	}
 
@@ -25,18 +29,18 @@ class AccessControl extends BaseControl
 	{
         if (session('userAccess')) return true;
 
-        $user = $this->getUser();
+        $user = $this->userInfo;
         if (in_array($user['id'], $this->_super_admin)) {
-            $node = $this->getNode();
+            $node = $this->_NODE->getNode();
             $node = $this->dealNode($node);
         } else {
-            $roleids = $this->getRole($user['id']);
+            $roleids = $this->_ROLE->getRole($user['id']);
             if (empty($roleids)) return true;
 
-            $roleNode = $this->getRoleNode($roleids);
+            $roleNode = $this->_NODE->getRoleNode($roleids);
             if (empty($roleNode)) return true;
 
-            $userNode = $this->getUserNode($user['id']);
+            $userNode = $this->_NODE->getUserNode($user['id']);
             $node = $this->dealNode($roleNode,$userNode);
         }
 
@@ -44,7 +48,7 @@ class AccessControl extends BaseControl
             if ($v['pid'] == 0) $groupids[$v['groupid']] = $v['groupid'];
         }
 
-        $group = $this->getGroup($groupids);
+        $group = $this->_GROUP->getGroup($groupids);
         if (empty($group)) return true;
 
         $userAccess = $this->dealGroupNode($group, $node);
@@ -52,73 +56,6 @@ class AccessControl extends BaseControl
 
         return true;
 	}
-
-	/**
-     * 获取用户的角色信息
-     * @param $userid int 用户id
-	 */
-	protected function getRole($userid)
-	{
-        $return = null;
-
-        $where = array(
-            'userid' => $userid
-        );
-		$res = T('role_user')->field('roleid')->where($where)->select();
-        
-        if (!empty($res) && is_array($res)) {
-            foreach ($res as $v) {
-                $return[] = $v['roleid'];
-            }
-        }
-		return $return;
-	}
-
-    /**
-     * 获取某个节点的子节点
-     * @param $nodeid 节点id 默认为0 取全部
-     */
-    protected function getNode($nodeid=0)
-    {
-        $where = array();
-        if ($nodeid) {
-            $where = array(
-                'pid' => $nodeid
-            );
-        }
-
-        $res = T('node')->where($where)->order('id')->select();
-
-        return empty($res) ? null : $res;
-    }
-
-	/**
-     * 获取角色信息的node权限
-     * @param $roleids array 角色信息
-	 */
-	protected function getRoleNode($roleids)
-    {
-        if (!is_array($roleids)) return false;
-
-        $where['a.roleid'] = array('in',$roleids);
-        $res = T('role_node')->join(' '.TBF.'node as b on a.nodeid=b.id ')->field('a.nodeid,b.id,b.title,b.control,b.action,b.sort,b.pid,b.level,b.groupid')->where($where)->select();
-
-        return $res;
-    }
-
-    /**
-     * 获取用户的node权限
-     * @param $userid int 用户id
-     */
-    protected function getUserNode($userid)
-    {
-        if (!$userid) return false;
-
-        $where = array('a.userid' => $userid);
-        $res = T('admin_access')->join(' '.TBF.'node as b on a.nodeid=b.id ')->field('a.nodeid,b.id,b.title,b.control,b.action,b.sort,b.pid,b.level,b.groupid')->where($where)->select();
-
-        return $res;
-    }
 
     /**
      * 整理节点信息
@@ -167,20 +104,6 @@ class AccessControl extends BaseControl
     }
 
     /**
-     * 获取节点组信息
-     * @param $groupids array 组id数组
-     */
-    protected function getGroup($groupids)
-    {
-        if (!is_array($groupids)) return false;
-
-        $groupids = array('id' => array('in', $groupids));
-        $res = T('group')->where($groupids)->order('id')->select();
-
-        return $res;
-    }
-
-    /**
      * 整理节点与组信息
      * @param $group array 组信息
      * @param $node array 节点信息
@@ -202,12 +125,4 @@ class AccessControl extends BaseControl
 
         return $userAccess;
     }
-
-	/**
-	 * 获取用户的session信息/id username
-	 */
-	protected function getUser()
-	{
-		return $this->userInfo;
-	}
 }

@@ -11,22 +11,6 @@ class Node extends Base
 	}
 
 	/**
-	 * 获取节点树
-	 * @param $groupid int 组id 默认为Null 返回所有节点
-	 */
-	public function getNodeTree($groupid=null)
-	{
-		if ($groupid === 0) return array();
-
-		$where = array(
-			'groupid' => $groupid
-		);
-		$return = T('node')->where($where)->select();
-
-		return $return;
-	}
-
-	/**
 	 * 保存新节点
 	 */
 	public function saveNode($data)
@@ -35,4 +19,69 @@ class Node extends Base
 		
 		return T('node')->add($data);
 	}
+
+	/**
+	 * 获取某个组的子节点/节点树
+	 * @param $groupid int 组id 默认为Null 返回所有节点
+	 */
+	public function getNodeTree($groupid=null)
+	{
+		if ($groupid === 0) return array();
+
+		$where = array(
+			'groupid' => $groupid,
+			'isshow'  => 1
+		);
+		$return = T('node')->where($where)->select();
+
+		return $return;
+	}
+
+    /**
+     * 获取用户的node权限
+     * @param $userid int 用户id
+     */
+    public function getUserNode($userid)
+    {
+        if (!$userid) return false;
+
+        $where = array(
+        	'a.userid' => $userid,
+			'b.isshow'  => 1
+        );
+        $res = T('admin_access')->join(' '.TBF.'node as b on a.nodeid=b.id ')->field('a.nodeid,b.id,b.title,b.control,b.action,b.sort,b.pid,b.level,b.groupid')->where($where)->select();
+
+        return $res;
+    }
+
+	/**
+     * 获取某个节点的子节点
+     * @param $nodeid 节点id 默认为0 取全部
+     */
+    public function getNode($nodeid=0)
+    {
+        $where = array('isshow' => 1);
+        if ($nodeid) $where['pid'] = $nodeid;
+
+        $res = T('node')->where($where)->order('id')->select();
+
+        return empty($res) ? null : $res;
+    }
+
+	/**
+     * 获取角色信息的node权限
+     * @param $roleids array 角色信息
+	 */
+	public function getRoleNode($roleids)
+    {
+        if (!is_array($roleids)) return false;
+
+        $where = array(
+        	'a.roleid' => array('in', $roleids),
+        	'b.isshow'   => 1
+        );
+        $res = T('role_node')->join(' '.TBF.'node as b on a.nodeid=b.id ')->field('a.nodeid,b.id,b.title,b.control,b.action,b.sort,b.pid,b.level,b.groupid')->where($where)->select();
+
+        return $res;
+    }
 }

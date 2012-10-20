@@ -17,16 +17,16 @@
 			<li class="formblock colorblock">
 				<span>组: </span>
 				<select name="groupid" class="input" style="width:150px;">
-					<option value="" >|-顶级菜单</option>
+					<option value="" >|-组菜单</option>
 					{foreach $groupTree as $g}
-					<option value="{$g.id}">{$g.title}</option>
+					<option value="{$g.id}">&nbsp;|-{$g.title}</option>
 					{/foreach}
 				</select>
 			</li>
 			<li class="formblock colorblock">
 				<span>父节点: </span>
 				<select name="pid" flag="nodepid" class="input" style="width:150px;">
-					<option value="" >|-顶级菜单</option>
+					<option value="" >|-节点菜单</option>
 				</select>
 			</li>
 			<li class="formblock colorblock">

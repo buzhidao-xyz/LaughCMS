@@ -4,5 +4,5 @@
   array (
     0 => 'index front page',
   ),
-  'life_time' => 1349761984,
+  'life_time' => 1350723410,
 );

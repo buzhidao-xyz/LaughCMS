@@ -39,7 +39,8 @@ class DBConnect implements DBConnect_Interface
      * 通过哪种连接方式连接数据库
      * 默认通过pdo 其他方式为mysqli
      */
-    static private $_flag = "mysqli";
+    // static private $_flag = "mysqli";
+    static private $_flag = "pdo";
     
     /**
      * insert update delete 所影响的记录数
@@ -353,8 +354,7 @@ class DBConnect implements DBConnect_Interface
                 $return = self::$db->lastInsertId();
                 break;
             case 'mysqli':
-            dump(self::$db->insert_id());exit;
-                $return = self::$db->insert_id();
+                $return = self::$db->insert_id;
                 break;
             default:
                 $return = '';

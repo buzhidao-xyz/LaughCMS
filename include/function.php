@@ -267,7 +267,7 @@ function g($param)
 {
     $return = isset($_REQUEST[$param])?$_REQUEST[$param]:'';
     
-    return htmlentities(trim($return));
+    return trim($return);
 }
 
 /**
@@ -278,7 +278,7 @@ function p($param)
 {
     $return = isset($_REQUEST[$param])?$_REQUEST[$param]:'';
     
-    return htmlentities(trim($return));
+    return trim($return);
 }
 
 /**
@@ -289,7 +289,7 @@ function q($param)
 {
     $return = isset($_REQUEST[$param]) ? $_REQUEST[$param] : '';
     
-    return htmlentities(trim($return));
+    return trim($return);
 }
 
 //实例化控制器类

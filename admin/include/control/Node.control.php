@@ -32,9 +32,10 @@ class NodeControl extends CommonControl
      */
     private function _getGroupID()
     {
-        $groupid = q('groupid');
+        $groupid = q('groupid') ? q('groupid') : 0;
+        if (!FilterHelper::C_int($groupid)) $this->ajaxReturn(1,'请选择组');
 
-        return $groupid ? $groupid : 0;
+        return $groupid;
     }
 
     /**
@@ -42,9 +43,10 @@ class NodeControl extends CommonControl
      */
     private function _getPID()
     {
-        $pid = q('pid');
+        $pid = q('pid') ? q('pid') : 0;
+        if (!FilterHelper::C_int($pid) && $pid !== 0) $this->ajaxReturn(1,'父节点错误');
 
-        return $pid ? $pid : 0;
+        return $pid;
     }
 
     /**
@@ -53,18 +55,9 @@ class NodeControl extends CommonControl
     private function _getTitle()
     {
         $title = q('title');
+        if (!$title) $this->ajaxReturn(1,'请填写名称');
 
         return $title ? FilterHelper::F_htmlentities($title) : '';
-    }
-
-    /**
-     * 获取节点控制器
-     */
-    private function _getControl()
-    {
-        $control = q('control');
-
-        return $control ? FilterHelper::F_htmlentities($control) : '';
     }
 
     /**
@@ -75,6 +68,16 @@ class NodeControl extends CommonControl
         $remark = q('remark');
 
         return $remark ? FilterHelper::F_htmlentities($remark) : '';
+    }
+
+    /**
+     * 获取节点控制器
+     */
+    private function _getControl()
+    {
+        $control = q('control');
+
+        return $control ? FilterHelper::F_htmlentities($control) : '';
     }
 
     /**
@@ -104,9 +107,9 @@ class NodeControl extends CommonControl
     {
         $data = $this->_node_model->getNodeTree($this->_getGroupID());
 
-        $nodeTree = '<option value="" >|-顶级菜单</option>';
+        $nodeTree = '<option value="" >|-节点菜单</option>';
         foreach ($data as $v) {
-            $nodeTree .= '<option value="'.$v['id'].'" >|-'.$v['title'].'</option>';
+            $nodeTree .= '<option value="'.$v['id'].'" >&nbsp;|-'.$v['title'].'</option>';
         }
 
         return array('status'=>0, 'info'=>'', 'data'=>$nodeTree);
@@ -119,7 +122,7 @@ class NodeControl extends CommonControl
     {
         $groupid = $this->_getGroupID();
         $pid = $this->_getPID();
-        $title = $this->_getTitle();dump($title);exit;
+        $title = $this->_getTitle();
         $control = $this->_getControl();
         $remark = $this->_getRemark();
         $action = $this->_getAction();
@@ -130,10 +133,17 @@ class NodeControl extends CommonControl
             'title'   => $title,
             'control' => $control,
             'remark'  => $remark,
-            'action'  => $action
+            'action'  => $action,
+            'create_time' => TIMESTAMP
         );
         $return = $this->_node_model->saveNode($data);
 
         $this->ajaxReturn(0,'节点添加成功',$return);
+    }
+
+    //管理节点
+    public function manageNode()
+    {
+        $this->display("node/manage.html");
     }
 }

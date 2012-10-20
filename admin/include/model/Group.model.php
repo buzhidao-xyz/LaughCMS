@@ -15,6 +15,26 @@ class Group extends Base
 	 */
 	public function getGroupTree()
 	{
-		return T('group')->select();
+		$where = array(
+			'isshow' => 1
+		);
+		return T('group')->where()->select();
 	}
+
+    /**
+     * 获取节点组信息
+     * @param $groupids array 组id数组
+     */
+    public function getGroup($groupids)
+    {
+        if (!is_array($groupids)) return false;
+
+        $where = array(
+        	'id' => array('in', $groupids),
+        	'isshow' => 1
+        );
+        $res = T('group')->where($where)->order('id')->select();
+
+        return $res;
+    }
 }

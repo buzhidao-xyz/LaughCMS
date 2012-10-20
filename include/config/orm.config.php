@@ -29,6 +29,7 @@ $orm = array (
         'groupid'       => 'groupid',
         'createtime'    => 'createtime',
         'updatetime'    => 'updatetime',
+        'isshow'        => 'isshow'
     ),
     'role'              => array(
 	    'id'            => 'id',

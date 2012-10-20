@@ -24,8 +24,8 @@ var JS_APP = '/laugh/admin';
     <div class="nav">
         <ul class="hmenu">
             <li class="navon"><em><a hidefocus="true" href="/laugh/admin/?s=index/body&groupid=0" target="body">管理中心</a></em></li>
-                        <li><em><a hidefocus="true" href="/laugh/admin/?s=public/body/&groupid=1" target="body">系统管理</a></em></li>
-                        <li><em><a hidefocus="true" href="/laugh/admin/?s=public/body/&groupid=2" target="body">用户中心</a></em></li>
+                        <li><em><a hidefocus="true" href="/laugh/admin/?s=public/body&groupid=1" target="body">系统管理</a></em></li>
+                        <li><em><a hidefocus="true" href="/laugh/admin/?s=public/body&groupid=2" target="body">用户中心</a></em></li>
                     </ul>
         <div id="navlink" class="navlink">
             <p>管理中心&nbsp;&gt;</p>
@@ -33,8 +33,8 @@ var JS_APP = '/laugh/admin';
         <div class="navbd"></div>
         <div class="sitemapbtn">
             <p><a target="_blank" href="/laugh/?s=index">网站首页</a></p>
-            <p><a href="/laugh/admin/?s=index">管理中心</a></p>
-            <p><a href=javascript:;>网站地图</a></p>
+            <p><a hidefocus="true" href="javascript:;" target="body">管理中心</a></p>
+            <p><a href="javascript:;">网站地图</a></p>
         </div>
     </div>
 </div>

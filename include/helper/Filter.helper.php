@@ -33,7 +33,7 @@
      * @param $encode string 字符串编码
      */
     static public function F_htmlentities($string, $flag=ENT_QUOTES, $encode='UTF-8')
-    {return $string;
+    {
         return htmlentities($string, $flag, $encode);
     }
 

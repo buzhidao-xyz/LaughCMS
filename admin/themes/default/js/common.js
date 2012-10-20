@@ -43,11 +43,12 @@ $(document).ready(function() {
     $('#addajaxform').submit(function(){
         // $("#addajaxform input:[type=submit]").attr('disabled','disabled');
         if($('#addajaxform').length>0){
-            var data = $("#addajaxform").serialize();alert(data);
+            var data = $("#addajaxform").serialize();
             var url = $('#addajaxform').attr('action');
             $.post(url,data,function(data){
-                alert(data.info ? data.info : data.data);
-                if (data.status) {
+                alert(data.info);
+                if (!data.status) {
+                    location.href = location.href;
                     // $("#addajaxform input:[type=submit]").removeAttr('disabled');
                 }
             }, 'json');

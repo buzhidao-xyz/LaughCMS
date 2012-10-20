@@ -26,9 +26,17 @@ var JS_APP = '/laugh/admin';
 			<div><a target="main" hidefocus="true" href="javascript:;" class="">日志管理</a></div>
 					</li>
         		<li class="menulist">
+			<div><a target="main" hidefocus="true" href="javascript:;" class="">组管理</a></div>
+						<ul class="menusub">
+							<li><a target="main" hidefocus="true" href="/laugh/admin/?s=Group/newGroup" class="">添加组</a></li>
+							<li><a target="main" hidefocus="true" href="/laugh/admin/?s=Group/manageGroup" class="">管理组</a></li>
+						</ul>
+					</li>
+        		<li class="menulist">
 			<div><a target="main" hidefocus="true" href="javascript:;" class="">节点管理</a></div>
 						<ul class="menusub">
 							<li><a target="main" hidefocus="true" href="/laugh/admin/?s=Node/newNode" class="">添加节点</a></li>
+							<li><a target="main" hidefocus="true" href="/laugh/admin/?s=Node/manageNode" class="">管理节点</a></li>
 						</ul>
 					</li>
         		<li class="menulist">
