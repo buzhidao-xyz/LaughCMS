@@ -14,8 +14,8 @@ var JS_APP = '/laugh/admin';
 </head>
 
 <body>
-<div id="perstatus" pers="<pre class='xdebug-var-dump' dir='ltr'><small>string</small> <font color='#cc0000'>'&lt;font color=red&gt;127.0.0.1 系统发生错误: Undefined index: perstatus, in C:\xampp\htdocs\laugh\admin\cache\compile\cbc8f5b747cb8710ebc11a94ba2640fd59459142.file.add.html.php on line 28&lt;/font&gt;'</font> <i>(length=195)</i>
-</pre><pre class='xdebug-var-dump' dir='ltr'><small>string</small> <font color='#cc0000'>'&lt;font color=red&gt;127.0.0.1 系统发生错误: Trying to get property of non-object, in C:\xampp\htdocs\laugh\admin\cache\compile\cbc8f5b747cb8710ebc11a94ba2640fd59459142.file.add.html.php on line 28&lt;/font&gt;'</font> <i>(length=205)</i>
+<div id="perstatus" pers="<pre class='xdebug-var-dump' dir='ltr'><small>string</small> <font color='#cc0000'>'&lt;font color=red&gt;127.0.0.1 系统发生错误: Undefined index: perstatus, in /usr/local/webserver/site/laugh/admin/cache/compile/e1fc435c17c5e08a5e32b763c8368152c6032c62.file.add.html.php on line 28&lt;/font&gt;'</font> <i>(length=205)</i>
+</pre><pre class='xdebug-var-dump' dir='ltr'><small>string</small> <font color='#cc0000'>'&lt;font color=red&gt;127.0.0.1 系统发生错误: Trying to get property of non-object, in /usr/local/webserver/site/laugh/admin/cache/compile/e1fc435c17c5e08a5e32b763c8368152c6032c62.file.add.html.php on line 28&lt;/font&gt;'</font> <i>(length=215)</i>
 </pre>"></div>
 <div id="control">
 	<div class="control_nav">

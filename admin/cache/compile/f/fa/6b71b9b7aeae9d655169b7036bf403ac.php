@@ -14,17 +14,9 @@ var JS_APP = '/laugh/admin';
 </head>
 
 <body>
-<table border="0" cellPadding="0" cellSpacing="0" style="width:100%; height:100%; table-layout:fixed;">
- <tr><td width="160" height="90"></td><td></td></tr>
- <tr>
-  <td valign="top">
-   <iframe frameborder="0" id="menu" name="menu" width="160px" height="100%" src="/laugh/admin/?s=public/menu&groupid=1" scrolling="auto" class="iframe"></iframe>
-  </td>
-  <td valign="top">
-   <iframe frameborder="0" id="main" name="main" width="100%" height="100%" src="/laugh/admin/?s=public/welcome" scrolling="yes" class="iframe"></iframe>
-  </td>
- </tr>
-</table>
+<div id="perstatus" pers="<pre class='xdebug-var-dump' dir='ltr'><small>string</small> <font color='#cc0000'>'&lt;font color=red&gt;127.0.0.1 系统发生错误: Undefined index: perstatus, in /usr/local/webserver/site/laugh/admin/cache/compile/db4baf06e573777bf09002b125face9a38988df2.file.manage.html.php on line 28&lt;/font&gt;'</font> <i>(length=208)</i>
+</pre><pre class='xdebug-var-dump' dir='ltr'><small>string</small> <font color='#cc0000'>'&lt;font color=red&gt;127.0.0.1 系统发生错误: Trying to get property of non-object, in /usr/local/webserver/site/laugh/admin/cache/compile/db4baf06e573777bf09002b125face9a38988df2.file.manage.html.php on line 28&lt;/font&gt;'</font> <i>(length=218)</i>
+</pre>"></div>
 </body>
 <script type="text/javascript" src="themes/default/js/public.js"></script>
 <script type="text/javascript" src="themes/default/js/common.js"></script>
