@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2012-10-20 17:30:03
+Date: 2012-10-22 17:29:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -203,7 +203,7 @@ CREATE TABLE `la_group` (
   `sort` smallint(3) NOT NULL,
   `isshow` tinyint(1) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_group
@@ -213,6 +213,8 @@ INSERT INTO `la_group` VALUES ('2', '用户中心', '1332390538', '1332390538', 
 INSERT INTO `la_group` VALUES ('3', '文章管理', '1332390538', '1332390538', '3', '1');
 INSERT INTO `la_group` VALUES ('4', '网站设置', '1332390538', '1332390538', '4', '1');
 INSERT INTO `la_group` VALUES ('5', '系统工具', '1332390538', '1332390538', '5', '1');
+INSERT INTO `la_group` VALUES ('6', '测试组', '1350897953', '0', '0', '1');
+INSERT INTO `la_group` VALUES ('7', '测试组', '1350898030', '0', '0', '1');
 
 -- ----------------------------
 -- Table structure for `la_node`
