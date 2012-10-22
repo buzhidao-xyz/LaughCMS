@@ -22,16 +22,12 @@ var JS_APP = '/laugh/admin';
 		<h3>添加组</h3>
 	</div>
 	<div class="captitle"><h5>新组节点表单</h5></div>
-	<form name="newform" action="/laugh/admin/?s=Node/saveGroup" method="post" id="addajaxform">
+	<form name="newform" action="/laugh/admin/?s=Group/saveGroup" method="post" id="addajaxform">
 		<input type="hidden" name="" />
 		<ul class="formbody">
 			<li class="formblock colorblock">
 				<span>名称:</span>
 				<input type="text" name="title" value="" class="input" style="width:150px;" />
-			</li>
-			<li class="formblock colorblock">
-				<span>描述: </span>
-				<input type="text" name="remark" value="" class="input" style="width:150px;" />
 			</li>
 			<li class="formblock">
 				<input type="submit" name="subut" class="button" value="完成提交" />

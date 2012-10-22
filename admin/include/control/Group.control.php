@@ -9,14 +9,12 @@ class GroupControl extends CommonControl
     static protected $_control = 'Group';
 
     private $_group_model = null;
-    private $_node_model = null;
 
     public function __construct()
     {
         parent::__construct();
 
         if (!$this->_group_model) $this->_group_model = N('Group');
-        if (!$this->_node_model) $this->_node_model = N('Node');
     }
 
     /**
@@ -30,16 +28,6 @@ class GroupControl extends CommonControl
         return $title ? FilterHelper::F_htmlentities($title) : '';
     }
 
-    /**
-     * 获取节点描述
-     */
-    private function _getRemark()
-    {
-        $remark = q('remark');
-
-        return $remark ? FilterHelper::F_htmlentities($remark) : '';
-    }
-
     //新组模板
     public function newGroup()
     {
@@ -49,13 +37,20 @@ class GroupControl extends CommonControl
     /**
      * 保存新组
      */
-    public function saveNode()
+    public function saveGroup()
     {
+        $data = array(
+            'title' => $this->_getTitle(),
+            'createtime' => TIMESTAMP,
+            'isshow'=> 1
+        );
 
+        $return = $this->_group_model->addGroup($data);
+        $this->ajaxReturn(0, '添加成功', $return);
     }
 
     public function manageGroup()
     {
-
+        $this->display("Group/manage.html");
     }
 }

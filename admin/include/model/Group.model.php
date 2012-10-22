@@ -10,6 +10,14 @@ class Group extends Base
 		parent::__construct();
 	}
 
+	//新增导航组
+	public function addGroup($data=array())
+	{
+		if (!is_array($data) || empty($data)) return false;
+
+		return T('group')->add($data);
+	}
+
 	/**
 	 * 获取组树
 	 */
