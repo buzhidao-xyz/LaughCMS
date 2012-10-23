@@ -76,85 +76,28 @@ $(document).ready(function() {
             var thattd = $(this).parent().parent().find('li');
             var param_array = [
             {targetname:'id', val:that.attr('mcid'), type:'text'},
-            {targetname:'model_id', val:that.attr('mcid'), type:'text'},
-            {targetname:'parent_id', val:that.attr('parent_id'), type:'text'},
-            {targetname:'name', val:thattd.eq(1).html(), type:'text'},
-            {targetname:'userid', val:that.attr('mcid'), type:'text'},
-            {targetname:'username', val:thattd.eq(1).html(), type:'text'},
-            {targetname:'isopen', val:thattd.eq(4).attr('status'), type:'checkbox'},
-            {targetname:'url', val:that.attr('url'), type:'text'},
-            {targetname:'controller', val:that.attr('controller'), type:'text'},
-            {targetname:'action', val:that.attr('action'), type:'text'},
-            {targetname:'stime', val:thattd.eq(2).html(), type:'text'},
-            {targetname:'etime', val:thattd.eq(3).html(), type:'text'},
-            {targetname:'sstime', val:that.attr('receive_start_time'), type:'text'},
-            {targetname:'estime', val:that.attr('receive_end_time'), type:'text'},
-            {targetname:'sptime', val:that.attr('award_start_time'), type:'text'},
-            {targetname:'eptime', val:that.attr('award_end_time'), type:'text'},
-            {targetname:'unopen_time', val:that.attr('not_start_time'), type:'text'},
-            {targetname:'unopen_url', val:that.attr('end_url'), type:'text'},                           
-            {targetname:'end_url', val:that.attr('end_url'), type:'text'},
-            {targetname:'old_sort', val:that.attr('old_sort'), type:'text'},
-            {targetname:'firstclassid', val:that.attr('firstclassid'), type:'text'},
-            {targetname:'secondclassid', val:that.attr('secondclassid'), type:'text'},
-            {targetname:'channel_name', val:that.attr('channel_name'), type:'text'},
-            {targetname:'channelid', val:that.attr('channelid'), type:'text'},
-            {targetname:'channeldesc', val:that.attr('channeldesc'), type:'textarea'},
-            {targetname:'firstclass', val:that.attr('firstclass'), type:'text'},
-            {targetname:'sort', val:that.attr('sort'), type:'select'},
-            {targetname:'ctype', val:that.attr('type'), type:'text'},
-            {targetname:'secondclass', val:that.attr('secondclass'), type:'text'},
-            {targetname:'usertype', val:that.attr('usertype'), type:'radio'},
-            {targetname:'bind_account', val:that.attr('bind_account'), type:'textarea'}
+            {targetname:'control', val:that.attr('control'), type:'text'},
+            {targetname:'action', val:that.attr('action'), type:'text'}
             ];
             if (that.attr('type')) {
-                var typeval = that.attr('type');
-                $("input[name=type]").each(function (){if ($(this).val() == typeval) $(this).attr("checked","checked")});
-                if (typeval == 1 && $(".updateblock2").length > 0) {
-                    $(".updateblock1").html(classhtml1).css('display','block');
-                    $(".updateblock2").html('').css('display','none');
+                var upblockval = that.attr('upblock');
+                $("input[name=upblock]").each(function (){
+                    if ($(this).val() == upblockval) $(this).attr("checked","checked");
+                });
+                if (upblockval == 1 && $(".upblock2").length > 0) {
+                    $(".upblock1").html(classhtml1).css('display','block');
+                    $(".upblock2").html('').css('display','none');
                 }
-                if (typeval == 2 && $(".updateblock1").length > 0) {
-                    $(".updateblock2").html(classhtml2).css('display','block');
-                    $(".updateblock1").html('').css('display','none');
-                    var d = {
-                        firstclassid : that.attr('firstclassid')
-                    }
-                    $.post(__APP__+'/Class/getSecondCountList', d, function(data) {
-                        var data = $.parseJSON(data);
-                        $("select:[name=sort]").html(data.data);
-                        if ($("select[name=sort]")) $("select[name=sort]").find("option[value="+that.attr('sort')+"]").attr("selected",true);
-                    })
+                if (upblockval == 2 && $(".upblock1").length > 0) {
+                    $(".upblock2").html(classhtml2).css('display','block');
+                    $(".upblock1").html('').css('display','none');
                 }
             }
             m_d.insertvalue(param_array).open(e);
-
-            if ($("select[name=pid]")) $("select[name=pid]").find("option[value="+param_array[2].val+"]").attr("selected",true);
-            if ($("select[name=firstclassid]")) $("select[name=firstclassid]").find("option[value="+param_array[20].val+"]").attr("selected",true);
-            
-            if (that.attr('secondclassid')){
-                var d = {
-                    firstclassid : $("select:[name=firstclassid]").val()
-                }
-                $.post(__APP__+'/Class/getSecondClassList', d, function(data) {
-                    var data = $.parseJSON(data);
-                    $("select:[name=secondclassid]").html(data.data);
-                    if ($("select[name=secondclassid]")) $("select[name=secondclassid]").find("option[value="+param_array[21].val+"]").attr("selected",true);
-                });
-            }
-            if (that.attr('e_f_url')){
-                $.post(that.attr('e_f_url'), '', function(data) {
-                    var data = $.parseJSON(data);
-                    $("#element_info").html(data.errormsg);
-                });
-            }
         });
         
         $('#modify_div_close').click(function(){
             m_d.close();
-            if ($("#element_info").html()){
-                $("#element_info").empty();
-            }
         });
         
         $('a[name="del"]').click(function(){
@@ -189,18 +132,20 @@ $(document).ready(function() {
     //数据表格操作
     /*删除按钮绑定*/
     ullilist.alertres = function(data){
-        alert(data.errormsg);
-        if(!data.errorcode){
+        alert(data.info);
+        if(!data.status){
             location.href = location.href;
         }
     }
 
     ullilist.delajax = function(that){
         if (that.attr('channel_use')){
-            var d = {delid:that.attr('delid'), action:'channel_check'};
+            var d = {
+                delid: that.attr('delid')
+            };
             $.post(that.attr('delurl'), d, function(data){
-                if (data.errorcode == 9){
-                    alert(data.errormsg);
+                if (data.status){
+                    alert(data.info);
                     return false;
                 } else {
                     ullilist.opertefunction(that);
@@ -223,6 +168,7 @@ $(document).ready(function() {
         } else {
             var msg = "确定删除吗？";
         }
+        if (that.attr('msg')) var msg = that.attr('msg');
         if(confirm(msg)){
             var d = {delid:that.attr('delid'), action:'del',delname:that.attr('delname')};
             if(that.attr('a')) d.a = that.attr('a');

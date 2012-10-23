@@ -8,13 +8,13 @@ class GroupControl extends CommonControl
     //控制器
     static protected $_control = 'Group';
 
-    private $_group_model = null;
+    private $_GROUP;
 
     public function __construct()
     {
         parent::__construct();
 
-        if (!$this->_group_model) $this->_group_model = N('Group');
+        if (!$this->_GROUP) $this->_GROUP = N('Group');
     }
 
     /**
@@ -45,12 +45,18 @@ class GroupControl extends CommonControl
             'isshow'=> 1
         );
 
-        $return = $this->_group_model->addGroup($data);
+        $return = $this->_GROUP->addGroup($data);
         $this->ajaxReturn(0, '添加成功', $return);
     }
 
     public function manageGroup()
     {
+        list($start,$length) = $this->getPages();
+        $groupList = $this->_GROUP->getGroupTree($start,$length);
+
+        $this->assign("total", $groupList['total']);
+        $this->assign("groupList", $groupList['data']);
+        $this->assign("page", getPage($groupList['total'],$this->_pagesize));
         $this->display("Group/manage.html");
     }
 }

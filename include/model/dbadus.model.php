@@ -196,11 +196,11 @@ class DBADUS extends DBConnect
     public function count($options=array())
     {
         $this->_before_sql($options);
-        $this->sql = "SELECT COUNT(".$this->_field.") FROM ".self::$_tbf.self::$_table." as a ".$this->_where;
+        $this->sql = "SELECT COUNT(".$this->_field.") as la_num FROM ".self::$_tbf.self::$_table." as a ".$this->_where;
         $this->_after_sql();
         $data = $this->GetOne($this->sql);
 
-        return $data['COUNT('.$this->_field.')'];
+        return $data['la_num'];
     }
     
     /**

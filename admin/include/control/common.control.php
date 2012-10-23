@@ -11,6 +11,9 @@ class CommonControl extends BaseControl
     //缓存当前访问的控制器名
     static protected $_control;
 
+    //分页 每页显示数据数
+    protected $_pagesize = 20;
+
     /**
      * 初始化并读取用户权限信息
      */
@@ -24,38 +27,33 @@ class CommonControl extends BaseControl
         $this->setUserAccess();
     }
 
-    /**
-     * 获取用户权限信息
-     */
+    //获取用户权限信息
     public function getUserAccess()
     {
          $this->userAccess = session('userAccess');
     }
 
-    /**
-     * 设置用户权限信息
-     */
+    //设置用户权限信息
     public function setUserAccess()
     {
         $this->assign('userAccess', $this->userAccess);
     }
 
     /**
-     * 获取某个组的信息
-     * @param $groupid string 组id
+     * 检查一个节点是否是有效的数据库节点
+     * @param $control string 要访问的类/控制器
+     * @param $action string 要访问的节点/方法
      */
-    public function getGroup($groupid)
+    protected function _isDBNode($control,$action)
     {
-        $return = array();
+        $return = null;
 
-        foreach ($this->userAccess as $g) {
-            if ($g['id'] == $groupid) {
-                $return = $g;
-                break;
-            }
-        }
+        $where = array(
+            'control' => $control,
+            'action'  => $action
+        );
 
-        return $return;
+        return T('node')->where($where)->count() ? true : false;
     }
 
     /**
@@ -91,25 +89,16 @@ class CommonControl extends BaseControl
     }
 
     /**
-     * 检查一个节点是否是有效的数据库节点
+     * 检测节点内增删改查操作接口     
      * @param $control string 要访问的类/控制器
-     * @param $action string 要访问的节点/方法
+     * @param $action string 访问的节点/方法名(增删改查等)
      */
-    protected function _isDBNode($control,$action)
+    protected function _checkNodeAccess($control,$action)
     {
-        $return = null;
-
-        $where = array(
-            'control' => $control,
-            'action'  => $action
-        );
-
-        return T('node')->where($where)->count() ? true : false;
+        if (!$this->checkUserAccess($control,$action)) $this->_host();
     }
 
-    /**
-     * 判断一个请求是否为AJAX请求
-     */
+    //判断一个请求是否为AJAX请求
     protected function isAjax()
     {
         if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) ) {
@@ -122,19 +111,23 @@ class CommonControl extends BaseControl
         return false;
     }
 
-    /**
-     * 检测节点内增删改查操作接口     
-     * @param $control string 要访问的类/控制器
-     * @param $action string 访问的节点/方法名(增删改查等)
-     */
-    protected function _checkNodeAccess($control,$action)
+    //获取分页页码
+    protected function getPage()
     {
-        if (!$this->checkUserAccess($control,$action)) $this->_host();
+        $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : 1;
+
+        return $page;
     }
 
-    /**
-     * 跳转到主页
-     */
+    //获取分页开始和条数
+    protected function getPages()
+    {
+        $page = $this->getPage();
+
+        return array(($page-1)*$this->_pagesize, $this->_pagesize);
+    }
+
+    //跳转到主页
     protected function _host()
     {
         header("location:".__APP__);

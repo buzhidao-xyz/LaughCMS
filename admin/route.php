@@ -12,9 +12,9 @@ class Route
      * 定义查询数组
      */
     static private $_query = array(
-        'control'   => 'IndexControl',
+        'control' => 'IndexControl',
         'action'  => 'index',
-        'string'    => ''
+        'string'  => ''
     );
 
     //控制器后缀
@@ -33,7 +33,7 @@ class Route
      */
     static private function _getUrl()
     {
-        self::$_current_url = __HOST__.$_SERVER['REQUEST_URI'];
+        self::$_current_url = urldecode(__HOST__.$_SERVER['REQUEST_URI']);
     }
     
     /**
@@ -55,11 +55,11 @@ class Route
         $url_array = parse_url(self::$_current_url);
         if (isset($url_array['query'])) {
             preg_match_all("/^s=([0-9a-z]+)(\/)?([0-9a-z]+)?(&.+)*/i", $url_array['query'], $url_array);
-            
+
             self::$_query['control'] = ucfirst($url_array[1][0]).self::$_control;
             if (!class_exists(self::$_query['control'])) $this->_host();
             
-            self::$_query['action'] = $url_array[3][0]?$url_array[3][0]:'index';
+            self::$_query['action'] = $url_array[3][0] ? $url_array[3][0] : 'index';
             if (!method_exists(self::$_query['control'], self::$_query['action'])) self::$_query['action'] = 'index';
             
             if (!empty($url_array[4])) {

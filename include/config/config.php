@@ -21,7 +21,11 @@ function C($key)
 {
     global $config;
     $key = explode(".", $key);
-    return isset($key[1]) ? $config[$key[0]][$key[1]] : $config[$key[0]];
+    if (isset($key[1])) {
+        return array_key_exists($key[0], $config) && array_key_exists($key[1], $config[$key[0]]) ? $config[$key[0]][$key[1]] : '';
+    } else {
+        return array_key_exists($key[0], $config) ? $config[$key[0]] : '';
+    }
 }
 
 //自动加载工具类，无需调用

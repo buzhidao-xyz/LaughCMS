@@ -18,7 +18,7 @@ function assign($key, $value)
  * @param $n 要获取的随机字符串长度(1-100) 默认值6
  */
 function getRandStrs($n = 6)
-{   
+{
     $return = '';
 	$totalStr = '0123456789abcdefghijklmnopqrstuvwxyz';
     
@@ -161,6 +161,13 @@ function getIp() {
     // IP地址合法验证
     $ip = (false !== ip2long($ip)) ? $ip : '0.0.0.0';
     return $ip;
+}
+
+//格式化ip为无符号整型数
+function ip3long($ip)
+{
+    if (!$ip) return 0;
+    return sprintf("%u",ip2long($ip));
 }
 
 /**
@@ -321,56 +328,20 @@ function N($class)
     return $model;
 }
 
-//-----------------------分页方法-----------------------//
-
 /**
- * 分页
- * @param $page 页面名称包括访问路径
- * @param $pn 当前页面的页码
- * @param $pc 总的页面数
+ * 实例化数据模型类
  */
-function flipage($page, $pn, $pc)
+function M($class)
 {
-    //当前页左右两边要显示的页数 前/后各3页
-    $spn = 3;
-    $search = array('{page}', '{pn}', '{pc}');
-    $replace = array($page, $pn, $pc);
-    
-    //载入分页模板页
-    $flipage = getFile(STYLE_PUBLIC."/flipage.html");
+    if(empty($class)) return false;
 
-    $flipage = str_replace($search, $replace, $flipage);
+    static $_model = array();
+    if(isset($_model[$class])) return $_model[$class];
 
-    $flip .= $pn == 1?"[1]":"<a href=\"".$page."&pn=1\">[1]</a>";
-    $flip .= (($pn-$spn) > 2 && ($pc - 2*$spn - 1) > 2)?'......':'';
+    $model = new $class();
+    $_model[$class] = $model;
 
-    if ($pn < ($spn + 2)) {
-        for ($i= 2; $i<= (1 + 2*$spn + 1); $i++) {
-            if ($i < $pc) {
-                $flip .= ($i == $pn)?"[".$i."]":("<a href=\"".$page."&pn=".$i."\">[".$i."]</a>");
-            }
-        }
-    } else if ($pn > ($pc - $spn - 1)) {
-        for ($i= ($pc - 2*$spn - 1); $i<= $pc; $i++) {
-            if ($i > 1 && $i < $pc) {
-                $flip .= ($i > 1 && $i < $pc)?"[".$i."]":("<a href=\"".$page."&pn=".$i."\">[".$i."]</a>");
-            }
-        }
-    } else {
-        for ($i= ($pn-$spn); $i<= ($pn+$spn); $i++) {
-            if ($i > 0 && $i <= $pc) {
-                $flip .= ($i == $pn)?"[".$i."]":("<a href=\"".$page."&pn=".$i."\">[".$i."]</a>");
-            }
-        }
-    }
-    
-    $flip .= (($pn+$spn) < ($pc-1) && (1 + 2*$spn + 1) < ($pc-1))?"......":"";
-    
-    if($pagecount > 1) {
-        $flip .= ($pn == $pc)?"[".$pagecount."]":("<a href=\"".$pagename."&pn=".$pagecount."\">[".$pagecount."]</a>");
-    }
-    
-    return str_replace("{flip}", $flip, $flipage);
+    return $model;
 }
 
 

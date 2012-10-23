@@ -150,3 +150,16 @@ function mk_dir($dir, $mode = 0777) {
         return false;
     return @mkdir($dir, $mode);
 }
+
+/**
+ * 取分页数据，返回数组
+ * @param array $total  总的记录数
+ * @param array $pagesize  每页显示记录数
+ * @param array $parameter  分页跳转的参数
+ */
+function getPage($total, $pagesize=20, $parameter='')
+{
+    import('ORG.Util.Page');
+    $pageObj = new Page($total, $pagesize, $parameter);
+    return $pageObj->showResForBackstage();
+}
