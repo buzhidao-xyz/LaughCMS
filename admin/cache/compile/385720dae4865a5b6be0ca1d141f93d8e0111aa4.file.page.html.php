@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-10-23 17:27:31
+<?php /* Smarty version Smarty-3.1.12, created on 2012-10-23 17:57:31
          compiled from "C:\xampp\htdocs\laugh\admin\themes\default\public\page.html" */ ?>
-<?php /*%%SmartyHeaderCode:278795086630373c3c5-73941992%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1219450866a0b5df436-11609784%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '385720dae4865a5b6be0ca1d141f93d8e0111aa4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\default\\public\\page.html',
-      1 => 1350373385,
+      1 => 1350984563,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '278795086630373c3c5-73941992',
+  'nocache_hash' => '1219450866a0b5df436-11609784',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50866303845a75_79346059',
+  'unifunc' => 'content_50866a0b6e4b32_02551363',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50866303845a75_79346059')) {function content_50866303845a75_79346059($_smarty_tpl) {?><?php if ($_smarty_tpl->tpl_vars['page']->value&&count($_smarty_tpl->tpl_vars['page']->value['page'])>1){?>
+<?php if ($_valid && !is_callable('content_50866a0b6e4b32_02551363')) {function content_50866a0b6e4b32_02551363($_smarty_tpl) {?><?php if ($_smarty_tpl->tpl_vars['page']->value&&count($_smarty_tpl->tpl_vars['page']->value['page'])>1){?>
 <div id="<?php if ($_smarty_tpl->tpl_vars['isface']->value){?>facepage<?php }else{ ?>compage<?php }?>" class="pagination">
 	<?php if ($_smarty_tpl->tpl_vars['page']->value['firstpage']['row']){?>
 	<a class="pageprev graya fleft" href="<?php if ($_smarty_tpl->tpl_vars['page']->value['firstpage']['href']){?><?php echo $_smarty_tpl->tpl_vars['page']->value['firstpage']['href'];?>

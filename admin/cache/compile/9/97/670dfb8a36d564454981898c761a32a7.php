@@ -15,7 +15,6 @@ var JS_APP = '/laugh/admin';
 
 <body>
 <style type="text/css">
-<!--
 .sitemap{
  position:absolute;
  width:800px;
@@ -178,6 +177,7 @@ $("#sitemap_title").mousedown(function() {
 });
 -->
 </script>
+
 <iframe frameborder="0" id="head" name="head" src="/laugh/admin/?s=public/head" scrolling="no" style="position:absolute; width:100%; height:90px; visibility:inherit; z-index:1; overflow:auto;">
 </iframe>
 <iframe frameborder="0" id="body" name="body" src="/laugh/admin/?s=public/body" scrolling="no" style="width:100%; height:100%; z-index:1; overflow:auto;">

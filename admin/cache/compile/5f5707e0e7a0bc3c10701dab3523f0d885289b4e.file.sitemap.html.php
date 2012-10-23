@@ -1,4 +1,25 @@
-<style type="text/css">
+<?php /* Smarty version Smarty-3.1.12, created on 2012-10-23 17:57:24
+         compiled from "C:\xampp\htdocs\laugh\admin\themes\default\sitemap.html" */ ?>
+<?php /*%%SmartyHeaderCode:2868950866a04131b90-76117129%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '5f5707e0e7a0bc3c10701dab3523f0d885289b4e' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\default\\sitemap.html',
+      1 => 1350985661,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '2868950866a04131b90-76117129',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.12',
+  'unifunc' => 'content_50866a0414f5e2_55469720',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_50866a0414f5e2_55469720')) {function content_50866a0414f5e2_55469720($_smarty_tpl) {?><style type="text/css">
 .sitemap{
  position:absolute;
  width:800px;
@@ -161,3 +182,4 @@ $("#sitemap_title").mousedown(function() {
 });
 -->
 </script>
+<?php }} ?>

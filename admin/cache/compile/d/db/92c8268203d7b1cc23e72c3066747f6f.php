@@ -13,12 +13,6 @@ var JS_APP = '/laugh/admin';
 </script>
 </head>
 
-<<<<<<< HEAD:admin/cache/compile/f/fa/6b71b9b7aeae9d655169b7036bf403ac.php
-<body>
-<div id="perstatus" pers="<pre class='xdebug-var-dump' dir='ltr'><small>string</small> <font color='#cc0000'>'&lt;font color=red&gt;127.0.0.1 系统发生错误: Undefined index: perstatus, in /usr/local/webserver/site/laugh/admin/cache/compile/db4baf06e573777bf09002b125face9a38988df2.file.manage.html.php on line 28&lt;/font&gt;'</font> <i>(length=208)</i>
-</pre><pre class='xdebug-var-dump' dir='ltr'><small>string</small> <font color='#cc0000'>'&lt;font color=red&gt;127.0.0.1 系统发生错误: Trying to get property of non-object, in /usr/local/webserver/site/laugh/admin/cache/compile/db4baf06e573777bf09002b125face9a38988df2.file.manage.html.php on line 28&lt;/font&gt;'</font> <i>(length=218)</i>
-</pre>"></div>
-=======
 <body>
 <div id="perstatus" pers="<pre class='xdebug-var-dump' dir='ltr'><small>string</small> <font color='#cc0000'>'&lt;font color=red&gt;127.0.0.1 系统发生错误: Undefined index: perstatus, in C:\xampp\htdocs\laugh\admin\cache\compile\2543daa228af7e280eda9e0e0c5fabcc7c8ccfe1.file.manage.html.php on line 31&lt;/font&gt;'</font> <i>(length=198)</i>
 </pre><pre class='xdebug-var-dump' dir='ltr'><small>string</small> <font color='#cc0000'>'&lt;font color=red&gt;127.0.0.1 系统发生错误: Trying to get property of non-object, in C:\xampp\htdocs\laugh\admin\cache\compile\2543daa228af7e280eda9e0e0c5fabcc7c8ccfe1.file.manage.html.php on line 31&lt;/font&gt;'</font> <i>(length=208)</i>
@@ -121,7 +115,6 @@ var JS_APP = '/laugh/admin';
 	</form>
 </div>
 <!--弹出层-->
->>>>>>> page:admin/cache/compile/d/db/92c8268203d7b1cc23e72c3066747f6f.php
 </body>
 <script type="text/javascript" src="themes/default/js/public.js"></script>
 <script type="text/javascript" src="themes/default/js/div_window.js"></script>

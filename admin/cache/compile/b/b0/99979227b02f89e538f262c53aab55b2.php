@@ -14,8 +14,15 @@ var JS_APP = '/laugh/admin';
 </head>
 
 <body>
-<div id="control">
-    <h3>欢迎使用管理中心！</h2>
+<div class="menu">
+    <ul>
+        <li class="menulist">
+			<div><a target="main" hidefocus="true" href="javascript:;">基本信息</a></div>
+			<ul class="menusub">
+				<li><a target="main" hidefocus="true" href="javascript:;" class="">个人信息</a></li>
+			</ul>
+		</li>
+    </ul>
 </div>
 </body>
 <script type="text/javascript" src="themes/default/js/public.js"></script>

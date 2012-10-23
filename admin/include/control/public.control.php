@@ -52,8 +52,7 @@ class PublicControl extends CommonControl
      */
     public function menu()
     {
-        $groupid = $this->_getGroupid();
-        $menu = $this->getGroup($groupid);
+        $menu = $this->getGroup($this->_getGroupid());
 
         if (is_array($menu) && !empty($menu)) {
             $this->assign('menu',$menu['cnode']);
@@ -69,5 +68,13 @@ class PublicControl extends CommonControl
     public function welcome()
     {
     	$this->display('public/welcome.html');
+    }
+
+    //获取组信息
+    private function getGroup($groupid=null)
+    {
+        foreach ($this->userAccess as $v) {
+            if ($v['id'] == $groupid) return $v;
+        }
     }
 }
