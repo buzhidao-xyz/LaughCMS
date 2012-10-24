@@ -28,12 +28,6 @@ class GroupControl extends CommonControl
         return $title ? FilterHelper::F_htmlentities($title) : '';
     }
 
-    //新组模板
-    public function newGroup()
-    {
-        $this->display("Group/add.html");
-    }
-
     /**
      * 保存新组
      */

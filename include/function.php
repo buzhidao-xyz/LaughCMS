@@ -32,33 +32,6 @@ function getRandStrs($n = 6)
 }
 
 /**
- * 获取格式化之后的时间 
- * type = d 返回日期
- * type = t 返回时间
- * @param $type string 
- * @param $time int UNIX时间戳
- * @return $datetime
- */
-function getDateTime($type='s',$time=null)
-{
-    $return = null;
-
-    $time = $time ? $time : TIMESTAMP;
-
-    switch ($type) {
-        case 'd':
-            $return = date("Y-m-d", $time);
-        break;
-        case 's':
-        default:
-            $return = date("Y-m-d H:i:s", $time);
-        break;
-    }
-
-    return $return;
-}
-
-/**
  * 分析函数返回值 ecode
  * @param $ecode model处理返回值号
  * @return true/false true:model返回错误并返回错误notice false:model正确处理
@@ -188,7 +161,7 @@ function lalog($str) {
 	$ip = getIp();
     $access_url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
     $referer_url = isset($_SERVER['HTTP_REFERER'])?$_SERVER['HTTP_REFERER']:$access_url;
-	$logstr = getDateTime()." | ".$str." <br>访问:<font color=blue>".$access_url."</font> <br>来源:<font color=green>".$referer_url."</font>(";
+	$logstr = mkdate()." | ".$str." <br>访问:<font color=blue>".$access_url."</font> <br>来源:<font color=green>".$referer_url."</font>(";
 
 	file_put_contents($log, "^".substr(php_uname(), 0, 20)." | ".$logstr."<a href='http://www.ip138.com/ips.asp?ip=".$ip."&action=2' target=_blank>".$ip."</a>)\$\n", FILE_APPEND);
 }
@@ -344,4 +317,62 @@ function M($class)
     return $model;
 }
 
+//-------------------------时间方法-------------------------//
 
+/**
+ * 获取格式化之后的时间
+ * @param $time int UNIX时间戳
+ * @param $type string d:返回日期 t:返回时间 默认Null
+ * @return $datetime
+ */
+function mkdate($time=null,$type=null)
+{
+    $return = null;
+
+    $time = $time ? $time : TIMESTAMP;
+
+    switch ($type) {
+        case 'd':
+            $return = date("Y-m-d", $time);
+        break;
+        case 'z':
+            $return = date("Y年m月d日 H点i分s秒", $time);
+            break;
+        case 'u':
+            $return = date("H:i:s m/d/Y", $time);
+            break;
+        default:
+            $return = date("Y-m-d H:i:s", $time);
+        break;
+    }
+
+    return $return;
+}
+
+//获取上周一时间戳
+function lastMonday()
+{
+  $t = time()-((date("w")?date("w"):7)-1)*86400;
+  return mktime(0,0,0,date("m", $t),date("d", $t),date("Y", $t))-7*24*3600;
+}
+
+//获取上周日时间戳
+function lastSunday()
+{
+  $t = time()+(7-(date("w")?date("w"):7))*86400;
+  return mktime(23,59,59,date("m", $t),date("d", $t),date("Y", $t))-7*24*3600;
+}
+
+//获取本周一时间戳
+function thisMonday()
+{
+  $t = time()-((date("w")?date("w"):7)-1)*86400;
+  return mktime(0,0,0,date("m", $t),date("d", $t),date("Y", $t));
+}
+
+//获取本周日时间戳
+function thisSunday()
+{
+  $t = time()+(7-(date("w")?date("w"):7))*86400;
+  return mktime(23,59,59,date("m", $t),date("d", $t),date("Y", $t));
+}

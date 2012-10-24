@@ -2,12 +2,28 @@
 <div id="perstatus" pers="{$perstatus}"></div>
 <div id="control">
 	<div class="control_nav">
+		<h3>添加组</h3>
+	</div>
+	<div class="captitle"><h5>新组节点表单</h5></div>
+	<form name="newform" action="__APP__/?s=Group/saveGroup" method="post" id="addajaxform">
+		<input type="hidden" name="" />
+		<ul class="formbody">
+			<li class="formblock colorblock">
+				<span>名称:</span>
+				<input type="text" name="title" value="" class="input" style="width:150px;" />
+			</li>
+			<li class="formblock">
+				<input type="submit" name="subut" class="button" value="添加" />
+			</li>
+		</ul>
+	</form>
+	<div class="control_nav">
 		<h3>组节点列表</h3>
 	</div>
 	<div class="captitle"><h5>兑奖申请列表【目前共有{if $total}{$total}{else}0{/if}条数据】</h5></div>
     <ul class="table_list_title">
     	<li class="table_list_l table_list_l150">组节点名称</li>
-    	<li class="table_list_l table_list_l120">创建时间</li>
+    	<li class="table_list_l table_list_l170">创建时间</li>
     	<li class="table_list_l table_list_l100">是/否显示</li>
     	<li class="table_list_l table_list_l150">操作</li>
     </ul>
@@ -15,7 +31,7 @@
      {foreach $groupList as $d}
     <ul class="table_list">
 		<li class="table_list_l table_list_l150">{$d.title}</li>
-    	<li class="table_list_l table_list_l120">{$d.createtime|date}</li>
+    	<li class="table_list_l table_list_l170">{$d.createtime|mkdate}</li>
     	<li class="table_list_l table_list_l100">{if $d.isshow}显{else}隐{/if}</li>
     	<li class="table_list_l table_list_l150">
     		<a href="javascript:;" name="modify">修改</a>&nbsp;&nbsp;

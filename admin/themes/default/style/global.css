@@ -64,6 +64,9 @@
     border-right: 1px solid #DEEFFB;
     border-bottom: 1px solid #DEEFFB;
 }
+.table_list_title {
+  color: #CC3300;
+}
 .table_list {
   overflow:visible;
 }
