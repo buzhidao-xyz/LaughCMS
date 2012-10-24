@@ -2,7 +2,7 @@
 #control {
     float:left;
     width:97%;
-    margin:15px 10px;
+    margin: 5px 10px;
 }
 #control a:link, #control a:visited {
     text-decoration: underline;
@@ -14,7 +14,7 @@
     width: auto;
     height: 20px;
     line-height: 20px;
-    margin-bottom:15px;
+    margin: 10px 5px;
 }
 #control .control_nav .control_nav_tab {
     float: left;

@@ -17,6 +17,15 @@ class GroupControl extends CommonControl
         if (!$this->_GROUP) $this->_GROUP = N('Group');
     }
 
+    //获取组节点id
+    public function _getID()
+    {
+        $id = q('id');
+        if (!FilterHelper::C_int($id)) $this->ajaxReturn(1,'id错误');
+
+        return $id;
+    }
+
     /**
      * 获取节点名称
      */
@@ -28,19 +37,13 @@ class GroupControl extends CommonControl
         return $title ? FilterHelper::F_htmlentities($title) : '';
     }
 
-    /**
-     * 保存新组
-     */
-    public function saveGroup()
+    //获取是否显示
+    private function _getIsShow()
     {
-        $data = array(
-            'title' => $this->_getTitle(),
-            'createtime' => TIMESTAMP,
-            'isshow'=> 1
-        );
+        $isshow = q('isshow');
+        if ((int)$isshow !== 0 && (int)$isshow !== 1) $this->ajaxReturn(1,'是否显示组菜单错误');
 
-        $return = $this->_GROUP->addGroup($data);
-        $this->ajaxReturn(0, '添加成功', $return);
+        return $isshow;
     }
 
     public function manageGroup()
@@ -52,5 +55,35 @@ class GroupControl extends CommonControl
         $this->assign("groupList", $groupList['data']);
         $this->assign("page", getPage($groupList['total'],$this->_pagesize));
         $this->display("Group/manage.html");
+    }
+
+    //保存新组信息
+    public function saveGroup()
+    {
+        if (!$this->isAjax()) return false;
+
+        $title = $this->_getTitle();
+        if ($this->_GROUP->hasGroupTitle($title)) $this->ajaxReturn(0, '组名称已存在');
+
+        $data = array(
+            'title' => $title,
+            'createtime' => TIMESTAMP,
+            'isshow'=> 1
+        );
+        $return = $this->_GROUP->addGroup($data);
+
+        $this->ajaxReturn(0, '添加成功', $return);
+    }
+
+    //更新组信息
+    public function upGroup()
+    {
+        if (!$this->isAjax()) return false;
+
+        $id = $this->_getID();
+        $title = $this->_getTitle();
+        $isshow = $this->_getIsShow();
+
+        
     }
 }

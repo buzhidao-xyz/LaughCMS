@@ -19,6 +19,17 @@ class Group extends Base
 	}
 
 	/**
+	 * 判断组名称是否已存在
+	 * @param $title string 组名称
+	 */
+	public function hasGroupTitle($title=null)
+	{
+		if (!$title) return false;
+
+		return T('group')->where(array("title"=>$title))->count() ? true : false;
+	}
+
+	/**
 	 * 获取组树
 	 * @param $start int 开始位置
 	 * @param $length int 获取数据长度
@@ -36,15 +47,15 @@ class Group extends Base
 	}
 
     /**
-     * 根据节点id获取节点组信息
-     * @param $groupids array 组id数组
+     * 根据组id获取节点组信息
+     * @param $groupid int/array 组id或者id数组
      */
-    public function getGroup($groupids=array())
+    public function getGroup($groupid=null)
     {
-        if (!is_array($groupids) || empty($groupids)) return false;
+        if (!$groupid) return false;
 
         $where = array(
-        	'id' => array('in', $groupids),
+        	'id' => is_array($groupid) ? array('in', $groupid) : $groupid,
         	'isshow' => 1
         );
         return T('group')->where($where)->order('id')->select();

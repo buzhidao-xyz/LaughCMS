@@ -63,11 +63,11 @@ $(document).ready(function() {
     if($('#modify_div').length>0){
         var delfunction = true;
         var m_d = new Div_window('modify_div');
-        if ($(".updateblock1").length > 0) {
-            classhtml1 = $(".updateblock1").html();
+        if ($(".upblock1").length > 0) {
+            classhtml1 = $(".upblock1").html();
         }
-        if ($(".updateblock2").length > 0) {
-            classhtml2 = $(".updateblock2").html();
+        if ($(".upblock2").length > 0) {
+            classhtml2 = $(".upblock2").html();
         }
         
         $('a[name="modify"]').click(function(event){
@@ -75,9 +75,9 @@ $(document).ready(function() {
             var that = $(this);
             var thattd = $(this).parent().parent().find('li');
             var param_array = [
-            {targetname:'id', val:that.attr('mcid'), type:'text'},
-            {targetname:'control', val:that.attr('control'), type:'text'},
-            {targetname:'action', val:that.attr('action'), type:'text'}
+            {targetname:'id', val:that.attr('id'), type:'text'},
+            {targetname:'title', val:that.attr('title'), type:'text'},
+            {targetname:'isshow', val:that.attr('isshow'), type:'radio'}
             ];
             if (that.attr('type')) {
                 var upblockval = that.attr('upblock');
