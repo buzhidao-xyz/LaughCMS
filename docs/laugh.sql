@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2012-10-22 17:29:01
+Date: 2012-10-25 17:41:05
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -203,7 +203,7 @@ CREATE TABLE `la_group` (
   `sort` smallint(3) NOT NULL,
   `isshow` tinyint(1) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_group
@@ -213,8 +213,6 @@ INSERT INTO `la_group` VALUES ('2', '用户中心', '1332390538', '1332390538', 
 INSERT INTO `la_group` VALUES ('3', '文章管理', '1332390538', '1332390538', '3', '1');
 INSERT INTO `la_group` VALUES ('4', '网站设置', '1332390538', '1332390538', '4', '1');
 INSERT INTO `la_group` VALUES ('5', '系统工具', '1332390538', '1332390538', '5', '1');
-INSERT INTO `la_group` VALUES ('6', '测试组', '1350897953', '0', '0', '1');
-INSERT INTO `la_group` VALUES ('7', '测试组', '1350898030', '0', '0', '1');
 
 -- ----------------------------
 -- Table structure for `la_node`
@@ -236,7 +234,7 @@ CREATE TABLE `la_node` (
   PRIMARY KEY (`id`),
   KEY `level` (`level`),
   KEY `pid` (`pid`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_node
@@ -248,10 +246,9 @@ INSERT INTO `la_node` VALUES ('4', '组管理', '节点组管理', '', '', '4', 
 INSERT INTO `la_node` VALUES ('5', '节点管理', '管理模块下的节点信息', '', '', '5', '0', '1', '1', '0', '0', '1');
 INSERT INTO `la_node` VALUES ('6', '管理员用户管理', '管理员账号管理中心', '', '', '6', '0', '1', '1', '0', '0', '1');
 INSERT INTO `la_node` VALUES ('7', '用户搜索', '搜索用户信息', '', '', '1', '0', '1', '2', '0', '0', '1');
-INSERT INTO `la_node` VALUES ('8', '添加组', '添加新的组导航', 'Group', 'newGroup', '1', '4', '2', '0', '0', '0', '1');
-INSERT INTO `la_node` VALUES ('9', '管理组', '', 'Group', 'manageGroup', '2', '4', '2', '0', '0', '0', '1');
-INSERT INTO `la_node` VALUES ('10', '添加节点', null, 'Node', 'newNode', '1', '5', '0', '0', '0', '0', '1');
-INSERT INTO `la_node` VALUES ('11', '管理节点', null, 'Node', 'manageNode', '2', '5', '0', '0', '0', '0', '1');
+INSERT INTO `la_node` VALUES ('8', '管理组', '', 'Group', 'manageGroup', '2', '4', '2', '0', '0', '0', '1');
+INSERT INTO `la_node` VALUES ('9', '添加节点', null, 'Node', 'newNode', '1', '5', '0', '0', '0', '0', '1');
+INSERT INTO `la_node` VALUES ('10', '管理节点', null, 'Node', 'manageNode', '2', '5', '0', '0', '0', '0', '1');
 
 -- ----------------------------
 -- Table structure for `la_role`
