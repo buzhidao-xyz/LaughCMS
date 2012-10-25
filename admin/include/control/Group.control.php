@@ -63,7 +63,7 @@ class GroupControl extends CommonControl
         if (!$this->isAjax()) return false;
 
         $title = $this->_getTitle();
-        if ($this->_GROUP->hasGroupTitle($title)) $this->ajaxReturn(0, '组名称已存在');
+        if ($this->_GROUP->getGroupByTitle($title)) $this->ajaxReturn(0, '组名称已存在');
 
         $data = array(
             'title' => $title,
