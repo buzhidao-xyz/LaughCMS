@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-10-26 10:35:42
+<?php /* Smarty version Smarty-3.1.12, created on 2012-10-27 17:03:50
          compiled from "C:\xampp\htdocs\laugh\admin\themes\default\Group\manage.html" */ ?>
-<?php /*%%SmartyHeaderCode:308015089f6feda8239-71561684%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:16986508ba3769e7555-02081727%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '2543daa228af7e280eda9e0e0c5fabcc7c8ccfe1' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\default\\Group\\manage.html',
-      1 => 1351070457,
+      1 => 1351328235,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '308015089f6feda8239-71561684',
+  'nocache_hash' => '16986508ba3769e7555-02081727',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5089f6ff029b55_27136973',
+  'unifunc' => 'content_508ba376ae7cf1_68211948',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5089f6ff029b55_27136973')) {function content_5089f6ff029b55_27136973($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_508ba376ae7cf1_68211948')) {function content_508ba376ae7cf1_68211948($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div id="perstatus" pers="<?php echo $_smarty_tpl->tpl_vars['perstatus']->value;?>
 "></div>
@@ -87,7 +87,7 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 </div>
 <!--弹出层-->
 <div id="modify_div" class="modify_div" style="display:none;">
-	<form id="modify_div_form" action="__APP__/Group/upGroup">
+	<form id="modify_div_form" action="__APP__/?s=Group/upGroup">
 		<input name="id" value="" type="hidden" />
 		<a href="javascript:;" class="modify_div_close" id="modify_div_close">X</a>
 		<ul class="formbody modify_div_box">

@@ -108,8 +108,8 @@ $(document).ready(function() {
         $('#modify_div_form').submit(function(){
             m_d.formsubmit($(this).attr('action'), function(data){
                 //var data = $.parseJSON(data);
-                alert(data.errormsg);
-                if (!data.errorcode) {
+                alert(data.info);
+                if (!data.status) {
                     m_d.close();
                     var locat = $("a[name=modify]").attr('location');
                     if (locat) location.href = locat;

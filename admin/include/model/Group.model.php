@@ -39,9 +39,9 @@ class Group extends Base
      * 根据组id获取节点组信息
      * @param $groupid int/array 组id或者id数组
      */
-    public function getGroup($groupid=null,$title=null)
+    public function getGroup($groupid=null)
     {
-        if (!$groupid) return false;
+        if (!$groupid && !$title) return false;
 
         $where = array(
         	'id' => is_array($groupid) ? array('in', $groupid) : $groupid,
@@ -61,5 +61,17 @@ class Group extends Base
 		$return = T('group')->where(array("title"=>$title))->find();
 
 		return !empty($return) ? $return : false;
+	}
+
+	/**
+	 * 更新组信息
+	 * @param $id int 组id
+	 * @param $data array() 组信息
+	 */
+	public function upGroup($id,$data=array())
+	{
+		if (!$id || empty($data)) return false;
+
+		return T('group')->where(array('id'=>$id))->update($data);
 	}
 }

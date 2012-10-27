@@ -93,7 +93,7 @@ var JS_APP = '/laugh/admin';
 </div>
 <!--弹出层-->
 <div id="modify_div" class="modify_div" style="display:none;">
-	<form id="modify_div_form" action="/laugh/admin/Group/upGroup">
+	<form id="modify_div_form" action="/laugh/admin/?s=Group/upGroup">
 		<input name="id" value="" type="hidden" />
 		<a href="javascript:;" class="modify_div_close" id="modify_div_close">X</a>
 		<ul class="formbody modify_div_box">

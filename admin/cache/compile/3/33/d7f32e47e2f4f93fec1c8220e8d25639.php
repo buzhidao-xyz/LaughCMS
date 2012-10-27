@@ -28,7 +28,7 @@ var JS_APP = '/laugh/admin';
             </ul>
         </form>
     </div>
-    <div id="logError">用户名或密码错误!</div>
+    <div id="logError"></div>
     <div class="login logFoot">
         Powered by Laugh &copy; 2011-2012
     </div>
