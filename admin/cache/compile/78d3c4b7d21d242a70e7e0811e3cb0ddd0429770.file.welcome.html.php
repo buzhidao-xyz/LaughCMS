@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-10-27 16:19:40
+<?php /* Smarty version Smarty-3.1.12, created on 2012-11-07 16:25:16
          compiled from "C:\xampp\htdocs\laugh\admin\themes\default\public\welcome.html" */ ?>
-<?php /*%%SmartyHeaderCode:8307508b991c0353e4-31559024%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:29252509a1aec77f025-96756288%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,15 +11,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '8307508b991c0353e4-31559024',
+  'nocache_hash' => '29252509a1aec77f025-96756288',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_508b991c099d95_64749724',
+  'unifunc' => 'content_509a1aec7cdae6_78703511',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_508b991c099d95_64749724')) {function content_508b991c099d95_64749724($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_509a1aec7cdae6_78703511')) {function content_509a1aec7cdae6_78703511($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div id="control">
     <h3>欢迎使用管理中心！</h2>

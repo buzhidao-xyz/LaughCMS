@@ -85,7 +85,7 @@ class GroupControl extends CommonControl
         $isshow = $this->_getIsShow();
 
         $res = $this->_GROUP->getGroupByTitle($title);
-        if ($res['id'] != $id) $this->ajaxReturn(1, '组名称已存在');
+        if ($res && $res['id'] != $id) $this->ajaxReturn(1, '组名称已存在');
 
         $data = array(
             'title' => $title,
