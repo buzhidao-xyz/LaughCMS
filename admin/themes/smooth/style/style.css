@@ -101,7 +101,7 @@ ol.decimal  { list-style-type: decimal; }
 div.color
 {
 	right: 0;
-	margin: 116px 28px 0 0;
+	margin: 116px 23px 0 0;
 	padding: 0 4px 4px 4px;
 	clear: both;
 	overflow: hidden;
@@ -321,7 +321,7 @@ div.color a.greyblue
 	top: 0;
 	right: 0;
 	margin: 0;
-	padding: 10px 12px 8px 10px;
+	padding: 10px 18px 8px 18px;
 	height: 30px;
 	display: block;
 	float: left;
@@ -331,7 +331,7 @@ div.color a.greyblue
 
 #header #header-inner #quick li span.normal
 {
-	padding: 10px 12px 8px 12px;
+	padding: 10px 18px 8px 18px;
 	border: none;	
 }
 
@@ -486,7 +486,7 @@ div.color a.greyblue
 	height: 100%;
 	clear: both;
 	overflow: hidden;
-	background: url("../images/content.png") repeat-y top left;
+	/*background: url("../images/content.png") repeat-y top left;*/
 	position: relative;
 }
 
@@ -840,7 +840,7 @@ div.color a.greyblue
 
 #content div.box
 {
-	margin: 10px 0 0 0;
+	margin: 0;
 	padding: 0 0 10px 0;
 	clear: both;
 	overflow: hidden;
@@ -1270,7 +1270,7 @@ div.color a.greyblue
 div.form
 {
 	margin: 0;
-	padding: 0 20px 10px 20px;
+	padding: 0 5px 5px 5px;
 	clear: both;
 	overflow: hidden;
 }
@@ -1329,11 +1329,12 @@ div.form div.fields div.field span.success
 
 div.form div.fields div.field div.label
 {
-	left: 310px;
+	/*left: 10px;*/
 	margin: 0;
 	padding: 8px 0 0 5px;
-	width: auto;
-	position: absolute;
+	width: 200px;
+	position: relative;
+	float: left;
 }
 
 .ui-dialog div.form div.fields div.field div.label,
@@ -1424,7 +1425,7 @@ div.form div.fields div.field div.label span
 
 div.form div.fields div.field div.input
 {
-	margin: 0 0 0 200px;
+	margin: 0;
 	padding: 0;
 }
 
@@ -1445,7 +1446,7 @@ div.box-right div.form div.fields div.field div.input
 div.form div.fields div.field div.input input
 {
 	margin: 0;
-	padding: 3px;
+	padding: 5px 3px;
 	float: left;
 	background: #FFFFFF;
 	border-top: 1px solid #b3b3b3;
@@ -1473,17 +1474,17 @@ div.form div.fields div.field div.input-file input
 
 div.form div.fields div.field div.input input.small
 {
-	width: 30%;	
+	width: 190px;	
 }
 
 div.form div.fields div.field div.input input.medium
 {
-	width: 55%;	
+	width: 220px;	
 }
 
 div.form div.fields div.field div.input input.large
 {
-	width: 85%;	
+	width: 300px;	
 }
 
 div.form div.fields div.field div.input input.date
@@ -3168,8 +3169,17 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 .pdtop20 {
 	padding-top: 20px;
 }
+#content div.mtop10 {
+	margin-top: 10px;
+}
 
 .blankhd {
 	height: 10px;
 	background: url("../images/background.png") repeat scroll 0 0 #D1D1D1;
+}
+#control {
+	clear: both;
+	overflow: hidden;
+	margin: 0 60px 0 10px;
+	padding: 0;
 }
