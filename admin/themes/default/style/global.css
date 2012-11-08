@@ -54,15 +54,15 @@
     line-height:21px;
     background: url("../images/bg_repx_hc.gif") repeat-x scroll 0 -40px transparent;
     padding: 5px;
-    border-bottom: 1px solid #DEEFFB;
+    border-bottom: 1px solid #DEEFFA;
     clear: both;
 }
 .table_list_title, .table_list {
     position: relative;
     height: 32px;
     clear: both;
-    border-right: 1px solid #DEEFFB;
-    border-bottom: 1px solid #DEEFFB;
+    border-right: 1px solid #DEEFFA;
+    border-bottom: 1px solid #DEEFFA;
 }
 .table_list_title {
   color: #CC3300;
@@ -80,7 +80,7 @@
     line-height: 32px;
     text-indent: 5px;
     overflow: hidden;
-    border-left: 1px solid #DEEFFB;
+    border-left: 1px solid #DEEFFA;
 }
 .table_list_center {
     width: 100%;
@@ -137,14 +137,14 @@
 .rowspanhover {
     height:33px;
     background:#FFF;
-    border-right:1px solid #DEEFFB;
-    border-top:1px solid #DEEFFB;
+    border-right:1px solid #DEEFFA;
+    border-top:1px solid #DEEFFA;
     margin-top:-1px;
 }
 .rowspan {
     margin-top:-1px;
     background:#FFF;
-    border-right:1px solid #DEEFFB;
+    border-right:1px solid #DEEFFA;
 }
 
 /**form表单样式表*/
@@ -160,7 +160,7 @@ form ul.formbody li.formblock {
     width: auto;
     height: 40px;
     line-height: 40px;
-    border-bottom: 1px solid #DEEFFB;
+    border-bottom: 1px solid #DEEFFA;
 }
 form ul li.colorblock:hover {
     background: #F2F9FD;
@@ -179,7 +179,7 @@ form ul.formbody li.auto {
     padding-bottom:10px;
     clear: both;
     overflow: hidden;
-    border-bottom: 1px solid #DEEFFB;
+    border-bottom: 1px solid #DEEFFA;
 }
 
 /**show_list样式表**/
@@ -187,7 +187,7 @@ form ul.formbody li.auto {
     width: auto;
 	max-width: 900px;
     height: auto;
-    border-bottom: 0px solid #DEEFFB;
+    border-bottom: 0px solid #DEEFFA;
 }
 .show_list .show_list_title {
     height: 20px;

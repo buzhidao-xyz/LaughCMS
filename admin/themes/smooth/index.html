@@ -1,0 +1,22 @@
+{include file="include/head.html"}
+{include file="sitemap.html"}
+<div id="colors-switcher" class="color">
+	<a href="" class="blue" title="Blue"></a>
+	<a href="" class="green" title="Green"></a>
+	<a href="" class="brown" title="Brown"></a>
+	<a href="" class="purple" title="Purple"></a>
+	<a href="" class="red" title="Red"></a>
+	<a href="" class="greyblue" title="GreyBlue"></a>
+</div>
+<iframe frameborder="0" id="head" name="head" src="__APP__/?s=public/head" scrolling="no" style="position:absolute; width:100%; height:110px; visibility:inherit; z-index:1; overflow:auto;">
+</iframe>
+<iframe frameborder="0" id="body" name="body" src="__APP__/?s=public/body" scrolling="no" style="width:100%; height:100%; z-index:1; overflow:auto;">
+</iframe>
+<style>
+body {
+	padding: 0;
+	margin: 0;
+    overflow:hidden;
+}
+</style>
+{include file="include/foot.html"}
