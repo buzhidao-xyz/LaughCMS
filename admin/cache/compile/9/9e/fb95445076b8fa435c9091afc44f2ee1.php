@@ -6,6 +6,7 @@
 	<!-- stylesheets -->
 	<link rel="stylesheet" type="text/css" href="themes/smooth/style/reset.css" />
 	<link rel="stylesheet" type="text/css" href="themes/smooth/style/style.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="themes/smooth/style/table.css" />
 	<link id="color" rel="stylesheet" type="text/css" href="themes/smooth/style/colors/blue.css" />
 	<!-- scripts (jquery) -->
 	<script src="themes/smooth/js/jquery-1.4.2.min.js" type="text/javascript"></script>
@@ -34,8 +35,7 @@
 </head>
 
 <body>
-<div id="content">
-	<div class="blankhd"></div>
+<div id="content" style="height:100%;background: url('themes/smooth/images/content.png') repeat-y top left;">
 	<!-- end content / left -->
 	<div id="left">
 		<div id="menu">
@@ -74,5 +74,9 @@
 	</div>
 	<!-- end content / left -->
 </div>
+<script type="text/javascript" src="themes/smooth/js/public.js"></script>
+<script type="text/javascript" src="themes/smooth/js/div_window.js"></script>
+<script type="text/javascript" src="themes/smooth/js/common.js"></script>
+<script type="text/javascript" src="themes/smooth/js/ajax.js"></script>
 </body>
 </html>

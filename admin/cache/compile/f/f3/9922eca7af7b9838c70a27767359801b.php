@@ -6,6 +6,7 @@
 	<!-- stylesheets -->
 	<link rel="stylesheet" type="text/css" href="themes/smooth/style/reset.css" />
 	<link rel="stylesheet" type="text/css" href="themes/smooth/style/style.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="themes/smooth/style/table.css" />
 	<link id="color" rel="stylesheet" type="text/css" href="themes/smooth/style/colors/blue.css" />
 	<!-- scripts (jquery) -->
 	<script src="themes/smooth/js/jquery-1.4.2.min.js" type="text/javascript"></script>
@@ -34,8 +35,9 @@
 </head>
 
 <body>
-<div id="control">
-    <h3>欢迎使用管理中心！</h2>
+<div id="content">
+	<div class="blankhd"></div>
+	<div id="control">欢迎使用管理中心！</div>
 </div>
 </body>
 </html>

@@ -6,6 +6,7 @@
 	<!-- stylesheets -->
 	<link rel="stylesheet" type="text/css" href="themes/smooth/style/reset.css" />
 	<link rel="stylesheet" type="text/css" href="themes/smooth/style/style.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="themes/smooth/style/table.css" />
 	<link id="color" rel="stylesheet" type="text/css" href="themes/smooth/style/colors/blue.css" />
 	<!-- scripts (jquery) -->
 	<script src="themes/smooth/js/jquery-1.4.2.min.js" type="text/javascript"></script>
@@ -35,15 +36,19 @@
 
 <body>
 <table border="0" cellPadding="0" cellSpacing="0" style="width:100%; height:100%; table-layout:fixed;">
- <tr><td width="280" height="110"></td><td></td></tr>
+ <tr><td width="280" height="120"></td><td></td></tr>
  <tr>
   <td valign="top">
-   <iframe frameborder="0" id="menu" name="menu" width="280px" height="100%" src="/laugh/admin/?s=public/menu&groupid=0" scrolling="none" class="iframe"></iframe>
+   <iframe frameborder="0" id="menu" name="menu" width="280px" height="100%" src="/laugh/admin/?s=public/menu&groupid=1" scrolling="none" class="iframe"></iframe>
   </td>
   <td valign="top">
-   <iframe frameborder="0" id="main" name="main" width="100%" height="100%" src="/laugh/admin/?s=public/welcome" scrolling="yes" class="iframe"></iframe>
+   <iframe frameborder="0" id="main" name="main" width="100%" height="100%" src="/laugh/admin/?s=public/welcome" scrolling="auto" class="iframe" style="overflow-y:scroll;"></iframe>
   </td>
  </tr>
 </table>
+<script type="text/javascript" src="themes/smooth/js/public.js"></script>
+<script type="text/javascript" src="themes/smooth/js/div_window.js"></script>
+<script type="text/javascript" src="themes/smooth/js/common.js"></script>
+<script type="text/javascript" src="themes/smooth/js/ajax.js"></script>
 </body>
 </html>

@@ -101,7 +101,7 @@ ol.decimal  { list-style-type: decimal; }
 div.color
 {
 	right: 0;
-	margin: 116px 23px 0 0;
+	margin: 118px 23px 0 0;
 	padding: 0 4px 4px 4px;
 	clear: both;
 	overflow: hidden;
@@ -483,7 +483,7 @@ div.color a.greyblue
 #content 
 {
 	padding: 0;
-	height: 100%;
+	/*height: 100%;*/
 	clear: both;
 	overflow: hidden;
 	/*background: url("../images/content.png") repeat-y top left;*/
@@ -867,7 +867,7 @@ div.color a.greyblue
 
 #content div.box div.title
 {
-	margin: 0 0 20px 0;
+	margin: 0 0 10px 0;
 	padding: 0;
 	clear: both;
 	overflow: hidden;
@@ -1076,7 +1076,7 @@ div.color a.greyblue
 
 #content div.box li
 {
-	padding: 4px 0 4px 0;
+	/*padding: 0;*/
 	font-size: 12px;  
 }
 
@@ -1765,7 +1765,7 @@ div.form div.fields div.field div.checkboxes div.checkbox label
 
 div.form div.fields div.field div.radios
 {
-	margin: 0 0 0 200px;
+	margin: 0;
 	padding: 0;
 }
 
@@ -1957,7 +1957,7 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 #content div.box div.table
 {
 	margin: 0;
-	padding: 0 20px 10px 20px;
+	padding: 0 5px 10px 5px;
 	clear: both;
 	overflow: hidden;
 }
@@ -2154,7 +2154,7 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 {
 	margin: 10px 0 0 0;
 	padding: 0;
-	height: 1%;
+	height: 30px;
 	clear: both;
 	overflow: hidden;
 }
@@ -2171,7 +2171,7 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 {
 	margin: 0;
 	padding: 6px 8px 6px 8px;
-	height: 1%;
+	height: 13px;
 	display: block;
 	float: left;
 	background: #ebebeb url("../images/pager.png") repeat-x;
@@ -2195,7 +2195,7 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 {
 	margin: 0 0 0 4px;
 	padding: 0;
-	height: 1%;
+	height: auto;
 	float: left;
 	list-style: none;
 	background: #ebebeb url("../images/pager.png") repeat-x;
@@ -2205,6 +2205,7 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 	border-bottom: 1px solid #c4c4c4;
 	color: #4A4A4A;
 	font-weight: bold;
+	font-size: 13px;
 }
 
 #content div.box div.pagination ul.pager li.separator
@@ -2233,7 +2234,7 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 {
 	margin: 0;
 	padding: 6px;
-	height: 1%;
+	height: 13px;
 	display: block;
 	float: left;
 	color: #515151;
@@ -3180,6 +3181,6 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 #control {
 	clear: both;
 	overflow: hidden;
-	margin: 0 60px 0 10px;
+	margin: 0 43px 0 10px;
 	padding: 0;
 }

@@ -123,8 +123,13 @@ class CommonControl extends BaseControl
     protected function getPages()
     {
         $page = $this->getPage();
+        $start = ($page-1)*$this->_pagesize;
+        $length = $this->_pagesize;
 
-        return array(($page-1)*$this->_pagesize, $this->_pagesize);
+        $this->assign('start',$start);
+        $this->assign('length',$length);
+
+        return array($start, $length);
     }
 
     //跳转到主页

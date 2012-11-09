@@ -6,6 +6,7 @@
 	<!-- stylesheets -->
 	<link rel="stylesheet" type="text/css" href="themes/smooth/style/reset.css" />
 	<link rel="stylesheet" type="text/css" href="themes/smooth/style/style.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="themes/smooth/style/table.css" />
 	<link id="color" rel="stylesheet" type="text/css" href="themes/smooth/style/colors/blue.css" />
 	<!-- scripts (jquery) -->
 	<script src="themes/smooth/js/jquery-1.4.2.min.js" type="text/javascript"></script>
@@ -37,5 +38,8 @@
 <div id="perstatus" pers="<pre class='xdebug-var-dump' dir='ltr'><small>string</small> <font color='#cc0000'>'&lt;font color=red&gt;127.0.0.1 系统发生错误: Undefined index: perstatus, in C:\xampp\htdocs\laugh\admin\cache\compile\0544b71b503f05deaa9d698c74065a37d3ee11af.file.manage.html.php on line 28&lt;/font&gt;'</font> <i>(length=198)</i>
 </pre><pre class='xdebug-var-dump' dir='ltr'><small>string</small> <font color='#cc0000'>'&lt;font color=red&gt;127.0.0.1 系统发生错误: Trying to get property of non-object, in C:\xampp\htdocs\laugh\admin\cache\compile\0544b71b503f05deaa9d698c74065a37d3ee11af.file.manage.html.php on line 28&lt;/font&gt;'</font> <i>(length=208)</i>
 </pre>"></div>
+<script type="text/javascript" src="themes/smooth/js/div_window.js"></script>
+<script type="text/javascript" src="themes/smooth/js/common.js"></script>
+<script type="text/javascript" src="themes/smooth/js/ajax.js"></script>
 </body>
 </html>

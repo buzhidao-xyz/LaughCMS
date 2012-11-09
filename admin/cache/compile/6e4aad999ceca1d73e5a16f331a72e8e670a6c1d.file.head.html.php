@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-11-08 17:29:31
+<?php /* Smarty version Smarty-3.1.12, created on 2012-11-09 17:29:26
          compiled from "C:\xampp\htdocs\laugh\admin\themes\smooth\include\head.html" */ ?>
-<?php /*%%SmartyHeaderCode:14391509b7b7b7a1c66-17447090%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:198509cccf65ea407-51153166%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '6e4aad999ceca1d73e5a16f331a72e8e670a6c1d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\smooth\\include\\head.html',
-      1 => 1352363118,
+      1 => 1352440421,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '14391509b7b7b7a1c66-17447090',
+  'nocache_hash' => '198509cccf65ea407-51153166',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_509b7b7b7aa862_25204168',
+  'unifunc' => 'content_509cccf65f0c60_85281278',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_509b7b7b7aa862_25204168')) {function content_509b7b7b7aa862_25204168($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<?php if ($_valid && !is_callable('content_509cccf65f0c60_85281278')) {function content_509cccf65f0c60_85281278($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>Laugh Admin Center</title>
@@ -27,6 +27,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<!-- stylesheets -->
 	<link rel="stylesheet" type="text/css" href="themes/smooth/style/reset.css" />
 	<link rel="stylesheet" type="text/css" href="themes/smooth/style/style.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="themes/smooth/style/table.css" />
 	<link id="color" rel="stylesheet" type="text/css" href="themes/smooth/style/colors/blue.css" />
 	<!-- scripts (jquery) -->
 	<script src="themes/smooth/js/jquery-1.4.2.min.js" type="text/javascript"></script>
