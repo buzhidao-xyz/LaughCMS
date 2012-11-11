@@ -321,15 +321,16 @@ function M($class)
 
 /**
  * 获取格式化之后的时间
- * @param $time int UNIX时间戳
+ * @param $time int UNIX时间戳 默认为1取当前时间
  * @param $type string d:返回日期 t:返回时间 默认Null
  * @return $datetime
  */
-function mkdate($time=null,$type=null)
+function mkdate($time=1,$type=null)
 {
     $return = null;
 
-    $time = $time ? $time : TIMESTAMP;
+    $time = $time === 1 ? TIMESTAMP : $time;
+    if (!$time) return null;
 
     switch ($type) {
         case 'd':

@@ -41,7 +41,7 @@ class Group extends Base
      */
     public function getGroup($groupid=null)
     {
-        if (!$groupid && !$title) return false;
+        if (!$groupid) return false;
 
         $where = array(
         	'id' => is_array($groupid) ? array('in', $groupid) : $groupid,

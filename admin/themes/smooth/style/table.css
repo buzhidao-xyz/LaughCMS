@@ -1,17 +1,4 @@
 /** control */
-#control a:link, #control a:visited {
-    text-decoration: underline;
-}
-#control a:hover {
-    text-decoration: underline;
-}
-#control .captitle {
-    line-height:21px;
-    background: url("../images/bg_repx_hc.gif") repeat-x scroll 0 -40px transparent;
-    padding: 5px;
-    border-bottom: 1px solid #CDCDCD;
-    clear: both;
-}
 .table_list_title, .table_list {
     position: relative;
     height: 32px;
@@ -28,7 +15,13 @@
     overflow:visible;
 }
 .table_list:hover {
-    background: #FFF2E0;
+    background: #EEF2E0;
+}
+.table_list a:link, .table_list a:visited {
+    text-decoration: underline;
+}
+.table_list a:hover {
+    text-decoration: underline;
 }
 .table_list_l, .table_list_center {
     float: left;
@@ -130,16 +123,44 @@
 
 /*修改详细信息*/
 .modify_div {
-    z-index:999;
+    z-index: 0;
     position: absolute;
     width: 450px;
     height: auto;
     min-height:100px;
     border:#00366C 10px solid;
-    background:#F2F9FD;  color:#333; top: -100px; left: 50%; margin-left: -260px; padding: 25px;
+    background:#F2F9FD;
+    color:#333;
+    top: -100px;
+    left: 50%;
+    margin-left: -260px;
+    padding: 25px;
 }
-.modify_div_box { position: relative;}
-.modify_div_close { position: absolute; display: block; width: 20px; height: 20px; z-index: 9999; line-height: 20px; text-align: center; font-family: Arial; top: 10px; right: 10px;}
-.modify_div_close:link,.modify_div_close:visited { background-color: #00366C; color: #fff; text-decoration: none;}
-.modify_div_close:hover,.modify_div_close:active { background-color: #c00; color: #fff; text-decoration: none;}
+.modify_div_box {
+    position: relative;
+}
+.modify_div_close {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    z-index: 9999;
+    line-height: 20px;
+    text-align: center;
+    font-family: Arial;
+    top: 10px;
+    right: 10px;
+}
+.modify_div_close:link,.modify_div_close:visited {
+    background-color: #00366C;
+    color: #fff;
+    text-decoration: none;
+}
+.modify_div_close:hover,.modify_div_close:active {
+    background-color: #c00;
+    color: #fff;
+    text-decoration: none;
+}
 /*修改详细信息*/
+
+

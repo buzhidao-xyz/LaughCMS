@@ -58,14 +58,18 @@ class Node extends Base
      * 获取某个节点的子节点
      * @param $nodeid 节点id 默认为0 取全部
      */
-    public function getNode($nodeid=0)
+    public function getNode($nodeid=0,$start=0,$length=0)
     {
         $where = array('isshow' => 1);
         if ($nodeid) $where['pid'] = $nodeid;
 
-        $res = T('node')->where($where)->order('id')->select();
+        $obj = T('node')->where($where)->order('id');
+        $total = $obj->count();
 
-        return empty($res) ? null : $res;
+        if ($length > 0) $obj = $obj->limit($start,$length);
+        $data = $obj->select();
+
+        return array('total'=>$total, 'data'=>$data);
     }
 
 	/**
@@ -83,5 +87,20 @@ class Node extends Base
         $res = T('role_node')->join(' '.TBF.'node as b on a.nodeid=b.id ')->field('a.nodeid,b.id,b.title,b.control,b.action,b.sort,b.pid,b.level,b.groupid')->where($where)->select();
 
         return $res;
+    }
+
+    /**
+     * 获取某个节点的信息
+     * @param $nodeid 节点id
+     */
+    public function getNodeInfo($nodeid=null)
+    {
+        if (!$nodeid) return array();
+
+        $where = array(
+            'id'     => $nodeid,
+            'isshow' => 1
+        );
+        return T('node')->where($where)->find();
     }
 }

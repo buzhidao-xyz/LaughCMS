@@ -11,8 +11,16 @@ $(document).ready(function() {
 			groupid: $(this).val()
 		}
 		$.post(JS_APP+'/?s=AJAX', d, function(data){
-			// var data = $.parseJSON(data);
-			$("select[flag=nodepid]").html(data.data);
+			$("#nodepid").html(data.data).find('select').selectmenu({
+		        style: 'dropdown',
+		        width: 200,
+		        menuWidth: 200,
+		        icons: [
+				    { find: '.locked', icon: 'ui-icon-locked' },
+				    { find: '.unlocked', icon: 'ui-icon-unlocked' },
+				    { find: '.folder-open', icon: 'ui-icon-folder-open' }
+			    ]
+		    });
 		},'json')
 	});
 });

@@ -8,15 +8,15 @@ class NodeControl extends CommonControl
     //控制器
     static protected $_control = 'Node';
 
-    private $_group_model = null;
-    private $_node_model = null;
+    private $_GROUP = null;
+    private $_NODE = null;
 
     public function __construct()
     {
         parent::__construct();
 
-        if (!$this->_group_model) $this->_group_model = N('Group');
-        if (!$this->_node_model) $this->_node_model = N('Node');
+        if (!$this->_GROUP) $this->_GROUP = N('Group');
+        if (!$this->_NODE) $this->_NODE = N('Node');
     }
 
     /**
@@ -95,7 +95,8 @@ class NodeControl extends CommonControl
      */
     public function newNode()
     {
-        $this->assign("groupTree",$this->_group_model->getGroupTree());
+        $groupTree = $this->_GROUP->getGroupTree();
+        $this->assign("groupTree",$groupTree['data']);
         $this->assign("nodeTree",array());
         $this->display('node/add.html');
     }
@@ -105,12 +106,15 @@ class NodeControl extends CommonControl
      */
     public function nodeTree()
     {
-        $data = $this->_node_model->getNodeTree($this->_getGroupID());
+        $data = $this->_NODE->getNodeTree($this->_getGroupID());
 
-        $nodeTree = '<option value="" >|-节点菜单</option>';
+        $nodeTree  = null;
+        $nodeTree .= '<select name="pid">';
+        $nodeTree .= '<option value="" >|-节点菜单</option>';
         foreach ($data as $v) {
             $nodeTree .= '<option value="'.$v['id'].'" >&nbsp;|-'.$v['title'].'</option>';
         }
+        $nodeTree .= '</select>';
 
         return array('status'=>0, 'info'=>'', 'data'=>$nodeTree);
     }
@@ -128,15 +132,15 @@ class NodeControl extends CommonControl
         $action = $this->_getAction();
 
         $data = array(
-            'groupid' => $groupid,
+            'groupid' => $pid ? 0 : $groupid,
             'pid'     => $pid,
             'title'   => $title,
             'control' => $control,
             'remark'  => $remark,
             'action'  => $action,
-            'create_time' => TIMESTAMP
+            'createtime' => TIMESTAMP
         );
-        $return = $this->_node_model->saveNode($data);
+        $return = $this->_NODE->saveNode($data);
 
         $this->ajaxReturn(0,'节点添加成功',$return);
     }
@@ -144,6 +148,25 @@ class NodeControl extends CommonControl
     //管理节点
     public function manageNode()
     {
+        list($start,$length) = $this->getPages();
+        $nodeList = $this->_NODE->getNode($start,$length);
+        if ($nodeList['total']) {
+            foreach ($nodeList['data'] as $k => $v) {
+                if ($v['pid']) $res = $this->_NODE->getNodeInfo($v['pid']);
+                $nodeList['data'][$k]['pnode'] = $v['pid']&&isset($res) ? $res['title'] : '';
+                if ($v['groupid']) $res = $this->_GROUP->getGroup($v['pid']);
+                $nodeList['data'][$k]['group'] = $v['groupid']&&isset($res) ? $res[0]['title'] : '';
+            }
+        }
+
+        $this->assign("total", $nodeList['total']);
+        $this->assign("nodeList", $nodeList['data']);
+        dump($nodeList);exit;
+
+        $groupTree = $this->_GROUP->getGroupTree();
+        $this->assign("groupTree",$groupTree['data']);
+
+        $this->assign("page", getPage($nodeList['total'],$this->_pagesize));
         $this->display("node/manage.html");
     }
 }

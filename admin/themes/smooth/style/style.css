@@ -156,7 +156,7 @@ div.color a.greyblue
 #header
 {
 	margin: 0;
-	padding: 10px 60px 0 60px;
+	padding: 0px 60px;
 	background: #b0b0b0 url("../images/header_background.png") repeat;
 }
 
@@ -166,7 +166,9 @@ div.color a.greyblue
 
 #header #logo
 {
-	float: left;	
+	float: left;
+	padding: 10px 20px 0px 20px;
+	background: #b0b0b0 url("../images/header-logo-container.png") left bottom repeat-x;
 }
 
 #header #logo h1
@@ -179,13 +181,13 @@ div.color a.greyblue
 
 #header #logo a
 {
-	color: #ffffff;
+	color: #4E4E4E;
 	text-decoration: none;	
 }
 
 #header #logo a:hover
 {
-	color: #ffffff;
+	color: #4E4E4E;
 }
 
 /* -----------------------------------------------------------
@@ -194,8 +196,8 @@ div.color a.greyblue
 
 #header ul#user
 {
-	margin: 0 0 30px 0;
-	padding: 0;
+	margin: 0 0 15px 0;
+	padding: 10px 0px 0px 0px;
 	float: right;
 }
 
@@ -1671,7 +1673,7 @@ div.form div.fields div.field div.textarea textarea.success
 
 div.form div.fields div.field div.select
 {
-	margin: 0 0 0 200px;
+	margin: 0;
 	padding: 0;
 	float: left;
 }

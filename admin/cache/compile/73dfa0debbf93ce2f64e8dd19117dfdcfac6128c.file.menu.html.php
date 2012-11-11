@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-11-08 23:18:37
+<?php /* Smarty version Smarty-3.1.12, created on 2012-11-11 16:45:45
          compiled from "/usr/local/webserver/site/laugh/admin/themes/smooth/public/menu.html" */ ?>
-<?php /*%%SmartyHeaderCode:169587593509bcd4d4c7f51-10700829%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:665123676509f65b9d7fb06-96804396%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '73dfa0debbf93ce2f64e8dd19117dfdcfac6128c' => 
     array (
       0 => '/usr/local/webserver/site/laugh/admin/themes/smooth/public/menu.html',
-      1 => 1352385751,
+      1 => 1352623526,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '169587593509bcd4d4c7f51-10700829',
+  'nocache_hash' => '665123676509f65b9d7fb06-96804396',
   'function' => 
   array (
   ),
@@ -24,12 +24,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_509bcd4d56c2e9_71317647',
+  'unifunc' => 'content_509f65b9e0f5c7_02866142',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_509bcd4d56c2e9_71317647')) {function content_509bcd4d56c2e9_71317647($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_509f65b9e0f5c7_02866142')) {function content_509f65b9e0f5c7_02866142($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-<div id="content" style="background: url('themes/smooth/images/content.png') repeat-y top left;">
-	<div class="blankhd"></div>
+<div id="content" style="overflow-y:auto;height:100%;background: url('themes/smooth/images/content.png') repeat-y top left;">
 	<!-- end content / left -->
 	<div id="left">
 		<div id="menu">
