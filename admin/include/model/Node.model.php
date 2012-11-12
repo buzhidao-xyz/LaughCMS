@@ -103,4 +103,24 @@ class Node extends Base
         );
         return T('node')->where($where)->find();
     }
+
+    /**
+     * 更新节点信息
+     * @param $id int 节点id
+     * @param $data array() 数据数组
+     */
+    public function upNode($id=null,$data=array())
+    {
+        if (!$id) return false;
+
+        return T('node')->where(array('id'=>$id))->update($data);
+    }
+
+    //删除节点
+    public function delNode($id=null)
+    {
+        if (!$id) return false;
+
+        return T('node')->where(array('id'=>$id))->delete();
+    }
 }

@@ -27,6 +27,15 @@ class NodeControl extends CommonControl
         
     }
 
+    //获取节点id
+    private function _getID()
+    {
+        $id = q('id') ? q('id') : 0;
+        if (!FilterHelper::C_int($id)) $this->ajaxReturn(1,'ID错误！');
+
+        return $id;
+    }
+
     /**
      * 获取组ID
      */
@@ -44,7 +53,7 @@ class NodeControl extends CommonControl
     private function _getPID()
     {
         $pid = q('pid') ? q('pid') : 0;
-        if (!FilterHelper::C_int($pid) && $pid !== 0) $this->ajaxReturn(1,'父节点错误');
+        if ($pid !== 0 && !FilterHelper::C_int($pid)) $this->ajaxReturn(1,'父节点错误');
 
         return $pid;
     }
@@ -135,8 +144,8 @@ class NodeControl extends CommonControl
             'groupid' => $pid ? 0 : $groupid,
             'pid'     => $pid,
             'title'   => $title,
-            'control' => $control,
             'remark'  => $remark,
+            'control' => $control,
             'action'  => $action,
             'createtime' => TIMESTAMP
         );
@@ -154,19 +163,58 @@ class NodeControl extends CommonControl
             foreach ($nodeList['data'] as $k => $v) {
                 if ($v['pid']) $res = $this->_NODE->getNodeInfo($v['pid']);
                 $nodeList['data'][$k]['pnode'] = $v['pid']&&isset($res) ? $res['title'] : '';
-                if ($v['groupid']) $res = $this->_GROUP->getGroup($v['pid']);
+                $nodeList['data'][$k]['groupid'] = $v['pid']&&isset($res) ? $res['groupid'] : $v['groupid'];
+                if ($v['groupid']) $res = $this->_GROUP->getGroup($v['groupid']);
                 $nodeList['data'][$k]['group'] = $v['groupid']&&isset($res) ? $res[0]['title'] : '';
             }
         }
 
         $this->assign("total", $nodeList['total']);
         $this->assign("nodeList", $nodeList['data']);
-        dump($nodeList);exit;
 
         $groupTree = $this->_GROUP->getGroupTree();
         $this->assign("groupTree",$groupTree['data']);
 
         $this->assign("page", getPage($nodeList['total'],$this->_pagesize));
         $this->display("node/manage.html");
+    }
+
+    //修改节点信息
+    public function upNode()
+    {
+        $id = $this->_getID();
+        $groupid = $this->_getGroupID();
+        $pid = $this->_getPID();
+        $title = $this->_getTitle();
+        $control = $this->_getControl();
+        $remark = $this->_getRemark();
+        $action = $this->_getAction();
+
+        $data = array(
+            'groupid' => $pid ? 0 : $groupid,
+            'pid'     => $pid,
+            'title'   => $title,
+            'remark'  => $remark,
+            'control' => $control,
+            'action'  => $action
+        );
+        $return = $this->_NODE->upNode($id,$data);
+        if ($return) {
+            $this->ajaxReturn(0,'节点修改成功！',$return);
+        } else {
+            $this->ajaxReturn(1,'节点修改失败！',$return);
+        }
+    }
+
+    //删除节点
+    public function deleteNode()
+    {
+        $id = $this->_getID();
+        $return = $this->_NODE->delNode($id);
+        if ($return) {
+            $this->ajaxReturn(0,'节点删除成功！',$return);
+        } else {
+            $this->ajaxReturn(1,'节点删除失败！',$return);
+        }
     }
 }

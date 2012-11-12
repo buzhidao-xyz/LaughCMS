@@ -32,7 +32,7 @@ class AccessControl extends BaseControl
         $user = $this->userInfo;
         if (in_array($user['id'], $this->_super_admin)) {
             $node = $this->_NODE->getNode();
-            $node = $this->dealNode($node);
+            $node = $this->dealNode($node['data']);
         } else {
             $roleids = $this->_ROLE->getRole($user['id']);
             if (empty($roleids)) return true;

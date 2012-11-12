@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2012-10-26 17:06:29
+Date: 2012-11-12 17:15:09
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -248,7 +248,7 @@ INSERT INTO `la_node` VALUES ('6', '管理员用户管理', '管理员账号管�
 INSERT INTO `la_node` VALUES ('7', '用户搜索', '搜索用户信息', '', '', '1', '0', '1', '2', '0', '0', '1');
 INSERT INTO `la_node` VALUES ('8', '管理组', '', 'Group', 'manageGroup', '2', '4', '2', '0', '0', '0', '1');
 INSERT INTO `la_node` VALUES ('9', '添加节点', null, 'Node', 'newNode', '1', '5', '0', '0', '0', '0', '1');
-INSERT INTO `la_node` VALUES ('10', '管理节点', null, 'Node', 'manageNode', '2', '5', '0', '0', '0', '0', '1');
+INSERT INTO `la_node` VALUES ('10', '管理节点', '', 'Node', 'manageNode', '0', '5', '0', '0', '1352711650', '0', '1');
 
 -- ----------------------------
 -- Table structure for `la_role`

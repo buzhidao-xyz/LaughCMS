@@ -1,25 +1,4 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-11-12 17:16:56
-         compiled from "C:\xampp\htdocs\laugh\admin\themes\smooth\include\head.html" */ ?>
-<?php /*%%SmartyHeaderCode:2826350a0be883f9304-71686307%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
-$_valid = $_smarty_tpl->decodeProperties(array (
-  'file_dependency' => 
-  array (
-    '6e4aad999ceca1d73e5a16f331a72e8e670a6c1d' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\smooth\\include\\head.html',
-      1 => 1352682482,
-      2 => 'file',
-    ),
-  ),
-  'nocache_hash' => '2826350a0be883f9304-71686307',
-  'function' => 
-  array (
-  ),
-  'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50a0be883ff773_78269444',
-),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50a0be883ff773_78269444')) {function content_50a0be883ff773_78269444($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>Laugh Admin Center</title>
@@ -46,7 +25,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<script src="themes/smooth/js/smooth.dialog.js" type="text/javascript"></script>
 	<script src="themes/smooth/js/smooth.autocomplete.js" type="text/javascript"></script>
 	<script type="text/javascript">
-	var JS_APP = '__APP__';
+	var JS_APP = '/laugh/admin';
 	var style_path = "themes/smooth/style/colors";
 	$(document).ready(function () {
 		$("#box-tabs, #box-left-tabs").tabs();
@@ -54,4 +33,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	</script>
 </head>
 
-<body><?php }} ?>
+<body>
+<table border="0" cellPadding="0" cellSpacing="0" style="width:100%; height:100%; table-layout:fixed;">
+ <tr><td width="265" height="105"></td><td></td></tr>
+ <tr>
+  <td valign="top">
+   <iframe frameborder="0" id="menu" name="menu" width="265px" height="100%" src="/laugh/admin/?s=public/menu&groupid=1" scrolling="none" class="iframe"></iframe>
+  </td>
+  <td valign="top">
+   <iframe frameborder="0" id="main" name="main" width="100%" height="100%" src="/laugh/admin/?s=public/welcome" scrolling="auto" class="iframe" style="overflow-y:scroll;"></iframe>
+  </td>
+ </tr>
+</table>
+<script type="text/javascript" src="themes/smooth/js/div_window.js"></script>
+<script type="text/javascript" src="themes/smooth/js/common.js"></script>
+<script type="text/javascript" src="themes/smooth/js/ajax.js"></script>
+</body>
+</html>

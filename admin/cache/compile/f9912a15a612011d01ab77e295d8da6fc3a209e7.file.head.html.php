@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-11-09 17:13:02
+<?php /* Smarty version Smarty-3.1.12, created on 2012-11-12 17:16:10
          compiled from "C:\xampp\htdocs\laugh\admin\themes\smooth\public\head.html" */ ?>
-<?php /*%%SmartyHeaderCode:26573509cc91e344601-60734545%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1152250a0be5ab236f5-31310126%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'f9912a15a612011d01ab77e295d8da6fc3a209e7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\smooth\\public\\head.html',
-      1 => 1352423930,
+      1 => 1352682482,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '26573509cc91e344601-60734545',
+  'nocache_hash' => '1152250a0be5ab236f5-31310126',
   'function' => 
   array (
   ),
@@ -23,15 +23,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_509cc91e3d2da1_36829963',
+  'unifunc' => 'content_50a0be5abcea35_90653390',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_509cc91e3d2da1_36829963')) {function content_509cc91e3d2da1_36829963($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50a0be5abcea35_90653390')) {function content_50a0be5abcea35_90653390($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <!-- header -->
 <div id="header">
     <!-- logo -->
     <div id="logo">
-        <h1><a href="" title="管理中心">管理中心</a></h1>
+        <h1><a hidefocus="true" href="__APP__/?s=index/body&groupid=0" title="管理中心" target="body">管理中心</a></h1>
     </div>
     <!-- end logo -->
     <!-- user -->
@@ -44,7 +44,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <!-- end user -->
     <div id="header-inner">
         <div id="home">
-            <a href="__APP__/?s=index" title="Home"></a>
+            <a hidefocus="true" href="__APP__/?s=index/body&groupid=0" title="管理中心" target="body"></a>
         </div>
         <!-- quick -->
         <ul id="quick">

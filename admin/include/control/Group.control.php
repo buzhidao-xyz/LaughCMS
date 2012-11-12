@@ -95,4 +95,16 @@ class GroupControl extends CommonControl
         if ($return) $this->ajaxReturn(0, '更新成功');
         else $this->ajaxReturn(1, '更新失败');
     }
+
+    //删除组信息
+    public function deleteGroup()
+    {
+        $id = $this->_getID();
+        $return = $this->_NODE->delGroup($id);
+        if ($return) {
+            $this->ajaxReturn(0,'组删除成功！',$return);
+        } else {
+            $this->ajaxReturn(1,'组删除失败！',$return);
+        }
+    }
 }

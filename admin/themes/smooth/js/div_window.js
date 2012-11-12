@@ -69,13 +69,14 @@ Div_window.prototype.insertvalue = function(param_array){
 			break;
 			
 			case 'select':{
-				thisobj = that.obj.find('select[name='+targetname+']');
-				thisobj.find('option').each(function(){
-					if($(this).val() === val){						
-						$(this).attr('selected','selected');
-						return true;
-					};			
-				})
+				// thisobj = that.obj.find('select[name='+targetname+']');
+				// thisobj.find('option').each(function(){
+				// 	if($(this).val() === val){						
+				// 		$(this).attr('selected','selected');
+				// 		return true;
+				// 	};			
+				// });
+				thisobj = that.obj.find('select[name='+targetname+']').selectmenu('value',val);
 			}
 			break;
 			
@@ -113,7 +114,8 @@ Div_window.prototype.clear = function(){
 	this.obj.find('img').attr('src', '');
 	this.obj.find('select').each(function(){
 		$(this).find('option').eq(0).attr('selected','selected');
-	})
+	});
+	// this.obj.find('select').selectmenu('value',val);
 }
 
 Div_window.prototype.close = function(){

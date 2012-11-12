@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-11-09 17:13:03
+<?php /* Smarty version Smarty-3.1.12, created on 2012-11-12 17:16:56
          compiled from "C:\xampp\htdocs\laugh\admin\themes\smooth\public\menu.html" */ ?>
-<?php /*%%SmartyHeaderCode:2046509cc91fbc8362-05108533%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2544950a0be881d31f7-76956972%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '665003a237122539982b579d0c9aa1e9338d7717' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\smooth\\public\\menu.html',
-      1 => 1352449206,
+      1 => 1352682482,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2046509cc91fbc8362-05108533',
+  'nocache_hash' => '2544950a0be881d31f7-76956972',
   'function' => 
   array (
   ),
@@ -24,11 +24,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_509cc91fcb8f54_07761489',
+  'unifunc' => 'content_50a0be8828d7b0_05900492',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_509cc91fcb8f54_07761489')) {function content_509cc91fcb8f54_07761489($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50a0be8828d7b0_05900492')) {function content_50a0be8828d7b0_05900492($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-<div id="content" style="height:100%;background: url('themes/smooth/images/content.png') repeat-y top left;">
+<div id="content" style="overflow-y:auto;height:100%;background: url('themes/smooth/images/content.png') repeat-y top left;">
 	<!-- end content / left -->
 	<div id="left">
 		<div id="menu">

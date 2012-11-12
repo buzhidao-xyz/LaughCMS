@@ -25,8 +25,8 @@
 			    	<li class="table_list_l table_list_l150">{$d.createtime|mkdate}</li>
 			    	<li class="table_list_l table_list_l80">{if $d.isshow}显{else}隐{/if}</li>
 			    	<li class="table_list_l table_list_l100">
-			    		<a href="javascript:;" name="modify" id="{$d.id}" title="{$d.title}" isshow="{$d.isshow}">修改</a>&nbsp;&nbsp;
-			    		<a delurl="__APP__/Group/deleteGroup" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+			    		<a href="javascript:;" name="modify" id="{$d.id}" title="{$d.title}" remark="{$d.remark}" groupid="{$d.groupid}" pid="{$d.pid}" control="{$d.control}" action="{$d.action}" isshow="{$d.isshow}">修改</a>&nbsp;&nbsp;
+			    		<a delurl="__APP__/?s=Node/deleteNode&id={$d.id}" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 			    	</li>
 			    </ul>
 			    {/foreach}
@@ -101,7 +101,7 @@
 					</div>
 				</div>
 				<div class="buttons">
-					<input type="submit" name="submit" value="添加" />
+					<input type="submit" name="submit" value="修改" />
 				</div>
 			</div>
 		</div>

@@ -74,4 +74,12 @@ class Group extends Base
 
 		return T('group')->where(array('id'=>$id))->update($data);
 	}
+
+	//删除组信息
+	public function delGroup($id=null)
+	{
+		if (!$id) return false;
+
+        return T('group')->where(array('id'=>$id))->delete();
+	}
 }

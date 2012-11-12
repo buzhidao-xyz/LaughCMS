@@ -50,6 +50,11 @@ $(document).ready(function() {
             var param_array = [
             {targetname:'id', val:that.attr('id'), type:'text'},
             {targetname:'title', val:that.attr('title'), type:'text'},
+            {targetname:'remark', val:that.attr('remark'), type:'text'},
+            {targetname:'control', val:that.attr('control'), type:'text'},
+            {targetname:'action', val:that.attr('action'), type:'text'},
+            {targetname:'groupid', val:that.attr('groupid'), type:'select'},
+            {targetname:'pid', val:that.attr('pid'), type:'select'},
             {targetname:'isshow', val:that.attr('isshow'), type:'radio'}
             ];
             if (that.attr('type')) {
@@ -66,7 +71,28 @@ $(document).ready(function() {
                     $(".upblock1").html('').css('display','none');
                 }
             }
-            m_d.insertvalue(param_array).open(e);
+            if ($("select[name=groupid]").length && that.attr('groupid')) {
+                var d = {
+                    c: 'Node',
+                    f: 'nodeTree',
+                    groupid: that.attr('groupid')
+                }
+                $.post(JS_APP+'/?s=AJAX', d, function(data){
+                    $("#nodepid").html(data.data).find('select').selectmenu({
+                        style: 'dropdown',
+                        width: 200,
+                        menuWidth: 200,
+                        icons: [
+                            { find: '.locked', icon: 'ui-icon-locked' },
+                            { find: '.unlocked', icon: 'ui-icon-unlocked' },
+                            { find: '.folder-open', icon: 'ui-icon-folder-open' }
+                        ]
+                    });
+                    m_d.insertvalue(param_array).open(e);
+                },'json')
+            } else {
+                m_d.insertvalue(param_array).open(e);
+            }
         });
         
         $('#modify_div_close').click(function(){

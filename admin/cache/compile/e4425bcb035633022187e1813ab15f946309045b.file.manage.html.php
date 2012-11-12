@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-11-09 17:29:26
+<?php /* Smarty version Smarty-3.1.12, created on 2012-11-12 17:16:22
          compiled from "C:\xampp\htdocs\laugh\admin\themes\smooth\Group\manage.html" */ ?>
-<?php /*%%SmartyHeaderCode:13985509cccf65154c8-25111861%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2256850a0be66e696f7-63497982%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e4425bcb035633022187e1813ab15f946309045b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\smooth\\Group\\manage.html',
-      1 => 1352451790,
+      1 => 1352699474,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '13985509cccf65154c8-25111861',
+  'nocache_hash' => '2256850a0be66e696f7-63497982',
   'function' => 
   array (
   ),
@@ -23,9 +23,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_509cccf65dfb63_38860249',
+  'unifunc' => 'content_50a0be6700f970_58058272',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_509cccf65dfb63_38860249')) {function content_509cccf65dfb63_38860249($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50a0be6700f970_58058272')) {function content_50a0be6700f970_58058272($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div id="content">
 	<div id="control">
@@ -122,7 +122,7 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 					</div>
 				</div>
 				<div class="buttons">
-					<input type="submit" name="submit" value="添加" />
+					<input type="submit" name="submit" value="修改" />
 				</div>
 			</div>
 		</div>
