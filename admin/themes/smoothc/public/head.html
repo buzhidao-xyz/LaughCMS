@@ -1,0 +1,62 @@
+{include file="include/head.html"}
+<!-- header -->
+<div id="header">
+    <!-- logo -->
+    <div id="logo">
+        <h1><a hidefocus="true" href="__APP__/?s=index/body&groupid=0" title="管理中心" target="body">管理中心</a></h1>
+    </div>
+    <!-- end logo -->
+    <!-- user -->
+    <ul id="user">
+        <li class="first">您好 , <em>{$userInfo.username}</em> [ <a target="_top" href="__APP__/?s=index/logout">退出</a> ]</li>
+        <li><a target="_blank" href="__APPM__/?s=index">网站首页</a></li>
+        <li class="last"><a href="javascript:;">网站地图</a></li>
+    </ul>
+    <!-- end user -->
+    <div id="header-inner">
+        <div id="home">
+            <a hidefocus="true" href="__APP__/?s=index/body&groupid=0" title="管理中心" target="body"></a>
+        </div>
+        <!-- quick -->
+        <ul id="quick">
+            <li>
+                <a hidefocus="true" href="__APP__/?s=index/body&groupid=0" title="管理中心" target="body"><span class="normal">管理中心</span></a>
+            </li>
+            {foreach $userAccess as $value}
+            <li>
+                <a href="__APP__/?s=public/body&groupid={$value.id}" title="{$value.title|html_entity_decode}" target="body"><span>{$value.title|html_entity_decode}</span></a>
+                <!--
+                <ul>
+                    <li><a href="#">Manage Products</a></li>
+                    <li><a href="#">Add Product</a></li>
+                    <li>
+                        <a href="#" class="childs">Sales</a>
+                        <ul>
+                            <li><a href="">Today</a></li>
+                            <li class="last"><a href="">Yesterday</a></li>
+                        </ul>
+                    </li>
+                    <li class="last">
+                        <a href="#" class="childs">Offers</a>
+                        <ul>
+                            <li><a href="">Coupon Codes</a></li>
+                            <li class="last"><a href="">Rebates</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                -->
+            </li>
+            {/foreach}
+        </ul>
+        <!-- end quick -->
+        <div class="corner tl"></div>
+        <div class="corner tr"></div>
+    </div>
+</div>
+<!-- end header -->
+<style>
+body {
+    overflow:hidden;
+}
+</style>
+{include file="include/foot.html"}

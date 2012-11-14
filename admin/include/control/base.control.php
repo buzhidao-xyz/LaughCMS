@@ -108,6 +108,12 @@ class BaseControl
         $this->_template->assign($key,$value);
     }
 
+    //fetch
+    protected function fetch($tpl)
+    {
+        return $this->_template->fetch($tpl);
+    }
+
     /**
      * 解析模版
      * @param $tpl string 模版字符串 

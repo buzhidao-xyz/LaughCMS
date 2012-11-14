@@ -1,9 +1,8 @@
-{include file="include/head.html"}
 <!-- header -->
 <div id="header">
     <!-- logo -->
     <div id="logo">
-        <h1><a hidefocus="true" href="__APP__/?s=index/body&groupid=0" title="管理中心" target="body">管理中心</a></h1>
+        <h1><a hidefocus="true" href="__APP__/?s=index" title="管理中心">管理中心</a></h1>
     </div>
     <!-- end logo -->
     <!-- user -->
@@ -15,16 +14,16 @@
     <!-- end user -->
     <div id="header-inner">
         <div id="home">
-            <a hidefocus="true" href="__APP__/?s=index/body&groupid=0" title="管理中心" target="body"></a>
+            <a hidefocus="true" href="javascript:;" groupid="0" title="管理中心" target="body"></a>
         </div>
         <!-- quick -->
         <ul id="quick">
             <li>
-                <a hidefocus="true" href="__APP__/?s=index/body&groupid=0" title="管理中心" target="body"><span class="normal">管理中心</span></a>
+                <a hidefocus="true" href="javascript:;" groupid="0" title="管理中心" class="navHeadMenu"><span class="normal">管理中心</span></a>
             </li>
             {foreach $userAccess as $value}
             <li>
-                <a href="__APP__/?s=public/body&groupid={$value.id}" title="{$value.title|html_entity_decode}" target="body"><span>{$value.title|html_entity_decode}</span></a>
+                <a href="javascript:;" groupid="{$value.id}" title="{$value.title|html_entity_decode}" class="navHeadMenu"><span>{$value.title|html_entity_decode}</span></a>
                 <!--
                 <ul>
                     <li><a href="#">Manage Products</a></li>
@@ -54,9 +53,3 @@
     </div>
 </div>
 <!-- end header -->
-<style>
-body {
-    overflow:hidden;
-}
-</style>
-{include file="include/foot.html"}

@@ -1,0 +1,34 @@
+{include file="include/head.html"}
+<div id="content" style="overflow-y:auto;height:100%;background: url('themes/smooth/images/content.png') repeat-y top left;">
+	<!-- end content / left -->
+	<div id="left">
+		<div id="menu">
+        	{foreach $menu as $k=>$m}
+			<h6 id="h-menu-menu{$k}"><a href="javascript:;" submenu="#menu{$k}"><span>{$m.title}</span></a></h6>
+			{if array_key_exists('cnode',$m)}
+			<ul id="menu-menu{$k}" class="closed">
+				{foreach $m.cnode as $m1}
+				<li><a target="main" hidefocus="true" href="__APP__/?s={$m1.control}/{$m1.action}" class="">{$m1.title|html_entity_decode}</a></li>
+				{/foreach}
+				<!--
+				<li class="collapsible last">
+					<a href="#" class="plus">Offers</a>
+					<ul class="collapsed">
+						<li><a href="">Coupon Codes</a></li>
+						<li class="last"><a href="">Rebates</a></li>
+					</ul>
+				</li>
+				-->
+			</ul>
+			{/if}
+        	{/foreach}
+		</div>
+	</div>
+	<!-- end content / left -->
+</div>
+<style type="text/css">
+body {
+	overflow-x:hidden;
+}
+</style>
+{include file="include/foot.html"}

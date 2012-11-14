@@ -38,28 +38,22 @@ class PublicControl extends CommonControl
     }
 
     /**
-     * body页
-     */
-    public function body()
-    {
-        $groupid = $this->_getGroupid();
-        $this->assign("groupid", $groupid);
-        $this->display('public/body.html');
-    }
-
-    /**
      * 菜单
      */
     public function menu()
     {
-        $menu = $this->getGroup($this->_getGroupid());
+        $groupid = $this->_getGroupid();
+        $this->assign("groupid", $groupid);
 
+        $menu = $this->getGroup($groupid);
         if (is_array($menu) && !empty($menu)) {
             $this->assign('menu',$menu['cnode']);
-            $this->display('public/menu.html');
+            $html = $this->fetch('public/menu.html');
         } else {
-            $this->display('public/menu_index.html');
+            $html = $this->fetch('public/menu_index.html');
         }
+
+        $this->ajaxReturn(0,'OK',$html);
     }
 
     /**

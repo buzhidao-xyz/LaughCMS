@@ -21,9 +21,9 @@ $(document).ready(function () {
         return false;
     });
 
-    $("#menu h6 a").click(function () {
+    $("#menu h6 a").live('click', function () {
         var link = $(this);
-        var value = link.attr("href");
+        var value = link.attr("submenu");
         var id = value.substring(value.indexOf('#') + 1);
 
         var heading = $("#h-menu-" + id);

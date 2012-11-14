@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-11-12 17:16:10
+<?php /* Smarty version Smarty-3.1.12, created on 2012-11-14 17:26:53
          compiled from "C:\xampp\htdocs\laugh\admin\themes\smooth\public\head.html" */ ?>
-<?php /*%%SmartyHeaderCode:1152250a0be5ab236f5-31310126%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1722650a363dd6fb169-41721442%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'f9912a15a612011d01ab77e295d8da6fc3a209e7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\smooth\\public\\head.html',
-      1 => 1352682482,
+      1 => 1352885009,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1152250a0be5ab236f5-31310126',
+  'nocache_hash' => '1722650a363dd6fb169-41721442',
   'function' => 
   array (
   ),
@@ -23,15 +23,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50a0be5abcea35_90653390',
+  'unifunc' => 'content_50a363dd73da44_68400187',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50a0be5abcea35_90653390')) {function content_50a0be5abcea35_90653390($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
-
-<!-- header -->
+<?php if ($_valid && !is_callable('content_50a363dd73da44_68400187')) {function content_50a363dd73da44_68400187($_smarty_tpl) {?><!-- header -->
 <div id="header">
     <!-- logo -->
     <div id="logo">
-        <h1><a hidefocus="true" href="__APP__/?s=index/body&groupid=0" title="管理中心" target="body">管理中心</a></h1>
+        <h1><a hidefocus="true" href="__APP__/?s=index" title="管理中心">管理中心</a></h1>
     </div>
     <!-- end logo -->
     <!-- user -->
@@ -44,12 +42,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <!-- end user -->
     <div id="header-inner">
         <div id="home">
-            <a hidefocus="true" href="__APP__/?s=index/body&groupid=0" title="管理中心" target="body"></a>
+            <a hidefocus="true" href="javascript:;" groupid="0" title="管理中心" target="body"></a>
         </div>
         <!-- quick -->
         <ul id="quick">
             <li>
-                <a hidefocus="true" href="__APP__/?s=index/body&groupid=0" title="管理中心" target="body"><span class="normal">管理中心</span></a>
+                <a hidefocus="true" href="javascript:;" groupid="0" title="管理中心" class="navHeadMenu"><span class="normal">管理中心</span></a>
             </li>
             <?php  $_smarty_tpl->tpl_vars['value'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['value']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['userAccess']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -57,9 +55,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars['value']->key => $_smarty_tpl->tpl_var
 $_smarty_tpl->tpl_vars['value']->_loop = true;
 ?>
             <li>
-                <a href="__APP__/?s=public/body&groupid=<?php echo $_smarty_tpl->tpl_vars['value']->value['id'];?>
+                <a href="javascript:;" groupid="<?php echo $_smarty_tpl->tpl_vars['value']->value['id'];?>
 " title="<?php echo html_entity_decode($_smarty_tpl->tpl_vars['value']->value['title']);?>
-" target="body"><span><?php echo html_entity_decode($_smarty_tpl->tpl_vars['value']->value['title']);?>
+" class="navHeadMenu"><span><?php echo html_entity_decode($_smarty_tpl->tpl_vars['value']->value['title']);?>
 </span></a>
                 <!--
                 <ul>
@@ -89,11 +87,4 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
         <div class="corner tr"></div>
     </div>
 </div>
-<!-- end header -->
-<style>
-body {
-    overflow:hidden;
-}
-</style>
-<?php echo $_smarty_tpl->getSubTemplate ("include/foot.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
-<?php }} ?>
+<!-- end header --><?php }} ?>

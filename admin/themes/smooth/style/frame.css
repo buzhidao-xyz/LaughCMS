@@ -1,0 +1,62 @@
+* {
+	margin:0;
+	padding:0;
+}
+html, body{
+	height:100%;
+	overflow:hidden;
+}
+#header{
+	position:absolute;
+	top:0;
+	left:0px;
+	right:0px;
+	height:94px;
+}
+#menuTree{
+	position:absolute;
+	top:100px;
+	left:0;
+	bottom:20px;
+	width:265px;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+#main{
+	position:absolute;
+	top:100px;
+	left:265px;
+	bottom:20px;
+	right:0;
+	overflow-x: hidden;
+    overflow-y: auto;
+}
+#main iframe{
+	width:100%;
+	height:100%;
+}
+#stateBar{
+	position:absolute;
+	left:0;
+	right:0;
+	bottom:0;
+	height:20px;
+}
+
+/*---ie6---*/
+html {
+	*padding:70px 10px;
+}
+#header{
+	*position:relative;
+	*height:50px;
+	*margin-top:-60px;
+	*margin-bottom:10px;
+	*top:0;
+	*right:0;
+	*bottom:0;
+	*left:0;
+}
+.side{*position:relative;*float:left;*width:200px;*height:100%;*top:0; *right:0; *bottom:0; *left:0;}
+.main{*position:relative;*height:100%;*margin-left:207px;*top:0; *right:0; *bottom:0; *left:0;}
+.bottom{*position:relative;*height:50px;*margin-top:10px;*top:0; *right:0; *bottom:0; *left:0;}

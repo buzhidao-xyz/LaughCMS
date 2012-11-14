@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-11-12 17:16:56
+<?php /* Smarty version Smarty-3.1.12, created on 2012-11-14 17:25:46
          compiled from "C:\xampp\htdocs\laugh\admin\themes\smooth\public\menu.html" */ ?>
-<?php /*%%SmartyHeaderCode:2544950a0be881d31f7-76956972%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:922350a3639a519e50-13477143%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '665003a237122539982b579d0c9aa1e9338d7717' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\smooth\\public\\menu.html',
-      1 => 1352682482,
+      1 => 1352882697,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2544950a0be881d31f7-76956972',
+  'nocache_hash' => '922350a3639a519e50-13477143',
   'function' => 
   array (
   ),
@@ -24,11 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50a0be8828d7b0_05900492',
+  'unifunc' => 'content_50a3639a5c1f86_15629568',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50a0be8828d7b0_05900492')) {function content_50a0be8828d7b0_05900492($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
-
-<div id="content" style="overflow-y:auto;height:100%;background: url('themes/smooth/images/content.png') repeat-y top left;">
+<?php if ($_valid && !is_callable('content_50a3639a5c1f86_15629568')) {function content_50a3639a5c1f86_15629568($_smarty_tpl) {?><div id="content" style="overflow-y:auto;height:100%;background: url('themes/smooth/images/content.png') repeat-y top left;">
 	<!-- end content / left -->
 	<div id="left">
 		<div id="menu">
@@ -40,7 +38,7 @@ $_smarty_tpl->tpl_vars['m']->_loop = true;
  $_smarty_tpl->tpl_vars['k']->value = $_smarty_tpl->tpl_vars['m']->key;
 ?>
 			<h6 id="h-menu-menu<?php echo $_smarty_tpl->tpl_vars['k']->value;?>
-"><a href="javascript:#menu<?php echo $_smarty_tpl->tpl_vars['k']->value;?>
+"><a href="javascript:;" submenu="#menu<?php echo $_smarty_tpl->tpl_vars['k']->value;?>
 "><span><?php echo $_smarty_tpl->tpl_vars['m']->value['title'];?>
 </span></a></h6>
 			<?php if (array_key_exists('cnode',$_smarty_tpl->tpl_vars['m']->value)){?>
@@ -71,6 +69,4 @@ $_smarty_tpl->tpl_vars['m1']->_loop = true;
 		</div>
 	</div>
 	<!-- end content / left -->
-</div>
-<?php echo $_smarty_tpl->getSubTemplate ("include/foot.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
-<?php }} ?>
+</div><?php }} ?>

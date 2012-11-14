@@ -38,7 +38,7 @@
 	<div id="control">
 		<div class="box">
 			<div class="title">
-				<h5>节点列表 【目前共有10条数据】</h5>
+				<h5>节点列表 【目前共有14条数据】</h5>
 			</div>
 			<div class="table">
 				<ul class="table_list_title">
@@ -170,9 +170,57 @@
 			    		<a delurl="/laugh/admin/?s=Node/deleteNode&id=10" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 			    	</li>
 			    </ul>
+			    			    <ul class="table_list">
+					<li class="table_list_l table_list_l150">角色添加</li>
+					<li class="table_list_l table_list_l200" tooltip=1 title=""></li>
+			    	<li class="table_list_l table_list_l100">Role</li>
+			    	<li class="table_list_l table_list_l120">newRole</li>
+			    	<li class="table_list_l table_list_l150">2012-11-14 09:23:34</li>
+			    	<li class="table_list_l table_list_l80">显</li>
+			    	<li class="table_list_l table_list_l100">
+			    		<a href="javascript:;" name="modify" id="11" title="角色添加" remark="" groupid="1" pid="2" control="Role" action="newRole" isshow="1">修改</a>&nbsp;&nbsp;
+			    		<a delurl="/laugh/admin/?s=Node/deleteNode&id=11" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+			    	</li>
+			    </ul>
+			    			    <ul class="table_list">
+					<li class="table_list_l table_list_l150">管理角色</li>
+					<li class="table_list_l table_list_l200" tooltip=1 title=""></li>
+			    	<li class="table_list_l table_list_l100">Role</li>
+			    	<li class="table_list_l table_list_l120">manageRole</li>
+			    	<li class="table_list_l table_list_l150">2012-11-14 09:23:58</li>
+			    	<li class="table_list_l table_list_l80">显</li>
+			    	<li class="table_list_l table_list_l100">
+			    		<a href="javascript:;" name="modify" id="12" title="管理角色" remark="" groupid="1" pid="2" control="Role" action="manageRole" isshow="1">修改</a>&nbsp;&nbsp;
+			    		<a delurl="/laugh/admin/?s=Node/deleteNode&id=12" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+			    	</li>
+			    </ul>
+			    			    <ul class="table_list">
+					<li class="table_list_l table_list_l150">日志列表</li>
+					<li class="table_list_l table_list_l200" tooltip=1 title=""></li>
+			    	<li class="table_list_l table_list_l100">Log</li>
+			    	<li class="table_list_l table_list_l120">Index</li>
+			    	<li class="table_list_l table_list_l150">2012-11-14 09:45:54</li>
+			    	<li class="table_list_l table_list_l80">显</li>
+			    	<li class="table_list_l table_list_l100">
+			    		<a href="javascript:;" name="modify" id="13" title="日志列表" remark="" groupid="1" pid="3" control="Log" action="Index" isshow="1">修改</a>&nbsp;&nbsp;
+			    		<a delurl="/laugh/admin/?s=Node/deleteNode&id=13" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+			    	</li>
+			    </ul>
+			    			    <ul class="table_list">
+					<li class="table_list_l table_list_l150">管理员列表</li>
+					<li class="table_list_l table_list_l200" tooltip=1 title=""></li>
+			    	<li class="table_list_l table_list_l100">Admin</li>
+			    	<li class="table_list_l table_list_l120">adminList</li>
+			    	<li class="table_list_l table_list_l150">2012-11-14 10:08:34</li>
+			    	<li class="table_list_l table_list_l80">显</li>
+			    	<li class="table_list_l table_list_l100">
+			    		<a href="javascript:;" name="modify" id="14" title="管理员列表" remark="" groupid="1" pid="6" control="Admin" action="adminList" isshow="1">修改</a>&nbsp;&nbsp;
+			    		<a delurl="/laugh/admin/?s=Node/deleteNode&id=14" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+			    	</li>
+			    </ul>
 			    			        			<div class="pagination pagination-left">
 	<div class="results">
-		<span>显示数据 1-10 / 10</span>
+		<span>显示数据 1-14 / 14</span>
 	</div>
 	</div>
 			</div>

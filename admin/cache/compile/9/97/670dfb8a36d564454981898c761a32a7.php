@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 	<title>Laugh Admin Center</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
@@ -198,17 +198,112 @@ $("#sitemap_title").mousedown(function() {
 -->
 </script>
 
+<link rel="stylesheet" type="text/css" href="themes/smooth/style/frame.css" />
 <div id="colors-switcher" class="color">
-	<a href="" class="blue" title="Blue"></a>
-	<a href="" class="green" title="Green"></a>
-	<a href="" class="brown" title="Brown"></a>
-	<a href="" class="purple" title="Purple"></a>
-	<a href="" class="red" title="Red"></a>
-	<a href="" class="greyblue" title="GreyBlue"></a>
+	<a href="javascript:;" class="blue" title="Blue"></a>
+	<a href="javascript:;" class="green" title="Green"></a>
+	<a href="javascript:;" class="brown" title="Brown"></a>
+	<a href="javascript:;" class="purple" title="Purple"></a>
+	<a href="javascript:;" class="red" title="Red"></a>
+	<a href="javascript:;" class="greyblue" title="GreyBlue"></a>
 </div>
-<iframe frameborder="0" id="head" name="head" src="/laugh/admin/?s=public/head" scrolling="no" style="position:absolute; width:100%; height:95px; visibility:inherit; z-index:1; overflow:auto;">
-</iframe>
-<iframe frameborder="0" id="body" name="body" src="/laugh/admin/?s=public/body" scrolling="no" style="width:100%; height:100%; z-index:1; overflow:auto;">
+<!-- header -->
+<div id="header">
+    <!-- logo -->
+    <div id="logo">
+        <h1><a hidefocus="true" href="/laugh/admin/?s=index" title="管理中心">管理中心</a></h1>
+    </div>
+    <!-- end logo -->
+    <!-- user -->
+    <ul id="user">
+        <li class="first">您好 , <em>admin</em> [ <a target="_top" href="/laugh/admin/?s=index/logout">退出</a> ]</li>
+        <li><a target="_blank" href="/laugh/?s=index">网站首页</a></li>
+        <li class="last"><a href="javascript:;">网站地图</a></li>
+    </ul>
+    <!-- end user -->
+    <div id="header-inner">
+        <div id="home">
+            <a hidefocus="true" href="javascript:;" groupid="0" title="管理中心" target="body"></a>
+        </div>
+        <!-- quick -->
+        <ul id="quick">
+            <li>
+                <a hidefocus="true" href="javascript:;" groupid="0" title="管理中心" class="navHeadMenu"><span class="normal">管理中心</span></a>
+            </li>
+                        <li>
+                <a href="javascript:;" groupid="1" title="系统管理" class="navHeadMenu"><span>系统管理</span></a>
+                <!--
+                <ul>
+                    <li><a href="#">Manage Products</a></li>
+                    <li><a href="#">Add Product</a></li>
+                    <li>
+                        <a href="#" class="childs">Sales</a>
+                        <ul>
+                            <li><a href="">Today</a></li>
+                            <li class="last"><a href="">Yesterday</a></li>
+                        </ul>
+                    </li>
+                    <li class="last">
+                        <a href="#" class="childs">Offers</a>
+                        <ul>
+                            <li><a href="">Coupon Codes</a></li>
+                            <li class="last"><a href="">Rebates</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                -->
+            </li>
+                        <li>
+                <a href="javascript:;" groupid="2" title="用户中心" class="navHeadMenu"><span>用户中心</span></a>
+                <!--
+                <ul>
+                    <li><a href="#">Manage Products</a></li>
+                    <li><a href="#">Add Product</a></li>
+                    <li>
+                        <a href="#" class="childs">Sales</a>
+                        <ul>
+                            <li><a href="">Today</a></li>
+                            <li class="last"><a href="">Yesterday</a></li>
+                        </ul>
+                    </li>
+                    <li class="last">
+                        <a href="#" class="childs">Offers</a>
+                        <ul>
+                            <li><a href="">Coupon Codes</a></li>
+                            <li class="last"><a href="">Rebates</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                -->
+            </li>
+                    </ul>
+        <!-- end quick -->
+        <div class="corner tl"></div>
+        <div class="corner tr"></div>
+    </div>
+</div>
+<!-- end header -->
+<div id="menuTree">
+	<!-- content -->
+<div id="content" style="overflow-y:auto;height:100%;background: url('themes/smooth/images/content.png') repeat-y top left;">
+	<!-- end content / left -->
+	<div id="left">
+		<div id="menu">
+			<h6 id="h-menu-menu1" class="selected"><a target="main" hidefocus="true" href="javascript:;" submenu="#menu1"><span>基本信息</span></a></h6>
+			<ul id="menu-menu1" class="opend">
+				<li><a target="main" hidefocus="true" href="javascript:;" class="">个人信息</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- end content / left -->
+</div>
+</div>
+<div id="main">
+	<iframe frameborder="0" name="main" src="/laugh/admin/?s=public/welcome"></iframe>
+</div>
+<div id="stateBar">
+	
+</div>
 </iframe>
 <style>
 body {

@@ -4,6 +4,18 @@
  */
 $(document).ready(function() {
 	//添加新组/节点
+	$("a.navHeadMenu").click(function (){
+		var d = {
+			c: 'Public',
+			f: 'menu',
+			groupid: $(this).attr('groupid')
+		}
+		$.post(JS_APP+'/?s=AJAX', d, function(data){
+			$("#menuTree").html(data.data);
+		},'json')
+	});
+
+	//添加新组/节点
 	$("select[name=groupid]").change(function (){
 		var d = {
 			c: 'Node',

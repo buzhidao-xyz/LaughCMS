@@ -1,0 +1,75 @@
+{include file="include/head.html"}
+<div id="content">
+	<div id="control">
+		<div class="box">
+			<div class="title">
+				<h5>新节点表单</h5>
+			</div>
+			<form name="newform" action="__APP__/?s=Node/saveNode" method="post" id="addajaxform">
+			<div class="form">
+				<div class="fields">
+					<div class="field  field-first">
+						<div class="label">
+							<label for="select">组:</label>
+						</div>
+						<div class="select">
+							<select id="select" name="groupid">
+								<option value="" >|-组菜单</option>
+								{foreach $groupTree as $g}
+								<option value="{$g.id}">&nbsp;|-{$g.title}</option>
+								{/foreach}
+							</select>
+						</div>
+					</div>
+					<div class="field">
+						<div class="label">
+							<label for="select">父节点:</label>
+						</div>
+						<div class="select" id="nodepid">
+							<select name="pid">
+								<option value="" >|-节点菜单</option>
+							</select>
+						</div>
+					</div>
+					<div class="field">
+						<div class="label">
+							<label for="input-small">名称:</label>
+						</div>
+						<div class="input" style="float:left;">
+							<input type="text" id="input-small" name="title" class="small" />
+						</div>
+					</div>
+					<div class="field">
+						<div class="label">
+							<label for="input-small">描述:</label>
+						</div>
+						<div class="input" style="float:left;">
+							<input type="text" id="input-small" name="remark" class="small" />
+						</div>
+					</div>
+					<div class="field">
+						<div class="label">
+							<label for="input-small">Control:</label>
+						</div>
+						<div class="input" style="float:left;">
+							<input type="text" id="input-small" name="control" class="small" />
+						</div>
+					</div>
+					<div class="field">
+						<div class="label">
+							<label for="input-small">Action:</label>
+						</div>
+						<div class="input" style="float:left;">
+							<input type="text" id="input-small" name="action" class="small" />
+						</div>
+					</div>
+					<div class="buttons">
+						<input type="submit" name="submit" value="添加" />
+					</div>
+				</div>
+			</div>
+			</form>
+		</div>
+	</div>
+</div>
+{include file="include/foot.html"}

@@ -150,7 +150,6 @@ class NodeControl extends CommonControl
             'createtime' => TIMESTAMP
         );
         $return = $this->_NODE->saveNode($data);
-
         $this->ajaxReturn(0,'节点添加成功',$return);
     }
 
