@@ -16,10 +16,9 @@ $(document).ready(function() {
      * 更改左侧菜单选中背景样式
      * 更新顶部链接地址说明(navlink)内容
      */
-    $(".menu ul li a").click(function() {
-        var that = $(top.frames["head"].document.body).contents();
-        var hnavlink = that.find("ul.hmenu li.navon em a").html();
-        that.find("#navlink p").html(hnavlink+'&nbsp;&gt;&nbsp;'+$(this).html()+'&nbsp;');
+    $(".menu ul li a").live('click', function() {
+        var hnavlink = $("#header").find("ul.hmenu li.navon em a").html();
+        $("#header").find("#navlink p").html(hnavlink+'&nbsp;&gt;&nbsp;'+$(this).html()+'&nbsp;');
 
         var thisp = $(this).parent().parent().find(".menusub");
         if (thisp.css('display') == 'block') {
@@ -28,8 +27,8 @@ $(document).ready(function() {
             thisp.css('display','block');
         }
     });
-    $(".menu .menusub li a").click(function() {
-        var that = $(top.frames["head"].document.body).contents();
+    $(".menu .menusub li a").live('click', function() {
+        var that = $("#header");
         var hnavlink = that.find("ul.hmenu li.navon em a").html();
         var pnavlink = $(this).parent().parent().parent().find("div:first a").html();
         that.find("#navlink p").html(hnavlink+'&nbsp;&gt;&nbsp;'+pnavlink+'&nbsp;&gt;&nbsp;'+$(this).html()+'&nbsp;');

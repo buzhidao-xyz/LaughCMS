@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-11-11 15:15:01
+<?php /* Smarty version Smarty-3.1.12, created on 2012-11-14 23:10:36
          compiled from "/usr/local/webserver/site/laugh/admin/themes/smooth/Group/manage.html" */ ?>
-<?php /*%%SmartyHeaderCode:1099635702509f5075320864-64860274%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:165316860350a3b46c581d02-04607537%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '7d64ffdb13cf6d7837c44eba92a3170df20cd526' => 
     array (
       0 => '/usr/local/webserver/site/laugh/admin/themes/smooth/Group/manage.html',
-      1 => 1352550549,
+      1 => 1352899196,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1099635702509f5075320864-64860274',
+  'nocache_hash' => '165316860350a3b46c581d02-04607537',
   'function' => 
   array (
   ),
@@ -23,9 +23,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_509f50753cf852_55559799',
+  'unifunc' => 'content_50a3b46c631954_65613423',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_509f50753cf852_55559799')) {function content_509f50753cf852_55559799($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50a3b46c631954_65613423')) {function content_50a3b46c631954_65613423($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div id="content">
 	<div id="control">
@@ -122,7 +122,7 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 					</div>
 				</div>
 				<div class="buttons">
-					<input type="submit" name="submit" value="添加" />
+					<input type="submit" name="submit" value="修改" />
 				</div>
 			</div>
 		</div>

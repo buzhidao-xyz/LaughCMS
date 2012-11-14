@@ -207,8 +207,9 @@ class Template extends SmartyBC
 	     self::$_path = FileCache::compile(self::$_template, $view, array('life_time'=>self::$_life_time, 'cache_dir'=>'compile'));
 	}
 
-	public function display($template = null, $cache_id = null, $compile_id = null, $parent = null)
-	{
+    //fetch
+    public function fetchd($template = null, $cache_id = null, $compile_id = null, $parent = null)
+    {
         global $data;
 
         $view = isset($view) ? $view : '';
@@ -229,6 +230,13 @@ class Template extends SmartyBC
         }
 
         $view = str_replace($this->_constant_key, $this->_constant_value, $view);
+
+        return $view;
+    }
+
+	public function display($template = null, $cache_id = null, $compile_id = null, $parent = null)
+	{
+        $view = $this->fetchd($template,$cache_id,$compile_id,$parent);
         self::_compile($view);
 
         include_once(self::$_path);

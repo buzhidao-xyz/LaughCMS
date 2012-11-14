@@ -111,7 +111,7 @@ class BaseControl
     //fetch
     protected function fetch($tpl)
     {
-        return $this->_template->fetch($tpl);
+        return $this->_template->fetchd($tpl);
     }
 
     /**

@@ -28,7 +28,7 @@
 #header #header-inner ul#quick li span
 {
 	background: url("../../images/colors/greyblue/quick_r.png") no-repeat top right;
-	border-left: 1px solid #5a6f84;
+	/*border-left: 1px solid #5a6f84;*/
 }
 
 #header #header-inner ul#quick li span.icon
@@ -107,7 +107,7 @@
 
 #content #left #menu li a
 {
-	background: url("../../images/colors/greyblue/menu_arrow.png") no-repeat 0 9px;	
+	background: url("../../images/colors/greyblue/menu_arrow.png") no-repeat left center;
 }
 
 #content #left #menu li a:hover

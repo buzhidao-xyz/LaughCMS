@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-11-11 16:45:45
+<?php /* Smarty version Smarty-3.1.12, created on 2012-11-14 23:10:33
          compiled from "/usr/local/webserver/site/laugh/admin/themes/smooth/public/menu.html" */ ?>
-<?php /*%%SmartyHeaderCode:665123676509f65b9d7fb06-96804396%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:185944512150a3b469abe8c8-63051160%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '73dfa0debbf93ce2f64e8dd19117dfdcfac6128c' => 
     array (
       0 => '/usr/local/webserver/site/laugh/admin/themes/smooth/public/menu.html',
-      1 => 1352623526,
+      1 => 1352899196,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '665123676509f65b9d7fb06-96804396',
+  'nocache_hash' => '185944512150a3b469abe8c8-63051160',
   'function' => 
   array (
   ),
@@ -24,11 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_509f65b9e0f5c7_02866142',
+  'unifunc' => 'content_50a3b469b41329_80751718',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_509f65b9e0f5c7_02866142')) {function content_509f65b9e0f5c7_02866142($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
-
-<div id="content" style="overflow-y:auto;height:100%;background: url('themes/smooth/images/content.png') repeat-y top left;">
+<?php if ($_valid && !is_callable('content_50a3b469b41329_80751718')) {function content_50a3b469b41329_80751718($_smarty_tpl) {?><div id="content" style="overflow-y:auto;height:100%;background: url('themes/smooth/images/content.png') repeat-y top left;">
 	<!-- end content / left -->
 	<div id="left">
 		<div id="menu">
@@ -40,7 +38,7 @@ $_smarty_tpl->tpl_vars['m']->_loop = true;
  $_smarty_tpl->tpl_vars['k']->value = $_smarty_tpl->tpl_vars['m']->key;
 ?>
 			<h6 id="h-menu-menu<?php echo $_smarty_tpl->tpl_vars['k']->value;?>
-"><a href="javascript:#menu<?php echo $_smarty_tpl->tpl_vars['k']->value;?>
+"><a href="javascript:;" submenu="#menu<?php echo $_smarty_tpl->tpl_vars['k']->value;?>
 "><span><?php echo $_smarty_tpl->tpl_vars['m']->value['title'];?>
 </span></a></h6>
 			<?php if (array_key_exists('cnode',$_smarty_tpl->tpl_vars['m']->value)){?>
@@ -71,6 +69,4 @@ $_smarty_tpl->tpl_vars['m1']->_loop = true;
 		</div>
 	</div>
 	<!-- end content / left -->
-</div>
-<?php echo $_smarty_tpl->getSubTemplate ("include/foot.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
-<?php }} ?>
+</div><?php }} ?>

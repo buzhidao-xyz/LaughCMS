@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-11-11 17:15:04
+<?php /* Smarty version Smarty-3.1.12, created on 2012-11-14 23:17:38
          compiled from "/usr/local/webserver/site/laugh/admin/themes/smooth/include/foot.html" */ ?>
-<?php /*%%SmartyHeaderCode:557573483509f6c9863f1a3-16952463%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:81956853250a3b612e176d6-13504925%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,15 +11,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '557573483509f6c9863f1a3-16952463',
+  'nocache_hash' => '81956853250a3b612e176d6-13504925',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_509f6c98641a54_61667633',
+  'unifunc' => 'content_50a3b612e193e1_62047000',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_509f6c98641a54_61667633')) {function content_509f6c98641a54_61667633($_smarty_tpl) {?><script type="text/javascript" src="themes/smooth/js/div_window.js"></script>
+<?php if ($_valid && !is_callable('content_50a3b612e193e1_62047000')) {function content_50a3b612e193e1_62047000($_smarty_tpl) {?><script type="text/javascript" src="themes/smooth/js/div_window.js"></script>
 <script type="text/javascript" src="themes/smooth/js/common.js"></script>
 <script type="text/javascript" src="themes/smooth/js/ajax.js"></script>
 </body>
