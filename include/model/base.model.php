@@ -32,4 +32,28 @@ class Base
         
         return $return;
     }
+    
+    /**
+     * 获取文件内容
+     * @param $f 文件位置
+     * @param $m 0:以字符串方式读取 1:以数组方式读取 默认为0
+     */
+    static protected function _getFile($f,$m=0)
+    {
+        $content = null;
+        
+        if (!$m) {
+            $content = file_exists($f)?file_get_contents($f):'';
+        } else {
+            $h = @fopen($f,'r');
+            if ($h) {
+                while ($l = fgets($h)) {
+                    $content[] = $l;
+                }
+            }
+            fclose($h);
+        }
+        
+        return $content;
+    }
 }

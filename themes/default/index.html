@@ -1,9 +1,9 @@
 <div>
  This is the index.html
 </div>
-{foreach name=data.content key=value}
-<div>{value}</div>
-{end}
+{foreach $data as $d}
+<div>{$d}</div>
+{/foreach}
 <script language="javascript">
 $(document).ready(function(){
     var d = {

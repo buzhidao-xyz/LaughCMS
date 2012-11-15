@@ -18,37 +18,37 @@ class LogsControl extends CommonControl
     /**
      * log内容
      */
-    static private $_log_content = array();
+    static private $_logContent = array();
     
     /**
      * log文件
      */
-    static private $_log_file = null;
+    static private $_logFile = null;
     
     public function __construct()
     {
-        
+        parent::__construct();
     }
     
     /**
      * Log控制器主入口 
      */
-    static public function index()
+    public function index()
     {   
         list($u,$p) = self::_get();
         Logs::checkLog($u,$p);
         
         $f = g('f');
-        $log_file = $f ? $f : self::$_log_file;
+        $logFile = $f ? $f : self::$_logFile;
         
         ob_flush();
-        $log_content = Logs::_getLog($f);
-        $log_content = $log_content ? $log_content : self::$_log_content;
+        $logContent = Logs::_getLog($f);
+        $logContent = $logContent ? $logContent : self::$_logContent;
         
-        assign("logfile", $log_file);
-        assign('logcontent', $log_content);
+        $this->assign("logfile", $logFile);
+        $this->assign('logcontent', $logContent);
         
-        Template::display('logs.index.html');
+        $this->display('Log/index.html');
     }
     
     /**
@@ -57,7 +57,7 @@ class LogsControl extends CommonControl
     static public function backup()
     {
         Logs::_backup();
-        header("location:?r=logs");
+        header("location:?s=logs");
     }
     
     /**
@@ -66,19 +66,19 @@ class LogsControl extends CommonControl
     static public function clear()
     {
         Logs::_clear();
-        header("location:?r=logs");
+        header("location:?s=logs");
     }
     
     /**
      * 查看备份的日志文件列表
      */
-    static public function look()
+    public function logflist()
     {
         $_file_list = Logs::_list();
         
-        assign("logfile", 1);
-        assign("filelist", $_file_list);
-        Template::display('logs.list.html');
+        $this->assign("logfile", 1);
+        $this->assign("filelist", $_file_list);
+        $this->display('Log/list.html');
     }
     
     /**

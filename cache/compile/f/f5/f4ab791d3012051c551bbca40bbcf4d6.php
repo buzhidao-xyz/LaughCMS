@@ -37,11 +37,11 @@ $(document).ready(function () {
 </script>
 
 <div id="menu">
-    {if logfile}
-    <a href="?r=logs">当前日志</a> |
-    {else}
-    <a href="?r=logs/backup">备份当前日志</a> |
-    <a href="?r=logs/clear">清空日志</a> |
-    {end}
-    <a href="?r=logs/look">日志列表</a>
+        <a href="?s=logs">当前日志</a> |
+        <a href="?s=logs/logflist">日志列表</a>
 </div>
+<ul id="filelist">
+        <li><a href="?s=logs/index&f=access.log">access.log</a></li>
+        <li><a href="?s=logs/index&f=access_20120202170537.log">access_20120202170537.log</a></li>
+        <li><a href="?s=logs/index&f=access_20120501223943.log">access_20120501223943.log</a></li>
+    </ul>

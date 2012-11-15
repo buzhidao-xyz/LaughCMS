@@ -12,9 +12,9 @@ class Route
      * 定义查询数组
      */
     static private $_query = array(
-        'control'   => 'IndexControl',
-        'function'  => 'index',
-        'string'    => ''
+        'control' => 'IndexControl',
+        'action'  => 'index',
+        'string'  => ''
     );
 
     //控制器后缀
@@ -41,7 +41,7 @@ class Route
      */
     static private function _checkUrl()
     {
-        if (!preg_match("/^http:\/\/[0-9a-z.:]+\/(".__SELF__."\/)?(\?r=.+)?$/i", self::$_current_url)) {
+        if (!preg_match("/^http:\/\/[0-9a-z.:]+\/(".__SELF__."\/)?(\?s=.+)?$/i", self::$_current_url)) {
             self::_host();
         }
     }
@@ -53,13 +53,13 @@ class Route
     {
         $url_array = parse_url(self::$_current_url);
         if (isset($url_array['query'])) {
-            preg_match_all("/^r=([0-9a-z]+)(\/)?([0-9a-z]+)?(&.+)*/i", $url_array['query'], $url_array);
+            preg_match_all("/^s=([0-9a-z]+)(\/)?([0-9a-z]+)?(&.+)*/i", $url_array['query'], $url_array);
             
             self::$_query['control'] = ucfirst($url_array[1][0]).self::$_control;
             if (!class_exists(self::$_query['control'])) $this->_host();
             
-            self::$_query['function'] = $url_array[3][0]?$url_array[3][0]:'index';
-            if (!method_exists(self::$_query['control'], self::$_query['function'])) self::$_query['function'] = 'index';
+            self::$_query['action'] = $url_array[3][0]?$url_array[3][0]:'index';
+            if (!method_exists(self::$_query['control'], self::$_query['action'])) self::$_query['action'] = 'index';
             
             if (!empty($url_array[4])) {
                 $query_string = explode('&', $url_array[4][0]);
@@ -89,9 +89,9 @@ class Route
     static private function _call()
     {
         $_control  = self::$_query['control'];
-        $_function = self::$_query['function'];
+        $_action = self::$_query['action'];
         
         $obj = new $_control(self::$_query);
-        $obj->$_function();
+        $obj->$_action();
     }
 }

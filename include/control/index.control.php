@@ -14,19 +14,20 @@ class IndexControl extends CommonControl
     
     //定义调用数组
     static private $_query = array(
-        'control'   => 'IndexControl',
-        'function'  => 'index',
-        'string'    => ''
+        'control' => 'IndexControl',
+        'action'  => 'index',
+        'string'  => ''
     );
     
     public function __construct($query)
     {
         self::$_query = $query;
+        parent::__construct();
     }
     
-    static public function index()
+    public function index()
     {
-        $cache_id = self::$_query['control'].' '.self::$_query['function'];
+        $cache_id = self::$_query['control'].' '.self::$_query['action'];
         $data = FileCache::get($cache_id);
         
         if (!$data) {
@@ -38,80 +39,7 @@ class IndexControl extends CommonControl
             FileCache::set($cache_id, $data, array('life_time'=>self::$_life_time));
         }
         
-        assign('data', $data);
-        Template::display('index.html');
-    }
-
-    static public function dbadd()
-    {
-        $user = array(
-            "username" => "test",
-        );
-
-        $return = User::add($user);
-        $ecode = eCode($return);
-
-        $res = $ecode?$ecode:'用户插入成功!';
-
-        assign('code', $res);
-        Template::display('code.html');
-    }
-    
-    static public function dbselect()
-    {
-        $user = array(
-            'username' => 'test'
-        );
-        
-        $return = User::getInfo($user);
-        $ecode = eCode($return);
-
-        $res = $ecode?$ecode:"username:".$return['username']."<br/>mail:".$return['mail'];
-        
-        assign('code', $res);
-        Template::display('code.html');
-    }
-
-    static public function upTest()
-    {
-        Template::display('upload.html');
-    }
-
-    static public function upload()
-    {
-        $file1 = $_FILES['file1'];
-
-        $up = new UploadHelper($file1);
-        $return = $up->_upload();
-        echo $return;
-    }
-    
-    static public function memTest()
-    {
-        $time = Memcacheg::get('time');
-        
-        if (!$time) {
-            $time = TIMESTAMP;
-            Memcacheg::set('time', $time, 10, 1);
-        }
-        
-        echo $time;
-    }
-    
-    static public function getAjax()
-    {
-        $data = self::$_class_name;
-        
-        $return = array(
-            'status' => 1,
-            'data'   => $data
-        );
-        
-        return $return;
-    }
-
-    static public function motest()
-    {
-        
+        $this->assign('data', $data);
+        $this->display('index.html');
     }
 }

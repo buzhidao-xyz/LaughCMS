@@ -3,7 +3,7 @@
  * 日志(log)处理
  * by wbq 2012-1-31
  */
-class Logs extends Model
+class Logs extends Base
 {
     /**
      * 定义类名
@@ -24,7 +24,7 @@ class Logs extends Model
     
     public function __construct()
     {
-        
+        parent::__construct();
     }
     
     /**

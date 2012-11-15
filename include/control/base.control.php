@@ -5,9 +5,12 @@
  */
 class BaseControl
 {
+    protected $_template;   //模板解析类对象
+    protected $_userInfo;   //用户信息
+
 	public function __construct()
 	{
-        if ($this->_template == null) $this->_template = new Template();
+        if (!$this->_template) $this->_template = new Template();
 	}
 	
 	/**
@@ -27,5 +30,54 @@ class BaseControl
         $return[0] = $return[1]?$control:'';
         
         return $return;
+    }
+
+    /**
+     * ajax返回
+     * @param $status int 状态码 0:正常 1:有错误
+     * @param $info string ajax信息
+     * @param $data mixed 返回数据
+     * @param $type string 数据编码类型 默认为json
+     */
+    static protected function ajaxReturn($status=0,$info='',$data=array(),$type='json')
+    {
+        $return = array(
+            'status' => $status,
+            'info'   => $info,
+            'data'   => $data
+        );
+
+        switch ($type) {
+            case 'json':
+                $return = json_encode($return);
+                break;
+            default:
+                break;
+        }
+
+        echo $return; exit;
+    }
+
+    /**
+     * 赋值
+     */
+    protected function assign($key,$value)
+    {
+        $this->_template->assign($key,$value);
+    }
+
+    //fetch
+    protected function fetch($tpl)
+    {
+        return $this->_template->fetchd($tpl);
+    }
+
+    /**
+     * 解析模版
+     * @param $tpl string 模版字符串 
+     */
+    protected function display($tpl)
+    {
+        $this->_template->display($tpl);
     }
 }
