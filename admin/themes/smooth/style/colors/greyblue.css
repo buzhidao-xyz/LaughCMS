@@ -91,7 +91,7 @@
 
 #content #left #menu h6.selected span
 {
-	background: url("../../images/colors/greyblue/menu_r_selected.png") no-repeat top right;
+	/*background: url("../../images/colors/greyblue/menu_r_selected.png") no-repeat top right;*/
 }
 
 #content #left #menu ul
@@ -301,3 +301,13 @@
 
 .ui-dialog { border: 1px solid #50667c; }
 .ui-dialog .ui-dialog-titlebar { background: #50667c url("../../images/colors/greyblue/title.png") repeat-x; }
+
+.modify_div {
+    border:#1D3349 10px solid;
+}
+.modify_div_close:link,.modify_div_close:visited {
+    background-color: #1D3349;
+}
+.modify_div_close:hover,.modify_div_close:active {
+    background-color: #CC0000;
+}

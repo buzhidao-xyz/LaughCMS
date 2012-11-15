@@ -14,6 +14,7 @@ body
 	font-family: 宋体, Verdana, Arial, sans-serif;
 	font-size: 13px;
 	height: 100%;
+	overflow:hidden;
 }
 
 /* -----------------------------------------------------------
@@ -101,12 +102,13 @@ ol.decimal  { list-style-type: decimal; }
 
 div.color
 {
+	position: absolute;
 	right: 0;
+	top: 0;
 	margin: 118px 23px 0 0;
 	padding: 0 4px 4px 4px;
 	clear: both;
 	overflow: hidden;
-	position: absolute;
 	background: #ffffff;
 	border: 1px solid #cccccc;
 	z-index: 10;
@@ -484,14 +486,20 @@ div.color a.greyblue
 	content
 ----------------------------------------------------------- */ 
 
-#content 
+#content
 {
 	padding: 0;
-	/*height: 100%;*/
 	clear: both;
 	overflow: hidden;
-	/*background: url("../images/content.png") repeat-y top left;*/
 	position: relative;
+	margin-bottom: 10px;
+}
+
+#menuTree #content {
+	overflow-y:auto;
+	height:100%;
+	background: url("../images/content.png") repeat-y top left;
+	margin-bottom: 0;
 }
 
 /* -----------------------------------------------------------
@@ -501,7 +509,7 @@ div.color a.greyblue
 #content #left
 {
 	left: 0;
-	width: 280px;
+	width: 235px;
 	overflow: hidden;
 	position: relative;
 	/*position: absolute;*/
@@ -513,7 +521,7 @@ div.color a.greyblue
 
 #content #left #menu
 {
-	margin: 5px 10px 0 60px;
+	margin: 5px 0 0 60px;
 	padding: 0;
 	clear: both;
 	overflow: hidden;
@@ -525,7 +533,7 @@ div.color a.greyblue
 
 #content #left #menu h6
 {
-	margin: 5px 0 0 0;
+	margin: 3px 0 0 0;
 	padding: 0;
 	clear: both;
 	overflow: hidden;
@@ -549,10 +557,11 @@ div.color a.greyblue
 #content #left #menu h6 span
 {
 	margin: 0;
-	padding: 9px 10px 10px 10px;
 	height: 30px;
+	line-height: 30px;
+	text-indent: 10px;
 	display: block;
-	background: url("../images/menu_r.png") no-repeat top right;
+	background: url("../images/menu-sub-up.png") no-repeat 155px center;
 }
 
 #content #left #menu h6.selected
@@ -569,7 +578,8 @@ div.color a.greyblue
 
 #content #left #menu h6.selected span
 {
-	background: url("../images/colors/blue/menu_r_selected.png") no-repeat top right;
+	/*background: url("../images/colors/blue/menu_r_selected.png") no-repeat top right;*/
+	background: url("../images/menu-sub-down.png") no-repeat 155px center;
 }
 
 /* -----------------------------------------------------------
@@ -709,120 +719,6 @@ div.color a.greyblue
 }
 
 /* -----------------------------------------------------------
-	content -> left -> date picker
------------------------------------------------------------ */ 
-
-#content #left #date-picker
-{
-	margin: 5px 10px 0 60px;
-	padding: 0;
-	clear: both;
-	overflow: hidden;
-}
-
-#content #left #date-picker .ui-datepicker  
-{
-	width: auto; 
-	padding: 0; 
-	clear: both;
-	overflow: hidden;
-	background: #FFFFFF; 
-	border: none; 
-}
-
-#content #left #date-picker .ui-datepicker .ui-datepicker-header  
-{
-	padding: 5px 0 6px 0;
-	background: #dfdfdf url("../images/menu.png") repeat-x;
-}
-
-#content #left #date-picker .ui-datepicker .ui-datepicker-header .ui-datepicker-prev
-{
-	top: 0;
-	left: 0;
-	padding: 0;
-	background: url("../images/menu_l.png") no-repeat top left;
-}
-
-#content #left #date-picker .ui-datepicker .ui-datepicker-header .ui-datepicker-prev .ui-icon-circle-triangle-w
-{
-	top: 8px;
-	left: 8px;
-	width: 26px;
-	height: 30px;
-	background: url("../images/calender_prev.png") no-repeat 0 0;
-}
-
-#content #left #date-picker .ui-datepicker .ui-datepicker-header .ui-datepicker-next  
-{
-	top: 0;
-	right: 0;
-	padding: 5px 12px 5px 0;
-	background: url("../images/menu_r.png") no-repeat top right;
-}
-
-#content #left #date-picker .ui-datepicker .ui-datepicker-header .ui-datepicker-next .ui-icon-circle-triangle-e
-{
-	top: 8px;
-	left: 14px;
-	width: 26px;
-	height: 30px;
-	background: url("../images/calender_next.png") no-repeat 0 0;
-}
-
-#content #left #date-picker .ui-datepicker .ui-datepicker-header .ui-datepicker-prev-hover
-{
-	top: 0;
-	left: 0;
-}
-
-#content #left #date-picker .ui-datepicker .ui-datepicker-header .ui-datepicker-prev-hover .ui-icon-circle-triangle-w
-{
-	background-position: 0 -30px;
-}
-
-#content #left #date-picker .ui-datepicker .ui-datepicker-header .ui-datepicker-next-hover
-{
-	top: 0;
-	right: 0;
-}
-
-#content #left #date-picker .ui-datepicker .ui-datepicker-header .ui-datepicker-next-hover .ui-icon-circle-triangle-e
-{
-	background-position: 0 -30px;
-}
-
-#content #left #date-picker .ui-datepicker .ui-datepicker-header span
-{
-	color: #6e6e6e;
-	font-weight: bold;
-}
-
-#content #left #date-picker .ui-datepicker .ui-datepicker-calendar
-{
-	margin: 5px auto;
-}
-
-#content #left #date-picker .ui-datepicker .ui-datepicker-calendar th
-{
-	background: #f6f6f6;
-	border: 1px solid #dddddd;
-	border-top: none;
-	border-left: none;
-	border-right: none;
-}
-
-#content #left #date-picker .ui-datepicker .ui-datepicker-calendar td
-{
-	padding: 5px 3px 5px 3px;
-	background: #ffffff;
-	border: 1px solid #dddddd;
-	border-left: none;
-	border-right: none;
-	border-bottom: none;
-}
-
-/* -----------------------------------------------------------
 	content -> right
 ----------------------------------------------------------- */ 
 
@@ -867,6 +763,7 @@ div.color a.greyblue
 
 #content div.box div.title
 {
+	width: 100%;
 	margin: 0 0 10px 0;
 	padding: 0;
 	clear: both;
@@ -2325,23 +2222,25 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 }
 
 /* -----------------------------------------------------------
-	footer
+	bottom
 ----------------------------------------------------------- */
 
-#footer
+#bottom
 {
 	margin: 0;
-	padding: 5px 0 5px 0;
+	padding: 0;
 	clear: both;
 	overflow: hidden;
 	background: #2a2a2a;
 	text-align: right;
+	font-size: 11px;
+	font-family: Lucida Grande,Verdana,Lucida Sans Regular,Lucida Sans Unicode,Arial,sans-serif;
 }
 
-#footer p
+#bottom p
 {
-	margin: 0 60px 0 60px;
-	padding: 10px 0 10px 0;
+	padding: 0;
+	margin: 4px 60px 0 60px;
 	color: #ffffff;
 }
 
@@ -2370,6 +2269,7 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 	clear: both;
 	overflow: hidden;
 	background: #FFFFFF;
+	top: auto;
 }
 
 #login div.color a

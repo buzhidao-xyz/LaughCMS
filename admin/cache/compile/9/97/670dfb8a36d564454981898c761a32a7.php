@@ -199,93 +199,85 @@ $("#sitemap_title").mousedown(function() {
 </script>
 
 <link rel="stylesheet" type="text/css" href="themes/smooth/style/frame.css" />
-<div id="colors-switcher" class="color">
-	<a href="javascript:;" class="blue" title="Blue"></a>
-	<a href="javascript:;" class="green" title="Green"></a>
-	<a href="javascript:;" class="brown" title="Brown"></a>
-	<a href="javascript:;" class="purple" title="Purple"></a>
-	<a href="javascript:;" class="red" title="Red"></a>
-	<a href="javascript:;" class="greyblue" title="GreyBlue"></a>
-</div>
-<!-- header -->
 <div id="header">
-    <!-- logo -->
-    <div id="logo">
-        <h1><a hidefocus="true" href="/laugh/admin/?s=index" title="管理中心">管理中心</a></h1>
+	<!-- header -->
+<!-- logo -->
+<div id="logo">
+    <h1><a hidefocus="true" href="/laugh/admin/?s=index" title="管理中心">管理中心</a></h1>
+</div>
+<!-- end logo -->
+<!-- user -->
+<ul id="user">
+    <li class="first">您好 , <em>admin</em> [ <a target="_top" href="/laugh/admin/?s=index/logout">退出</a> ]</li>
+    <li><a target="_blank" href="/laugh/?s=index">网站首页</a></li>
+    <li class="last"><a href="javascript:;">网站地图</a></li>
+</ul>
+<!-- end user -->
+<div id="header-inner">
+    <div id="home">
+        <a hidefocus="true" href="/laugh/admin/?s=index" title="管理中心"></a>
     </div>
-    <!-- end logo -->
-    <!-- user -->
-    <ul id="user">
-        <li class="first">您好 , <em>admin</em> [ <a target="_top" href="/laugh/admin/?s=index/logout">退出</a> ]</li>
-        <li><a target="_blank" href="/laugh/?s=index">网站首页</a></li>
-        <li class="last"><a href="javascript:;">网站地图</a></li>
-    </ul>
-    <!-- end user -->
-    <div id="header-inner">
-        <div id="home">
-            <a hidefocus="true" href="javascript:;" groupid="0" title="管理中心" target="body"></a>
-        </div>
-        <!-- quick -->
-        <ul id="quick">
-            <li>
-                <a hidefocus="true" href="javascript:;" groupid="0" title="管理中心" class="navHeadMenu"><span class="normal">管理中心</span></a>
-            </li>
-                        <li>
-                <a href="javascript:;" groupid="1" title="系统管理" class="navHeadMenu"><span>系统管理</span></a>
-                <!--
-                <ul>
-                    <li><a href="#">Manage Products</a></li>
-                    <li><a href="#">Add Product</a></li>
-                    <li>
-                        <a href="#" class="childs">Sales</a>
-                        <ul>
-                            <li><a href="">Today</a></li>
-                            <li class="last"><a href="">Yesterday</a></li>
-                        </ul>
-                    </li>
-                    <li class="last">
-                        <a href="#" class="childs">Offers</a>
-                        <ul>
-                            <li><a href="">Coupon Codes</a></li>
-                            <li class="last"><a href="">Rebates</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                -->
-            </li>
-                        <li>
-                <a href="javascript:;" groupid="2" title="用户中心" class="navHeadMenu"><span>用户中心</span></a>
-                <!--
-                <ul>
-                    <li><a href="#">Manage Products</a></li>
-                    <li><a href="#">Add Product</a></li>
-                    <li>
-                        <a href="#" class="childs">Sales</a>
-                        <ul>
-                            <li><a href="">Today</a></li>
-                            <li class="last"><a href="">Yesterday</a></li>
-                        </ul>
-                    </li>
-                    <li class="last">
-                        <a href="#" class="childs">Offers</a>
-                        <ul>
-                            <li><a href="">Coupon Codes</a></li>
-                            <li class="last"><a href="">Rebates</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                -->
-            </li>
+    <!-- quick -->
+    <ul id="quick">
+        <li>
+            <a hidefocus="true" href="javascript:;" groupid="0" title="管理中心" class="navHeadMenu"><span class="normal">管理中心</span></a>
+        </li>
+                <li>
+            <a href="javascript:;" groupid="1" title="系统管理" class="navHeadMenu"><span>系统管理</span></a>
+            <!--
+            <ul>
+                <li><a href="#">Manage Products</a></li>
+                <li><a href="#">Add Product</a></li>
+                <li>
+                    <a href="#" class="childs">Sales</a>
+                    <ul>
+                        <li><a href="">Today</a></li>
+                        <li class="last"><a href="">Yesterday</a></li>
                     </ul>
-        <!-- end quick -->
-        <div class="corner tl"></div>
-        <div class="corner tr"></div>
-    </div>
+                </li>
+                <li class="last">
+                    <a href="#" class="childs">Offers</a>
+                    <ul>
+                        <li><a href="">Coupon Codes</a></li>
+                        <li class="last"><a href="">Rebates</a></li>
+                    </ul>
+                </li>
+            </ul>
+            -->
+        </li>
+                <li>
+            <a href="javascript:;" groupid="2" title="用户中心" class="navHeadMenu"><span>用户中心</span></a>
+            <!--
+            <ul>
+                <li><a href="#">Manage Products</a></li>
+                <li><a href="#">Add Product</a></li>
+                <li>
+                    <a href="#" class="childs">Sales</a>
+                    <ul>
+                        <li><a href="">Today</a></li>
+                        <li class="last"><a href="">Yesterday</a></li>
+                    </ul>
+                </li>
+                <li class="last">
+                    <a href="#" class="childs">Offers</a>
+                    <ul>
+                        <li><a href="">Coupon Codes</a></li>
+                        <li class="last"><a href="">Rebates</a></li>
+                    </ul>
+                </li>
+            </ul>
+            -->
+        </li>
+            </ul>
+    <!-- end quick -->
+    <div class="corner tl"></div>
+    <div class="corner tr"></div>
 </div>
 <!-- end header -->
+</div>
 <div id="menuTree">
 	<!-- content -->
-<div id="content" style="overflow-y:auto;height:100%;background: url('themes/smooth/images/content.png') repeat-y top left;">
+<div id="content">
 	<!-- end content / left -->
 	<div id="left">
 		<div id="menu">
@@ -299,19 +291,19 @@ $("#sitemap_title").mousedown(function() {
 </div>
 </div>
 <div id="main">
-	<iframe frameborder="0" name="main" src="/laugh/admin/?s=public/welcome"></iframe>
+	<iframe frameborder="0" name="main" src="/laugh/admin/?s=public/welcome" scrolling="yes"></iframe>
 </div>
-<div id="stateBar">
-	
+<div id="bottom">
+	<p>Copyright &copy; Laugh. Buzhidao</p>
 </div>
-</iframe>
-<style>
-body {
-	padding: 0;
-	margin: 0;
-    overflow:hidden;
-}
-</style>
+<div id="colors-switcher" class="color">
+	<a href="javascript:;" class="blue" title="Blue"></a>
+	<a href="javascript:;" class="green" title="Green"></a>
+	<a href="javascript:;" class="brown" title="Brown"></a>
+	<a href="javascript:;" class="purple" title="Purple"></a>
+	<a href="javascript:;" class="red" title="Red"></a>
+	<a href="javascript:;" class="greyblue" title="GreyBlue"></a>
+</div>
 <script type="text/javascript" src="themes/smooth/js/div_window.js"></script>
 <script type="text/javascript" src="themes/smooth/js/common.js"></script>
 <script type="text/javascript" src="themes/smooth/js/ajax.js"></script>

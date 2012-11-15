@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2012-11-12 17:15:09
+Date: 2012-11-15 17:28:03
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -234,7 +234,7 @@ CREATE TABLE `la_node` (
   PRIMARY KEY (`id`),
   KEY `level` (`level`),
   KEY `pid` (`pid`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_node
@@ -249,6 +249,11 @@ INSERT INTO `la_node` VALUES ('7', '用户搜索', '搜索用户信息', '', '',
 INSERT INTO `la_node` VALUES ('8', '管理组', '', 'Group', 'manageGroup', '2', '4', '2', '0', '0', '0', '1');
 INSERT INTO `la_node` VALUES ('9', '添加节点', null, 'Node', 'newNode', '1', '5', '0', '0', '0', '0', '1');
 INSERT INTO `la_node` VALUES ('10', '管理节点', '', 'Node', 'manageNode', '0', '5', '0', '0', '1352711650', '0', '1');
+INSERT INTO `la_node` VALUES ('11', '添加角色', '', 'Role', 'newRole', '0', '2', '0', '0', '1352856214', '0', '1');
+INSERT INTO `la_node` VALUES ('12', '管理角色', '', 'Role', 'manageRole', '0', '2', '0', '0', '1352856238', '0', '1');
+INSERT INTO `la_node` VALUES ('13', '日志列表', '', 'Log', 'Index', '0', '3', '0', '0', '1352857554', '0', '1');
+INSERT INTO `la_node` VALUES ('14', '新管理员', '', 'Admin', 'newAdmin', '0', '6', '0', '0', '1352858914', '0', '1');
+INSERT INTO `la_node` VALUES ('15', '管理员列表', '', 'Admin', 'adminList', '0', '6', '0', '0', '1352944271', '0', '1');
 
 -- ----------------------------
 -- Table structure for `la_role`

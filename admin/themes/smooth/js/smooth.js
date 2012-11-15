@@ -14,9 +14,8 @@ $(document).ready(function () {
 
     /* color picker */
     $("#colors-switcher > a").click(function () {
-        var style = $("#color");
-
-        style.attr("href", "" + style_path + "/" + $(this).attr("title").toLowerCase() + ".css");
+        $("#color").attr("href", "" + style_path + "/" + $(this).attr("title").toLowerCase() + ".css");
+        $(window.frames["main"].document).find("#color").attr("href", "" + style_path + "/" + $(this).attr("title").toLowerCase() + ".css");
 
         return false;
     });

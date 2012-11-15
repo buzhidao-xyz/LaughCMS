@@ -1,8 +1,10 @@
 /** control */
 #control {
-    float:left;
-    width:97%;
-    margin: 5px 10px;
+    clear: both;
+    margin: 5px 5px 10px 5px;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
 }
 #control a:link, #control a:visited {
     text-decoration: underline;
