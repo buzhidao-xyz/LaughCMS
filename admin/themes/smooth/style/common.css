@@ -1,0 +1,38 @@
+.clear {
+	clear: both;
+}
+
+#content div.mtop15 {
+	margin-top: 15px;
+}
+
+#control .captitle {
+	padding: 10px 0 10px 0;
+}
+
+#content div.box-left #box-left-forms a {
+	padding: 15px 0 15px 15px;
+}
+
+#content div.box .content ul li {
+	height: 23px;
+	line-height: 23px;
+	margin: 0 3px;
+	border-bottom: 1px dashed #CFD7C4;
+	clear: both;
+}
+#content div.box .content ul li span.sleft {
+	float: left;
+	text-align: right;
+	width: 150px;
+	display: block;
+}
+#content div.box .content ul li span.sright {
+	text-align: left;
+	text-indent: 10px;
+	display: block;
+}
+#content div.box .content ul li.title {
+	text-indent: 30px;
+	color: #336699;
+}

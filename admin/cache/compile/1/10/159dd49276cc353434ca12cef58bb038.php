@@ -4,10 +4,11 @@
 	<title>Laugh Admin Center</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<!-- stylesheets -->
-	<link rel="stylesheet" type="text/css" href="themes/smooth/style/reset.css" />
+	<link rel="stylesheet" type="text/css" href="themes/smooth/style/reset.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="themes/smooth/style/style.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="themes/smooth/style/table.css" />
+	<link rel="stylesheet" type="text/css" href="themes/smooth/style/table.css" media="screen" />
 	<link id="color" rel="stylesheet" type="text/css" href="themes/smooth/style/colors/blue.css" />
+	<link rel="stylesheet" type="text/css" href="themes/smooth/style/common.css" media="screen" />
 	<!-- scripts (jquery) -->
 	<script src="themes/smooth/js/jquery-1.4.2.min.js" type="text/javascript"></script>
 	<!--[if IE]><script language="javascript" type="text/javascript" src="themes/smooth/js/excanvas.min.js"></script><![endif]-->

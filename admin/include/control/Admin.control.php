@@ -10,6 +10,15 @@ class AdminControl extends CommonControl
 		parent::__construct();
 	}
 
+	//主入口
+	public function index(){}
+
+	//个人信息
+	public function profile()
+	{
+		
+	}
+
 	//新管理员
 	public function newAdmin()
 	{

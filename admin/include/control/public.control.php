@@ -61,6 +61,8 @@ class PublicControl extends CommonControl
      */
     public function welcome()
     {
+        $phpinfo = M('System')->getPHPInfo();
+        $this->assign("phpinfo", $phpinfo);
     	$this->display('public/welcome.html');
     }
 
@@ -70,5 +72,17 @@ class PublicControl extends CommonControl
         foreach ($this->userAccess as $v) {
             if ($v['id'] == $groupid) return $v;
         }
+    }
+
+    //获取快捷操作
+    private function _getFastOperation()
+    {
+        
+    }
+
+    //新增快捷操作
+    public function newFastOperation()
+    {
+
     }
 }

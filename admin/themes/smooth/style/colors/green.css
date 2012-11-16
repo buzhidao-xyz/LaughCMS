@@ -141,6 +141,11 @@
 	content -> right -> box / title
 ----------------------------------------------------------- */
 
+#content div.box
+{
+	border: 1px solid #7b8745;
+}
+
 #content div.box div.title
 {
 	background: #7b8745 url("../../images/colors/green/title.png") repeat-x;

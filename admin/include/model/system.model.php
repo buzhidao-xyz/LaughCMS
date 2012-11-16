@@ -5,6 +5,12 @@
  */
 class System extends Base
 {
+    private $_phpinfo = array(
+        'php_version'      => PHP_VERSION,
+        'register_globals' => '',
+        'safe_mode'        => '',
+    );
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -36,6 +42,21 @@ class System extends Base
         $return = array();
         foreach ($sys as $k => $v) {
             $return[$v['cfgname']] = $v['cfgvalue'];
+        }
+
+        return $return;
+    }
+
+    //获取服务器系统信息
+    public function getPHPInfo($config=null)
+    {
+        if ($config) return ini_get($config);
+
+        $return = array(
+            'php_version' => PHP_VERSION
+        );
+        foreach ($this->_phpinfo as $k=>$v) {
+            $return[$k] = $v ? $v : ini_get($k);
         }
 
         return $return;

@@ -4,10 +4,11 @@
 	<title>Laugh Admin Center</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<!-- stylesheets -->
-	<link rel="stylesheet" type="text/css" href="themes/smooth/style/reset.css" />
+	<link rel="stylesheet" type="text/css" href="themes/smooth/style/reset.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="themes/smooth/style/style.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="themes/smooth/style/table.css" />
+	<link rel="stylesheet" type="text/css" href="themes/smooth/style/table.css" media="screen" />
 	<link id="color" rel="stylesheet" type="text/css" href="themes/smooth/style/colors/blue.css" />
+	<link rel="stylesheet" type="text/css" href="themes/smooth/style/common.css" media="screen" />
 	<!-- scripts (jquery) -->
 	<script src="themes/smooth/js/jquery-1.4.2.min.js" type="text/javascript"></script>
 	<!--[if IE]><script language="javascript" type="text/javascript" src="themes/smooth/js/excanvas.min.js"></script><![endif]-->
@@ -283,7 +284,8 @@ $("#sitemap_title").mousedown(function() {
 		<div id="menu">
 			<h6 id="h-menu-menu1" class="selected"><a target="main" hidefocus="true" href="javascript:;" submenu="#menu1"><span>基本信息</span></a></h6>
 			<ul id="menu-menu1" class="opend">
-				<li><a target="main" hidefocus="true" href="javascript:;" class="">个人信息</a></li>
+				<li><a hidefocus="true" href="/laugh/admin/?s=Public/welcome" target="main">欢迎页</a></li>
+				<li><a hidefocus="true" href="/laugh/admin/?s=Admin/profile" target="main">个人信息</a></li>
 			</ul>
 		</div>
 	</div>

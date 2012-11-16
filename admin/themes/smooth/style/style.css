@@ -783,6 +783,7 @@ div.color a.greyblue
 	float: left;
 	border: none;
 	color: #ffffff;
+	padding: 8px 0 8px 10px;
 }
 
 #content div.box div.title ul.links
@@ -804,6 +805,7 @@ div.color a.greyblue
 {
 	margin: 0;
 	padding: 13px 16px 12px 16px;
+	padding: 8px 16px 9px 16px;
 	height: 1%;
 	display: block;
 	float: left;
