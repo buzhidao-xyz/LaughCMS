@@ -1,42 +1,42 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-11-15 23:10:41
+<?php /* Smarty version Smarty-3.1.12, created on 2012-11-18 21:04:25
          compiled from "/usr/local/webserver/site/laugh/admin/themes/smooth/index.html" */ ?>
-<?php /*%%SmartyHeaderCode:100051896250a505f14e8405-63819465%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:25966387650a8dcd9daf171-10319876%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '4532bf787d75df3208024d136d7d0ba86fe50336' => 
     array (
       0 => '/usr/local/webserver/site/laugh/admin/themes/smooth/index.html',
-      1 => 1352984977,
+      1 => 1353074069,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '100051896250a505f14e8405-63819465',
+  'nocache_hash' => '25966387650a8dcd9daf171-10319876',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50a505f15318d8_42952903',
+  'unifunc' => 'content_50a8dcd9eb7724_93910510',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50a505f15318d8_42952903')) {function content_50a505f15318d8_42952903($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50a8dcd9eb7724_93910510')) {function content_50a8dcd9eb7724_93910510($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate ("sitemap.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <link rel="stylesheet" type="text/css" href="themes/smooth/style/frame.css" />
 <div id="header">
-	<?php echo $_smarty_tpl->getSubTemplate ("public/header.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+	<?php echo $_smarty_tpl->getSubTemplate ("Public/header.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 </div>
 <div id="menuTree">
-	<?php echo $_smarty_tpl->getSubTemplate ("public/menu_index.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+	<?php echo $_smarty_tpl->getSubTemplate ("Public/menu_index.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 </div>
 <div id="main">
-	<iframe frameborder="0" name="main" src="__APP__/?s=public/welcome" scrolling="yes"></iframe>
+	<iframe frameborder="0" name="main" src="__APP__/?s=Public/welcome" scrolling="yes"></iframe>
 </div>
 <div id="bottom">
-	<?php echo $_smarty_tpl->getSubTemplate ("public/bottom.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+	<?php echo $_smarty_tpl->getSubTemplate ("Public/bottom.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 </div>
 <div id="colors-switcher" class="color">

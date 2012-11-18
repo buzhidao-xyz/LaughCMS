@@ -1,31 +1,31 @@
 // JavaScript Document
 void function(){
-	/*获取url参数加强版*/
+/*获取url参数加强版*/
 var Get_QueryString_Plus = function(url){
 	var no_q = 1,
 	now_url = url && (url.split('?')[1] || no_q) || document.location.search.slice(1) || no_q;
 	if(now_url === no_q) return false;
-        var q_array = now_url.split('&'),
-       q_o = {},
-       v_array; 
-        for(var i=0;i<q_array.length;i++){
-              v_array = q_array[i].split('=');
-      		  q_o[v_array[0]] = decodeURIComponent(v_array[1]);
-        };
-        return q_o;
-    }
- /*获取url参数加强版*/
+    var q_array = now_url.split('&'),
+    q_o = {},
+    v_array; 
+    for(var i=0;i<q_array.length;i++){
+          v_array = q_array[i].split('=');
+    	  q_o[v_array[0]] = decodeURIComponent(v_array[1]);
+    };
+    return q_o;
+}
+/*获取url参数加强版*/
 
-var __APP__ = $("#app").attr("appurl");
+var __APP__ = JS_APP;
 var Rolemanage = function(){
 	var that = this;
 	this.step = 1;
 	this.stepid = 'step';
 	this.stepclass = 'stable_box';
 	//this.treeurl = '/operation-admin/adminmenu.txt';
-	this.treeurl = __APP__+'/role/rolemodify/';
+	this.treeurl = __APP__+'/?s=role/rolemodify/';
 	this.ajaxurl = $('#roleform').attr('action');
-	this.modifyurl = __APP__+'/role/rolemodify';
+	this.modifyurl = __APP__+'/?s=role/rolemodify';
 	this.dom = $("#treeDemo");
 	this.treedata = {};
 	this.setting = {
@@ -68,7 +68,7 @@ Rolemanage.prototype.submit = function(){
 		if(!d.errorcode){
 			alert(d.errormsg);
 			if(data.roleid){
-				location.href = __APP__+'/role/rolemodify'
+				location.href = __APP__+'/?s=role/rolemodify'
 				return false;
 			}		
 			location.href=location.href;
@@ -193,9 +193,7 @@ if($('#roleform').length>0){
 	role.intial();
 }
 
-
-		
-//如果是角色管理列表 	
+//如果是角色管理列表
 if($('.role_table').length>0){
 	$('a[name="modify"]').click(function(event){
 		var e = event;
@@ -203,7 +201,7 @@ if($('.role_table').length>0){
 			thattd = that.parent().parent().find('li'),
 			pstr='&',
 			param ={
-				roleid:that.attr('mcid'),
+				roleid:that.attr('id'),
 				rolename:encodeURIComponent(thattd.eq(1).html()),
 				desc:encodeURIComponent(thattd.eq(2).html()),
 				status:that.attr('typeid')
@@ -212,7 +210,7 @@ if($('.role_table').length>0){
 			pstr += j +'='+param[j]+'&'				  	
 		  }		
 			 pstr += 'action=modify' 
-		 that.attr('href',__APP__+'/role/roleadd'+pstr);
+		 that.attr('href',__APP__+'/?s=role/roleadd'+pstr);
 		 return true;
 	});
 //	$('a[name="del"]').click(function(){
@@ -220,14 +218,11 @@ if($('.role_table').length>0){
 //	});
 }
 //如果是角色管理列表 
-	
-
-
 
 //如果是角色分配页面 	
 if($('.role_send_table').length>0){
 		var roleshow={
-			sel:$('#role_sel'),
+			sel:$('#roles'),
 			addbt:$('#addrole'),
 			u_role_class:'userrole',
 			insert_after:$('#rolehr'),
@@ -286,8 +281,8 @@ if($('.role_send_table').length>0){
 			var str = '';
 			for(var i=0; i<namearray.length; i++){			
 				if(!namearray[i].name) continue;
-				str += '<tr>'+
-				   	   '<td  class="stgap userrole" colspan="2" title="'+namearray[i].desc+'"><b>'+namearray[i].name+'</b>&nbsp;&nbsp;&nbsp;<a class="role_del" roleid="'+namearray[i].roleid+'" href="javascript:;">删除</a></td>'+ 
+				str += '<tr height="20">'+
+				   	   '<td align="center" class="stgap userrole" colspan="2" title="'+namearray[i].desc+'"><b>'+namearray[i].name+'</b>&nbsp;&nbsp;&nbsp;<a class="role_del" roleid="'+namearray[i].roleid+'" href="javascript:;">删除</a></td>'+ 
 				 	   '</tr>' 
 			}
 			return str;
@@ -318,8 +313,8 @@ if($('.role_send_table').length>0){
 			roleshow.binddelclick(true); //添加绑定
 		}
 	    roleshow.hascheck = function(id){//判断是否存在
-				var val = $('#'+roleshow.roleidinput).val(),
-			    	str = val.indexOf(id+',');
+				var val = $('#'+roleshow.roleidinput).val();
+			    var str = val.indexOf(id+',');
 			    if(str === -1) return false;
 			    return true;
 		}
@@ -352,17 +347,18 @@ if($('.role_send_table').length>0){
 		*/
 //修改资料
 		if($('#modify_div').length>0){ 
-			var m_d = new Div_window('modify_div');				
+			var m_d = new Div_window('modify_div');
 			$('a[name="modify"]').click(function(event){
 				var e = event;
 				var that = $(this);
-				var thattd = that.parent().parent().find('li');
+				var thattd = that.parent().parent().find('li[name=role]');
 				var param_array = [
-				{targetname:'roleid', val:thattd.eq(2).attr('roleid')+',', type:'text',callback:function(that){
+				{
+					targetname:'roleid', val:thattd.attr('roleid')+',', type:'text',callback:function(that){
 					roleshow.cleardivtable();
 					roleshow.putdivtable(that);
 				}},
-				{targetname:'userid', val:that.attr('mcid'), type:'text'}
+				{targetname:'id', val:that.attr('id'), type:'text'}
 				];
 				m_d.insertvalue(param_array).open(e);
 			});
@@ -371,9 +367,9 @@ if($('.role_send_table').length>0){
 				m_d.close();
 			});
 			$('#user_role_modify_div_form').submit(function(){
-				m_d.formsubmit(__APP__+'/Role/roleadmin', function(data){
-					alert(data.errormsg);
-					if (!data.errorcode) {
+				m_d.formsubmit(__APP__+'/?s=Role/roleAdmin', function(data){
+					alert(data.info);
+					if (!data.status) {
 						location.href = location.href;
 					};
 				}).close();

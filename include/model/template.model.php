@@ -202,7 +202,7 @@ class Template extends SmartyBC
         return self::getFile(self::$_style_public."/index.frame.html");
     }
     
-    static protected function _compile(&$view)
+    static protected function _compile($view)
 	{
 	     self::$_path = FileCache::compile(self::$_template, $view, array('life_time'=>self::$_life_time, 'cache_dir'=>'compile'));
 	}

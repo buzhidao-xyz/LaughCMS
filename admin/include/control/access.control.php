@@ -28,13 +28,14 @@ class AccessControl extends BaseControl
 	private function _getUserAccess()
 	{
         if (session('userAccess')) return true;
+        session('super_admin', $this->_super_admin);
 
         $user = $this->userInfo;
         if (in_array($user['id'], $this->_super_admin)) {
             $node = $this->_NODE->getNode();
             $node = $this->dealNode($node['data']);
         } else {
-            $roleids = $this->_ROLE->getRole($user['id']);
+            $roleids = $this->_ROLE->getAdminRole($user['id']);
             if (empty($roleids)) return true;
 
             $roleNode = $this->_NODE->getRoleNode($roleids);

@@ -1,34 +1,35 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-11-15 23:10:41
+<?php /* Smarty version Smarty-3.1.12, created on 2012-11-18 22:13:50
          compiled from "/usr/local/webserver/site/laugh/admin/themes/smooth/include/head.html" */ ?>
-<?php /*%%SmartyHeaderCode:101103428050a505f18c2718-12036470%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:113290752550a8ed1e382789-97935378%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '9206226292296c9b4e9b3e94869546e6d34eec61' => 
     array (
       0 => '/usr/local/webserver/site/laugh/admin/themes/smooth/include/head.html',
-      1 => 1352899196,
+      1 => 1353233394,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '101103428050a505f18c2718-12036470',
+  'nocache_hash' => '113290752550a8ed1e382789-97935378',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50a505f18c77b0_88595076',
+  'unifunc' => 'content_50a8ed1e3870e1_93420496',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50a505f18c77b0_88595076')) {function content_50a505f18c77b0_88595076($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_50a8ed1e3870e1_93420496')) {function content_50a8ed1e3870e1_93420496($_smarty_tpl) {?><!DOCTYPE html>
 <html>
 <head>
 	<title>Laugh Admin Center</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<!-- stylesheets -->
-	<link rel="stylesheet" type="text/css" href="themes/smooth/style/reset.css" />
+	<link rel="stylesheet" type="text/css" href="themes/smooth/style/reset.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="themes/smooth/style/style.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="themes/smooth/style/table.css" />
+	<link rel="stylesheet" type="text/css" href="themes/smooth/style/table.css" media="screen" />
 	<link id="color" rel="stylesheet" type="text/css" href="themes/smooth/style/colors/blue.css" />
+	<link rel="stylesheet" type="text/css" href="themes/smooth/style/common.css" media="screen" />
 	<!-- scripts (jquery) -->
 	<script src="themes/smooth/js/jquery-1.4.2.min.js" type="text/javascript"></script>
 	<!--[if IE]><script language="javascript" type="text/javascript" src="themes/smooth/js/excanvas.min.js"></script><![endif]-->
@@ -45,6 +46,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<script src="themes/smooth/js/smooth.form.js" type="text/javascript"></script>
 	<script src="themes/smooth/js/smooth.dialog.js" type="text/javascript"></script>
 	<script src="themes/smooth/js/smooth.autocomplete.js" type="text/javascript"></script>
+	<script src="themes/smooth/js/div_window.js" type="text/javascript"></script>
+	<script src="themes/smooth/js/common.js" type="text/javascript"></script>
+	<script src="themes/smooth/js/ajax.js" type="text/javascript"></script>
 	<script type="text/javascript">
 	var JS_APP = '__APP__';
 	var style_path = "themes/smooth/style/colors";

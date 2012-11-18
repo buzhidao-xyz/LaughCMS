@@ -137,10 +137,17 @@ function getIp() {
 }
 
 //格式化ip为无符号整型数
-function ip3long($ip)
+function ip2longs($ip)
 {
-    if (!$ip) return 0;
+    if (!$ip) return null;
     return sprintf("%u",ip2long($ip));
+}
+
+//整型数格式化ip
+function longs2ip($long)
+{
+    if (!$long) return null;
+    return long2ip($long);
 }
 
 /**
@@ -245,9 +252,9 @@ function T($table)
  */
 function g($param)
 {
-    $return = isset($_REQUEST[$param])?$_REQUEST[$param]:'';
+    $return = isset($_REQUEST[$param]) ? $_REQUEST[$param] : '';
     
-    return trim($return);
+    return FilterHelper::F_htmlentities(trim($return));
 }
 
 /**
@@ -256,9 +263,9 @@ function g($param)
  */
 function p($param)
 {
-    $return = isset($_REQUEST[$param])?$_REQUEST[$param]:'';
+    $return = isset($_REQUEST[$param]) ? $_REQUEST[$param] : '';
     
-    return trim($return);
+    return FilterHelper::F_htmlentities(trim($return));
 }
 
 /**
@@ -269,7 +276,7 @@ function q($param)
 {
     $return = isset($_REQUEST[$param]) ? $_REQUEST[$param] : '';
     
-    return trim($return);
+    return FilterHelper::F_htmlentities(trim($return));
 }
 
 //实例化控制器类
@@ -288,7 +295,7 @@ function D($name='') {
 /**
  * 实例化数据模型类
  */
-function N($class)
+function M($class)
 {
     if(empty($class)) return false;
 
@@ -304,7 +311,7 @@ function N($class)
 /**
  * 实例化数据模型类
  */
-function M($class)
+function N($class)
 {
     if(empty($class)) return false;
 

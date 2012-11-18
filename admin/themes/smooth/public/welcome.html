@@ -67,11 +67,11 @@
 				<ul>
 					<li class="title">PHP环境摘要---></li>
 					<li><span class="sleft">PHP版本: </span><span class="sright">{$phpinfo.php_version}</span></li>
-					<li><span class="sleft">是否安全模式: </span><span class="sright">{$phpinfo.safe_mode}</span></li>
-					<li><span class="sleft">Register_Globals: </span><span class="sright"></span></li>
-					<li><span class="sleft">Magic_Quotes_Gpc: </span><span class="sright"></span></li>
-					<li><span class="sleft">支持上传的最大文件: </span><span class="sright"></span></li>
-					<li><span class="sleft">是否允许打开远程连接: </span><span class="sright"></span></li>
+					<li><span class="sleft">是否安全模式: </span><span class="sright">{if $phpinfo.safe_mode}是{else}否{/if}</span></li>
+					<li><span class="sleft">Register_Globals: </span><span class="sright">{if $phpinfo.register_globals}开启{else}关闭{/if}</span></li>
+					<li><span class="sleft">Magic_Quotes_Gpc: </span><span class="sright">{if $phpinfo.magic_quotes_gpc}开启{else}关闭{/if}</span></li>
+					<li><span class="sleft">支持上传的最大文件: </span><span class="sright">{$phpinfo.upload_max_filesize}</span></li>
+					<li><span class="sleft">是否允许打开远程连接: </span><span class="sright">{if $phpinfo.allow_url_fopen}是{else}否{/if}</span></li>
 				</ul>
 			</div>
 		</div>

@@ -3,6 +3,23 @@
  * orm字段映射表 相同的数据表字段最好用相同的映射key值
  */
 $orm = array (
+    'admin'             => array(
+        'id'            => 'id',
+        'username'      => 'username',
+        'password'      => 'password',
+        'ukey'          => 'ukey',
+        'createtime'    => 'createtime',
+        'status'        => 'status',
+        'ustate'        => 'ustate',
+        'lastlogintime' => 'lastlogintime',
+        'lastloginip'   => 'lastloginip',
+        'logincount'    => 'logincount'
+    ),
+    'admin_access'       => array(
+        'userid'        => 'userid',
+        'nodeid'        => 'nodeid',
+        'groupid'       => 'groupid',
+    ),
     'article_index'     => array(
         'id'            => 'id',
         'title'         => 'title',
@@ -45,9 +62,9 @@ $orm = array (
     	'roleid'        => 'roleid',
     	'nodeid'        => 'nodeid'
     ),
-    'role_user'         => array(
+    'role_admin'         => array(
     	'roleid'        => 'roleid',
-    	'userid'        => 'userid'
+    	'adminid'       => 'adminid'
     ),
     'system'            => array(
         'id'            => 'id',
@@ -69,14 +86,9 @@ $orm = array (
         'createtime'    => 'createtime',
         'status'        => 'status',
         'ustate'        => 'ustate',
-        'permission'    => 'permission',
+        'urank'         => 'urank',
         'lastlogintime' => 'lastlogintime',
         'lastloginip'   => 'lastloginip',
         'logincount'    => 'logincount'
-    ),
-    'admin_access'       => array(
-    	'userid'        => 'userid',
-    	'nodeid'        => 'nodeid',
-    	'groupid'       => 'groupid',
     ),
 );

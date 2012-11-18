@@ -7,8 +7,11 @@ class System extends Base
 {
     private $_phpinfo = array(
         'php_version'      => PHP_VERSION,
-        'register_globals' => '',
         'safe_mode'        => '',
+        'register_globals' => '',
+        'magic_quotes_gpc' => '',
+        'upload_max_filesize' => '',
+        'allow_url_fopen'  => '',
     );
 
 	public function __construct()

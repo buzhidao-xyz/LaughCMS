@@ -7,7 +7,7 @@ $config_dir = str_replace('/admin/include/config', '', str_replace('\\', '/', di
 require_once($config_dir.'/config.php');
 
 $admin_config = array(
-    'STYLE_DEFAULT'        => ADMIN_DIR.'/themes/default', //模板样式路径
+    'STYLE_DEFAULT'        => ADMIN_DIR.'/themes/smooth', //模板样式路径
 
     'INCLUDE_DIR'          => ADMIN_DIR.'/include',
     'CACHE_DIR'            => ADMIN_DIR.'/cache',

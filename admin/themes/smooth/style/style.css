@@ -976,7 +976,7 @@ div.color a.greyblue
 #content div.box li
 {
 	/*padding: 0;*/
-	font-size: 12px;  
+	font-size: 13px;
 }
 
 #content div.box ol.lower-roman, 
@@ -1191,7 +1191,7 @@ div.form div.fields div.field
 {
 	margin: 0;
 	padding: 10px 0 10px 0; 
-	height: 30px;
+	height: auto;
 	border-bottom: 1px solid #DDDDDD;
 	clear: both;
 	overflow: hidden;
@@ -1324,6 +1324,7 @@ div.form div.fields div.field div.label span
 
 div.form div.fields div.field div.input
 {
+	float: left;
 	margin: 0;
 	padding: 0;
 }

@@ -46,9 +46,7 @@ class LoginControl extends BaseControl
     static private function getUsername()
     {
         $username = q('username');
-        
-        $reg = "/^[0-9a-zA-Z][0-9a-zA-Z_.-@]{2,19}$/";
-        if (preg_match($reg, $username)) {
+        if (Check::__Check('adminName',$username)) {
             return $username;
         } else {
             session('ecode', 1003);
@@ -63,9 +61,7 @@ class LoginControl extends BaseControl
     static private function getPassword()
     {
         $password = q('password');
-        
-        $reg = "/^[0-9a-zA-Z][0-9a-zA-Z_]{5,19}$/";
-        if (preg_match($reg, $password)) {
+        if (Check::__Check('adminPwd',$password)) {
             return $password;
         } else {
             session('ecode', 1003);
@@ -99,19 +95,23 @@ class LoginControl extends BaseControl
         $username = self::getUsername();
         $password = self::getPassword();
         
-        $where = array(
-            'username' => $username
-        );
-        $res = T('user')->field('id,username,password,ukey,ustate')->where($where)->find();
+        $res = T('admin')->field('id,username,password,ukey,ustate,logincount')->where(array('username'=>$username))->find();
         
-        if (empty($res) || $username != $res['username'] || md5(md5($password).$res['ukey']) != $res['password']) {
+        if (empty($res) || $username != $res['username'] || M('Admin')->password_encrypt($password,$res['ukey']) != $res['password']) {
             session('ecode', 1003);
             self::LoginIndex();
         }
+
+        M('Admin')->upAdmin($res['id'],array(
+            'lastlogintime' => TIMESTAMP,
+            'lastloginip'   => ip2longs(getIp()),
+            'logincount'    => $res['logincount']+1
+        ));
         
         $userInfo = array(
             'id'       => $res['id'],
-            'username' => $username
+            'username' => $res['username'],
+            'ukey'     => $res['ukey']
         );
         
 		session('userInfo', $userInfo);

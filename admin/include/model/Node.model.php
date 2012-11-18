@@ -63,9 +63,8 @@ class Node extends Base
         $where = array('isshow' => 1);
         if ($nodeid) $where['pid'] = $nodeid;
 
+        $total = T('node')->where($where)->count();
         $obj = T('node')->where($where)->order('id');
-        $total = $obj->count();
-
         if ($length > 0) $obj = $obj->limit($start,$length);
         $data = $obj->select();
 

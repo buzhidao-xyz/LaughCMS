@@ -10,8 +10,6 @@ class PublicControl extends CommonControl
 	public function __construct()
     {
         parent::__construct();
-
-        //$this->_system_model = N('System');
     }
 
     /**
@@ -34,7 +32,7 @@ class PublicControl extends CommonControl
      */
     public function head()
     {
-        $this->display('public/head.html');
+        $this->display('Public/head.html');
     }
 
     /**
@@ -50,7 +48,7 @@ class PublicControl extends CommonControl
             $this->assign('menu',$menu['cnode']);
             $html = $this->fetch('public/menu.html');
         } else {
-            $html = $this->fetch('public/menu_index.html');
+            $html = $this->fetch('Public/menu_index.html');
         }
 
         $this->ajaxReturn(0,'OK',$html);
@@ -63,7 +61,7 @@ class PublicControl extends CommonControl
     {
         $phpinfo = M('System')->getPHPInfo();
         $this->assign("phpinfo", $phpinfo);
-    	$this->display('public/welcome.html');
+    	$this->display('Public/welcome.html');
     }
 
     //获取组信息

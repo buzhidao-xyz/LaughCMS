@@ -1,0 +1,82 @@
+{include file="include/head.html"}
+<div id="content">
+	<div id="control">
+		<div class="box">
+			<div class="title">
+				<h5>管理员列表 【目前共有{if $total}{$total}{else}0{/if}条数据】</h5>
+			</div>
+			<div class="table">
+				<ul class="table_list_title">
+			    	<li class="table_list_l table_list_l120">用户名</li>
+			    	<li class="table_list_l table_list_l150">拥有权限角色</li>
+			    	<li class="table_list_l table_list_l150">创建时间</li>
+			    	<li class="table_list_l table_list_l150">最后登录时间</li>
+			    	<li class="table_list_l table_list_l120">最后登录IP</li>
+			    	<li class="table_list_l table_list_l80">登录次数</li>
+			    	<li class="table_list_l table_list_l80">账户状态</li>
+			    	<li class="table_list_l table_list_l80">操作</li>
+			    </ul>
+			    {if $adminList}
+			    {foreach $adminList as $d}
+			    <ul class="table_list role_send_table">
+					<li class="table_list_l table_list_l120">{$d.username}</li>
+    				<li class="table_list_l table_list_l150" name="role" roleid="{$d.roleid}" title="{$d.rolename}">{$d.rolename}</li>
+			    	<li class="table_list_l table_list_l150">{$d.createtime|mkdate}</li>
+			    	<li class="table_list_l table_list_l150">{$d.lastlogintime|mkdate}</li>
+			    	<li class="table_list_l table_list_l120">{$d.lastloginip|longs2ip}</li>
+			    	<li class="table_list_l table_list_l80">{$d.logincount}</li>
+			    	<li class="table_list_l table_list_l80">{if $d.status}启用{else}禁用{/if}</li>
+			    	<li class="table_list_l table_list_l80">
+			    		{if !in_array($d.id,$super_admin)}
+			    		<a href="javascript:;" name="modify" id="{$d.id}" username="{$d.username}">修改</a>&nbsp;&nbsp;
+			    		<a delurl="__APP__/?s=Admin/delteAdmin&id={$d.id}" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+			    		{/if}
+			    	</li>
+			    </ul>
+			    {/foreach}
+			    {else}
+			    <ul class="table_list"><li class="table_list_center">空</li></ul>
+			    {/if}
+    			{include file="public/page.html"}
+			</div>
+		</div>
+	</div>
+</div>
+<!--弹出层-->
+<div id="modify_div" class="modify_div" style="display:none;">
+	<form id="user_role_modify_div_form" action="__APP__/?s=Admin/roleAdmin">
+		<input name="id" id="id" value="" type="hidden" />
+		<input name="roleid" id="roleid" value="" type="hidden">
+		<a href="javascript:;" class="modify_div_close" id="modify_div_close">X</a>
+		<div class="form">
+			<div class="fields">
+			<ul class="formbody modify_div_box">
+			<table align="center" border="0" cellspacing="0" cellpadding="0" style="width:100%;">
+				<tr>
+					<td  class="stgap" width="85%">
+						<li class="noborder formblock colorblock">
+							<span class="label">选择角色: </span>
+							<select name="roles" id="roles">
+								{foreach $roleList as $d}
+								<option value="{$d.id}" desc="{$d.remark}">{$d.name}</option>
+								{/foreach}
+							</select>
+						</li>
+					</td>
+					<td class="stgap" width="15%"><input type="button" name="subut" id="addrole" class="" value="添加" /></td>
+				</tr>
+				<tr id="rolehr">
+					<td class="stgap" colspan="2"><hr></td>
+				</tr>
+				<tr id="rolesubmit">
+					<td colspan=2><div class="buttons"><input type="submit" name="subut" value="完成提交" /></div></td>
+				</tr>
+			</table>
+			</ul>
+			</div>
+		</div>
+	</form>
+</div>
+<!--弹出层-->
+<script src="themes/smooth/js/role.js" type="text/javascript"></script>
+{include file="include/foot.html"}

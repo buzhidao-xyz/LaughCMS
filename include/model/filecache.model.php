@@ -128,11 +128,11 @@ class FileCache
         
         $fmtime = file_exists($path)&&filemtime($path) ? filemtime($path)+$policy['life_time'] : $policy['life_time'];
         if ($fmtime < TIMESTAMP) {
-            if (empty($view)) {
-                $path = false;
-            } else {
+            // if (empty($view)) {
+            //     $path = false;
+            // } else {
                 file_put_contents($path, $view);
-            }
+            // }
         }
         
         return $path;

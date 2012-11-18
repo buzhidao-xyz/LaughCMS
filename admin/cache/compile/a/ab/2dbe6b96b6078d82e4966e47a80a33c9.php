@@ -1,13 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 	<title>Laugh Admin Center</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<!-- stylesheets -->
-	<link rel="stylesheet" type="text/css" href="themes/smooth/style/reset.css" />
+	<link rel="stylesheet" type="text/css" href="themes/smooth/style/reset.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="themes/smooth/style/style.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="themes/smooth/style/table.css" />
+	<link rel="stylesheet" type="text/css" href="themes/smooth/style/table.css" media="screen" />
 	<link id="color" rel="stylesheet" type="text/css" href="themes/smooth/style/colors/blue.css" />
+	<link rel="stylesheet" type="text/css" href="themes/smooth/style/common.css" media="screen" />
 	<!-- scripts (jquery) -->
 	<script src="themes/smooth/js/jquery-1.4.2.min.js" type="text/javascript"></script>
 	<!--[if IE]><script language="javascript" type="text/javascript" src="themes/smooth/js/excanvas.min.js"></script><![endif]-->
@@ -24,6 +25,9 @@
 	<script src="themes/smooth/js/smooth.form.js" type="text/javascript"></script>
 	<script src="themes/smooth/js/smooth.dialog.js" type="text/javascript"></script>
 	<script src="themes/smooth/js/smooth.autocomplete.js" type="text/javascript"></script>
+	<script src="themes/smooth/js/div_window.js" type="text/javascript"></script>
+	<script src="themes/smooth/js/common.js" type="text/javascript"></script>
+	<script src="themes/smooth/js/ajax.js" type="text/javascript"></script>
 	<script type="text/javascript">
 	var JS_APP = '/laugh/admin';
 	var style_path = "themes/smooth/style/colors";
@@ -112,8 +116,5 @@
         $("input:submit, input:reset").button();
     });
 </script>
-<script type="text/javascript" src="themes/smooth/js/div_window.js"></script>
-<script type="text/javascript" src="themes/smooth/js/common.js"></script>
-<script type="text/javascript" src="themes/smooth/js/ajax.js"></script>
 </body>
 </html>
