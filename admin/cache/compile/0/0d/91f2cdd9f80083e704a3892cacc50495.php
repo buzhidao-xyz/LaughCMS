@@ -272,6 +272,98 @@ $("#sitemap_title").mousedown(function() {
             </ul>
             -->
         </li>
+                <li>
+            <a href="javascript:;" groupid="3" title="核心内容" class="navHeadMenu"><span>核心内容</span></a>
+            <!--
+            <ul>
+                <li><a href="#">Manage Products</a></li>
+                <li><a href="#">Add Product</a></li>
+                <li>
+                    <a href="#" class="childs">Sales</a>
+                    <ul>
+                        <li><a href="">Today</a></li>
+                        <li class="last"><a href="">Yesterday</a></li>
+                    </ul>
+                </li>
+                <li class="last">
+                    <a href="#" class="childs">Offers</a>
+                    <ul>
+                        <li><a href="">Coupon Codes</a></li>
+                        <li class="last"><a href="">Rebates</a></li>
+                    </ul>
+                </li>
+            </ul>
+            -->
+        </li>
+                <li>
+            <a href="javascript:;" groupid="4" title="网站更新" class="navHeadMenu"><span>网站更新</span></a>
+            <!--
+            <ul>
+                <li><a href="#">Manage Products</a></li>
+                <li><a href="#">Add Product</a></li>
+                <li>
+                    <a href="#" class="childs">Sales</a>
+                    <ul>
+                        <li><a href="">Today</a></li>
+                        <li class="last"><a href="">Yesterday</a></li>
+                    </ul>
+                </li>
+                <li class="last">
+                    <a href="#" class="childs">Offers</a>
+                    <ul>
+                        <li><a href="">Coupon Codes</a></li>
+                        <li class="last"><a href="">Rebates</a></li>
+                    </ul>
+                </li>
+            </ul>
+            -->
+        </li>
+                <li>
+            <a href="javascript:;" groupid="5" title="系统插件" class="navHeadMenu"><span>系统插件</span></a>
+            <!--
+            <ul>
+                <li><a href="#">Manage Products</a></li>
+                <li><a href="#">Add Product</a></li>
+                <li>
+                    <a href="#" class="childs">Sales</a>
+                    <ul>
+                        <li><a href="">Today</a></li>
+                        <li class="last"><a href="">Yesterday</a></li>
+                    </ul>
+                </li>
+                <li class="last">
+                    <a href="#" class="childs">Offers</a>
+                    <ul>
+                        <li><a href="">Coupon Codes</a></li>
+                        <li class="last"><a href="">Rebates</a></li>
+                    </ul>
+                </li>
+            </ul>
+            -->
+        </li>
+                <li>
+            <a href="javascript:;" groupid="6" title="系统设置" class="navHeadMenu"><span>系统设置</span></a>
+            <!--
+            <ul>
+                <li><a href="#">Manage Products</a></li>
+                <li><a href="#">Add Product</a></li>
+                <li>
+                    <a href="#" class="childs">Sales</a>
+                    <ul>
+                        <li><a href="">Today</a></li>
+                        <li class="last"><a href="">Yesterday</a></li>
+                    </ul>
+                </li>
+                <li class="last">
+                    <a href="#" class="childs">Offers</a>
+                    <ul>
+                        <li><a href="">Coupon Codes</a></li>
+                        <li class="last"><a href="">Rebates</a></li>
+                    </ul>
+                </li>
+            </ul>
+            -->
+        </li>
             </ul>
     <!-- end quick -->
     <div class="corner tl"></div>

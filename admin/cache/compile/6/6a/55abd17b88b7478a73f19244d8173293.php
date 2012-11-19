@@ -42,17 +42,46 @@
 	<div id="control">
 		<div class="box">
 			<div class="title">
-				<h5>新组节点表单</h5>
+				<h5>新管理员表单</h5>
 			</div>
-			<form name="newform" action="/laugh/admin/?s=Group/saveGroup" method="post" id="addajaxform">
+			<form name="newform" action="/laugh/admin/?s=Admin/saveAdmin" method="post" id="addajaxform">
 			<div class="form">
 				<div class="fields">
-					<div class="field  field-first">
+					<div class="field">
 						<div class="label">
-							<label for="input-small">名称:</label>
+							<label for="input-small">账户:</label>
 						</div>
 						<div class="input" style="float:left;">
-							<input type="text" id="input-small" name="title" class="small" />
+							<input type="text" name="username" class="small" />
+						</div>
+					</div>
+					<div class="field">
+						<div class="label">
+							<label for="input-small">密码:</label>
+						</div>
+						<div class="input" style="float:left;">
+							<input type="password" name="password" class="small" />
+						</div>
+					</div>
+					<div class="field">
+						<div class="label">
+							<label for="input-small">重复密码:</label>
+						</div>
+						<div class="input" style="float:left;">
+							<input type="password" name="password1" class="small" />
+						</div>
+					</div>
+					<div class="field">
+						<div class="label label-radio">
+							<label for="input-small">是否启用:</label>
+						</div>
+						<div class="radios" style="float:left;">
+							<div class="radio">
+								<input type="radio" name="status" value="1" class="radio" checked="checked" /><label>启用</label>
+							</div>
+							<div class="radio">
+								<input type="radio" name="status" value="0" class="radio" /><label>禁用</label>
+							</div>
 						</div>
 					</div>
 					<div class="buttons">

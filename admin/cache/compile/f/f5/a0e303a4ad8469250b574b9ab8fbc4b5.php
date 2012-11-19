@@ -59,10 +59,12 @@
 					<li class="table_list_l table_list_l120">admin</li>
     				<li class="table_list_l table_list_l150" name="role" roleid="" title=""></li>
 			    	<li class="table_list_l table_list_l150">2011-12-15 08:47:32</li>
-			    	<li class="table_list_l table_list_l150">2012-11-18 21:04:25</li>
+			    	<li class="table_list_l table_list_l150">2012-11-19 21:19:28</li>
 			    	<li class="table_list_l table_list_l120">127.0.0.1</li>
-			    	<li class="table_list_l table_list_l80">7</li>
-			    	<li class="table_list_l table_list_l80">启用</li>
+			    	<li class="table_list_l table_list_l80">13</li>
+			    	<li class="table_list_l table_list_l80">
+			    					    			启用
+			    					    	</li>
 			    	<li class="table_list_l table_list_l80">
 			    					    	</li>
 			    </ul>
@@ -73,7 +75,9 @@
 			    	<li class="table_list_l table_list_l150"></li>
 			    	<li class="table_list_l table_list_l120"></li>
 			    	<li class="table_list_l table_list_l80">0</li>
-			    	<li class="table_list_l table_list_l80">启用</li>
+			    	<li class="table_list_l table_list_l80">
+			    					    			<a delurl="/laugh/admin/?s=Admin/upAdminStatus&id=2&status=1" href="javascript:;" name="del" msg="确定启用吗？">禁用</a>
+			    					    	</li>
 			    	<li class="table_list_l table_list_l80">
 			    					    		<a href="javascript:;" name="modify" id="2" username="luochuan">修改</a>&nbsp;&nbsp;
 			    		<a delurl="/laugh/admin/?s=Admin/delteAdmin&id=2" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
@@ -86,7 +90,9 @@
 			    	<li class="table_list_l table_list_l150"></li>
 			    	<li class="table_list_l table_list_l120"></li>
 			    	<li class="table_list_l table_list_l80">0</li>
-			    	<li class="table_list_l table_list_l80">启用</li>
+			    	<li class="table_list_l table_list_l80">
+			    					    			<a delurl="/laugh/admin/?s=Admin/upAdminStatus&id=3&status=0" href="javascript:;" name="del" msg="确定禁用吗？">启用</a>
+			    					    	</li>
 			    	<li class="table_list_l table_list_l80">
 			    					    		<a href="javascript:;" name="modify" id="3" username="test">修改</a>&nbsp;&nbsp;
 			    		<a delurl="/laugh/admin/?s=Admin/delteAdmin&id=3" href="javascript:;" name="del" msg="确定删除吗？">删除</a>

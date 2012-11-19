@@ -1673,8 +1673,10 @@ div.form div.fields div.field div.radios div.radio
 {
 	margin: 0;
 	padding: 2px 0 2px 0;
-	clear: both;
+	/*clear: both;*/
 	overflow: hidden;
+	margin: 0 5px;
+	float: left;
 }
 
 div.form div.fields div.field div.radios div.radio input

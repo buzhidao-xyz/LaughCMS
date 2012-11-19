@@ -17,6 +17,13 @@ class Admin extends Base
 		return md5(md5($password).$ukey);
 	}
 
+	//保存新管理员
+	public function saveAdmin($data=array())
+	{
+		if (!is_array($data) || empty($data)) return false;
+		return T('admin')->add($data);
+	}
+
 	/**
      * 获取管理员信息
 	 */

@@ -26,6 +26,22 @@ class AdminControl extends CommonControl
 		return $id;
 	}
 
+	//获取管理员用户名
+	private function _getUsername()
+	{
+		$username = q('username');
+		if (!$username) $this->ajaxReturn(1,'请输入账户名！');
+		return $username;
+	}
+
+	//获取状态
+	private function _getStatus()
+	{
+		$status = q('status');
+		if ((int)$status!==0 && (int)$status!==1) $this->ajaxReturn(1,'账户状态错误！');
+		return $status;
+	}
+
 	//个人信息
 	public function profile()
 	{
@@ -62,6 +78,36 @@ class AdminControl extends CommonControl
 	public function newAdmin()
 	{
 		$this->display('Admin/add.html');
+	}
+
+	//保存管理员信息
+	public function saveAdmin()
+	{
+		$username = $this->_getUsername();
+		$password = isset($_REQUEST['password']) ? $_REQUEST['password'] : '';
+		if (!Check::__Check('adminPwd',$password)) $this->ajaxReturn(1,'密码错误！');
+		$password1 = isset($_REQUEST['password1']) ? $_REQUEST['password1'] : '';
+		if ($password != $password1) $this->ajaxReturn(1,'两次密码不一样！');
+		$status = $this->_getStatus();
+
+		$ukey = getRandStrs();
+		$data = array(
+			'username' => $username,
+			'password' => M('Admin')->password_encrypt($password,$ukey),
+			'ukey'     => $ukey,
+			'createtime' => TIMESTAMP,
+			'status'   => $status,
+			'ustate'   => md5(md5($username).$ukey),
+			'lastlogintime' => TIMESTAMP,
+			'lastloginip'   => ip2longs(getIp()),
+			'logincount'    => 0
+		);
+		$return = M('Admin')->saveAdmin($data);
+		if ($return) {
+			$this->ajaxReturn(0,'管理员添加成功！');
+		} else {
+			$this->ajaxReturn(1,'管理员添加失败！');
+		}
 	}
 
 	//管理员列表

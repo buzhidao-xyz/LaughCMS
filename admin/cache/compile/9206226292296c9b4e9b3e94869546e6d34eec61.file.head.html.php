@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-11-18 22:13:50
+<?php /* Smarty version Smarty-3.1.12, created on 2012-11-19 22:26:25
          compiled from "/usr/local/webserver/site/laugh/admin/themes/smooth/include/head.html" */ ?>
-<?php /*%%SmartyHeaderCode:113290752550a8ed1e382789-97935378%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:129665332950aa419156d340-20115551%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,15 +11,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '113290752550a8ed1e382789-97935378',
+  'nocache_hash' => '129665332950aa419156d340-20115551',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50a8ed1e3870e1_93420496',
+  'unifunc' => 'content_50aa4191573b04_52476512',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50a8ed1e3870e1_93420496')) {function content_50a8ed1e3870e1_93420496($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_50aa4191573b04_52476512')) {function content_50aa4191573b04_52476512($_smarty_tpl) {?><!DOCTYPE html>
 <html>
 <head>
 	<title>Laugh Admin Center</title>

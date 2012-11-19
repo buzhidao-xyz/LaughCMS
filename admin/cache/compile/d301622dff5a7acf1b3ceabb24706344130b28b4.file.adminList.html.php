@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-11-18 22:13:50
+<?php /* Smarty version Smarty-3.1.12, created on 2012-11-19 22:26:25
          compiled from "/usr/local/webserver/site/laugh/admin/themes/smooth/Admin/adminList.html" */ ?>
-<?php /*%%SmartyHeaderCode:122521439250a8ed1e25eca9-99313838%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:190060830250aa41913b5be7-95117476%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'd301622dff5a7acf1b3ceabb24706344130b28b4' => 
     array (
       0 => '/usr/local/webserver/site/laugh/admin/themes/smooth/Admin/adminList.html',
-      1 => 1353248028,
+      1 => 1353330122,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '122521439250a8ed1e25eca9-99313838',
+  'nocache_hash' => '190060830250aa41913b5be7-95117476',
   'function' => 
   array (
   ),
@@ -25,9 +25,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50a8ed1e37ce65_29798204',
+  'unifunc' => 'content_50aa41914ee937_45831246',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50a8ed1e37ce65_29798204')) {function content_50a8ed1e37ce65_29798204($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50aa41914ee937_45831246')) {function content_50aa41914ee937_45831246($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div id="content">
 	<div id="control">
@@ -68,7 +68,16 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 </li>
 			    	<li class="table_list_l table_list_l80"><?php echo $_smarty_tpl->tpl_vars['d']->value['logincount'];?>
 </li>
-			    	<li class="table_list_l table_list_l80"><?php if ($_smarty_tpl->tpl_vars['d']->value['status']){?>启用<?php }else{ ?>禁用<?php }?></li>
+			    	<li class="table_list_l table_list_l80">
+			    		<?php if (in_array($_smarty_tpl->tpl_vars['d']->value['id'],$_smarty_tpl->tpl_vars['super_admin']->value)){?>
+			    			<?php echo $_smarty_tpl->tpl_vars['d']->value['_status'];?>
+
+			    		<?php }else{ ?>
+			    			<a delurl="__APP__/?s=Admin/upAdminStatus&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+&status=<?php if ($_smarty_tpl->tpl_vars['d']->value['status']){?>0<?php }else{ ?>1<?php }?>" href="javascript:;" name="del" msg="确定<?php if ($_smarty_tpl->tpl_vars['d']->value['status']){?>禁用<?php }else{ ?>启用<?php }?>吗？"><?php echo $_smarty_tpl->tpl_vars['d']->value['_status'];?>
+</a>
+			    		<?php }?>
+			    	</li>
 			    	<li class="table_list_l table_list_l80">
 			    		<?php if (!in_array($_smarty_tpl->tpl_vars['d']->value['id'],$_smarty_tpl->tpl_vars['super_admin']->value)){?>
 			    		<a href="javascript:;" name="modify" id="<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
