@@ -42,6 +42,7 @@ class RoleControl extends CommonControl
 	public function roleAdmin()
 	{
 		$id = $this->_getID();
+		if (in_array($id, session('super_admin'))) $this->ajaxReturn(1,'禁止操作！');
 		$roleid = $this->_getRoleID();
 		$roleid = explode(',', $roleid);
 

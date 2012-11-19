@@ -44,4 +44,11 @@ class Admin extends Base
 
 		return T('admin')->where(array('id'=>$id))->update($data);
 	}
+
+	//删除管理员
+	public function deleteAdmin($id)
+	{
+		if (!$id) return false;
+		return T('admin')->where(array('id'=>$id))->delete();
+	}
 }

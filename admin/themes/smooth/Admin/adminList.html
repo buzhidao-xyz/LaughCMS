@@ -25,7 +25,13 @@
 			    	<li class="table_list_l table_list_l150">{$d.lastlogintime|mkdate}</li>
 			    	<li class="table_list_l table_list_l120">{$d.lastloginip|longs2ip}</li>
 			    	<li class="table_list_l table_list_l80">{$d.logincount}</li>
-			    	<li class="table_list_l table_list_l80">{if $d.status}启用{else}禁用{/if}</li>
+			    	<li class="table_list_l table_list_l80">
+			    		{if in_array($d.id,$super_admin)}
+			    			{$d._status}
+			    		{else}
+			    			<a delurl="__APP__/?s=Admin/upAdminStatus&id={$d.id}&status={if $d.status}0{else}1{/if}" href="javascript:;" name="del" msg="确定{if $d.status}禁用{else}启用{/if}吗？">{$d._status}</a>
+			    		{/if}
+			    	</li>
 			    	<li class="table_list_l table_list_l80">
 			    		{if !in_array($d.id,$super_admin)}
 			    		<a href="javascript:;" name="modify" id="{$d.id}" username="{$d.username}">修改</a>&nbsp;&nbsp;

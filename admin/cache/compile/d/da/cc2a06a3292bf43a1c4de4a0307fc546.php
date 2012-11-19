@@ -1,25 +1,4 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-11-19 17:26:09
-         compiled from "C:\xampp\htdocs\laugh\admin\themes\smooth\include\head.html" */ ?>
-<?php /*%%SmartyHeaderCode:47150a9fb313e2664-20554328%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
-$_valid = $_smarty_tpl->decodeProperties(array (
-  'file_dependency' => 
-  array (
-    '6e4aad999ceca1d73e5a16f331a72e8e670a6c1d' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\smooth\\include\\head.html',
-      1 => 1353286829,
-      2 => 'file',
-    ),
-  ),
-  'nocache_hash' => '47150a9fb313e2664-20554328',
-  'function' => 
-  array (
-  ),
-  'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50a9fb313e8653_67080754',
-),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50a9fb313e8653_67080754')) {function content_50a9fb313e8653_67080754($_smarty_tpl) {?><!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Laugh Admin Center</title>
@@ -50,7 +29,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<script src="themes/smooth/js/common.js" type="text/javascript"></script>
 	<script src="themes/smooth/js/ajax.js" type="text/javascript"></script>
 	<script type="text/javascript">
-	var JS_APP = '__APP__';
+	var JS_APP = '/laugh/admin';
 	var style_path = "themes/smooth/style/colors";
 	$(document).ready(function () {
 		$("#box-tabs, #box-left-tabs").tabs();
@@ -58,4 +37,32 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	</script>
 </head>
 
-<body><?php }} ?>
+<body>
+<div id="content">
+	<div id="control">
+		<div class="box">
+			<div class="title">
+				<h5>新组节点表单</h5>
+			</div>
+			<form name="newform" action="/laugh/admin/?s=Group/saveGroup" method="post" id="addajaxform">
+			<div class="form">
+				<div class="fields">
+					<div class="field  field-first">
+						<div class="label">
+							<label for="input-small">名称:</label>
+						</div>
+						<div class="input" style="float:left;">
+							<input type="text" id="input-small" name="title" class="small" />
+						</div>
+					</div>
+					<div class="buttons">
+						<input type="submit" name="submit" value="添加" />
+					</div>
+				</div>
+			</div>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>

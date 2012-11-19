@@ -1,13 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 	<title>Laugh Admin Center</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<!-- stylesheets -->
-	<link rel="stylesheet" type="text/css" href="themes/smooth/style/reset.css" />
+	<link rel="stylesheet" type="text/css" href="themes/smooth/style/reset.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="themes/smooth/style/style.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="themes/smooth/style/table.css" />
+	<link rel="stylesheet" type="text/css" href="themes/smooth/style/table.css" media="screen" />
 	<link id="color" rel="stylesheet" type="text/css" href="themes/smooth/style/colors/blue.css" />
+	<link rel="stylesheet" type="text/css" href="themes/smooth/style/common.css" media="screen" />
 	<!-- scripts (jquery) -->
 	<script src="themes/smooth/js/jquery-1.4.2.min.js" type="text/javascript"></script>
 	<!--[if IE]><script language="javascript" type="text/javascript" src="themes/smooth/js/excanvas.min.js"></script><![endif]-->
@@ -24,11 +25,13 @@
 	<script src="themes/smooth/js/smooth.form.js" type="text/javascript"></script>
 	<script src="themes/smooth/js/smooth.dialog.js" type="text/javascript"></script>
 	<script src="themes/smooth/js/smooth.autocomplete.js" type="text/javascript"></script>
+	<script src="themes/smooth/js/div_window.js" type="text/javascript"></script>
+	<script src="themes/smooth/js/common.js" type="text/javascript"></script>
+	<script src="themes/smooth/js/ajax.js" type="text/javascript"></script>
 	<script type="text/javascript">
+	var JS_APP = '/laugh/admin';
+	var style_path = "themes/smooth/style/colors";
 	$(document).ready(function () {
-		var JS_APP = '/laugh/admin';
-		var style_path = "themes/smooth/style/colors";
-
 		$("#box-tabs, #box-left-tabs").tabs();
 	});
 	</script>
@@ -61,7 +64,7 @@
 		</div>
 		<div class="box mtop10">
 			<div class="title">
-				<h5>组节点列表 【目前共有5条数据】</h5>
+				<h5>组节点列表 【目前共有6条数据】</h5>
 			</div>
 			<div class="table">
 				<ul class="table_list_title">
@@ -89,35 +92,44 @@
 			    	</li>
 			    </ul>
 			    			    <ul class="table_list">
-					<li class="table_list_l table_list_l150">文章管理</li>
+					<li class="table_list_l table_list_l150">核心内容</li>
 			    	<li class="table_list_l table_list_l170">2012-03-22 12:28:58</li>
 			    	<li class="table_list_l table_list_l100">显</li>
 			    	<li class="table_list_l table_list_l150">
-			    		<a href="javascript:;" name="modify" id="3" title="文章管理" isshow="1">修改</a>&nbsp;&nbsp;
+			    		<a href="javascript:;" name="modify" id="3" title="核心内容" isshow="1">修改</a>&nbsp;&nbsp;
 			    		<a delurl="/laugh/admin/Group/deleteGroup" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 			    	</li>
 			    </ul>
 			    			    <ul class="table_list">
-					<li class="table_list_l table_list_l150">网站设置</li>
+					<li class="table_list_l table_list_l150">网站更新</li>
 			    	<li class="table_list_l table_list_l170">2012-03-22 12:28:58</li>
 			    	<li class="table_list_l table_list_l100">显</li>
 			    	<li class="table_list_l table_list_l150">
-			    		<a href="javascript:;" name="modify" id="4" title="网站设置" isshow="1">修改</a>&nbsp;&nbsp;
+			    		<a href="javascript:;" name="modify" id="4" title="网站更新" isshow="1">修改</a>&nbsp;&nbsp;
 			    		<a delurl="/laugh/admin/Group/deleteGroup" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 			    	</li>
 			    </ul>
 			    			    <ul class="table_list">
-					<li class="table_list_l table_list_l150">系统工具</li>
+					<li class="table_list_l table_list_l150">系统插件</li>
 			    	<li class="table_list_l table_list_l170">2012-03-22 12:28:58</li>
 			    	<li class="table_list_l table_list_l100">显</li>
 			    	<li class="table_list_l table_list_l150">
-			    		<a href="javascript:;" name="modify" id="5" title="系统工具" isshow="1">修改</a>&nbsp;&nbsp;
+			    		<a href="javascript:;" name="modify" id="5" title="系统插件" isshow="1">修改</a>&nbsp;&nbsp;
+			    		<a delurl="/laugh/admin/Group/deleteGroup" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+			    	</li>
+			    </ul>
+			    			    <ul class="table_list">
+					<li class="table_list_l table_list_l150">系统设置</li>
+			    	<li class="table_list_l table_list_l170">2012-11-19 17:12:15</li>
+			    	<li class="table_list_l table_list_l100">显</li>
+			    	<li class="table_list_l table_list_l150">
+			    		<a href="javascript:;" name="modify" id="6" title="系统设置" isshow="1">修改</a>&nbsp;&nbsp;
 			    		<a delurl="/laugh/admin/Group/deleteGroup" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 			    	</li>
 			    </ul>
 			    			        			<div class="pagination pagination-left">
 	<div class="results">
-		<span>显示数据 1-5 / 5</span>
+		<span>显示数据 1-6 / 6</span>
 	</div>
 	</div>
 			</div>
@@ -153,15 +165,12 @@
 					</div>
 				</div>
 				<div class="buttons">
-					<input type="submit" name="submit" value="添加" />
+					<input type="submit" name="submit" value="修改" />
 				</div>
 			</div>
 		</div>
 	</form>
 </div>
 <!--弹出层-->
-<script type="text/javascript" src="themes/smooth/js/div_window.js"></script>
-<script type="text/javascript" src="themes/smooth/js/common.js"></script>
-<script type="text/javascript" src="themes/smooth/js/ajax.js"></script>
 </body>
 </html>

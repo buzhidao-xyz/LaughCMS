@@ -5,6 +5,11 @@
  */
 class AdminControl extends CommonControl
 {
+	private $_status = array(
+		0 => '禁用',
+		1 => '启用'
+	);
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -49,14 +54,14 @@ class AdminControl extends CommonControl
 		if ($return) {
 			$this->ajaxReturn(0,'密码修改成功！');
 		} else {
-			$this->ajaxReturn(1,'密码修改成功！');
+			$this->ajaxReturn(1,'密码修改失败！');
 		}
 	}
 
 	//新管理员
 	public function newAdmin()
 	{
-
+		$this->display('Admin/add.html');
 	}
 
 	//管理员列表
@@ -76,6 +81,7 @@ class AdminControl extends CommonControl
 					}
 				} else $rolenames = array();
 				$adminList['data'][$k]['rolename'] = implode(' ',$rolenames);
+				$adminList['data'][$k]['_status'] = $this->_status[$v['status']];
 			}
 		}
 
@@ -90,9 +96,32 @@ class AdminControl extends CommonControl
 		$this->display('Admin/adminList.html');
 	}
 
+	//更改状态
+	public function upAdminStatus()
+	{
+		$id = $this->_getID();
+		$status = isset($_REQUEST['status']) ? $_REQUEST['status'] : 0;
+		if (in_array($id, session('super_admin'))) $this->ajaxReturn(1,'禁止操作！');
+
+		$return = M('Admin')->upAdmin($id,array('status'=>$status));
+		if ($return) {
+			$this->ajaxReturn(0,'管理员已'.$this->_status[$status].'！');
+		} else {
+			$this->ajaxReturn(1,'管理员已'.$this->_status[$status].'！');
+		}
+	}
+
 	//删除管理员
 	public function delteAdmin()
 	{
 		$id = $this->_getID();
+		if (in_array($id, session('super_admin'))) $this->ajaxReturn(1,'禁止操作！');
+
+		$return = M('Admin')->deleteAdmin($id);
+		if ($return) {
+			$this->ajaxReturn(0,'管理员删除成功！');
+		} else {
+			$this->ajaxReturn(1,'管理员删除失败！');
+		}
 	}
 }

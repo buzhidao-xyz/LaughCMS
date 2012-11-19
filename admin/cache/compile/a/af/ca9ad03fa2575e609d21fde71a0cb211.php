@@ -42,7 +42,7 @@
 	<div id="control">
 		<div class="box">
 			<div class="title">
-				<h5>节点列表 【目前共有15条数据】</h5>
+				<h5>节点列表 【目前共有26条数据】</h5>
 			</div>
 			<div class="table">
 				<ul class="table_list_title">
@@ -234,10 +234,152 @@
 			    		<a delurl="/laugh/admin/?s=Node/deleteNode&id=15" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 			    	</li>
 			    </ul>
+			    			    <ul class="table_list">
+					<li class="table_list_l table_list_l150">栏目管理</li>
+					<li class="table_list_l table_list_l200" tooltip=1 title="管理网站栏目">管理网站栏目</li>
+			    	<li class="table_list_l table_list_l100"></li>
+			    	<li class="table_list_l table_list_l120"></li>
+			    	<li class="table_list_l table_list_l150">2012-11-19 16:18:33</li>
+			    	<li class="table_list_l table_list_l80">显</li>
+			    	<li class="table_list_l table_list_l100">
+			    		<a href="javascript:;" name="modify" id="16" title="栏目管理" remark="管理网站栏目" groupid="3" pid="0" control="" action="" isshow="1">修改</a>&nbsp;&nbsp;
+			    		<a delurl="/laugh/admin/?s=Node/deleteNode&id=16" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+			    	</li>
+			    </ul>
+			    			    <ul class="table_list">
+					<li class="table_list_l table_list_l150">网站栏目</li>
+					<li class="table_list_l table_list_l200" tooltip=1 title=""></li>
+			    	<li class="table_list_l table_list_l100">Column</li>
+			    	<li class="table_list_l table_list_l120">index</li>
+			    	<li class="table_list_l table_list_l150">2012-11-19 16:19:46</li>
+			    	<li class="table_list_l table_list_l80">显</li>
+			    	<li class="table_list_l table_list_l100">
+			    		<a href="javascript:;" name="modify" id="17" title="网站栏目" remark="" groupid="3" pid="16" control="Column" action="index" isshow="1">修改</a>&nbsp;&nbsp;
+			    		<a delurl="/laugh/admin/?s=Node/deleteNode&id=17" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+			    	</li>
+			    </ul>
+			    			    <ul class="table_list">
+					<li class="table_list_l table_list_l150">文档管理</li>
+					<li class="table_list_l table_list_l200" tooltip=1 title=""></li>
+			    	<li class="table_list_l table_list_l100"></li>
+			    	<li class="table_list_l table_list_l120"></li>
+			    	<li class="table_list_l table_list_l150">2012-11-19 17:08:57</li>
+			    	<li class="table_list_l table_list_l80">显</li>
+			    	<li class="table_list_l table_list_l100">
+			    		<a href="javascript:;" name="modify" id="18" title="文档管理" remark="" groupid="3" pid="0" control="" action="" isshow="1">修改</a>&nbsp;&nbsp;
+			    		<a delurl="/laugh/admin/?s=Node/deleteNode&id=18" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+			    	</li>
+			    </ul>
+			    			    <ul class="table_list">
+					<li class="table_list_l table_list_l150">发布新文档</li>
+					<li class="table_list_l table_list_l200" tooltip=1 title=""></li>
+			    	<li class="table_list_l table_list_l100">Article</li>
+			    	<li class="table_list_l table_list_l120">newArticle</li>
+			    	<li class="table_list_l table_list_l150">2012-11-19 17:10:12</li>
+			    	<li class="table_list_l table_list_l80">显</li>
+			    	<li class="table_list_l table_list_l100">
+			    		<a href="javascript:;" name="modify" id="19" title="发布新文档" remark="" groupid="3" pid="18" control="Article" action="newArticle" isshow="1">修改</a>&nbsp;&nbsp;
+			    		<a delurl="/laugh/admin/?s=Node/deleteNode&id=19" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+			    	</li>
+			    </ul>
+			    			    <ul class="table_list">
+					<li class="table_list_l table_list_l150">自动更新</li>
+					<li class="table_list_l table_list_l200" tooltip=1 title=""></li>
+			    	<li class="table_list_l table_list_l100"></li>
+			    	<li class="table_list_l table_list_l120"></li>
+			    	<li class="table_list_l table_list_l150">2012-11-19 17:12:49</li>
+			    	<li class="table_list_l table_list_l80">显</li>
+			    	<li class="table_list_l table_list_l100">
+			    		<a href="javascript:;" name="modify" id="20" title="自动更新" remark="" groupid="4" pid="0" control="" action="" isshow="1">修改</a>&nbsp;&nbsp;
+			    		<a delurl="/laugh/admin/?s=Node/deleteNode&id=20" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+			    	</li>
+			    </ul>
+			    			    <ul class="table_list">
+					<li class="table_list_l table_list_l150">一键更新网站</li>
+					<li class="table_list_l table_list_l200" tooltip=1 title=""></li>
+			    	<li class="table_list_l table_list_l100">Make</li>
+			    	<li class="table_list_l table_list_l120">makeHtml</li>
+			    	<li class="table_list_l table_list_l150">2012-11-19 17:13:35</li>
+			    	<li class="table_list_l table_list_l80">显</li>
+			    	<li class="table_list_l table_list_l100">
+			    		<a href="javascript:;" name="modify" id="21" title="一键更新网站" remark="" groupid="4" pid="20" control="Make" action="makeHtml" isshow="1">修改</a>&nbsp;&nbsp;
+			    		<a delurl="/laugh/admin/?s=Node/deleteNode&id=21" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+			    	</li>
+			    </ul>
+			    			    <ul class="table_list">
+					<li class="table_list_l table_list_l150">更新系统缓存</li>
+					<li class="table_list_l table_list_l200" tooltip=1 title=""></li>
+			    	<li class="table_list_l table_list_l100">System</li>
+			    	<li class="table_list_l table_list_l120">upSystemCache</li>
+			    	<li class="table_list_l table_list_l150">2012-11-19 17:14:34</li>
+			    	<li class="table_list_l table_list_l80">显</li>
+			    	<li class="table_list_l table_list_l100">
+			    		<a href="javascript:;" name="modify" id="22" title="更新系统缓存" remark="" groupid="4" pid="20" control="System" action="upSystemCache" isshow="1">修改</a>&nbsp;&nbsp;
+			    		<a delurl="/laugh/admin/?s=Node/deleteNode&id=22" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+			    	</li>
+			    </ul>
+			    			    <ul class="table_list">
+					<li class="table_list_l table_list_l150">基本设置</li>
+					<li class="table_list_l table_list_l200" tooltip=1 title=""></li>
+			    	<li class="table_list_l table_list_l100"></li>
+			    	<li class="table_list_l table_list_l120"></li>
+			    	<li class="table_list_l table_list_l150">2012-11-19 17:15:54</li>
+			    	<li class="table_list_l table_list_l80">显</li>
+			    	<li class="table_list_l table_list_l100">
+			    		<a href="javascript:;" name="modify" id="23" title="基本设置" remark="" groupid="6" pid="0" control="" action="" isshow="1">修改</a>&nbsp;&nbsp;
+			    		<a delurl="/laugh/admin/?s=Node/deleteNode&id=23" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+			    	</li>
+			    </ul>
+			    			    <ul class="table_list">
+					<li class="table_list_l table_list_l150">数据库</li>
+					<li class="table_list_l table_list_l200" tooltip=1 title=""></li>
+			    	<li class="table_list_l table_list_l100"></li>
+			    	<li class="table_list_l table_list_l120"></li>
+			    	<li class="table_list_l table_list_l150">2012-11-19 17:16:37</li>
+			    	<li class="table_list_l table_list_l80">显</li>
+			    	<li class="table_list_l table_list_l100">
+			    		<a href="javascript:;" name="modify" id="24" title="数据库" remark="" groupid="6" pid="0" control="" action="" isshow="1">修改</a>&nbsp;&nbsp;
+			    		<a delurl="/laugh/admin/?s=Node/deleteNode&id=24" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+			    	</li>
+			    </ul>
+			    			    <ul class="table_list">
+					<li class="table_list_l table_list_l150">辅助插件</li>
+					<li class="table_list_l table_list_l200" tooltip=1 title=""></li>
+			    	<li class="table_list_l table_list_l100"></li>
+			    	<li class="table_list_l table_list_l120"></li>
+			    	<li class="table_list_l table_list_l150">2012-11-19 17:17:02</li>
+			    	<li class="table_list_l table_list_l80">显</li>
+			    	<li class="table_list_l table_list_l100">
+			    		<a href="javascript:;" name="modify" id="25" title="辅助插件" remark="" groupid="5" pid="0" control="" action="" isshow="1">修改</a>&nbsp;&nbsp;
+			    		<a delurl="/laugh/admin/?s=Node/deleteNode&id=25" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+			    	</li>
+			    </ul>
+			    			    <ul class="table_list">
+					<li class="table_list_l table_list_l150">文件管理器</li>
+					<li class="table_list_l table_list_l200" tooltip=1 title=""></li>
+			    	<li class="table_list_l table_list_l100">FileManage</li>
+			    	<li class="table_list_l table_list_l120">index</li>
+			    	<li class="table_list_l table_list_l150">2012-11-19 17:18:56</li>
+			    	<li class="table_list_l table_list_l80">显</li>
+			    	<li class="table_list_l table_list_l100">
+			    		<a href="javascript:;" name="modify" id="26" title="文件管理器" remark="" groupid="5" pid="25" control="FileManage" action="index" isshow="1">修改</a>&nbsp;&nbsp;
+			    		<a delurl="/laugh/admin/?s=Node/deleteNode&id=26" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+			    	</li>
+			    </ul>
 			    			        			<div class="pagination pagination-left">
 	<div class="results">
-		<span>显示数据 1-15 / 15</span>
+		<span>显示数据 1-20 / 26</span>
 	</div>
+		<ul class="pager">
+				<li><a class="pageprev graya fleft" href="/laugh/admin/?s=Node%2FmanageNode&page=1">首页</a></li>
+				<li><a class="pageprev graya fleft" href="javascript:;">上一页</a></li>
+		<span class="pageList none">
+													<li class="current">1</li>
+												<li><a class="jumpPageBtn fleft" href="/laugh/admin/?s=Node%2FmanageNode&page=2">2</a></li>
+							</span>
+		<li><a class="pagenext graya fleft" href="/laugh/admin/?s=Node%2FmanageNode&page=2">下一页</a></li>
+				<li><a class="pageprev graya fleft" href="/laugh/admin/?s=Node%2FmanageNode&page=2">尾页</a></li>
+			</ul>
 	</div>
 			</div>
 		</div>
@@ -259,9 +401,10 @@
 							<option value="" >|-组菜单</option>
 														<option value="1">&nbsp;|-系统管理</option>
 														<option value="2">&nbsp;|-用户中心</option>
-														<option value="3">&nbsp;|-文章管理</option>
-														<option value="4">&nbsp;|-网站设置</option>
-														<option value="5">&nbsp;|-系统工具</option>
+														<option value="3">&nbsp;|-核心内容</option>
+														<option value="4">&nbsp;|-网站更新</option>
+														<option value="5">&nbsp;|-系统插件</option>
+														<option value="6">&nbsp;|-系统设置</option>
 													</select>
 					</div>
 				</div>
