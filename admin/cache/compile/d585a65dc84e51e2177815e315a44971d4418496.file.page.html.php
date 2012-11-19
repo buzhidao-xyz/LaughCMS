@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-11-16 16:44:19
+<?php /* Smarty version Smarty-3.1.12, created on 2012-11-19 10:58:42
          compiled from "C:\xampp\htdocs\laugh\admin\themes\smooth\public\page.html" */ ?>
-<?php /*%%SmartyHeaderCode:2442550a5fce3ee2a33-78828936%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1631750a9a0621cd678-41869840%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2442550a5fce3ee2a33-78828936',
+  'nocache_hash' => '1631750a9a0621cd678-41869840',
   'function' => 
   array (
   ),
@@ -26,9 +26,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50a5fce40d2b74_16249867',
+  'unifunc' => 'content_50a9a0622f6198_27887287',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50a5fce40d2b74_16249867')) {function content_50a5fce40d2b74_16249867($_smarty_tpl) {?><div class="pagination pagination-left">
+<?php if ($_valid && !is_callable('content_50a9a0622f6198_27887287')) {function content_50a9a0622f6198_27887287($_smarty_tpl) {?><div class="pagination pagination-left">
 	<div class="results">
 		<span>显示数据 <?php echo $_smarty_tpl->tpl_vars['start']->value+1;?>
 -<?php if ($_smarty_tpl->tpl_vars['start']->value+$_smarty_tpl->tpl_vars['length']->value>$_smarty_tpl->tpl_vars['total']->value){?><?php echo $_smarty_tpl->tpl_vars['total']->value;?>

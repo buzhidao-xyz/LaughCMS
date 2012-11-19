@@ -1,13 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 	<title>Laugh Admin Center</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<!-- stylesheets -->
-	<link rel="stylesheet" type="text/css" href="themes/smooth/style/reset.css" />
+	<link rel="stylesheet" type="text/css" href="themes/smooth/style/reset.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="themes/smooth/style/style.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="themes/smooth/style/table.css" />
+	<link rel="stylesheet" type="text/css" href="themes/smooth/style/table.css" media="screen" />
 	<link id="color" rel="stylesheet" type="text/css" href="themes/smooth/style/colors/blue.css" />
+	<link rel="stylesheet" type="text/css" href="themes/smooth/style/common.css" media="screen" />
 	<!-- scripts (jquery) -->
 	<script src="themes/smooth/js/jquery-1.4.2.min.js" type="text/javascript"></script>
 	<!--[if IE]><script language="javascript" type="text/javascript" src="themes/smooth/js/excanvas.min.js"></script><![endif]-->
@@ -24,11 +25,13 @@
 	<script src="themes/smooth/js/smooth.form.js" type="text/javascript"></script>
 	<script src="themes/smooth/js/smooth.dialog.js" type="text/javascript"></script>
 	<script src="themes/smooth/js/smooth.autocomplete.js" type="text/javascript"></script>
+	<script src="themes/smooth/js/div_window.js" type="text/javascript"></script>
+	<script src="themes/smooth/js/common.js" type="text/javascript"></script>
+	<script src="themes/smooth/js/ajax.js" type="text/javascript"></script>
 	<script type="text/javascript">
+	var JS_APP = '/laugh/admin';
+	var style_path = "themes/smooth/style/colors";
 	$(document).ready(function () {
-		var JS_APP = '/laugh/admin';
-		var style_path = "themes/smooth/style/colors";
-
 		$("#box-tabs, #box-left-tabs").tabs();
 	});
 	</script>
@@ -199,27 +202,112 @@ $("#sitemap_title").mousedown(function() {
 -->
 </script>
 
-<div id="colors-switcher" class="color">
-	<a href="" class="blue" title="Blue"></a>
-	<a href="" class="green" title="Green"></a>
-	<a href="" class="brown" title="Brown"></a>
-	<a href="" class="purple" title="Purple"></a>
-	<a href="" class="red" title="Red"></a>
-	<a href="" class="greyblue" title="GreyBlue"></a>
+<link rel="stylesheet" type="text/css" href="themes/smooth/style/frame.css" />
+<div id="header">
+	<!-- header -->
+<!-- logo -->
+<div id="logo">
+    <h1><a hidefocus="true" href="/laugh/admin/?s=index" title="管理中心">管理中心</a></h1>
 </div>
-<iframe frameborder="0" id="head" name="head" src="/laugh/admin/?s=public/head" scrolling="no" style="position:absolute; width:100%; height:110px; visibility:inherit; z-index:1; overflow:auto;">
-</iframe>
-<iframe frameborder="0" id="body" name="body" src="/laugh/admin/?s=public/body" scrolling="no" style="width:100%; height:100%; z-index:1; overflow:auto;">
-</iframe>
-<style>
-body {
-	padding: 0;
-	margin: 0;
-    overflow:hidden;
-}
-</style>
-<script type="text/javascript" src="themes/smooth/js/div_window.js"></script>
-<script type="text/javascript" src="themes/smooth/js/common.js"></script>
-<script type="text/javascript" src="themes/smooth/js/ajax.js"></script>
+<!-- end logo -->
+<!-- user -->
+<ul id="user">
+    <li class="first">您好 , <em>admin</em> [ <a target="_top" href="/laugh/admin/?s=index/logout">退出</a> ]</li>
+    <li><a target="_blank" href="/laugh/?s=index">网站首页</a></li>
+    <li class="last"><a href="javascript:;">网站地图</a></li>
+</ul>
+<!-- end user -->
+<div id="header-inner">
+    <div id="home">
+        <a hidefocus="true" href="/laugh/admin/?s=index" title="管理中心"></a>
+    </div>
+    <!-- quick -->
+    <ul id="quick">
+        <li>
+            <a hidefocus="true" href="javascript:;" groupid="0" title="管理中心" class="navHeadMenu"><span class="normal">管理中心</span></a>
+        </li>
+                <li>
+            <a href="javascript:;" groupid="1" title="系统管理" class="navHeadMenu"><span>系统管理</span></a>
+            <!--
+            <ul>
+                <li><a href="#">Manage Products</a></li>
+                <li><a href="#">Add Product</a></li>
+                <li>
+                    <a href="#" class="childs">Sales</a>
+                    <ul>
+                        <li><a href="">Today</a></li>
+                        <li class="last"><a href="">Yesterday</a></li>
+                    </ul>
+                </li>
+                <li class="last">
+                    <a href="#" class="childs">Offers</a>
+                    <ul>
+                        <li><a href="">Coupon Codes</a></li>
+                        <li class="last"><a href="">Rebates</a></li>
+                    </ul>
+                </li>
+            </ul>
+            -->
+        </li>
+                <li>
+            <a href="javascript:;" groupid="2" title="用户中心" class="navHeadMenu"><span>用户中心</span></a>
+            <!--
+            <ul>
+                <li><a href="#">Manage Products</a></li>
+                <li><a href="#">Add Product</a></li>
+                <li>
+                    <a href="#" class="childs">Sales</a>
+                    <ul>
+                        <li><a href="">Today</a></li>
+                        <li class="last"><a href="">Yesterday</a></li>
+                    </ul>
+                </li>
+                <li class="last">
+                    <a href="#" class="childs">Offers</a>
+                    <ul>
+                        <li><a href="">Coupon Codes</a></li>
+                        <li class="last"><a href="">Rebates</a></li>
+                    </ul>
+                </li>
+            </ul>
+            -->
+        </li>
+            </ul>
+    <!-- end quick -->
+    <div class="corner tl"></div>
+    <div class="corner tr"></div>
+</div>
+<!-- end header -->
+</div>
+<div id="menuTree">
+	<!-- content -->
+<div id="content">
+	<!-- end content / left -->
+	<div id="left">
+		<div id="menu">
+			<h6 id="h-menu-menu1" class="selected"><a target="main" hidefocus="true" href="javascript:;" submenu="#menu1"><span>基本信息</span></a></h6>
+			<ul id="menu-menu1" class="opend">
+				<li><a hidefocus="true" href="/laugh/admin/?s=Public/welcome" target="main">欢迎页</a></li>
+				<li><a hidefocus="true" href="/laugh/admin/?s=Admin/profile" target="main">个人信息</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- end content / left -->
+</div>
+</div>
+<div id="main">
+	<iframe frameborder="0" name="main" src="/laugh/admin/?s=Public/welcome" scrolling="yes"></iframe>
+</div>
+<div id="bottom">
+	<p>Copyright &copy; Laugh. Buzhidao</p>
+</div>
+<div id="colors-switcher" class="color">
+	<a href="javascript:;" class="blue" title="Blue"></a>
+	<a href="javascript:;" class="green" title="Green"></a>
+	<a href="javascript:;" class="brown" title="Brown"></a>
+	<a href="javascript:;" class="purple" title="Purple"></a>
+	<a href="javascript:;" class="red" title="Red"></a>
+	<a href="javascript:;" class="greyblue" title="GreyBlue"></a>
+</div>
 </body>
 </html>

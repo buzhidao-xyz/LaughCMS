@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-11-16 17:26:11
+<?php /* Smarty version Smarty-3.1.12, created on 2012-11-19 10:58:42
          compiled from "C:\xampp\htdocs\laugh\admin\themes\smooth\include\head.html" */ ?>
-<?php /*%%SmartyHeaderCode:2581150a606b3c94610-40201962%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1922050a9a0621be1d0-71606417%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '6e4aad999ceca1d73e5a16f331a72e8e670a6c1d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\smooth\\include\\head.html',
-      1 => 1353041171,
+      1 => 1353286829,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2581150a606b3c94610-40201962',
+  'nocache_hash' => '1922050a9a0621be1d0-71606417',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50a606b3c9a456_04309955',
+  'unifunc' => 'content_50a9a0621c4b59_99739726',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50a606b3c9a456_04309955')) {function content_50a606b3c9a456_04309955($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_50a9a0621c4b59_99739726')) {function content_50a9a0621c4b59_99739726($_smarty_tpl) {?><!DOCTYPE html>
 <html>
 <head>
 	<title>Laugh Admin Center</title>
@@ -46,6 +46,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<script src="themes/smooth/js/smooth.form.js" type="text/javascript"></script>
 	<script src="themes/smooth/js/smooth.dialog.js" type="text/javascript"></script>
 	<script src="themes/smooth/js/smooth.autocomplete.js" type="text/javascript"></script>
+	<script src="themes/smooth/js/div_window.js" type="text/javascript"></script>
+	<script src="themes/smooth/js/common.js" type="text/javascript"></script>
+	<script src="themes/smooth/js/ajax.js" type="text/javascript"></script>
 	<script type="text/javascript">
 	var JS_APP = '__APP__';
 	var style_path = "themes/smooth/style/colors";
