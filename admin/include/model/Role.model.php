@@ -56,4 +56,12 @@ class Role extends Base
 
 		return $return===false ? false : true;
 	}
+
+	//修改角色信息
+	public function upRole($id=null,$data=array())
+	{
+		if (!$id || !is_array($data) || empty($data)) return false;
+
+		return T('role')->where(array('id'=>$id))->update($data);
+	}
 }

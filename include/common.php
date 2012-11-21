@@ -153,13 +153,15 @@ function mk_dir($dir, $mode = 0777) {
 
 /**
  * 取分页数据，返回数组
- * @param array $total  总的记录数
- * @param array $pagesize  每页显示记录数
- * @param array $parameter  分页跳转的参数
+ * @param $total int 总的记录数
+ * @param $pagesize int 每页显示记录数
+ * @param $flag int 0后台分页数组 1前台分页数组 默认0
+ * @param $parameter array 分页跳转的参数
  */
-function getPage($total, $pagesize=20, $parameter='')
+function getPage($total, $pagesize=20, $flag=0, $parameter='')
 {
     import('ORG.Util.Page');
     $pageObj = new Page($total, $pagesize, $parameter);
-    return $pageObj->showResForBackstage();
+    if ($flag === 0) return $pageObj->getAdminPageArray();
+    if ($flag === 1) return $pageObj->getFrontPageArray();
 }

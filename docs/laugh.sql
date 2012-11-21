@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2012-11-19 17:27:12
+Date: 2012-11-21 17:23:36
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -31,14 +31,15 @@ CREATE TABLE `la_admin` (
   `logincount` tinyint(6) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_admin
 -- ----------------------------
-INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1353317163', '2130706433', '12');
+INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1353464369', '2130706433', '14');
 INSERT INTO `la_admin` VALUES ('2', 'luochuan', 'dfd154b410395ccac8cede2eb850667a', 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '0', null, '0');
 INSERT INTO `la_admin` VALUES ('3', 'test', 'a2907812388492fdf0f488bd5a3dc26d', '2fcy4o', '1325211617', '1', '', '0', null, '0');
+INSERT INTO `la_admin` VALUES ('4', 'test1', '11202f6d001046e827d2c9e203092562', 'e8xh6n', '1353464448', '1', 'ddc1a11fc298d60a78231e883373547d', '1353464448', '2130706433', '0');
 
 -- ----------------------------
 -- Table structure for `la_admin_access`
@@ -270,13 +271,11 @@ DROP TABLE IF EXISTS `la_role`;
 CREATE TABLE `la_role` (
   `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
-  `pid` smallint(6) DEFAULT NULL,
   `status` tinyint(1) unsigned DEFAULT NULL,
   `remark` varchar(255) DEFAULT NULL,
   `createtime` int(11) unsigned NOT NULL DEFAULT '0',
   `updatetime` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
-  KEY `parentId` (`pid`),
   KEY `status` (`status`),
   KEY `id` (`id`),
   KEY `id_2` (`id`)
@@ -285,9 +284,9 @@ CREATE TABLE `la_role` (
 -- ----------------------------
 -- Records of la_role
 -- ----------------------------
-INSERT INTO `la_role` VALUES ('1', '超级管理员', '0', '1', '超级管理员 具有全站管理权限', '1332391671', '1332391671');
-INSERT INTO `la_role` VALUES ('2', '管理员', '0', '1', '普通管理员 管理某些模块', '1332391671', '1332391671');
-INSERT INTO `la_role` VALUES ('3', '普通用户', '0', '1', '普通用户', '1332391671', '1332391671');
+INSERT INTO `la_role` VALUES ('1', '超级管理员', '1', '超级管理员 具有全站管理权限', '1332391671', '1332391671');
+INSERT INTO `la_role` VALUES ('2', '管理员', '1', '普通管理员 管理某些模块', '1332391671', '1332391671');
+INSERT INTO `la_role` VALUES ('3', '普通用户', '1', '普通用户', '1332391671', '1332391671');
 
 -- ----------------------------
 -- Table structure for `la_role_admin`

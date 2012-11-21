@@ -42,7 +42,7 @@
 	<div id="control">
 		<div class="box">
 			<div class="title">
-				<h5>管理员列表 【目前共有3条数据】</h5>
+				<h5>管理员列表 【目前共有4条数据】</h5>
 			</div>
 			<div class="table">
 				<ul class="table_list_title">
@@ -59,9 +59,9 @@
 					<li class="table_list_l table_list_l120">admin</li>
     				<li class="table_list_l table_list_l150" name="role" roleid="" title=""></li>
 			    	<li class="table_list_l table_list_l150">2011-12-15 08:47:32</li>
-			    	<li class="table_list_l table_list_l150">2012-11-18 21:04:25</li>
+			    	<li class="table_list_l table_list_l150">2012-11-21 10:19:29</li>
 			    	<li class="table_list_l table_list_l120">127.0.0.1</li>
-			    	<li class="table_list_l table_list_l80">7</li>
+			    	<li class="table_list_l table_list_l80">14</li>
 			    	<li class="table_list_l table_list_l80">
 			    					    			启用
 			    					    	</li>
@@ -98,9 +98,24 @@
 			    		<a delurl="/laugh/admin/?s=Admin/delteAdmin&id=3" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 			    					    	</li>
 			    </ul>
+			    			    <ul class="table_list role_send_table">
+					<li class="table_list_l table_list_l120">test1</li>
+    				<li class="table_list_l table_list_l150" name="role" roleid="" title=""></li>
+			    	<li class="table_list_l table_list_l150">2012-11-21 10:20:48</li>
+			    	<li class="table_list_l table_list_l150">2012-11-21 10:20:48</li>
+			    	<li class="table_list_l table_list_l120">127.0.0.1</li>
+			    	<li class="table_list_l table_list_l80">0</li>
+			    	<li class="table_list_l table_list_l80">
+			    					    			<a delurl="/laugh/admin/?s=Admin/upAdminStatus&id=4&status=0" href="javascript:;" name="del" msg="确定禁用吗？">启用</a>
+			    					    	</li>
+			    	<li class="table_list_l table_list_l80">
+			    					    		<a href="javascript:;" name="modify" id="4" username="test1">修改</a>&nbsp;&nbsp;
+			    		<a delurl="/laugh/admin/?s=Admin/delteAdmin&id=4" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+			    					    	</li>
+			    </ul>
 			    			        			<div class="pagination pagination-left">
 	<div class="results">
-		<span>显示数据 1-3 / 3</span>
+		<span>显示数据 1-4 / 4</span>
 	</div>
 	</div>
 			</div>

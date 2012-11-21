@@ -106,5 +106,5 @@ $(document).ready(function () {
     });
 
     /* button styling */
-    $("input:submit, input:reset, button").button();
+    $("input:submit, input:reset, input:button, button").button();
 });

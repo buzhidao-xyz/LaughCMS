@@ -146,7 +146,7 @@ class AdminControl extends CommonControl
 	public function upAdminStatus()
 	{
 		$id = $this->_getID();
-		$status = isset($_REQUEST['status']) ? $_REQUEST['status'] : 0;
+		$status = $this->_getStatus();
 		if (in_array($id, session('super_admin'))) $this->ajaxReturn(1,'禁止操作！');
 
 		$return = M('Admin')->upAdmin($id,array('status'=>$status));

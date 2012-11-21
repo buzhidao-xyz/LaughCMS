@@ -1,0 +1,10 @@
+.tree {padding-left:50px;}
+.tree li a input.rename {height:19px; width:200px;}	
+.tree li { line-height: 28px;}
+.tree li a.curSelectedNode {padding:3px 5px 3px 1px;}
+.rolelistb {
+	padding-right:30px; color:#f70; width: 75px; padding-left: 50px !important;
+	height: 25px;
+	display: block;
+    float: left;
+}

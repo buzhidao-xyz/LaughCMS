@@ -22,7 +22,6 @@ var Rolemanage = function(){
 	this.step = 1;
 	this.stepid = 'step';
 	this.stepclass = 'stable_box';
-	//this.treeurl = '/operation-admin/adminmenu.txt';
 	this.treeurl = __APP__+'/?s=role/rolemodify/';
 	this.ajaxurl = $('#roleform').attr('action');
 	this.modifyurl = __APP__+'/?s=role/rolemodify';
@@ -49,10 +48,10 @@ Rolemanage.prototype.stepshow = function(num){//第几步显示
 Rolemanage.prototype.submit = function(){
 	var that = this;
 	var data={}
-	data.rolename = $('input[name=rolename]').val();
-	data.desc = $('input[name=desc]').val();
+	data.name = $('input[name=name]').val();
+	data.remark = $('input[name=remark]').val();
 	data.status = $("input:checked[name=status]").val();
-	data.roleid = $('#roleid').val();
+	data.id = $('#id').val();
 	data.role = [];
 	var num = $('.rolelist').length,
 		roleobj;

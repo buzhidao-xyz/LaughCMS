@@ -107,7 +107,7 @@ class NodeControl extends CommonControl
         $groupTree = $this->_GROUP->getGroupTree();
         $this->assign("groupTree",$groupTree['data']);
         $this->assign("nodeTree",array());
-        $this->display('node/add.html');
+        $this->display('node/newnode.html');
     }
 
     /**
@@ -157,7 +157,7 @@ class NodeControl extends CommonControl
     public function manageNode()
     {
         list($start,$length) = $this->getPages();
-        $nodeList = $this->_NODE->getNode($start,$length);
+        $nodeList = $this->_NODE->getNode(null,$start,$length);
         if ($nodeList['total']) {
             foreach ($nodeList['data'] as $k => $v) {
                 if ($v['pid']) $res = $this->_NODE->getNodeInfo($v['pid']);

@@ -115,7 +115,6 @@ class CommonControl extends BaseControl
     protected function getPage()
     {
         $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : 1;
-
         return $page;
     }
 
