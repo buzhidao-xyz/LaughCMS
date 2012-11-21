@@ -121,9 +121,9 @@ Rolemanage.prototype.renew = function(callback){
 	$.post(that.treeurl, {"action":"gettree","roleid":$('#roleid').val()}, function(data){
 		that.treedata = data;
 		that.zTree = that.dom.zTree(that.setting, that.treedata);
-		callback();		
-		},'json');
-	}
+		callback();
+	},'json');
+}
 
 Rolemanage.prototype.extend = function(){
 	this.treeextend = !this.treeextend;
