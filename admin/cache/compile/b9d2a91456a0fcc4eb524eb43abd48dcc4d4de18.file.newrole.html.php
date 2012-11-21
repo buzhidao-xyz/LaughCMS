@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-11-21 17:10:08
+<?php /* Smarty version Smarty-3.1.12, created on 2012-11-21 17:25:51
          compiled from "C:\xampp\htdocs\laugh\admin\themes\smooth\Role\newrole.html" */ ?>
-<?php /*%%SmartyHeaderCode:965350ac9a705674b9-10800430%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:553550ac9e1f69f5f1-83656777%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '965350ac9a705674b9-10800430',
+  'nocache_hash' => '553550ac9e1f69f5f1-83656777',
   'function' => 
   array (
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50ac9a705e4559_37876826',
+  'unifunc' => 'content_50ac9e1f71c414_65244298',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50ac9a705e4559_37876826')) {function content_50ac9a705e4559_37876826($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50ac9e1f71c414_65244298')) {function content_50ac9e1f71c414_65244298($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <link rel="stylesheet" href="themes/smooth/js/plugin/zTreeStyle/zTreeStyle.css" type="text/css">
 <link rel="stylesheet" href="themes/smooth/js/plugin/zTreeStyle/roletree.css" type="text/css">

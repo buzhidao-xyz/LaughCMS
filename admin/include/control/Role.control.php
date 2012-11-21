@@ -64,12 +64,12 @@ class RoleControl extends CommonControl
 		$this->display("Role/manage.html");
 	}
 
-		/**
+	/**
 	 * 添加、修改角色、如果roleid为空为添加角色
 	 */
 	public function rolemodify()
 	{
-		$role_id = trim($_REQUEST['roleid']);
+		$id = $this->_getID();
 		if(trim($_REQUEST['action'])=='gettree'){//获取完整的权限树
 			if(empty($role_id)) exit(json_encode($this->power->formatTreeForRole($this->powermod->get(0,true,false),true)));//空树
 			exit(json_encode($this->power->formatTreeForRole($this->powerrole->getModel($role_id),true)));
