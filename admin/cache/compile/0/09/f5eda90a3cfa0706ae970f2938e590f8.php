@@ -42,7 +42,7 @@
 	<div id="control">
 		<div class="box mtop10">
 			<div class="title">
-				<h5>角色列表 【目前共有3条数据】</h5>
+				<h5>角色列表 【目前共有2条数据】</h5>
 			</div>
 			<div class="table">
 				<ul class="table_list_title">
@@ -80,23 +80,9 @@
 			    		<a delurl="/laugh/admin/Group/deleteGroup" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 			    	</li>
 			    </ul>
-			    			    <ul class="table_list">
-					<li class="table_list_l table_list_l150">普通用户</li>
-					<li class="table_list_l table_list_l200" title="普通用户">普通用户</li>
-			    	<li class="table_list_l table_list_l150">2012-03-22 12:47:51</li>
-			    	<li class="table_list_l table_list_l100">
-			    		<a delurl="/laugh/admin/?s=Role/upRoleStatus&id=3&status=0" href="javascript:;" name="del" msg="确定禁用吗？">启用</a>
-			    	</li>
-			    	<li class="table_list_l table_list_l150">
-			    		<a href="javascript:;" name="modify" id="3" title="<pre class='xdebug-var-dump' dir='ltr'><small>string</small> <font color='#cc0000'>'&lt;font color=red&gt;127.0.0.1 系统发生错误: Undefined index: title, in C:\xampp\htdocs\laugh\admin\cache\compile\baf94ffe4a2fd9d72fac7c09e66fec12d56a582b.file.manage.html.php on line 65&lt;/font&gt;'</font> <i>(length=194)</i>
-</pre>" isshow="<pre class='xdebug-var-dump' dir='ltr'><small>string</small> <font color='#cc0000'>'&lt;font color=red&gt;127.0.0.1 系统发生错误: Undefined index: isshow, in C:\xampp\htdocs\laugh\admin\cache\compile\baf94ffe4a2fd9d72fac7c09e66fec12d56a582b.file.manage.html.php on line 66&lt;/font&gt;'</font> <i>(length=195)</i>
-</pre>">修改</a>&nbsp;&nbsp;
-			    		<a delurl="/laugh/admin/Group/deleteGroup" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
-			    	</li>
-			    </ul>
 			    			        			<div class="pagination pagination-left">
 	<div class="results">
-		<span>显示数据 1-3 / 3</span>
+		<span>显示数据 1-2 / 2</span>
 	</div>
 	</div>
 			</div>

@@ -48,6 +48,9 @@ class RoleControl extends CommonControl
 		$roleInfo = $id ? $this->getRole($id) : array();
 		$roleInfo = empty($roleInfo) ? array('id'=>'','name'=>'','remark'=>'','status'=>1) : $roleInfo['data'];
 		$this->assign('roleInfo', $roleInfo);
+
+		$nodeTree = M('Node')->makeNodeTree();
+		$this->assign('nodeTree',$nodeTree);
 		$this->display("Role/newrole.html");
 	}
 
@@ -67,72 +70,9 @@ class RoleControl extends CommonControl
 	/**
 	 * 添加、修改角色、如果roleid为空为添加角色
 	 */
-	public function rolemodify()
+	public function roleModify()
 	{
-		$id = $this->_getID();
-		if(trim($_REQUEST['action'])=='gettree'){//获取完整的权限树
-			if(empty($role_id)) exit(json_encode($this->power->formatTreeForRole($this->powermod->get(0,true,false),true)));//空树
-			exit(json_encode($this->power->formatTreeForRole($this->powerrole->getModel($role_id),true)));
-		}
-		if($_POST)
-		{
-			$powerTree 	= 	$_REQUEST['role'];
-			$role_name 	=	$_REQUEST['rolename'];
-			$role_desc	=	$_REQUEST['desc'];
-			$state		=	$_REQUEST['status'];
-			
-			if(empty($role_name)) $this->ierror(1,'用户名不能为空');
-			
-			if(!in_array($state,array(0,1))) $this->ierror(1,'用户状态错误');
-			if(!is_array($powerTree)) $this->ierror(1,'权限树错误');
-			
-			$roleArray = array(	
-					'role_name'		=>	$role_name,
-					'role_desc'		=>	$role_desc,
-					'state'			=>	$state,
-					'create_time'	=>	time(),
-				);
-			if(empty($role_id)) {
-				$role_id = $this->powerrole->add($roleArray);
-				$is_add = true;
-			} else {
-				$this->powerrole->edit($role_id,$roleArray);
-				$del = $this->powerrole->delModel($role_id); //删除现有模块
-				if($del===false) $this->ierror(1,'权限操作错误');
-			}
-			
-			if(empty($role_id)) $this->ierror(1,'数据库操作失败');
-			
-			$modelAddLog = '';				//添加权限的错误日志
-			foreach($powerTree as $v)
-			{
-				if($v['status']==0||!is_numeric($v['status'])) continue;
-				
-				$modelArray = array(	'role_id'	=>$role_id,
-										'model_id'	=>$v['id'],
-										'model_priv'=>$v['status'],
-										'timestamp'	=>time()
-									);
-				$modelId = $this->powerrole->addModel($modelArray);
-				if(empty($modelId)) $modelAddLog .= ','.$v['name'];
-			}
-			if(!empty($modelAddLog)) $this->ierror(1,'角色创建成功。权限：'.trim($modelAddLog,',').'添加失败');
-			
-			if ($is_add){
-				$this->writeLog('添加角色：'.$role_name);
-				$this->ierror(0,'添加成功');
-			} else {
-				$this->writeLog('修改角色：'.$role_name);
-				$this->ierror(0,'修改成功');
-			}
- 			
-		}
-		$start = ($this->p-1)*$this->pnum;
-		$total = $this->powerrole->get(0,0,0,1);
-		$this->assign('total',$total);
-		$this->assign('allRole',$this->powerrole->get(0,$start,$this->pnum));
-		$this->assign('page',getPage($total,$this->pnum));
-		$this->display('role:rolemodify');
+		
 	}
 
 	//修改角色状态

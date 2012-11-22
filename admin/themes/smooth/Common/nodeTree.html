@@ -1,0 +1,33 @@
+<link rel="stylesheet" type="text/css" href="themes/smooth/style/nodeTree.css" media="screen" />
+<div id="nodeTree">
+	<span class="nodeTreeTitle">请选择节点</span>
+	{if $nodeTree}
+	{foreach $nodeTree as $d}
+	<ul class="groupTree">
+		<li><span class="expand"></span><input type="checkbox" name="group{$d.id}" />{$d.title}</li>
+		<ul class="parentNode">
+		{if isset($d.cnode)}
+		{foreach $d.cnode as $d1}
+			<li title="{$d1.remark}"><span class="expand"></span><input type="checkbox" name="parentNode{$d.id}" />{$d1.title}</li>
+			<ul class="childNode">
+			{if isset($d1.cnode)}
+			{foreach $d1.cnode as $d2}
+				<li title="{$d2.remark}"><input type="checkbox" name="childNode{$d.id}" />{$d2.title}</li>
+			{/foreach}
+			{/if}
+			</ul>
+		{/foreach}
+		{/if}
+		</ul>
+	</ul>
+	{/foreach}
+	{/if}
+</div>
+<script type="text/javascript">
+$(document).ready(function (){
+$("#nodeTree ul li span.expand").click(function(){
+	alert($(this).index());
+	// $(this).parent().parent().find("ul:eq(0)").css('display','none').css("position","");
+});
+});
+</script>

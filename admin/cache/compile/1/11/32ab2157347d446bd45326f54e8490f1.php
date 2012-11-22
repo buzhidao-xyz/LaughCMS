@@ -42,7 +42,7 @@
 	<div id="control">
 		<div class="box">
 			<div class="title">
-				<h5>管理员列表 【目前共有4条数据】</h5>
+				<h5>管理员列表 【目前共有3条数据】</h5>
 			</div>
 			<div class="table">
 				<ul class="table_list_title">
@@ -53,39 +53,40 @@
 			    	<li class="table_list_l table_list_l120">最后登录IP</li>
 			    	<li class="table_list_l table_list_l80">登录次数</li>
 			    	<li class="table_list_l table_list_l80">账户状态</li>
-			    	<li class="table_list_l table_list_l80">操作</li>
+			    	<li class="table_list_l table_list_l150">操作</li>
 			    </ul>
 			    			    			    <ul class="table_list role_send_table">
 					<li class="table_list_l table_list_l120">admin</li>
     				<li class="table_list_l table_list_l150" name="role" roleid="" title=""></li>
 			    	<li class="table_list_l table_list_l150">2011-12-15 08:47:32</li>
-			    	<li class="table_list_l table_list_l150">2012-11-21 10:19:29</li>
+			    	<li class="table_list_l table_list_l150">2012-11-22 14:26:09</li>
 			    	<li class="table_list_l table_list_l120">127.0.0.1</li>
-			    	<li class="table_list_l table_list_l80">14</li>
+			    	<li class="table_list_l table_list_l80">17</li>
 			    	<li class="table_list_l table_list_l80">
 			    					    			启用
 			    					    	</li>
-			    	<li class="table_list_l table_list_l80">
+			    	<li class="table_list_l table_list_l150">
 			    					    	</li>
 			    </ul>
 			    			    <ul class="table_list role_send_table">
 					<li class="table_list_l table_list_l120">luochuan</li>
-    				<li class="table_list_l table_list_l150" name="role" roleid="1,2,3" title="超级管理员 管理员 普通用户">超级管理员 管理员 普通用户</li>
+    				<li class="table_list_l table_list_l150" name="role" roleid="1" title="超级管理员">超级管理员</li>
 			    	<li class="table_list_l table_list_l150">2011-12-19 11:36:13</li>
-			    	<li class="table_list_l table_list_l150"></li>
-			    	<li class="table_list_l table_list_l120"></li>
-			    	<li class="table_list_l table_list_l80">0</li>
+			    	<li class="table_list_l table_list_l150">2012-11-22 14:25:45</li>
+			    	<li class="table_list_l table_list_l120">127.0.0.1</li>
+			    	<li class="table_list_l table_list_l80">1</li>
 			    	<li class="table_list_l table_list_l80">
 			    					    			<a delurl="/laugh/admin/?s=Admin/upAdminStatus&id=2&status=0" href="javascript:;" name="del" msg="确定禁用吗？">启用</a>
 			    					    	</li>
-			    	<li class="table_list_l table_list_l80">
-			    					    		<a href="javascript:;" name="modify" id="2" username="luochuan">修改</a>&nbsp;&nbsp;
+			    	<li class="table_list_l table_list_l150">
+			    					    		<a href="javascript:;" name="modify" id="2" username="luochuan">角色权限</a>
+			    		<a delurl="/laugh/admin/?s=Admin/resetPassword&id=2" href="javascript:;" name="del" msg="确定重置密码吗？">重置密码</a>
 			    		<a delurl="/laugh/admin/?s=Admin/delteAdmin&id=2" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 			    					    	</li>
 			    </ul>
 			    			    <ul class="table_list role_send_table">
 					<li class="table_list_l table_list_l120">test</li>
-    				<li class="table_list_l table_list_l150" name="role" roleid="3" title="普通用户">普通用户</li>
+    				<li class="table_list_l table_list_l150" name="role" roleid="1,2" title="超级管理员 管理员">超级管理员 管理员</li>
 			    	<li class="table_list_l table_list_l150">2011-12-30 10:20:17</li>
 			    	<li class="table_list_l table_list_l150"></li>
 			    	<li class="table_list_l table_list_l120"></li>
@@ -93,29 +94,15 @@
 			    	<li class="table_list_l table_list_l80">
 			    					    			<a delurl="/laugh/admin/?s=Admin/upAdminStatus&id=3&status=0" href="javascript:;" name="del" msg="确定禁用吗？">启用</a>
 			    					    	</li>
-			    	<li class="table_list_l table_list_l80">
-			    					    		<a href="javascript:;" name="modify" id="3" username="test">修改</a>&nbsp;&nbsp;
+			    	<li class="table_list_l table_list_l150">
+			    					    		<a href="javascript:;" name="modify" id="3" username="test">角色权限</a>
+			    		<a delurl="/laugh/admin/?s=Admin/resetPassword&id=3" href="javascript:;" name="del" msg="确定重置密码吗？">重置密码</a>
 			    		<a delurl="/laugh/admin/?s=Admin/delteAdmin&id=3" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
-			    					    	</li>
-			    </ul>
-			    			    <ul class="table_list role_send_table">
-					<li class="table_list_l table_list_l120">test1</li>
-    				<li class="table_list_l table_list_l150" name="role" roleid="" title=""></li>
-			    	<li class="table_list_l table_list_l150">2012-11-21 10:20:48</li>
-			    	<li class="table_list_l table_list_l150">2012-11-21 10:20:48</li>
-			    	<li class="table_list_l table_list_l120">127.0.0.1</li>
-			    	<li class="table_list_l table_list_l80">0</li>
-			    	<li class="table_list_l table_list_l80">
-			    					    			<a delurl="/laugh/admin/?s=Admin/upAdminStatus&id=4&status=0" href="javascript:;" name="del" msg="确定禁用吗？">启用</a>
-			    					    	</li>
-			    	<li class="table_list_l table_list_l80">
-			    					    		<a href="javascript:;" name="modify" id="4" username="test1">修改</a>&nbsp;&nbsp;
-			    		<a delurl="/laugh/admin/?s=Admin/delteAdmin&id=4" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 			    					    	</li>
 			    </ul>
 			    			        			<div class="pagination pagination-left">
 	<div class="results">
-		<span>显示数据 1-4 / 4</span>
+		<span>显示数据 1-3 / 3</span>
 	</div>
 	</div>
 			</div>
@@ -139,11 +126,12 @@
 							<select name="roles" id="roles">
 																<option value="1" desc="超级管理员 具有全站管理权限">超级管理员</option>
 																<option value="2" desc="普通管理员 管理某些模块">管理员</option>
-																<option value="3" desc="普通用户">普通用户</option>
 															</select>
 						</li>
 					</td>
-					<td class="stgap" width="15%"><input type="button" name="subut" id="addrole" class="" value="添加" /></td>
+					<td class="stgap" width="15%">
+						<div class="buttons" style="margin-left:10px;"><input type="button" name="subut" id="addrole" value="添加" /></div>
+					</td>
 				</tr>
 				<tr id="rolehr">
 					<td class="stgap" colspan="2"><hr></td>

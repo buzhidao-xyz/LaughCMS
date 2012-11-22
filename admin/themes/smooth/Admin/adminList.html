@@ -14,7 +14,7 @@
 			    	<li class="table_list_l table_list_l120">最后登录IP</li>
 			    	<li class="table_list_l table_list_l80">登录次数</li>
 			    	<li class="table_list_l table_list_l80">账户状态</li>
-			    	<li class="table_list_l table_list_l80">操作</li>
+			    	<li class="table_list_l table_list_l150">操作</li>
 			    </ul>
 			    {if $adminList}
 			    {foreach $adminList as $d}
@@ -32,9 +32,10 @@
 			    			<a delurl="__APP__/?s=Admin/upAdminStatus&id={$d.id}&status={if $d.status}0{else}1{/if}" href="javascript:;" name="del" msg="确定{if $d.status}禁用{else}启用{/if}吗？">{$d._status}</a>
 			    		{/if}
 			    	</li>
-			    	<li class="table_list_l table_list_l80">
+			    	<li class="table_list_l table_list_l150">
 			    		{if !in_array($d.id,$super_admin)}
-			    		<a href="javascript:;" name="modify" id="{$d.id}" username="{$d.username}">修改</a>&nbsp;&nbsp;
+			    		<a href="javascript:;" name="modify" id="{$d.id}" username="{$d.username}">角色权限</a>
+			    		<a delurl="__APP__/?s=Admin/resetPassword&id={$d.id}" href="javascript:;" name="del" msg="确定重置密码吗？">重置密码</a>
 			    		<a delurl="__APP__/?s=Admin/delteAdmin&id={$d.id}" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 			    		{/if}
 			    	</li>
@@ -69,7 +70,9 @@
 							</select>
 						</li>
 					</td>
-					<td class="stgap" width="15%"><input type="button" name="subut" id="addrole" class="" value="添加" /></td>
+					<td class="stgap" width="15%">
+						<div class="buttons" style="margin-left:10px;"><input type="button" name="subut" id="addrole" value="添加" /></div>
+					</td>
 				</tr>
 				<tr id="rolehr">
 					<td class="stgap" colspan="2"><hr></td>

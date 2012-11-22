@@ -157,6 +157,23 @@ class AdminControl extends CommonControl
 		}
 	}
 
+	//重置密码
+	public function resetPassword()
+	{
+		$id = $this->_getID();
+		$randString = getRandStrs(5,1);
+
+		$adminInfo = M('Admin')->getAdmin($id);
+		if (!$adminInfo['total']) $this->ajaxReturn(1,'非法管理员！');
+
+		$return = M('Admin')->upAdmin($id,array('password'=>M('Admin')->password_encrypt($randString,$adminInfo['data'][0]['ukey'])));
+		if ($return) {
+			$this->ajaxReturn(0,'重置成功 新密码: '.$randString);
+		} else {
+			$this->ajaxReturn(1,'重置失败');
+		}
+	}
+
 	//删除管理员
 	public function delteAdmin()
 	{

@@ -17,15 +17,19 @@ function assign($key, $value)
  * 字符串取值0-9 a-z之间
  * @param $n 要获取的随机字符串长度(1-100) 默认值6
  */
-function getRandStrs($n = 6)
+function getRandStrs($n=6,$type=2)
 {
     $return = '';
-	$totalStr = '0123456789abcdefghijklmnopqrstuvwxyz';
+	$totalStr = array(
+        0 => '0123456789',
+        1 => 'abcdefghijklmnopqrstuvwxyz',
+        2 => '0123456789abcdefghijklmnopqrstuvwxyz',
+    );
     
-    $n = preg_match('/^[1-9][0-9]{0,1}$/', $n)?$n:0;
-    
+    $n = preg_match('/^[1-9][0-9]{0,1}$/', $n) ? $n : 0;
+    $l = strlen($totalStr[$type])-1;
     for ($i= 0; $i< $n; $i++) {
-        $return .= $totalStr{rand(0,35)};
+        $return .= $totalStr[$type]{rand(0,$l)};
     }
 
 	return $return;

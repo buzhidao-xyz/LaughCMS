@@ -20,6 +20,23 @@ class Node extends Base
 		return T('node')->add($data);
 	}
 
+    /**
+     * 获取某个节点的子节点
+     * @param $nodeid 节点id 默认为0 取全部
+     */
+    public function getNode($nodeid=0,$start=0,$length=0)
+    {
+        $where = array('isshow' => 1);
+        if ($nodeid) $where['pid'] = $nodeid;
+
+        $total = T('node')->where($where)->count();
+        $obj = T('node')->where($where)->order('id');
+        if ($length > 0) $obj = $obj->limit($start,$length);
+        $data = $obj->select();
+
+        return array('total'=>$total, 'data'=>$data);
+    }
+
 	/**
 	 * 获取某个组的子节点/节点树
 	 * @param $groupid int 组id 默认为Null 返回所有节点
@@ -52,23 +69,6 @@ class Node extends Base
         $res = T('admin_access')->join(' '.TBF.'node as b on a.nodeid=b.id ')->field('a.nodeid,b.id,b.title,b.control,b.action,b.sort,b.pid,b.level,b.groupid')->where($where)->select();
 
         return $res;
-    }
-
-	/**
-     * 获取某个节点的子节点
-     * @param $nodeid 节点id 默认为0 取全部
-     */
-    public function getNode($nodeid=0,$start=0,$length=0)
-    {
-        $where = array('isshow' => 1);
-        if ($nodeid) $where['pid'] = $nodeid;
-
-        $total = T('node')->where($where)->count();
-        $obj = T('node')->where($where)->order('id');
-        if ($length > 0) $obj = $obj->limit($start,$length);
-        $data = $obj->select();
-
-        return array('total'=>$total, 'data'=>$data);
     }
 
 	/**
@@ -121,5 +121,87 @@ class Node extends Base
         if (!$id) return false;
 
         return T('node')->where(array('id'=>$id))->delete();
+    }
+
+    //生成节点分配列表树
+    public function makeNodeTree()
+    {
+        $node = $this->getNode();
+        $node = $this->dealNode($node['data']);
+
+        $groupids = array();
+        foreach ($node as $v) {
+            if ($v['pid'] == 0) $groupids[$v['groupid']] = $v['groupid'];
+        }
+
+        $group = M('Group')->getGroup($groupids);
+        if (is_array($group) && !empty($group))
+            return M('Node')->dealGroupNode($group, $node);
+        else
+            return array();
+    }
+
+    /**
+     * 整理节点信息
+     * @param $roleNode array 角色节点数组
+     * @param $userNode array 用户单独节点数组
+     */
+    private function dealNode($roleNode=array(),$userNode=array())
+    {
+        $return = array();
+
+        $roleNode = array_merge($roleNode,$userNode);
+        foreach ($roleNode as $v) {
+            if ($v['pid'] == 0) {
+                $m = 0;
+                foreach ($return as $k0=>$v0) {
+                    if ($v0['id'] == $v['id']) {
+                        $m = 1;
+                        break;
+                    }
+                }
+                if (!$m) $return[] = $v;
+            } else {
+                foreach ($return as $k1=>$v1) {
+                    if ($v['pid'] == $v1['id']) {
+                        $m = 0;
+                        if (array_key_exists('cnode', $return[$k1])) {
+                            foreach ($return[$k1]['cnode'] as $k2=>$v2) {
+                                if ($v2['id'] == $v['id']) {
+                                    $m = 1;
+                                    break;
+                                }
+                            }
+                        }
+                        if (!$m) $return[$k1]['cnode'][] = $v;
+                        break;
+                    }
+                }
+            }
+        }
+        
+        return $return;
+    }
+
+    /**
+     * 整理节点与组信息
+     * @param $group array 组信息
+     * @param $node array 节点信息
+     */
+    private function dealGroupNode($group,$node)
+    {
+        $userAccess = array();
+
+        foreach ($node as $k=>$v) {
+            foreach ($group as $k1=>$v1) {
+                if ($v['groupid'] == $v1['id']) {
+                    if (!array_key_exists($v['groupid'], $userAccess)) $userAccess[$v['groupid']] = $v1;
+                    $userAccess[$v['groupid']]['cnode'][] = $v;
+                    break;
+                }
+            }
+        }
+
+        return $userAccess;
     }
 }

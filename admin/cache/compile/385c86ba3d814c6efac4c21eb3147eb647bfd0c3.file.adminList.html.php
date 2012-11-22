@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-11-21 13:28:57
+<?php /* Smarty version Smarty-3.1.12, created on 2012-11-22 14:55:36
          compiled from "C:\xampp\htdocs\laugh\admin\themes\smooth\Admin\adminList.html" */ ?>
-<?php /*%%SmartyHeaderCode:2490150ac669902aac2-21499499%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2086050adcc68a57a64-76056390%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '385c86ba3d814c6efac4c21eb3147eb647bfd0c3' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\smooth\\Admin\\adminList.html',
-      1 => 1353375083,
+      1 => 1353567326,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2490150ac669902aac2-21499499',
+  'nocache_hash' => '2086050adcc68a57a64-76056390',
   'function' => 
   array (
   ),
@@ -25,9 +25,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50ac66991b28f1_76389051',
+  'unifunc' => 'content_50adcc68be6ef6_89425767',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50ac66991b28f1_76389051')) {function content_50ac66991b28f1_76389051($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50adcc68be6ef6_89425767')) {function content_50adcc68be6ef6_89425767($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div id="content">
 	<div id="control">
@@ -45,7 +45,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			    	<li class="table_list_l table_list_l120">最后登录IP</li>
 			    	<li class="table_list_l table_list_l80">登录次数</li>
 			    	<li class="table_list_l table_list_l80">账户状态</li>
-			    	<li class="table_list_l table_list_l80">操作</li>
+			    	<li class="table_list_l table_list_l150">操作</li>
 			    </ul>
 			    <?php if ($_smarty_tpl->tpl_vars['adminList']->value){?>
 			    <?php  $_smarty_tpl->tpl_vars['d'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['d']->_loop = false;
@@ -78,11 +78,13 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 </a>
 			    		<?php }?>
 			    	</li>
-			    	<li class="table_list_l table_list_l80">
+			    	<li class="table_list_l table_list_l150">
 			    		<?php if (!in_array($_smarty_tpl->tpl_vars['d']->value['id'],$_smarty_tpl->tpl_vars['super_admin']->value)){?>
 			    		<a href="javascript:;" name="modify" id="<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 " username="<?php echo $_smarty_tpl->tpl_vars['d']->value['username'];?>
-">修改</a>&nbsp;&nbsp;
+">角色权限</a>
+			    		<a delurl="__APP__/?s=Admin/resetPassword&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+" href="javascript:;" name="del" msg="确定重置密码吗？">重置密码</a>
 			    		<a delurl="__APP__/?s=Admin/delteAdmin&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 " href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 			    		<?php }?>
@@ -126,7 +128,9 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 							</select>
 						</li>
 					</td>
-					<td class="stgap" width="15%"><input type="button" name="subut" id="addrole" class="" value="添加" /></td>
+					<td class="stgap" width="15%">
+						<div class="buttons" style="margin-left:10px;"><input type="button" name="subut" id="addrole" value="添加" /></div>
+					</td>
 				</tr>
 				<tr id="rolehr">
 					<td class="stgap" colspan="2"><hr></td>

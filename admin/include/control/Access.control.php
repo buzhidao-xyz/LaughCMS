@@ -15,9 +15,9 @@ class AccessControl extends BaseControl
 	{
 		parent::__construct();
 
-        $this->_NODE = N('Node');
-        $this->_GROUP = N('Group');
-        $this->_ROLE = N('Role');
+        $this->_NODE = M('Node');
+        $this->_GROUP = M('Group');
+        $this->_ROLE = M('Role');
 
 		$this->_getUserAccess();
 	}
@@ -77,7 +77,6 @@ class AccessControl extends BaseControl
                         break;
                     }
                 }
-                // $v['title'] = html_entity_decode($v['title']);
                 if (!$m) $return[] = $v;
             } else {
                 foreach ($return as $k1=>$v1) {
@@ -91,10 +90,7 @@ class AccessControl extends BaseControl
                                 }
                             }
                         }
-                        if (!$m) {
-                            // $v['title'] = html_entity_decode($v['title']);
-                            $return[$k1]['cnode'][] = $v;
-                        }
+                        if (!$m) $return[$k1]['cnode'][] = $v;
                         break;
                     }
                 }
@@ -115,7 +111,6 @@ class AccessControl extends BaseControl
 
         foreach ($node as $k=>$v) {
             foreach ($group as $k1=>$v1) {
-                // $v['title'] = html_entity_decode($v['title']);
                 if ($v['groupid'] == $v1['id']) {
                     if (!array_key_exists($v['groupid'], $userAccess)) $userAccess[$v['groupid']] = $v1;
                     $userAccess[$v['groupid']]['cnode'][] = $v;
