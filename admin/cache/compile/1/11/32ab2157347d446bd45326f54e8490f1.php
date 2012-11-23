@@ -70,7 +70,7 @@
 			    </ul>
 			    			    <ul class="table_list role_send_table">
 					<li class="table_list_l table_list_l120">luochuan</li>
-    				<li class="table_list_l table_list_l150" name="role" roleid="1" title="超级管理员">超级管理员</li>
+    				<li class="table_list_l table_list_l150" name="role" roleid="1,2" title="超级管理员 管理员">超级管理员 管理员</li>
 			    	<li class="table_list_l table_list_l150">2011-12-19 11:36:13</li>
 			    	<li class="table_list_l table_list_l150">2012-11-22 14:25:45</li>
 			    	<li class="table_list_l table_list_l120">127.0.0.1</li>

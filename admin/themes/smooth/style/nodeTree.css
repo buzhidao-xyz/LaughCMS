@@ -6,14 +6,20 @@
 	height: auto;
 	overflow: hidden;
 	padding: 2px 0;
+	display: block;
 }
 #nodeTree li {
 
 }
 #nodeTree li span.expand {
-	padding: 3px;
+	padding: 3px 5px;
 	cursor: pointer;
-	background: url("../images/arrow_01.png") no-repeat left 4px;
+	background: url("../images/arrow_mius.png") no-repeat left 6px;
+}
+#nodeTree li span.back {
+	padding: 3px 5px;
+	cursor: pointer;
+	background: url("../images/arrow_plus.png") no-repeat left 4px;
 }
 #nodeTree span.nodeTreeTitle {
 	padding: 10px 5px 3px 5px;

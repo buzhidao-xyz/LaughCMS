@@ -60,10 +60,8 @@
 			    		<a delurl="/laugh/admin/?s=Role/upRoleStatus&id=1&status=0" href="javascript:;" name="del" msg="确定禁用吗？">启用</a>
 			    	</li>
 			    	<li class="table_list_l table_list_l150">
-			    		<a href="javascript:;" name="modify" id="1" title="<pre class='xdebug-var-dump' dir='ltr'><small>string</small> <font color='#cc0000'>'&lt;font color=red&gt;127.0.0.1 系统发生错误: Undefined index: title, in C:\xampp\htdocs\laugh\admin\cache\compile\baf94ffe4a2fd9d72fac7c09e66fec12d56a582b.file.manage.html.php on line 65&lt;/font&gt;'</font> <i>(length=194)</i>
-</pre>" isshow="<pre class='xdebug-var-dump' dir='ltr'><small>string</small> <font color='#cc0000'>'&lt;font color=red&gt;127.0.0.1 系统发生错误: Undefined index: isshow, in C:\xampp\htdocs\laugh\admin\cache\compile\baf94ffe4a2fd9d72fac7c09e66fec12d56a582b.file.manage.html.php on line 66&lt;/font&gt;'</font> <i>(length=195)</i>
-</pre>">修改</a>&nbsp;&nbsp;
-			    		<a delurl="/laugh/admin/Group/deleteGroup" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+			    		<a href="/laugh/admin/?s=Role/newRole&id=1">修改</a>&nbsp;&nbsp;
+			    		<a delurl="/laugh/admin/?s=Role/deleteRole&id=1" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 			    	</li>
 			    </ul>
 			    			    <ul class="table_list">
@@ -74,10 +72,8 @@
 			    		<a delurl="/laugh/admin/?s=Role/upRoleStatus&id=2&status=0" href="javascript:;" name="del" msg="确定禁用吗？">启用</a>
 			    	</li>
 			    	<li class="table_list_l table_list_l150">
-			    		<a href="javascript:;" name="modify" id="2" title="<pre class='xdebug-var-dump' dir='ltr'><small>string</small> <font color='#cc0000'>'&lt;font color=red&gt;127.0.0.1 系统发生错误: Undefined index: title, in C:\xampp\htdocs\laugh\admin\cache\compile\baf94ffe4a2fd9d72fac7c09e66fec12d56a582b.file.manage.html.php on line 65&lt;/font&gt;'</font> <i>(length=194)</i>
-</pre>" isshow="<pre class='xdebug-var-dump' dir='ltr'><small>string</small> <font color='#cc0000'>'&lt;font color=red&gt;127.0.0.1 系统发生错误: Undefined index: isshow, in C:\xampp\htdocs\laugh\admin\cache\compile\baf94ffe4a2fd9d72fac7c09e66fec12d56a582b.file.manage.html.php on line 66&lt;/font&gt;'</font> <i>(length=195)</i>
-</pre>">修改</a>&nbsp;&nbsp;
-			    		<a delurl="/laugh/admin/Group/deleteGroup" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+			    		<a href="/laugh/admin/?s=Role/newRole&id=2">修改</a>&nbsp;&nbsp;
+			    		<a delurl="/laugh/admin/?s=Role/deleteRole&id=2" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 			    	</li>
 			    </ul>
 			    			        			<div class="pagination pagination-left">

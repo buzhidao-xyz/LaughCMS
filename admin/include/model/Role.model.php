@@ -10,6 +10,13 @@ class Role extends Base
 		parent::__construct();
 	}
 
+	//新角色保存
+	public function saveRole($data=array())
+	{
+		if (!is_array($data) || empty($data)) return false;
+		return T("role")->add($data);
+	}
+
 	//角色列表
 	public function getRole($id=null,$start=0,$length=0)
 	{

@@ -118,10 +118,10 @@ if($('.role_send_table').length>0){
 	}
 
     roleshow.hascheck = function(id){//判断是否存在
-			var val = $('#'+roleshow.roleidinput).val();
-		    var str = val.indexOf(id+',');
-		    if(str === -1) return false;
-		    return true;
+		var val = $('#'+roleshow.roleidinput).val();
+	    var str = val.indexOf(id+',');
+	    if(str === -1) return false;
+	    return true;
 	}
 
 	roleshow.bindaddclick = function(){//绑定添加
@@ -135,7 +135,7 @@ if($('.role_send_table').length>0){
 					str = roleshow.createstr(strarray);
 					roleshow.rolesubmit.before(str);
 					$('#'+roleshow.roleidinput).val(val+rid+',');
-					roleshow.binddelclick(true); //添加绑定
+					roleshow.binddelclick(true); //绑定删除
 				return true;
 			};
 			alert('角色已存在');
@@ -144,7 +144,7 @@ if($('.role_send_table').length>0){
 	}();
 
 	//修改资料
-	if($('#modify_div').length>0){ 
+	if($('#modify_div').length>0){
 		var m_d = new Div_window('modify_div');
 		$('a[name="modify"]').click(function(event){
 			var e = event;

@@ -74,18 +74,25 @@ class Node extends Base
 	/**
      * 获取角色信息的node权限
      * @param $roleids array 角色信息
+     * @param $f int 是否只返回节点id数组 默认1返回全部
 	 */
-	public function getRoleNode($roleids)
+	public function getRoleNode($roleids,$f=1)
     {
-        if (!is_array($roleids)) return false;
+        if (!is_array($roleids) || empty($roleids)) return array();
 
         $where = array(
-        	'a.roleid' => array('in', $roleids),
-        	'b.isshow'   => 1
+        	'a.roleid' => array('in', $roleids)
         );
-        $res = T('role_node')->join(' '.TBF.'node as b on a.nodeid=b.id ')->field('a.nodeid,b.id,b.title,b.control,b.action,b.sort,b.pid,b.level,b.groupid')->where($where)->select();
-
-        return $res;
+        if ($f === 1) {
+            $where['b.isshow'] = 1;
+            $return = T('role_node')->join(' '.TBF.'node as b on a.nodeid=b.id ')->field('a.nodeid,b.id,b.title,b.control,b.action,b.sort,b.pid,b.level,b.groupid')->where($where)->select();
+        } else if ($f === 0) {
+            $res = T('role_node')->field('nodeid')->where($where)->select();
+            foreach ($res as $k=>$v) {
+                $return[] = $v['nodeid'];
+            }
+        }
+        return $return;
     }
 
     /**
@@ -203,5 +210,14 @@ class Node extends Base
         }
 
         return $userAccess;
+    }
+
+    //更新角色节点
+    public function upRoleNode($roleid=null,$data=array())
+    {
+        if (!$roleid || !is_array($data) || empty($data)) return false;
+
+        $return = T('role_node')->where(array('roleid'=>$roleid))->delete();
+        return T('role_node')->add($data);
     }
 }

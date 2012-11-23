@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-11-22 15:47:16
+<?php /* Smarty version Smarty-3.1.12, created on 2012-11-23 15:50:12
          compiled from "C:\xampp\htdocs\laugh\admin\themes\smooth\Role\manage.html" */ ?>
-<?php /*%%SmartyHeaderCode:2473750add884d19201-00611335%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2035250af2ab47e9bd6-42200208%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'baf94ffe4a2fd9d72fac7c09e66fec12d56a582b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\smooth\\Role\\manage.html',
-      1 => 1353479254,
+      1 => 1353649435,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2473750add884d19201-00611335',
+  'nocache_hash' => '2035250af2ab47e9bd6-42200208',
   'function' => 
   array (
   ),
@@ -23,9 +23,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50add884e1b2a0_09727166',
+  'unifunc' => 'content_50af2ab48d8369_88700529',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50add884e1b2a0_09727166')) {function content_50add884e1b2a0_09727166($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50af2ab48d8369_88700529')) {function content_50af2ab48d8369_88700529($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div id="content">
 	<div id="control">
@@ -61,11 +61,10 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 &status=<?php if ($_smarty_tpl->tpl_vars['d']->value['status']){?>0<?php }else{ ?>1<?php }?>" href="javascript:;" name="del" msg="确定<?php if ($_smarty_tpl->tpl_vars['d']->value['status']){?>禁用<?php }else{ ?>启用<?php }?>吗？"><?php if ($_smarty_tpl->tpl_vars['d']->value['status']){?>启用<?php }else{ ?>禁用<?php }?></a>
 			    	</li>
 			    	<li class="table_list_l table_list_l150">
-			    		<a href="javascript:;" name="modify" id="<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
-" title="<?php echo $_smarty_tpl->tpl_vars['d']->value['title'];?>
-" isshow="<?php echo $_smarty_tpl->tpl_vars['d']->value['isshow'];?>
+			    		<a href="__APP__/?s=Role/newRole&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 ">修改</a>&nbsp;&nbsp;
-			    		<a delurl="__APP__/Group/deleteGroup" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+			    		<a delurl="__APP__/?s=Role/deleteRole&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 			    	</li>
 			    </ul>
 			    <?php } ?>
