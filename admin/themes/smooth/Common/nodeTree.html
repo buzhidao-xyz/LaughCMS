@@ -29,7 +29,8 @@ var nodeTreeClass = function(){
 	var nodeTree = {
 		expand: $("#nodeTree ul li span.expand"),
 		node: $("#nodeTree ul li input[type=checkbox]"),
-		pNode: $("#nodeTree ul li input[flag=pNode]")
+		pNode: $("#nodeTree ul li input[flag=pNode]"),
+		cNode: $("#nodeTree ul li input[flag=cNode]")
 	}
 
 	//展开收缩 toggle动态
@@ -47,6 +48,11 @@ var nodeTreeClass = function(){
 			var nodeObj = $(this).parent().next("ul").find("input[type=checkbox]");
 			if ($(this).attr("checked")) nodeObj.attr("checked",true);
 			else nodeObj.attr("checked",false);
+		})
+
+		//选中子节点 默认选中父节点
+		nodeTree.cNode.click(function (){
+			
 		})
 	}(window);
 

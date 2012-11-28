@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2012-11-23 17:27:40
+Date: 2012-11-28 17:26:37
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -36,7 +36,7 @@ CREATE TABLE `la_admin` (
 -- ----------------------------
 -- Records of la_admin
 -- ----------------------------
-INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1353565569', '2130706433', '17');
+INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1354081927', '2130706433', '19');
 INSERT INTO `la_admin` VALUES ('2', 'luochuan', 'b499d04eb60c19135ab559c0ef52783d', 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '1353565545', '2130706433', '1');
 INSERT INTO `la_admin` VALUES ('3', 'test', 'a2907812388492fdf0f488bd5a3dc26d', '2fcy4o', '1325211617', '1', '', '0', null, '0');
 
@@ -278,16 +278,13 @@ CREATE TABLE `la_role` (
   KEY `status` (`status`),
   KEY `id` (`id`),
   KEY `id_2` (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_role
 -- ----------------------------
 INSERT INTO `la_role` VALUES ('1', '超级管理员', '1', '超级管理员 具有全站管理权限', '1332391671', '1332391671');
 INSERT INTO `la_role` VALUES ('2', '管理员', '1', '普通管理员 管理某些模块', '1332391671', '1332391671');
-INSERT INTO `la_role` VALUES ('3', '测试角色', '1', 'asdasd', '1353661667', '1353661667');
-INSERT INTO `la_role` VALUES ('4', '', '0', '', '1353661685', '1353661685');
-INSERT INTO `la_role` VALUES ('5', '小ZX', '1', '选择性撒旦', '1353662528', '1353662528');
 
 -- ----------------------------
 -- Table structure for `la_role_admin`

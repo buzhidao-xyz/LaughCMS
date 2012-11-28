@@ -258,9 +258,11 @@ function g($param)
 {
     $return = isset($_GET[$param]) ? $_GET[$param] : '';
     $types = array('string','integer','double');
-    if (in_array(gettype($return), $types)) return trim($return);
+    if (in_array(gettype($return), $types)) {
+        $return = FilterHelper::F_htmlentities(trim($return));
+    }
 
-    return FilterHelper::F_htmlentities($return);
+    return $return;
 }
 
 /**
@@ -271,9 +273,11 @@ function p($param)
 {
     $return = isset($_POST[$param]) ? $_POST[$param] : '';
     $types = array('string','integer','double');
-    if (in_array(gettype($return), $types)) $return = trim($return);
+    if (in_array(gettype($return), $types)) {
+        $return = FilterHelper::F_htmlentities(trim($return));
+    }
 
-    return FilterHelper::F_htmlentities($return);
+    return $return;
 }
 
 /**
@@ -284,9 +288,11 @@ function q($param)
 {
     $return = isset($_REQUEST[$param]) ? $_REQUEST[$param] : '';
     $types = array('string','integer','double');
-    if (in_array(gettype($return), $types)) $return = trim($return);
+    if (in_array(gettype($return), $types)) {
+        $return = FilterHelper::F_htmlentities(trim($return));
+    }
 
-    return FilterHelper::F_htmlentities($return);
+    return $return;
 }
 
 //实例化控制器类
