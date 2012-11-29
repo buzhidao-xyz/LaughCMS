@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-11-28 17:05:25
+<?php /* Smarty version Smarty-3.1.12, created on 2012-11-29 14:46:00
          compiled from "C:\xampp\htdocs\laugh\admin\themes\smooth\Role\newrole.html" */ ?>
-<?php /*%%SmartyHeaderCode:1586650b5d3d54e52f7-35790016%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:3122350b704a87a6dd8-81454937%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'b9d2a91456a0fcc4eb524eb43abd48dcc4d4de18' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\smooth\\Role\\newrole.html',
-      1 => 1353907176,
+      1 => 1354171551,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1586650b5d3d54e52f7-35790016',
+  'nocache_hash' => '3122350b704a87a6dd8-81454937',
   'function' => 
   array (
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50b5d3d5582476_93692135',
+  'unifunc' => 'content_50b704a8831d73_43297045',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50b5d3d5582476_93692135')) {function content_50b5d3d5582476_93692135($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50b704a8831d73_43297045')) {function content_50b704a8831d73_43297045($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div id="content">
 	<div id="control">
@@ -31,7 +31,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<div class="title">
 				<h5>新角色表单</h5>
 			</div>
-			<form name="newform" action="__APP__/?s=Role/saveRole" method="post" method="post" id="roleform">
+			<form name="newform" action="__APP__/?s=Role/saveRole" method="post" method="post" id="addajaxform">
 			<input type="hidden"  name="id" id="id" value="<?php echo $_smarty_tpl->tpl_vars['roleInfo']->value['id'];?>
 " />
 			<div class="form">
@@ -74,6 +74,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		</div>
 	</div>
 </div>
-<script src="themes/smooth/js/role.js" type="text/javascript"></script>
+<!-- <script src="themes/smooth/js/role.js" type="text/javascript"></script> -->
 <?php echo $_smarty_tpl->getSubTemplate ("include/foot.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 <?php }} ?>

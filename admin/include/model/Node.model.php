@@ -217,7 +217,8 @@ class Node extends Base
     {
         if (!$roleid || !is_array($data) || empty($data)) return false;
 
-        $return = T('role_node')->where(array('roleid'=>$roleid))->delete();
-        return T('role_node')->add($data,true);
+        T('role_node')->where(array('roleid'=>$roleid))->delete();
+        T('role_node')->add($data,true);
+        return true;
     }
 }

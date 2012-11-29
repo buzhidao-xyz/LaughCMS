@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2012-11-28 17:26:37
+Date: 2012-11-29 14:46:20
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -284,7 +284,7 @@ CREATE TABLE `la_role` (
 -- Records of la_role
 -- ----------------------------
 INSERT INTO `la_role` VALUES ('1', '超级管理员', '1', '超级管理员 具有全站管理权限', '1332391671', '1332391671');
-INSERT INTO `la_role` VALUES ('2', '管理员', '1', '普通管理员 管理某些模块', '1332391671', '1332391671');
+INSERT INTO `la_role` VALUES ('2', '管理员', '1', '普通管理员 管理某些模块', '1332391671', '1354171483');
 
 -- ----------------------------
 -- Table structure for `la_role_admin`
@@ -323,7 +323,11 @@ INSERT INTO `la_role_node` VALUES ('1', '2');
 INSERT INTO `la_role_node` VALUES ('1', '3');
 INSERT INTO `la_role_node` VALUES ('1', '4');
 INSERT INTO `la_role_node` VALUES ('1', '5');
+INSERT INTO `la_role_node` VALUES ('2', '26');
+INSERT INTO `la_role_node` VALUES ('2', '9');
 INSERT INTO `la_role_node` VALUES ('2', '5');
+INSERT INTO `la_role_node` VALUES ('2', '8');
+INSERT INTO `la_role_node` VALUES ('2', '4');
 
 -- ----------------------------
 -- Table structure for `la_system`

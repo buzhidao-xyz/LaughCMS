@@ -44,7 +44,7 @@
 			<div class="title">
 				<h5>新角色表单</h5>
 			</div>
-			<form name="newform" action="/laugh/admin/?s=Role/saveRole" method="post" method="post" id="roleform">
+			<form name="newform" action="/laugh/admin/?s=Role/saveRole" method="post" method="post" id="addajaxform">
 			<input type="hidden"  name="id" id="id" value="0" />
 			<div class="form">
 				<div class="fields">
@@ -165,7 +165,8 @@ var nodeTreeClass = function(){
 	var nodeTree = {
 		expand: $("#nodeTree ul li span.expand"),
 		node: $("#nodeTree ul li input[type=checkbox]"),
-		pNode: $("#nodeTree ul li input[flag=pNode]")
+		pNode: $("#nodeTree ul li input[flag=pNode]"),
+		cNode: $("#nodeTree ul li input[flag=cNode]")
 	}
 
 	//展开收缩 toggle动态
@@ -184,14 +185,35 @@ var nodeTreeClass = function(){
 			if ($(this).attr("checked")) nodeObj.attr("checked",true);
 			else nodeObj.attr("checked",false);
 		})
+
+		//选中子节点 默认选中父节点
+		nodeTree.cNode.click(function (){
+			var nodeObj = $(this).parent().parent().prev("li").find("input[type=checkbox]");
+			var groupObj = $(this).parent().parent().parent().prev("li").find("input[type=checkbox]");
+			if ($(this).attr("checked")) {
+				nodeObj.attr("checked",true);
+				groupObj.attr("checked",true);
+			}
+		})
+
+		//选中父节点 默认选中组节点
+		nodeTree.pNode.click(function (){
+			var nodeObj = $(this).parent().parent().prev("li").find("input[type=checkbox]");
+			if ($(this).attr("checked")) nodeObj.attr("checked",true);
+		})
 	}(window);
 
-	//选中组
-	if (nodeTree.pNode.length > 0) {
+	//选种组
+	var checkGroup = function (){
 		nodeTree.pNode.each(function (){
 			if ($(this).attr("checked"))
 				$(this).parent().parent().prev("li").find("input[type=checkbox]").attr("checked",true);
 		});
+	}
+
+	//选中组
+	if (nodeTree.pNode.length > 0) {
+		checkGroup();
 	}
 }
 new nodeTreeClass();
@@ -205,6 +227,6 @@ new nodeTreeClass();
 		</div>
 	</div>
 </div>
-<script src="themes/smooth/js/role.js" type="text/javascript"></script>
+<!-- <script src="themes/smooth/js/role.js" type="text/javascript"></script> -->
 </body>
 </html>

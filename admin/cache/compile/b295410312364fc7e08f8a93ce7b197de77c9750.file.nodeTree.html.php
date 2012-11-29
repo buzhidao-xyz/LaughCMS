@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-11-28 17:05:25
+<?php /* Smarty version Smarty-3.1.12, created on 2012-11-29 14:46:00
          compiled from "C:\xampp\htdocs\laugh\admin\themes\smooth\Common\nodeTree.html" */ ?>
-<?php /*%%SmartyHeaderCode:2612050b5d3d559faf9-53980913%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1300550b704a88486f1-06738769%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'b295410312364fc7e08f8a93ce7b197de77c9750' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\smooth\\Common\\nodeTree.html',
-      1 => 1353907176,
+      1 => 1354170509,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2612050b5d3d559faf9-53980913',
+  'nocache_hash' => '1300550b704a88486f1-06738769',
   'function' => 
   array (
   ),
@@ -25,9 +25,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50b5d3d5694303_03829858',
+  'unifunc' => 'content_50b704a8943fe7_93681282',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50b5d3d5694303_03829858')) {function content_50b5d3d5694303_03829858($_smarty_tpl) {?><link rel="stylesheet" type="text/css" href="themes/smooth/style/nodeTree.css" media="screen" />
+<?php if ($_valid && !is_callable('content_50b704a8943fe7_93681282')) {function content_50b704a8943fe7_93681282($_smarty_tpl) {?><link rel="stylesheet" type="text/css" href="themes/smooth/style/nodeTree.css" media="screen" />
 <div id="nodeTree">
 	<span class="nodeTreeTitle">请选择节点</span>
 	<?php if ($_smarty_tpl->tpl_vars['nodeTree']->value){?>
@@ -79,7 +79,8 @@ var nodeTreeClass = function(){
 	var nodeTree = {
 		expand: $("#nodeTree ul li span.expand"),
 		node: $("#nodeTree ul li input[type=checkbox]"),
-		pNode: $("#nodeTree ul li input[flag=pNode]")
+		pNode: $("#nodeTree ul li input[flag=pNode]"),
+		cNode: $("#nodeTree ul li input[flag=cNode]")
 	}
 
 	//展开收缩 toggle动态
@@ -98,14 +99,35 @@ var nodeTreeClass = function(){
 			if ($(this).attr("checked")) nodeObj.attr("checked",true);
 			else nodeObj.attr("checked",false);
 		})
+
+		//选中子节点 默认选中父节点
+		nodeTree.cNode.click(function (){
+			var nodeObj = $(this).parent().parent().prev("li").find("input[type=checkbox]");
+			var groupObj = $(this).parent().parent().parent().prev("li").find("input[type=checkbox]");
+			if ($(this).attr("checked")) {
+				nodeObj.attr("checked",true);
+				groupObj.attr("checked",true);
+			}
+		})
+
+		//选中父节点 默认选中组节点
+		nodeTree.pNode.click(function (){
+			var nodeObj = $(this).parent().parent().prev("li").find("input[type=checkbox]");
+			if ($(this).attr("checked")) nodeObj.attr("checked",true);
+		})
 	}(window);
 
-	//选中组
-	if (nodeTree.pNode.length > 0) {
+	//选种组
+	var checkGroup = function (){
 		nodeTree.pNode.each(function (){
 			if ($(this).attr("checked"))
 				$(this).parent().parent().prev("li").find("input[type=checkbox]").attr("checked",true);
 		});
+	}
+
+	//选中组
+	if (nodeTree.pNode.length > 0) {
+		checkGroup();
 	}
 }
 new nodeTreeClass();

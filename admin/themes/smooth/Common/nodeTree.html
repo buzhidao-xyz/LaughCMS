@@ -52,16 +52,32 @@ var nodeTreeClass = function(){
 
 		//选中子节点 默认选中父节点
 		nodeTree.cNode.click(function (){
-			
+			var nodeObj = $(this).parent().parent().prev("li").find("input[type=checkbox]");
+			var groupObj = $(this).parent().parent().parent().prev("li").find("input[type=checkbox]");
+			if ($(this).attr("checked")) {
+				nodeObj.attr("checked",true);
+				groupObj.attr("checked",true);
+			}
+		})
+
+		//选中父节点 默认选中组节点
+		nodeTree.pNode.click(function (){
+			var nodeObj = $(this).parent().parent().prev("li").find("input[type=checkbox]");
+			if ($(this).attr("checked")) nodeObj.attr("checked",true);
 		})
 	}(window);
 
-	//选中组
-	if (nodeTree.pNode.length > 0) {
+	//选种组
+	var checkGroup = function (){
 		nodeTree.pNode.each(function (){
 			if ($(this).attr("checked"))
 				$(this).parent().parent().prev("li").find("input[type=checkbox]").attr("checked",true);
 		});
+	}
+
+	//选中组
+	if (nodeTree.pNode.length > 0) {
+		checkGroup();
 	}
 }
 new nodeTreeClass();
