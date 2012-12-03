@@ -39,8 +39,7 @@ class DBConnect implements DBConnect_Interface
      * 通过哪种连接方式连接数据库
      * 默认通过pdo 其他方式为mysqli
      */
-    // static private $_flag = "mysqli";
-    static private $_flag = "pdo";
+    static private $_db_type = "pdo";
     
     /**
      * insert update delete 所影响的记录数
@@ -68,6 +67,9 @@ class DBConnect implements DBConnect_Interface
         try {
             $this->dbs = C('DB');
             $this->dbs = $this->dbs['db0'];
+
+            //设置DB_TYPE数据库连接类型
+            self::$_db_type = $this->dbs['db_type'] ? $this->dbs['db_type'] : self::$_db_type;
             
             if (empty($this->dbs)) {
                 throw new MyException("Databse is null", 1);
@@ -164,17 +166,16 @@ class DBConnect implements DBConnect_Interface
     
     private function connect()
     {
-        if (self::$_flag == "pdo") {
+        if (self::$_db_type == "pdo") {
             try {
                 $this->_initPDO();
             } catch(PDOException $e) {
                 $this->_initMysqli();
             }
-        } else if (self::$_flag == "mysqli") {
+        } else if (self::$_db_type == "mysqli") {
             $this->_initMysqli();
         }
         self::Execute("SET NAMES 'UTF8'");
-        // dump(self::$db);exit;
         
         if (self::$db) $this->setAttributes();
     }
@@ -191,7 +192,7 @@ class DBConnect implements DBConnect_Interface
             throw new PDOException("The connect is unvaliable", 1);
             exit;
         };
-        self::$_flag = "pdo";
+        self::$_db_type = "pdo";
     }
 
     /**
@@ -204,7 +205,7 @@ class DBConnect implements DBConnect_Interface
                 throw new MyException("The connect is unvaliable", 1);
                 exit;
             }
-            self::$_flag = "mysqli";
+            self::$_db_type = "mysqli";
         } catch(MyException $e) {
             echo $e;
         }
@@ -215,7 +216,7 @@ class DBConnect implements DBConnect_Interface
      */
     private function setAttributes()
     {
-        switch (self::$_flag) {
+        switch (self::$_db_type) {
             case 'pdo':
                 /**
                  * 仅返回以键值作为下标的查询结果集
@@ -241,7 +242,7 @@ class DBConnect implements DBConnect_Interface
 	{
 		$sql = self::tablePR($sql);
 
-		switch (self::$_flag) {
+		switch (self::$_db_type) {
             case 'pdo':
                 $count = self::$db->exec($sql);
                 break;
@@ -269,7 +270,7 @@ class DBConnect implements DBConnect_Interface
         $sth = self::$db->prepare($sql);
         $sth->execute();
         
-        switch (self::$_flag) {
+        switch (self::$_db_type) {
             case 'pdo':
                 $count = $sth->rowCount();
                 break;
@@ -298,7 +299,7 @@ class DBConnect implements DBConnect_Interface
         $sth = self::$db->prepare($sql);
         $sth->execute();
         
-        switch (self::$_flag) {
+        switch (self::$_db_type) {
             case 'pdo':
                 $return = $sth->rowCount() ? $sth->fetch(0) : $result;
                 break;
@@ -326,7 +327,7 @@ class DBConnect implements DBConnect_Interface
 		$sth = self::$db->prepare($sql);
 		$sth->execute();
         
-        switch (self::$_flag) {
+        switch (self::$_db_type) {
             case 'pdo':
                 $return = $sth->rowCount() ? $sth->fetchAll() : $result;
                 break;
@@ -349,7 +350,7 @@ class DBConnect implements DBConnect_Interface
      */
 	static public function GetInsertID()
 	{
-	    switch (self::$_flag) {
+	    switch (self::$_db_type) {
             case 'pdo':
                 $return = self::$db->lastInsertId();
                 break;
@@ -372,7 +373,7 @@ class DBConnect implements DBConnect_Interface
     {
         $sql = self::tablePR($sql);
         
-        switch (self::$_flag) {
+        switch (self::$_db_type) {
             case 'pdo':
                 self::$db->beginTransaction();
                 $count = self::$db->exec($sql);
@@ -397,7 +398,7 @@ class DBConnect implements DBConnect_Interface
     
     static private function closeCommit()
     {
-        switch (self::$_flag) {
+        switch (self::$_db_type) {
             case 'pdo':
                 
                 break;

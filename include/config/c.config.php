@@ -25,6 +25,7 @@ $config = array(
     //Laugh数据模型数据库配置信息
     'DB' => array(
         'db0' => array (
+            'db_type'  => 'pdo',
             'host'     => 'localhost',
             'username' => 'root',
             'password' => '123456',
@@ -32,6 +33,7 @@ $config = array(
             'prefix'   => 'la_'
         ),
         'db1' => array (
+            'db_type'  => 'pdo',
             'host'     => 'localhost',
             'username' => 'root',
             'password' => '123456',

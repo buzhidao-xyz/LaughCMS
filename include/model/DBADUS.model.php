@@ -30,7 +30,7 @@ class DBADUS extends DBConnect
     static private $_sql;
     
     /**
-     * 获取orm映射字段值
+     * 获取orm映射字段值 如果ORM里面配置的key获取该配置的key 没有配置直接返回key
      * @param $key 字段值
      */
     private function orm($key)
@@ -43,17 +43,29 @@ class DBADUS extends DBConnect
             $pos = strpos($key, ' ');
             $alias = $pos !== false ? substr($key, $pos) : '';
             $key = $pos !== false ? substr($key, 0, $pos) : $key;
-            return 'a.`'.$orm[self::$_table][$key].$alias.'`';
+            if (!is_array($orm) || empty($orm) || !array_key_exists(self::$_table, $orm) || !array_key_exists($key, $orm[self::$_table])) {
+                return 'a.`'.$key.$alias.'`';
+            } else {
+                return 'a.`'.$orm[self::$_table][$key].$alias.'`';
+            }
         }
         if (preg_match("/^b\./", $key)) {
             $key = str_replace('b.', '', $key);
             $pos = strpos($key, ' ');
             $alias = $pos !== false ? substr($key, $pos) : '';
             $key = $pos !== false ? substr($key, 0, $pos) : $key;
-            return 'b.`'.$orm[self::$_join_table][$key].$alias.'`';
+            if (!is_array($orm) || empty($orm) || !array_key_exists(self::$_join_table, $orm) || !array_key_exists($key, $orm[self::$_join_table])) {
+                return 'a.`'.$key.$alias.'`';
+            } else {
+                return 'b.`'.$orm[self::$_join_table][$key].$alias.'`';
+            }
         }
 
-        return '`'.$orm[self::$_table][$key].'`';
+        if (!is_array($orm) || empty($orm) || !array_key_exists(self::$_join_table, $orm) || !array_key_exists($key, $orm[self::$_join_table])) {
+            return '`'.$key.'`';
+        } else {
+            return '`'.$orm[self::$_table][$key].'`';
+        }
     }
 
     /**
