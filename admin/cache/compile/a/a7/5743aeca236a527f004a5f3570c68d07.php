@@ -3,13 +3,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="keywords" content="">
-<link type="text/css" rel="stylesheet" href="themes/default/style/common.css" media="screen">
-<link type="text/css" rel="stylesheet" href="themes/default/style/base.css" media="screen">
-<link type="text/css" rel="stylesheet" href="themes/default/style/global.css" media="screen">
-<script type="text/javascript" src="themes/default/js/jquery.js"></script>
-<!--
-<script type="text/javascript" src="themes/default/js/PIE.js"></script>
--->
+<link type="text/css" rel="stylesheet" href="themes/blue/style/common.css" media="screen">
+<link type="text/css" rel="stylesheet" href="themes/blue/style/base.css" media="screen">
+<link type="text/css" rel="stylesheet" href="themes/blue/style/global.css" media="screen">
+<script type="text/javascript" src="themes/blue/js/jquery.js"></script>
+<!-- <script type="text/javascript" src="themes/blue/js/PIE.js"></script> -->
 <title>管理中心</title>
 <script type="text/javascript">
 var JS_APP = '/laugh/admin';
@@ -181,7 +179,7 @@ $("#sitemap_title").mousedown(function() {
 -->
 </script>
 
-<link rel="stylesheet" type="text/css" href="themes/default/style/frame.css" />
+<link rel="stylesheet" type="text/css" href="themes/blue/style/frame.css" />
 <div id="header">
 	<!-- header -->
 <div class="logo">
@@ -231,8 +229,8 @@ $("#sitemap_title").mousedown(function() {
 	<p>Copyright &copy; Laugh. Buzhidao</p>
 </div>
 </body>
-<script type="text/javascript" src="themes/default/js/public.js"></script>
-<script type="text/javascript" src="themes/default/js/div_window.js"></script>
-<script type="text/javascript" src="themes/default/js/common.js"></script>
-<script type="text/javascript" src="themes/default/js/ajax.js"></script>
+<script type="text/javascript" src="themes/blue/js/public.js"></script>
+<script type="text/javascript" src="themes/blue/js/div_window.js"></script>
+<script type="text/javascript" src="themes/blue/js/common.js"></script>
+<script type="text/javascript" src="themes/blue/js/ajax.js"></script>
 </html>

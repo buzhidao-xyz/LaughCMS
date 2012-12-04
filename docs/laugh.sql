@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2012-11-29 14:46:20
+Date: 2012-12-04 17:24:50
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -36,8 +36,8 @@ CREATE TABLE `la_admin` (
 -- ----------------------------
 -- Records of la_admin
 -- ----------------------------
-INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1354081927', '2130706433', '19');
-INSERT INTO `la_admin` VALUES ('2', 'luochuan', 'b499d04eb60c19135ab559c0ef52783d', 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '1353565545', '2130706433', '1');
+INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1354612278', '2130706433', '28');
+INSERT INTO `la_admin` VALUES ('2', 'luochuan', 'f3739d687fe0edfad83398420af74556', 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '1354514400', '2130706433', '2');
 INSERT INTO `la_admin` VALUES ('3', 'test', 'a2907812388492fdf0f488bd5a3dc26d', '2fcy4o', '1325211617', '1', '', '0', null, '0');
 
 -- ----------------------------

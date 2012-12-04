@@ -19,10 +19,12 @@ var JS_APP = '/laugh/admin';
 <div id="loginTop"></div>
 <div id="loginCenter">
     <div id="loginasdf">
-        <div id="loginCaption"></div>
+        <div id="loginCaption">
+            <img src="themes/blue/images/login_caption_logo.png" width="173" height="60" />
+        </div>
         <div id="loginPanel">
             <div class="login logTop">
-                <h1>网站管理系统</h1>
+                <h3>网站后台管理系统</h3>
             </div>
             <div class="login logForm">
                 <form name="logform" method="post" action="/laugh/admin/?s=login/loginCheck">
@@ -30,18 +32,17 @@ var JS_APP = '/laugh/admin';
                         <li><span>用户名:</span><input type="text" name="username" value="" class="input" /></li>
                         <li><span>密&nbsp;&nbsp;&nbsp;码:</span><input type="password" name="password" value="" class="input" /></li>
                         <li><span>验证码:</span><input type="text" name="vcode" value="" class="input" style="width:80px;" />&nbsp;<img src="/laugh/admin/?s=vcode" class="vcode" /></li>
-                        <li><input type="submit" name="subut" class="button" value="登录" /></li>
+                        <li><input type="submit" name="subut" class="button btnyellow2" value="登录" /></li>
                     </ul>
                 </form>
             </div>
-            <div id="logError"></div>
-            <div class="login logFoot">
-                Powered by Laugh &copy; 2011-2012
-            </div>
+            <!-- <div id="logError"></div> -->
+            <div class="loginWelcome"></div>
         </div>
     </div>
+    <div></div>
 </div>
-<div id="loginBottom"></div>
+<div id="loginBottom">Powered by xxx &copy; 2012-2015</div>
 <script language="javascript">
 $(document).ready(function(){
     $("form[name=logform]").submit(function() {
@@ -59,8 +60,8 @@ $(document).ready(function(){
 });
 </script>
 </body>
-<script type="text/javascript" src="themes/default/js/public.js"></script>
-<script type="text/javascript" src="themes/default/js/div_window.js"></script>
-<script type="text/javascript" src="themes/default/js/common.js"></script>
-<script type="text/javascript" src="themes/default/js/ajax.js"></script>
+<script type="text/javascript" src="themes/blue/js/public.js"></script>
+<script type="text/javascript" src="themes/blue/js/div_window.js"></script>
+<script type="text/javascript" src="themes/blue/js/common.js"></script>
+<script type="text/javascript" src="themes/blue/js/ajax.js"></script>
 </html>

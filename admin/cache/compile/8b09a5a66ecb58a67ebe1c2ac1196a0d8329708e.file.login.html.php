@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-12-03 17:29:31
+<?php /* Smarty version Smarty-3.1.12, created on 2012-12-04 17:10:34
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\login.html" */ ?>
-<?php /*%%SmartyHeaderCode:2620950bc70fb1315a1-68316749%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1394350bdbe0a125172-19237833%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '8b09a5a66ecb58a67ebe1c2ac1196a0d8329708e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\login.html',
-      1 => 1354526275,
+      1 => 1354612129,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2620950bc70fb1315a1-68316749',
+  'nocache_hash' => '1394350bdbe0a125172-19237833',
   'function' => 
   array (
   ),
@@ -21,18 +21,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50bc70fb183e67_40713680',
+  'unifunc' => 'content_50bdbe0a173cf0_36939149',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50bc70fb183e67_40713680')) {function content_50bc70fb183e67_40713680($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50bdbe0a173cf0_36939149')) {function content_50bdbe0a173cf0_36939149($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <link type="text/css" rel="stylesheet" href="themes/blue/style/login.css" media="screen">
 <div id="loginTop"></div>
 <div id="loginCenter">
     <div id="loginasdf">
-        <div id="loginCaption"></div>
+        <div id="loginCaption">
+            <img src="themes/blue/images/login_caption_logo.png" width="173" height="60" />
+        </div>
         <div id="loginPanel">
             <div class="login logTop">
-                <h1>网站管理系统</h1>
+                <h3>网站后台管理系统</h3>
             </div>
             <div class="login logForm">
                 <form name="logform" method="post" action="__APP__/?s=login/loginCheck">
@@ -40,19 +42,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         <li><span>用户名:</span><input type="text" name="username" value="" class="input" /></li>
                         <li><span>密&nbsp;&nbsp;&nbsp;码:</span><input type="password" name="password" value="" class="input" /></li>
                         <li><span>验证码:</span><input type="text" name="vcode" value="" class="input" style="width:80px;" />&nbsp;<img src="__APP__/?s=vcode" class="vcode" /></li>
-                        <li><input type="submit" name="subut" class="button" value="登录" /></li>
+                        <li><input type="submit" name="subut" class="button btnyellow2" value="登录" /></li>
                     </ul>
                 </form>
             </div>
-            <div id="logError"><?php echo $_smarty_tpl->tpl_vars['ecode']->value;?>
-</div>
-            <div class="login logFoot">
-                Powered by Laugh &copy; 2011-2012
-            </div>
+            <!-- <div id="logError"><?php echo $_smarty_tpl->tpl_vars['ecode']->value;?>
+</div> -->
+            <div class="loginWelcome"></div>
         </div>
     </div>
+    <div></div>
 </div>
-<div id="loginBottom"></div>
+<div id="loginBottom">Powered by xxx &copy; 2012-2015</div>
 <script language="javascript">
 $(document).ready(function(){
     $("form[name=logform]").submit(function() {
