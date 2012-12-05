@@ -3,15 +3,22 @@
     <ul>
         {foreach $menu as $m}
 		<li class="menulist">
-			<div><a target="main" hidefocus="true" href="javascript:;" class="">{$m.title}</a></div>
+			<div class="menutree1"><a target="main" hidefocus="true" href="javascript:;" class="plus">{$m.title}</a></div>
 			{if array_key_exists('cnode',$m)}
 			<ul class="menusub">
-			{foreach $m.cnode as $m1}
+				<li class="menuTopLine"></li>
+				{foreach $m.cnode as $m1}
 				<li><a target="main" hidefocus="true" href="__APP__/?s={$m1.control}/{$m1.action}" class="">{$m1.title|html_entity_decode}</a></li>
-			{/foreach}
+				{/foreach}
 			</ul>
 			{/if}
 		</li>
         {/foreach}
     </ul>
 </div>
+<script type="text/javascript">
+$(document).ready(function (){
+	$("li.menulist:eq(0) > div.menutree1 > a").addClass("mius");
+	$("li.menulist:eq(0) > ul.menusub").css("display","block");
+});
+</script>

@@ -2,10 +2,17 @@
 <div class="menu">
     <ul>
         <li class="menulist">
-			<div><a target="main" hidefocus="true" href="javascript:;">基本信息</a></div>
+			<div class="menutree1"><a target="main" hidefocus="true" href="javascript:;" class="plus">基本信息</a></div>
 			<ul class="menusub">
+				<li class="menuTopLine"></li>
 				<li><a target="main" hidefocus="true" href="javascript:;" class="">个人信息</a></li>
 			</ul>
 		</li>
     </ul>
 </div>
+<script type="text/javascript">
+$(document).ready(function (){
+	$("li.menulist:eq(0) > div.menutree1 > a").addClass("mius");
+	$("li.menulist:eq(0) > ul.menusub").css("display","block");
+});
+</script>

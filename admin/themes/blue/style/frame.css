@@ -11,21 +11,21 @@ html, body {
 	top:0;
 	left:0px;
 	right:0px;
-	height:90px;
+	height:72px;
 }
 #menuTree {
 	position:absolute;
-	top:90px;
+	top:72px;
 	left:0;
 	bottom:20px;
-	width:160px;
+	width:185px;
 	/*overflow-x:hidden;
 	overflow-y:auto;*/
 }
 #main {
 	position:absolute;
-	top:90px;
-	left:160px;
+	top:72px;
+	left:185px;
 	bottom:20px;
 	right:0;
 	overflow: hidden;
@@ -42,17 +42,20 @@ html, body {
 	right:0;
 	bottom:0;
 	height:20px;
+	color: #FFF;
+	padding-right: 30px;
+    background:url('../images/login_bottom_bg.gif') left top repeat-x;
 }
 
 /*---ie6---*/
 html {
-	*padding-top: 90px;
+	*padding-top: 72px;
 	*padding-bottom: 20px;
 }
 #header {
 	*position:relative;
-	*height:90px;
-	*margin-top:-90px;
+	*height:72px;
+	*margin-top:-72px;
 }
 #menuTree, #main {
 	*position:relative;
@@ -64,10 +67,10 @@ html {
 }
 #menuTree {
 	*float:left;
-	*width:160px;
+	*width:185px;
 }
 #main {
-	*margin-left:160px;
+	*margin-left:185px;
 }
 #main iframe {
 	*width:100%;

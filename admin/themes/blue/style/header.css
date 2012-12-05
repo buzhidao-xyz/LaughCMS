@@ -1,0 +1,132 @@
+/* header */
+#header {
+    width:100%;
+    height:72px;
+    overflow:hidden;
+    background:url('../images/header_bg.gif') left top repeat-x;
+}
+#header .logo {
+    float: left;
+    width:185px;
+    text-align:center;
+    height:72px;
+    margin-top:12px;
+}
+#header .logo h1 {
+    color: #FFF;
+}
+#header .logo span {
+    clear:both;
+    display:block;
+}
+#header .headerNav {
+    overflow: hidden;
+}
+#header .uinfo {
+    height: 25px;
+    margin-top: 7px;
+    color: #FFF;
+    font-weight: 600;
+    text-align: right;
+    padding-right: 100px;
+}
+#header .uinfo a {
+    color:#FFF;
+}
+#header .nav {
+    width:100%;
+    height: 35px;
+    font-size: 14px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+#header .nav .hmenu {
+    padding-left: 10px;
+}
+#header .nav .hmenu li {
+    float: left;
+    height: 35px;
+    line-height: 40px;
+}
+#header .nav .hmenu li a {
+    color: #395A7B;
+    font-weight: 700;
+    padding: 7px 15px;
+    padding-top: 8px;
+    text-decoration: none;
+}
+#header .nav .hmenu li a:hover {
+    color: #006600;
+}
+#header .nav .hmenu li.navon {
+    background: url("../images/header_nav_bg_hover.gif") no-repeat left bottom;
+}
+#header .nav .hmenu li.navon a {
+    color: #006600;
+    background: url("../images/header_nav_bg_hover_r.gif") no-repeat right bottom;
+}
+/** menu */
+.menu {
+    position: relative;
+    width: 185px;
+    height:100%;
+    z-index: 20;
+    overflow: hidden;
+    overflow-y: auto;
+}
+.menu ul {
+    width: 182px;
+    height:auto;
+    overflow: visible;
+    margin: 10px auto;
+}
+.menu ul li.menulist {
+    height: auto;
+    overflow: hidden;
+    background: url("../images/menu_bgs.gif") no-repeat;
+}
+.menu ul li.menulist .menutree1 a {
+    display: block;
+    height:30px;
+    line-height:30px;
+    text-decoration: none;
+    color: #1B3143;
+    font-weight: 600;
+    text-indent: 30px;
+}
+.menu .menutree1 .plus {
+    background: url("../images/arrow_plus.png") no-repeat scroll 15px 11px;
+}
+.menu .menutree1 .mius {
+    background: url("../images/arrow_mius.png") no-repeat scroll 15px 12px;
+}
+.menu .menusub {
+	display: none;
+    margin: 0 auto;
+}
+.menu .menusub li.menuTopLine {
+    height: 5px;
+    background: url("../images/menu_topline.gif") no-repeat;
+}
+.menu .menusub li {
+    
+}
+.menu .menusub li a {
+    color: #333333;
+    display: block;
+    text-indent: 48px;
+    height: 26px;
+    line-height: 26px;
+    background: url("../images/menu_bg1.gif") no-repeat;
+}
+.menu .menusub li a:hover {
+    color: #006600;
+    font-weight: 600;
+    text-decoration: none;
+    background: url("../images/menu_bg2.gif") no-repeat;
+}
+.menu .menusub li a.tabon, .menu .menusub li a.tabon:hover {
+    color: #006600;
+    font-weight: 600;
+    background: url("../images/menu_bg2.gif") no-repeat;
+}

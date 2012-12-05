@@ -6,10 +6,6 @@ $(document).ready(function() {
     $("#header .nav ul.hmenu li").click(function() {
         $("#header .nav ul.hmenu li").removeClass('navon');
         $(this).addClass("navon");
-        
-        var hnavlink = $(this).find("em a").html();
-        //var lnavlink = $("#menu", top.frames["body"].document.body).contents().find(".menu ul li a:eq(0)").html();
-        $("#header .nav .navlink p").html(hnavlink+"&nbsp;&gt;");
     });
     
     /**
@@ -17,26 +13,18 @@ $(document).ready(function() {
      * 更新顶部链接地址说明(navlink)内容
      */
     $(".menu ul li a").live('click', function() {
-        var hnavlink = $("#header").find("ul.hmenu li.navon em a").html();
-        $("#header").find("#navlink p").html(hnavlink+'&nbsp;&gt;&nbsp;'+$(this).html()+'&nbsp;');
-
-        var thisp = $(this).parent().parent().find(".menusub");
-        if (thisp.css('display') == 'block') {
-            thisp.css('display','none');
-        } else {
-            thisp.css('display','block');
-        }
+        var thisa = $(this);
+        $(this).parent().parent().find(".menusub").slideToggle(100,function(){
+            if ($(this).css("display") == "block")
+                thisa.removeClass("plus").addClass("mius");
+            else
+                thisa.removeClass("mius").addClass("plus");
+        });
     });
     $(".menu .menusub li a").live('click', function() {
-        var that = $("#header");
-        var hnavlink = that.find("ul.hmenu li.navon em a").html();
-        var pnavlink = $(this).parent().parent().parent().find("div:first a").html();
-        that.find("#navlink p").html(hnavlink+'&nbsp;&gt;&nbsp;'+pnavlink+'&nbsp;&gt;&nbsp;'+$(this).html()+'&nbsp;');
-
         $(".menu .menusub li a").removeClass('tabon');
         $(this).addClass('tabon');
     });
-
 
     /*添加的FORM ajax提交方法*/
     $('#addajaxform').submit(function(){
