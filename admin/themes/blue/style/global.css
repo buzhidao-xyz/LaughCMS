@@ -1,10 +1,13 @@
 /** control */
 #control {
     clear: both;
-    margin: 10px;
+    margin: 10px 4px;
+    margin-bottom: 0;
     overflow: hidden;
     padding: 0;
+    background: url('../images/main_right_bg.gif') right repeat-y #F7F8F9;
     position: relative;
+    color: #333333;
 }
 #control a:link, #control a:visited {
     text-decoration: underline;
@@ -12,11 +15,53 @@
 #control a:hover {
     text-decoration: underline;
 }
+#control ul.controlTop {
+  overflow: hidden;
+  height: 23px;
+  background: url('../images/main_top1.gif') left top repeat-x;
+}
+#control ul li.controlLeftTop {
+  float: left;
+  width: 17px;
+  height: 23px;
+  background: url('../images/main_left_top1.gif') left top no-repeat;
+}
+#control ul li.controlRightTop {
+  float: right;
+  width: 17px;
+  height: 23px;
+  background: url('../images/main_right_top1.gif') right top no-repeat;
+}
+#control ul.controlBottom {
+  clear: both;
+  overflow: hidden;
+  height: 17px;
+  background: url('../images/main_bottom.gif') left top repeat-x;
+}
+#control ul li.controlLeftBottom {
+  float: left;
+  width: 17px;
+  height: 17px;
+  background: url('../images/main_left_bottom.gif') left top no-repeat;
+}
+#control ul li.controlRightBottom {
+  float: right;
+  width: 16px;
+  height: 17px;
+  background: url('../images/main_right_bottom.gif') right top no-repeat;
+}
+#control #controlContent {
+  padding: 10px 17px 0 17px;
+  clear: both;
+  overflow: hidden;
+  background: url('../images/main_left_bg.gif') left top repeat-y;
+}
 #control .control_nav {
     width: auto;
     height: 20px;
     line-height: 20px;
     margin: 10px 5px;
+    clear: both;
 }
 #control .control_nav .control_nav_tab {
     float: left;
@@ -54,26 +99,29 @@
 }
 #control .captitle {
     line-height:21px;
-    background: url("../images/bg_repx_hc.gif") repeat-x scroll 0 -40px transparent;
-    padding: 5px;
-    border-bottom: 1px solid #DEEFFA;
+    background: url("../images/captitle_icon1.png") no-repeat 0 12px;
+    padding: 5px 10px;
+    /*border-bottom: 1px solid #B5D0D9;*/
     clear: both;
 }
 .table_list_title, .table_list {
     position: relative;
     height: 32px;
     clear: both;
-    border-right: 1px solid #DEEFFA;
-    border-bottom: 1px solid #DEEFFA;
+    border-right: 1px solid #B5D0D9;
+    border-bottom: 1px solid #B5D0D9;
 }
 .table_list_title {
-  color: #CC3300;
+  color: #FF6600;
+  /*color: #000000;*/
+  font-weight: 600;
+  background: #D3EAEF;
 }
 .table_list {
   overflow:visible;
 }
 .table_list:hover {
-    background: #F2F9FD;
+    background: #E2E7ED;
 }
 .table_list_l, .table_list_center {
     float: left;
@@ -82,7 +130,7 @@
     line-height: 32px;
     text-indent: 5px;
     overflow: hidden;
-    border-left: 1px solid #DEEFFA;
+    border-left: 1px solid #B5D0D9;
 }
 .table_list_center {
     width: 100%;
@@ -139,14 +187,14 @@
 .rowspanhover {
     height:33px;
     background:#FFF;
-    border-right:1px solid #DEEFFA;
-    border-top:1px solid #DEEFFA;
+    border-right:1px solid #B5D0D9;
+    border-top:1px solid #B5D0D9;
     margin-top:-1px;
 }
 .rowspan {
     margin-top:-1px;
     background:#FFF;
-    border-right:1px solid #DEEFFA;
+    border-right:1px solid #B5D0D9;
 }
 
 /**form表单样式表*/
@@ -154,18 +202,23 @@ form {
 
 }
 form ul.formbody {
-    width: 100%;
+    float: left;
+    width: auto;
     height: auto;
-    clear: both;
+    border: 1px solid #B5D0D9;
+    overflow: hidden;
+    z-index: 50;
 }
 form ul.formbody li.formblock {
     width: auto;
     height: 40px;
     line-height: 40px;
-    border-bottom: 1px solid #DEEFFA;
+    padding-right: 100px;
+    /*border-bottom: 1px solid #B5D0D9;*/
+    overflow: hidden;
 }
 form ul li.colorblock:hover {
-    background: #F2F9FD;
+    background: #E2E7ED;
 }
 form ul.formbody li span {
     float: left;
@@ -173,6 +226,7 @@ form ul.formbody li span {
     display: block;
     margin-right: 20px;
     text-align: right;
+    overflow: hidden;
 }
 form ul.formbody li.auto {
     height: auto;
@@ -209,64 +263,37 @@ form ul.formbody li.auto {
 }
 
 /*修改详细信息*/
-.modify_div { z-index:999; position: absolute; width: 450px; height: auto; min-height:100px; border:#0099CC 10px solid; background:#F2F9FD;  color:#333; top: -100px; left: 50%; margin-left: -260px; padding: 25px;}
-.modify_div_box { position: relative;}
-.modify_div_close { position: absolute; display: block; width: 20px; height: 20px; z-index: 9999; line-height: 20px; text-align: center; font-family: Arial; top: 10px; right: 10px;}
-.modify_div_close:link,.modify_div_close:visited { background-color: #0099CC; color: #fff; text-decoration: none;}
-.modify_div_close:hover,.modify_div_close:active { background-color: #c00; color: #fff; text-decoration: none;}
+.modify_div {
+  z-index:999;
+  position: absolute;
+  width: 450px;
+  height: auto;
+  min-height:100px;
+  border:#395A7B 10px solid;
+  background:#F7F8F9;  color:#333; top: -100px; left: 50%; margin-left: -260px; padding: 25px;
+}
+.modify_div_box {
+  position: relative;
+}
+.modify_div_close {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  z-index: 9999; line-height: 20px; text-align: center; font-family: Arial; top: 10px;
+  right: 10px;
+}
+#control a.modify_div_close {
+  background-color: #395A7B;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+#control a.modify_div_close:hover, #control a.modify_div_close:active {
+  background-color: #CC0000;
+}
 /*修改详细信息*/
 
 /*分页*/
-/*
-.pagination {
-  zoom:1;
-  clear:both;
-  position:relative;
-  padding:25px 25px 25px 0;
-  text-align:right;
-  font-size:12px;
-}
-.pagenext, .pageprev {
-  display:inline-block;
-  width:56px;
-  height:24px;
-  margin:0 10px;
-  line-height:24px;
-  color:#73797c;
-  text-align:center;
-  background:url('../images/btn_page.png') no-repeat;
-}
-.pageNum {
-  display:inline-block;
-  height:24px;
-  line-height:24px;
-  padding:0 12px 0 10px;
-  color:#7aafe0;
-  background:url('../images/p_arrow.gif') no-repeat 86% 10px;
-}
-.pageList {
-  position:absolute;
-  z-index:99;
-  right:100px;
-  bottom:48px;
-  _width:80px;
-  padding:1px;
-  background:#ffffff;
-  border:1px solid #cdcdcd;
-}
-.pageList a, .current {
-  display:block;
-  height:24px;
-  line-height:24px;
-  padding:0 15px;
-  text-align:center;
-  color:#666666;
-}
-.pageList a:hover {
-  background:#e7e7e7;
-  color:#0078b6;
-}
-*/
 .pagination {
   float: right;
   zoom:1;

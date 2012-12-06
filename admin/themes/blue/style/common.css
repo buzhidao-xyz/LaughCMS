@@ -25,7 +25,6 @@ h2 {
     font-size: 18px;
 }
 h3 {
-    float: left;
     color: #1D3647;
     font-size: 15px;
 }
@@ -39,11 +38,11 @@ h5 {
 	display: inline;
 }
 a:link, a:visited{
-    color:#555555;
+    color:#006600;
     text-decoration:none;
 }
 a:hover{
-    color:#0099CC;
+    color:#FF6600;
     text-decoration:underline;
 }
 div{
@@ -53,6 +52,7 @@ div{
     font-size:13px;
     border:0px;
     text-align:left;
+    overflow: hidden;
 }
 ul, li {
     list-style:none;
@@ -117,11 +117,13 @@ input,textarea,select {
     padding: 2px;
 }
 .input:hover,.input:focus,textarea:hover,textarea:focus {
-    border-color:#1D3647;
+    /*border-color:#1D3647;*/
+    border-color: #FF6600;
     background:#F5F9FD;
 }
 .input_textarea_hover {
-    border-color:#1D3647;
+    /*border-color:#1D3647;*/
+    border-color: #FF6600;
     background:#F5F9FD;
 }
 .button{

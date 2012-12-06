@@ -8,12 +8,10 @@ $(document).ready(function() {
         $(this).removeClass("input_textarea_hover");
     });
     $("input:[type='text'],textarea").focus(function(){
-        $(this).css("border-color","#1D3647");
-        $(this).css("background","#F5F9FD");
+        $(this).addClass("input_textarea_hover");
     });
     $("input:[type='text'],textarea").blur(function(){
-        $(this).css("border-color","");
-        $(this).css("background","");
+        $(this).removeClass("input_textarea_hover");
     });
     /** end */
 });

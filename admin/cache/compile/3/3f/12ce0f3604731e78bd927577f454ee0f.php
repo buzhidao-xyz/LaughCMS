@@ -16,7 +16,17 @@ var JS_APP = '/laugh/admin';
 
 <body>
 <div id="control">
-    <h3>欢迎使用管理中心！</h2>
+	<ul class="controlTop">
+		<li class="controlLeftTop"></li>
+		<li class="controlRightTop"></li>
+	</ul>
+	<div id="controlContent">
+<h3>欢迎使用管理中心！</h3>
+    </div>
+    <ul class="controlBottom">
+		<li class="controlLeftBottom"></li>
+		<li class="controlRightBottom"></li>
+	</ul>
 </div>
 </body>
 <script type="text/javascript" src="themes/blue/js/public.js"></script>
