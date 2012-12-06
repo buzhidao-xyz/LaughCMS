@@ -46,7 +46,7 @@ class BaseControl
 		$res = null;
         $sstate = session('sstate'); $ustate = session('ustate');
         
-        $url = parse_url($_SERVER['REQUEST_URI']);
+        $url = parse_url(request_uri());
 		if (isset($url['query'])) $res = preg_match("/^s=(vcode|login)(\/index)?(\/loginCheck)?(\&w=[1-9][0-9]{1,2})?(\&h=[1-9][0-9]{1,2})?$/",$url['query']);
 
         if (!$res && (empty($this->userInfo) || $sstate != $ustate)) {

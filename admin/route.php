@@ -33,7 +33,7 @@ class Route
      */
     static private function _getUrl()
     {
-        self::$_current_url = urldecode(__HOST__.$_SERVER['REQUEST_URI']);
+        self::$_current_url = urldecode(__HOST__.request_uri());
     }
     
     /**
@@ -41,7 +41,7 @@ class Route
      */
     static private function _checkUrl()
     {
-        $url = "{^http:\/\/[0-9a-z.:-]+\/(".__SELF__."\/)?(\?s=.+)?$}i";
+        $url = "#^http://[0-9a-z.:-]+/(".__SELF__."/)?(index\.php)?(\?s=.+)?$#i";
         if (!preg_match($url, self::$_current_url)) {
             self::_host();
         }

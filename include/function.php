@@ -400,3 +400,23 @@ function thisSunday()
   $t = time()+(7-(date("w")?date("w"):7))*86400;
   return mktime(23,59,59,date("m", $t),date("d", $t),date("Y", $t));
 }
+
+//获取$_SERVER['REQUEST_URI']值
+function request_uri()
+{
+    if (isset($_SERVER['REQUEST_URI'])) {
+        $uri = $_SERVER['REQUEST_URI'];
+    } else {
+        if (isset($_SERVER['argv'])) {
+            $uri = $_SERVER['PHP_SELF'] .'?'. $_SERVER['argv'][0];
+        } else {
+            if (isset($_SERVER['QUERY_STRING'])) {
+                $uri = $_SERVER['PHP_SELF'] .'?'. $_SERVER['QUERY_STRING'];
+            } else {
+                $uri = $_SERVER['PHP_SELF'];
+            }
+        }
+    }
+    
+    return $uri;
+}

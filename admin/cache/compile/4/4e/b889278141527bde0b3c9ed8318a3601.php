@@ -1,4 +1,20 @@
-{include file="include/head.html"}
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="">
+<link type="text/css" rel="stylesheet" href="themes/blue/style/common.css" media="screen">
+<link type="text/css" rel="stylesheet" href="themes/blue/style/base.css" media="screen">
+<link type="text/css" rel="stylesheet" href="themes/blue/style/global.css" media="screen">
+<script type="text/javascript" src="themes/blue/js/jquery.js"></script>
+<!-- <script type="text/javascript" src="themes/blue/js/PIE.js"></script> -->
+<title>管理中心</title>
+<script type="text/javascript">
+var JS_APP = '/laugh/admin';
+</script>
+</head>
+
+<body>
 <link type="text/css" rel="stylesheet" href="themes/blue/style/login.css" media="screen">
 <div id="loginTop"></div>
 <div id="loginCenter">
@@ -11,16 +27,16 @@
                 <h3>网站后台管理系统</h3>
             </div>
             <div class="login logForm">
-                <form name="logform" method="post" action="__APP__/index.php?s=login/loginCheck">
+                <form name="logform" method="post" action="/laugh/admin/index.php?s=login/loginCheck">
                     <ul>
                         <li><span>用户名:</span><input type="text" name="username" value="" class="input" /></li>
                         <li><span>密&nbsp;&nbsp;&nbsp;码:</span><input type="password" name="password" value="" class="input" /></li>
-                        <li><span>验证码:</span><input type="text" name="vcode" value="" class="input" style="width:80px;" />&nbsp;<img src="__APP__/?s=vcode" class="vcode" /></li>
+                        <li><span>验证码:</span><input type="text" name="vcode" value="" class="input" style="width:80px;" />&nbsp;<img src="/laugh/admin/?s=vcode" class="vcode" /></li>
                         <li><input type="submit" name="subut" class="button btnyellow2" value="登录" /></li>
                     </ul>
                 </form>
             </div>
-            <!-- <div id="logError">{$ecode}</div> -->
+            <!-- <div id="logError"></div> -->
             <div class="loginWelcome"></div>
         </div>
     </div>
@@ -43,4 +59,9 @@ $(document).ready(function(){
     });
 });
 </script>
-{include file="include/foot.html"}
+</body>
+<script type="text/javascript" src="themes/blue/js/public.js"></script>
+<script type="text/javascript" src="themes/blue/js/div_window.js"></script>
+<script type="text/javascript" src="themes/blue/js/common.js"></script>
+<script type="text/javascript" src="themes/blue/js/ajax.js"></script>
+</html>

@@ -75,7 +75,6 @@ class LoginControl extends BaseControl
     static private function vcodeCheck()
     {
         $vcode = q('vcode');
-        
         if (session('vcode') == md5(strtoupper($vcode))) {
             return true;
         } else {

@@ -12,7 +12,7 @@ define('__HOST__', 'http://'.$_SERVER['HTTP_HOST']);
 define('__SELF__', substr(str_replace('/index.php', '', $_SERVER['PHP_SELF']),1));
 
 //工程目录
-define('APP_PATH', dirname($_SERVER['SCRIPT_FILENAME']));
+define('APP_PATH', str_replace('\\', '/', dirname($_SERVER['SCRIPT_FILENAME'])));
 
 //工程名
 define('APP_NAME', substr(APP_PATH, strripos(APP_PATH, '/')+1));
