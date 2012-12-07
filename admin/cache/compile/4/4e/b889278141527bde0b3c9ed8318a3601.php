@@ -31,7 +31,7 @@ var JS_APP = '/laugh/admin';
                     <ul>
                         <li><span>用户名:</span><input type="text" name="username" value="" class="input" /></li>
                         <li><span>密&nbsp;&nbsp;&nbsp;码:</span><input type="password" name="password" value="" class="input" /></li>
-                        <li><span>验证码:</span><input type="text" name="vcode" value="" class="input" style="width:80px;" />&nbsp;<img src="/laugh/admin/?s=vcode" class="vcode" /></li>
+                        <!-- <li><span>验证码:</span><input type="text" name="vcode" value="" class="input" style="width:80px;" />&nbsp;<img src="/laugh/admin/?s=vcode" class="vcode" /></li> -->
                         <li><input type="submit" name="subut" class="button btnyellow2" value="登录" /></li>
                     </ul>
                 </form>
@@ -50,7 +50,7 @@ $(document).ready(function(){
         var password = $(this).find("input[name=password]").val();
         var vcode = $(this).find("input[name=vcode]").val();
         
-        if (!username || !password || !vcode) {
+        if (!username || !password) {
             alert('请填写完整登录信息!');
             return false;
         }
@@ -60,6 +60,7 @@ $(document).ready(function(){
 });
 </script>
 </body>
+<script type="text/javascript" src="themes/blue/js/jquery.corner.js"></script>
 <script type="text/javascript" src="themes/blue/js/public.js"></script>
 <script type="text/javascript" src="themes/blue/js/div_window.js"></script>
 <script type="text/javascript" src="themes/blue/js/common.js"></script>

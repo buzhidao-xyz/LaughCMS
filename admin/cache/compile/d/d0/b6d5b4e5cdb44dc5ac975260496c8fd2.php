@@ -29,6 +29,7 @@ var JS_APP = '/laugh/admin';
 	</ul>
 </div>
 </body>
+<script type="text/javascript" src="themes/blue/js/jquery.corner.js"></script>
 <script type="text/javascript" src="themes/blue/js/public.js"></script>
 <script type="text/javascript" src="themes/blue/js/div_window.js"></script>
 <script type="text/javascript" src="themes/blue/js/common.js"></script>

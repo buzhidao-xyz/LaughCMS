@@ -60,12 +60,13 @@ $(document).ready(function (){
 </script>
 </div>
 <div id="main">
-	<iframe frameborder="0" name="main" src="/laugh/admin/?s=public/welcome" scrolling="yes"></iframe>
+	<iframe frameborder="0" name="main" src="/laugh/admin/index.php?s=public/welcome" scrolling="yes"></iframe>
 </div>
 <div id="bottom">
 	Copyright &copy; xxx. 2012-2015
 </div>
 </body>
+<script type="text/javascript" src="themes/blue/js/jquery.corner.js"></script>
 <script type="text/javascript" src="themes/blue/js/public.js"></script>
 <script type="text/javascript" src="themes/blue/js/div_window.js"></script>
 <script type="text/javascript" src="themes/blue/js/common.js"></script>

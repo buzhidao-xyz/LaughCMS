@@ -90,7 +90,7 @@ class LoginControl extends BaseControl
      */
     static public function loginCheck()
     {
-        self::vcodeCheck();
+        // self::vcodeCheck();
         $username = self::getUsername();
         $password = self::getPassword();
         

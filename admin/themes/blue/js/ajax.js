@@ -10,7 +10,7 @@ $(document).ready(function() {
 			f: 'menu',
 			groupid: $(this).attr('groupid')
 		}
-		$.post(JS_APP+'/?s=AJAX', d, function(data){
+		$.post(JS_APP+'/index.php?s=AJAX', d, function(data){
 			$("#menuTree").html(data.data);
 		},'json')
 	});
@@ -22,7 +22,7 @@ $(document).ready(function() {
 			f: 'nodeTree',
 			groupid: $(this).val()
 		}
-		$.post(JS_APP+'/?s=AJAX', d, function(data){
+		$.post(JS_APP+'/index.php?s=AJAX', d, function(data){
 			// var data = $.parseJSON(data);
 			$("select[flag=nodepid]").html(data.data);
 		},'json')

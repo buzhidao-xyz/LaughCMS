@@ -11,11 +11,11 @@
                 <h3>网站后台管理系统</h3>
             </div>
             <div class="login logForm">
-                <form name="logform" method="post" action="__APP__/?s=login/loginCheck">
+                <form name="logform" method="post" action="__APP__/index.php?s=login/loginCheck">
                     <ul>
                         <li><span>用户名:</span><input type="text" name="username" value="" class="input" /></li>
                         <li><span>密&nbsp;&nbsp;&nbsp;码:</span><input type="password" name="password" value="" class="input" /></li>
-                        <li><span>验证码:</span><input type="text" name="vcode" value="" class="input" style="width:80px;" />&nbsp;<img src="__APP__/?s=vcode" class="vcode" /></li>
+                        <!-- <li><span>验证码:</span><input type="text" name="vcode" value="" class="input" style="width:80px;" />&nbsp;<img src="__APP__/?s=vcode" class="vcode" /></li> -->
                         <li><input type="submit" name="subut" class="button btnyellow2" value="登录" /></li>
                     </ul>
                 </form>
@@ -34,7 +34,7 @@ $(document).ready(function(){
         var password = $(this).find("input[name=password]").val();
         var vcode = $(this).find("input[name=vcode]").val();
         
-        if (!username || !password || !vcode) {
+        if (!username || !password) {
             alert('请填写完整登录信息!');
             return false;
         }

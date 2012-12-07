@@ -131,7 +131,8 @@ class Page {
                 $parameter .= '&'.$k.'='.$v;
             }
         }
-        $url  =  $_SERVER['REQUEST_URI'].(strpos($_SERVER['REQUEST_URI'],'?')?'':"?").$parameter;
+        $request_uri = request_uri();
+        $url  =  $request_uri.(strpos($request_uri,'?')?'':"?").$parameter;
 
         $parse = parse_url($url);
         if(isset($parse['query'])) {
