@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-12-06 17:27:14
+<?php /* Smarty version Smarty-3.1.12, created on 2012-12-07 17:12:43
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\public\menu.html" */ ?>
-<?php /*%%SmartyHeaderCode:2176250c064f272cfb4-01420551%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2363750c1b30b2c9f17-12435532%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2176250c064f272cfb4-01420551',
+  'nocache_hash' => '2363750c1b30b2c9f17-12435532',
   'function' => 
   array (
   ),
@@ -23,9 +23,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50c064f27c0933_15836156',
+  'unifunc' => 'content_50c1b30b35c269_42045757',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50c064f27c0933_15836156')) {function content_50c064f27c0933_15836156($_smarty_tpl) {?><!-- menu -->
+<?php if ($_valid && !is_callable('content_50c1b30b35c269_42045757')) {function content_50c1b30b35c269_42045757($_smarty_tpl) {?><!-- menu -->
 <div class="menu">
     <ul>
         <?php  $_smarty_tpl->tpl_vars['m'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['m']->_loop = false;

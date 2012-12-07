@@ -106,19 +106,26 @@
 }
 .table_list_title, .table_list {
     position: relative;
-    height: 32px;
+    height: 30px;
     clear: both;
     border-right: 1px solid #B5D0D9;
     border-bottom: 1px solid #B5D0D9;
 }
 .table_list_title {
-  color: #FF6600;
+  color: #FFFFFF;
   /*color: #000000;*/
   font-weight: 600;
-  background: #D3EAEF;
+  background: #CAE8EA;
+  background: #D9E9F9;
+  background: #E3FFDF;
+  border-top: 1px solid #B5D0D9;
+  background: url("../images/table_list_title_bg.gif") repeat-x;
+  background: #258CD1;
+  background: #395A7B;
 }
 .table_list {
   overflow:visible;
+  background: #EBF2F6;
 }
 .table_list:hover {
     background: #E2E7ED;
@@ -126,8 +133,8 @@
 .table_list_l, .table_list_center {
     float: left;
     width: auto;
-    height: 32px;
-    line-height: 32px;
+    height: 30px;
+    line-height: 30px;
     text-indent: 5px;
     overflow: hidden;
     border-left: 1px solid #B5D0D9;
@@ -196,37 +203,74 @@
     background:#FFF;
     border-right:1px solid #B5D0D9;
 }
+.bgfff {
+    background: #FFF;
+}
+.lineTop {
+    border-top: 1px solid #D4D4D4;
+}
 
 /**form表单样式表*/
-form {
-
+div.formContainer {
+    overflow: hidden;
+}
+div.formContainer .formtitle {
+    position: relative;
+    float: left;
+    clear: both;
+    padding: 7px 15px;
+    border: 1px solid #666;
+    margin: 0 20px;
+    z-index: 2;
+    background: url('../images/darkBg.jpg') repeat-x bottom #333;
+}
+div.formContainer .formtitle h5 {
+    color: #FFFFFF;
+    /*color: #C5D52B;*/
+}
+form.newform {
+  position: relative;
+  overflow: hidden;
+  clear: both;
+  top: -15px;
+  z-index: 1;
+  background: #FFFFFF;
+  /*background: url('../images/form_bg.gif') repeat-x bottom;*/
 }
 form ul.formbody {
-    float: left;
     width: auto;
     height: auto;
-    border: 1px solid #B5D0D9;
     overflow: hidden;
     z-index: 50;
+    border: 1px solid #395A7B;
+    clear: both;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    background: #FFFFFF;
 }
 form ul.formbody li.formblock {
     width: auto;
     height: 40px;
     line-height: 40px;
-    padding-right: 100px;
-    /*border-bottom: 1px solid #B5D0D9;*/
+    border-bottom: 1px dashed #E1E1E1;
     overflow: hidden;
+    margin: 0 5px;
+}
+form ul.formbody li.bordernone {
+    border: 0;
 }
 form ul li.colorblock:hover {
     background: #E2E7ED;
 }
 form ul.formbody li span {
     float: left;
-    width: 120px;
+    width: 170px;
     display: block;
     margin-right: 20px;
     text-align: right;
     overflow: hidden;
+    font-weight: 600;
+    /*background: #*/
 }
 form ul.formbody li.auto {
     height: auto;
@@ -237,11 +281,14 @@ form ul.formbody li.auto {
     overflow: hidden;
     border-bottom: 1px solid #DEEFFA;
 }
+form ul.formbody input.button {
+    margin-left: 200px;
+}
 
 /**show_list样式表**/
 .show_list {
     width: auto;
-	max-width: 900px;
+	  max-width: 900px;
     height: auto;
     border-bottom: 0px solid #DEEFFA;
 }
@@ -262,6 +309,19 @@ form ul.formbody li.auto {
     border-bottom: none;
 }
 
+/*item列表*/
+.item_list {
+  height: 40px;
+  overflow: hidden;
+}
+.item_list label{
+  float: left;
+  height: 20px;
+  line-height: 18px;
+  padding: 12px 0;
+  display: block;
+}
+
 /*修改详细信息*/
 .modify_div {
   z-index:999;
@@ -269,27 +329,71 @@ form ul.formbody li.auto {
   width: 450px;
   height: auto;
   min-height:100px;
-  border:#395A7B 10px solid;
-  background:#F7F8F9;  color:#333; top: -100px; left: 50%; margin-left: -260px; padding: 25px;
+  color:#333;
+  top: -100px;
+  left: 50%;
+  margin-left: -260px;
+  padding: 8px;
+  overflow: hidden;
+  background: url('../images/modify_div_bg.png') repeat;
+}
+.modify_div .modify_div_Top {
+    padding: 0 15px;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    background: #648E25;
+    background: #30A4B1;
+    background: #99C600;
+    background: #258CD1;
+    /*border-bottom:1px solid #D4D4D4;*/
+    background: url('../images/table_list_title_bg.gif') repeat;
+}
+.modify_div .modify_div_Top h5{
+  float: left;
+  font-weight: 400;
+  color: #333;
+  color: #FFFFFF;
+}
+.modify_div .modify_div_Top a.close {
+    float: right;
+    border: 0 none;
+    cursor: pointer;
+    padding: 0;
+    color: #7FCDED;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 20px;
+    cursor: pointer;
+    background: none;
+    padding-top: 3px;
+}
+#control .modify_div .modify_div_Top a.close {
+    text-decoration: none;
+}
+.modify_div .modify_div_Top a.close:hover {
+    color: #E4E4E4;
+}
+.modify_div form {
+  border: 0px #258CD1 solid;
+  border-left: 1px #258CD1 solid;
+  border-right: 1px #258CD1 solid;
+}
+.modify_div .formbody{
+  border: 0;
+  padding: 0;
+  background: #FFF;
+  padding: 15px;
 }
 .modify_div_box {
   position: relative;
 }
-.modify_div_close {
-  position: absolute;
-  display: block;
-  width: 20px;
-  height: 20px;
-  z-index: 9999; line-height: 20px; text-align: center; font-family: Arial; top: 10px;
-  right: 10px;
-}
-#control a.modify_div_close {
-  background-color: #395A7B;
-  color: #FFFFFF;
-  text-decoration: none;
-}
-#control a.modify_div_close:hover, #control a.modify_div_close:active {
-  background-color: #CC0000;
+.modify_div .modify_div_Bottom {
+    height: 5px; 
+    overflow: hidden;
+    background: #E4E4E4;
+    background: #0282C1;
+    /*border-top:1px solid #D4D4D4;*/
 }
 /*修改详细信息*/
 

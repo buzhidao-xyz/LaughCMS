@@ -68,6 +68,7 @@ input.radio {
     vertical-align:top;
 	margin:0;
 	padding:0;
+    border: 0;
 }
 textarea{
     
@@ -115,6 +116,7 @@ input,textarea,select {
     border-width: 1px;
     color: #333333;
     padding: 2px;
+    margin: 5px 0;
 }
 .input:hover,.input:focus,textarea:hover,textarea:focus {
     /*border-color:#1D3647;*/
@@ -131,7 +133,7 @@ input,textarea,select {
     height:29px;
     line-height:26px;
     cursor: pointer;
-    margin: 3px auto;
+    margin: 5px auto;
     font-size: 14px;
     font-weight: 600;
     font-family: "宋体";
