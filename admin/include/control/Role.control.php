@@ -30,7 +30,7 @@ class RoleControl extends CommonControl
 	private function _getRoleID()
 	{
 		$roleid = q('roleid');
-		if ((int)$roleid !== 0 || !FilterHelper::C_int($roleid)) $this->ajaxReturn(1,'角色ID错误！');
+		if (!$roleid) $this->ajaxReturn(1,'角色ID错误！');
 
 		return $roleid;
 	}

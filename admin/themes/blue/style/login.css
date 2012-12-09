@@ -85,14 +85,13 @@ body {
     height:20px;
     line-height:20px;
     color:#FF0000;
-    text-align:center;
-    margin-top:30px;
+    text-indent: 40px;
 }
 .loginWelcome {
     position: absolute;
     width: 242px;
     height: 138px;
-    margin-top: 58px;
+    margin-top: 39px;
     padding-left: 350px;
     background: url("../images/login_welcome.gif") no-repeat right;
 }

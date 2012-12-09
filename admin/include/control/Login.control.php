@@ -36,7 +36,11 @@ class LoginControl extends BaseControl
      */
     static public function LoginIndex()
     {
-        header("location:".__APP__."/?s=login"); exit;
+        if (self::isAjax()) {
+            self::ajaxReturn(1,eCode(session('ecode')));
+        } else {
+            header("location:".__APP__."/index.php?s=login"); exit;
+        }
     }
     
     /**
@@ -90,7 +94,7 @@ class LoginControl extends BaseControl
      */
     static public function loginCheck()
     {
-        // self::vcodeCheck();
+        self::vcodeCheck();
         $username = self::getUsername();
         $password = self::getPassword();
         
@@ -116,7 +120,12 @@ class LoginControl extends BaseControl
 		session('userInfo', $userInfo);
 		session('sstate', md5(md5($username).$res['ukey']));
 		session('ustate', $res['ustate']);
-        
-        header("location:".__APP__."/?s=index");
+
+        if (self::isAjax()) {
+            self::ajaxReturn(0,'登录成功！');
+        } else {
+            // header("Cache-Control:no-cache, must-revalidate");
+            header("location:".__APP__."/index.php?s=index");exit;
+        }
     }
 }

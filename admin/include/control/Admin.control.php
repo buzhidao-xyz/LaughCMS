@@ -77,6 +77,7 @@ class AdminControl extends CommonControl
 	//新管理员
 	public function newAdmin()
 	{
+        header("Cache-Control:no-cache, must-revalidate");
 		$this->display('Admin/add.html');
 	}
 

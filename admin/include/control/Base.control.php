@@ -50,7 +50,7 @@ class BaseControl
 		if (isset($url['query'])) $res = preg_match("/^s=(vcode|login)(\/index)?(\/loginCheck)?(\&w=[1-9][0-9]{1,2})?(\&h=[1-9][0-9]{1,2})?$/",$url['query']);
 
         if (!$res && (empty($this->userInfo) || $sstate != $ustate)) {
-            header("location:".__APP__.'/?s=login');
+            header("location:".__APP__.'/index.php?s=login');
             exit;
         }
     }
@@ -72,6 +72,19 @@ class BaseControl
         $return[0] = $return[1] ? $control : '';
         
         return $return;
+    }
+
+    //判断一个请求是否为AJAX请求
+    static protected function isAjax()
+    {
+        if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) ) {
+            if('xmlhttprequest' == strtolower($_SERVER['HTTP_X_REQUESTED_WITH']))
+                return true;
+        }
+        if(!empty($_POST[C('VAR_AJAX_SUBMIT')]) || !empty($_GET[C('VAR_AJAX_SUBMIT')]))
+            // 判断Ajax方式提交
+            return true;
+        return false;
     }
 
     /**

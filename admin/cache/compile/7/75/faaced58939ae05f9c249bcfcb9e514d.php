@@ -24,7 +24,7 @@ var JS_APP = '/laugh/admin';
 </div>
 <div class="headerNav">
     <div class="uinfo">
-        您好 , admin [ <a href="/laugh/admin/?s=index/logout">退出</a> ] | <a href="javascript:;">系统设置</a> | <a href="javascript:;">参数设置</a>
+        您好 , admin [ <a href="/laugh/admin/index.php?s=index/logout">退出</a> ] | <a href="javascript:;">系统设置</a> | <a href="javascript:;">参数设置</a>
     </div>
     <div class="nav">
         <ul class="hmenu">

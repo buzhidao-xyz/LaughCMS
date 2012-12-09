@@ -98,19 +98,6 @@ class CommonControl extends BaseControl
         if (!$this->checkUserAccess($control,$action)) $this->_host();
     }
 
-    //判断一个请求是否为AJAX请求
-    protected function isAjax()
-    {
-        if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) ) {
-            if('xmlhttprequest' == strtolower($_SERVER['HTTP_X_REQUESTED_WITH']))
-                return true;
-        }
-        if(!empty($_POST[C('VAR_AJAX_SUBMIT')]) || !empty($_GET[C('VAR_AJAX_SUBMIT')]))
-            // 判断Ajax方式提交
-            return true;
-        return false;
-    }
-
     //获取分页页码
     protected function getPage()
     {

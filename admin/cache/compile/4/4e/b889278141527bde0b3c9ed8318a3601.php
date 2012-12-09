@@ -26,17 +26,17 @@ var JS_APP = '/laugh/admin';
             <div class="login logTop">
                 <h3>网站后台管理系统</h3>
             </div>
+            <div id="logError"></div>
             <div class="login logForm">
-                <form name="logform" method="post" action="/laugh/admin/index.php?s=login/loginCheck">
+                <form name="loginform" method="post" action="/laugh/admin/index.php?s=login/loginCheck">
                     <ul>
                         <li><span>用户名:</span><input type="text" name="username" value="" class="input" /></li>
                         <li><span>密&nbsp;&nbsp;&nbsp;码:</span><input type="password" name="password" value="" class="input" /></li>
-                        <!-- <li><span>验证码:</span><input type="text" name="vcode" value="" class="input" style="width:80px;" />&nbsp;<img src="/laugh/admin/?s=vcode" class="vcode" /></li> -->
+                        <li><span>验证码:</span><input type="text" name="vcode" value="" class="input" style="width:80px;" />&nbsp;<img src="/laugh/admin/index.php?s=vcode" class="vcode" /></li>
                         <li><input type="submit" name="subut" class="button btnyellow2" value="登录" /></li>
                     </ul>
                 </form>
             </div>
-            <!-- <div id="logError"></div> -->
             <div class="loginWelcome"></div>
         </div>
     </div>
@@ -45,17 +45,31 @@ var JS_APP = '/laugh/admin';
 <div id="loginBottom">Powered by xxx &copy; 2012-2015</div>
 <script language="javascript">
 $(document).ready(function(){
-    $("form[name=logform]").submit(function() {
+    $("form[name=loginform]").submit(function() {
         var username = $(this).find("input[name=username]").val();
         var password = $(this).find("input[name=password]").val();
         var vcode = $(this).find("input[name=vcode]").val();
         
-        if (!username || !password) {
+        if (!username || !password || !vcode) {
             alert('请填写完整登录信息!');
             return false;
         }
-        
-        return true;
+
+        var d = {
+            username: username,
+            password: password,
+            vcode: vcode
+        }
+        $.post($(this).attr("action"), d, function(data){
+            if (!data.status) {
+                location.href = JS_APP+"/index.php?s=index";
+                return true;
+            } else {
+                $("#logError").html(data.info);
+                return false;
+            }
+        },'json')
+        return false;
     });
 });
 </script>

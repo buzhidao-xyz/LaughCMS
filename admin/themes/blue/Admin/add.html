@@ -1,0 +1,35 @@
+{include file="public/control_top.html"}
+<!-- <div class="control_nav">
+	<h3>添加组</h3>
+</div> -->
+<div class="formContainer">
+	<div class="formtitle"><h5>新管理员表单</h5></div>
+	<form name="newform" action="__APP__/index.php?s=Admin/saveAdmin" method="post" id="addajaxform" class="newform">
+		<input type="hidden" name="" />
+		<ul class="formbody">
+			<li class="formblock">
+				<span>账户:</span>
+				<input type="text" name="username" autocomplete="off" value="" class="input w150" />
+			</li>
+			<li class="formblock">
+				<span>密码:</span>
+				<input type="password" name="password" autocomplete="off" value="" class="input w150" />
+			</li>
+			<li class="formblock">
+				<span>重复密码:</span>
+				<input type="password" name="password1" autocomplete="off" value="" class="input w150" />
+			</li>
+			<li class="formblock">
+				<span>是否启用: </span>
+				<div class="item_list fleft">
+					<label><input type="radio" name="status" value="1" class="radio" checked="checked" />启用</label>
+					<label><input type="radio" name="status" value="0" class="radio" />禁用</label>
+				</div>
+			</li>
+			<li class="formblock bordernone">
+				<input type="submit" name="subut" class="button btnyellow2" value="添加" />
+			</li>
+		</ul>
+	</form>
+</div>
+{include file="public/control_bottom.html"}
