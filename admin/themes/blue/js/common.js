@@ -64,6 +64,11 @@ $(document).ready(function() {
             var param_array = [
             {targetname:'id', val:that.attr('id'), type:'text'},
             {targetname:'title', val:that.attr('title'), type:'text'},
+            {targetname:'remark', val:that.attr('remark'), type:'text'},
+            {targetname:'control', val:that.attr('control'), type:'text'},
+            {targetname:'action', val:that.attr('action'), type:'text'},
+            {targetname:'groupid', val:that.attr('groupid'), type:'select'},
+            {targetname:'pid', val:that.attr('pid'), type:'select'},
             {targetname:'isshow', val:that.attr('isshow'), type:'radio'}
             ];
             if (that.attr('type')) {

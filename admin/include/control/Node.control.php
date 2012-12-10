@@ -147,10 +147,14 @@ class NodeControl extends CommonControl
             'remark'  => $remark,
             'control' => $control,
             'action'  => $action,
-            'createtime' => TIMESTAMP
+            'createtime' => TIMESTAMP,
+            'updatetime' => TIMESTAMP
         );
         $return = $this->_NODE->saveNode($data);
-        $this->ajaxReturn(0,'节点添加成功',$return);
+        if ($return)
+            $this->ajaxReturn(0,'节点添加成功！',$return);
+        else
+            $this->ajaxReturn(1,'节点添加失败！',$return);
     }
 
     //管理节点

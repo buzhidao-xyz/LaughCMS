@@ -308,6 +308,9 @@ form ul.formbody li.auto {
 form ul.formbody input.button {
     margin-left: 200px;
 }
+form ul.formbody input.mauto {
+    margin:0 auto;
+}
 
 /**show_list样式表**/
 .show_list {
@@ -436,7 +439,7 @@ form ul.formbody input.button {
   display:inline-block;
   width:56px;
   height:24px;
-  margin:0 10px;
+  margin:0 5px;
   line-height:24px;
   color:#73797c;
   text-align:center;

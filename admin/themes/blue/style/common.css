@@ -256,6 +256,7 @@ input,textarea,select {
     width:15px;
     height:15px;
     border:0px;
+    margin: 5px;
 }
 .clear{
     clear:both;

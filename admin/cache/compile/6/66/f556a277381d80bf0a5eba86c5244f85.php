@@ -7,6 +7,7 @@
 <link type="text/css" rel="stylesheet" href="themes/blue/style/base.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/blue/style/global.css" media="screen">
 <script type="text/javascript" src="themes/blue/js/jquery.js"></script>
+<script type="text/javascript" src="themes/blue/js/div_window.js"></script>
 <!-- <script type="text/javascript" src="themes/blue/js/PIE.js"></script> -->
 <title>管理中心</title>
 <script type="text/javascript">
@@ -27,7 +28,6 @@ var JS_APP = '/laugh/admin';
 <div class="formContainer">
 	<div class="formtitle"><h5>新管理员表单</h5></div>
 	<form name="newform" action="/laugh/admin/index.php?s=Admin/saveAdmin" method="post" id="addajaxform" class="newform">
-		<input type="hidden" name="" />
 		<ul class="formbody">
 			<li class="formblock">
 				<span>账户:</span>
@@ -63,7 +63,6 @@ var JS_APP = '/laugh/admin';
 </body>
 <script type="text/javascript" src="themes/blue/js/jquery.corner.js"></script>
 <script type="text/javascript" src="themes/blue/js/public.js"></script>
-<script type="text/javascript" src="themes/blue/js/div_window.js"></script>
 <script type="text/javascript" src="themes/blue/js/common.js"></script>
 <script type="text/javascript" src="themes/blue/js/ajax.js"></script>
 </html>

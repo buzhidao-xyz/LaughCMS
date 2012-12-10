@@ -7,6 +7,7 @@
 <link type="text/css" rel="stylesheet" href="themes/blue/style/base.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/blue/style/global.css" media="screen">
 <script type="text/javascript" src="themes/blue/js/jquery.js"></script>
+<script type="text/javascript" src="themes/blue/js/div_window.js"></script>
 <!-- <script type="text/javascript" src="themes/blue/js/PIE.js"></script> -->
 <title>管理中心</title>
 <script type="text/javascript">
@@ -47,7 +48,8 @@ var JS_APP = '/laugh/admin';
 			<div class="menutree1"><a target="main" hidefocus="true" href="javascript:;" class="plus">基本信息</a></div>
 			<ul class="menusub">
 				<li class="menuTopLine"></li>
-				<li><a target="main" hidefocus="true" href="javascript:;" class="">个人信息</a></li>
+				<li><a hidefocus="true" href="/laugh/admin/index.php?s=Public/welcome" target="main">欢迎页</a></li>
+				<li><a hidefocus="true" href="/laugh/admin/index.php?s=Admin/profile" target="main">个人信息</a></li>
 			</ul>
 		</li>
     </ul>
@@ -56,6 +58,7 @@ var JS_APP = '/laugh/admin';
 $(document).ready(function (){
 	$("li.menulist:eq(0) > div.menutree1 > a").addClass("mius");
 	$("li.menulist:eq(0) > ul.menusub").css("display","block");
+	$("li.menulist:eq(0) > ul.menusub > li:eq(1) > a").addClass('tabon');
 });
 </script>
 </div>
@@ -68,7 +71,6 @@ $(document).ready(function (){
 </body>
 <script type="text/javascript" src="themes/blue/js/jquery.corner.js"></script>
 <script type="text/javascript" src="themes/blue/js/public.js"></script>
-<script type="text/javascript" src="themes/blue/js/div_window.js"></script>
 <script type="text/javascript" src="themes/blue/js/common.js"></script>
 <script type="text/javascript" src="themes/blue/js/ajax.js"></script>
 </html>

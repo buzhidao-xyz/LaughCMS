@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-12-10 00:18:49
+<?php /* Smarty version Smarty-3.1.12, created on 2012-12-11 00:19:50
          compiled from "G:\website\laugh\admin\themes\blue\public\page.html" */ ?>
-<?php /*%%SmartyHeaderCode:1202650c4b9e9061849-74842339%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2784850c60ba6ddff20-16129856%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '3ea56397168ac38eaec5c031d7a9e7e828466097' => 
     array (
       0 => 'G:\\website\\laugh\\admin\\themes\\blue\\public\\page.html',
-      1 => 1354793056,
+      1 => 1355148086,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1202650c4b9e9061849-74842339',
+  'nocache_hash' => '2784850c60ba6ddff20-16129856',
   'function' => 
   array (
   ),
@@ -24,10 +24,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50c4b9e9129706_86917944',
+  'unifunc' => 'content_50c60ba6eba476_46306474',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50c4b9e9129706_86917944')) {function content_50c4b9e9129706_86917944($_smarty_tpl) {?><?php if ($_smarty_tpl->tpl_vars['page']->value&&count($_smarty_tpl->tpl_vars['page']->value['page'])>1){?>
-<div id="<?php if ($_smarty_tpl->tpl_vars['isface']->value){?>facepage<?php }else{ ?>compage<?php }?>" class="pagination">
+<?php if ($_valid && !is_callable('content_50c60ba6eba476_46306474')) {function content_50c60ba6eba476_46306474($_smarty_tpl) {?><?php if ($_smarty_tpl->tpl_vars['page']->value&&count($_smarty_tpl->tpl_vars['page']->value['page'])>1){?>
+<div id="<?php if (isset($_smarty_tpl->tpl_vars['isface']->value)){?>facepage<?php }else{ ?>compage<?php }?>" class="pagination">
 	<?php if ($_smarty_tpl->tpl_vars['page']->value['firstpage']['row']){?>
 	<a class="pageprev graya fleft" href="<?php if ($_smarty_tpl->tpl_vars['page']->value['firstpage']['href']){?><?php echo $_smarty_tpl->tpl_vars['page']->value['firstpage']['href'];?>
 <?php }else{ ?>javascript:;<?php }?>">首页</a> 

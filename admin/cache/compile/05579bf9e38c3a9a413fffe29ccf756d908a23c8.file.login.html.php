@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-12-09 15:22:40
+<?php /* Smarty version Smarty-3.1.12, created on 2012-12-10 21:01:43
          compiled from "G:\website\laugh\admin\themes\blue\login.html" */ ?>
-<?php /*%%SmartyHeaderCode:3180050c43c400827a2-25988676%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1838150c5dd37854675-37487120%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '05579bf9e38c3a9a413fffe29ccf756d908a23c8' => 
     array (
       0 => 'G:\\website\\laugh\\admin\\themes\\blue\\login.html',
-      1 => 1355037095,
+      1 => 1355144332,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3180050c43c400827a2-25988676',
+  'nocache_hash' => '1838150c5dd37854675-37487120',
   'function' => 
   array (
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50c43c400dfdf8_58315361',
+  'unifunc' => 'content_50c5dd378aef95_02222671',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50c43c400dfdf8_58315361')) {function content_50c43c400dfdf8_58315361($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50c5dd378aef95_02222671')) {function content_50c5dd378aef95_02222671($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <link type="text/css" rel="stylesheet" href="themes/blue/style/login.css" media="screen">
 <div id="loginTop"></div>
@@ -77,6 +77,7 @@ $(document).ready(function(){
                 return true;
             } else {
                 $("#logError").html(data.info);
+                location.href = location.href;
                 return false;
             }
         },'json')

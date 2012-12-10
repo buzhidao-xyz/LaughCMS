@@ -38,9 +38,9 @@ var JS_APP = '/laugh/admin';
 		<li class="table_list_l table_list_l120">admin</li>
 		<li class="table_list_l table_list_l150" name="role" roleid="" title=""></li>
 		<li class="table_list_l table_list_l150">2011-12-15 08:47:32</li>
-		<li class="table_list_l table_list_l150">2012-12-09 15:22:53</li>
+		<li class="table_list_l table_list_l150">2012-12-10 21:01:51</li>
 		<li class="table_list_l table_list_l120">127.0.0.1</li>
-		<li class="table_list_l table_list_l80">91</li>
+		<li class="table_list_l table_list_l80">94</li>
 		<li class="table_list_l table_list_l80">
 							启用
 					</li>
