@@ -21,9 +21,9 @@ function getRandStrs($n=6,$type=2)
 {
     $return = '';
 	$totalStr = array(
-        0 => '0123456789',
+        0 => '123456789',
         1 => 'abcdefghijklmnopqrstuvwxyz',
-        2 => '0123456789abcdefghijklmnopqrstuvwxyz',
+        2 => '123456789abcdefghijklmnopqrstuvwxyz',
     );
     
     $n = preg_match('/^[1-9][0-9]{0,1}$/', $n) ? $n : 0;

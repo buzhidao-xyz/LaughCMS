@@ -50,6 +50,7 @@ $(document).ready(function(){
                 return true;
             } else {
                 $("#logError").html(data.info);
+                location.href = location.href;
                 return false;
             }
         },'json')

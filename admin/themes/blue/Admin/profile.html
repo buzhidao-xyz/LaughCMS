@@ -1,55 +1,35 @@
-{include file="include/head.html"}
-<div id="content">
-	<div id="control">
-		<div class="box">
-			<div class="title">
-				<h5>个人信息表单</h5>
-			</div>
-			<form name="newform" action="__APP__/?s=Admin/upPassword" method="post" id="addajaxform">
-			<div class="form">
-				<div class="fields">
-					<div class="field">
-						<div class="label">
-							<label for="input-small">管理员账号:</label>
-						</div>
-						<div class="label">
-							{$userInfo.username}
-						</div>
-					</div>
-					<div class="field">
-						<div class="label">
-							<label for="input-small">原始密码:</label>
-						</div>
-						<div class="input">
-							<input type="password" name="password0" class="small" />
-						</div>
-					</div>
-					<div class="field">
-						<div class="label">
-							<label for="input-small">新密码:</label>
-						</div>
-						<div class="input">
-							<input type="password" name="password" class="small" />
-						</div>
-						<div class="caption">
-							*数字、字母下划线或-@#!，长度3-20
-						</div>
-					</div>
-					<div class="field">
-						<div class="label">
-							<label for="input-small">重复密码:</label>
-						</div>
-						<div class="input">
-							<input type="password" name="password1" class="small" />
-						</div>
-					</div>
-					<div class="buttons">
-						<input type="submit" name="submit" value="修改" />
-					</div>
+{include file="public/control_top.html"}
+<!-- <div class="control_nav">
+	<h3>添加组</h3>
+</div> -->
+<div class="formContainer">
+	<div class="formtitle"><h5>个人信息修改</h5></div>
+	<form name="newform" action="__APP__/index.php?s=Admin/upPassword" method="post" id="addajaxform" class="editform">
+		<input type="hidden" name="" />
+		<ul class="formbody">
+			<li class="formblock">
+				<span>管理员账号: </span>
+				{$userInfo.username}
+			</li>
+			<li class="formblock">
+				<span>原密码:</span>
+				<input type="password" name="password0" autocomplete="off" value="" class="input w150" />
+			</li>
+			<li class="formblock">
+				<span>新密码:</span>
+				<input type="password" name="password" autocomplete="off" value="" class="input w150" />
+				<div class="caption">
+					*数字、字母下划线或-@#!，长度3-20
 				</div>
-			</div>
-			</form>
-		</div>
-	</div>
+			</li>
+			<li class="formblock">
+				<span>重复密码:</span>
+				<input type="password" name="password1" autocomplete="off" value="" class="input w150" />
+			</li>
+			<li class="formblock bordernone">
+				<input type="submit" name="subut" class="button btnyellow2" value="修改" />
+			</li>
+		</ul>
+	</form>
 </div>
-{include file="include/foot.html"}
+{include file="public/control_bottom.html"}

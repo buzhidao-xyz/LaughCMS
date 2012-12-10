@@ -7,6 +7,7 @@
 <link type="text/css" rel="stylesheet" href="themes/blue/style/base.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/blue/style/global.css" media="screen">
 <script type="text/javascript" src="themes/blue/js/jquery.js"></script>
+<script type="text/javascript" src="themes/blue/js/div_window.js"></script>
 <!-- <script type="text/javascript" src="themes/blue/js/PIE.js"></script> -->
 <title>管理中心</title>
 <script type="text/javascript">
@@ -137,10 +138,9 @@ var JS_APP = '/laugh/admin';
 		<li class="controlRightBottom"></li>
 	</ul>
 </div>
-<script type="text/javascript" src="themes/blue/js/jquery.corner.js"></script>
 </body>
+<script type="text/javascript" src="themes/blue/js/jquery.corner.js"></script>
 <script type="text/javascript" src="themes/blue/js/public.js"></script>
-<script type="text/javascript" src="themes/blue/js/div_window.js"></script>
 <script type="text/javascript" src="themes/blue/js/common.js"></script>
 <script type="text/javascript" src="themes/blue/js/ajax.js"></script>
 </html>

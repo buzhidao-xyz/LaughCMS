@@ -212,6 +212,9 @@
 input.w50 {
   width: 50px;
 }
+input.w100 {
+  width: 100px;
+}
 input.w150 {
   width: 150px;
 }
@@ -241,6 +244,15 @@ div.formContainer .formtitle h5 {
     /*color: #C5D52B;*/
 }
 form.newform {
+  position: relative;
+  overflow: hidden;
+  clear: both;
+  top: -15px;
+  z-index: 1;
+  background: #FFFFFF;
+  /*background: url('../images/form_bg.gif') repeat-x bottom;*/
+}
+form.editform {
   position: relative;
   overflow: hidden;
   clear: both;

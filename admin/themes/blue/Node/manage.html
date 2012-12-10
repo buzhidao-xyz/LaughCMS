@@ -1,3 +1,111 @@
 {include file="include/head.html"}
-<div id="perstatus" pers="{$perstatus}"></div>
+<div id="content">
+	<div id="control">
+		<div class="box">
+			<div class="title">
+				<h5>节点列表 【目前共有{if $total}{$total}{else}0{/if}条数据】</h5>
+			</div>
+			<div class="table">
+				<ul class="table_list_title">
+			    	<li class="table_list_l table_list_l150">名称</li>
+			    	<li class="table_list_l table_list_l200">描述</li>
+			    	<li class="table_list_l table_list_l100">Control</li>
+			    	<li class="table_list_l table_list_l120">Action</li>
+			    	<li class="table_list_l table_list_l150">创建时间</li>
+			    	<li class="table_list_l table_list_l80">是/否显示</li>
+			    	<li class="table_list_l table_list_l100">操作</li>
+			    </ul>
+			    {if $nodeList}
+			     {foreach $nodeList as $d}
+			    <ul class="table_list">
+					<li class="table_list_l table_list_l150">{$d.title}</li>
+					<li class="table_list_l table_list_l200" tooltip=1 title="{$d.remark}">{$d.remark}</li>
+			    	<li class="table_list_l table_list_l100">{$d.control}</li>
+			    	<li class="table_list_l table_list_l120">{$d.action}</li>
+			    	<li class="table_list_l table_list_l150">{$d.createtime|mkdate}</li>
+			    	<li class="table_list_l table_list_l80">{if $d.isshow}显{else}隐{/if}</li>
+			    	<li class="table_list_l table_list_l100">
+			    		<a href="javascript:;" name="modify" id="{$d.id}" title="{$d.title}" remark="{$d.remark}" groupid="{$d.groupid}" pid="{$d.pid}" control="{$d.control}" action="{$d.action}" isshow="{$d.isshow}">修改</a>&nbsp;&nbsp;
+			    		<a delurl="__APP__/?s=Node/deleteNode&id={$d.id}" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+			    	</li>
+			    </ul>
+			    {/foreach}
+			    {else}
+			    <ul class="table_list"><li class="table_list_center">空</li></ul>
+			    {/if}
+    			{include file="public/page.html"}
+			</div>
+		</div>
+	</div>
+</div>
+<!--弹出层-->
+<div id="modify_div" class="modify_div" style="display:none;">
+	<form id="modify_div_form" action="__APP__/?s=Node/upNode">
+		<input name="id" value="" type="hidden" />
+		<a href="javascript:;" class="modify_div_close" id="modify_div_close">X</a>
+		<div class="form">
+			<div class="fields">
+				<div class="field field-first">
+					<div class="label">
+						<label for="select">组:</label>
+					</div>
+					<div class="select">
+						<select name="groupid">
+							<option value="" >|-组菜单</option>
+							{foreach $groupTree as $g}
+							<option value="{$g.id}">&nbsp;|-{$g.title}</option>
+							{/foreach}
+						</select>
+					</div>
+				</div>
+				<div class="field">
+					<div class="label">
+						<label for="select">父节点:</label>
+					</div>
+					<div class="select" id="nodepid">
+						<select name="pid">
+							<option value="" >|-节点菜单</option>
+						</select>
+					</div>
+				</div>
+				<div class="field">
+					<div class="label">
+						<label for="input-small">名称:</label>
+					</div>
+					<div class="input" style="float:left;">
+						<input type="text" id="input-small" name="title" class="small" />
+					</div>
+				</div>
+				<div class="field">
+					<div class="label">
+						<label for="input-small">描述:</label>
+					</div>
+					<div class="input" style="float:left;">
+						<input type="text" id="input-small" name="remark" class="small" />
+					</div>
+				</div>
+				<div class="field">
+					<div class="label">
+						<label for="input-small">Control:</label>
+					</div>
+					<div class="input" style="float:left;">
+						<input type="text" id="input-small" name="control" class="small" />
+					</div>
+				</div>
+				<div class="field">
+					<div class="label">
+						<label for="input-small">Action:</label>
+					</div>
+					<div class="input" style="float:left;">
+						<input type="text" id="input-small" name="action" class="small" />
+					</div>
+				</div>
+				<div class="buttons">
+					<input type="submit" name="submit" value="修改" />
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<!--弹出层-->
 {include file="include/foot.html"}

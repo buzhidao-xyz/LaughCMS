@@ -162,7 +162,7 @@ class AdminControl extends CommonControl
 	public function resetPassword()
 	{
 		$id = $this->_getID();
-		$randString = getRandStrs(5,1);
+		$randString = getRandStrs(6,0);
 
 		$adminInfo = M('Admin')->getAdmin($id);
 		if (!$adminInfo['total']) $this->ajaxReturn(1,'非法管理员！');
