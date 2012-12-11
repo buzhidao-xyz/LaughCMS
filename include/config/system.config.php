@@ -2,8 +2,12 @@
 //根目录
 define('ROOT_DIR', str_replace('/include/config', '', str_replace('\\', '/', dirname(__FILE__))));
 
-//admin目录
-define('ADMIN_DIR', ROOT_DIR.'/admin');
+//管理中心目录
+define('ADMIN_DIR', ROOT_DIR.'/'.$cache['ADMIN_FILENAME']);
+
+//服务器环境
+define('IS_CGI',substr(PHP_SAPI, 0, 3) == 'cgi' ? 1 : 0 );
+define('IS_WIN',strstr(PHP_OS, 'WIN') ? 1 : 0 );
 
 //主域名HOST
 define('__HOST__', 'http://'.$_SERVER['HTTP_HOST']);
@@ -17,11 +21,11 @@ define('APP_PATH', str_replace('\\', '/', dirname($_SERVER['SCRIPT_FILENAME'])))
 //工程名
 define('APP_NAME', substr(APP_PATH, strripos(APP_PATH, '/')+1));
 
-//当前项目主目录相对网站服务器路径地址
-define('__APPM__',substr(ROOT_DIR, strripos(ROOT_DIR, '/')));
+//当前项目目录相对网站服务器路径地址
+define('__APP__', isset($_SERVER['SCRIPT_NAME']) ? str_replace('/index.php', '', $_SERVER['SCRIPT_NAME']) : __SELF__);
 
-//当前项目相对网站服务器路径地址
-define('__APP__', __APPM__.str_replace(ROOT_DIR, "", APP_PATH));
+//网站主项目目录相对网站服务器路径地址
+define('__APPM__', __HOST__.str_replace($cache['ADMIN_FILENAME'], "", __APP__));
 
 //网站include主目录
 define('__INC__', ROOT_DIR.'/include');

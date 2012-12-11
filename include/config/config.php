@@ -4,11 +4,14 @@ session_start();
 
 error_reporting(E_ALL | E_STRICT);
 
+//数据库配置缓存
+require('cache.config.php');
+
 //常量配置文件
 require('system.config.php');
 
-//数据库配置文件
-require('c.config.php');
+//数据库和主配置文件
+require('main.config.php');
 
 //orm数据映射文件
 require('orm.config.php');
