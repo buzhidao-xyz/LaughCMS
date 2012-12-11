@@ -87,9 +87,10 @@ class Node extends Base
             $where['b.isshow'] = 1;
             $return = T('role_node')->join(' '.TBF.'node as b on a.nodeid=b.id ')->field('a.nodeid,b.id,b.title,b.control,b.action,b.sort,b.pid,b.level,b.groupid')->where($where)->select();
         } else if ($f === 0) {
-            $res = T('role_node')->field('nodeid')->where($where)->select();
+            $res = T('role_node')->field('nodeid,access')->where($where)->select();
             foreach ($res as $k=>$v) {
-                $return[] = $v['nodeid'];
+                $return['node'][] = $v['nodeid'];
+                $return['access'][$v['nodeid']] = $v['access'];
             }
         }
         return $return;

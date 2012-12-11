@@ -1,6 +1,10 @@
 #nodeTree {
 	padding: 10px 5px;
 }
+#nodeTree #notice {
+	padding: 5px 15px;
+	color: #CC0000;
+}
 #nodeTree ul {
 	width: auto;
 	height: auto;
@@ -70,12 +74,14 @@
 #nodeTree ul.groupTree ul.parentNode li {
 	padding: 0px 60px;
 	background: #EBF2F6;
+	border-top: 1px solid #DDD;
 }
 #nodeTree ul.groupTree ul.parentNode ul.childNode {
-	border-bottom: 1px solid #DDD;
+	/*border-bottom: 1px solid #DDD;*/
 }
 #nodeTree ul.groupTree ul.parentNode ul.childNode li {
 	padding: 0px 90px;
 	background: #FFF;
 	border-bottom: 1px dashed #DDD;
+	border-top: 0;
 }

@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-12-11 00:19:53
+<?php /* Smarty version Smarty-3.1.12, created on 2012-12-12 00:06:08
          compiled from "G:\website\laugh\admin\themes\blue\Common\nodeTree.html" */ ?>
-<?php /*%%SmartyHeaderCode:1698550c60ba953e524-48674605%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1225050c759f0d011d5-10126916%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '7dfa52544320dddee4be7a9990218fd6556225f0' => 
     array (
       0 => 'G:\\website\\laugh\\admin\\themes\\blue\\Common\\nodeTree.html',
-      1 => 1355156387,
+      1 => 1355241325,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1698550c60ba953e524-48674605',
+  'nocache_hash' => '1225050c759f0d011d5-10126916',
   'function' => 
   array (
   ),
@@ -25,10 +25,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50c60ba963c4b0_75299589',
+  'unifunc' => 'content_50c759f0e2e784_39311685',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50c60ba963c4b0_75299589')) {function content_50c60ba963c4b0_75299589($_smarty_tpl) {?><link rel="stylesheet" type="text/css" href="themes/blue/style/nodeTree.css" media="screen" />
+<?php if ($_valid && !is_callable('content_50c759f0e2e784_39311685')) {function content_50c759f0e2e784_39311685($_smarty_tpl) {?><link rel="stylesheet" type="text/css" href="themes/blue/style/nodeTree.css" media="screen" />
 <div id="nodeTree">
+	<div id="notice">*注意操作权限包含浏览权限 如果两个都勾选则只赋予操作权限</div>
 	<div class="nodeTreeTitle">
 		<span class="titleNode w726">节点名称</span>
 		<span class="titleAccess w120">浏览权限</span>
@@ -47,10 +48,10 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 </span>
 			<span class="w120"><input type="checkbox" name="group<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 " value="<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
-" class="checkbox" /></span>
+" flag="groupNode1" class="checkbox" /></span>
 			<span class="w120"><input type="checkbox" name="group<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 " value="<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
-" class="checkbox" /></span>
+" flag="groupNode2" class="checkbox" /></span>
 		</li>
 		<ul class="parentNode">
 		<?php if (isset($_smarty_tpl->tpl_vars['d']->value['cnode'])){?>
@@ -65,9 +66,9 @@ $_smarty_tpl->tpl_vars['d1']->_loop = true;
 				<span class="w670"><?php echo $_smarty_tpl->tpl_vars['d1']->value['title'];?>
 </span>
 				<span class="w120"><input type="checkbox" name="node[]" value="<?php echo $_smarty_tpl->tpl_vars['d1']->value['id'];?>
-" <?php if (in_array($_smarty_tpl->tpl_vars['d1']->value['id'],$_smarty_tpl->tpl_vars['roleInfo']->value['node'])){?>checked<?php }?> flag="pNode" class="checkbox" /></span>
+,0" <?php if (in_array($_smarty_tpl->tpl_vars['d1']->value['id'],$_smarty_tpl->tpl_vars['roleInfo']->value['node'])&&$_smarty_tpl->tpl_vars['roleInfo']->value['access'][$_smarty_tpl->tpl_vars['d1']->value['id']]==0){?>checked<?php }?> node="pNode" flag="pNode1" class="checkbox" /></span>
 				<span class="w120"><input type="checkbox" name="node[]" value="<?php echo $_smarty_tpl->tpl_vars['d1']->value['id'];?>
-" <?php if (in_array($_smarty_tpl->tpl_vars['d1']->value['id'],$_smarty_tpl->tpl_vars['roleInfo']->value['node'])){?>checked<?php }?> flag="pNode" class="checkbox" /></span>
+,1" <?php if (in_array($_smarty_tpl->tpl_vars['d1']->value['id'],$_smarty_tpl->tpl_vars['roleInfo']->value['node'])&&$_smarty_tpl->tpl_vars['roleInfo']->value['access'][$_smarty_tpl->tpl_vars['d1']->value['id']]==1){?>checked<?php }?> node="pNode" flag="pNode2" class="checkbox" /></span>
 			</li>
 			<ul class="childNode">
 			<?php if (isset($_smarty_tpl->tpl_vars['d1']->value['cnode'])){?>
@@ -76,14 +77,14 @@ $_smarty_tpl->tpl_vars['d1']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['d2']->key => $_smarty_tpl->tpl_vars['d2']->value){
 $_smarty_tpl->tpl_vars['d2']->_loop = true;
 ?>
-				<li title="<?php echo $_smarty_tpl->tpl_vars['d2']->value['remark'];?>
+				<li flag=1 title="<?php echo $_smarty_tpl->tpl_vars['d2']->value['remark'];?>
 ">
 					<span class="w656"><?php echo $_smarty_tpl->tpl_vars['d2']->value['title'];?>
 </span>
 					<span class="w120"><input type="checkbox" name="node[]" value="<?php echo $_smarty_tpl->tpl_vars['d2']->value['id'];?>
-" <?php if (in_array($_smarty_tpl->tpl_vars['d2']->value['id'],$_smarty_tpl->tpl_vars['roleInfo']->value['node'])){?>checked<?php }?> flag="cNode" class="checkbox" /></span>
+,0" <?php if (in_array($_smarty_tpl->tpl_vars['d2']->value['id'],$_smarty_tpl->tpl_vars['roleInfo']->value['node'])&&$_smarty_tpl->tpl_vars['roleInfo']->value['access'][$_smarty_tpl->tpl_vars['d2']->value['id']]==0){?>checked<?php }?> node="cNode" flag="cNode1" class="checkbox" /></span>
 					<span class="w120"><input type="checkbox" name="node[]" value="<?php echo $_smarty_tpl->tpl_vars['d2']->value['id'];?>
-" <?php if (in_array($_smarty_tpl->tpl_vars['d2']->value['id'],$_smarty_tpl->tpl_vars['roleInfo']->value['node'])){?>checked<?php }?> flag="cNode" class="checkbox" /></span>
+,1" <?php if (in_array($_smarty_tpl->tpl_vars['d2']->value['id'],$_smarty_tpl->tpl_vars['roleInfo']->value['node'])&&$_smarty_tpl->tpl_vars['roleInfo']->value['access'][$_smarty_tpl->tpl_vars['d2']->value['id']]==1){?>checked<?php }?> node="cNode" flag="cNode2" class="checkbox" /></span>
 				</li>
 			<?php } ?>
 			<?php }?>
@@ -101,8 +102,8 @@ var nodeTreeClass = function(){
 	var nodeTree = {
 		expand: $("#nodeTree ul li span.expand"),
 		node: $("#nodeTree ul li input[type=checkbox]"),
-		pNode: $("#nodeTree ul li input[flag=pNode]"),
-		cNode: $("#nodeTree ul li input[flag=cNode]")
+		pNode: $("#nodeTree ul li input[node=pNode]"),
+		cNode: $("#nodeTree ul li input[node=cNode]")
 	}
 
 	//展开收缩 toggle动态
@@ -117,15 +118,31 @@ var nodeTreeClass = function(){
 	//选中/不选中全部
 	nodeTree.check = function(){
 		nodeTree.node.click(function (){
-			var nodeObj = $(this).parent().next("ul").find("input[type=checkbox]");
-			if ($(this).attr("checked")) nodeObj.attr("checked",true);
-			else nodeObj.attr("checked",false);
+			var nodeObj;
+			if ($(this).attr("flag") == "groupNode1") {
+				var nodeObj = $(this).parent().parent().next("ul").find("input[flag=pNode1],input[flag=cNode1]");
+			} else if ($(this).attr("flag") == "groupNode2") {
+				var nodeObj = $(this).parent().parent().next("ul").find("input[flag=pNode2],input[flag=cNode2]");
+			} else if ($(this).attr("flag") == "pNode1") {
+				var nodeObj = $(this).parent().parent().next("ul").find("input[flag=cNode1]");
+			} else if ($(this).attr("flag") == "pNode2") {
+				var nodeObj = $(this).parent().parent().next("ul").find("input[flag=cNode2]");
+			}
+			if (nodeObj) {
+				if ($(this).attr("checked")) nodeObj.attr("checked",true);
+				else nodeObj.attr("checked",false);
+			}
 		})
 
 		//选中子节点 默认选中父节点
 		nodeTree.cNode.click(function (){
-			var nodeObj = $(this).parent().parent().prev("li").find("input[type=checkbox]");
-			var groupObj = $(this).parent().parent().parent().prev("li").find("input[type=checkbox]");
+			if ($(this).attr("flag") == "cNode1") {
+				var nodeObj = $(this).parent().parent().parent().prev("li").find("input[flag=pNode1]");
+				var groupObj = $(this).parent().parent().parent().parent().prev("li").find("input[flag=groupNode1]");
+			} else if ($(this).attr("flag") == "cNode2") {
+				var nodeObj = $(this).parent().parent().parent().prev("li").find("input[flag=pNode2]");
+				var groupObj = $(this).parent().parent().parent().parent().prev("li").find("input[flag=groupNode2]");
+			}
 			if ($(this).attr("checked")) {
 				nodeObj.attr("checked",true);
 				groupObj.attr("checked",true);
@@ -134,7 +151,11 @@ var nodeTreeClass = function(){
 
 		//选中父节点 默认选中组节点
 		nodeTree.pNode.click(function (){
-			var nodeObj = $(this).parent().parent().prev("li").find("input[type=checkbox]");
+			if ($(this).attr("flag") == "pNode1") {
+				var nodeObj = $(this).parent().parent().parent().prev("li").find("input[flag=groupNode1]");
+			} else if ($(this).attr("flag") == "pNode2") {
+				var nodeObj = $(this).parent().parent().parent().prev("li").find("input[flag=groupNode2]");
+			}
 			if ($(this).attr("checked")) nodeObj.attr("checked",true);
 		})
 	}(window);
@@ -142,14 +163,23 @@ var nodeTreeClass = function(){
 	//选中组
 	var checkGroup = function (){
 		nodeTree.pNode.each(function (){
-			if ($(this).attr("checked"))
-				$(this).parent().parent().prev("li").find("input[type=checkbox]").attr("checked",true);
+			if ($(this).attr("checked")) {
+				if ($(this).attr("flag") == "pNode1") {
+					$(this).parent().parent().parent().prev("li").find("input[flag=groupNode1]").attr("checked",true);
+				} else if ($(this).attr("flag") == "pNode2") {
+					$(this).parent().parent().parent().prev("li").find("input[flag=groupNode2]").attr("checked",true);
+				}
+			}
 		});
 	}
 
 	//选中组
 	if (nodeTree.pNode.length > 0) {
 		checkGroup();
+		$("#nodeTree ul li").each(function (){
+			if (!$(this).next().attr("flag"))
+				$(this).css("border-bottom",0);
+		});
 	}
 }
 new nodeTreeClass();

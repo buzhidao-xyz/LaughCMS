@@ -69,7 +69,9 @@ class RoleControl extends CommonControl
 		$id = $this->_getID();
 		$roleInfo = $id ? M('Role')->getRole($id) : array();
 		$roleInfo = empty($roleInfo) ? array('id'=>0,'name'=>'','remark'=>'','status'=>1) : $roleInfo['data'][0];
-		$roleInfo['node'] = $id ? M('Node')->getRoleNode(array($roleInfo['id']),0) : array();
+		$return = $id ? M('Node')->getRoleNode(array($roleInfo['id']),0) : array('node'=>array(),'access'=>array());
+		$roleInfo['node'] = $return['node'];
+		$roleInfo['access'] = $return['access'];
 		$this->assign('roleInfo', $roleInfo);
 
 		$nodeTree = M('Node')->makeNodeTree();
@@ -90,6 +92,10 @@ class RoleControl extends CommonControl
 		$remark = $this->_getRemark();
 		$status = $this->_getStatus();
 		$node = $this->_getNode();
+		foreach ($node as $k=>$v) {
+			$nodec = explode(',', $v);
+			$nodes[$nodec[0]] = isset($nodes[$nodec[0]])&&$nodes[$nodec[0]]['access']==1 ? $nodes[$nodec[0]] : array('nodeid'=>$nodec[0],'access'=>$nodec[1]);
+		}
 
 		$info = $id ? '编辑' : '新增';
 		$data = array(
@@ -103,8 +109,8 @@ class RoleControl extends CommonControl
 		if ($return) {
 			$id = $id ? $id : $return;
 			$data = array();
-			foreach ($node as $k=>$v) {
-				$data[] = array('roleid'=>$id,'nodeid'=>$v);
+			foreach ($nodes as $k=>$v) {
+				$data[] = array('roleid'=>$id,'nodeid'=>$v['nodeid'],'access'=>$v['access']);
 			}
 			$return = M('Node')->upRoleNode($id,$data);
 			if ($return) {

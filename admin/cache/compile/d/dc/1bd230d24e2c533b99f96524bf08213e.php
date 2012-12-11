@@ -22,7 +22,7 @@ var JS_APP = '/laugh/admin';
 		<li class="controlRightTop"></li>
 	</ul>
 	<div id="controlContent">
-<div class="captitle"><h5>组节点列表【目前共有4条数据】</h5></div>
+<div class="captitle"><h5>组节点列表【目前共有2条数据】</h5></div>
 <ul class="table_list_title">
 	<li class="table_list_l table_list_l120">用户名</li>
 	<li class="table_list_l table_list_l150">拥有权限角色</li>
@@ -38,9 +38,9 @@ var JS_APP = '/laugh/admin';
 		<li class="table_list_l table_list_l120">admin</li>
 		<li class="table_list_l table_list_l150" name="role" roleid="" title=""></li>
 		<li class="table_list_l table_list_l150">2011-12-15 08:47:32</li>
-		<li class="table_list_l table_list_l150">2012-12-10 21:01:51</li>
+		<li class="table_list_l table_list_l150">2012-12-11 20:24:40</li>
 		<li class="table_list_l table_list_l120">127.0.0.1</li>
-		<li class="table_list_l table_list_l80">94</li>
+		<li class="table_list_l table_list_l80">43</li>
 		<li class="table_list_l table_list_l80">
 							启用
 					</li>
@@ -61,38 +61,6 @@ var JS_APP = '/laugh/admin';
 						<a href="javascript:;" name="modify" id="2" username="luochuan">角色权限</a>
 			<a delurl="/laugh/admin/index.php?s=Admin/resetPassword&id=2" href="javascript:;" name="del" msg="确定重置密码吗？">重置密码</a>
 			<a delurl="/laugh/admin/index.php?s=Admin/delteAdmin&id=2" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
-					</li>
-	</ul>
-		<ul class="table_list role_send_table">
-		<li class="table_list_l table_list_l120">test</li>
-		<li class="table_list_l table_list_l150" name="role" roleid="2,1" title="超级管理员 管理员">超级管理员 管理员</li>
-		<li class="table_list_l table_list_l150">2011-12-30 10:20:17</li>
-		<li class="table_list_l table_list_l150"></li>
-		<li class="table_list_l table_list_l120"></li>
-		<li class="table_list_l table_list_l80">0</li>
-		<li class="table_list_l table_list_l80">
-							<a delurl="/laugh/admin/index.php?s=Admin/upAdminStatus&id=3&status=0" href="javascript:;" name="del" msg="确定禁用吗？">启用</a>
-					</li>
-		<li class="table_list_l table_list_l150">
-						<a href="javascript:;" name="modify" id="3" username="test">角色权限</a>
-			<a delurl="/laugh/admin/index.php?s=Admin/resetPassword&id=3" href="javascript:;" name="del" msg="确定重置密码吗？">重置密码</a>
-			<a delurl="/laugh/admin/index.php?s=Admin/delteAdmin&id=3" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
-					</li>
-	</ul>
-		<ul class="table_list role_send_table">
-		<li class="table_list_l table_list_l120">test123</li>
-		<li class="table_list_l table_list_l150" name="role" roleid="" title=""></li>
-		<li class="table_list_l table_list_l150">2012-12-09 15:32:49</li>
-		<li class="table_list_l table_list_l150">2012-12-09 15:32:49</li>
-		<li class="table_list_l table_list_l120">127.0.0.1</li>
-		<li class="table_list_l table_list_l80">0</li>
-		<li class="table_list_l table_list_l80">
-							<a delurl="/laugh/admin/index.php?s=Admin/upAdminStatus&id=4&status=0" href="javascript:;" name="del" msg="确定禁用吗？">启用</a>
-					</li>
-		<li class="table_list_l table_list_l150">
-						<a href="javascript:;" name="modify" id="4" username="test123">角色权限</a>
-			<a delurl="/laugh/admin/index.php?s=Admin/resetPassword&id=4" href="javascript:;" name="del" msg="确定重置密码吗？">重置密码</a>
-			<a delurl="/laugh/admin/index.php?s=Admin/delteAdmin&id=4" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 					</li>
 	</ul>
 		</div>
