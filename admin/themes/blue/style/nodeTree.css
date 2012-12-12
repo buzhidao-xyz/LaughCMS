@@ -1,17 +1,19 @@
 #nodeTree {
+	display: none;
 	padding: 10px 5px;
 }
 #nodeTree #notice {
 	padding: 5px 15px;
 	color: #CC0000;
 }
-#nodeTree ul {
+#nodeTree div.ul {
 	width: auto;
 	height: auto;
 	overflow: hidden;
 	display: block;
+	clear: both;
 }
-#nodeTree li {
+#nodeTree div.li {
 	height: 30px;
 	line-height: 30px;
 	background: #E2E7ED;
@@ -37,7 +39,7 @@
 #nodeTree .w726 {
 	width: 726px;
 }
-#nodeTree li span.expand {
+#nodeTree div.li span.expand {
 	width: 4px;
 	height: 7px;
 	padding: 6px;
@@ -45,7 +47,7 @@
 	cursor: pointer;
 	background: url("../images/arrow_mius.png") no-repeat left 12px;
 }
-#nodeTree li span.back {
+#nodeTree div.li span.back {
 	padding: 6px;
 	cursor: pointer;
 	background: url("../images/arrow_plus.png") no-repeat left 10px;
@@ -64,24 +66,27 @@
 #nodeTree .nodeTreeTitle .titleNode {
 	text-indent: 20px;
 }
-#nodeTree ul.groupTree {
+#nodeTree div.groupTree {
 	clear: both;
 	border-top: 1px solid #336699;
 }
-#nodeTree ul.groupTree li {
+#nodeTree div.groupTree div.li {
 	padding: 0 30px;
 }
-#nodeTree ul.groupTree ul.parentNode li {
+#nodeTree div.groupTree div.parentNode div.li {
 	padding: 0px 60px;
 	background: #EBF2F6;
 	border-top: 1px solid #DDD;
 }
-#nodeTree ul.groupTree ul.parentNode ul.childNode {
+#nodeTree div.groupTree div.parentNode div.childNode {
+	font-size: 1px;
+	line-height: 1px;
 	/*border-bottom: 1px solid #DDD;*/
 }
-#nodeTree ul.groupTree ul.parentNode ul.childNode li {
+#nodeTree div.groupTree div.parentNode div.childNode div.li {
 	padding: 0px 90px;
 	background: #FFF;
 	border-bottom: 1px dashed #DDD;
 	border-top: 0;
+	font-size: 13px;
 }

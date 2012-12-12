@@ -80,7 +80,7 @@
     width: 182px;
     height:auto;
     overflow: visible;
-    margin: 10px auto;
+    margin: 10px 1px 10px 2px;
 }
 .menu ul li.menulist {
     height: auto;
@@ -104,7 +104,7 @@
 }
 .menu .menusub {
 	display: none;
-    margin: 0 auto;
+    margin: 0;
 }
 .menu .menusub li.menuTopLine {
     height: 5px;

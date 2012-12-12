@@ -25,7 +25,7 @@ var JS_APP = '/laugh/admin';
 <!-- <div class="control_nav">
 	<h3>添加组</h3>
 </div> -->
-<div class="formContainer">
+<div class="formContainer" accessStatus=1>
 	<div class="formtitle"><h5>新组节点表单</h5></div>
 	<form name="newform" action="/laugh/admin/?s=Group/saveGroup" method="post" id="addajaxform" class="newform">
 		<input type="hidden" name="" />
@@ -45,67 +45,67 @@ var JS_APP = '/laugh/admin';
 	<li class="table_list_l table_list_l150">组节点名称</li>
 	<li class="table_list_l table_list_l170">创建时间</li>
 	<li class="table_list_l table_list_l100">是/否显示</li>
-	<li class="table_list_l table_list_l150">操作</li>
-</ul>
+		<li class="table_list_l table_list_l150" accessStatus=1>操作</li>
+	</ul>
 <div class="contentTableList">
 			<ul class="table_list">
 		<li class="table_list_l table_list_l150">系统管理</li>
 		<li class="table_list_l table_list_l170">2012-03-22 12:28:58</li>
 		<li class="table_list_l table_list_l100">显</li>
-		<li class="table_list_l table_list_l150">
+				<li class="table_list_l table_list_l150" accessStatus=1>
 			<a href="javascript:;" name="modify" id="1" title="系统管理" isshow="1">修改</a>&nbsp;&nbsp;
 			<a delurl="/laugh/admin/Group/deleteGroup" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 		</li>
-	</ul>
+			</ul>
 		<ul class="table_list">
 		<li class="table_list_l table_list_l150">用户中心</li>
 		<li class="table_list_l table_list_l170">2012-03-22 12:28:58</li>
 		<li class="table_list_l table_list_l100">显</li>
-		<li class="table_list_l table_list_l150">
+				<li class="table_list_l table_list_l150" accessStatus=1>
 			<a href="javascript:;" name="modify" id="2" title="用户中心" isshow="1">修改</a>&nbsp;&nbsp;
 			<a delurl="/laugh/admin/Group/deleteGroup" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 		</li>
-	</ul>
+			</ul>
 		<ul class="table_list">
 		<li class="table_list_l table_list_l150">核心内容</li>
 		<li class="table_list_l table_list_l170">2012-03-22 12:28:58</li>
 		<li class="table_list_l table_list_l100">显</li>
-		<li class="table_list_l table_list_l150">
+				<li class="table_list_l table_list_l150" accessStatus=1>
 			<a href="javascript:;" name="modify" id="3" title="核心内容" isshow="1">修改</a>&nbsp;&nbsp;
 			<a delurl="/laugh/admin/Group/deleteGroup" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 		</li>
-	</ul>
+			</ul>
 		<ul class="table_list">
 		<li class="table_list_l table_list_l150">网站更新</li>
 		<li class="table_list_l table_list_l170">2012-03-22 12:28:58</li>
 		<li class="table_list_l table_list_l100">显</li>
-		<li class="table_list_l table_list_l150">
+				<li class="table_list_l table_list_l150" accessStatus=1>
 			<a href="javascript:;" name="modify" id="4" title="网站更新" isshow="1">修改</a>&nbsp;&nbsp;
 			<a delurl="/laugh/admin/Group/deleteGroup" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 		</li>
-	</ul>
+			</ul>
 		<ul class="table_list">
 		<li class="table_list_l table_list_l150">系统插件</li>
 		<li class="table_list_l table_list_l170">2012-03-22 12:28:58</li>
 		<li class="table_list_l table_list_l100">显</li>
-		<li class="table_list_l table_list_l150">
+				<li class="table_list_l table_list_l150" accessStatus=1>
 			<a href="javascript:;" name="modify" id="5" title="系统插件" isshow="1">修改</a>&nbsp;&nbsp;
 			<a delurl="/laugh/admin/Group/deleteGroup" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 		</li>
-	</ul>
+			</ul>
 		<ul class="table_list">
 		<li class="table_list_l table_list_l150">系统设置</li>
 		<li class="table_list_l table_list_l170">2012-11-19 17:12:15</li>
 		<li class="table_list_l table_list_l100">显</li>
-		<li class="table_list_l table_list_l150">
+				<li class="table_list_l table_list_l150" accessStatus=1>
 			<a href="javascript:;" name="modify" id="6" title="系统设置" isshow="1">修改</a>&nbsp;&nbsp;
 			<a delurl="/laugh/admin/Group/deleteGroup" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 		</li>
-	</ul>
+			</ul>
 		</div>
 
 <!--弹出层-->
-<div id="modify_div" class="modify_div" style="display:none;">
+<div id="modify_div" class="modify_div" style="display:none;" accessStatus=1>
 	<div class="modify_div_Top">
 		<h5>编辑组节点信息</h5>
 		<a href="javascript:;" id="modify_div_close" class="close">×</a>
@@ -131,7 +131,6 @@ var JS_APP = '/laugh/admin';
 	</form>
 	<div class="modify_div_Bottom"></div>
 </div>
-<!--弹出层-->
     </div>
     <ul class="controlBottom">
 		<li class="controlLeftBottom"></li>

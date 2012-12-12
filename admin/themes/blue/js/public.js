@@ -24,4 +24,9 @@ $(document).ready(function() {
 
     //对只有节点浏览权限的用户隐藏掉所有增删改查操作功能链接
     $("*[accessStatus=0]").remove();
+
+    //角色配置页面 是否配置角色的功能节点
+    $("input[isSetNode=1]").click(function (){
+        $("#nodeTree").css('display','block');
+    });
 });

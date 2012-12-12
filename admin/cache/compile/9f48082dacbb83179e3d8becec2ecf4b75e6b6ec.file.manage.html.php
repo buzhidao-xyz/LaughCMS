@@ -1,31 +1,32 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-12-12 19:39:36
+<?php /* Smarty version Smarty-3.1.12, created on 2012-12-12 23:33:59
          compiled from "G:\website\laugh\admin\themes\blue\Role\manage.html" */ ?>
-<?php /*%%SmartyHeaderCode:777150c86cf89f6e10-40720379%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:3260350c8a3e7ee6bf5-19524599%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '9f48082dacbb83179e3d8becec2ecf4b75e6b6ec' => 
     array (
       0 => 'G:\\website\\laugh\\admin\\themes\\blue\\Role\\manage.html',
-      1 => 1355150244,
+      1 => 1355313645,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '777150c86cf89f6e10-40720379',
+  'nocache_hash' => '3260350c8a3e7ee6bf5-19524599',
   'function' => 
   array (
   ),
   'variables' => 
   array (
     'total' => 0,
+    'accessStatus' => 0,
     'roleList' => 0,
     'd' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50c86cf8ac97e4_43321236',
+  'unifunc' => 'content_50c8a3e8095c80_46617914',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50c86cf8ac97e4_43321236')) {function content_50c86cf8ac97e4_43321236($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50c8a3e8095c80_46617914')) {function content_50c8a3e8095c80_46617914($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="captitle"><h5>角色列表 【目前共有<?php if ($_smarty_tpl->tpl_vars['total']->value){?><?php echo $_smarty_tpl->tpl_vars['total']->value;?>
 <?php }else{ ?>0<?php }?>条数据】</h5></div>
@@ -33,12 +34,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<li class="table_list_l table_list_l150">角色名</li>
 	<li class="table_list_l table_list_l200">描述</li>
 	<li class="table_list_l table_list_l150">创建时间</li>
-	<li class="table_list_l table_list_l100">状态</li>
-	<li class="table_list_l table_list_l150">操作</li>
+    <?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
+	<li class="table_list_l table_list_l100" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
+>状态</li>
+	<li class="table_list_l table_list_l150" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
+>操作</li>
+    <?php }?>
 </ul>
 <div class="contentTableList">
     <?php if ($_smarty_tpl->tpl_vars['roleList']->value){?>
-     <?php  $_smarty_tpl->tpl_vars['d'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['d']->_loop = false;
+    <?php  $_smarty_tpl->tpl_vars['d'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['d']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['roleList']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['d']->key => $_smarty_tpl->tpl_vars['d']->value){
 $_smarty_tpl->tpl_vars['d']->_loop = true;
@@ -51,16 +56,20 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 </li>
     	<li class="table_list_l table_list_l150"><?php echo mkdate($_smarty_tpl->tpl_vars['d']->value['createtime']);?>
 </li>
-    	<li class="table_list_l table_list_l100">
+        <?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
+    	<li class="table_list_l table_list_l100" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
+>
     		<a delurl="__APP__/index.php?s=Role/upRoleStatus&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 &status=<?php if ($_smarty_tpl->tpl_vars['d']->value['status']){?>0<?php }else{ ?>1<?php }?>" href="javascript:;" name="del" msg="确定<?php if ($_smarty_tpl->tpl_vars['d']->value['status']){?>禁用<?php }else{ ?>启用<?php }?>吗？"><?php if ($_smarty_tpl->tpl_vars['d']->value['status']){?>启用<?php }else{ ?>禁用<?php }?></a>
     	</li>
-    	<li class="table_list_l table_list_l150">
+    	<li class="table_list_l table_list_l150" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
+>
     		<a href="__APP__/index.php?s=Role/newRole&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 ">修改</a>&nbsp;&nbsp;
     		<a delurl="__APP__/index.php?s=Role/deleteRole&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 " href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>
+        <?php }?>
     </ul>
     <?php } ?>
     <?php }else{ ?>

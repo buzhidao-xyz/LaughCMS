@@ -309,7 +309,7 @@ form ul.formbody input.button {
     margin-left: 200px;
 }
 form ul.formbody input.mauto {
-    margin:0 auto;
+    margin:5px auto;
 }
 
 /**show_list样式表**/

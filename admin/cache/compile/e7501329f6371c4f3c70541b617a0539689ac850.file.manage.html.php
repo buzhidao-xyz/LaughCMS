@@ -1,36 +1,39 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-12-12 00:06:14
+<?php /* Smarty version Smarty-3.1.12, created on 2012-12-12 22:05:42
          compiled from "G:\website\laugh\admin\themes\blue\Group\manage.html" */ ?>
-<?php /*%%SmartyHeaderCode:632650c759f6c55784-75025048%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:3166850c88f361cbdd6-89360136%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e7501329f6371c4f3c70541b617a0539689ac850' => 
     array (
       0 => 'G:\\website\\laugh\\admin\\themes\\blue\\Group\\manage.html',
-      1 => 1355144332,
+      1 => 1355313645,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '632650c759f6c55784-75025048',
+  'nocache_hash' => '3166850c88f361cbdd6-89360136',
   'function' => 
   array (
   ),
   'variables' => 
   array (
+    'accessStatus' => 0,
     'total' => 0,
     'groupList' => 0,
     'd' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50c759f6d0a336_53194036',
+  'unifunc' => 'content_50c88f362afac6_11599124',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50c759f6d0a336_53194036')) {function content_50c759f6d0a336_53194036($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50c88f362afac6_11599124')) {function content_50c88f362afac6_11599124($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <!-- <div class="control_nav">
 	<h3>添加组</h3>
 </div> -->
-<div class="formContainer">
+<?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
+<div class="formContainer" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
+>
 	<div class="formtitle"><h5>新组节点表单</h5></div>
 	<form name="newform" action="__APP__/?s=Group/saveGroup" method="post" id="addajaxform" class="newform">
 		<input type="hidden" name="" />
@@ -45,13 +48,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		</ul>
 	</form>
 </div>
+<?php }?>
 <div class="captitle"><h5>组节点列表【目前共有<?php if ($_smarty_tpl->tpl_vars['total']->value){?><?php echo $_smarty_tpl->tpl_vars['total']->value;?>
 <?php }else{ ?>0<?php }?>条数据】</h5></div>
 <ul class="table_list_title">
 	<li class="table_list_l table_list_l150">组节点名称</li>
 	<li class="table_list_l table_list_l170">创建时间</li>
 	<li class="table_list_l table_list_l100">是/否显示</li>
-	<li class="table_list_l table_list_l150">操作</li>
+	<?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
+	<li class="table_list_l table_list_l150" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
+>操作</li>
+	<?php }?>
 </ul>
 <div class="contentTableList">
 	<?php if ($_smarty_tpl->tpl_vars['groupList']->value){?>
@@ -66,13 +73,16 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 		<li class="table_list_l table_list_l170"><?php echo mkdate($_smarty_tpl->tpl_vars['d']->value['createtime']);?>
 </li>
 		<li class="table_list_l table_list_l100"><?php if ($_smarty_tpl->tpl_vars['d']->value['isshow']){?>显<?php }else{ ?>隐<?php }?></li>
-		<li class="table_list_l table_list_l150">
+		<?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
+		<li class="table_list_l table_list_l150" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
+>
 			<a href="javascript:;" name="modify" id="<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 " title="<?php echo $_smarty_tpl->tpl_vars['d']->value['title'];?>
 " isshow="<?php echo $_smarty_tpl->tpl_vars['d']->value['isshow'];?>
 ">修改</a>&nbsp;&nbsp;
 			<a delurl="__APP__/Group/deleteGroup" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 		</li>
+		<?php }?>
 	</ul>
 	<?php } ?>
 	<?php }else{ ?>
@@ -82,7 +92,9 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 <?php echo $_smarty_tpl->getSubTemplate ("public/page.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <!--弹出层-->
-<div id="modify_div" class="modify_div" style="display:none;">
+<?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
+<div id="modify_div" class="modify_div" style="display:none;" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
+>
 	<div class="modify_div_Top">
 		<h5>编辑组节点信息</h5>
 		<a href="javascript:;" id="modify_div_close" class="close">×</a>
@@ -108,6 +120,6 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 	</form>
 	<div class="modify_div_Bottom"></div>
 </div>
-<!--弹出层-->
+<?php }?>
 <?php echo $_smarty_tpl->getSubTemplate ("public/control_bottom.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 <?php }} ?>

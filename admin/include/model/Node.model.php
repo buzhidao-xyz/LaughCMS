@@ -220,10 +220,10 @@ class Node extends Base
     //更新角色节点
     public function upRoleNode($roleid=null,$data=array())
     {
-        if (!$roleid || !is_array($data) || empty($data)) return false;
+        if (!$roleid || !is_array($data)) return false;
 
         T('role_node')->where(array('roleid'=>$roleid))->delete();
-        T('role_node')->add($data,true);
+        if (!empty($data)) T('role_node')->add($data,true);
         return true;
     }
 }

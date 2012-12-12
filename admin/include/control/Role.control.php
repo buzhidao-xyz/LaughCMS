@@ -38,13 +38,17 @@ class RoleControl extends CommonControl
 	//获取角色名称
 	private function _getName()
 	{
-		return q('name');
+		$name = q('name');
+		if (!$name) $this->ajaxReturn(1,"请填写角色名！");
+		return FilterHelper::F_htmlentities($name);
 	}
 
 	//获取描述
 	private function _getRemark()
 	{
-		return q('remark');
+		$remark = q('remark');
+		if (!$remark) $this->ajaxReturn(1,"请填写角色描述！");
+		return FilterHelper::F_htmlentities($remark);
 	}
 
 	//获取状态
@@ -60,7 +64,7 @@ class RoleControl extends CommonControl
 	{
 		$node = q('node');
 
-		return $node;
+		return is_array($node) ? $node : array();
 	}
 
 	//新建角色
@@ -92,6 +96,7 @@ class RoleControl extends CommonControl
 		$remark = $this->_getRemark();
 		$status = $this->_getStatus();
 		$node = $this->_getNode();
+		$nodes = array();
 		foreach ($node as $k=>$v) {
 			$nodec = explode(',', $v);
 			$nodes[$nodec[0]] = isset($nodes[$nodec[0]])&&$nodes[$nodec[0]]['access']==1 ? $nodes[$nodec[0]] : array('nodeid'=>$nodec[0],'access'=>$nodec[1]);
