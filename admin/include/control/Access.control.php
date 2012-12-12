@@ -9,7 +9,7 @@ class AccessControl extends BaseControl
 	static protected $_control = 'Access';
 
     //超级管理员账户id数组
-    private $_super_admin = array(1);
+    private $_super_admin;
 
 	public function __construct()
 	{
@@ -19,8 +19,25 @@ class AccessControl extends BaseControl
         $this->_GROUP = M('Group');
         $this->_ROLE = M('Role');
 
+        $this->_super_admin = $this->_getSuperAdmin();
+
 		$this->_getUserAccess();
 	}
+
+    //获取超级管理员账户
+    private function _getSuperAdmin()
+    {
+        $return = array();
+
+        $superAdmin = M('Admin')->getAdmin(null,0,0,array('super'=>1));
+        if (is_array($superAdmin) && !empty($superAdmin) && $superAdmin['total']) {
+            foreach ($superAdmin['data'] as $k=>$v) {
+                $return[] = $v['id'];
+            }
+        }
+
+        return $return;
+    }
 
 	/**
 	 * 获取用户的控制访问权限
@@ -41,8 +58,8 @@ class AccessControl extends BaseControl
             $roleNode = $this->_NODE->getRoleNode($roleids);
             if (empty($roleNode)) return true;
 
-            $userNode = $this->_NODE->getUserNode($user['id']);
-            $node = $this->dealNode($roleNode,$userNode);
+            // $userNode = $this->_NODE->getUserNode($user['id']);
+            $node = $this->dealNode($roleNode);
         }
 
         foreach ($node as $v) {
@@ -73,30 +90,42 @@ class AccessControl extends BaseControl
                 $m = 0;
                 foreach ($return as $k0=>$v0) {
                     if ($v0['id'] == $v['id']) {
-                        $m = 1;
-                        break;
+                        if ($v0['access'] == 1) {
+                            $m = 1;
+                            break;
+                        } else {
+                            unset($return[$k0]);
+                        }
                     }
                 }
+                $v['access'] = isset($v['access']) ? $v['access'] : 1;
                 if (!$m) $return[] = $v;
-            } else {
+            }
+        }
+        foreach ($roleNode as $k=>$v) {
+            if ($v['pid'] != 0) {
                 foreach ($return as $k1=>$v1) {
                     if ($v['pid'] == $v1['id']) {
                         $m = 0;
                         if (array_key_exists('cnode', $return[$k1])) {
                             foreach ($return[$k1]['cnode'] as $k2=>$v2) {
                                 if ($v2['id'] == $v['id']) {
-                                    $m = 1;
-                                    break;
+                                    if ($v2['access'] == 1) {
+                                        $m = 1;
+                                        break;
+                                    } else {
+                                        unset($return[$k1]['cnode'][$k2]);
+                                    }
                                 }
                             }
                         }
+                        $v['access'] = isset($v['access']) ? $v['access'] : 1;
                         if (!$m) $return[$k1]['cnode'][] = $v;
                         break;
                     }
                 }
             }
         }
-        
         return $return;
     }
 

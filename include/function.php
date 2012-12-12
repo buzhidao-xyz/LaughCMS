@@ -88,11 +88,14 @@ function msbstr($string, $start, $length, $encoding='UTF-8', $outcoding='GBK', $
 }
 
 /**
- * 打印调试函数
+ * 打印调试函数 浏览器友好的变量输出
  * @param $data 要输出的变量
  */
-// 浏览器友好的变量输出
-function dump($var, $echo=true, $label=null, $strict=true) {
+function dump($var, $flag=0, $echo=true, $label=null, $strict=true) {
+    if ($flag) {
+        echo "<pre>";print_r($var);return null;
+    }
+
     $label = ($label === null) ? '' : rtrim($label) . ' ';
     if (!$strict) {
         if (ini_get('html_errors')) {

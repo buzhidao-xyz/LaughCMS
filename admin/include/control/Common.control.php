@@ -61,8 +61,9 @@ class CommonControl extends BaseControl
      * @param $control string 要访问的类/控制器
      * @param $action string 要访问的节点/方法
      */
-    public function checkUserAccess($control,$action)
+    public function checkUserAccess($control,$action,$flag=0)
     {
+        $accessStatus = 0;
         $return = false;
         $control = str_replace("Control", "", $control);
 
@@ -75,7 +76,8 @@ class CommonControl extends BaseControl
                         if (isset($v1['cnode']) && is_array($v1['cnode']) && !empty($v1['cnode'])) {
                             foreach ($v1['cnode'] as $v2) {
                                 if (ucfirst($v2['control']) == ucfirst($control) && $v2['action'] == $action) {
-                                    $return = true;
+                                    $accessStatus = $v2['access'];
+                                    $return = $flag ? $v2['access'] : true;
                                     break 3;
                                 }
                             }
@@ -85,6 +87,8 @@ class CommonControl extends BaseControl
             }
         } else $return = true;
 
+        //赋值节点操作权限以便用于前台判断是否显示某些操作链接
+        $this->assign('accessStatus',$accessStatus);
         return $return;
     }
 
@@ -95,7 +99,9 @@ class CommonControl extends BaseControl
      */
     protected function _checkNodeAccess($control,$action)
     {
-        if (!$this->checkUserAccess($control,$action)) $this->_host();
+        if (!$this->checkUserAccess($control,$action,1)) {
+            return false;exit;
+        }
     }
 
     //获取分页页码

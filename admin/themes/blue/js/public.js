@@ -21,4 +21,7 @@ $(document).ready(function() {
 
     //圆角
     $(".modify_div").corner("7px");
+
+    //对只有节点浏览权限的用户隐藏掉所有增删改查操作功能链接
+    $("*[accessStatus=0]").remove();
 });

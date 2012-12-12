@@ -2,7 +2,8 @@
 <!-- <div class="control_nav">
 	<h3>添加组</h3>
 </div> -->
-<div class="formContainer">
+{if $accessStatus == 1}
+<div class="formContainer" accessStatus={$accessStatus}>
 	<div class="formtitle"><h5>新操作节点表单</h5></div>
 	<form name="newform" action="__APP__/index.php?s=Node/saveNode" method="post" id="addajaxform" class="newform">
 		<ul class="formbody">
@@ -43,4 +44,5 @@
 		</ul>
 	</form>
 </div>
-{include file="include/foot.html"}
+{/if}
+{include file="public/control_bottom.html"}

@@ -2,7 +2,8 @@
 <!-- <div class="control_nav">
 	<h3>添加组</h3>
 </div> -->
-<div class="formContainer">
+{if $accessStatus == 1}
+<div class="formContainer" accessStatus={$accessStatus}>
 	<div class="formtitle"><h5>新组节点表单</h5></div>
 	<form name="newform" action="__APP__/?s=Group/saveGroup" method="post" id="addajaxform" class="newform">
 		<input type="hidden" name="" />
@@ -17,12 +18,15 @@
 		</ul>
 	</form>
 </div>
+{/if}
 <div class="captitle"><h5>组节点列表【目前共有{if $total}{$total}{else}0{/if}条数据】</h5></div>
 <ul class="table_list_title">
 	<li class="table_list_l table_list_l150">组节点名称</li>
 	<li class="table_list_l table_list_l170">创建时间</li>
 	<li class="table_list_l table_list_l100">是/否显示</li>
-	<li class="table_list_l table_list_l150">操作</li>
+	{if $accessStatus == 1}
+	<li class="table_list_l table_list_l150" accessStatus={$accessStatus}>操作</li>
+	{/if}
 </ul>
 <div class="contentTableList">
 	{if $groupList}
@@ -31,10 +35,12 @@
 		<li class="table_list_l table_list_l150">{$d.title}</li>
 		<li class="table_list_l table_list_l170">{$d.createtime|mkdate}</li>
 		<li class="table_list_l table_list_l100">{if $d.isshow}显{else}隐{/if}</li>
-		<li class="table_list_l table_list_l150">
+		{if $accessStatus == 1}
+		<li class="table_list_l table_list_l150" accessStatus={$accessStatus}>
 			<a href="javascript:;" name="modify" id="{$d.id}" title="{$d.title}" isshow="{$d.isshow}">修改</a>&nbsp;&nbsp;
 			<a delurl="__APP__/Group/deleteGroup" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 		</li>
+		{/if}
 	</ul>
 	{/foreach}
 	{else}
@@ -43,7 +49,8 @@
 </div>
 {include file="public/page.html"}
 <!--弹出层-->
-<div id="modify_div" class="modify_div" style="display:none;">
+{if $accessStatus == 1}
+<div id="modify_div" class="modify_div" style="display:none;" accessStatus={$accessStatus}>
 	<div class="modify_div_Top">
 		<h5>编辑组节点信息</h5>
 		<a href="javascript:;" id="modify_div_close" class="close">×</a>
@@ -69,5 +76,5 @@
 	</form>
 	<div class="modify_div_Bottom"></div>
 </div>
-<!--弹出层-->
+{/if}
 {include file="public/control_bottom.html"}

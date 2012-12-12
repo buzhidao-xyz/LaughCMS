@@ -1,5 +1,6 @@
 {include file="public/control_top.html"}
-<div class="formContainer">
+{if $accessStatus == 1}
+<div class="formContainer" accessStatus={$accessStatus}>
 	<div class="formtitle"><h5>新角色表单</h5></div>
 	<form name="newform" action="__APP__/index.php?s=Role/saveRole" method="post" method="post" id="addajaxform" class="newform">
 		<input type="hidden" name="id" id="id" value="{$roleInfo.id}" />
@@ -26,4 +27,5 @@
 		</ul>
 	</form>
 </div>
-{include file="include/foot.html"}
+{/if}
+{include file="public/control_bottom.html"}

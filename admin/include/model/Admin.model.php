@@ -27,9 +27,9 @@ class Admin extends Base
 	/**
      * 获取管理员信息
 	 */
-	public function getAdmin($id=null,$start=0,$length=0)
+	public function getAdmin($id=null,$start=0,$length=0,$where=array())
 	{
-		$where = array();
+		$where = isset($where)&&!empty($where) ? $where : array();
 		if ($id) $where['id'] = is_array($id) && !empty($id) ? array('in',$id) : $id;
 
 		$total = T('admin')->where($where)->count();

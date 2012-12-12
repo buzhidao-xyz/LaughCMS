@@ -25,17 +25,12 @@ var JS_APP = '/admin';
 </div>
 <div class="headerNav">
     <div class="uinfo">
-        您好 , admin [ <a href="/admin/index.php?s=index/logout">退出</a> ] | <a href="javascript:;">系统设置</a> | <a href="javascript:;">参数设置</a>
+        您好 , luochuan [ <a href="/admin/index.php?s=index/logout">退出</a> ] | <a href="javascript:;">系统设置</a> | <a href="javascript:;">参数设置</a>
     </div>
     <div class="nav">
         <ul class="hmenu">
             <li class="navon"><a hidefocus="true" href="javascript:;" groupid="0" title="管理中心" class="navHeadMenu">管理中心</a></li>
                         <li><a href="javascript:;" groupid="1" title="系统管理" class="navHeadMenu">系统管理</a></li>
-                        <li><a href="javascript:;" groupid="2" title="用户中心" class="navHeadMenu">用户中心</a></li>
-                        <li><a href="javascript:;" groupid="3" title="核心内容" class="navHeadMenu">核心内容</a></li>
-                        <li><a href="javascript:;" groupid="4" title="网站更新" class="navHeadMenu">网站更新</a></li>
-                        <li><a href="javascript:;" groupid="5" title="系统插件" class="navHeadMenu">系统插件</a></li>
-                        <li><a href="javascript:;" groupid="6" title="系统设置" class="navHeadMenu">系统设置</a></li>
                     </ul>
     </div>
 </div>
