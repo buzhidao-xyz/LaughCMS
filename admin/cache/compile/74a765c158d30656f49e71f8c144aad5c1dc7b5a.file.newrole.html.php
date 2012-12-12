@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-12-12 17:17:55
+<?php /* Smarty version Smarty-3.1.12, created on 2012-12-12 17:28:27
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Role\newrole.html" */ ?>
-<?php /*%%SmartyHeaderCode:1736950c84bc34617a8-13461721%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:940750c84e3bed8910-36781007%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '74a765c158d30656f49e71f8c144aad5c1dc7b5a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\Role\\newrole.html',
-      1 => 1355301074,
+      1 => 1355304470,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1736950c84bc34617a8-13461721',
+  'nocache_hash' => '940750c84e3bed8910-36781007',
   'function' => 
   array (
   ),
@@ -22,9 +22,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50c84bc3501cf9_68569141',
+  'unifunc' => 'content_50c84e3c02ffb4_28209647',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50c84bc3501cf9_68569141')) {function content_50c84bc3501cf9_68569141($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50c84e3c02ffb4_28209647')) {function content_50c84e3c02ffb4_28209647($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
 <div class="formContainer" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
@@ -48,11 +48,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				<span>状态: </span>
 				<div class="item_list fleft">
 					<label><input type="radio" name="status" value="1" class="radio" <?php if ($_smarty_tpl->tpl_vars['roleInfo']->value['status']==1){?>checked="checked"<?php }?> />启用</label>
-					<label><input type="radio" name="status" value="0" class="radio"  <?php if ($_smarty_tpl->tpl_vars['roleInfo']->value['status']==0){?>checked="checked"<?php }?> />禁用</label>
+					<label><input type="radio" name="status" value="0" class="radio" <?php if ($_smarty_tpl->tpl_vars['roleInfo']->value['status']==0){?>checked="checked"<?php }?> />禁用</label>
 				</div>
 			</li>
-			<?php echo $_smarty_tpl->getSubTemplate ("Common/nodeTree.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+			<li style="height:auto;overflow:hidden;">
+				<?php echo $_smarty_tpl->getSubTemplate ("Common/nodeTree.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
+			</li>
 			<li class="formblock bordernone">
 				<input type="submit" name="newRoleButton" class="button btnyellow4 mauto" value="完成提交" />
 			</li>

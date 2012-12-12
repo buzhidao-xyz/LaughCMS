@@ -30,6 +30,7 @@ var JS_APP = '/admin';
 	<li class="table_list_l table_list_l120">Action</li>
 	<li class="table_list_l table_list_l150">创建时间</li>
 	<li class="table_list_l table_list_l80">是/否显示</li>
+		<li class="table_list_l table_list_l100" accessStatus=1>操作</li>
 	</ul>
 <div class="contentTableList">
             <ul class="table_list">
@@ -39,6 +40,10 @@ var JS_APP = '/admin';
     	<li class="table_list_l table_list_l120"></li>
     	<li class="table_list_l table_list_l150"></li>
     	<li class="table_list_l table_list_l80">显</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a href="javascript:;" name="modify" id="2" title="角色管理" remark="管理角色信息 可编辑角色权限/改变用户的角色" groupid="1" pid="0" control="" action="" isshow="1">修改</a>&nbsp;&nbsp;
+    		<a delurl="/admin/index.php?s=Node/deleteNode&id=2" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l150">日志管理</li>
@@ -47,6 +52,10 @@ var JS_APP = '/admin';
     	<li class="table_list_l table_list_l120"></li>
     	<li class="table_list_l table_list_l150"></li>
     	<li class="table_list_l table_list_l80">显</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a href="javascript:;" name="modify" id="3" title="日志管理" remark="日志模块" groupid="1" pid="0" control="" action="" isshow="1">修改</a>&nbsp;&nbsp;
+    		<a delurl="/admin/index.php?s=Node/deleteNode&id=3" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l150">组管理</li>
@@ -55,6 +64,10 @@ var JS_APP = '/admin';
     	<li class="table_list_l table_list_l120"></li>
     	<li class="table_list_l table_list_l150"></li>
     	<li class="table_list_l table_list_l80">显</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a href="javascript:;" name="modify" id="4" title="组管理" remark="节点组管理" groupid="1" pid="0" control="" action="" isshow="1">修改</a>&nbsp;&nbsp;
+    		<a delurl="/admin/index.php?s=Node/deleteNode&id=4" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l150">节点管理</li>
@@ -63,6 +76,10 @@ var JS_APP = '/admin';
     	<li class="table_list_l table_list_l120"></li>
     	<li class="table_list_l table_list_l150"></li>
     	<li class="table_list_l table_list_l80">显</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a href="javascript:;" name="modify" id="5" title="节点管理" remark="管理模块下的节点信息" groupid="1" pid="0" control="" action="" isshow="1">修改</a>&nbsp;&nbsp;
+    		<a delurl="/admin/index.php?s=Node/deleteNode&id=5" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l150">管理员用户管理</li>
@@ -71,6 +88,10 @@ var JS_APP = '/admin';
     	<li class="table_list_l table_list_l120"></li>
     	<li class="table_list_l table_list_l150"></li>
     	<li class="table_list_l table_list_l80">显</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a href="javascript:;" name="modify" id="6" title="管理员用户管理" remark="管理员账号管理中心" groupid="1" pid="0" control="" action="" isshow="1">修改</a>&nbsp;&nbsp;
+    		<a delurl="/admin/index.php?s=Node/deleteNode&id=6" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l150">用户搜索</li>
@@ -79,6 +100,10 @@ var JS_APP = '/admin';
     	<li class="table_list_l table_list_l120"></li>
     	<li class="table_list_l table_list_l150"></li>
     	<li class="table_list_l table_list_l80">显</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a href="javascript:;" name="modify" id="7" title="用户搜索" remark="搜索用户信息" groupid="2" pid="0" control="" action="" isshow="1">修改</a>&nbsp;&nbsp;
+    		<a delurl="/admin/index.php?s=Node/deleteNode&id=7" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l150">管理组</li>
@@ -87,6 +112,10 @@ var JS_APP = '/admin';
     	<li class="table_list_l table_list_l120">manageGroup</li>
     	<li class="table_list_l table_list_l150"></li>
     	<li class="table_list_l table_list_l80">显</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a href="javascript:;" name="modify" id="8" title="管理组" remark="" groupid="1" pid="4" control="Group" action="manageGroup" isshow="1">修改</a>&nbsp;&nbsp;
+    		<a delurl="/admin/index.php?s=Node/deleteNode&id=8" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l150">添加节点</li>
@@ -95,6 +124,10 @@ var JS_APP = '/admin';
     	<li class="table_list_l table_list_l120">newNode</li>
     	<li class="table_list_l table_list_l150"></li>
     	<li class="table_list_l table_list_l80">显</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a href="javascript:;" name="modify" id="9" title="添加节点" remark="" groupid="1" pid="5" control="Node" action="newNode" isshow="1">修改</a>&nbsp;&nbsp;
+    		<a delurl="/admin/index.php?s=Node/deleteNode&id=9" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l150">管理节点</li>
@@ -103,6 +136,10 @@ var JS_APP = '/admin';
     	<li class="table_list_l table_list_l120">manageNode</li>
     	<li class="table_list_l table_list_l150">2012-11-12 17:14:10</li>
     	<li class="table_list_l table_list_l80">显</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a href="javascript:;" name="modify" id="10" title="管理节点" remark="" groupid="1" pid="5" control="Node" action="manageNode" isshow="1">修改</a>&nbsp;&nbsp;
+    		<a delurl="/admin/index.php?s=Node/deleteNode&id=10" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l150">添加角色</li>
@@ -111,6 +148,10 @@ var JS_APP = '/admin';
     	<li class="table_list_l table_list_l120">newRole</li>
     	<li class="table_list_l table_list_l150">2012-11-14 09:23:34</li>
     	<li class="table_list_l table_list_l80">显</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a href="javascript:;" name="modify" id="11" title="添加角色" remark="" groupid="1" pid="2" control="Role" action="newRole" isshow="1">修改</a>&nbsp;&nbsp;
+    		<a delurl="/admin/index.php?s=Node/deleteNode&id=11" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l150">管理角色</li>
@@ -119,6 +160,10 @@ var JS_APP = '/admin';
     	<li class="table_list_l table_list_l120">manageRole</li>
     	<li class="table_list_l table_list_l150">2012-11-14 09:23:58</li>
     	<li class="table_list_l table_list_l80">显</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a href="javascript:;" name="modify" id="12" title="管理角色" remark="" groupid="1" pid="2" control="Role" action="manageRole" isshow="1">修改</a>&nbsp;&nbsp;
+    		<a delurl="/admin/index.php?s=Node/deleteNode&id=12" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l150">日志列表</li>
@@ -127,6 +172,10 @@ var JS_APP = '/admin';
     	<li class="table_list_l table_list_l120">Index</li>
     	<li class="table_list_l table_list_l150">2012-11-14 09:45:54</li>
     	<li class="table_list_l table_list_l80">显</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a href="javascript:;" name="modify" id="13" title="日志列表" remark="" groupid="1" pid="3" control="Log" action="Index" isshow="1">修改</a>&nbsp;&nbsp;
+    		<a delurl="/admin/index.php?s=Node/deleteNode&id=13" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l150">新管理员</li>
@@ -135,6 +184,10 @@ var JS_APP = '/admin';
     	<li class="table_list_l table_list_l120">newAdmin</li>
     	<li class="table_list_l table_list_l150">2012-11-14 10:08:34</li>
     	<li class="table_list_l table_list_l80">显</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a href="javascript:;" name="modify" id="14" title="新管理员" remark="" groupid="1" pid="6" control="Admin" action="newAdmin" isshow="1">修改</a>&nbsp;&nbsp;
+    		<a delurl="/admin/index.php?s=Node/deleteNode&id=14" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l150">管理员列表</li>
@@ -143,6 +196,10 @@ var JS_APP = '/admin';
     	<li class="table_list_l table_list_l120">adminList</li>
     	<li class="table_list_l table_list_l150">2012-11-15 09:51:11</li>
     	<li class="table_list_l table_list_l80">显</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a href="javascript:;" name="modify" id="15" title="管理员列表" remark="" groupid="1" pid="6" control="Admin" action="adminList" isshow="1">修改</a>&nbsp;&nbsp;
+    		<a delurl="/admin/index.php?s=Node/deleteNode&id=15" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l150">栏目管理</li>
@@ -151,6 +208,10 @@ var JS_APP = '/admin';
     	<li class="table_list_l table_list_l120"></li>
     	<li class="table_list_l table_list_l150">2012-11-19 16:18:33</li>
     	<li class="table_list_l table_list_l80">显</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a href="javascript:;" name="modify" id="16" title="栏目管理" remark="管理网站栏目" groupid="3" pid="0" control="" action="" isshow="1">修改</a>&nbsp;&nbsp;
+    		<a delurl="/admin/index.php?s=Node/deleteNode&id=16" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l150">网站栏目</li>
@@ -159,6 +220,10 @@ var JS_APP = '/admin';
     	<li class="table_list_l table_list_l120">index</li>
     	<li class="table_list_l table_list_l150">2012-11-19 16:19:46</li>
     	<li class="table_list_l table_list_l80">显</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a href="javascript:;" name="modify" id="17" title="网站栏目" remark="" groupid="3" pid="16" control="Column" action="index" isshow="1">修改</a>&nbsp;&nbsp;
+    		<a delurl="/admin/index.php?s=Node/deleteNode&id=17" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l150">文档管理</li>
@@ -167,6 +232,10 @@ var JS_APP = '/admin';
     	<li class="table_list_l table_list_l120"></li>
     	<li class="table_list_l table_list_l150">2012-11-19 17:08:57</li>
     	<li class="table_list_l table_list_l80">显</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a href="javascript:;" name="modify" id="18" title="文档管理" remark="" groupid="3" pid="0" control="" action="" isshow="1">修改</a>&nbsp;&nbsp;
+    		<a delurl="/admin/index.php?s=Node/deleteNode&id=18" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l150">发布新文档</li>
@@ -175,6 +244,10 @@ var JS_APP = '/admin';
     	<li class="table_list_l table_list_l120">newArticle</li>
     	<li class="table_list_l table_list_l150">2012-11-19 17:10:12</li>
     	<li class="table_list_l table_list_l80">显</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a href="javascript:;" name="modify" id="19" title="发布新文档" remark="" groupid="3" pid="18" control="Article" action="newArticle" isshow="1">修改</a>&nbsp;&nbsp;
+    		<a delurl="/admin/index.php?s=Node/deleteNode&id=19" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l150">自动更新</li>
@@ -183,6 +256,10 @@ var JS_APP = '/admin';
     	<li class="table_list_l table_list_l120"></li>
     	<li class="table_list_l table_list_l150">2012-11-19 17:12:49</li>
     	<li class="table_list_l table_list_l80">显</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a href="javascript:;" name="modify" id="20" title="自动更新" remark="" groupid="4" pid="0" control="" action="" isshow="1">修改</a>&nbsp;&nbsp;
+    		<a delurl="/admin/index.php?s=Node/deleteNode&id=20" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l150">一键更新网站</li>
@@ -191,6 +268,10 @@ var JS_APP = '/admin';
     	<li class="table_list_l table_list_l120">makeHtml</li>
     	<li class="table_list_l table_list_l150">2012-11-19 17:13:35</li>
     	<li class="table_list_l table_list_l80">显</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a href="javascript:;" name="modify" id="21" title="一键更新网站" remark="" groupid="4" pid="20" control="Make" action="makeHtml" isshow="1">修改</a>&nbsp;&nbsp;
+    		<a delurl="/admin/index.php?s=Node/deleteNode&id=21" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
     	    </ul>
         </div>
 <div id="compage" class="pagination">
@@ -223,6 +304,54 @@ else if($('#facepage').length>0){
 
 
 <!--弹出层-->
+<div id="modify_div" class="modify_div" style="display:none;">
+	<div class="modify_div_Top">
+		<h5>编辑组节点信息</h5>
+		<a href="javascript:;" id="modify_div_close" class="close">×</a>
+	</div>
+	<form id="modify_div_form" action="/admin/index.php?s=Node/upNode">
+		<input name="id" value="" type="hidden" />
+		<ul class="formbody">
+			<li class="formblock">
+				<span>组: </span>
+				<select id="select" name="groupid">
+					<option value="">|-组菜单</option>
+										<option value="1">&nbsp;|-系统管理</option>
+										<option value="2">&nbsp;|-用户中心</option>
+										<option value="3">&nbsp;|-核心内容</option>
+										<option value="4">&nbsp;|-网站更新</option>
+										<option value="5">&nbsp;|-系统插件</option>
+										<option value="6">&nbsp;|-系统设置</option>
+									</select>
+			</li>
+			<li class="formblock">
+				<span>父节点: </span>
+				<select name="pid" flag="nodepid" style="width:150px;">
+					<option value="">|-节点菜单</option>
+				</select>
+			</li>
+			<li class="formblock">
+				<span>名称: </span>
+				<input type="text" name="title" class="input w150" />
+			</li>
+			<li class="formblock">
+				<span>描述: </span>
+				<input type="text" name="remark" class="input w150" />
+			</li>
+			<li class="formblock">
+				<span>Control: </span>
+				<input type="text" name="control" class="input w100" />
+			</li>
+			<li class="formblock">
+				<span>Action: </span>
+				<input type="text" name="action" class="input w150" />
+			</li>
+			<li class="formblock bordernone">
+				<input type="submit" name="subut" class="button btnyellow2" value="修改" />
+			</li>
+		</ul>
+	</form>
+</div>
     </div>
     <ul class="controlBottom">
 		<li class="controlLeftBottom"></li>

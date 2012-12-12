@@ -25,24 +25,25 @@ var JS_APP = '/admin';
 <div class="formContainer" accessStatus=1>
 	<div class="formtitle"><h5>新角色表单</h5></div>
 	<form name="newform" action="/admin/index.php?s=Role/saveRole" method="post" method="post" id="addajaxform" class="newform">
-		<input type="hidden" name="id" id="id" value="2" />
+		<input type="hidden" name="id" id="id" value="0" />
 		<ul class="formbody">
 			<li class="formblock">
 				<span>角色名:</span>
-				<input type="text" name="name" value="管理员" class="input w150" />
+				<input type="text" name="name" value="" class="input w150" />
 			</li>
 			<li class="formblock">
 				<span>描述:</span>
-				<input type="text" name="remark" value="普通管理员 管理某些模块" class="input w250" />
+				<input type="text" name="remark" value="" class="input w250" />
 			</li>
 			<li class="formblock">
 				<span>状态: </span>
 				<div class="item_list fleft">
 					<label><input type="radio" name="status" value="1" class="radio" checked="checked" />启用</label>
-					<label><input type="radio" name="status" value="0" class="radio"   />禁用</label>
+					<label><input type="radio" name="status" value="0" class="radio"  />禁用</label>
 				</div>
 			</li>
-			<link rel="stylesheet" type="text/css" href="themes/blue/style/nodeTree.css" media="screen" />
+			<li style="height:auto;overflow:hidden;">
+				<link rel="stylesheet" type="text/css" href="themes/blue/style/nodeTree.css" media="screen" />
 <div id="nodeTree">
 	<div id="notice">*注意操作权限包含浏览权限 如果两个都勾选则只赋予操作权限</div>
 	<div class="nodeTreeTitle">
@@ -62,7 +63,7 @@ var JS_APP = '/admin';
 				<span class="expand"></span>
 				<span class="w670">角色管理</span>
 				<span class="w120"><input type="checkbox" name="node[]" value="2,0"  node="pNode" flag="pNode1" class="checkbox" /></span>
-				<span class="w120"><input type="checkbox" name="node[]" value="2,1" checked node="pNode" flag="pNode2" class="checkbox" /></span>
+				<span class="w120"><input type="checkbox" name="node[]" value="2,1"  node="pNode" flag="pNode2" class="checkbox" /></span>
 			</li>
 			<ul class="childNode">
 										<li flag=1 title="">
@@ -73,7 +74,7 @@ var JS_APP = '/admin';
 							<li flag=1 title="">
 					<span class="w656">管理角色</span>
 					<span class="w120"><input type="checkbox" name="node[]" value="12,0"  node="cNode" flag="cNode1" class="checkbox" /></span>
-					<span class="w120"><input type="checkbox" name="node[]" value="12,1" checked node="cNode" flag="cNode2" class="checkbox" /></span>
+					<span class="w120"><input type="checkbox" name="node[]" value="12,1"  node="cNode" flag="cNode2" class="checkbox" /></span>
 				</li>
 									</ul>
 					<li title="日志模块">
@@ -360,6 +361,7 @@ var nodeTreeClass = function(){
 }
 new nodeTreeClass();
 </script>
+			</li>
 			<li class="formblock bordernone">
 				<input type="submit" name="newRoleButton" class="button btnyellow4 mauto" value="完成提交" />
 			</li>

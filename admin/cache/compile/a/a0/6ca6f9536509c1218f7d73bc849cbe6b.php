@@ -25,6 +25,50 @@ var JS_APP = '/admin';
 <!-- <div class="control_nav">
 	<h3>添加组</h3>
 </div> -->
+<div class="formContainer" accessStatus=1>
+	<div class="formtitle"><h5>新操作节点表单</h5></div>
+	<form name="newform" action="/admin/index.php?s=Node/saveNode" method="post" id="addajaxform" class="newform">
+		<ul class="formbody">
+			<li class="formblock">
+				<span>组: </span>
+				<select id="select" name="groupid">
+					<option value="">|-组菜单</option>
+										<option value="1">&nbsp;|-系统管理</option>
+										<option value="2">&nbsp;|-用户中心</option>
+										<option value="3">&nbsp;|-核心内容</option>
+										<option value="4">&nbsp;|-网站更新</option>
+										<option value="5">&nbsp;|-系统插件</option>
+										<option value="6">&nbsp;|-系统设置</option>
+									</select>
+			</li>
+			<li class="formblock">
+				<span>父节点: </span>
+				<select name="pid" flag="nodepid" style="width:150px;">
+					<option value="">|-节点菜单</option>
+				</select>
+			</li>
+			<li class="formblock">
+				<span>名称: </span>
+				<input type="text" name="title" autocomplete="off" value="" class="input w150" />
+			</li>
+			<li class="formblock">
+				<span>描述: </span>
+				<input type="text" name="remark" autocomplete="off" value="" class="input w250" />
+			</li>
+			<li class="formblock">
+				<span>Control: </span>
+				<input type="text" name="control" autocomplete="off" value="" class="input w100" />
+			</li>
+			<li class="formblock">
+				<span>Action: </span>
+				<input type="text" name="action" autocomplete="off" value="" class="input w150" />
+			</li>
+			<li class="formblock bordernone">
+				<input type="submit" name="subut" class="button btnyellow2" value="添加" />
+			</li>
+		</ul>
+	</form>
+</div>
     </div>
     <ul class="controlBottom">
 		<li class="controlLeftBottom"></li>
