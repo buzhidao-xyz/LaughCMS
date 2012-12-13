@@ -1,0 +1,93 @@
+{include file="include/head.html"}
+<div id="content">
+	<div id="control">
+		<div class="box">
+			<div class="title">
+				<h5>新组节点表单</h5>
+			</div>
+			<form name="newform" action="__APP__/?s=Group/saveGroup" method="post" id="addajaxform">
+			<div class="form">
+				<div class="fields">
+					<div class="field  field-first">
+						<div class="label">
+							<label for="input-small">名称:</label>
+						</div>
+						<div class="input" style="float:left;">
+							<input type="text" id="input-small" name="title" class="small" />
+						</div>
+					</div>
+					<div class="buttons">
+						<input type="submit" name="submit" value="添加" />
+					</div>
+				</div>
+			</div>
+			</form>
+		</div>
+		<div class="box mtop10">
+			<div class="title">
+				<h5>组节点列表 【目前共有{if $total}{$total}{else}0{/if}条数据】</h5>
+			</div>
+			<div class="table">
+				<ul class="table_list_title">
+			    	<li class="table_list_l table_list_l150">组节点名称</li>
+			    	<li class="table_list_l table_list_l170">创建时间</li>
+			    	<li class="table_list_l table_list_l100">是/否显示</li>
+			    	<li class="table_list_l table_list_l150">操作</li>
+			    </ul>
+			    {if $groupList}
+			     {foreach $groupList as $d}
+			    <ul class="table_list">
+					<li class="table_list_l table_list_l150">{$d.title}</li>
+			    	<li class="table_list_l table_list_l170">{$d.createtime|mkdate}</li>
+			    	<li class="table_list_l table_list_l100">{if $d.isshow}显{else}隐{/if}</li>
+			    	<li class="table_list_l table_list_l150">
+			    		<a href="javascript:;" name="modify" id="{$d.id}" title="{$d.title}" isshow="{$d.isshow}">修改</a>&nbsp;&nbsp;
+			    		<a delurl="__APP__/Group/deleteGroup" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+			    	</li>
+			    </ul>
+			    {/foreach}
+			    {else}
+			    <ul class="table_list"><li class="table_list_center">空</li></ul>
+			    {/if}
+    			{include file="public/page.html"}
+			</div>
+		</div>
+	</div>
+</div>
+<!--弹出层-->
+<div id="modify_div" class="modify_div" style="display:none;">
+	<form id="modify_div_form" action="__APP__/?s=Group/upGroup">
+		<input name="id" value="" type="hidden" />
+		<a href="javascript:;" class="modify_div_close" id="modify_div_close">X</a>
+		<div class="form">
+			<div class="fields">
+				<div class="field field-first">
+					<div class="label">
+						<label for="input-small">名称:</label>
+					</div>
+					<div class="input" style="float:left;">
+						<input type="text" id="input-small" name="title" class="small" />
+					</div>
+				</div>
+				<div class="field">
+					<div class="label label-radio">
+						<label for="input-small">是否显示:</label>
+					</div>
+					<div class="radios" style="float:left;">
+						<div class="radio">
+							<input type="radio" name="isshow" value="1" class="radio" /><label>是</label>
+						</div>
+						<div class="radio">
+							<input type="radio" name="isshow" value="0" class="radio" /><label>否</label>
+						</div>
+					</div>
+				</div>
+				<div class="buttons">
+					<input type="submit" name="submit" value="修改" />
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<!--弹出层-->
+{include file="include/foot.html"}

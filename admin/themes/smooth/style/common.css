@@ -1,0 +1,59 @@
+/**********************************common**********************************/
+.clear {
+	clear: both;
+}
+
+#content div.mtop15 {
+	margin-top: 15px;
+}
+
+/**********************************control**********************************/
+#control .captitle {
+	padding: 10px 0 10px 0;
+}
+
+/**********************************content**********************************/
+
+#content div.box-left #box-left-forms a {
+	padding: 15px 0 15px 15px;
+}
+
+#content div.box .content ul li {
+	height: 23px;
+	line-height: 23px;
+	margin: 0 3px;
+	border-bottom: 1px dashed #CFD7C4;
+	clear: both;
+}
+#content div.box .content ul li span.sleft {
+	float: left;
+	text-align: right;
+	width: 170px;
+	display: block;
+}
+#content div.box .content ul li span.sright {
+	text-align: left;
+	text-indent: 10px;
+	display: block;
+}
+#content div.box .content ul li.title {
+	text-indent: 30px;
+	color: #336699;
+}
+
+/**********************************tips**********************************/
+
+div.caption {
+    float: left;
+    margin: 0;
+    padding: 8px 0 0 5px;
+    position: relative;
+    width: auto;
+    text-indent: 10px;
+    color: #cc0099;
+}
+span.label {
+    float: left;
+    position: relative;
+    padding: 8px 10px 0 20px;
+}

@@ -1,0 +1,86 @@
+{include file="public/control_top.html"}
+<div class="captitle"><h5>节点列表 【目前共有{if $total}{$total}{else}0{/if}条数据】</h5></div>
+<ul class="table_list_title">
+	<li class="table_list_l table_list_l150">名称</li>
+	<li class="table_list_l table_list_l200">描述</li>
+	<li class="table_list_l table_list_l100">Control</li>
+	<li class="table_list_l table_list_l120">Action</li>
+	<li class="table_list_l table_list_l150">创建时间</li>
+	<li class="table_list_l table_list_l80">是/否显示</li>
+	{if $accessStatus == 1}
+	<li class="table_list_l table_list_l100" accessStatus={$accessStatus}>操作</li>
+	{/if}
+</ul>
+<div class="contentTableList">
+    {if $nodeList}
+    {foreach $nodeList as $d}
+    <ul class="table_list">
+		<li class="table_list_l table_list_l150">{$d.title}</li>
+		<li class="table_list_l table_list_l200" tooltip=1 title="{$d.remark}">{$d.remark}</li>
+    	<li class="table_list_l table_list_l100">{$d.control}</li>
+    	<li class="table_list_l table_list_l120">{$d.action}</li>
+    	<li class="table_list_l table_list_l150">{$d.createtime|mkdate}</li>
+    	<li class="table_list_l table_list_l80">{if $d.isshow}显{else}隐{/if}</li>
+    	{if $accessStatus == 1}
+    	<li class="table_list_l table_list_l100" accessStatus={$accessStatus}>
+    		<a href="javascript:;" name="modify" id="{$d.id}" title="{$d.title}" remark="{$d.remark}" groupid="{$d.groupid}" pid="{$d.pid}" control="{$d.control}" action="{$d.action}" isshow="{$d.isshow}">修改</a>&nbsp;&nbsp;
+    		<a delurl="__APP__/index.php?s=Node/deleteNode&id={$d.id}" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
+    	{/if}
+    </ul>
+    {/foreach}
+    {else}
+    <ul class="table_list"><li class="table_list_center">空</li></ul>
+    {/if}
+</div>
+{include file="public/page.html"}
+<!--弹出层-->
+{if $accessStatus == 1}
+<div id="modify_div" class="modify_div" style="display:none;">
+	<div class="modify_div_Top">
+		<h5>编辑组节点信息</h5>
+		<a href="javascript:;" id="modify_div_close" class="close">×</a>
+	</div>
+	<form id="modify_div_form" action="__APP__/index.php?s=Node/upNode">
+		<input name="id" value="" type="hidden" />
+		<ul class="formbody">
+			<li class="formblock">
+				<span>组: </span>
+				<select id="select" name="groupid">
+					<option value="">|-组菜单</option>
+					{foreach $groupTree as $g}
+					<option value="{$g.id}">&nbsp;|-{$g.title}</option>
+					{/foreach}
+				</select>
+			</li>
+			<li class="formblock">
+				<span>父节点: </span>
+				<select name="pid" flag="nodepid" style="width:150px;">
+					<option value="">|-节点菜单</option>
+				</select>
+			</li>
+			<li class="formblock">
+				<span>名称: </span>
+				<input type="text" name="title" class="input w150" />
+			</li>
+			<li class="formblock">
+				<span>描述: </span>
+				<input type="text" name="remark" class="input w150" />
+			</li>
+			<li class="formblock">
+				<span>Control: </span>
+				<input type="text" name="control" class="input w100" />
+			</li>
+			<li class="formblock">
+				<span>Action: </span>
+				<input type="text" name="action" class="input w150" />
+			</li>
+			<li class="formblock bordernone">
+				<input type="submit" name="subut" class="button btnyellow2" value="修改" />
+			</li>
+		</ul>
+	</form>
+	<div class="modify_div_Bottom"></div>
+</div>
+{/if}
+{include file="public/control_bottom.html"}

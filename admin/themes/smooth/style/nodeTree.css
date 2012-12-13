@@ -1,0 +1,47 @@
+#nodeTree {
+	padding: 10px 5px;
+}
+#nodeTree ul {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	padding: 2px 0;
+	display: block;
+}
+#nodeTree li {
+
+}
+#nodeTree li span.expand {
+	padding: 3px 5px;
+	cursor: pointer;
+	background: url("../images/arrow_mius.png") no-repeat left 6px;
+}
+#nodeTree li span.back {
+	padding: 3px 5px;
+	cursor: pointer;
+	background: url("../images/arrow_plus.png") no-repeat left 4px;
+}
+#nodeTree span.nodeTreeTitle {
+	padding: 10px 5px 3px 5px;
+	display: block;
+	width: 100%;
+	height: 20px;
+	font-weight: 700;
+	border-bottom: 1px solid #DDDDDD;
+}
+#nodeTree ul.groupTree {
+	margin: 5px 30px;
+	clear: both;
+	border-bottom: 1px solid #336699;
+}
+#nodeTree ul.groupTree ul.parentNode {
+	margin: 3px 50px;
+}
+#nodeTree ul.groupTree ul.parentNode ul.childNode {
+	padding: 3px 50px;
+	border-bottom: 1px solid #DDD;
+}
+#nodeTree ul.groupTree ul.parentNode ul.childNode li {
+	float: left;
+	width: 120px;
+}

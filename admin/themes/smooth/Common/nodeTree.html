@@ -1,0 +1,84 @@
+<link rel="stylesheet" type="text/css" href="themes/smooth/style/nodeTree.css" media="screen" />
+<div id="nodeTree">
+	<span class="nodeTreeTitle">请选择节点</span>
+	{if $nodeTree}
+	{foreach $nodeTree as $d}
+	<ul class="groupTree">
+		<li><span class="expand"></span><input type="checkbox" name="group{$d.id}" value="{$d.id}" />{$d.title}</li>
+		<ul class="parentNode">
+		{if isset($d.cnode)}
+		{foreach $d.cnode as $d1}
+			<li title="{$d1.remark}"><span class="expand"></span><input type="checkbox" name="node[]" value="{$d1.id}"  {if in_array($d1.id,$roleInfo.node)}checked{/if} flag="pNode" />{$d1.title}</li>
+			<ul class="childNode">
+			{if isset($d1.cnode)}
+			{foreach $d1.cnode as $d2}
+				<li title="{$d2.remark}"><input type="checkbox" name="node[]" value="{$d2.id}"  {if in_array($d2.id,$roleInfo.node)}checked{/if} flag="cNode" />{$d2.title}</li>
+			{/foreach}
+			{/if}
+			</ul>
+		{/foreach}
+		{/if}
+		</ul>
+	</ul>
+	{/foreach}
+	{/if}
+</div>
+<script type="text/javascript">
+var nodeTreeClass = function(){
+	//定义对象属性
+	var nodeTree = {
+		expand: $("#nodeTree ul li span.expand"),
+		node: $("#nodeTree ul li input[type=checkbox]"),
+		pNode: $("#nodeTree ul li input[flag=pNode]"),
+		cNode: $("#nodeTree ul li input[flag=cNode]")
+	}
+
+	//展开收缩 toggle动态
+	nodeTree.ehNode = function() {
+		nodeTree.expand.click(function (){
+			if ($(this).attr("class").indexOf("back")<0) $(this).addClass("back");
+			else $(this).removeClass("back");
+			$(this).parent().next("ul").toggle(300);
+		})
+	}(window);
+
+	//选中/不选中全部
+	nodeTree.check = function(){
+		nodeTree.node.click(function (){
+			var nodeObj = $(this).parent().next("ul").find("input[type=checkbox]");
+			if ($(this).attr("checked")) nodeObj.attr("checked",true);
+			else nodeObj.attr("checked",false);
+		})
+
+		//选中子节点 默认选中父节点
+		nodeTree.cNode.click(function (){
+			var nodeObj = $(this).parent().parent().prev("li").find("input[type=checkbox]");
+			var groupObj = $(this).parent().parent().parent().prev("li").find("input[type=checkbox]");
+			if ($(this).attr("checked")) {
+				nodeObj.attr("checked",true);
+				groupObj.attr("checked",true);
+			}
+		})
+
+		//选中父节点 默认选中组节点
+		nodeTree.pNode.click(function (){
+			var nodeObj = $(this).parent().parent().prev("li").find("input[type=checkbox]");
+			if ($(this).attr("checked")) nodeObj.attr("checked",true);
+		})
+	}(window);
+
+	//选种组
+	var checkGroup = function (){
+		nodeTree.pNode.each(function (){
+			if ($(this).attr("checked"))
+				$(this).parent().parent().prev("li").find("input[type=checkbox]").attr("checked",true);
+		});
+	}
+
+	//选中组
+	if (nodeTree.pNode.length > 0) {
+		checkGroup();
+	}
+}
+new nodeTreeClass();
+</script>

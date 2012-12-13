@@ -1,0 +1,47 @@
+{include file="include/head.html"}
+<div id="content">
+	<div id="control">
+		<div class="box">
+			<div class="title">
+				<h5>新角色表单</h5>
+			</div>
+			<form name="newform" action="__APP__/?s=Role/saveRole" method="post" method="post" id="addajaxform">
+			<input type="hidden"  name="id" id="id" value="{$roleInfo.id}" />
+			<div class="form">
+				<div class="fields">
+					<div class="field">
+						<div class="label">
+							<label for="input-small">角色名:</label>
+						</div>
+						<div class="input" style="float:left;">
+							<input type="text" name="name" value="{$roleInfo.name}" class="small" />
+						</div>
+					</div>
+					<div class="field">
+						<div class="label">
+							<label for="input-small">描述:</label>
+						</div>
+						<div class="input" style="float:left;">
+							<input type="text" name="remark" value="{$roleInfo.remark}" class="small" />
+						</div>
+					</div>
+					<div class="field">
+						<div class="label">
+							<label for="input-small">状态:</label>
+						</div>
+						<div class="radio">
+							<input  type="radio" name="status"  value="1" {if $roleInfo.status == 1}checked="checked"{/if} />启用&nbsp;&nbsp;
+	  	 					<input  type="radio" name="status"  value="0" {if $roleInfo.status == 0}checked="checked"{/if} />禁用
+						</div>
+					</div>
+					{include file="Common/nodeTree.html"}
+					<div class="buttons">
+						<input type="submit" name="newRoleButton" value="完成提交" />
+					</div>
+				</div>
+			</div>
+			</form>
+		</div>
+	</div>
+</div>
+{include file="include/foot.html"}

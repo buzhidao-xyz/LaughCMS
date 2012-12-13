@@ -1,0 +1,28 @@
+<!-- content -->
+<div id="content">
+	<!-- end content / left -->
+	<div id="left">
+		<div id="menu">
+        	{foreach $menu as $k=>$m}
+			<h6 id="h-menu-menu{$k}"><a href="javascript:;" submenu="#menu{$k}"><span>{$m.title}</span></a></h6>
+			{if array_key_exists('cnode',$m)}
+			<ul id="menu-menu{$k}" class="closed">
+				{foreach $m.cnode as $m1}
+				<li><a hidefocus="true" href="__APP__/?s={$m1.control}/{$m1.action}" target="main">{$m1.title|html_entity_decode}</a></li>
+				{/foreach}
+				<!--
+				<li class="collapsible last">
+					<a href="#" class="plus">Offers</a>
+					<ul class="collapsed">
+						<li><a href="">Coupon Codes</a></li>
+						<li class="last"><a href="">Rebates</a></li>
+					</ul>
+				</li>
+				-->
+			</ul>
+			{/if}
+        	{/foreach}
+		</div>
+	</div>
+	<!-- end content / left -->
+</div>
