@@ -105,33 +105,43 @@ class DBpdomysql extends DBDriver
         return self::$db->lastInsertId();
     }
     
+    //开始事务
+    static public function beginTransaction()
+    {
+        self::$db->beginTransaction();
+    }
+
+    //提交事务
+    static public function commitTransaction()
+    {
+        self::$db->commit();
+    }
+
+    //回滚事务
+    static public function rollBackTransaction()
+    {
+        self::$db->rollBack();
+    }
+    
     /**
      * 事务处理 update/delete
-     * @param 要执行的sql语句
+     * @param 要执行的sql语句数组 多条sql事务处理
      * @return 返回值 true/false
      */
-    static public function Transaction($sql)
+    static public function Transaction($sql=array())
     {
+        if (!is_array($sql) || empty($sql)) return false;
         $sql = self::tablePR($sql);
         
         self::$db->beginTransaction();
-        $count = self::$db->exec($sql);
-        
-        if ($count) {
-            self::$db->commit();
-            self::$db->closeCommit();
-            return true;
-        } else {
-            self::$db->rollBack();
-            self::$db->closeCommit();
-            return false;
+        foreach ($sql as $k=>$v) {
+            if (!self::$db->exec($sql)) {
+                self::$db->rollBack();
+                return false;
+            }
         }
-    }
-    
-    //结束事务
-    static private function closeCommit()
-    {
-        
+        self::$db->commit();
+        return true;
     }
 
     /**

@@ -30,6 +30,7 @@ class DBmysqli extends DBDriver
             throw new MyException("The connect is unvaliable", 1);
             exit;
         }
+        self::Execute("SET NAMES UTF8");
     }
 
     /**
@@ -42,9 +43,7 @@ class DBmysqli extends DBDriver
         $sql = self::tablePR($sql);
 
         self::$db->query($sql);
-        $count = self::$db->affected_rows;
-
-        return $count ? true : false;
+        return self::$db->affected_rows ? true : false;
     }
 
     /**
@@ -54,25 +53,12 @@ class DBmysqli extends DBDriver
      */
     static public function GetCount($sql)
     {
-        $count = 0;
         $sql = self::tablePR($sql);
 
         $sth = self::$db->prepare($sql);
         $sth->execute();
-        
-        switch (self::$_db_type) {
-            case 'pdo':
-                $count = $sth->rowCount();
-                break;
-            case 'mysqli':
-                $res = $sth->get_result();
-                $count = $res->num_rows;
-                break;
-            default:
-                break;
-        }
-
-        return $count;
+        $res = $sth->get_result();
+        return $res->num_rows;
     }
 
     /**
@@ -82,26 +68,12 @@ class DBmysqli extends DBDriver
      */
     static public function GetOne($sql)
     {
-        $result = array();
-        
         $sql = self::tablePR($sql);
 
         $sth = self::$db->prepare($sql);
         $sth->execute();
-        
-        switch (self::$_db_type) {
-            case 'pdo':
-                $return = $sth->rowCount() ? $sth->fetch(0) : $result;
-                break;
-            case 'mysqli':
-                $res = $sth->get_result();
-                $return = $res->num_rows ? $res->fetch_assoc() : $result;
-                break;
-            default:
-                $return = $result;
-        }
-
-        return $return;
+        $res = $sth->get_result();
+        return $res->num_rows ? $res->fetch_assoc() : array();
     }
 
     /**
@@ -111,26 +83,13 @@ class DBmysqli extends DBDriver
      */
     static public function GetAll($sql)
     {
-        $result = array();
         $sql = self::tablePR($sql);
 
         $sth = self::$db->prepare($sql);
         $sth->execute();
-        
-        switch (self::$_db_type) {
-            case 'pdo':
-                $return = $sth->rowCount() ? $sth->fetchAll() : $result;
-                break;
-            case 'mysqli':
-                $res = $sth->get_result();
-                // MYSQLI_ASSOC 以字段/值关联模式返回数据格式
-                $return = $res->num_rows ? $res->fetch_all(MYSQLI_ASSOC) : $result;
-                break;
-            default:
-                $return = $result;
-        }
-        
-        return $return;
+        $res = $sth->get_result();
+        // MYSQLI_ASSOC 以字段/值关联模式返回数据格式
+        return $res->num_rows ? $res->fetch_all(MYSQLI_ASSOC) : array();
     }
 
     /**
@@ -140,18 +99,7 @@ class DBmysqli extends DBDriver
      */
     static public function GetInsertID()
     {
-        switch (self::$_db_type) {
-            case 'pdo':
-                $return = self::$db->lastInsertId();
-                break;
-            case 'mysqli':
-                $return = self::$db->insert_id;
-                break;
-            default:
-                $return = '';
-        }
-        
-        return $return;
+        return self::$db->insert_id;
     }
     
     /**
@@ -162,20 +110,11 @@ class DBmysqli extends DBDriver
     static public function Transaction($sql)
     {
         $sql = self::tablePR($sql);
+
+        self::$db->autocommit(false);
+        self::$db->query($sql);
         
-        switch (self::$_db_type) {
-            case 'pdo':
-                self::$db->beginTransaction();
-                $count = self::$db->exec($sql);
-                break;
-            case 'mysqli':
-                self::$db->autocommit(false);
-                self::$db->query($sql);
-                $count = self::$db->affected_rows;
-                break;
-        }
-        
-        if ($count) {
+        if (self::$db->affected_rows) {
             self::$db->commit();
             self::$db->closeCommit();
             return true;
@@ -188,14 +127,7 @@ class DBmysqli extends DBDriver
     
     static private function closeCommit()
     {
-        switch (self::$_db_type) {
-            case 'pdo':
-                
-                break;
-            case 'mysqli':
-                self::$db->autocommit(true);
-                break;
-        }
+        self::$db->autocommit(true);
     }
 
     /**
