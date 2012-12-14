@@ -25,10 +25,10 @@ class DBmysqli extends DBDriver
     /************************************以下方法必须实现************************************/
 
     //连接数据库
-    public function _initConnect($host,$username,$password,$database)
+    public function _initConnect($host,$port,$username,$password,$database)
     {
         //mysqli connect
-        if (!(@self::$db = new mysqli($host, $username, $password, $database))) {
+        if (!(@self::$db = new mysqli($host, $username, $password, $database, $port))) {
             throw new MyException("The connect is unvaliable", 1);
             exit;
         }

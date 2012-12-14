@@ -25,11 +25,10 @@ class DBpdomysql extends DBDriver
     /************************************以下方法必须实现************************************/
 
     //连接数据库
-    public function _initConnect($host,$username,$password,$database)
+    public function _initConnect($host,$port,$username,$password,$database)
     {
         //pdo_mysql connect
-        $dsn = "mysql:host=".$host.";dbname=".$database;
-
+        $dsn = "mysql:host=".$host.";port=".$port.";dbname=".$database;
         if (!(@self::$db = new PDO($dsn, $username, $password))) {
             throw new PDOException("The connect is unvaliable", 1);
             exit;

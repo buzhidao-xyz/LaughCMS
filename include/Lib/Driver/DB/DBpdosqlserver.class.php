@@ -26,12 +26,11 @@ class DBpdosqlserver extends DBDriver
     /************************************以下方法必须实现************************************/
 
     //连接数据库
-    public function _initConnect($host,$username,$password,$database)
+    public function _initConnect($host,$port,$username,$password,$database)
     {
         //pdo_sqlserver connect
-        $dsn = "sqlsrv:Server=(".$host.");Database=".$database;
-
-        if (!(@self::$db = new PDO($dsn, $username, $password))) {
+        $dsn = "sqlsrv:Server=".$host.",".$port.";Database=".$database;
+        if (!(@self::$db = new PDO($dsn, $username, $password, array(PDO::SQLSRV_ATTR_DIRECT_QUERY => true)))) {
             throw new PDOException("The connect is unvaliable", 1);
             exit;
         };

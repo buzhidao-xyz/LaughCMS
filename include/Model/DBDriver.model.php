@@ -21,6 +21,7 @@ class DBDriver implements DBDriver_Interface
      * 数据库连接信息
      */
     private $host;
+    private $port;
     private $username;
     private $password;
     private $database;
@@ -40,6 +41,7 @@ class DBDriver implements DBDriver_Interface
     {
         $this->setDBS();
         $this->setHost();
+        $this->setPort();
         $this->setUsername();
         $this->setPassword();
         $this->setDatabase();
@@ -76,6 +78,23 @@ class DBDriver implements DBDriver_Interface
 
             if (!trim($this->host)) {
                 throw new MyException("The DataBase Host can't be null", 1);
+                exit;
+            }
+        } catch (MyException $e) {
+            echo $e;
+        }
+    }
+
+    /**
+     * 设置连接字符串中的port值
+     */
+    private function setPort()
+    {
+        try {
+            $this->port = $this->dbs['port'];
+
+            if (!trim($this->port)) {
+                throw new MyException("The DataBase port can't be null", 1);
                 exit;
             }
         } catch (MyException $e) {
@@ -154,7 +173,7 @@ class DBDriver implements DBDriver_Interface
     private function connect()
     {
         try {
-            $this->_initConnect($this->host, $this->username, $this->password, $this->database);
+            $this->_initConnect($this->host, $this->port, $this->username, $this->password, $this->database);
         } catch(PDOException $e) {
             echo $e;
             die('DB Connect Error!');
