@@ -3,7 +3,8 @@
  * 数据库驱动基类
  * by wbq 2011-12-13
  * edit by buzhidao 2012-12-13
- * 提供读取配置并初始化连接数据库操作
+ * 提供读取配置并初始化连接数据库操作，内置部分PDO操作数据库方法，事务操作
+ * 只有方法名并直接返回true的方法 子驱动类必须实现
  */
 interface DBDriver_Interface
 {
@@ -166,6 +167,8 @@ class DBDriver implements DBDriver_Interface
 	{
 		return str_replace(self::$_tbf, self::$_prefix, $sql);
 	}
+
+    /************************************SQL对象分析************************************/
     
     /**
      * 获取orm映射字段值 如果ORM里面配置的key获取该配置的key 没有配置直接返回key
@@ -207,7 +210,7 @@ class DBDriver implements DBDriver_Interface
     }
     
     /**
-     * 设置要查询的字段
+     * 字段解析
      * @param $field(mixed)
      * 查询某个字段直接传字段名
      * 查询多个字段用,隔开或以数组形式传递参数
@@ -231,11 +234,63 @@ class DBDriver implements DBDriver_Interface
         return $this;
     }
 
+    /**
+     * where子句构造
+     * @param $where = array('field1'=>value1,'field2'=>valuw2,...,'or'=>array('field3'=>value3,'field4'=>value4,...))
+     *        between操作 array('field'=>array('between',array(value1,value2)))
+     * @param $op 操作符 AND/OR/BETWEEN
+     */
+    public function where($where,$op='')
+    {
+        if (!$where) return $this;
+
+        if (is_array($where) && !empty($where)) {
+            $whereArray = array();
+            foreach ($where as $k=>$v) {
+                if (is_array($v) && !empty($v)) {
+                    switch (strtolower($v[0])) {
+                        case 'in':
+                            $whereArray[] = " ".$this->orm($k)." IN(".implode(',',$v[1]).") ";
+                            break;
+                        case 'like':
+                            $whereArray[] = " ".$this->orm($k)." LIKE '".$v[1]."' ";
+                            break;
+                        default:
+                            $whereArray[] = " ".$this->orm($k)."='".$v."' ";
+                            break;
+                    }
+                } else {
+                    $whereArray[] = " ".$this->orm($k)."='".$v."' ";
+                }
+            }
+            $where = implode(" AND ",$whereArray);
+        }
+        $this->_where = " WHERE ".$where;
+
+        return $this;
+    }
+
+    /**
+     * 排序语句
+     * @param $field string 排序字段
+     * @param $orderway string ASC/DESC ASC 升序排列
+     */
+    public function order($field,$way='ASC')
+    {
+        if (!$field || !$way) return $this;
+
+        $this->_order = ' ORDER BY '.$this->orm($field).' '.strtoupper($way).' ';
+
+        return $this;
+    }
+
+    //sql语句处理之前要进行的操作
     protected function _before_sql($options)
     {
         $this->_parse_options($options);
     }
 
+    //结束sql语句处理之后要进行的操作
     protected function _after_sql()
     {
         $this->_field = '*';
@@ -246,9 +301,34 @@ class DBDriver implements DBDriver_Interface
         //$this->sql = null;
     }
 
+    //解析option选项值
     protected function _parse_options($options)
     {
 
+    }
+
+    /************************************增删改查ADUS************************************/
+
+    /**
+     * 执行一条sql
+     * @param sql语句
+     * @return 成功返回true 失败返回false
+     * 子类必须实现此方法
+     */
+    static public function Execute($sql)
+    {
+        return true;
+    }
+
+    /**
+     * 执行一条sql语句
+     * @param $sql 要执行的语句
+     */
+    public function exec($sql=null)
+    {
+        $sql = !empty($sql) ? $sql : $this->sql;
+        
+        return $this->Execute($sql);
     }
 
     /**
@@ -268,20 +348,179 @@ class DBDriver implements DBDriver_Interface
     }
 
     /**
-     * 执行一条sql语句
-     * @param $sql 要执行的语句
+     * insert插入语法
+     * @param $data(mixed)
+     * 插入一条记录到数据库
      */
-    public function exec($sql=null)
+    protected function insertOne($data)
     {
-        $sql = !empty($sql) ? $sql : $this->sql;
+        if (!is_array($data)) return false;
         
-        return $this->Execute($sql);
+        foreach ($data as $k=>$v) {
+            if (isset($keys)) {
+                $keys .= ",".$this->orm($k);
+                $values .= ",'".$v."'";
+            } else {
+                $keys = $this->orm($k);
+                $values = "'".$v."'";
+            }
+        }
+        
+        $this->sql = "INSERT INTO ".self::$_tbf.self::$_table." (".$keys.") VALUES (".$values.")";
+        if ($this->Execute($this->sql)) return $this->GetInsertID();
+        else return false;
+    }
+    
+    /**
+     * insert插入语法
+     * @param $data(mixed)
+     * 插入多条记录到数据库
+     */
+    public function insertAll($data)
+    {
+        if (!is_array($data)) return false;
+        
+        foreach ($data as $d) {
+            foreach ($d as $k=>$v) {
+                if (isset($keys)) {
+                    $keys .= ','.$this->orm($k);
+                    $values .= ",'".$v."'";
+                } else {
+                    $keys = $this->orm($k);
+                    $values = "'".$v."'";
+                }
+            }
+            
+            $key = " (".$keys.") ";
+            
+            if (isset($value)) {
+                $value .= ","." (".$values.") ";
+            } else {
+                $value = " (".$values.") ";
+            }
+            unset($keys); unset($values);
+        }
+        
+        $this->sql = "INSERT INTO ".self::$_tbf.self::$_table." ".$key." VALUES ".$value;
+
+        if ($this->Execute($this->sql)) return $this->GetInsertID();
+        else return false;
+    }
+    
+    /**
+     * 查询一条数据
+     * @param $options array 参数数组
+     */
+    public function find($options=array())
+    {
+        $this->_before_sql($options);
+        $this->sql = "SELECT ".$this->_field." FROM ".self::$_tbf.self::$_table." as a ".$this->_join.$this->_where.$this->_order.$this->_limit;
+        $this->_after_sql();
+        $return = $this->GetOne($this->sql);
+        return $return;
     }
 
-    public function getSql()
+    /**
+     * 查询多条数据
+     * @param $options array 参数数组
+     */
+    public function select($options=array())
     {
-        return $this->sql;
+        $this->_before_sql($options);
+        $this->sql = "SELECT ".$this->_field." FROM ".self::$_tbf.self::$_table." as a ".$this->_join.$this->_where.$this->_order.$this->_limit;
+        $this->_after_sql();
+        $return = $this->GetAll($this->sql);
+        return $return;
     }
+
+    /**
+     * 计算数据条数
+     */
+    public function count($options=array())
+    {
+        return true;
+    }
+
+    /**
+     * update更新sql操作
+     * @param $data(mixed) 要更新的字段的键值数组
+     */
+    public function update($data,$options=array())
+    {
+        return true;
+    }
+
+    /**
+     * delete删除操作
+     */
+    public function delete($options=array())
+    {
+        return true;
+    }
+
+    /**
+     * join字句
+     * @param $join 联合查询字符串 
+     * @param $flag 联合方式 0左连接 1右连接 默认0
+     */
+    public function join($join=null,$flag=0)
+    {
+        return true;
+    }
+
+    /**
+     * 查找数据
+     * @param $start int 数据结果的开始位置偏移 默认从0开始
+     * @param $length int 数据结果的长度 默认取1条数据
+     * @param $flag string 取范围关键字 top等 默认null
+     */
+    public function limit($start = 0, $length = 1, $flag = null)
+    {
+        return true;
+    }
+
+    /************************************pdo事务处理************************************/
+
+    //开始事务
+    static public function beginTransaction()
+    {
+        self::$db->beginTransaction();
+    }
+
+    //提交事务
+    static public function commitTransaction()
+    {
+        self::$db->commit();
+    }
+
+    //回滚事务
+    static public function rollBackTransaction()
+    {
+        self::$db->rollBack();
+    }
+    
+    /**
+     * 事务处理 update/delete
+     * @param 要执行的sql语句数组 多条sql事务处理
+     * @return 返回值 true/false
+     */
+    static public function Transaction($sql=array())
+    {
+        if (!is_array($sql) || empty($sql)) return false;
+        $sql = self::tablePR($sql);
+        
+        $this->beginTransaction();
+        foreach ($sql as $k=>$v) {
+            if (!self::$db->exec($sql)) {
+                $this->rollBackTransaction();
+                return false;
+            }
+        }
+        $this->commitTransaction();
+        return true;
+    }
+
+    /************************************DB收尾操作************************************/
 
 	/**
      * 关闭数据库连接
@@ -290,5 +529,11 @@ class DBDriver implements DBDriver_Interface
     {
 		self::$db = null;
 	}
+
+    //获取sql语句 用于打印输出调试
+    public function getSql()
+    {
+        return $this->sql;
+    }
 }
 ?>

@@ -22,11 +22,13 @@ class DBmysqli extends DBDriver
         parent::__construct();
     }
 
+    /************************************以下方法必须实现************************************/
+
     //连接数据库
     public function _initConnect($host,$username,$password,$database)
     {
         //mysqli connect
-        if (!(@self::$db = new mysqli($this->host, $this->username, $this->password, $this->database))) {
+        if (!(@self::$db = new mysqli($host, $username, $password, $database))) {
             throw new MyException("The connect is unvaliable", 1);
             exit;
         }
@@ -101,164 +103,25 @@ class DBmysqli extends DBDriver
     {
         return self::$db->insert_id;
     }
+
+    /************************************以上方法必须实现************************************/
     
-    /**
-     * 事务处理 update/delete
-     * @param 要执行的sql语句
-     * @return 返回值 true/false
-     */
-    static public function Transaction($sql)
+    //开始事务
+    static public function beginTransaction()
     {
-        $sql = self::tablePR($sql);
-
-        self::$db->autocommit(false);
-        self::$db->query($sql);
-        
-        if (self::$db->affected_rows) {
-            self::$db->commit();
-            self::$db->closeCommit();
-            return true;
-        } else {
-            self::$db->rollBack();
-            self::$db->closeCommit();
-            return false;
-        }
-    }
-    
-    static private function closeCommit()
-    {
-        self::$db->autocommit(true);
+        self::$db->autocommit(FALSE);
     }
 
-    /**
-     * insert插入语法
-     * @param $data(mixed)
-     * 插入一条记录到数据库
-     */
-    protected function insertOne($data)
+    //提交事务
+    static public function commitTransaction()
     {
-        if (!is_array($data)) return false;
-        
-        foreach ($data as $k=>$v) {
-            if (isset($keys)) {
-                $keys .= ",".$this->orm($k);
-                $values .= ",'".$v."'";
-            } else {
-                $keys = $this->orm($k);
-                $values = "'".$v."'";
-            }
-        }
-        
-        $this->sql = "INSERT INTO ".self::$_tbf.self::$_table." (".$keys.") VALUES (".$values.")";
-        if ($this->Execute($this->sql)) return $this->GetInsertID();
-        else return false;
-    }
-    
-    /**
-     * insert插入语法
-     * @param $data(mixed)
-     * 插入多条记录到数据库
-     */
-    public function insertAll($data)
-    {
-        if (!is_array($data)) return false;
-        
-        foreach ($data as $d) {
-            foreach ($d as $k=>$v) {
-                if (isset($keys)) {
-                    $keys .= ','.$this->orm($k);
-                    $values .= ",'".$v."'";
-                } else {
-                    $keys = $this->orm($k);
-                    $values = "'".$v."'";
-                }
-            }
-            
-            $key = " (".$keys.") ";
-            
-            if (isset($value)) {
-                $value .= ","." (".$values.") ";
-            } else {
-                $value = " (".$values.") ";
-            }
-            unset($keys); unset($values);
-        }
-        
-        $this->sql = "INSERT INTO ".self::$_tbf.self::$_table." ".$key." VALUES ".$value;
-
-        if ($this->Execute($this->sql)) return $this->GetInsertID();
-        else return false;
+        self::$db->commit();
     }
 
-    /**
-     * delete删除操作
-     */
-    public function delete($options=array())
+    //回滚事务
+    static public function rollBackTransaction()
     {
-        $this->_before_sql($options);
-        $this->sql = "DELETE FROM ".self::$_tbf.self::$_table." ".$this->_where.$this->_order.$this->_limit;
-        $this->_after_sql();
-        return $this->exec($this->sql);
-    }
-
-    /**
-     * update更新sql操作
-     * @param $data(mixed) 要更新的字段的键值数组
-     */
-    public function update($data,$options=array())
-    {
-        if (!is_array($data)) return false;
-        
-        foreach ($data as $k=>$v) {
-            if (isset($ups)) {
-                $ups .= " , ".$this->orm($k)."='".$v."' ";
-            } else {
-                $ups = $this->orm($k)."='".$v."' ";
-            }
-        }
-        
-        $this->_before_sql($options);
-        $this->sql = "UPDATE ".self::$_tbf.self::$_table." SET ".$ups.$this->_where;
-        $this->_after_sql();
-        return $this->exec();
-    }
-    
-    /**
-     * 设置要查询的字段
-     * @param $field(mixed)
-     * 查询某个字段直接传字段名
-     * 查询多个字段用,隔开或以数组形式传递参数
-     */
-    public function field($fields = '*')
-    {
-        if (!is_array($fields)) {
-            $fields = explode(',', $fields);
-        }
-        
-        foreach ($fields as $k=>$v) {
-            if (isset($field)) {
-                $field .= ','.$this->orm($v);
-            } else {
-                $field = strpos($v,'*') !== false ? $v : $this->orm($v);
-            }
-        }
-        
-        $this->_field = $field;
-
-        return $this;
-    }
-
-    /**
-     * 计算数据条数
-     */
-    public function count($options=array())
-    {
-        $this->_before_sql($options);
-        $this->sql = "SELECT COUNT(".$this->_field.") as la_num FROM ".self::$_tbf.self::$_table." as a ".$this->_where;
-        $this->_after_sql();
-        $data = $this->GetOne($this->sql);
-
-        return $data['la_num'];
+        self::$db->rollback();
     }
     
     /**
@@ -287,24 +150,50 @@ class DBmysqli extends DBDriver
         return $return;
     }
 
-    protected function _before_sql($options)
+    /**
+     * 计算数据条数
+     */
+    public function count($options=array())
     {
-        $this->_parse_options($options);
+        $this->_before_sql($options);
+        $this->sql = "SELECT COUNT(".$this->_field.") as la_num FROM ".self::$_tbf.self::$_table." as a ".$this->_join.$this->_where;
+        $this->_after_sql();
+        $data = $this->GetOne($this->sql);
+
+        return $data['la_num'];
     }
 
-    protected function _after_sql()
+    /**
+     * update更新sql操作
+     * @param $data(mixed) 要更新的字段的键值数组
+     */
+    public function update($data,$options=array())
     {
-        $this->_field = '*';
-        $this->_join = '';
-        $this->_where = '';
-        $this->_order = '';
-        $this->_limit = '';
-        //$this->sql = null;
+        if (!is_array($data)) return false;
+        
+        foreach ($data as $k=>$v) {
+            if (isset($ups)) {
+                $ups .= " , ".$this->orm($k)."='".$v."' ";
+            } else {
+                $ups = $this->orm($k)."='".$v."' ";
+            }
+        }
+        
+        $this->_before_sql($options);
+        $this->sql = "UPDATE ".self::$_tbf.self::$_table." SET ".$ups.$this->_where;
+        $this->_after_sql();
+        return $this->exec();
     }
 
-    protected function _parse_options($options)
+    /**
+     * delete删除操作
+     */
+    public function delete($options=array())
     {
-
+        $this->_before_sql($options);
+        $this->sql = "DELETE FROM ".self::$_tbf.self::$_table." ".$this->_where.$this->_order.$this->_limit;
+        $this->_after_sql();
+        return $this->exec($this->sql);
     }
         
     /**
@@ -327,6 +216,18 @@ class DBmysqli extends DBDriver
 
         $this->_join = $join;
 
+        return $this;
+    }
+    
+    /**
+     * 查找数据
+     * @param $start 数据结果的开始位置偏移 默认从0开始
+     * @param $length 数据结果的长度 默认取1条数据
+     */
+    public function limit($start = 0, $length = 1, $flag = null)
+    {
+        $this->_limit = " limit ".$start." , ".$length;
+        
         return $this;
     }
 
@@ -353,73 +254,5 @@ class DBmysqli extends DBDriver
         $this->sql = "SELECT ".$field.", MATCH(".$match.") AGAINST('".$value."' IN BOOLEAN MODE) AS score FROM ".self::$_tbf.self::$_table." WHERE MATCH(".$match.") AGAINST('".$value."' IN BOOLEAN MODE) ORDER BY score DESC ";
 
         return $this;
-    }
-
-    /**
-     * where子句构造
-     * @param $where = array('field1'=>value1,'field2'=>valuw2,...,'or'=>array('field3'=>value3,'field4'=>value4,...))
-     *        between操作 array('field'=>array('between',array(value1,value2)))
-     * @param $op 操作符 AND/OR/BETWEEN
-     */
-    public function where($where,$op='')
-    {
-        if (!$where) return $this;
-
-        if (is_array($where) && !empty($where)) {
-            $whereArray = array();
-            foreach ($where as $k=>$v) {
-                if ($v[0] == 'in') {
-                    $whereArray[] = " ".$this->orm($k)." IN(".implode(',',$v[1]).") ";
-                } else {
-                    $whereArray[] = " ".$this->orm($k)."='".$v."' ";
-                }
-            }
-            $where = implode(" AND ",$whereArray);
-        }
-        $this->_where = " WHERE ".$where;
-
-        return $this;
-    }
-
-    /**
-     * 排序语句
-     * @param $field string 排序字段
-     * @param $orderway string ASC/DESC ASC 升序排列
-     */
-    public function order($field,$way='ASC')
-    {
-        if (!$field || !$way) return $this;
-
-        $this->_order = ' ORDER BY '.$this->orm($field).' '.strtoupper($way).' ';
-
-        return $this;
-    }
-    
-    /**
-     * 查找数据
-     * @param $start 数据结果的开始位置偏移 默认从0开始
-     * @param $length 数据结果的长度 默认取1条数据
-     */
-    public function limit($start = 0, $length = 1)
-    {
-        $this->_limit = " limit ".$start." , ".$length;
-        
-        return $this;
-    }
-
-    /**
-     * 执行一条sql语句
-     * @param $sql 要执行的语句
-     */
-    public function exec($sql=null)
-    {
-        $sql = !empty($sql) ? $sql : $this->sql;
-        
-        return $this->Execute($sql);
-    }
-
-    public function getSql()
-    {
-        return $this->sql;
     }
 }

@@ -19,21 +19,23 @@ class DBpdosqlserver extends DBDriver
     //调用父类初始化数据库连接
     public function __construct()
     {
+        //select *,ROW_NUMBER() over (order by field) as ROW_NUMBER from table as t where t.row_number between m and n
         parent::__construct();
     }
+
+    /************************************以下方法必须实现************************************/
 
     //连接数据库
     public function _initConnect($host,$username,$password,$database)
     {
-        //pdo_mysql connect
-        $dsn = "mysql:host=".$host.";dbname=".$database;
+        //pdo_sqlserver connect
         $dsn = "sqlsrv:Server=(".$host.");Database=".$database;
 
         if (!(@self::$db = new PDO($dsn, $username, $password))) {
             throw new PDOException("The connect is unvaliable", 1);
             exit;
         };
-        self::Execute("SET NAMES UTF8");
+        // self::Execute("SET NAMES UTF8");
 
         //指定返回数据的格式化格式（带fieldname）
         self::$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_NAMED);
@@ -106,114 +108,56 @@ class DBpdosqlserver extends DBDriver
         return self::$db->lastInsertId();
     }
 
-    //开始事务
-    static public function beginTransaction()
-    {
-        self::$db->beginTransaction();
-    }
-
-    //提交事务
-    static public function commitTransaction()
-    {
-        self::$db->commit();
-    }
-
-    //回滚事务
-    static public function rollBackTransaction()
-    {
-        self::$db->rollBack();
-    }
+    /************************************以上方法必须实现************************************/
     
     /**
-     * 事务处理 update/delete
-     * @param 要执行的sql语句数组 多条sql事务处理
-     * @return 返回值 true/false
+     * 查询一条数据
+     * @param $options array 参数数组
      */
-    static public function Transaction($sql=array())
-    {
-        if (!is_array($sql) || empty($sql)) return false;
-        $sql = self::tablePR($sql);
-        
-        self::$db->beginTransaction();
-        foreach ($sql as $k=>$v) {
-            if (!self::$db->exec($sql)) {
-                self::$db->rollBack();
-                return false;
-            }
-        }
-        self::$db->commit();
-        return true;
-    }
-
-    /**
-     * insert插入语法
-     * @param $data(mixed)
-     * 插入一条记录到数据库
-     */
-    protected function insertOne($data)
-    {
-        if (!is_array($data)) return false;
-        
-        foreach ($data as $k=>$v) {
-            if (isset($keys)) {
-                $keys .= ",".$this->orm($k);
-                $values .= ",'".$v."'";
-            } else {
-                $keys = $this->orm($k);
-                $values = "'".$v."'";
-            }
-        }
-        
-        $this->sql = "INSERT INTO ".self::$_tbf.self::$_table." (".$keys.") VALUES (".$values.")";
-        if ($this->Execute($this->sql)) return $this->GetInsertID();
-        else return false;
-    }
-    
-    /**
-     * insert插入语法
-     * @param $data(mixed)
-     * 插入多条记录到数据库
-     */
-    public function insertAll($data)
-    {
-        if (!is_array($data)) return false;
-        
-        foreach ($data as $d) {
-            foreach ($d as $k=>$v) {
-                if (isset($keys)) {
-                    $keys .= ','.$this->orm($k);
-                    $values .= ",'".$v."'";
-                } else {
-                    $keys = $this->orm($k);
-                    $values = "'".$v."'";
-                }
-            }
-            
-            $key = " (".$keys.") ";
-            
-            if (isset($value)) {
-                $value .= ","." (".$values.") ";
-            } else {
-                $value = " (".$values.") ";
-            }
-            unset($keys); unset($values);
-        }
-        
-        $this->sql = "INSERT INTO ".self::$_tbf.self::$_table." ".$key." VALUES ".$value;
-
-        if ($this->Execute($this->sql)) return $this->GetInsertID();
-        else return false;
-    }
-
-    /**
-     * delete删除操作
-     */
-    public function delete($options=array())
+    public function find($options=array())
     {
         $this->_before_sql($options);
-        $this->sql = "DELETE FROM ".self::$_tbf.self::$_table." ".$this->_where.$this->_order.$this->_limit;
+        $this->sql = "SELECT TOP 1 ".$this->_field." FROM ".self::$_tbf.self::$_table." as a ".$this->_join.$this->_where.$this->_order;
         $this->_after_sql();
-        return $this->exec($this->sql);
+        $return = $this->GetOne($this->sql);
+        return $return;
+    }
+
+    /**
+     * 查询多条数据 用row_number()给结果加行号 where条件里row_number取行号区间的方法获取limit数据
+     * @param $options array 参数数组
+     */
+    public function select($options=array())
+    {
+        $this->_before_sql($options);
+
+        if ($this->_limit) {
+            if (!$this->_order) return array();
+
+            $this->_limit = $this->_where ? " AND ".$this->_limit : " WHERE ".$this->_limit;
+            $_temp_table = "SELECT *,ROW_NUMBER() OVER(".$this->_order.") AS ROW_NUMBER FROM ".self::$_tbf.self::$_table;
+        } else {
+            $_temp_table = self::$_tbf.self::$_table;
+        }
+        $this->sql = "SELECT ".$this->_field." FROM ".$_temp_table." as a ".$this->_join.$this->_where.$this->_limit;
+        
+        $this->_after_sql();
+
+        $return = $this->GetAll($this->sql);
+        return $return;
+    }
+
+    /**
+     * 计算数据条数
+     */
+    public function count($options=array())
+    {
+        $this->_before_sql($options);
+        $this->sql = "SELECT COUNT(".$this->_field.") as la_num FROM ".self::$_tbf.self::$_table." as a ".$this->_join.$this->_where;
+        $this->_after_sql();
+        $data = $this->GetOne($this->sql);
+
+        return $data['la_num'];
     }
 
     /**
@@ -239,44 +183,16 @@ class DBpdosqlserver extends DBDriver
     }
 
     /**
-     * 计算数据条数
+     * delete删除操作
      */
-    public function count($options=array())
+    public function delete($options=array())
     {
         $this->_before_sql($options);
-        $this->sql = "SELECT COUNT(".$this->_field.") as la_num FROM ".self::$_tbf.self::$_table." as a ".$this->_where;
+        $this->sql = "DELETE ".$this->_limit." FROM ".self::$_tbf.self::$_table." ".$this->_where.$this->_order;
         $this->_after_sql();
-        $data = $this->GetOne($this->sql);
-
-        return $data['la_num'];
+        return $this->exec($this->sql);
     }
     
-    /**
-     * 查询一条数据
-     * @param $options array 参数数组
-     */
-    public function find($options=array())
-    {
-        $this->_before_sql($options);
-        $this->sql = "SELECT ".$this->_field." FROM ".self::$_tbf.self::$_table." as a ".$this->_join.$this->_where.$this->_order.$this->_limit;
-        $this->_after_sql();
-        $return = $this->GetOne($this->sql);
-        return $return;
-    }
-
-    /**
-     * 查询多条数据
-     * @param $options array 参数数组
-     */
-    public function select($options=array())
-    {
-        $this->_before_sql($options);
-        $this->sql = "SELECT ".$this->_field." FROM ".self::$_tbf.self::$_table." as a ".$this->_join.$this->_where.$this->_order.$this->_limit;
-        $this->_after_sql();
-        $return = $this->GetAll($this->sql);
-        return $return;
-    }
-        
     /**
      * join字句
      * @param $join 联合查询字符串 
@@ -297,6 +213,22 @@ class DBpdosqlserver extends DBDriver
 
         $this->_join = $join;
 
+        return $this;
+    }
+    
+    /**
+     * 查找数据
+     * @param $start 数据结果的开始位置偏移 默认从0开始
+     * @param $length 数据结果的长度 默认取1条数据
+     */
+    public function limit($start = 0, $length = 1, $flag = null)
+    {
+        if ($flag == "top") {
+            $this->_limit = " TOP ".(int)$length." ";
+        } else {
+            $this->_limit = " (a.ROW_NUMBER BETWEEN ".((int)$start+1)." AND ".(int)$start+(int)$length.") ";
+        }
+        
         return $this;
     }
 
@@ -322,58 +254,6 @@ class DBpdosqlserver extends DBDriver
 
         $this->sql = "SELECT ".$field.", MATCH(".$match.") AGAINST('".$value."' IN BOOLEAN MODE) AS score FROM ".self::$_tbf.self::$_table." WHERE MATCH(".$match.") AGAINST('".$value."' IN BOOLEAN MODE) ORDER BY score DESC ";
 
-        return $this;
-    }
-
-    /**
-     * where子句构造
-     * @param $where = array('field1'=>value1,'field2'=>valuw2,...,'or'=>array('field3'=>value3,'field4'=>value4,...))
-     *        between操作 array('field'=>array('between',array(value1,value2)))
-     * @param $op 操作符 AND/OR/BETWEEN
-     */
-    public function where($where,$op='')
-    {
-        if (!$where) return $this;
-
-        if (is_array($where) && !empty($where)) {
-            $whereArray = array();
-            foreach ($where as $k=>$v) {
-                if ($v[0] == 'in') {
-                    $whereArray[] = " ".$this->orm($k)." IN(".implode(',',$v[1]).") ";
-                } else {
-                    $whereArray[] = " ".$this->orm($k)."='".$v."' ";
-                }
-            }
-            $where = implode(" AND ",$whereArray);
-        }
-        $this->_where = " WHERE ".$where;
-
-        return $this;
-    }
-
-    /**
-     * 排序语句
-     * @param $field string 排序字段
-     * @param $orderway string ASC/DESC ASC 升序排列
-     */
-    public function order($field,$way='ASC')
-    {
-        if (!$field || !$way) return $this;
-
-        $this->_order = ' ORDER BY '.$this->orm($field).' '.strtoupper($way).' ';
-
-        return $this;
-    }
-    
-    /**
-     * 查找数据
-     * @param $start 数据结果的开始位置偏移 默认从0开始
-     * @param $length 数据结果的长度 默认取1条数据
-     */
-    public function limit($start = 0, $length = 1)
-    {
-        $this->_limit = " limit ".$start." , ".$length;
-        
         return $this;
     }
 }
