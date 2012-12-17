@@ -168,20 +168,31 @@ class Node extends Base
                 $m = 0;
                 foreach ($return as $k0=>$v0) {
                     if ($v0['id'] == $v['id']) {
-                        $m = 1;
-                        break;
+                        if ($v0['access'] == 1) {
+                            $m = 1;
+                            break;
+                        } else {
+                            unset($return[$k0]);
+                        }
                     }
                 }
                 if (!$m) $return[] = $v;
-            } else {
+            }
+        }
+        foreach ($roleNode as $k=>$v) {
+            if ($v['pid'] != 0) {
                 foreach ($return as $k1=>$v1) {
                     if ($v['pid'] == $v1['id']) {
                         $m = 0;
                         if (array_key_exists('cnode', $return[$k1])) {
                             foreach ($return[$k1]['cnode'] as $k2=>$v2) {
                                 if ($v2['id'] == $v['id']) {
-                                    $m = 1;
-                                    break;
+                                    if ($v2['access'] == 1) {
+                                        $m = 1;
+                                        break;
+                                    } else {
+                                        unset($return[$k1]['cnode'][$k2]);
+                                    }
                                 }
                             }
                         }
@@ -191,7 +202,6 @@ class Node extends Base
                 }
             }
         }
-        
         return $return;
     }
 

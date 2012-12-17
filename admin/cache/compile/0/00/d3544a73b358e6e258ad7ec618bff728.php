@@ -21,7 +21,7 @@ var JS_APP = '/admin';
 <div id="loginCenter">
     <div id="loginasdf">
         <div id="loginCaption">
-            <img src="themes/blue/images/login_caption_logo.png" width="173" height="60" />
+            <!-- <img src="themes/blue/images/login_caption_logo.png" width="173" height="60" /> -->
         </div>
         <div id="loginPanel">
             <div class="login logTop">

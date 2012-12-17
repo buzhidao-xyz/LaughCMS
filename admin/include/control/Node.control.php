@@ -118,12 +118,12 @@ class NodeControl extends CommonControl
         $data = $this->_NODE->getNodeTree($this->_getGroupID());
 
         $nodeTree  = null;
-        $nodeTree .= '<select name="pid">';
+        // $nodeTree .= '<select name="pid">';
         $nodeTree .= '<option value="" >|-节点菜单</option>';
         foreach ($data as $v) {
             $nodeTree .= '<option value="'.$v['id'].'" >&nbsp;|-'.$v['title'].'</option>';
         }
-        $nodeTree .= '</select>';
+        // $nodeTree .= '</select>';
 
         return array('status'=>0, 'info'=>'', 'data'=>$nodeTree);
     }

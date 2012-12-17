@@ -90,7 +90,12 @@ var JS_APP = '/admin';
 				<span class="w120"><input type="checkbox" name="node[]" value="3,1"  node="pNode" flag="pNode2" class="checkbox" /></span>
 			</div>
 			<div class="ul childNode" ul=1>
-						</div>
+										<div flag=1 title="" li=1 class="li">
+					<span class="w656">日志列表</span>
+					<span class="w120"><input type="checkbox" name="node[]" value="13,0"  node="cNode" flag="cNode1" class="checkbox" /></span>
+					<span class="w120"><input type="checkbox" name="node[]" value="13,1"  node="cNode" flag="cNode2" class="checkbox" /></span>
+				</div>
+									</div>
 					<div title="节点组管理" li=1 class="li">
 				<span class="expand"></span>
 				<span class="w670">组管理</span>
@@ -140,14 +145,6 @@ var JS_APP = '/admin';
 					<span class="w120"><input type="checkbox" name="node[]" value="15,1"  node="cNode" flag="cNode2" class="checkbox" /></span>
 				</div>
 									</div>
-					<div title="" li=1 class="li">
-				<span class="expand"></span>
-				<span class="w670">日志列表</span>
-				<span class="w120"><input type="checkbox" name="node[]" value="13,0"  node="pNode" flag="pNode1" class="checkbox" /></span>
-				<span class="w120"><input type="checkbox" name="node[]" value="13,1"  node="pNode" flag="pNode2" class="checkbox" /></span>
-			</div>
-			<div class="ul childNode" ul=1>
-						</div>
 						</div>
 	</div>
 		<div ul=1 class="ul groupTree">

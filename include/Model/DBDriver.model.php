@@ -193,7 +193,7 @@ class DBDriver implements DBDriver_Interface
      * 获取orm映射字段值 如果ORM里面配置的key获取该配置的key 没有配置直接返回key
      * @param $key 字段值
      */
-    protected function orm($key)
+    protected function orm($key,$sepflag1="`",$sepflag2="`")
     {
         global $orm;
         if (!$key) return $orm[self::$_table];
@@ -204,9 +204,9 @@ class DBDriver implements DBDriver_Interface
             $alias = $pos !== false ? substr($key, $pos) : '';
             $key = $pos !== false ? substr($key, 0, $pos) : $key;
             if (!is_array($orm) || empty($orm) || !array_key_exists(self::$_table, $orm) || !array_key_exists($key, $orm[self::$_table])) {
-                return 'a.`'.$key.$alias.'`';
+                return 'a.'.$sepflag1.$key.$alias.$sepflag2;
             } else {
-                return 'a.`'.$orm[self::$_table][$key].$alias.'`';
+                return 'a.'.$sepflag1.$orm[self::$_table][$key].$alias.$sepflag2;
             }
         }
         if (preg_match("/^b\./", $key)) {
@@ -215,16 +215,16 @@ class DBDriver implements DBDriver_Interface
             $alias = $pos !== false ? substr($key, $pos) : '';
             $key = $pos !== false ? substr($key, 0, $pos) : $key;
             if (!is_array($orm) || empty($orm) || !array_key_exists(self::$_join_table, $orm) || !array_key_exists($key, $orm[self::$_join_table])) {
-                return 'a.`'.$key.$alias.'`';
+                return 'a.'.$sepflag1.$key.$alias.$sepflag2;
             } else {
-                return 'b.`'.$orm[self::$_join_table][$key].$alias.'`';
+                return 'b.'.$sepflag1.$orm[self::$_join_table][$key].$alias.$sepflag2;
             }
         }
 
         if (!is_array($orm) || empty($orm) || !array_key_exists(self::$_join_table, $orm) || !array_key_exists($key, $orm[self::$_join_table])) {
-            return '`'.$key.'`';
+            return $sepflag1.$key.$sepflag2;
         } else {
-            return '`'.$orm[self::$_table][$key].'`';
+            return $sepflag1.$orm[self::$_table][$key].$sepflag2;
         }
     }
     

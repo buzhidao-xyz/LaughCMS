@@ -108,6 +108,15 @@ class DBpdosqlserver extends DBDriver
     }
 
     /************************************以上方法必须实现************************************/
+
+    /**
+     * 获取orm映射字段值 如果ORM里面配置的key获取该配置的key 没有配置直接返回key
+     * @param $key 字段值
+     */
+    protected function orm($key)
+    {
+        return parent::orm($key,"[","]");
+    }
     
     /**
      * 查询一条数据
