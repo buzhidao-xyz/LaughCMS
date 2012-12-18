@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-12-17 17:25:41
+<?php /* Smarty version Smarty-3.1.12, created on 2012-12-18 11:16:22
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\public\menu.html" */ ?>
-<?php /*%%SmartyHeaderCode:2579850cee5154b6ae8-17568614%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2363250cfe006b4bc82-77153749%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '47600bccac123d62fb3cd96609925b71c797a27a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\public\\menu.html',
-      1 => 1355124804,
+      1 => 1355800375,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2579850cee5154b6ae8-17568614',
+  'nocache_hash' => '2363250cfe006b4bc82-77153749',
   'function' => 
   array (
   ),
@@ -23,9 +23,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50cee515550c11_42321772',
+  'unifunc' => 'content_50cfe006bd9fa4_21007468',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50cee515550c11_42321772')) {function content_50cee515550c11_42321772($_smarty_tpl) {?><!-- menu -->
+<?php if ($_valid && !is_callable('content_50cfe006bd9fa4_21007468')) {function content_50cfe006bd9fa4_21007468($_smarty_tpl) {?><!-- menu -->
 <div class="menu">
     <ul>
         <?php  $_smarty_tpl->tpl_vars['m'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['m']->_loop = false;
@@ -58,7 +58,7 @@ $_smarty_tpl->tpl_vars['m1']->_loop = true;
 <script type="text/javascript">
 $(document).ready(function (){
 	$("li.menulist:eq(0) > div.menutree1 > a").addClass("mius");
-	$("li.menulist:eq(0) > ul.menusub").css("display","block");
+	$("li.menulist > ul.menusub").css("display","block");
 	// $("li.menulist:eq(0) > ul.menusub > li:eq(1) > a").addClass('tabon');
 });
 </script><?php }} ?>

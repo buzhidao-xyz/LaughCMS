@@ -42,7 +42,7 @@ class NodeControl extends CommonControl
     private function _getGroupID()
     {
         $groupid = q('groupid') ? q('groupid') : 0;
-        if (!FilterHelper::C_int($groupid)) $this->ajaxReturn(1,'请选择组');
+        if ((int)$groupid !== 0 && !FilterHelper::C_int($groupid)) $this->ajaxReturn(1,'请选择组');
 
         return $groupid;
     }
@@ -115,7 +115,8 @@ class NodeControl extends CommonControl
      */
     public function nodeTree()
     {
-        $data = $this->_NODE->getNodeTree($this->_getGroupID());
+        $groupid = $this->_getGroupID();
+        $data = $groupid ? $this->_NODE->getNodeTree($groupid) : array();
 
         $nodeTree  = null;
         // $nodeTree .= '<select name="pid">';

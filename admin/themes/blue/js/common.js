@@ -85,7 +85,19 @@ $(document).ready(function() {
                     $(".upblock1").html('').css('display','none');
                 }
             }
-            m_d.insertvalue(param_array).open(e);
+            if ($("select[flag=nodepid]").length && that.attr('groupid')) {
+                var d = {
+                    c: 'Node',
+                    f: 'nodeTree',
+                    groupid: that.attr('groupid')
+                }
+                $.post(JS_APP+'/?s=AJAX', d, function(data){
+                    $("select[flag=nodepid]").html(data.data);
+                    m_d.insertvalue(param_array).open(e);
+                },'json')
+            } else {
+                m_d.insertvalue(param_array).open(e);
+            }
         });
         
         $('#modify_div_close').click(function(){
