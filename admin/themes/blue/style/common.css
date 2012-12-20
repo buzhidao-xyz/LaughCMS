@@ -52,7 +52,7 @@ div{
     font-size:13px;
     border:0px;
     text-align:left;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 ul, li {
     list-style:none;
@@ -117,6 +117,7 @@ input,textarea,select {
     color: #333333;
     padding: 2px;
     margin: 5px 0;
+    font-size: 13px;
     *margin-top: 7px;
 }
 select {

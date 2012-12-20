@@ -1,0 +1,28 @@
+{include file="public/control_top.html"}
+<div class="captitle"><h5>栏目列表【目前共有{if $total}{$total}{else}0{/if}条数据】</h5></div>
+<ul class="table_list_title">
+	<li class="table_list_l table_list_l200">栏目名称</li>
+	<li class="table_list_l table_list_l100">是/否显示</li>
+	{if $accessStatus == 1}
+	<li class="table_list_l table_list_l150" accessStatus={$accessStatus}>操作</li>
+	{/if}
+</ul>
+<div class="contentTableList">
+	{if $dataList}
+	{foreach $dataList as $d}
+	<ul class="table_list">
+		<li class="table_list_l table_list_l150">{$d.title}</li>
+		<li class="table_list_l table_list_l100">{if $d.isshow}显{else}隐{/if}</li>
+		{if $accessStatus == 1}
+		<li class="table_list_l table_list_l150" accessStatus={$accessStatus}>
+			<a href="javascript:;" name="modify" id="{$d.id}" title="{$d.title}" isshow="{$d.isshow}">修改</a>&nbsp;&nbsp;
+			<a delurl="__APP__/Group/deleteGroup" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+		</li>
+		{/if}
+	</ul>
+	{/foreach}
+	{else}
+	<ul class="table_list"><li class="table_list_center">空</li></ul>
+	{/if}
+</div>
+{include file="public/control_bottom.html"}

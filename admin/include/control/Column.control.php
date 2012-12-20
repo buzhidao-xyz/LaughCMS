@@ -13,6 +13,27 @@ class ColumnControl extends CommonControl
 	//主入口
 	public function index()
 	{
+		$this->assign("dataList",$dataList);
+		$this->display("Column/column.html");
+	}
 
+	//添加栏目
+	public function newColumn()
+	{
+		$this->assign("columnTree", $this->getColumnTree());
+		$this->display("Column/newcolumn.html");
+	}
+
+	//保存栏目信息
+	public function saveColumn()
+	{
+
+	}
+
+	public function getColumnTree()
+	{
+		$data = M("Column")->getColumn();
+
+		return $data;
 	}
 }

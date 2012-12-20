@@ -29,4 +29,13 @@ $(document).ready(function() {
     $("input[isSetNode=1]").click(function (){
         $("#nodeTree").slideDown(300);
     });
+
+    //选项卡切换
+    $(".shtabtitlec .shtabtitle").click(function (){
+        var index = $(this).index();
+        $(".shtabtitlec .shtabtitle").removeClass("shtabcurrent");
+        $(this).addClass("shtabcurrent");
+        $(".shtabcontentc .shtabcontent").removeClass("shtabcontentcurrent");
+        $(".shtabcontentc .shtabcontent:eq("+index+")").addClass("shtabcontentcurrent");
+    });
 });
