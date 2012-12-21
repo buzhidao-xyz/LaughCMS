@@ -25,7 +25,7 @@ define('APP_NAME', substr(APP_PATH, strripos(APP_PATH, '/')+1));
 define('__APP__', isset($_SERVER['SCRIPT_NAME']) ? str_replace('/index.php', '', $_SERVER['SCRIPT_NAME']) : __SELF__);
 
 //网站主项目目录相对网站服务器路径地址
-define('__APPM__', __HOST__.str_replace($cache['ADMIN_FILENAME'], "", __APP__));
+define('__APPM__', str_replace("/".$cache['ADMIN_FILENAME'], "", __HOST__.__APP__));
 
 //网站include主目录
 define('__INC__', ROOT_DIR.'/include');

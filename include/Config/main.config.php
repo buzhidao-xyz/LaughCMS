@@ -8,6 +8,8 @@ $config = array(
     'LOG_DIR'       => ROOT_DIR.'/data/log',
     'VENDOR'        => ROOT_DIR.'/include/vendor',
 
+    'UPLOAD_PATH'   => ROOT_DIR.'/Uploads',
+
     'COMPILE_LIFE_TIME' => 10, //编译文件有效时间 N秒
 
     'TEMPLATE_TYPE'    => 'Smarty',   //模版引擎类型 Laugh/Smarty

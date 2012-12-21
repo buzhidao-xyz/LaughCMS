@@ -39,47 +39,47 @@
         UEDITOR_HOME_URL : URL
 
         //图片上传配置区
-        ,imageUrl:URL+"php/imageUp.php"             //图片上传提交地址
-        ,imagePath:URL + "php/"                     //图片修正地址，引用了fixedImagePath,如有特殊需求，可自行配置
-       //,imageFieldName:"upfile"                   //图片数据的key,若此处修改，需要在后台对应文件修改对应参数
-        //,compressSide:0                            //等比压缩的基准，确定maxImageSideLength参数的参照对象。0为按照最长边，1为按照宽度，2为按照高度
-        //,maxImageSideLength:900                    //上传图片最大允许的边长，超过会自动等比缩放,不缩放就设置一个比较大的值，更多设置在image.html中
+        ,imageUrl:JS_APPM+"/index.php?s=File/upImage"    //图片上传提交地址
+        ,imagePath:""                     //图片修正地址，引用了fixedImagePath,如有特殊需求，可自行配置
+        //,imageFieldName:"upfile"                   //图片数据的key,若此处修改，需要在后台对应文件修改对应参数
+        //,compressSide:0                           //等比压缩的基准，确定maxImageSideLength参数的参照对象。0为按照最长边，1为按照宽度，2为按照高度
+        //,maxImageSideLength:900                   //上传图片最大允许的边长，超过会自动等比缩放,不缩放就设置一个比较大的值，更多设置在image.html中
 
         //涂鸦图片配置区
-        ,scrawlUrl:URL+"php/scrawlUp.php"           //涂鸦上传地址
-        ,scrawlPath:URL+"php/"                            //图片修正地址，同imagePath
+        ,scrawlUrl:JS_APPM+"/index.php?s=File/scrawlImage"           //涂鸦上传地址
+        ,scrawlPath:""                              //图片修正地址，同imagePath
 
         //附件上传配置区
-        ,fileUrl:URL+"php/fileUp.php"               //附件上传提交地址
-        ,filePath:URL + "php/"                   //附件修正地址，同imagePath
-        //,fileFieldName:"upfile"                    //附件提交的表单名，若此处修改，需要在后台对应文件修改对应参数
+        ,fileUrl:JS_APPM+"/index.php?s=File/upFile"               //附件上传提交地址
+        ,filePath:""                                //附件修正地址，同imagePath
+        //,fileFieldName:"upfile"                   //附件提交的表单名，若此处修改，需要在后台对应文件修改对应参数
 
-         //远程抓取配置区
-        //,catchRemoteImageEnable:true               //是否开启远程图片抓取,默认开启
-        ,catcherUrl:URL +"php/getRemoteImage.php"   //处理远程图片抓取的地址
-        ,catcherPath:URL + "php/"                  //图片修正地址，同imagePath
-        //,catchFieldName:"upfile"                   //提交到后台远程图片uri合集，若此处修改，需要在后台对应文件修改对应参数
+        //远程抓取配置区 - 不开启
+        ,catchRemoteImageEnable:false               //是否开启远程图片抓取,默认开启
+        ,catcherUrl:JS_APPM+"/index.php?s=File/getRemoteImage"   //处理远程图片抓取的地址
+        ,catcherPath:""                            //图片修正地址，同imagePath
+        //,catchFieldName:"upfile"                  //提交到后台远程图片uri合集，若此处修改，需要在后台对应文件修改对应参数
         //,separater:'ue_separate_ue'               //提交至后台的远程图片地址字符串分隔符
-        //,localDomain:[]                            //本地顶级域名，当开启远程图片抓取时，除此之外的所有其它域名下的图片都将被抓取到本地,默认不抓取127.0.0.1和localhost
+        //,localDomain:[]                           //本地顶级域名，当开启远程图片抓取时，除此之外的所有其它域名下的图片都将被抓取到本地,默认不抓取127.0.0.1和localhost
 
         //图片在线管理配置区
-        ,imageManagerUrl:URL + "php/imageManager.php"       //图片在线管理的处理地址
-        ,imageManagerPath:URL + "php/"                                    //图片修正地址，同imagePath
+        ,imageManagerUrl:JS_APPM+"/index.php?s=File/imageManager"       //图片在线管理的处理地址
+        ,imageManagerPath:""                                    //图片修正地址，同imagePath
 
         //屏幕截图配置区
-        ,snapscreenHost: '127.0.0.1'                                  //屏幕截图的server端文件所在的网站地址或者ip，请不要加http://
-        ,snapscreenServerUrl: URL +"php/imageUp.php" //屏幕截图的server端保存程序，UEditor的范例代码为“URL +"server/upload/php/snapImgUp.php"”
-        ,snapscreenPath: URL + "php/"
+        //,snapscreenHost: '127.0.0.1'                                  //屏幕截图的server端文件所在的网站地址或者ip，请不要加http://
+        //,snapscreenServerUrl: URL +"php/imageUp.php" //屏幕截图的server端保存程序，UEditor的范例代码为“URL +"server/upload/php/snapImgUp.php"”
+        //,snapscreenPath: URL + "php/"
         //,snapscreenServerPort: 80                                    //屏幕截图的server端端口
         //,snapscreenImgAlign: 'center'                                //截图的图片默认的排版方式
 
         //word转存配置区
-        ,wordImageUrl:URL + "php/imageUp.php"             //word转存提交地址
-        ,wordImagePath:URL + "php/"                       //
+        // ,wordImageUrl:URL + "php/imageUp.php"             //word转存提交地址
+        // ,wordImagePath:URL + "php/"                       //
         //,wordImageFieldName:"upfile"                     //word转存表单名若此处修改，需要在后台对应文件修改对应参数
 
         //获取视频数据的地址
-        ,getMovieUrl:URL+"php/getMovie.php"                   //视频数据获取地址
+        ,getMovieUrl:JS_APPM+"/index.php?s=File/getMovie"                   //视频数据获取地址
 
         //工具栏上的所有的功能按钮和下拉框，可以在new编辑器的实例时选择自己需要的从新定义
         ,toolbars:[
@@ -91,7 +91,7 @@
                 'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|','touppercase','tolowercase','|',
                 'link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright','imagecenter', '|',
                 'insertimage', 'scrawl', 'insertvideo','music','attachment', 'map', 'gmap', 'insertframe','highlightcode','pagebreak','template','background', '|',
-                'horizontal', 'date', 'time', 'spechars','snapscreen', 'wordimage', '|',
+                'horizontal', 'date', 'time', 'spechars', '|',
                 'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', '|',
                 'print', 'preview', 'searchreplace']
         ]
@@ -124,8 +124,8 @@
 
         ,initialContent:''    //初始化编辑器的内容,也可以通过textarea/script给值，看官网例子
 
-        ,initialFrameWidth:900  //初始化编辑器宽度,默认1000
-        ,initialFrameHeight:320  //初始化编辑器高度,默认320
+        // ,initialFrameWidth:1000  //初始化编辑器宽度,默认1000
+        // ,initialFrameHeight:320  //初始化编辑器高度,默认320
 
         //,autoClearinitialContent:true //是否自动清除编辑器初始内容，注意：如果focus属性设置为true,这个也为真，那么编辑器一上来就会触发导致初始化的内容看不到了
 

@@ -144,7 +144,7 @@ function strip_whitespace($content) {
 
 // 循环创建目录
 function mk_dir($dir, $mode = 0777) {
-    if (is_dir($dir) || @mkdir($dir, $mode))
+    if (is_dir($dir) || @mkdir($dir, $mode, true))
         return true;
     if (!mk_dir(dirname($dir), $mode))
         return false;

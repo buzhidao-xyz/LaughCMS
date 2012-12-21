@@ -12,6 +12,7 @@
 <title>管理中心</title>
 <script type="text/javascript">
 var JS_APP = '/admin';
+var JS_APPM = 'http://localhost:81';
 </script>
 </head>
 
@@ -24,7 +25,7 @@ var JS_APP = '/admin';
 	<div id="controlContent">
 <div class="formContainer" accessStatus=1>
 	<div class="formtitle"><h5>添加新栏目</h5></div>
-	<form name="newform" action="/admin/index.php?s=Column/saveColumn" method="post" id="addajaxform" class="newform">
+	<form name="newform" action="/admin/index.php?s=Column/saveColumn" enctype="multipart/form-data" method="post" class="newform">
 		<ul class="formbody">
 			<div class="shtabtitlec">
 				<div class="shtabtitle shtabcurrent"><a href="javascript:;"><span>常规内容</span></a></div>
@@ -94,7 +95,10 @@ var JS_APP = '/admin';
 <script src="themes/blue/UEditor/editor_config.js" type="text/javascript"></script>
 <script src="themes/blue/UEditor/editor_all_min.js" type="text/javascript"></script>
 <script type="text/javascript">
-    UE.getEditor('myEditor');
+    UE.getEditor('myEditor',{
+    	initialFrameWidth: 900,
+    	initialFrameHeight: 320
+    });
 </script>
     </div>
     <ul class="controlBottom">

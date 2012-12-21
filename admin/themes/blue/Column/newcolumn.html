@@ -2,7 +2,7 @@
 {if $accessStatus == 1}
 <div class="formContainer" accessStatus={$accessStatus}>
 	<div class="formtitle"><h5>添加新栏目</h5></div>
-	<form name="newform" action="__APP__/index.php?s=Column/saveColumn" method="post" id="addajaxform" class="newform">
+	<form name="newform" action="__APP__/index.php?s=Column/saveColumn" enctype="multipart/form-data" method="post" class="newform">
 		<ul class="formbody">
 			<div class="shtabtitlec">
 				<div class="shtabtitle shtabcurrent"><a href="javascript:;"><span>常规内容</span></a></div>
@@ -76,6 +76,9 @@
 <script src="themes/blue/UEditor/editor_config.js" type="text/javascript"></script>
 <script src="themes/blue/UEditor/editor_all_min.js" type="text/javascript"></script>
 <script type="text/javascript">
-    UE.getEditor('myEditor');
+    UE.getEditor('myEditor',{
+    	initialFrameWidth: 900,
+    	initialFrameHeight: 320
+    });
 </script>
 {include file="public/control_bottom.html"}

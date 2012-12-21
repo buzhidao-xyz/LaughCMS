@@ -581,7 +581,7 @@ form ul.formbody input.mauto {
   color: #FFFFFF;
 }
 .shtabcontentc .shtabcontent {
-  display: none;
+  /*display: none;*/
   overflow: hidden;
   padding-top: 10px;
 }

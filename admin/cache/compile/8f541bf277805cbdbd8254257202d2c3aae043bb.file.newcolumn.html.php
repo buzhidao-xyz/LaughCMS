@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-12-20 17:22:58
+<?php /* Smarty version Smarty-3.1.12, created on 2012-12-21 17:28:48
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Column\newcolumn.html" */ ?>
-<?php /*%%SmartyHeaderCode:1466850d2d8f22d4b20-95063939%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2425850d42bd0387720-88538355%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '8f541bf277805cbdbd8254257202d2c3aae043bb' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\Column\\newcolumn.html',
-      1 => 1355994659,
+      1 => 1356078253,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1466850d2d8f22d4b20-95063939',
+  'nocache_hash' => '2425850d42bd0387720-88538355',
   'function' => 
   array (
   ),
@@ -23,15 +23,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50d2d8f2351be3_56176321',
+  'unifunc' => 'content_50d42bd04080d8_20563524',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50d2d8f2351be3_56176321')) {function content_50d2d8f2351be3_56176321($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50d42bd04080d8_20563524')) {function content_50d42bd04080d8_20563524($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
 <div class="formContainer" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
 >
 	<div class="formtitle"><h5>添加新栏目</h5></div>
-	<form name="newform" action="__APP__/index.php?s=Column/saveColumn" method="post" id="addajaxform" class="newform">
+	<form name="newform" action="__APP__/index.php?s=Column/saveColumn" enctype="multipart/form-data" method="post" class="newform">
 		<ul class="formbody">
 			<div class="shtabtitlec">
 				<div class="shtabtitle shtabcurrent"><a href="javascript:;"><span>常规内容</span></a></div>
@@ -111,7 +111,10 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 <script src="themes/blue/UEditor/editor_config.js" type="text/javascript"></script>
 <script src="themes/blue/UEditor/editor_all_min.js" type="text/javascript"></script>
 <script type="text/javascript">
-    UE.getEditor('myEditor');
+    UE.getEditor('myEditor',{
+    	initialFrameWidth: 900,
+    	initialFrameHeight: 320
+    });
 </script>
 <?php echo $_smarty_tpl->getSubTemplate ("public/control_bottom.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 <?php }} ?>
