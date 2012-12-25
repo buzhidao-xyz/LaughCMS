@@ -12,6 +12,7 @@
 <title>管理中心</title>
 <script type="text/javascript">
 var JS_APP = '/admin';
+var JS_APPM = 'http://localhost:81';
 </script>
 </head>
 
@@ -181,9 +182,14 @@ var JS_APP = '/admin';
 			</div>
 			<div class="ul childNode" ul=1>
 										<div flag=1 title="" li=1 class="li">
-					<span class="w656">网站栏目</span>
+					<span class="w656">添加栏目</span>
 					<span class="w120"><input type="checkbox" name="node[]" value="17,0"  node="cNode" flag="cNode1" class="checkbox" /></span>
 					<span class="w120"><input type="checkbox" name="node[]" value="17,1"  node="cNode" flag="cNode2" class="checkbox" /></span>
+				</div>
+							<div flag=1 title="" li=1 class="li">
+					<span class="w656">网站栏目</span>
+					<span class="w120"><input type="checkbox" name="node[]" value="27,0"  node="cNode" flag="cNode1" class="checkbox" /></span>
+					<span class="w120"><input type="checkbox" name="node[]" value="27,1"  node="cNode" flag="cNode2" class="checkbox" /></span>
 				</div>
 									</div>
 					<div title="" li=1 class="li">

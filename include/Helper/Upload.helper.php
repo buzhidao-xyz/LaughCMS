@@ -301,7 +301,7 @@ class UploadHelper
         }
         
         $img = base64_decode($base64Data);
-        $this->fileName = time() . "_" .rand(1 , 10000) . ".png";
+        $this->fileName = time() . "_" . getRandStrs(6,2) . "_" . rand(1 , 10000) . ".png";
         $this->fullName = $this->savePath . '/' . $this->fileName;
         if (!file_put_contents($this->fullName, $img)) {
             $this->error(7);
@@ -451,14 +451,15 @@ class UploadHelper
         if (empty($rule)) {//没有定义命名规则，则保持文件名不变
             $saveName = $filename['name'];
         } else {
+            $imginfo = pathinfo($filename['name']);
             if(function_exists($rule)) {
+
                 //使用函数生成一个唯一文件标识号
-                $saveName = $rule()."_".$filename['name'];
+                $saveName = $rule()."_".getRandStrs(6,2)."_".rand(1,10000).'.'.$imginfo['extension'];
             } else {
                 //使用给定的文件名作为标识号
                 //$saveName = $rule."_".$filename['name'];
-                $imginfo = pathinfo($filename['name']);
-                $saveName = $rule.'.'.$imginfo['extension'];
+                $saveName = $rule."_".getRandStrs(6,2)."_".rand(1,10000).'.'.$imginfo['extension'];
             }
         }
         if ($this->autoSub) {

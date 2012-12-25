@@ -65,6 +65,7 @@
         //图片在线管理配置区
         ,imageManagerUrl:JS_APPM+"/index.php?s=File/imageManager"       //图片在线管理的处理地址
         ,imageManagerPath:""                                    //图片修正地址，同imagePath
+        ,separater:'ue_separate_ue'                 //提交至后台的远程图片地址字符串分隔符
 
         //屏幕截图配置区
         //,snapscreenHost: '127.0.0.1'                                  //屏幕截图的server端文件所在的网站地址或者ip，请不要加http://
@@ -90,7 +91,7 @@
                 'directionalityltr', 'directionalityrtl', 'indent', '|',
                 'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|','touppercase','tolowercase','|',
                 'link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright','imagecenter', '|',
-                'insertimage', 'scrawl', 'insertvideo','music','attachment', 'map', 'gmap', 'insertframe','highlightcode','pagebreak','template','background', '|',
+                'insertimage', 'scrawl', 'insertvideo','music','attachment', 'map', 'gmap','highlightcode','pagebreak','|','template','background', '|',
                 'horizontal', 'date', 'time', 'spechars', '|',
                 'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', '|',
                 'print', 'preview', 'searchreplace']
@@ -278,7 +279,7 @@
 
         //autoHeightEnabled
         // 是否自动长高,默认true
-        //,autoHeightEnabled:true
+        ,autoHeightEnabled:false
 
         //scaleEnabled
         //是否可以拉伸长高,默认true(当开启时，自动长高失效)

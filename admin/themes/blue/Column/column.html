@@ -1,28 +1,41 @@
 {include file="public/control_top.html"}
-<div class="captitle"><h5>栏目列表【目前共有{if $total}{$total}{else}0{/if}条数据】</h5></div>
-<ul class="table_list_title">
-	<li class="table_list_l table_list_l200">栏目名称</li>
-	<li class="table_list_l table_list_l100">是/否显示</li>
-	{if $accessStatus == 1}
-	<li class="table_list_l table_list_l150" accessStatus={$accessStatus}>操作</li>
-	{/if}
-</ul>
-<div class="contentTableList">
-	{if $dataList}
-	{foreach $dataList as $d}
-	<ul class="table_list">
-		<li class="table_list_l table_list_l150">{$d.title}</li>
-		<li class="table_list_l table_list_l100">{if $d.isshow}显{else}隐{/if}</li>
-		{if $accessStatus == 1}
-		<li class="table_list_l table_list_l150" accessStatus={$accessStatus}>
-			<a href="javascript:;" name="modify" id="{$d.id}" title="{$d.title}" isshow="{$d.isshow}">修改</a>&nbsp;&nbsp;
-			<a delurl="__APP__/Group/deleteGroup" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
-		</li>
+<div class="captitle"><h5>栏目列表</h5></div>
+<div id="columnList">
+	<div class="ul columnListTitle">
+		<div class="li columnListd700" flag="columnListTitle" style="text-indent:0;">栏目名称</div>
+		<div class="li columnListd300" flag="columnListTitle">操作</div>
+	</div>
+	<div class="ul columnListTable">
+		{if $dataList}
+		{foreach $dataList as $d}
+		<div class="ul columnlistd">
+			<div class="li columnplus" columnid="{$d.id}"></div>
+			<div class="li columnListd700" flag="columnTableList">{$d.columnname}{if $d.isshow==1}<font color="green"></font>{else}<font color="red">[隐]</font>{/if}</div>
+			<div class="li columnListd300" flag="columnTableList">
+				<a href="javascript:;">预览</a> |
+				<a href="javascript:;">栏目文档</a> |
+				<a href="javascript:;">增加子栏目</a> |
+				<a href="javascript:;">编辑</a> |
+				<a href="javascript:;">删除</a>
+			</div>
+		</div>
+		<div class="ul columnSubList">
+		</div>
+		{/foreach}
 		{/if}
-	</ul>
-	{/foreach}
-	{else}
-	<ul class="table_list"><li class="table_list_center">空</li></ul>
-	{/if}
+	</div>
+	<div class="columnList">
+	</div>
 </div>
+<link rel="stylesheet" type="text/css" href="themes/blue/style/column.css" media="screen" />
+<script type="text/javascript">
+$(document).ready(function(){
+	var column = function (){
+		var columnObj = {
+			columnplus: $("#columnList .columnListTable .columnlistd div.columnplus"),
+			columnmius: $("#columnList .columnListTable .columnlistd div.columnmius"),
+		}
+	}
+});
+</script>
 {include file="public/control_bottom.html"}

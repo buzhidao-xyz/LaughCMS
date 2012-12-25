@@ -12,7 +12,7 @@
 <title>管理中心</title>
 <script type="text/javascript">
 var JS_APP = '/admin';
-var JS_APPM = 'http://localhost:81/admin';
+var JS_APPM = 'http://localhost:81';
 </script>
 </head>
 
@@ -26,7 +26,7 @@ var JS_APPM = 'http://localhost:81/admin';
 </div>
 <div class="headerNav">
     <div class="uinfo">
-        您好 , admin [ <a href="/admin/index.php?s=index/logout">退出</a> ] | <a href="javascript:;">系统设置</a> | <a href="javascript:;">参数设置</a>
+        您好 , admin [ <a href="/admin/index.php?s=index/logout">退出</a> ] | <a href="/admin/index.php?s=index">系统主页</a> | <a href="http://localhost:81/index.php?s=index" target="_blank">网站主页</a> | <a href="javascript:;">系统设置</a>
     </div>
     <div class="nav">
         <ul class="hmenu">

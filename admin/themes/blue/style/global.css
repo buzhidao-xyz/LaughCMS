@@ -209,6 +209,9 @@
 .lineTop {
     border-top: 1px solid #D4D4D4;
 }
+.lineBottom {
+    border-top: 1px solid #1D3647;
+}
 input.w50 {
   width: 50px;
 }
@@ -581,7 +584,7 @@ form ul.formbody input.mauto {
   color: #FFFFFF;
 }
 .shtabcontentc .shtabcontent {
-  /*display: none;*/
+  display: none;
   overflow: hidden;
   padding-top: 10px;
 }

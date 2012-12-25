@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-12-21 15:32:11
+<?php /* Smarty version Smarty-3.1.12, created on 2012-12-25 17:21:27
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\public\header.html" */ ?>
-<?php /*%%SmartyHeaderCode:1744250d4107b641527-16840090%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1947050d970170f95d0-85553562%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '9e278d96bf2b610b0f94f8ce98e539f23ffb90ac' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\public\\header.html',
-      1 => 1355103794,
+      1 => 1356398828,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1744250d4107b641527-16840090',
+  'nocache_hash' => '1947050d970170f95d0-85553562',
   'function' => 
   array (
   ),
@@ -23,16 +23,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50d4107b747ff5_66299656',
+  'unifunc' => 'content_50d9701713d391_85203378',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50d4107b747ff5_66299656')) {function content_50d4107b747ff5_66299656($_smarty_tpl) {?><!-- header -->
+<?php if ($_valid && !is_callable('content_50d9701713d391_85203378')) {function content_50d9701713d391_85203378($_smarty_tpl) {?><!-- header -->
 <div class="logo">
     <h1>管理中心</h1>
 </div>
 <div class="headerNav">
     <div class="uinfo">
         您好 , <?php echo $_smarty_tpl->tpl_vars['userInfo']->value['username'];?>
- [ <a href="__APP__/index.php?s=index/logout">退出</a> ] | <a href="javascript:;">系统设置</a> | <a href="javascript:;">参数设置</a>
+ [ <a href="__APP__/index.php?s=index/logout">退出</a> ] | <a href="__APP__/index.php?s=index">系统主页</a> | <a href="__APPM__/index.php?s=index" target="_blank">网站主页</a> | <a href="javascript:;">系统设置</a>
     </div>
     <div class="nav">
         <ul class="hmenu">

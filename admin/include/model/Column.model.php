@@ -11,9 +11,10 @@ class Column extends Base
 	}
 
 	//添加栏目
-	public function addColumn()
+	public function addColumn($data=array())
 	{
-
+		if (!is_array($data) || empty($data)) return false;
+		return T("Column")->add($data);
 	}
 
 	/**
@@ -24,6 +25,25 @@ class Column extends Base
 	{
 		$where = array();
 		if ($columnid) $where['id'] = is_array($columnid) ? array("in", $columnid) : $columnid;
+
+		$data = T("Column")->where($where)->select();
+
+		return $data;
+	}
+
+	//获取顶级栏目
+	public function getTopColumn()
+	{
+		$data = T("Column")->where(array("topid"=>0))->select();
+
+		return $data;
+	}
+
+	//获取子栏目
+	public function getSubColumn($columnid = null)
+	{
+		$where = array();
+		if ($columnid) $where['parentid'] = is_array($columnid) ? array("in", $columnid) : $columnid;
 
 		$data = T("Column")->where($where)->select();
 

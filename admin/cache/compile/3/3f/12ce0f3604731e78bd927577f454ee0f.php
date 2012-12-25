@@ -12,6 +12,7 @@
 <title>管理中心</title>
 <script type="text/javascript">
 var JS_APP = '/admin';
+var JS_APPM = 'http://localhost:81';
 </script>
 </head>
 

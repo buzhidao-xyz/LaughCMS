@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-12-21 17:28:48
+<?php /* Smarty version Smarty-3.1.12, created on 2012-12-25 14:45:24
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Column\newcolumn.html" */ ?>
-<?php /*%%SmartyHeaderCode:2425850d42bd0387720-88538355%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1737850d94b84073ec0-30302730%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '8f541bf277805cbdbd8254257202d2c3aae043bb' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\Column\\newcolumn.html',
-      1 => 1356078253,
+      1 => 1356415102,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2425850d42bd0387720-88538355',
+  'nocache_hash' => '1737850d94b84073ec0-30302730',
   'function' => 
   array (
   ),
@@ -19,19 +19,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'accessStatus' => 0,
     'columnTree' => 0,
-    'd' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50d42bd04080d8_20563524',
+  'unifunc' => 'content_50d94b840dad70_78969932',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50d42bd04080d8_20563524')) {function content_50d42bd04080d8_20563524($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50d94b840dad70_78969932')) {function content_50d94b840dad70_78969932($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
 <div class="formContainer" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
 >
 	<div class="formtitle"><h5>添加新栏目</h5></div>
-	<form name="newform" action="__APP__/index.php?s=Column/saveColumn" enctype="multipart/form-data" method="post" class="newform">
+	<form name="newcolumnform" action="__APP__/index.php?s=Column/saveColumn" enctype="multipart/form-data" method="post" class="newform">
 		<ul class="formbody">
 			<div class="shtabtitlec">
 				<div class="shtabtitle shtabcurrent"><a href="javascript:;"><span>常规内容</span></a></div>
@@ -42,22 +41,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<div class="shtabcontent shtabcontentcurrent">
 				<li class="formblock">
 					<span>上级栏目: </span>
-					<select id="select" name="parentid" style="width:150px;">
-						<option value="">|-栏目列表</option>
-						<?php  $_smarty_tpl->tpl_vars['d'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['d']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['columnTree']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['d']->key => $_smarty_tpl->tpl_vars['d']->value){
-$_smarty_tpl->tpl_vars['d']->_loop = true;
-?>
-						<option value="<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
-">&nbsp;|-<?php echo $_smarty_tpl->tpl_vars['d']->value['columnname'];?>
-</option>
-						<?php } ?>
+					<select id="select" name="parentid" style="width:230px;">
+						<?php echo $_smarty_tpl->tpl_vars['columnTree']->value;?>
+
 					</select>
 				</li>
 				<li class="formblock">
 					<span>栏目名称:</span>
-					<input type="text" name="columnname" value="" class="input w150" />
+					<input type="text" name="columnname" value="" class="input w200" />
 				</li>
 				<li class="formblock">
 					<span>排列顺序:</span>
@@ -66,9 +57,9 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 				<li class="formautoblock">
 					<span>栏目属性:</span>
 					<div class="item_listh fleft">
-						<label style="float:none;"><input type="radio" name="isshow" value="1" class="radio" checked="checked" />最终列表栏目（允许在本栏目发布文档，并生成文档列表） </label>
-						<label style="float:none;"><input type="radio" name="isshow" value="0" class="radio" />频道封面（栏目本身不允许发布文档） </label>
-						<label style="float:none;"><input type="radio" name="isshow" value="0" class="radio" />外部连接（在"文件保存目录"处填写网址） </label>
+						<label style="float:none;"><input type="radio" name="columntype" value="1" class="radio" checked="checked" />最终列表栏目（允许在本栏目发布文档，并生成文档列表） </label>
+						<label style="float:none;"><input type="radio" name="columntype" value="2" class="radio" />频道封面（栏目本身不允许发布文档） </label>
+						<label style="float:none;"><input type="radio" name="columntype" value="3" class="radio" />外部连接（在"文件保存目录"处填写网址） </label>
 					</div>
 				</li>
 				<li class="formblock">
@@ -114,6 +105,18 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
     UE.getEditor('myEditor',{
     	initialFrameWidth: 900,
     	initialFrameHeight: 320
+    });
+    $("form[name=newcolumnform]").submit(function(){
+    	var columnname = $(this).find("input[name=columnname]").val();
+    	if (!columnname) {
+    		alert("请填写栏目名称!");
+    		return false;
+    	}
+    	var sortrank = $(this).find("input[name=sortrank]").val();
+    	if (!sortrank) {
+    		alert("请填写栏目排序位置!");
+    		return false;
+    	}
     });
 </script>
 <?php echo $_smarty_tpl->getSubTemplate ("public/control_bottom.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>

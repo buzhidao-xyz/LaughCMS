@@ -25,6 +25,20 @@ class FileControl extends CommonControl
         echo json_encode($return); exit;
     }
 
+    //文件上传返回
+    protected function fileUploadReturn($url=null,$fileType='',$original='',$state="SUCCESS")
+    {
+        $return = array(
+            'url'      => $url,
+            'fileType' => $fileType,
+            'original' => $original,
+            'state'    => $state
+        );
+
+        echo json_encode($return); exit;
+    }
+
+	//返回上传文件存放路径
     private function makeSavePath($folderpath=null)
     {
     	return C("UPLOAD_PATH")."/".$folderpath."/".date("Ym/d/");
@@ -74,4 +88,72 @@ class FileControl extends CommonControl
 			}
 	    }
 	}
+
+	//上传附件处理
+	public function upFile()
+	{
+		$upload = new UploadHelper();
+		$upload->savePath =  $this->makeSavePath("File");
+
+		if(!$upload->upload()) {
+			$this->fileUploadReturn("","","",$upload->getErrorMsg());
+		} else {
+			$info = $upload->getUploadFileInfo();
+			$url = str_replace(ROOT_DIR, "", $info[0]['savepath'].$info[0]['savename']);
+			$this->fileUploadReturn(__APP__.$url,".".$info[0]['extension'],$info[0]['name']);
+		}
+	}
+
+	//获取视频
+	public function getMovie()
+	{
+		error_reporting(E_ERROR|E_WARNING);
+	    $key = htmlspecialchars($_POST["searchKey"]);
+	    $type = htmlspecialchars($_POST["videoType"]);
+	    $html = file_get_contents('http://api.tudou.com/v3/gw?method=item.search&appKey=myKey&format=json&kw='.$key.'&pageNo=1&pageSize=20&channelId='.$type.'&inDays=7&media=v&sort=s');
+	    echo $html;
+	}
+
+	//图片管理器
+	public function imageManager()
+	{
+	    //最好使用缩略图地址，否则当网速慢时可能会造成严重的延时
+	    $path = C("UPLOAD_PATH");
+	    $action = htmlspecialchars($_POST["action"]);
+	    if ($action == "get") {
+	        $files = $this->getfiles($path);
+	        if (!$files) return;
+	        rsort($files,SORT_STRING);
+	        $str = "";
+	        foreach ( $files as $file ) {
+	            $str .= $file."ue_separate_ue";
+	        }
+	        echo $str;
+	    }
+	}
+
+	/**
+     * 遍历获取目录下的指定类型的文件
+     * @param $path
+     * @param array $files
+     * @return array
+     */
+    private function getfiles( $path , &$files = array() )
+    {
+        if ( !is_dir( $path ) ) return null;
+        $handle = opendir( $path );
+        while ( false !== ( $file = readdir( $handle ) ) ) {
+            if ( $file != '.' && $file != '..' ) {
+                $path2 = $path . '/' . $file;
+                if ( is_dir( $path2 ) ) {
+                    $this->getfiles( $path2 , $files );
+                } else {
+                    if ( preg_match( "/\.(gif|jpeg|jpg|png|bmp)$/i" , $file ) ) {
+                        $files[] = str_replace(ROOT_DIR, "", $path2);
+                    }
+                }
+            }
+        }
+        return $files;
+    }
 }

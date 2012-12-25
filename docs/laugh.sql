@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2012-12-17 17:30:41
+Date: 2012-12-25 17:26:10
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,7 +37,7 @@ CREATE TABLE `la_admin` (
 -- ----------------------------
 -- Records of la_admin
 -- ----------------------------
-INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1355736339', '2130706433', '71', '1');
+INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1356427286', '2130706433', '77', '1');
 INSERT INTO `la_admin` VALUES ('2', 'luochuan', '624879b3fff70462132a21eb1cd8eb75', 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '1355368421', '2130706433', '12', '0');
 
 -- ----------------------------
@@ -188,6 +188,37 @@ CREATE TABLE `la_class` (
 -- ----------------------------
 
 -- ----------------------------
+-- Table structure for `la_column`
+-- ----------------------------
+DROP TABLE IF EXISTS `la_column`;
+CREATE TABLE `la_column` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `columnname` varchar(50) NOT NULL,
+  `parentid` int(11) NOT NULL DEFAULT '0',
+  `topid` int(11) NOT NULL,
+  `columntype` tinyint(1) DEFAULT '1' COMMENT '栏目类型123',
+  `columnmodel` int(3) DEFAULT NULL COMMENT '栏目内容模型',
+  `columnpath` varchar(100) DEFAULT NULL,
+  `sortrank` int(4) NOT NULL DEFAULT '0' COMMENT '排序位置',
+  `title` varchar(100) DEFAULT NULL COMMENT '标题',
+  `keyword` varchar(1000) DEFAULT NULL COMMENT '关键字',
+  `description` varchar(3000) DEFAULT NULL COMMENT '描述',
+  `content` text,
+  `isshow` tinyint(1) NOT NULL DEFAULT '1' COMMENT '0隐藏1显示',
+  `createtime` int(10) NOT NULL,
+  `updatetime` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of la_column
+-- ----------------------------
+INSERT INTO `la_column` VALUES ('1', '栏目1', '0', '0', '1', null, null, '1', '栏目1', '栏目1', '栏目1', '&lt;p&gt;栏目1&lt;br /&gt;&lt;/p&gt;', '1', '1356402068', '1356402068');
+INSERT INTO `la_column` VALUES ('2', '子栏目1', '1', '1', '1', null, null, '1', '', '', '', '&lt;p&gt;&lt;img src=&quot;/Uploads/Image/201212/25/1356405476_fzagmz_6513.jpg&quot; style=&quot;float:none;&quot; title=&quot;震撼！精选立体设计壁纸.jpg&quot; /&gt;&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/Uploads/Image/201212/25/1356405476_f9blnw_6858.JPG&quot; style=&quot;float:none;&quot; title=&quot;未命名1231.JPG&quot; /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;', '1', '1356405490', '1356405490');
+INSERT INTO `la_column` VALUES ('3', '子子栏目1', '2', '1', '1', null, null, '1', '', '', '', '&lt;p&gt;子子&lt;strong&gt;&lt;img src=&quot;/Uploads/Scrawl/201212/25/1356406180_tkbjyl_4121.png&quot; /&gt;&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;', '1', '1356406231', '1356406231');
+INSERT INTO `la_column` VALUES ('4', '栏目2', '0', '0', '1', null, null, '2', '', '', '', '&lt;p&gt;栏目2&lt;br /&gt;&lt;/p&gt;', '1', '1356414942', '1356414942');
+
+-- ----------------------------
 -- Table structure for `la_group`
 -- ----------------------------
 DROP TABLE IF EXISTS `la_group`;
@@ -231,7 +262,7 @@ CREATE TABLE `la_node` (
   PRIMARY KEY (`id`),
   KEY `level` (`level`),
   KEY `pid` (`pid`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_node
@@ -251,7 +282,7 @@ INSERT INTO `la_node` VALUES ('13', '日志列表', '', 'Log', 'Index', '0', '3'
 INSERT INTO `la_node` VALUES ('14', '新管理员', '', 'Admin', 'newAdmin', '0', '6', '0', '0', '1352858914', '0', '1');
 INSERT INTO `la_node` VALUES ('15', '管理员列表', '', 'Admin', 'adminList', '0', '6', '0', '0', '1352944271', '0', '1');
 INSERT INTO `la_node` VALUES ('16', '栏目管理', '管理网站栏目', '', '', '0', '0', '0', '3', '1353313113', '0', '1');
-INSERT INTO `la_node` VALUES ('17', '网站栏目', '', 'Column', 'index', '0', '16', '0', '0', '1353313186', '0', '1');
+INSERT INTO `la_node` VALUES ('17', '添加栏目', '', 'Column', 'newColumn', '0', '16', '0', '0', '1353313186', '0', '1');
 INSERT INTO `la_node` VALUES ('18', '文档管理', '', '', '', '0', '0', '0', '3', '1353316137', '0', '1');
 INSERT INTO `la_node` VALUES ('19', '发布新文档', '', 'Article', 'newArticle', '0', '18', '0', '0', '1353316212', '0', '1');
 INSERT INTO `la_node` VALUES ('20', '自动更新', '', '', '', '0', '0', '0', '4', '1353316369', '0', '1');
@@ -261,6 +292,7 @@ INSERT INTO `la_node` VALUES ('25', '基本设置', '', '', '', '0', '0', '0', '
 INSERT INTO `la_node` VALUES ('26', '数据库', '', '', '', '0', '0', '0', '6', '1353316597', '0', '1');
 INSERT INTO `la_node` VALUES ('23', '辅助插件', '', '', '', '0', '0', '0', '5', '1353316622', '0', '1');
 INSERT INTO `la_node` VALUES ('24', '文件管理器', '', 'FileManage', 'index', '0', '23', '0', '0', '1353316736', '0', '1');
+INSERT INTO `la_node` VALUES ('27', '网站栏目', '', 'Column', 'index', '0', '16', null, '0', '1355898117', '1355898117', '1');
 
 -- ----------------------------
 -- Table structure for `la_role`
