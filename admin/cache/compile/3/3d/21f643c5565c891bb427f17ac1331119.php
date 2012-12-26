@@ -31,31 +31,33 @@ var JS_APPM = 'http://localhost:81';
 	</div>
 	<div class="ul columnListTable">
 						<div class="ul columnlistd">
-			<div class="li columnplus" columnid="1"></div>
-			<div class="li columnListd700" flag="columnTableList">栏目1<font color="green"></font></div>
+			<div class="li columnplusmius columnplus" columnid="1"></div>
+			<div class="li columnListd700" flag="columnTableList">
+				<a href="/admin/index.php?s=Column/columnContent">栏目1</a>
+				<font color="green"></font>			</div>
 			<div class="li columnListd300" flag="columnTableList">
 				<a href="javascript:;">预览</a> |
 				<a href="javascript:;">栏目文档</a> |
 				<a href="javascript:;">增加子栏目</a> |
 				<a href="javascript:;">编辑</a> |
-				<a href="javascript:;">删除</a>
+				<a delurl="/admin/index.php?s=Column/deleteColumn&columnid=1" href="javascript:;" name="del" msg="确定删除该栏目吗？">删除</a>
 			</div>
 		</div>
-		<div class="ul columnSubList">
-		</div>
+		<div class="ul columnSubList"></div>
 				<div class="ul columnlistd">
-			<div class="li columnplus" columnid="4"></div>
-			<div class="li columnListd700" flag="columnTableList">栏目2<font color="green"></font></div>
+			<div class="li columnplusmius columnplus" columnid="4"></div>
+			<div class="li columnListd700" flag="columnTableList">
+				<a href="/admin/index.php?s=Column/columnContent">栏目2</a>
+				<font color="green"></font>			</div>
 			<div class="li columnListd300" flag="columnTableList">
 				<a href="javascript:;">预览</a> |
 				<a href="javascript:;">栏目文档</a> |
 				<a href="javascript:;">增加子栏目</a> |
 				<a href="javascript:;">编辑</a> |
-				<a href="javascript:;">删除</a>
+				<a delurl="/admin/index.php?s=Column/deleteColumn&columnid=4" href="javascript:;" name="del" msg="确定删除该栏目吗？">删除</a>
 			</div>
 		</div>
-		<div class="ul columnSubList">
-		</div>
+		<div class="ul columnSubList"></div>
 					</div>
 	<div class="columnList">
 	</div>
@@ -65,9 +67,40 @@ var JS_APPM = 'http://localhost:81';
 $(document).ready(function(){
 	var column = function (){
 		var columnObj = {
-			columnplus: $("#columnList .columnListTable .columnlistd div.columnplus"),
+			columnplusmius: $("#columnList .columnListTable .columnlistd div.columnplusmius"),
 			columnmius: $("#columnList .columnListTable .columnlistd div.columnmius"),
 		}
+
+		columnObj.showSubColumn = function (){
+			columnObj.columnplusmius.live("click", function (){
+				var that = $(this);
+				var subthat = that.parent().next();
+				if (subthat.css("display") == 'block') {
+					that.removeClass("columnmius");
+					that.addClass("columnplus");
+					subthat.css("display","none");
+				} else {
+					that.removeClass("columnplus");
+					that.addClass("columnmius");
+					subthat.css("display","block");
+					if (!subthat.text().trim()) {
+						var d = {
+							columnid: $(this).attr("columnid")
+						}
+						$.post(JS_APP+"/index.php?s=Column/getSubColumn",d,function(data){
+							if (!data.status) {
+								subthat.html(data.data);
+							} else {
+								alert(data.info);
+							}
+						},'json')
+					}
+				}
+			});
+		}(window)
+	}
+	if ($("#columnList .columnListTable .columnlistd").length) {
+		column();
 	}
 });
 </script>

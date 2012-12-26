@@ -301,14 +301,16 @@ function q($param)
 }
 
 //实例化控制器类
-function D($name='') {
-    if(empty($name)) return false;
+function D($class)
+{
+    if(empty($class)) return false;
 
     static $_control = array();
-    if(isset($_control[$name])) return $_control[$name];
+    if(isset($_control[$class])) return $_control[$class];
 
+    $class .= "Control";
     $control = new $class();
-    $_control[$name] = $control;
+    $_control[$class] = $control;
 
     return $control;
 }

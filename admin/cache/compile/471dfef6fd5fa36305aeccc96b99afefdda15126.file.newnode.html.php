@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-12-19 14:21:58
+<?php /* Smarty version Smarty-3.1.12, created on 2012-12-26 15:31:49
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\node\newnode.html" */ ?>
-<?php /*%%SmartyHeaderCode:1381750d15d06325a85-82056849%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2200750daa7e5a30174-52353222%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '471dfef6fd5fa36305aeccc96b99afefdda15126' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\node\\newnode.html',
-      1 => 1355800379,
+      1 => 1356507073,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1381750d15d06325a85-82056849',
+  'nocache_hash' => '2200750daa7e5a30174-52353222',
   'function' => 
   array (
   ),
@@ -23,9 +23,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50d15d063a1077_95930647',
+  'unifunc' => 'content_50daa7e5aa71d8_68852640',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50d15d063a1077_95930647')) {function content_50d15d063a1077_95930647($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50daa7e5aa71d8_68852640')) {function content_50daa7e5aa71d8_68852640($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <!-- <div class="control_nav">
 	<h3>添加组</h3>
@@ -38,7 +38,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<ul class="formbody">
 			<li class="formblock">
 				<span>组: </span>
-				<select id="select" name="groupid">
+				<select id="select" name="groupid" style="width:150px;">
 					<option value="">|-组菜单</option>
 					<?php  $_smarty_tpl->tpl_vars['g'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['g']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['groupTree']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}

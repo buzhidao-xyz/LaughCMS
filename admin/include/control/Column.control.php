@@ -10,6 +10,14 @@ class ColumnControl extends CommonControl
 		parent::__construct();
 	}
 
+	//获取栏目ID
+	private function _getColumnID()
+	{
+		$columnid = q('columnid');
+
+		return $columnid;
+	}
+
 	private function _getparentid()
 	{
 		$parentid = q("parentid");
@@ -170,5 +178,58 @@ class ColumnControl extends CommonControl
 	    }
 
 		return $dataTree;
+	}
+
+	//AJAX获取子栏目
+	public function getSubColumn()
+	{
+		$columnid = $this->_getColumnID();
+		if (!FilterHelper::C_Int($columnid)) $this->ajaxReturn(1,'栏目ID错误！');
+		$data = M("Column")->getSubColumn($columnid);
+
+		$dataTree  = null;
+        if (is_array($data) && !empty($data)) {
+	        foreach ($data as $v) {
+	        	$isshow = $v['isshow']==1 ? '<font color="green"></font>' : '<font color="red">[隐]</font>';
+	        	$dataTree .= '<div class="ul columnlistd">
+								<div class="li columnplusmius columnplus" columnid="'.$v['id'].'"></div>
+								<div class="li columnListd700" flag="columnTableList">
+									<a href="'.__APP__.'/index.php?s=Column/columnContent">'.$v['columnname'].'</a>
+									'.$isshow.'
+								</div>
+								<div class="li columnListd300" flag="columnTableList">
+									<a href="javascript:;">预览</a> |
+									<a href="javascript:;">栏目文档</a> |
+									<a href="javascript:;">增加子栏目</a> |
+									<a href="javascript:;">编辑</a> |
+									<a delurl="'.__APP__.'/index.php?s=Column/deleteColumn&columnid='.$v['id'].'" href="javascript:;" name="del" msg="确定删除该栏目吗？">删除</a>
+								</div>
+							</div>';
+	        }
+	        $dataTree .= '<div class="ul columnSubList"></div>';
+	    }
+	    $this->ajaxReturn(0,1,$dataTree);
+	}
+
+	public function columnContent()
+	{
+		$columnid = $this->_getColumnID();
+	}
+
+	//删除栏目
+	public function deleteColumn()
+	{
+		$columnid = $this->_getColumnID();
+		if (!$columnid) $this->ajaxReturn(1,"栏目ID错误！");
+
+		if (T("Column")->where(array("parentid"=>$columnid))->count())
+			$this->ajaxReturn(1,"删除失败！该栏目非空！");
+
+		$return = M("Column")->delete($columnid);
+		if ($return) {
+			$this->ajaxReturn(0,"删除成功！");
+		} else {
+			$this->ajaxReturn(1,"删除失败！");
+		}
 	}
 }

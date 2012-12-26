@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2012-12-25 17:26:10
+Date: 2012-12-26 17:25:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,7 +37,7 @@ CREATE TABLE `la_admin` (
 -- ----------------------------
 -- Records of la_admin
 -- ----------------------------
-INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1356427286', '2130706433', '77', '1');
+INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1356507133', '2130706433', '78', '1');
 INSERT INTO `la_admin` VALUES ('2', 'luochuan', '624879b3fff70462132a21eb1cd8eb75', 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '1355368421', '2130706433', '12', '0');
 
 -- ----------------------------
@@ -60,13 +60,18 @@ CREATE TABLE `la_admin_access` (
 DROP TABLE IF EXISTS `la_article`;
 CREATE TABLE `la_article` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-  `title` varchar(50) CHARACTER SET utf8 NOT NULL,
-  `author` varchar(20) CHARACTER SET utf8 NOT NULL,
+  `title` varchar(50) CHARACTER SET utf8 NOT NULL COMMENT '文档标题',
+  `author` varchar(20) CHARACTER SET utf8 NOT NULL COMMENT '文档作者',
+  `columnid` int(10) NOT NULL,
+  `tag` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `source` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `seotitle` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `keyword` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `description` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `state` int(1) NOT NULL DEFAULT '1' COMMENT '文章状态 0:已删除 1:正常发布 2:草稿箱',
-  `comment_state` int(1) NOT NULL DEFAULT '1' COMMENT '评论状态 0:禁止评论 1:允许评论',
-  `comment_num` int(10) NOT NULL DEFAULT '0' COMMENT '评论数量',
-  `publish_date` int(20) NOT NULL COMMENT '发布时间',
-  `modify_date` int(20) DEFAULT NULL COMMENT '修改时间',
+  `comment` int(1) NOT NULL DEFAULT '1' COMMENT '评论状态 0:禁止评论 1:允许评论',
+  `publishtime` int(20) NOT NULL COMMENT '发布时间',
+  `updatetime` int(20) DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`),
   KEY `catalog` (`author`) USING BTREE
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -76,99 +81,18 @@ CREATE TABLE `la_article` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `la_article_class`
--- ----------------------------
-DROP TABLE IF EXISTS `la_article_class`;
-CREATE TABLE `la_article_class` (
-  `id` int(10) NOT NULL,
-  `article_id` int(10) NOT NULL,
-  `class_id` int(10) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `class` (`class_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of la_article_class
--- ----------------------------
-
--- ----------------------------
--- Table structure for `la_article_comment`
--- ----------------------------
-DROP TABLE IF EXISTS `la_article_comment`;
-CREATE TABLE `la_article_comment` (
-  `id` int(10) NOT NULL,
-  `username` varchar(20) DEFAULT NULL,
-  `content` varchar(200) NOT NULL,
-  `create_time` int(20) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of la_article_comment
--- ----------------------------
-
--- ----------------------------
 -- Table structure for `la_article_index`
 -- ----------------------------
 DROP TABLE IF EXISTS `la_article_index`;
 CREATE TABLE `la_article_index` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-  `article_id` int(10) DEFAULT NULL,
-  `title` varchar(200) NOT NULL,
-  `link` varchar(100) DEFAULT NULL COMMENT 'title链接地址',
-  `sindex` text NOT NULL,
-  PRIMARY KEY (`id`),
-  FULLTEXT KEY `fulltext` (`sindex`)
-) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of la_article_index
--- ----------------------------
-INSERT INTO `la_article_index` VALUES ('1', '1', '        PHP中文分词算法及代码实现\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7298300', 'PHP 54484636 46362354 23542042 20424367 43672308 23082816 28162090 20903475 34754221 42214754');
-INSERT INTO `la_article_index` VALUES ('2', '2', '\n        MySQL全文检索中文搜索\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7284016', 'MySQL 40114636 46362876 28764387 43875448 54484636 46364349 43494387');
-INSERT INTO `la_article_index` VALUES ('3', '3', '\n        nginx负载均衡session共享解决方案\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7288171', 'nginx session 24265256 52563089 30892666 25184777 47772966 29663086 30862329 23291624');
-INSERT INTO `la_article_index` VALUES ('4', '4', '\n        PHP安全基础学习与总结\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7276135', 'PHP 16184011 40112789 27892001 20014907 49074716 47165175 51755560 55602965');
-INSERT INTO `la_article_index` VALUES ('5', '5', '\n        求24点表达式的php实现\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7258907', '24 php 3983 21671777 17772079 20794229 42292136 42214754');
-INSERT INTO `la_article_index` VALUES ('6', '6', '\n        MAC OS下配置PHP的高效IDE - MACVIM\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7252299', 'MAC OS PHP IDE MACVIM 47343768 37685435 21362463 24634807');
-INSERT INTO `la_article_index` VALUES ('7', '7', '\n        MACVIM的配置文件.gvimrc备份\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7252916', 'MACVIM gvimrc 21363768 37685435 54354636 46362894 17242361');
-INSERT INTO `la_article_index` VALUES ('8', '8', '\n        vim代码颜色配置-PHP版\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7250163', 'vim PHP 20903475 34754953 49534111 41113768 37685435 1670');
-INSERT INTO `la_article_index` VALUES ('9', '9', '\n        nginx+PHP服务器环境安装与配置学习（一） - windows系统基础环境搭建\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7244286', 'nginx PHP windows 23944681 46813887 38872723 27233019 30191618 16185516 55165175 51753768 37685435 54354907 49074716 5027 47214519 45192789 27892001 20012723 27233019 30192078 20782908');
-INSERT INTO `la_article_index` VALUES ('10', '10', '\n        20个数据库设计值得遵循的规则\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7236728', '20 24864293 42933061 30613166 31664172 41722838 28385421 54212135 21355581 55814913 49132136 21362570 25705282');
-INSERT INTO `la_article_index` VALUES ('11', '11', '\n        PHP的pack方法总结备忘\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7230853', 'PHP pack 2136 23292308 23085560 55602965 29651724 17244592');
-INSERT INTO `la_article_index` VALUES ('12', '12', '\n        PHP中错误报告值参数及说明的查询备忘\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7220196', 'PHP 54482077 20774683 46831708 17082470 24705421 54211846 18464293 42932816 28164321 43213587 35872136 21361873 18734915 49151724 17244592');
-INSERT INTO `la_article_index` VALUES ('13', '13', '\n        关于反向代理\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7217837', '25565158 51582320 23204782 47822090 20903277');
-INSERT INTO `la_article_index` VALUES ('14', '14', '\n        HTML5新功能websocket的学习与备忘-PHP版（二）\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7198624', '5 HTML websocket PHP 48342506 25063660 21364907 49074716 47165175 51751724 17244592 1670 2294');
-INSERT INTO `la_article_index` VALUES ('15', '15', '\n        HTML5新功能websocket的学习与备忘-PHP版（一）\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7198619', '5 HTML websocket PHP 48342506 25063660 21364907 49074716 47165175 51751724 17244592 1670 5027');
-INSERT INTO `la_article_index` VALUES ('16', '16', '\n        每个程序员都该阅读的书【转载】\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7198017', '35312486 24861944 19444882 48825217 52172228 22282435 24355236 52362233 22332136 21364273 55105256');
-INSERT INTO `la_article_index` VALUES ('17', '17', '\n        为macos的php配置memcache\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7198012', 'macos php memcache 4610 2136 37685435');
-INSERT INTO `la_article_index` VALUES ('18', '18', '\n        为macos的php配置pdo_mysql扩展\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7198007', 'macos php pdo mysql 4610 2136 37685435 _ 32095325');
-INSERT INTO `la_article_index` VALUES ('19', '19', '\n        在Mac OS X中配置Apache ＋ PHP ＋ MySQL + PHPMYADMIN\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7198002', 'Mac OS X Apache PHP MySQL PHPMYADMIN 5258 54483768 37685435 0311 0311');
-INSERT INTO `la_article_index` VALUES ('20', '20', '\n        新浪微博技术架构演讲 - 网上转载\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7198000', '48343243 32434602 46021809 18092828 28284285 42852860 28602525 25254961 49612918 45884147 41475510 55105256');
-INSERT INTO `la_article_index` VALUES ('21', '21', '\n        vim、gvim在windows下中文乱码的解决方案\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7197995', 'vim gvim windows 5258 47345448 54484636 46363450 34503475 34752136 21362966 29663086 30862329 23291624');
-INSERT INTO `la_article_index` VALUES ('22', '22', '\n        redis的介绍与使用(二) - 测试命令\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7197993', 'redis 21362973 29734160 41605175 51754225 42255135 2294 18664252 42523592 35923378');
-INSERT INTO `la_article_index` VALUES ('23', '23', '\n        redis的介绍与使用(一) - benchmark等\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7197982', 'redis benchmark 21362973 29734160 41605175 51754225 42255135 5027 2140');
-INSERT INTO `la_article_index` VALUES ('24', '24', '\n        MACOS系统中查看隐藏文件\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7197965', 'MACOS 47214519 45195448 54481873 18733120 31205094 50941856 18564636 46362894');
-INSERT INTO `la_article_index` VALUES ('25', '25', '\n        关于MEMCACHE的学习与备忘(二)\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7197962', 'MEMCACHE 25565158 21364907 49074716 47165175 51751724 17244592 2294');
-INSERT INTO `la_article_index` VALUES ('26', '26', '\n        关于MEMCACHE的学习与备忘(一)\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7197952', 'MEMCACHE 25565158 21364907 49074716 47165175 51751724 17244592 5027');
-INSERT INTO `la_article_index` VALUES ('27', '27', '\n        用xdebug分析PHP以及结果分析程序webgrind的使用\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7197943', 'xdebug PHP webgrind 5135 23544686 50522816 28162965 29652591 25912354 23544686 46861944 19444882 21364225 42255135');
-INSERT INTO `la_article_index` VALUES ('28', '28', '\n        ApacheBench(ab)测试工具介绍 - 备忘与学习\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7197929', 'ApacheBench ab 18664252 42522504 25043063 30632973 29734160 17244592 45925175 51754907 49074716');
-INSERT INTO `la_article_index` VALUES ('29', '29', '\n        关于PHP的static(静态)变量\r\n        ', 'http://blog.csdn.net/luochuan/article/details/7197891', 'PHP static 25565158 2136 30184412 17683331');
-INSERT INTO `la_article_index` VALUES ('30', '30', '\n        仿googletoolbar导航菜单\r\n        ', 'http://blog.csdn.net/luochuan/article/details/3634825', 'googletoolbar 2334 21282629 26291843 18432105');
-
--- ----------------------------
--- Table structure for `la_article_tag`
--- ----------------------------
-DROP TABLE IF EXISTS `la_article_tag`;
-CREATE TABLE `la_article_tag` (
-  `id` int(10) NOT NULL,
-  `article_id` int(10) NOT NULL,
-  `tag_id` int(10) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `article` (`tag_id`)
+  `articleid` int(10) NOT NULL COMMENT '文档ID',
+  `content` mediumtext COMMENT '文档内容',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of la_article_tag
+-- Records of la_article_index
 -- ----------------------------
 
 -- ----------------------------
@@ -219,6 +143,22 @@ INSERT INTO `la_column` VALUES ('3', '子子栏目1', '2', '1', '1', null, null,
 INSERT INTO `la_column` VALUES ('4', '栏目2', '0', '0', '1', null, null, '2', '', '', '', '&lt;p&gt;栏目2&lt;br /&gt;&lt;/p&gt;', '1', '1356414942', '1356414942');
 
 -- ----------------------------
+-- Table structure for `la_comment`
+-- ----------------------------
+DROP TABLE IF EXISTS `la_comment`;
+CREATE TABLE `la_comment` (
+  `id` int(10) NOT NULL,
+  `username` varchar(20) DEFAULT NULL,
+  `content` varchar(200) NOT NULL,
+  `create_time` int(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of la_comment
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for `la_group`
 -- ----------------------------
 DROP TABLE IF EXISTS `la_group`;
@@ -262,7 +202,7 @@ CREATE TABLE `la_node` (
   PRIMARY KEY (`id`),
   KEY `level` (`level`),
   KEY `pid` (`pid`)
-) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_node
@@ -293,6 +233,7 @@ INSERT INTO `la_node` VALUES ('26', '数据库', '', '', '', '0', '0', '0', '6',
 INSERT INTO `la_node` VALUES ('23', '辅助插件', '', '', '', '0', '0', '0', '5', '1353316622', '0', '1');
 INSERT INTO `la_node` VALUES ('24', '文件管理器', '', 'FileManage', 'index', '0', '23', '0', '0', '1353316736', '0', '1');
 INSERT INTO `la_node` VALUES ('27', '网站栏目', '', 'Column', 'index', '0', '16', null, '0', '1355898117', '1355898117', '1');
+INSERT INTO `la_node` VALUES ('28', '所有文档列表', '', 'Article', 'index', '0', '18', null, '0', '1356507108', '1356507108', '1');
 
 -- ----------------------------
 -- Table structure for `la_role`

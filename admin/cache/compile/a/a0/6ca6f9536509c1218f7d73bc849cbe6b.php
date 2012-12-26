@@ -12,6 +12,7 @@
 <title>管理中心</title>
 <script type="text/javascript">
 var JS_APP = '/admin';
+var JS_APPM = 'http://localhost:81';
 </script>
 </head>
 
@@ -31,7 +32,7 @@ var JS_APP = '/admin';
 		<ul class="formbody">
 			<li class="formblock">
 				<span>组: </span>
-				<select id="select" name="groupid">
+				<select id="select" name="groupid" style="width:150px;">
 					<option value="">|-组菜单</option>
 										<option value="1">&nbsp;|-系统管理</option>
 										<option value="2">&nbsp;|-用户中心</option>

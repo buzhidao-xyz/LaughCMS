@@ -187,7 +187,7 @@ $(document).ready(function() {
     /*删除按钮方法*/
     
     if (!delfunction) {
-        $('a[name="del"]').click(function(){
+        $('a[name="del"]').live("click", function(){
             ullilist.delajax($(this));
         });
     }

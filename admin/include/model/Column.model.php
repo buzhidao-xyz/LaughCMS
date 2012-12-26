@@ -49,4 +49,11 @@ class Column extends Base
 
 		return $data;
 	}
+
+	//删除栏目
+	public function deleteColumn($columnid = null)
+	{
+		if (!$columnid) return false;
+		return T("Column")->where(array("id"=>$columnid))->delete();
+	}
 }
