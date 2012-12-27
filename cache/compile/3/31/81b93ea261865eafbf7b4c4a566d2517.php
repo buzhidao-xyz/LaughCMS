@@ -1,8 +1,7 @@
 <div>
  This is the index.html
 </div>
-<div>IndexControl index</div>
-<div>Array</div>
+<div>aaa</div>
 <script language="javascript">
 $(document).ready(function(){
     var d = {

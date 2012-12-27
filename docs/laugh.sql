@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2012-12-26 17:25:26
+Date: 2012-12-27 17:37:14
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,7 +37,7 @@ CREATE TABLE `la_admin` (
 -- ----------------------------
 -- Records of la_admin
 -- ----------------------------
-INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1356507133', '2130706433', '78', '1');
+INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1356576186', '2130706433', '79', '1');
 INSERT INTO `la_admin` VALUES ('2', 'luochuan', '624879b3fff70462132a21eb1cd8eb75', 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '1355368421', '2130706433', '12', '0');
 
 -- ----------------------------
@@ -63,6 +63,7 @@ CREATE TABLE `la_article` (
   `title` varchar(50) CHARACTER SET utf8 NOT NULL COMMENT '文档标题',
   `author` varchar(20) CHARACTER SET utf8 NOT NULL COMMENT '文档作者',
   `columnid` int(10) NOT NULL,
+  `thumbimage` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '文章缩略图',
   `tag` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `source` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `seotitle` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -74,11 +75,12 @@ CREATE TABLE `la_article` (
   `updatetime` int(20) DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`),
   KEY `catalog` (`author`) USING BTREE
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of la_article
 -- ----------------------------
+INSERT INTO `la_article` VALUES ('1', '这是一篇测试文章1', '', '1', null, '测试,文章', '', '', '', '', '1', '1', '0', null);
 
 -- ----------------------------
 -- Table structure for `la_article_index`
@@ -89,11 +91,12 @@ CREATE TABLE `la_article_index` (
   `articleid` int(10) NOT NULL COMMENT '文档ID',
   `content` mediumtext COMMENT '文档内容',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_article_index
 -- ----------------------------
+INSERT INTO `la_article_index` VALUES ('1', '1', '&lt;p&gt;&lt;br /&gt;&lt;img src=&quot;/Uploads/Image/201212/25/1356405476_fzagmz_6513.jpg&quot; /&gt;&lt;/p&gt;&lt;p&gt;测试文章&lt;br /&gt;&lt;/p&gt;');
 
 -- ----------------------------
 -- Table structure for `la_class`

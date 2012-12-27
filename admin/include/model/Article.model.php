@@ -9,4 +9,18 @@ class Article extends Base
 	{
 		parent::__construct();
 	}
+
+	//添加文档
+	public function saveArticle($data=array())
+	{
+		if (!is_array($data) || empty($data)) return false;
+		return T("Article")->add($data);
+	}
+
+	//添加文档内容
+	public function saveArticleContent($data=array())
+	{
+		if (!is_array($data) || empty($data)) return false;
+		return T("Article_index")->add($data);
+	}
 }

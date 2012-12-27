@@ -43,18 +43,22 @@ var JS_APPM = 'http://localhost:81';
 					<input type="text" name="tag" value="" class="input w300" /> (','号分开)
 				</li>
 				<li class="formblock">
+					<span>文档主栏目: </span>
+					<select id="select" name="columnid" style="width:230px;">
+						<option value="" >|-请选择栏目...</option><option value="1" >&nbsp;&nbsp;|-栏目1</option><option value="2" >&nbsp;&nbsp;&nbsp;&nbsp;|-子栏目1</option><option value="3" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-子子栏目1</option><option value="4" >&nbsp;&nbsp;|-栏目2</option>
+					</select>
+				</li>
+				<li class="formblock">
+					<span>文档缩略图:</span>
+					<input type="file" name="image" value="" class="input w150" style="height: 22px;" />
+				</li>
+				<li class="formblock">
 					<span>文档来源:</span>
 					<input type="text" name="source" value="" class="input w200" />
 				</li>
 				<li class="formblock">
 					<span>作者:</span>
 					<input type="text" name="author" value="" class="input w150" />
-				</li>
-				<li class="formblock">
-					<span>文档主栏目: </span>
-					<select id="select" name="columnid" style="width:230px;">
-						<option value="" >|-请选择栏目...</option><option value="1" >&nbsp;&nbsp;|-栏目1</option><option value="2" >&nbsp;&nbsp;&nbsp;&nbsp;|-子栏目1</option><option value="3" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-子子栏目1</option><option value="4" >&nbsp;&nbsp;|-栏目2</option>
-					</select>
 				</li>
 				<li class="formblock">
 					<span>发布时间:</span>
@@ -110,7 +114,7 @@ var JS_APPM = 'http://localhost:81';
     		alert("请填写文档标题!");
     		return false;
     	}
-    	var columnid = $(this).find("input[name=columnid]").val();
+    	var columnid = $(this).find("select[name=columnid]").val();
     	if (!columnid) {
     		alert("请选择文档所在主栏目!");
     		return false;

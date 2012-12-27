@@ -20,18 +20,22 @@
 					<input type="text" name="tag" value="" class="input w300" /> (','号分开)
 				</li>
 				<li class="formblock">
+					<span>文档主栏目: </span>
+					<select id="select" name="columnid" style="width:230px;">
+						{$columnTree}
+					</select>
+				</li>
+				<li class="formblock">
+					<span>文档缩略图:</span>
+					<input type="file" name="image" value="" class="input w150" style="height: 22px;" />
+				</li>
+				<li class="formblock">
 					<span>文档来源:</span>
 					<input type="text" name="source" value="" class="input w200" />
 				</li>
 				<li class="formblock">
 					<span>作者:</span>
 					<input type="text" name="author" value="" class="input w150" />
-				</li>
-				<li class="formblock">
-					<span>文档主栏目: </span>
-					<select id="select" name="columnid" style="width:230px;">
-						{$columnTree}
-					</select>
 				</li>
 				<li class="formblock">
 					<span>发布时间:</span>
@@ -88,7 +92,7 @@
     		alert("请填写文档标题!");
     		return false;
     	}
-    	var columnid = $(this).find("input[name=columnid]").val();
+    	var columnid = $(this).find("select[name=columnid]").val();
     	if (!columnid) {
     		alert("请选择文档所在主栏目!");
     		return false;
