@@ -23,4 +23,13 @@ class Article extends Base
 		if (!is_array($data) || empty($data)) return false;
 		return T("Article_index")->add($data);
 	}
+
+	//获取文档列表
+	public function getArticleList($id=null,$start=0,$length=0,$where=array())
+	{
+		$where = array();
+		if (!$id) $where['id'] = is_array($id) ? array('in', $id) : $id;
+
+		return array('total'=>$total, 'data'=>$data);
+	}
 }

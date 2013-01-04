@@ -274,6 +274,21 @@ class DBDriver implements DBDriver_Interface
                         case 'like':
                             $whereArray[] = " ".$this->orm($k)." LIKE '".$v[1]."' ";
                             break;
+                        case 'between':
+                            $whereArray[] = " ".$this->orm($k)." BETWEEN '".$v[1]."' AND '".$v[2]."' ";
+                            break;
+                        case 'lt':
+                            $whereArray[] = " ".$this->orm($k)." < '".$v[1]."' ";
+                            break;
+                        case 'gt':
+                            $whereArray[] = " ".$this->orm($k)." > '".$v[1]."' ";
+                            break;
+                        case 'elt':
+                            $whereArray[] = " ".$this->orm($k)." <= '".$v[1]."' ";
+                            break;
+                        case 'egt':
+                            $whereArray[] = " ".$this->orm($k)." >= '".$v[1]."' ";
+                            break;
                         default:
                             $whereArray[] = " ".$this->orm($k)."='".$v."' ";
                             break;
@@ -290,15 +305,23 @@ class DBDriver implements DBDriver_Interface
     }
 
     /**
-     * 排序语句
-     * @param $field string 排序字段
+     * 排序语句 如果是数组array('key'=>sortway,'key1'=>sortway1...)
+     * @param $field string/array 排序字段 
      * @param $orderway string ASC/DESC ASC 升序排列
      */
     public function order($field,$way='ASC')
     {
-        if (!$field || !$way) return $this;
+        if (!$field || empty($field) || !$way) return $this;
 
-        $this->_order = ' ORDER BY '.$this->orm($field).' '.strtoupper($way).' ';
+        if (is_array($field)) {
+            foreach ($field as $k=>$v) {
+                $sep = $this->_order ? ' , ' : ' ';
+                $this->_order .= $sep.' '.$this->orm($k).' '.strtoupper($v).' ';
+            }
+        } else {
+            $this->_order = ' '.$this->orm($field).' '.strtoupper($way).' ';
+        }
+        $this->_order = ' ORDER BY '.$this->_order.' ';
 
         return $this;
     }

@@ -204,6 +204,11 @@ var JS_APPM = 'http://localhost:81';
 					<span class="w120"><input type="checkbox" name="node[]" value="19,0"  node="cNode" flag="cNode1" class="checkbox" /></span>
 					<span class="w120"><input type="checkbox" name="node[]" value="19,1"  node="cNode" flag="cNode2" class="checkbox" /></span>
 				</div>
+							<div flag=1 title="" li=1 class="li">
+					<span class="w656">所有文档列表</span>
+					<span class="w120"><input type="checkbox" name="node[]" value="28,0"  node="cNode" flag="cNode1" class="checkbox" /></span>
+					<span class="w120"><input type="checkbox" name="node[]" value="28,1"  node="cNode" flag="cNode2" class="checkbox" /></span>
+				</div>
 									</div>
 						</div>
 	</div>

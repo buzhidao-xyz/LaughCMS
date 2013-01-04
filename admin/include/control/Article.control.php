@@ -110,6 +110,7 @@ class ArticleControl extends CommonControl
 
 	public function index()
 	{
+		
 		$this->display("Article/articlelist.html");
 	}
 

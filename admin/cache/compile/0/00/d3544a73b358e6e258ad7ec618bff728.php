@@ -11,8 +11,8 @@
 <!-- <script type="text/javascript" src="themes/blue/js/PIE.js"></script> -->
 <title>管理中心</title>
 <script type="text/javascript">
-var JS_APP = '/laugh/admin';
-var JS_APPM = 'http://localhost:82/laugh';
+var JS_APP = '/admin';
+var JS_APPM = 'http://localhost:81';
 </script>
 </head>
 
@@ -30,11 +30,11 @@ var JS_APPM = 'http://localhost:82/laugh';
             </div>
             <div id="logError"></div>
             <div class="login logForm">
-                <form name="loginform" method="post" action="/laugh/admin/index.php?s=login/loginCheck">
+                <form name="loginform" method="post" action="/admin/index.php?s=login/loginCheck">
                     <ul>
                         <li><span>用户名:</span><input type="text" name="username" value="" class="input" /></li>
                         <li><span>密&nbsp;&nbsp;&nbsp;码:</span><input type="password" name="password" value="" class="input" /></li>
-                        <li><span>验证码:</span><input type="text" name="vcode" value="" class="input" style="width:80px;" />&nbsp;<img src="/laugh/admin/index.php?s=vcode" class="vcode" /></li>
+                        <li><span>验证码:</span><input type="text" name="vcode" value="" class="input" style="width:80px;" />&nbsp;<img src="/admin/index.php?s=vcode" class="vcode" /></li>
                         <li><input type="submit" name="subut" class="button btnyellow2" value="登录" /></li>
                     </ul>
                 </form>
