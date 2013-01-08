@@ -36,3 +36,6 @@ date_default_timezone_set('Asia/Shanghai');
 //时间戳
 define('TIMESTAMP', time());
 
+//数据库表前缀
+define('TBF', '#@__');
+

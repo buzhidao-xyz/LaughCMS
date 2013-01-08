@@ -11,8 +11,8 @@
 <!-- <script type="text/javascript" src="themes/blue/js/PIE.js"></script> -->
 <title>管理中心</title>
 <script type="text/javascript">
-var JS_APP = '/admin';
-var JS_APPM = 'http://localhost:81';
+var JS_APP = '/laugh/admin';
+var JS_APPM = 'http://localhost:82/laugh';
 </script>
 </head>
 
@@ -25,7 +25,7 @@ var JS_APPM = 'http://localhost:81';
 	<div id="controlContent">
 <div class="formContainer" accessStatus=1>
 	<div class="formtitle"><h5>添加新栏目</h5></div>
-	<form name="newcolumnform" action="/admin/index.php?s=Column/saveColumn" enctype="multipart/form-data" method="post" class="newform">
+	<form name="newcolumnform" action="/laugh/admin/index.php?s=Column/saveColumn" enctype="multipart/form-data" method="post" class="newform">
 		<ul class="formbody">
 			<div class="shtabtitlec">
 				<div class="shtabtitle shtabcurrent"><a href="javascript:;"><span>常规内容</span></a></div>

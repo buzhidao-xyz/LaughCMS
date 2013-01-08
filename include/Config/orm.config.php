@@ -20,12 +20,6 @@ $orm = array (
         'nodeid'        => 'nodeid',
         'groupid'       => 'groupid',
     ),
-    'article_index'     => array(
-        'id'            => 'id',
-        'title'         => 'title',
-        'link'          => 'link',
-        'sindex'        => 'sindex'
-    ),
     'group'             => array(
 	    'id'            => 'id',
         'title'         => 'title',

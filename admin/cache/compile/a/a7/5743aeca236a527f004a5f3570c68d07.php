@@ -11,8 +11,8 @@
 <!-- <script type="text/javascript" src="themes/blue/js/PIE.js"></script> -->
 <title>管理中心</title>
 <script type="text/javascript">
-var JS_APP = '/admin';
-var JS_APPM = 'http://localhost:81';
+var JS_APP = '/laugh/admin';
+var JS_APPM = 'http://localhost:82/laugh';
 </script>
 </head>
 
@@ -26,7 +26,7 @@ var JS_APPM = 'http://localhost:81';
 </div>
 <div class="headerNav">
     <div class="uinfo">
-        您好 , admin [ <a href="/admin/index.php?s=index/logout">退出</a> ] | <a href="/admin/index.php?s=index">系统主页</a> | <a href="http://localhost:81/index.php?s=index" target="_blank">网站主页</a> | <a href="javascript:;">系统设置</a>
+        您好 , admin [ <a href="/laugh/admin/index.php?s=index/logout">退出</a> ] | <a href="/laugh/admin/index.php?s=index">系统主页</a> | <a href="http://localhost:82/laugh/index.php?s=index" target="_blank">网站主页</a> | <a href="javascript:;">系统设置</a>
     </div>
     <div class="nav">
         <ul class="hmenu">
@@ -49,8 +49,8 @@ var JS_APPM = 'http://localhost:81';
 			<div class="menutree1"><a target="main" hidefocus="true" href="javascript:;" class="plus">基本信息</a></div>
 			<ul class="menusub">
 				<li class="menuTopLine"></li>
-				<li><a hidefocus="true" href="/admin/index.php?s=Public/welcome" target="main">欢迎页</a></li>
-				<li><a hidefocus="true" href="/admin/index.php?s=Admin/profile" target="main">个人信息</a></li>
+				<li><a hidefocus="true" href="/laugh/admin/index.php?s=Public/welcome" target="main">欢迎页</a></li>
+				<li><a hidefocus="true" href="/laugh/admin/index.php?s=Admin/profile" target="main">个人信息</a></li>
 			</ul>
 		</li>
     </ul>
@@ -64,7 +64,7 @@ $(document).ready(function (){
 </script>
 </div>
 <div id="main">
-	<iframe frameborder="0" name="main" src="/admin/index.php?s=public/welcome" scrolling="yes"></iframe>
+	<iframe frameborder="0" name="main" src="/laugh/admin/index.php?s=public/welcome" scrolling="yes"></iframe>
 </div>
 <div id="bottom">
 	Copyright &copy; xxx. 2012-2015

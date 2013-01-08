@@ -215,7 +215,7 @@ class DBDriver implements DBDriver_Interface
             $alias = $pos !== false ? substr($key, $pos) : '';
             $key = $pos !== false ? substr($key, 0, $pos) : $key;
             if (!is_array($orm) || empty($orm) || !array_key_exists(self::$_join_table, $orm) || !array_key_exists($key, $orm[self::$_join_table])) {
-                return 'a.'.$sepflag1.$key.$alias.$sepflag2;
+                return 'b.'.$sepflag1.$key.$alias.$sepflag2;
             } else {
                 return 'b.'.$sepflag1.$orm[self::$_join_table][$key].$alias.$sepflag2;
             }

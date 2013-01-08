@@ -11,8 +11,8 @@
 <!-- <script type="text/javascript" src="themes/blue/js/PIE.js"></script> -->
 <title>管理中心</title>
 <script type="text/javascript">
-var JS_APP = '/admin';
-var JS_APPM = 'http://localhost:81';
+var JS_APP = '/laugh/admin';
+var JS_APPM = 'http://localhost:82/laugh';
 </script>
 </head>
 
@@ -33,28 +33,28 @@ var JS_APPM = 'http://localhost:81';
 						<div class="ul columnlistd">
 			<div class="li columnplusmius columnplus" columnid="1"></div>
 			<div class="li columnListd700" flag="columnTableList">
-				<a href="/admin/index.php?s=Column/columnContent">栏目1</a>
+				<a href="/laugh/admin/index.php?s=Column/columnContent">栏目1</a>
 				<font color="green"></font>			</div>
 			<div class="li columnListd300" flag="columnTableList">
 				<a href="javascript:;">预览</a> |
 				<a href="javascript:;">栏目文档</a> |
 				<a href="javascript:;">增加子栏目</a> |
 				<a href="javascript:;">编辑</a> |
-				<a delurl="/admin/index.php?s=Column/deleteColumn&columnid=1" href="javascript:;" name="del" msg="确定删除该栏目吗？">删除</a>
+				<a delurl="/laugh/admin/index.php?s=Column/deleteColumn&columnid=1" href="javascript:;" name="del" msg="确定删除该栏目吗？">删除</a>
 			</div>
 		</div>
 		<div class="ul columnSubList"></div>
 				<div class="ul columnlistd">
 			<div class="li columnplusmius columnplus" columnid="4"></div>
 			<div class="li columnListd700" flag="columnTableList">
-				<a href="/admin/index.php?s=Column/columnContent">栏目2</a>
+				<a href="/laugh/admin/index.php?s=Column/columnContent">栏目2</a>
 				<font color="green"></font>			</div>
 			<div class="li columnListd300" flag="columnTableList">
 				<a href="javascript:;">预览</a> |
 				<a href="javascript:;">栏目文档</a> |
 				<a href="javascript:;">增加子栏目</a> |
 				<a href="javascript:;">编辑</a> |
-				<a delurl="/admin/index.php?s=Column/deleteColumn&columnid=4" href="javascript:;" name="del" msg="确定删除该栏目吗？">删除</a>
+				<a delurl="/laugh/admin/index.php?s=Column/deleteColumn&columnid=4" href="javascript:;" name="del" msg="确定删除该栏目吗？">删除</a>
 			</div>
 		</div>
 		<div class="ul columnSubList"></div>

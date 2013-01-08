@@ -12,7 +12,7 @@ class CommonControl extends BaseControl
     static protected $_control;
 
     //分页 每页显示数据数
-    protected $_pagesize = 20;
+    protected $_pagesize = 30;
 
     /**
      * 初始化并读取用户权限信息

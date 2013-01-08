@@ -12,7 +12,7 @@ class ArticleControl extends CommonControl
 
 	private function _getArticleID()
 	{
-		$articleID = q("articleid");
+		$articleid = q("articleid");
 
 		return $articleid;
 	}
@@ -59,11 +59,11 @@ class ArticleControl extends CommonControl
 		return $publishtime;
 	}
 
-	private function _getcomment()
+	private function _getstatus()
 	{
-		$comment = q("comment");
+		$status = q("status");
 
-		return $comment;
+		return $status;
 	}
 
 	private function _getseotitle()
@@ -108,18 +108,31 @@ class ArticleControl extends CommonControl
 		}
 	}
 
+	//主控制 文档列表
 	public function index()
 	{
-		
-		$this->display("Article/articlelist.html");
+		list($start,$length) = $this->getPages();
+        $articleList = M("Article")->getArticle(null,$start,$length);
+        $this->assign("total", $articleList['total']);
+        $this->assign("dataList", $articleList['data']);
+
+        $this->assign("page", getPage($articleList['total'],$this->_pagesize));
+		$this->display("Article/index.html");
 	}
 
+	//新文档
 	public function newArticle()
 	{
+		$this->assign("timestamp",TIMESTAMP);
+		$this->assign("userInfo",$this->userInfo);
 		$this->assign("columnTree", D("Column")->getColumnTree());
 		$this->display("Article/newarticle.html");
 	}
 
+	/**
+	 * 保存文档入库
+	 * @param $title string 文章标题 必须
+	 */
 	public function saveArticle()
 	{
 		$title = $this->_getTitle();
@@ -128,7 +141,7 @@ class ArticleControl extends CommonControl
 		$author = $this->_getauthor();
 		$columnid = $this->_getcolumnid();
 		$publishtime = $this->_getpublishtime();
-		$comment = $this->_getcomment();
+		$status = $this->_getstatus();
 		$seotitle = $this->_getseotitle();
 		$keyword = $this->_getkeyword();
 		$description = $this->_getdescription();
@@ -137,15 +150,17 @@ class ArticleControl extends CommonControl
 
 		$data = array(
 			'title' => $title,
+			'author'=> $this->userInfo['username'],
 			'tag'   => $tag,
 			'source'   => $source,
 			'author'   => $author,
 			'columnid' => $columnid,
-			'publishtime' => $publishtime,
-			'comment'  => $comment,
+			'status'   => $status,
 			'seotitle' => $seotitle,
 			'keyword'  => $keyword,
-			'description' => $description
+			'description' => $description,
+			'publishtime' => $publishtime,
+			'updatetime'  => TIMESTAMP
 		);
 		if ($image) $data['thumbimage'] = $image;
 
@@ -164,5 +179,29 @@ class ArticleControl extends CommonControl
 		} else {
 			$this->display("Common/error.html");
 		}
+	}
+
+	//更新文档信息
+	public function upArticle()
+	{
+		$this->assign("accessStatus", 1);
+
+		$articleID = $this->_getArticleID();
+		$articleInfo = M("Article")->getArticle($articleID);
+		$articleInfo = !empty($articleInfo['data']) ? $articleInfo['data'][0] : array();
+
+		if (empty($articleInfo)) $this->display("Common/error.html");
+
+		$articleInfo['content'] = M("Article")->getArticleContent($articleInfo["id"]);
+		$this->assign("articleInfo", $articleInfo);
+
+		$this->assign("columnTree", D("Column")->getColumnTree());
+		$this->display("Article/uparticle.html");
+	}
+
+	//保存更新文档信息
+	public function saveUpArticle()
+	{
+		
 	}
 }

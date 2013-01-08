@@ -9,12 +9,6 @@
     position: relative;
     color: #333333;
 }
-#control a:link, #control a:visited {
-    text-decoration: underline;
-}
-#control a:hover {
-    text-decoration: underline;
-}
 #control ul.controlTop {
   overflow: hidden;
   height: 23px;
@@ -104,6 +98,9 @@
     /*border-bottom: 1px solid #B5D0D9;*/
     clear: both;
 }
+.contentTableList a:link, .contentTableList a:visited {
+    text-decoration: underline;
+}
 .table_list_title, .table_list {
     position: relative;
     height: 30px;
@@ -152,6 +149,9 @@
 .table_list_l50 {
     width: 50px;
 }
+.table_list_l70 {
+    width: 70px;
+}
 .table_list_l80 {
     width: 80px;
 }
@@ -160,6 +160,9 @@
 }
 .table_list_l120 {
     width: 120px;
+}
+.table_list_l130 {
+    width: 130px;
 }
 .table_list_l150 {
     width: 150px;
@@ -592,7 +595,7 @@ form ul.formbody input.mauto {
   display: block;
 }
 
-/****UEditor***/
+/**************UEditor************/
 .FullTextEditor {
   float: left;
 }
@@ -606,4 +609,21 @@ form ul.formbody li .edui-default span {
   line-height: 20px;
 }
 .edui-default {
+}
+
+/**************文档列表************/
+.opBottom {
+  height: 35px;
+  line-height: 35px;
+}
+.opBottom a {
+  color: #000000;
+  text-decoration: none;
+  background: url("../images/allbtbg.gif") repeat-x left bottom #CCCCCC;
+  border-color: -moz-use-text-color #ACACAC #ACACAC -moz-use-text-color;
+  border-image: none;
+  border-style: none solid solid none;
+  border-width: medium 1px 1px medium;
+  cursor: pointer;
+  padding: 3px 8px;
 }

@@ -1,8 +1,9 @@
 {include file="public/control_top.html"}
 {if $accessStatus == 1}
 <div class="formContainer" accessStatus={$accessStatus}>
-	<div class="formtitle"><h5>创建新文档</h5></div>
-	<form name="newform" action="__APP__/index.php?s=Article/saveArticle" enctype="multipart/form-data" method="post" class="newform">
+	<div class="formtitle"><h5>修改文档资料</h5></div>
+	<form name="newform" action="__APP__/index.php?s=Article/saveUpArticle" enctype="multipart/form-data" method="post" class="newform">
+		<input type="hidden" name="articleid" value="{$articleInfo.id}" />
 		<ul class="formbody">
 			<div class="shtabtitlec">
 				<div class="shtabtitle shtabcurrent"><a href="javascript:;"><span>常规内容</span></a></div>
@@ -13,11 +14,11 @@
 			<div class="shtabcontent shtabcontentcurrent">
 				<li class="formblock">
 					<span>文档标题:</span>
-					<input type="text" name="title" value="" class="input w300" />
+					<input type="text" name="title" value="{$articleInfo.title}" class="input w300" />
 				</li>
 				<li class="formblock">
 					<span>文档标签:</span>
-					<input type="text" name="tag" value="" class="input w300" /> (','号分开)
+					<input type="text" name="tag" value="{$articleInfo.tag}" class="input w300" /> (','号分开)
 				</li>
 				<li class="formblock">
 					<span>文档主栏目: </span>
@@ -27,52 +28,52 @@
 				</li>
 				<li class="formblock">
 					<span>文档缩略图:</span>
-					<input type="file" name="image" value="" class="input w150" style="height: 22px;" />
+					<input type="file" name="image" value="{$articleInfo.thumbimage}" class="input w150" style="height: 22px;" />
 				</li>
 				<li class="formblock">
 					<span>文档来源:</span>
-					<input type="text" name="source" value="" class="input w200" />
+					<input type="text" name="source" value="{$articleInfo.source}" class="input w200" />
 				</li>
 				<li class="formblock">
 					<span>作者:</span>
-					<input type="text" name="author" value="{$userInfo.username}" class="input w150" />
+					<input type="text" name="author" value="{$articleInfo.author}" class="input w150" />
 				</li>
 				<li class="formblock">
-					<span>发布时间:</span>
-					<input type="text" name="publishtime" value="{$timestamp|mkdate}" onClick="WdatePicker({literal}{dateFmt:'yyyy-MM-dd HH:mm:ss'}{/literal})" class="input w150" />
+					<span>更新时间:</span>
+					<input type="text" name="publishtime" value="{$articleInfo.updatetime|mkdate}" onClick="WdatePicker({literal}{dateFmt:'yyyy-MM-dd HH:mm:ss'}{/literal})" class="input w150" />
 				</li>
 				<li class="formblock">
 					<span>是否允许评论: </span>
 					<div class="item_list fleft">
-						<label><input type="radio" name="status" value="1" class="radio" checked="checked" />允许</label>
-						<label><input type="radio" name="status" value="0" class="radio" />禁止</label>
+						<label><input type="radio" name="status" value="1" class="radio" {if $articleInfo.status==1}checked{/if} />允许</label>
+						<label><input type="radio" name="status" value="0" class="radio" {if $articleInfo.status==0}checked{/if} />禁止</label>
 					</div>
 				</li>
 			</div>
 			<div class="shtabcontent">
 				<li class="formblock">
 					<span>SEO标题:</span>
-					<input type="text" name="seotitle" value="" class="input w300" />
+					<input type="text" name="seotitle" value="{$articleInfo.seotitle}" class="input w300" />
 				</li>
 				<li class="formautoblock">
 					<span>关键字:</span>
-					<textarea name="keyword" rows="1" cols="47"></textarea>
+					<textarea name="keyword" rows="1" cols="47">{$articleInfo.keyword}</textarea>
 				</li>
 				<li class="formautoblock">
 					<span>摘要内容:</span>
-					<textarea name="description" rows="2" cols="47"></textarea>
+					<textarea name="description" rows="2" cols="47">{$articleInfo.description}</textarea>
 				</li>
 			</div>
 			<div class="shtabcontent">
 				<li class="formautoblock">
 					<span>文档内容:</span>
 					<div class="FullTextEditor">
-						<textarea name="content" id="myEditor" rows="3" cols="50"></textarea>
+						<textarea name="content" id="myEditor" rows="3" cols="50">{$articleInfo.content}</textarea>
 					</div>
 				</li>
 			</div>
 			<li class="formblock bordernone">
-				<input type="submit" name="subut" class="button btnyellow2" value="添加" />
+				<input type="submit" name="subut" class="button btnyellow2" value="修改" />
 			</li>
 		</ul>
 	</form>
@@ -97,6 +98,9 @@
     		alert("请选择文档所在主栏目!");
     		return false;
     	}
+    });
+    $("select[name=columnid]").find("option").each(function (){
+    	if ($(this).val()=={$articleInfo.columnid}) $(this).attr("selected",true);
     });
 </script>
 {include file="public/control_bottom.html"}

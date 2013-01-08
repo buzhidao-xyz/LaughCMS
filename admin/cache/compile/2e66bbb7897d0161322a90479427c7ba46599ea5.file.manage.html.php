@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2012-12-19 14:23:19
+<?php /* Smarty version Smarty-3.1.12, created on 2013-01-08 11:15:04
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\node\manage.html" */ ?>
-<?php /*%%SmartyHeaderCode:1530150d15d576a0727-66715224%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2502950eb8f38686b95-68858719%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '2e66bbb7897d0161322a90479427c7ba46599ea5' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\node\\manage.html',
-      1 => 1355370804,
+      1 => 1356507079,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1530150d15d576a0727-66715224',
+  'nocache_hash' => '2502950eb8f38686b95-68858719',
   'function' => 
   array (
   ),
@@ -26,9 +26,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50d15d57829470_73011086',
+  'unifunc' => 'content_50eb8f3881b082_92548738',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50d15d57829470_73011086')) {function content_50d15d57829470_73011086($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50eb8f3881b082_92548738')) {function content_50eb8f3881b082_92548738($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="captitle"><h5>节点列表 【目前共有<?php if ($_smarty_tpl->tpl_vars['total']->value){?><?php echo $_smarty_tpl->tpl_vars['total']->value;?>
 <?php }else{ ?>0<?php }?>条数据】</h5></div>
@@ -100,7 +100,7 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 		<ul class="formbody">
 			<li class="formblock">
 				<span>组: </span>
-				<select id="select" name="groupid">
+				<select id="select" name="groupid" style="width:150px;">
 					<option value="">|-组菜单</option>
 					<?php  $_smarty_tpl->tpl_vars['g'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['g']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['groupTree']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
