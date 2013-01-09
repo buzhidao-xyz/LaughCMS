@@ -11,8 +11,8 @@
 <!-- <script type="text/javascript" src="themes/blue/js/PIE.js"></script> -->
 <title>管理中心</title>
 <script type="text/javascript">
-var JS_APP = '/admin';
-var JS_APPM = 'http://localhost:81';
+var JS_APP = '/laugh/admin';
+var JS_APPM = 'http://localhost:82/laugh';
 </script>
 </head>
 
@@ -28,7 +28,7 @@ var JS_APPM = 'http://localhost:81';
 </div> -->
 <div class="formContainer" accessStatus=1>
 	<div class="formtitle"><h5>新操作节点表单</h5></div>
-	<form name="newform" action="/admin/index.php?s=Node/saveNode" method="post" id="addajaxform" class="newform">
+	<form name="newform" action="/laugh/admin/index.php?s=Node/saveNode" method="post" id="addajaxform" class="newform">
 		<ul class="formbody">
 			<li class="formblock">
 				<span>组: </span>

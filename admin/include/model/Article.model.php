@@ -60,4 +60,39 @@ class Article extends Base
 		$content = T("article_index")->where(array("articleid"=>$articleid))->find();
 		return isset($content['content']) ? $content['content'] : null;
 	}
+
+	/**
+	 * 更新文档信息
+	 * @param int $articleid 文档id
+	 * @param array $data 更新内容信息
+	 */
+	public function upArticle($articleid=null, $data=array())
+	{
+		$where = array();
+		if (empty($articleid)) return null;
+		$where['id'] = is_array($articleid) ? array("in",$articleid) : $articleid;
+
+		return T("article")->where($where)->update($data);
+	}
+
+	//更新文档内容
+	public function upArticleContent($articleid=null, $data=array())
+	{
+		if (empty($articleid)) return null;
+
+		return T("article_index")->where(array("articleid"=>$articleid))->update($data);
+	}
+
+	//删除文档
+	public function deleteArticle($articleid=null)
+	{
+		$where = array();
+		if (empty($articleid)) return null;
+
+		$where['articleid'] = is_array($articleid) ? array("in",$articleid) : $articleid;
+		T("article_index")->where($where)->delete();
+
+		$where['id'] = is_array($articleid) ? array("in",$articleid) : $articleid;
+		return T("article")->where($where)->delete();
+	}
 }

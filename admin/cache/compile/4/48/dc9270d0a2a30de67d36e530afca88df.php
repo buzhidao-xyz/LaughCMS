@@ -62,7 +62,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 				</li>
 				<li class="formblock">
 					<span>发布时间:</span>
-					<input type="text" name="publishtime" value="2013-01-08 17:18:23" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="input w150" />
+					<input type="text" name="publishtime" value="2013-01-09 17:04:37" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="input w150" />
 				</li>
 				<li class="formblock">
 					<span>是否允许评论: </span>

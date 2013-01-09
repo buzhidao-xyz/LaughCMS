@@ -347,14 +347,14 @@ var JS_APPM = 'http://localhost:82/laugh';
     	</li>
     	    </ul>
         <ul class="table_list">
-		<li class="table_list_l table_list_l150">所有文档列表</li>
+		<li class="table_list_l table_list_l150">文档列表</li>
 		<li class="table_list_l table_list_l200" tooltip=1 title=""></li>
     	<li class="table_list_l table_list_l100">Article</li>
     	<li class="table_list_l table_list_l120">index</li>
     	<li class="table_list_l table_list_l150">2012-12-26 15:31:48</li>
     	<li class="table_list_l table_list_l80">显</li>
     	    	<li class="table_list_l table_list_l100" accessStatus=1>
-    		<a href="javascript:;" name="modify" id="28" title="所有文档列表" remark="" groupid="3" pid="18" control="Article" action="index" isshow="1">修改</a>&nbsp;&nbsp;
+    		<a href="javascript:;" name="modify" id="28" title="文档列表" remark="" groupid="3" pid="18" control="Article" action="index" isshow="1">修改</a>&nbsp;&nbsp;
     		<a delurl="/laugh/admin/index.php?s=Node/deleteNode&id=28" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>
     	    </ul>

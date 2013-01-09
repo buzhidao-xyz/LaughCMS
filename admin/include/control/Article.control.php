@@ -112,7 +112,7 @@ class ArticleControl extends CommonControl
 	public function index()
 	{
 		list($start,$length) = $this->getPages();
-        $articleList = M("Article")->getArticle(null,$start,$length);
+        $articleList = M("Article")->getArticle(null,$start,$length,array('state'=>1));
         $this->assign("total", $articleList['total']);
         $this->assign("dataList", $articleList['data']);
 
@@ -130,22 +130,20 @@ class ArticleControl extends CommonControl
 	}
 
 	/**
-	 * 保存文档入库
-	 * @param $title string 文章标题 必须
+	 * 处理前端提交过来的文章信息
+	 * @param array $filter 被过滤的字段 不需要更新的
 	 */
-	public function saveArticle()
+	private function dealArticleSubmit($filter=array())
 	{
 		$title = $this->_getTitle();
 		$tag = $this->_getTag();
 		$source = $this->_getsource();
 		$author = $this->_getauthor();
 		$columnid = $this->_getcolumnid();
-		$publishtime = $this->_getpublishtime();
 		$status = $this->_getstatus();
 		$seotitle = $this->_getseotitle();
 		$keyword = $this->_getkeyword();
 		$description = $this->_getdescription();
-		$content = $this->_getcontent();
 		$image = $this->_getImage();
 
 		$data = array(
@@ -159,16 +157,29 @@ class ArticleControl extends CommonControl
 			'seotitle' => $seotitle,
 			'keyword'  => $keyword,
 			'description' => $description,
-			'publishtime' => $publishtime,
 			'updatetime'  => TIMESTAMP
 		);
 		if ($image) $data['thumbimage'] = $image;
 
+		if (!in_array("publishtime", $filter)) $data['publishtime'] = $this->_getpublishtime();
+
+		return $data;
+	}
+
+	/**
+	 * 保存文档入库
+	 * @param $title string 文章标题 必须
+	 */
+	public function saveArticle()
+	{
+		$data = $this->dealArticleSubmit();
 		$articleid = M('Article')->saveArticle($data);
 		if ($articleid) {
+			$content = $this->_getcontent();
 			$arcdata = array(
 				'articleid' => $articleid,
-				'content'   => $content
+				'content'   => $content,
+				'updatetime' => TIMESTAMP
 			);
 			$return = M('Article')->saveArticleContent($arcdata);
 			if ($return) {
@@ -202,6 +213,80 @@ class ArticleControl extends CommonControl
 	//保存更新文档信息
 	public function saveUpArticle()
 	{
-		
+		$articleID = $this->_getArticleID();
+		$data = $this->dealArticleSubmit();
+		$return = M("Article")->upArticle($articleID, $data);
+		if ($return) {
+			$content = $this->_getcontent();
+			$data = array(
+				'content' => $content,
+				'updatetime' => TIMESTAMP
+			);
+			$return = M("Article")->upArticleContent($articleID, $data);
+			if ($return) {
+				$this->display("Common/success.html");
+			} else {
+				$this->display("Common/error.html");
+			}
+		} else {
+			$this->display("Common/error.html");
+		}
+	}
+
+	//回收文档 进入回收站
+	public function recoverArticle()
+	{
+		$articleID = $this->_getArticleID();
+		$articleID = explode(",", $articleID);
+		$data = array(
+			'state' => 0
+		);
+		$return = M("Article")->upArticle($articleID, $data);
+		if ($return) {
+			$this->ajaxReturn(0,"删除成功！");
+		} else {
+			$this->ajaxReturn(1,"删除失败！");
+		}
+	}
+
+	//彻底删除文档
+	public function deleteArticle()
+	{
+		$articleID = $this->_getArticleID();
+		$articleID = explode(",", $articleID);
+		$return = M("Article")->deleteArticle($articleID);
+		if ($return) {
+			$this->ajaxReturn(0,"删除成功！");
+		} else {
+			$this->ajaxReturn(1,"删除失败！");
+		}
+	}
+
+	//文档回收站
+	public function recover()
+	{
+		list($start,$length) = $this->getPages();
+        $articleList = M("Article")->getArticle(null,$start,$length,array('state'=>0));
+        $this->assign("total", $articleList['total']);
+        $this->assign("dataList", $articleList['data']);
+
+        $this->assign("page", getPage($articleList['total'],$this->_pagesize));
+		$this->display("Article/recover.html");
+	}
+
+	//还原文档
+	public function backArticle()
+	{
+		$articleID = $this->_getArticleID();
+		$articleID = explode(",", $articleID);
+		$data = array(
+			'state' => 1
+		);
+		$return = M("Article")->upArticle($articleID, $data);
+		if ($return) {
+			$this->ajaxReturn(0,"还原成功！");
+		} else {
+			$this->ajaxReturn(1,"还原失败！");
+		}
 	}
 }
