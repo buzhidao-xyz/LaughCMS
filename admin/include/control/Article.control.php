@@ -289,4 +289,18 @@ class ArticleControl extends CommonControl
 			$this->ajaxReturn(1,"还原失败！");
 		}
 	}
+
+	//移动文档
+	public function moveArticle()
+	{
+		$articleid = $this->_getArticleID();
+		$action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
+		if ($action == 'move') {
+			
+		} else {
+			$this->assign("articleid", $articleid);
+			$this->assign("columnTree", D("Column")->getColumnTree());
+			$this->display("Article/movearticle.html");
+		}
+	}
 }

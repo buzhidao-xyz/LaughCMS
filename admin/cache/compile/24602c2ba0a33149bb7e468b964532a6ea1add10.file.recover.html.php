@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-01-09 17:30:51
+<?php /* Smarty version Smarty-3.1.12, created on 2013-01-10 17:15:55
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Article\recover.html" */ ?>
-<?php /*%%SmartyHeaderCode:406450ed38cb835d59-31860435%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:3144450ee86cb420a23-16476865%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '24602c2ba0a33149bb7e468b964532a6ea1add10' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\Article\\recover.html',
-      1 => 1357723810,
+      1 => 1357780540,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '406450ed38cb835d59-31860435',
+  'nocache_hash' => '3144450ee86cb420a23-16476865',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50ed38cb9a9250_61542834',
+  'unifunc' => 'content_50ee86cb59ab08_77685628',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50ed38cb9a9250_61542834')) {function content_50ed38cb9a9250_61542834($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50ee86cb59ab08_77685628')) {function content_50ee86cb59ab08_77685628($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="captitle"><h5>文档回收站 【目前共有<?php if ($_smarty_tpl->tpl_vars['total']->value){?><?php echo $_smarty_tpl->tpl_vars['total']->value;?>
 <?php }else{ ?>0<?php }?>条文档】</h5></div>
@@ -120,6 +120,7 @@ var articleClass = function (){
 	articleObj.unCheckAll.click(function (){
 		$("input[flag=articleID]").attr("checked",false);
 	});
+	//回收文档
 	articleObj.articleBack.click(function (){
 		var articleid = getArticleID();
 		var d = {
@@ -130,6 +131,7 @@ var articleClass = function (){
 			if (!data.status) location.href = location.href;
 		},'json');
 	});
+	//删除文档
 	articleObj.articleDelete.click(function (){
 		var articleid = getArticleID();
 		var d = {

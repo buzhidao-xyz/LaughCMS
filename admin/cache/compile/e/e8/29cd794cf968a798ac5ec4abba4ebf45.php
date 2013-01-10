@@ -80,10 +80,12 @@ var JS_APPM = 'http://localhost:82/laugh';
 	<a href="javascript:;" name="unCheckAll">取消</a>
 	<a href="javascript:;" name="articleUpdate">更新</a>
 	<a href="javascript:;" name="articleReview">审核</a>
-	<a href="javascript:;" name="articleMove">移动</a>
+	<a href="/laugh/admin/index.php?s=Article/moveArticle" name="articleMove">移动</a>
 	<a href="javascript:;" name="articleDelete">删除</a>
 </div>
 
+<link type="text/css" rel="stylesheet" href="themes/blue/js/colorbox/colorbox.css" media="screen">
+<script type="text/javascript" src="themes/blue/js/colorbox/jquery.colorbox.js"></script>
 <script type="text/javascript">
 $(document).ready(function (){
 var articleClass = function (){
@@ -108,6 +110,15 @@ var articleClass = function (){
 	articleObj.unCheckAll.click(function (){
 		$("input[flag=articleID]").attr("checked",false);
 	});
+
+	//移动栏目
+	articleObj.articleMove.colorbox();
+	articleObj.articleMove.click(function (){
+		var articleid = getArticleID();
+		$(this).attr("href",$(this).attr("href")+"&articleid="+articleid);
+	});
+	
+	//删除文档
 	articleObj.articleDelete.click(function (){
 		var articleid = getArticleID();
 		var d = {

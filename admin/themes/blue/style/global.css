@@ -271,7 +271,7 @@ form.editform {
   background: #FFFFFF;
   /*background: url('../images/form_bg.gif') repeat-x bottom;*/
 }
-form ul.formbody {
+ul.formbody {
     width: auto;
     height: auto;
     overflow: hidden;
@@ -281,31 +281,31 @@ form ul.formbody {
     background: #FFFFFF;
     padding: 25px 5px 10px 5px;
 }
-form ul.formbody li.formblock {
+ul.formbody li.formblock {
     width: auto;
     height: 40px;
     line-height: 40px;
     border-bottom: 1px dashed #E1E1E1;
     overflow: hidden;
 }
-form ul.formbody li.formautoblock {
+ul.formbody li.formautoblock {
     width: auto;
     height: auto;
     line-height: auto;
     border-bottom: 1px dashed #E1E1E1;
     overflow: hidden;
 }
-form ul.formbody li.formautoblock span {
+ul.formbody li.formautoblock span {
   height: 40px;
   line-height: 40px;
 }
-form ul.formbody li.bordernone {
+ul.formbody li.bordernone {
     border: 0;
 }
-form ul li.colorblock:hover {
+ul li.colorblock:hover {
     background: #E2E7ED;
 }
-form ul.formbody li span {
+ul.formbody li span {
     float: left;
     width: 180px;
     display: block;
@@ -315,7 +315,7 @@ form ul.formbody li span {
     font-weight: 600;
     /*background: #*/
 }
-form ul.formbody li.auto {
+ul.formbody li.auto {
     height: auto;
     line-height: auto;
     padding: 10px 0px;
@@ -324,10 +324,10 @@ form ul.formbody li.auto {
     overflow: hidden;
     border-bottom: 1px solid #DEEFFA;
 }
-form ul.formbody input.button {
+ul.formbody input.button {
     margin-left: 210px;
 }
-form ul.formbody input.mauto {
+ul.formbody input.mauto {
     margin:5px auto;
 }
 

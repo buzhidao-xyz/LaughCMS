@@ -45,7 +45,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 				<li class="formblock">
 					<span>文档主栏目: </span>
 					<select id="select" name="columnid" style="width:230px;">
-						<option value="" >|-请选择栏目...</option><option value="1" >&nbsp;&nbsp;|-栏目1</option><option value="2" >&nbsp;&nbsp;&nbsp;&nbsp;|-子栏目1</option><option value="3" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-子子栏目1</option><option value="4" >&nbsp;&nbsp;|-栏目2</option>
+						<option value="">|-请选择栏目...</option><option value="1">&nbsp;&nbsp;|-栏目1</option><option value="2" >&nbsp;&nbsp;&nbsp;&nbsp;|-子栏目1</option><option value="3" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-子子栏目1</option><option value="4">&nbsp;&nbsp;|-栏目2</option>
 					</select>
 				</li>
 				<li class="formblock">
@@ -62,7 +62,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 				</li>
 				<li class="formblock">
 					<span>发布时间:</span>
-					<input type="text" name="publishtime" value="2013-01-09 17:04:37" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="input w150" />
+					<input type="text" name="publishtime" value="2013-01-10 17:31:33" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="input w150" />
 				</li>
 				<li class="formblock">
 					<span>是否允许评论: </span>

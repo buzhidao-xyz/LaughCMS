@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-01-09 17:30:50
+<?php /* Smarty version Smarty-3.1.12, created on 2013-01-10 17:43:55
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Article\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:268550ed38ca6fa4a8-61432641%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1524450ee8d5be226d2-81242191%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'f25060c5b5621a40489b64ee1ec54935461a344d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\Article\\index.html',
-      1 => 1357721905,
+      1 => 1357810644,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '268550ed38ca6fa4a8-61432641',
+  'nocache_hash' => '1524450ee8d5be226d2-81242191',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50ed38ca86cc60_76478441',
+  'unifunc' => 'content_50ee8d5c03f793_44184063',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50ed38ca86cc60_76478441')) {function content_50ed38ca86cc60_76478441($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50ee8d5c03f793_44184063')) {function content_50ee8d5c03f793_44184063($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="captitle"><h5>文档列表 【目前共有<?php if ($_smarty_tpl->tpl_vars['total']->value){?><?php echo $_smarty_tpl->tpl_vars['total']->value;?>
 <?php }else{ ?>0<?php }?>条文档】</h5></div>
@@ -95,11 +95,13 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 	<a href="javascript:;" name="unCheckAll">取消</a>
 	<a href="javascript:;" name="articleUpdate">更新</a>
 	<a href="javascript:;" name="articleReview">审核</a>
-	<a href="javascript:;" name="articleMove">移动</a>
+	<a href="__APP__/index.php?s=Article/moveArticle" name="articleMove">移动</a>
 	<a href="javascript:;" name="articleDelete">删除</a>
 </div>
 <?php echo $_smarty_tpl->getSubTemplate ("public/page.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
+<link type="text/css" rel="stylesheet" href="themes/blue/js/colorbox/colorbox.css" media="screen">
+<script type="text/javascript" src="themes/blue/js/colorbox/jquery.colorbox.js"></script>
 <script type="text/javascript">
 $(document).ready(function (){
 var articleClass = function (){
@@ -124,6 +126,15 @@ var articleClass = function (){
 	articleObj.unCheckAll.click(function (){
 		$("input[flag=articleID]").attr("checked",false);
 	});
+
+	//移动栏目
+	articleObj.articleMove.colorbox();
+	articleObj.articleMove.click(function (){
+		var articleid = getArticleID();
+		$(this).attr("href",$(this).attr("href")+"&articleid="+articleid);
+	});
+	
+	//删除文档
 	articleObj.articleDelete.click(function (){
 		var articleid = getArticleID();
 		var d = {

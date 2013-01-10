@@ -151,10 +151,10 @@ class ColumnControl extends CommonControl
 		$data = M("Column")->getTopColumn();
 
 		$dataTree  = null;
-        $dataTree .= '<option value="" >|-请选择栏目...</option>';
+        $dataTree .= '<option value="">|-请选择栏目...</option>';
         if (is_array($data) && !empty($data)) {
 	        foreach ($data as $v) {
-	            $dataTree .= '<option value="'.$v['id'].'" >&nbsp;&nbsp;|-'.$v['columnname'].'</option>';
+	            $dataTree .= '<option value="'.$v['id'].'">&nbsp;&nbsp;|-'.$v['columnname'].'</option>';
 	            $dataTree .= $this->getSubColumnTree($v['id'],2);
 	        }
 	    }

@@ -126,7 +126,7 @@ class FileControl extends CommonControl
 	        rsort($files,SORT_STRING);
 	        $str = "";
 	        foreach ( $files as $file ) {
-	            $str .= $file."ue_separate_ue";
+	            $str .= __APP__.$file."ue_separate_ue";
 	        }
 	        echo $str;
 	    }

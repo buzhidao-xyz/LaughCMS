@@ -67,6 +67,7 @@ var articleClass = function (){
 	articleObj.unCheckAll.click(function (){
 		$("input[flag=articleID]").attr("checked",false);
 	});
+	//回收文档
 	articleObj.articleBack.click(function (){
 		var articleid = getArticleID();
 		var d = {
@@ -77,6 +78,7 @@ var articleClass = function (){
 			if (!data.status) location.href = location.href;
 		},'json');
 	});
+	//删除文档
 	articleObj.articleDelete.click(function (){
 		var articleid = getArticleID();
 		var d = {

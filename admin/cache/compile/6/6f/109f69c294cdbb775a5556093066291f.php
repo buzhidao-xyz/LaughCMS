@@ -37,7 +37,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 				<li class="formblock">
 					<span>上级栏目: </span>
 					<select id="select" name="parentid" style="width:230px;">
-						<option value="" >|-请选择栏目...</option><option value="1" >&nbsp;&nbsp;|-栏目1</option><option value="2" >&nbsp;&nbsp;&nbsp;&nbsp;|-子栏目1</option><option value="3" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-子子栏目1</option><option value="4" >&nbsp;&nbsp;|-栏目2</option>
+						<option value="">|-请选择栏目...</option><option value="1">&nbsp;&nbsp;|-栏目1</option><option value="2" >&nbsp;&nbsp;&nbsp;&nbsp;|-子栏目1</option><option value="3" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-子子栏目1</option><option value="4">&nbsp;&nbsp;|-栏目2</option>
 					</select>
 				</li>
 				<li class="formblock">
