@@ -1,0 +1,100 @@
+{include file="public/control_top.html"}
+<div class="captitle"><h5>文档回收站 【目前共有{if $total}{$total}{else}0{/if}条文档】</h5></div>
+<ul class="table_list_title">
+	<li class="table_list_l table_list_l30"></li>
+	<li class="table_list_l table_list_l50">ID</li>
+	<li class="table_list_l table_list_l300">文档标题</li>
+	<li class="table_list_l table_list_l150">更新时间</li>
+	<li class="table_list_l table_list_l120">所属栏目</li>
+	<li class="table_list_l table_list_l100">文档作者</li>
+	<li class="table_list_l table_list_l80">点击数</li>
+	<li class="table_list_l table_list_l80">评论数</li>
+	{if $accessStatus == 1}
+	<li class="table_list_l table_list_l120" accessStatus={$accessStatus}>操作</li>
+	{/if}
+</ul>
+<div class="contentTableList">
+    {if $dataList}
+    {foreach $dataList as $d}
+    <ul class="table_list">
+		<li class="table_list_l table_list_l30">
+			<input type="checkbox" name="articleid[]" value="{$d.id}" flag="articleID" class="checkbox" />
+		</li>
+		<li class="table_list_l table_list_l50">{$d.id}</li>
+		<li class="table_list_l table_list_l300" title="{$d.title}">
+			{$d.title}
+		</li>
+    	<li class="table_list_l table_list_l150">{$d.updatetime|mkdate}</li>
+    	<li class="table_list_l table_list_l120">{$d.columnname}</li>
+		<li class="table_list_l table_list_l100">{$d.author}</li>
+		<li class="table_list_l table_list_l80">{$d.clicknum}</li>
+		<li class="table_list_l table_list_l80">{$d.commentnum}</li>
+    	{if $accessStatus == 1}
+    	<li class="table_list_l table_list_l120" accessStatus={$accessStatus}>
+    		<a href="__APP__/index.php?s=Article/upArticle&articleid={$d.id}">修改</a>
+    		<a delurl="__APP__/index.php?s=Article/backArticle&articleid={$d.id}" href="javascript:;" name="del" msg="确定还原吗？">还原</a>
+    		<a delurl="__APP__/index.php?s=Article/deleteArticle&articleid={$d.id}" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
+    	{/if}
+    </ul>
+    {/foreach}
+    {else}
+    <ul class="table_list"><li class="table_list_center">空</li></ul>
+    {/if}
+</div>
+<div id="opBottom" class="opBottom">
+	<a href="javascript:;" name="checkAll">全选</a>
+	<a href="javascript:;" name="unCheckAll">取消</a>
+	<a href="javascript:;" name="articleBack">还原</a>
+	<a href="javascript:;" name="articleDelete">删除</a>
+</div>
+{include file="public/page.html"}
+<script type="text/javascript">
+$(document).ready(function (){
+var articleClass = function (){
+	var articleObj = {
+		checkAll: $("#opBottom a[name=checkAll]"),
+		unCheckAll: $("#opBottom a[name=unCheckAll]"),
+		articleBack: $("#opBottom a[name=articleBack]"),
+		articleDelete: $("#opBottom a[name=articleDelete]")
+	}
+	var getArticleID = function (){
+		var articleid= "";
+		$("input[name='articleid[]']").each(function (){
+			if ($(this).attr("checked")) articleid += articleid ? ","+$(this).val() : $(this).val();
+		});
+		return articleid;
+	};
+	articleObj.checkAll.click(function (){
+		$("input[flag=articleID]").attr("checked","checked");
+	});
+	articleObj.unCheckAll.click(function (){
+		$("input[flag=articleID]").attr("checked",false);
+	});
+	//回收文档
+	articleObj.articleBack.click(function (){
+		var articleid = getArticleID();
+		var d = {
+			articleid: articleid
+		};
+		$.post("__APP__/index.php?s=Article/backArticle",d,function (data){
+			alert(data.info);
+			if (!data.status) location.href = location.href;
+		},'json');
+	});
+	//删除文档
+	articleObj.articleDelete.click(function (){
+		var articleid = getArticleID();
+		var d = {
+			articleid: articleid
+		};
+		$.post("__APP__/index.php?s=Article/deleteArticle",d,function (data){
+			alert(data.info);
+			if (!data.status) location.href = location.href;
+		},'json');
+	});
+}
+articleClass();
+});
+</script>
+{include file="public/control_bottom.html"}

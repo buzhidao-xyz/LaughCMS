@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-01-09 17:22:44
+<?php /* Smarty version Smarty-3.1.12, created on 2013-01-11 10:49:15
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Article\uparticle.html" */ ?>
-<?php /*%%SmartyHeaderCode:2408250ed36e4e20193-66115578%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1497650ef7dab331ce9-88187817%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '0849aa8739adf3177354f40c3622af42fae0dbe9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\Article\\uparticle.html',
-      1 => 1357637762,
+      1 => 1357872533,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2408250ed36e4e20193-66115578',
+  'nocache_hash' => '1497650ef7dab331ce9-88187817',
   'function' => 
   array (
   ),
@@ -23,9 +23,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50ed36e4f31909_19425126',
+  'unifunc' => 'content_50ef7dab452983_98219955',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50ed36e4f31909_19425126')) {function content_50ed36e4f31909_19425126($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50ef7dab452983_98219955')) {function content_50ef7dab452983_98219955($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
 <div class="formContainer" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
@@ -76,8 +76,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</li>
 				<li class="formblock">
 					<span>更新时间:</span>
-					<input type="text" name="publishtime" value="<?php echo mkdate($_smarty_tpl->tpl_vars['articleInfo']->value['updatetime']);?>
+					<input type="text" id="dpicker0" name="publishtime" value="<?php echo mkdate($_smarty_tpl->tpl_vars['articleInfo']->value['updatetime']);?>
 " onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="input w150" />
+					<img width="16" height="22" align="absmiddle" onclick="WdatePicker({el:'dpicker0',dateFmt:'yyyy-MM-dd HH:mm:ss'})" style="cursor:pointer" src="public/plugin/My97DatePicker/skin/datePicker.gif">
 				</li>
 				<li class="formblock">
 					<span>是否允许评论: </span>
@@ -120,9 +121,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	</form>
 </div>
 <?php }?>
-<script src="themes/blue/UEditor/editor_config.js" type="text/javascript"></script>
-<script src="themes/blue/UEditor/editor_all_min.js" type="text/javascript"></script>
-<script src="themes/blue/js/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+<script src="public/plugin/UEditor/editor_config.js" type="text/javascript"></script>
+<script src="public/plugin/UEditor/editor_all_min.js" type="text/javascript"></script>
+<script src="public/plugin/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
 <script type="text/javascript">
     UE.getEditor('myEditor',{
     	initialFrameWidth: 900,

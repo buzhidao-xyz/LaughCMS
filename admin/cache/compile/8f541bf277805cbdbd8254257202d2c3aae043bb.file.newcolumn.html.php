@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-01-10 15:05:41
+<?php /* Smarty version Smarty-3.1.12, created on 2013-01-11 10:09:16
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Column\newcolumn.html" */ ?>
-<?php /*%%SmartyHeaderCode:2154650ee6845c2dab1-67163331%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2865250ef744c17bfa9-00781985%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '8f541bf277805cbdbd8254257202d2c3aae043bb' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\Column\\newcolumn.html',
-      1 => 1356415102,
+      1 => 1357869769,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2154650ee6845c2dab1-67163331',
+  'nocache_hash' => '2865250ef744c17bfa9-00781985',
   'function' => 
   array (
   ),
@@ -22,9 +22,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50ee6845ca7c09_10530098',
+  'unifunc' => 'content_50ef744c20bab4_83308750',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50ee6845ca7c09_10530098')) {function content_50ee6845ca7c09_10530098($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50ef744c20bab4_83308750')) {function content_50ef744c20bab4_83308750($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
 <div class="formContainer" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
@@ -99,8 +99,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	</form>
 </div>
 <?php }?>
-<script src="themes/blue/UEditor/editor_config.js" type="text/javascript"></script>
-<script src="themes/blue/UEditor/editor_all_min.js" type="text/javascript"></script>
+<script src="public/plugin/UEditor/editor_config.js" type="text/javascript"></script>
+<script src="public/plugin/UEditor/editor_all_min.js" type="text/javascript"></script>
 <script type="text/javascript">
     UE.getEditor('myEditor',{
     	initialFrameWidth: 900,

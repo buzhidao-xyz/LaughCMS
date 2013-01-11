@@ -84,8 +84,8 @@ var JS_APPM = 'http://localhost:82/laugh';
 	<a href="javascript:;" name="articleDelete">删除</a>
 </div>
 
-<link type="text/css" rel="stylesheet" href="themes/blue/js/colorbox/colorbox.css" media="screen">
-<script type="text/javascript" src="themes/blue/js/colorbox/jquery.colorbox.js"></script>
+<link type="text/css" rel="stylesheet" href="public/plugin/colorbox/colorbox.css" media="screen">
+<script type="text/javascript" src="public/plugin/colorbox/jquery.colorbox.js"></script>
 <script type="text/javascript">
 $(document).ready(function (){
 var articleClass = function (){

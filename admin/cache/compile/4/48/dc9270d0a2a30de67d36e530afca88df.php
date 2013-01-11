@@ -62,7 +62,8 @@ var JS_APPM = 'http://localhost:82/laugh';
 				</li>
 				<li class="formblock">
 					<span>发布时间:</span>
-					<input type="text" name="publishtime" value="2013-01-10 17:31:33" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="input w150" />
+					<input type="text" id="dpicker0" name="publishtime" value="2013-01-11 10:55:03" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="input w150" />
+					<img width="16" height="22" align="absmiddle" onclick="WdatePicker({el:'dpicker0',dateFmt:'yyyy-MM-dd HH:mm:ss'})" style="cursor:pointer" src="public/plugin/My97DatePicker/skin/datePicker.gif">
 				</li>
 				<li class="formblock">
 					<span>是否允许评论: </span>
@@ -100,9 +101,9 @@ var JS_APPM = 'http://localhost:82/laugh';
 		</ul>
 	</form>
 </div>
-<script src="themes/blue/UEditor/editor_config.js" type="text/javascript"></script>
-<script src="themes/blue/UEditor/editor_all_min.js" type="text/javascript"></script>
-<script src="themes/blue/js/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+<script src="public/plugin/UEditor/editor_config.js" type="text/javascript"></script>
+<script src="public/plugin/UEditor/editor_all_min.js" type="text/javascript"></script>
+<script src="public/plugin/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
 <script type="text/javascript">
     UE.getEditor('myEditor',{
     	initialFrameWidth: 900,
