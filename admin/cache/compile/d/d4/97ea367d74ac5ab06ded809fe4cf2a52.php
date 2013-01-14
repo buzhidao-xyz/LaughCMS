@@ -70,8 +70,9 @@ $(document).ready(function (){
 	Copyright &copy; xxx. 2012-2015
 </div>
 </body>
-<script type="text/javascript" src="themes/blue/js/jquery.corner.js"></script>
-<script type="text/javascript" src="themes/blue/js/public.js"></script>
-<script type="text/javascript" src="themes/blue/js/common.js"></script>
-<script type="text/javascript" src="themes/blue/js/ajax.js"></script>
+<script type="text/javascript" src="themes/green/js/jquery.corner.js"></script>
+<script type="text/javascript" src="themes/green/js/public.js"></script>
+<script type="text/javascript" src="themes/green/js/common.js"></script>
+<script type="text/javascript" src="themes/green/js/ajax.js"></script>
+<script type="text/javascript" src="public/js/jquery.idTabs.min.js"></script>
 </html>

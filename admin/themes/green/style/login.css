@@ -1,10 +1,10 @@
 /* login */
 body {
-    background: #1D3647;
+    background: #B2BBCC;
 }
 #loginTop {
     height: 42px;
-    background: url("../images/login_top_bg.gif") repeat-x;
+    background: url("../images/header_bg.jpg") repeat-x bottom;
 }
 #loginCenter {
     width: 100%;
@@ -13,10 +13,13 @@ body {
     overflow: hidden;
 }
 #loginBottom {
-    color: #FFFFFF;
-    text-align: center;
+    position: fixed;
+    width: 100%;
     height: 20px;
     line-height: 20px;
+    color: #FFFFFF;
+    text-align: center;
+    bottom: 0;
     background: url("../images/login_bottom_bg.gif") repeat-x;
 }
 #loginasdf {
@@ -70,7 +73,7 @@ body {
     text-indent:30px;
     font-size:13px;
     font-weight:600;
-    color:#555;
+    color:#027263;
 }
 .logForm .input {
     float: left;
@@ -79,6 +82,7 @@ body {
 }
 .logForm .vcode {
     margin-top:6px;
+    cursor: pointer;
 }
 #logError {
     width:100%;

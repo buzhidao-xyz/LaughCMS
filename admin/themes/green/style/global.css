@@ -95,7 +95,6 @@
     line-height:21px;
     background: url("../images/captitle_icon1.png") no-repeat 0 12px;
     padding: 5px 10px;
-    /*border-bottom: 1px solid #B5D0D9;*/
     clear: both;
 }
 .contentTableList a:link, .contentTableList a:visited {
@@ -229,6 +228,9 @@ input.w350 {
 
 .nonefloat label {
   float: none;
+}
+.lineOrange {
+  border-bottom: 1px dashed #FF6600;
 }
 
 /**form表单样式表*/
@@ -607,7 +609,7 @@ form ul.formbody li .edui-default span {
 .edui-default {
 }
 
-/**************文档列表************/
+/******************文档列表****************/
 .opBottom {
   height: 35px;
   line-height: 35px;
@@ -622,4 +624,91 @@ form ul.formbody li .edui-default span {
   border-width: medium 1px 1px medium;
   cursor: pointer;
   padding: 3px 8px;
+}
+
+/******************文档列表****************/
+.box {
+  width: 480px;
+  overflow: hidden;
+  border: 1px solid #027263;
+}
+.boxLeft {
+  float: left;
+  clear: both;
+  margin-top: 10px;
+}
+.boxRight {
+  float: left;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.box .boxTitle {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background: #014A47;
+}
+.box .boxTitle h5 {
+  float: left;
+  color: #FFFFFF;
+  padding-left: 10px;
+}
+.box .boxTitle ul.boxTab {
+  float: right;
+  margin-right: 10px;
+}
+.box .boxTitle ul.boxTab li {
+  float: left;
+}
+.box .boxTitle ul.boxTab li a {
+  background: #DDEEF5;
+  padding: 6px 10px;
+  margin-left: 1px;
+  text-decoration: none;
+}
+.box .boxTitle ul.boxTab li a.selected {
+  background: #FFF;
+  border-bottom: 1px solid #FFF;
+}
+.box .boxContent {
+  padding: 5px 10px;
+}
+.box .boxContent a {
+  padding: 5px;
+}
+.box .boxTabContent {
+  background: #FFF;
+}
+.box .boxContent ul li span {
+  float: left;
+  padding: 4px;
+}
+.box .boxContent ul li span.sleft {
+  width: 170px;
+  text-align: left;
+  color: #027263;
+}
+.box .boxContent ul li span.sright {
+  color: #FF6600;
+}
+.box .boxContent ul li.title {
+  color: #014A47;
+  font-weight: 600;
+}
+.box .boxContent .boxFrom ul {
+
+}
+.box .boxContent .boxFrom ul li {
+  border-bottom: 1px dashed #CCC;
+}
+.box .boxContent .boxFrom ul li.bordernone {
+  border-bottom: 0;
+}
+.box .boxContent .boxFrom ul li span {
+  float: left;
+  width: 120px;
+  display: block;
+  padding: 9px 5px 0 0;
+  text-align: right;
+  color: #027263;
 }

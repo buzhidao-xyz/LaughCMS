@@ -65,7 +65,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 				</li>
 				<li class="formblock">
 					<span>发布时间:</span>
-					<input type="text" id="dpicker0" name="publishtime" value="2013-01-11 17:29:22" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="input w150" />
+					<input type="text" id="dpicker0" name="publishtime" value="2013-01-14 15:51:31" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="input w150" />
 					<img width="16" height="22" align="absmiddle" onclick="WdatePicker({el:'dpicker0',dateFmt:'yyyy-MM-dd HH:mm:ss'})" style="cursor:pointer" src="public/plugin/My97DatePicker/skin/datePicker.gif">
 				</li>
 				<li class="formblock">
@@ -132,8 +132,9 @@ var JS_APPM = 'http://localhost:82/laugh';
 	</ul>
 </div>
 </body>
-<script type="text/javascript" src="themes/blue/js/jquery.corner.js"></script>
-<script type="text/javascript" src="themes/blue/js/public.js"></script>
-<script type="text/javascript" src="themes/blue/js/common.js"></script>
-<script type="text/javascript" src="themes/blue/js/ajax.js"></script>
+<script type="text/javascript" src="themes/green/js/jquery.corner.js"></script>
+<script type="text/javascript" src="themes/green/js/public.js"></script>
+<script type="text/javascript" src="themes/green/js/common.js"></script>
+<script type="text/javascript" src="themes/green/js/ajax.js"></script>
+<script type="text/javascript" src="public/js/jquery.idTabs.min.js"></script>
 </html>

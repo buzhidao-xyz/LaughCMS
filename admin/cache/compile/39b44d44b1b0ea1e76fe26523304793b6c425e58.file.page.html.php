@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-01-11 17:29:23
+<?php /* Smarty version Smarty-3.1.12, created on 2013-01-14 14:33:09
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\public\page.html" */ ?>
-<?php /*%%SmartyHeaderCode:2686050efdb73d5f971-64692134%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1345350f3a6a588e452-33663724%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '39b44d44b1b0ea1e76fe26523304793b6c425e58' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\green\\public\\page.html',
-      1 => 1355370094,
+      1 => 1358129536,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2686050efdb73d5f971-64692134',
+  'nocache_hash' => '1345350f3a6a588e452-33663724',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50efdb73eabfe7_26359446',
+  'unifunc' => 'content_50f3a6a59f3b18_11642896',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50efdb73eabfe7_26359446')) {function content_50efdb73eabfe7_26359446($_smarty_tpl) {?><?php if ($_smarty_tpl->tpl_vars['page']->value&&count($_smarty_tpl->tpl_vars['page']->value['page'])>1){?>
+<?php if ($_valid && !is_callable('content_50f3a6a59f3b18_11642896')) {function content_50f3a6a59f3b18_11642896($_smarty_tpl) {?><?php if ($_smarty_tpl->tpl_vars['page']->value&&count($_smarty_tpl->tpl_vars['page']->value['page'])>1){?>
 <div id="<?php if (isset($_smarty_tpl->tpl_vars['isface']->value)){?>facepage<?php }else{ ?>compage<?php }?>" class="pagination">
 	<?php if ($_smarty_tpl->tpl_vars['page']->value['firstpage']['row']){?>
 	<a class="pageprev graya fleft" href="<?php if ($_smarty_tpl->tpl_vars['page']->value['firstpage']['href']){?><?php echo $_smarty_tpl->tpl_vars['page']->value['firstpage']['href'];?>
@@ -71,12 +71,10 @@ var bindpage = function($obj){
 	},function(){
 		$obj.find('.pageList').hide();
 	})
-    
 }
 if($('#compage').length>0){
     //bindpage($('#compage'));
-}
-else if($('#facepage').length>0){
+} else if ($('#facepage').length>0) {
     //bindpage($('#facepage'));   
 }
 </script>
