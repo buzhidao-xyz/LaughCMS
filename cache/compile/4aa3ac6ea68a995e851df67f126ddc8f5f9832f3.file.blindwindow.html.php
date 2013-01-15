@@ -1,15 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="keywords" content="">
-<link type="text/css" rel="stylesheet" href="themes/default/style/common.css" media="screen">
-<script type="text/javascript" src="public/js/jquery.js"></script>
-<title>主页</title>
-</head>
-
-<body>
-<link type="text/css" rel="stylesheet" href="public/plugin/blindwindow/style.css" media="screen">
+<?php /* Smarty version Smarty-3.1.12, created on 2013-01-15 17:13:46
+         compiled from "C:\xampp\htdocs\laugh\themes\default\Public\blindwindow.html" */ ?>
+<?php /*%%SmartyHeaderCode:1377650f51dcac7bbd8-49534746%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '4aa3ac6ea68a995e851df67f126ddc8f5f9832f3' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\Public\\blindwindow.html',
+      1 => 1358241222,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '1377650f51dcac7bbd8-49534746',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.12',
+  'unifunc' => 'content_50f51dcac7f0d5_04521193',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_50f51dcac7f0d5_04521193')) {function content_50f51dcac7f0d5_04521193($_smarty_tpl) {?><link type="text/css" rel="stylesheet" href="public/plugin/blindwindow/style.css" media="screen">
 <ul id="menu">
 	<li>
 		<a href="#">Weblog Tools</a>
@@ -56,6 +66,4 @@
 </style>
 <script type="text/javascript" src="public/plugin/blindwindow/menu.js"></script>
 <script type="text/javascript">
-</script>
-</body>
-</html>
+</script><?php }} ?>
