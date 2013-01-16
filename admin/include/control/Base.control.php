@@ -196,5 +196,6 @@ class BaseControl
     protected function display($tpl)
     {
         $this->_template->display($tpl);
+        exit;
     }
 }

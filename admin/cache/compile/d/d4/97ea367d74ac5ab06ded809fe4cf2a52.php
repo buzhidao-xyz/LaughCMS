@@ -49,7 +49,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 			<div class="menutree1"><a target="main" hidefocus="true" href="javascript:;" class="plus">基本信息</a></div>
 			<ul class="menusub">
 				<li class="menuTopLine"></li>
-				<li><a hidefocus="true" href="/laugh/admin/index.php?s=Public/welcome" target="main">欢迎页</a></li>
+				<li><a hidefocus="true" href="/laugh/admin/index.php?s=Public/welcome" target="main">系统主页</a></li>
 				<li><a hidefocus="true" href="/laugh/admin/index.php?s=Admin/profile" target="main">个人信息</a></li>
 			</ul>
 		</li>

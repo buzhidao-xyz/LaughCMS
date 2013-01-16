@@ -103,6 +103,8 @@ class ColumnControl extends CommonControl
 	//添加栏目
 	public function newColumn()
 	{
+		$columnid = $this->_getColumnID();
+		$this->assign("columnid",$columnid);
 		$this->assign("columnTree", $this->getColumnTree());
 		$this->display("Column/newcolumn.html");
 	}
@@ -194,14 +196,14 @@ class ColumnControl extends CommonControl
 	        	$dataTree .= '<div class="ul columnlistd">
 								<div class="li columnplusmius columnplus" columnid="'.$v['id'].'"></div>
 								<div class="li columnListd700" flag="columnTableList">
-									<a href="'.__APP__.'/index.php?s=Column/columnContent">'.$v['columnname'].'</a>
+									<a href="'.__APP__.'/index.php?s=Article/index&columnid='.$v['id'].'">'.$v['columnname'].'</a>
 									'.$isshow.'
 								</div>
 								<div class="li columnListd300" flag="columnTableList">
 									<a href="javascript:;">预览</a> |
-									<a href="javascript:;">栏目文档</a> |
-									<a href="javascript:;">增加子栏目</a> |
-									<a href="javascript:;">编辑</a> |
+									<a href="'.__APP__.'/index.php?s=Article/index&columnid='.$v['id'].'">栏目文档</a> |
+									<a href="'.__APP__.'/index.php?s=Column/newColumn&columnid='.$v['id'].'">增加子栏目</a> |
+									<a href="'.__APP__.'/index.php?s=Column/updateColumn&columnid='.$v['id'].'">编辑</a> |
 									<a delurl="'.__APP__.'/index.php?s=Column/deleteColumn&columnid='.$v['id'].'" href="javascript:;" name="del" msg="确定删除该栏目吗？">删除</a>
 								</div>
 							</div>';
@@ -211,9 +213,58 @@ class ColumnControl extends CommonControl
 	    $this->ajaxReturn(0,1,$dataTree);
 	}
 
-	public function columnContent()
+	//编辑栏目信息
+	public function updateColumn()
+	{
+		$this->assign("accessStatus", 1);
+		$columnid = $this->_getColumnID();
+		if (!FilterHelper::C_int($columnid)) $this->display("Common/error.html");
+
+		$columnInfo = M("Column")->getColumn($columnid);
+		$columnInfo = $columnInfo[0];
+		$this->assign("ColumnInfo", $columnInfo);
+		$this->assign("columnTree", $this->getColumnTree());
+		$this->display("Column/updatecolumn.html");
+	}
+
+	//保存编辑栏目信息
+	public function saveUpdateColumn()
 	{
 		$columnid = $this->_getColumnID();
+		if (!FilterHelper::C_int($columnid)) $this->display("Common/error.html");
+
+		$columnname  = $this->_getColumnName();
+		$parentid    = $this->_getparentid();
+		$sortrank    = $this->_getsortrank();
+		$columntype  = $this->_getcolumntype();
+		$isshow      = $this->_getisshow();
+		$title       = $this->_gettitle();
+		$keyword     = $this->_getkeyword();
+		$description = $this->_getdescription();
+		$content     = $this->_getcontent();
+
+		$topid = $this->getTopID($parentid);
+
+		$data = array(
+			'columnname'  => $columnname,
+			'parentid'    => $parentid,
+			'topid'       => $topid,
+			'sortrank'    => $sortrank,
+			'columntype'  => $columntype,
+			'isshow'      => $isshow,
+			'title'       => $title,
+			'keyword'     => $keyword,
+			'description' => $description,
+			'content'     => $content,
+			'updatetime'  => TIMESTAMP
+		);
+
+		$return = M("Column")->updateColumn($columnid,$data);
+		if ($return) {
+			$this->display("Common/success.html");
+		} else {
+			$this->display("Common/error.html");
+		}
 	}
 
 	//删除栏目

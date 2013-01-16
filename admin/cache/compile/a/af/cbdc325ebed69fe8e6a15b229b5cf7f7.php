@@ -27,8 +27,9 @@ var JS_APPM = 'http://localhost:82/laugh';
 	</ul>
 	<div id="controlContent">
 <div class="formContainer" accessStatus=1>
-	<div class="formtitle"><h5>添加新栏目</h5></div>
-	<form name="newcolumnform" action="/laugh/admin/index.php?s=Column/saveColumn" enctype="multipart/form-data" method="post" class="newform">
+	<div class="formtitle"><h5>更新栏目信息</h5></div>
+	<form name="newcolumnform" action="/laugh/admin/index.php?s=Column/saveUpdateColumn" enctype="multipart/form-data" method="post" class="newform">
+		<input type="hidden" name="columnid" value="2" />
 		<ul class="formbody">
 			<div class="shtabtitlec">
 				<div class="shtabtitle shtabcurrent"><a href="javascript:;"><span>常规内容</span></a></div>
@@ -45,25 +46,25 @@ var JS_APPM = 'http://localhost:82/laugh';
 				</li>
 				<li class="formblock">
 					<span>栏目名称:</span>
-					<input type="text" name="columnname" value="" class="input w200" />
+					<input type="text" name="columnname" value="子栏目1" class="input w200" />
 				</li>
 				<li class="formblock">
 					<span>排列顺序:</span>
-					<input type="text" name="sortrank" value="" class="input w100" />
+					<input type="text" name="sortrank" value="1" class="input w100" />
 				</li>
 				<li class="formautoblock">
 					<span>栏目属性:</span>
 					<div class="item_listh fleft">
 						<label style="float:none;"><input type="radio" name="columntype" value="1" class="radio" checked="checked" />最终列表栏目（允许在本栏目发布文档，并生成文档列表） </label>
-						<label style="float:none;"><input type="radio" name="columntype" value="2" class="radio" />频道封面（栏目本身不允许发布文档） </label>
-						<label style="float:none;"><input type="radio" name="columntype" value="3" class="radio" />外部连接（在"文件保存目录"处填写网址） </label>
+						<label style="float:none;"><input type="radio" name="columntype" value="2" class="radio"  />频道封面（栏目本身不允许发布文档） </label>
+						<label style="float:none;"><input type="radio" name="columntype" value="3" class="radio"  />外部连接（在"文件保存目录"处填写网址） </label>
 					</div>
 				</li>
 				<li class="formblock">
 					<span>是否隐藏: </span>
 					<div class="item_list fleft">
 						<label><input type="radio" name="isshow" value="1" class="radio" checked="checked" />显示</label>
-						<label><input type="radio" name="isshow" value="0" class="radio" />隐藏</label>
+						<label><input type="radio" name="isshow" value="0" class="radio"  />隐藏</label>
 					</div>
 				</li>
 			</div>
@@ -74,23 +75,23 @@ var JS_APPM = 'http://localhost:82/laugh';
 				</li>
 				<li class="formautoblock">
 					<span>关键字:</span>
-					<textarea name="keyword" rows="1" cols="47"></textarea>
+					<textarea name="keyword" value="" rows="1" cols="47"></textarea>
 				</li>
 				<li class="formautoblock">
 					<span>栏目描述:</span>
-					<textarea name="description" rows="2" cols="47"></textarea>
+					<textarea name="description" value="" rows="2" cols="47"></textarea>
 				</li>
 			</div>
 			<div class="shtabcontent">
 				<li class="formautoblock">
 					<span>栏目内容:</span>
 					<div class="FullTextEditor">
-						<textarea name="content" id="myEditor" rows="3" cols="50"></textarea>
+						<textarea name="content" id="myEditor" rows="3" cols="50">&lt;p&gt;子栏目&lt;strong&gt;&lt;img src=&quot;/Uploads/Scrawl/201212/25/1356406180_tkbjyl_4121.png&quot; /&gt;&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;</textarea>
 					</div>
 				</li>
 			</div>
 			<li class="formblock bordernone">
-				<input type="submit" name="subut" class="button btnyellow2" value="添加" />
+				<input type="submit" name="subut" class="button btnyellow2" value="修改" />
 			</li>
 		</ul>
 	</form>
@@ -115,7 +116,7 @@ var JS_APPM = 'http://localhost:82/laugh';
     	}
     });
     $("select[name=parentid]").find("option").each(function (){
-    	if ($(this).val()==4) $(this).attr("selected",true);
+    	if ($(this).val()==1) $(this).attr("selected",true);
     });
 </script>
     </div>

@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-01-14 14:33:07
+<?php /* Smarty version Smarty-3.1.12, created on 2013-01-16 17:26:40
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\Column\newcolumn.html" */ ?>
-<?php /*%%SmartyHeaderCode:1044950f3a6a318d878-20248399%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2793650f67250b95675-22718003%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'bd83c1b6780047f2c7d3de9bed340b9e52103a3d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\green\\Column\\newcolumn.html',
-      1 => 1357869769,
+      1 => 1358327928,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1044950f3a6a318d878-20248399',
+  'nocache_hash' => '2793650f67250b95675-22718003',
   'function' => 
   array (
   ),
@@ -19,12 +19,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'accessStatus' => 0,
     'columnTree' => 0,
+    'columnid' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50f3a6a320f3e1_46527359',
+  'unifunc' => 'content_50f67250c0b0b3_41672030',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50f3a6a320f3e1_46527359')) {function content_50f3a6a320f3e1_46527359($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50f67250c0b0b3_41672030')) {function content_50f67250c0b0b3_41672030($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
 <div class="formContainer" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
@@ -117,6 +118,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     		alert("请填写栏目排序位置!");
     		return false;
     	}
+    });
+    $("select[name=parentid]").find("option").each(function (){
+    	if ($(this).val()==<?php echo $_smarty_tpl->tpl_vars['columnid']->value;?>
+) $(this).attr("selected",true);
     });
 </script>
 <?php echo $_smarty_tpl->getSubTemplate ("public/control_bottom.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>

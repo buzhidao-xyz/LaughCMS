@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-01-16 09:30:14
+<?php /* Smarty version Smarty-3.1.12, created on 2013-01-16 17:26:42
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\Column\column.html" */ ?>
-<?php /*%%SmartyHeaderCode:2343150f602a6addd55-60451039%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:603750f672528c3665-05350439%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '5fcd84c533139317b741a27df608da5c84af07f5' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\green\\Column\\column.html',
-      1 => 1358211930,
+      1 => 1358326029,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2343150f602a6addd55-60451039',
+  'nocache_hash' => '603750f672528c3665-05350439',
   'function' => 
   array (
   ),
@@ -22,9 +22,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50f602a6bc0b16_06419945',
+  'unifunc' => 'content_50f672529a9be5_46365475',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50f602a6bc0b16_06419945')) {function content_50f602a6bc0b16_06419945($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50f672529a9be5_46365475')) {function content_50f672529a9be5_46365475($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="captitle"><h5>栏目列表</h5></div>
 <div id="columnList">
@@ -43,15 +43,19 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 			<div class="li columnplusmius columnplus" columnid="<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 "></div>
 			<div class="li columnListd700" flag="columnTableList">
-				<a href="__APP__/index.php?s=Column/columnContent"><?php echo $_smarty_tpl->tpl_vars['d']->value['columnname'];?>
+				<a href="__APP__/index.php?s=Article/index&columnid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['d']->value['columnname'];?>
 </a>
 				<?php if ($_smarty_tpl->tpl_vars['d']->value['isshow']==1){?><font color="green"></font><?php }else{ ?><font color="red">[隐]</font><?php }?>
 			</div>
 			<div class="li columnListd300" flag="columnTableList">
 				<a href="javascript:;">预览</a> |
-				<a href="javascript:;">栏目文档</a> |
-				<a href="javascript:;">增加子栏目</a> |
-				<a href="javascript:;">编辑</a> |
+				<a href="__APP__/index.php?s=Article/index&columnid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+">栏目文档</a> |
+				<a href="__APP__/index.php?s=Column/newColumn&columnid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+">增加子栏目</a> |
+				<a href="__APP__/index.php?s=Column/updateColumn&columnid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+">编辑</a> |
 				<a delurl="__APP__/index.php?s=Column/deleteColumn&columnid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 " href="javascript:;" name="del" msg="确定删除该栏目吗？">删除</a>
 			</div>
