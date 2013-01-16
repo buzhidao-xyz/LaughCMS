@@ -3,8 +3,7 @@ body{
     margin:0px;
     color:#000000;
     background:#FFFFFF;
-    font-size:13px;
-    /*font-family:Geneva, Arial, Helvetica, sans-serif;*/
+    font: 13px "宋体",Arial,Helvetica,sans-serif;
 }
 * {
     outline: medium none;
@@ -73,7 +72,6 @@ p{
 }
 table{
     color: #000000;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size:13px;
     font-style: normal;
     font-weight: normal;

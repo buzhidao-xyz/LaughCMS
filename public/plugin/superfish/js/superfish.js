@@ -85,7 +85,7 @@
 		hoverClass	: 'sfHover',
 		pathClass	: 'overideThisToUse',
 		pathLevels	: 1,
-		delay		: 800,
+		delay		: 100, //100MS之后隐藏子菜单
 		animation	: {opacity:'show'},
 		speed		: 'normal',
 		autoArrows	: true,

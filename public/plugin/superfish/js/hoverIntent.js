@@ -4,7 +4,7 @@
 		// default configuration options
 		var cfg = {
 			sensitivity: 7,
-			interval: 100,
+			interval: 10, //10MS之后显示子菜单
 			timeout: 0
 		};
 		// override configuration options with user supplied object

@@ -33,12 +33,12 @@
 .sf-navbar a, .sf-navbar a:visited {
 	border:			none;
 }
-.sf-navbar li.current {
+.sf-navbar li.navigationCurrent {
 	background:		#BDD2FF;
 }
 .sf-navbar li:hover,
 .sf-navbar li.sfHover,
-.sf-navbar li li.current,
+.sf-navbar li li.navigationCurrent,
 .sf-navbar a:focus, .sf-navbar a:hover, .sf-navbar a:active {
 	background:		#BDD2FF;
 }
@@ -51,21 +51,21 @@ ul.sf-navbar ul li.sfHover li,
 }
 ul.sf-navbar li li li:hover,
 ul.sf-navbar li li li.sfHover,
-.sf-navbar li li.current li.current,
+.sf-navbar li li.navigationCurrent li.navigationCurrent,
 .sf-navbar ul li li a:focus, .sf-navbar ul li li a:hover, .sf-navbar ul li li a:active {
 	background:		#E6EEFF;
 }
-ul.sf-navbar .current ul,
+ul.sf-navbar .navigationCurrent ul,
 ul.sf-navbar ul li:hover ul,
 ul.sf-navbar ul li.sfHover ul {
 	left:			0;
 	top:			2.5em; /* match top ul list item height */
 }
-ul.sf-navbar .current ul ul {
+ul.sf-navbar .navigationCurrent ul ul {
 	top: 			-999em;
 }
 
-.sf-navbar li li.current > a {
+.sf-navbar li li.navigationCurrent > a {
 	font-weight:	bold;
 }
 

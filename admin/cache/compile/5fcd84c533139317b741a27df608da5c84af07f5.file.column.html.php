@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-01-14 14:33:11
+<?php /* Smarty version Smarty-3.1.12, created on 2013-01-16 09:30:14
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\Column\column.html" */ ?>
-<?php /*%%SmartyHeaderCode:3233950f3a6a7dc19d4-12798143%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2343150f602a6addd55-60451039%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '5fcd84c533139317b741a27df608da5c84af07f5' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\green\\Column\\column.html',
-      1 => 1356506144,
+      1 => 1358211930,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3233950f3a6a7dc19d4-12798143',
+  'nocache_hash' => '2343150f602a6addd55-60451039',
   'function' => 
   array (
   ),
@@ -22,9 +22,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50f3a6a7e8f785_76715025',
+  'unifunc' => 'content_50f602a6bc0b16_06419945',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50f3a6a7e8f785_76715025')) {function content_50f3a6a7e8f785_76715025($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50f602a6bc0b16_06419945')) {function content_50f602a6bc0b16_06419945($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="captitle"><h5>栏目列表</h5></div>
 <div id="columnList">
@@ -63,7 +63,7 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 	<div class="columnList">
 	</div>
 </div>
-<link rel="stylesheet" type="text/css" href="themes/blue/style/column.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="themes/green/style/column.css" media="screen" />
 <script type="text/javascript">
 $(document).ready(function(){
 	var column = function (){

@@ -1,0 +1,53 @@
+/* ---------------------- 
+ * 顶部导航菜单样式表
+ * by buzhidao 2012-01-16
+ ---------------------- */
+ul.headerNavigation {
+	display:block;
+	width: 100%;
+	height:42px;
+	font-size:13px;
+	font-weight: 700;
+	background:transparent url(../images/blueslate_background.gif) repeat-x top left;
+	text-transform:uppercase;
+}
+ul.headerNavigation li {
+	display:block;
+	float:left;
+	background: none;
+}
+ul.headerNavigation li:hover, ul.headerNavigation li.sfHover {
+	background: url(../images/blueslate_backgroundOVER.gif) no-repeat top center;
+}
+ul.headerNavigation li a {
+	display:block;
+	padding:14px 20px;
+	height:auto;
+	color:#D5F1FF;
+	text-decoration:none;
+}
+ul.headerNavigation li a:hover, ul.headerNavigation li.sfHover a {
+	color: #FFFFFF;
+}
+ul.headerNavigation ul.SubNavigation {
+	font-weight: 500;
+}
+ul.headerNavigation ul.SubNavigation li {
+	background: #0F67A1;
+	border-bottom: 1px solid #86C7EF;
+}
+ul.headerNavigation ul.SubNavigation li:hover, ul.headerNavigation ul.SubNavigation li.sfHover {
+	background: #61BFED;
+}
+ul.headerNavigation ul.SubNavigation li a {
+	color:#D5F1FF;
+	padding: 8px 10px;
+	padding-left: 20px;
+}
+ul.headerNavigation ul.SubNavigation li a:hover, ul.headerNavigation ul.SubNavigation li.sfHover a {
+	color: #FFFFFF;
+}
+ul.headerNavigation ul.SubNavigation li a > .sf-sub-indicator {
+	top: 9px;
+	background-position: -10px 0px;
+}
