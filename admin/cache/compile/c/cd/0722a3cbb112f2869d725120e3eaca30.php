@@ -6,7 +6,7 @@
 <link type="text/css" rel="stylesheet" href="themes/green/style/common.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/green/style/base.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/green/style/global.css" media="screen">
-<script type="text/javascript" src="themes/green/js/jquery.js"></script>
+<script type="text/javascript" src="public/js/jquery.js"></script>
 <script type="text/javascript" src="themes/green/js/div_window.js"></script>
 <!-- <script type="text/javascript" src="themes/blue/js/PIE.js"></script> -->
 <title>管理中心</title>
@@ -65,7 +65,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 				</li>
 				<li class="formblock">
 					<span>发布时间:</span>
-					<input type="text" id="dpicker0" name="publishtime" value="2013-01-14 15:51:31" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="input w150" />
+					<input type="text" id="dpicker0" name="publishtime" value="2013-01-16 17:16:14" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="input w150" />
 					<img width="16" height="22" align="absmiddle" onclick="WdatePicker({el:'dpicker0',dateFmt:'yyyy-MM-dd HH:mm:ss'})" style="cursor:pointer" src="public/plugin/My97DatePicker/skin/datePicker.gif">
 				</li>
 				<li class="formblock">

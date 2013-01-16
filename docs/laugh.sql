@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2013-01-09 17:30:31
+Date: 2013-01-16 17:27:04
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,7 +37,7 @@ CREATE TABLE `la_admin` (
 -- ----------------------------
 -- Records of la_admin
 -- ----------------------------
-INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1357722189', '2130706433', '85', '1');
+INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1358129443', '2130706433', '89', '1');
 INSERT INTO `la_admin` VALUES ('2', 'luochuan', '624879b3fff70462132a21eb1cd8eb75', 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '1355368421', '2130706433', '12', '0');
 
 -- ----------------------------
@@ -145,8 +145,8 @@ CREATE TABLE `la_column` (
 -- ----------------------------
 -- Records of la_column
 -- ----------------------------
-INSERT INTO `la_column` VALUES ('1', '栏目1', '0', '0', '1', null, null, '1', '栏目1', '栏目1', '栏目1', '&lt;p&gt;栏目1&lt;br /&gt;&lt;/p&gt;', '1', '1356402068', '1356402068');
-INSERT INTO `la_column` VALUES ('2', '子栏目1', '1', '1', '1', null, null, '1', '', '', '', '&lt;p&gt;&lt;img src=&quot;/Uploads/Image/201212/25/1356405476_fzagmz_6513.jpg&quot; style=&quot;float:none;&quot; title=&quot;震撼！精选立体设计壁纸.jpg&quot; /&gt;&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/Uploads/Image/201212/25/1356405476_f9blnw_6858.JPG&quot; style=&quot;float:none;&quot; title=&quot;未命名1231.JPG&quot; /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;', '1', '1356405490', '1356405490');
+INSERT INTO `la_column` VALUES ('1', '栏目1', '0', '0', '1', null, null, '1', '栏目1', '', '', '&lt;p&gt;栏目一&lt;strong&gt;&lt;img src=&quot;/Uploads/Scrawl/201212/25/1356406180_tkbjyl_4121.png&quot; /&gt;&lt;/strong&gt;内容&lt;br /&gt;&lt;/p&gt;', '1', '1356402068', '1358325807');
+INSERT INTO `la_column` VALUES ('2', '子栏目1', '1', '1', '1', null, null, '1', '', '', '', '&lt;p&gt;子栏目1&lt;br /&gt;&lt;/p&gt;', '1', '1356405490', '1358325833');
 INSERT INTO `la_column` VALUES ('3', '子子栏目1', '2', '1', '1', null, null, '1', '', '', '', '&lt;p&gt;子子&lt;strong&gt;&lt;img src=&quot;/Uploads/Scrawl/201212/25/1356406180_tkbjyl_4121.png&quot; /&gt;&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;', '1', '1356406231', '1356406231');
 INSERT INTO `la_column` VALUES ('4', '栏目2', '0', '0', '1', null, null, '2', '', '', '', '&lt;p&gt;栏目2&lt;br /&gt;&lt;/p&gt;', '1', '1356414942', '1356414942');
 

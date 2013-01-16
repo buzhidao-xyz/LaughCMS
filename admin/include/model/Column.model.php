@@ -50,6 +50,27 @@ class Column extends Base
 		return $data;
 	}
 
+	//根据栏目ID获取其子栏目ID 无限级
+	public function getSubColumnID($columnid=null, $return=array())
+	{
+		if (!$columnid) return array();
+
+		$data = $this->getSubColumn($columnid);
+		foreach ($data as $k=>$v) {
+			$return[] = $v['id'];
+			$return = $this->getSubColumnID($v['id'], $return);
+		}
+
+		return $return;
+	}
+
+	//更新栏目信息
+	public function updateColumn($columnid=null,$data=array())
+	{
+		if (!$columnid) return false;
+		return T("Column")->where(array("id"=>$columnid))->update($data);
+	}
+
 	//删除栏目
 	public function deleteColumn($columnid = null)
 	{

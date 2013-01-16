@@ -111,8 +111,16 @@ class ArticleControl extends CommonControl
 	//主控制 文档列表
 	public function index()
 	{
+		$where = array('state'=>1);
+		$columnid = q("columnid");
+		if ($columnid) {
+			$columnids = M("Column")->getSubColumnID($columnid);
+			$columnids[] = $columnid;
+			$where['columnid'] = array('in', $columnids);
+		}
+
 		list($start,$length) = $this->getPages();
-        $articleList = M("Article")->getArticle(null,$start,$length,array('state'=>1));
+        $articleList = M("Article")->getArticle(null,$start,$length,$where);
         $this->assign("total", $articleList['total']);
         $this->assign("dataList", $articleList['data']);
 
