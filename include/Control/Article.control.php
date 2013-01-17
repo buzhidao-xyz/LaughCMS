@@ -11,8 +11,22 @@ class ArticleControl extends CommonControl
 		parent::__construct();
 	}
 
+	//主入口
 	public function index()
 	{
 		
+	}
+
+	//获取文档ID
+	public function _getArticleID()
+	{
+		$articleid = q("articleid");
+		return $articleid;
+	}
+
+	//获取文档内容
+	public function getArticle()
+	{
+		$articleid = $this->_getArticleID();
 	}
 }

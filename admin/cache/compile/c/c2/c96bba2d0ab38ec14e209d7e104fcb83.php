@@ -6,7 +6,7 @@
 <link type="text/css" rel="stylesheet" href="themes/green/style/common.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/green/style/base.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/green/style/global.css" media="screen">
-<script type="text/javascript" src="themes/green/js/jquery.js"></script>
+<script type="text/javascript" src="public/js/jquery.js"></script>
 <script type="text/javascript" src="themes/green/js/div_window.js"></script>
 <!-- <script type="text/javascript" src="themes/blue/js/PIE.js"></script> -->
 <title>管理中心</title>
@@ -34,7 +34,7 @@ var JS_APPM = 'http://localhost:82/laugh';
                     <ul>
                         <li><span>用户名:</span><input type="text" name="username" value="" class="input" /></li>
                         <li><span>密&nbsp;&nbsp;&nbsp;码:</span><input type="password" name="password" value="" class="input" /></li>
-                        <li><span>验证码:</span><input type="text" name="vcode" value="" class="input" style="width:80px;" />&nbsp;<img src="/laugh/admin/index.php?s=vcode" class="vcode" /></li>
+                        <li><span>验证码:</span><input type="text" name="vcode" value="" class="input" style="width:80px;" />&nbsp;<img src="/laugh/admin/index.php?s=Org/Vcode" class="vcode" /></li>
                         <li><input type="submit" name="subut" class="button btnyellow2" value="登录" /></li>
                     </ul>
                 </form>
@@ -85,4 +85,5 @@ $(document).ready(function(){
 <script type="text/javascript" src="themes/green/js/public.js"></script>
 <script type="text/javascript" src="themes/green/js/common.js"></script>
 <script type="text/javascript" src="themes/green/js/ajax.js"></script>
+<script type="text/javascript" src="public/js/jquery.idTabs.min.js"></script>
 </html>

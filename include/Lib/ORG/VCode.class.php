@@ -3,7 +3,7 @@
  * 验证码生成控制器 生成五位验证码
  * by wbq 2011-12-20
  */
-class VCodeControl
+class VCode
 {
     //控制器
     static protected $_control = 'VCode';

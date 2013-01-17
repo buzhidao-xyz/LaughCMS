@@ -47,10 +47,10 @@ class BaseControl
         $sstate = session('sstate'); $ustate = session('ustate');
         
         $url = parse_url(request_uri());
-		if (isset($url['query'])) $res = preg_match("/^s=(vcode|login)(\/index)?(\/loginCheck)?(\&w=[1-9][0-9]{1,2})?(\&h=[1-9][0-9]{1,2})?$/",$url['query']);
+		if (isset($url['query'])) $res = preg_match("/^s=(Login|Org)(\/index)?/i",$url['query']);
 
         if (!$res && (empty($this->userInfo) || $sstate != $ustate)) {
-            header("location:".__APP__.'/index.php?s=login');
+            header("location:".__APP__.'/index.php?s=Login');
             exit;
         }
     }

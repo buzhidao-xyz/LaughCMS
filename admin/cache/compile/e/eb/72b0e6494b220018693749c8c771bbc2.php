@@ -115,7 +115,7 @@ var JS_APPM = 'http://localhost:82/laugh';
     	}
     });
     $("select[name=parentid]").find("option").each(function (){
-    	if ($(this).val()==4) $(this).attr("selected",true);
+    	if ($(this).val()==) $(this).attr("selected",true);
     });
 </script>
     </div>

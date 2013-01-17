@@ -6,7 +6,7 @@
 <link type="text/css" rel="stylesheet" href="themes/green/style/common.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/green/style/base.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/green/style/global.css" media="screen">
-<script type="text/javascript" src="themes/green/js/jquery.js"></script>
+<script type="text/javascript" src="public/js/jquery.js"></script>
 <script type="text/javascript" src="themes/green/js/div_window.js"></script>
 <!-- <script type="text/javascript" src="themes/blue/js/PIE.js"></script> -->
 <title>管理中心</title>
@@ -70,4 +70,5 @@ var JS_APPM = 'http://localhost:82/laugh';
 <script type="text/javascript" src="themes/green/js/public.js"></script>
 <script type="text/javascript" src="themes/green/js/common.js"></script>
 <script type="text/javascript" src="themes/green/js/ajax.js"></script>
+<script type="text/javascript" src="public/js/jquery.idTabs.min.js"></script>
 </html>
