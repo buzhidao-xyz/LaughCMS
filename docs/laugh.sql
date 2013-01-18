@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2013-01-16 17:27:04
+Date: 2013-01-18 17:38:33
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,7 +37,7 @@ CREATE TABLE `la_admin` (
 -- ----------------------------
 -- Records of la_admin
 -- ----------------------------
-INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1358129443', '2130706433', '89', '1');
+INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1358406147', '2130706433', '91', '1');
 INSERT INTO `la_admin` VALUES ('2', 'luochuan', '624879b3fff70462132a21eb1cd8eb75', 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '1355368421', '2130706433', '12', '0');
 
 -- ----------------------------
@@ -239,7 +239,7 @@ INSERT INTO `la_node` VALUES ('22', '更新系统缓存', '', 'System', 'upSyste
 INSERT INTO `la_node` VALUES ('25', '基本设置', '', '', '', '0', '0', '0', '6', '1353316554', '0', '1');
 INSERT INTO `la_node` VALUES ('26', '数据库', '', '', '', '0', '0', '0', '6', '1353316597', '0', '1');
 INSERT INTO `la_node` VALUES ('23', '辅助插件', '', '', '', '0', '0', '0', '5', '1353316622', '0', '1');
-INSERT INTO `la_node` VALUES ('24', '文件管理器', '', 'FileManage', 'index', '0', '23', '0', '0', '1353316736', '0', '1');
+INSERT INTO `la_node` VALUES ('24', '文件管理器', '', 'Plugin', 'fileManage', '0', '23', '0', '0', '1353316736', '0', '1');
 INSERT INTO `la_node` VALUES ('27', '网站栏目', '', 'Column', 'index', '0', '16', null, '0', '1355898117', '1355898117', '1');
 INSERT INTO `la_node` VALUES ('28', '文档列表', '', 'Article', 'index', '0', '18', null, '0', '1356507108', '1356507108', '1');
 INSERT INTO `la_node` VALUES ('29', '回收站', '文档回收站', 'Article', 'recover', '0', '18', null, '0', '1357722182', '1357722182', '1');

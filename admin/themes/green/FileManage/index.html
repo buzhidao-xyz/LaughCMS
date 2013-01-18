@@ -1,0 +1,68 @@
+{include file="public/control_top.html"}
+<div class="captitle"><h5>当前目录 <font color="red">{$dir}</font></h5></div>
+<ul class="table_list_title">
+	<li class="table_list_l table_list_l350">文件名</li>
+	<li class="table_list_l table_list_l150">文件大小</li>
+	<li class="table_list_l table_list_l150">最后修改时间</li>
+	{if $accessStatus == 1}
+	<li class="table_list_l table_list_l200" accessStatus={$accessStatus}>操作</li>
+	{/if}
+</ul>
+<div class="contentTableList">
+	<ul class="table_list">
+		<li class="table_list_l table_list_l350"><a class="nonetextdecoration" href="__APP__/index.php?s=Plugin/fileManage&dir={$pdir}"><span class="icon" style="background:url(themes/green/images/fileicon/dir1.gif) no-repeat;">上级目录</span></a></li>
+    </ul>
+    {if $filelist}
+    {foreach $filelist as $d}
+    <ul class="table_list">
+		<li class="table_list_l table_list_l350"><a class="nonetextdecoration" href="__APP__/index.php?s=Plugin/fileManage&dir={$dir}/{$d.filename}"><span class="icon" style="background:url(themes/green/images/fileicon/{$d.filetype}.gif) no-repeat;">{$d.filename}</span></a></li>
+    	<li class="table_list_l table_list_l150">{$d.filesize}</li>
+    	<li class="table_list_l table_list_l150">{$d.filemtime}</li>
+    	{if $accessStatus == 1}
+    	<li class="table_list_l table_list_l200" accessStatus={$accessStatus}>
+    		{if $d.filetype!="dir"}
+    			<a name="fileEdit" href="__APP__/index.php?s=Plugin/fileEdit&dir={$dir}&filename={$d.filename}">编辑</a>
+    		{/if}
+    		<a name="fileRename" href="__APP__/index.php?s=Plugin/fileRename&dir={$dir}&filename={$d.filename}">改名</a>
+    		<a name="fileDelete" href="__APP__/index.php?s=Plugin/fileDelete&dir={$dir}&filename={$d.filename}">删除</a>
+    		{if $d.filetype!="dir"}
+    			<a name="fileMove" href="__APP__/index.php?s=Plugin/fileMove&dir={$dir}&filename={$d.filename}">移动</a>
+    		{/if}
+    	</li>
+    	{/if}
+    </ul>
+    {/foreach}
+    {else}
+    <ul class="table_list"><li class="table_list_center">空</li></ul>
+    {/if}
+</div>
+<link type="text/css" rel="stylesheet" href="public/plugin/colorbox/colorbox.css" media="screen">
+<script type="text/javascript" src="public/plugin/colorbox/jquery.colorbox.js"></script>
+<script type="text/javascript">
+$(document).ready(function (){
+var fileClass = function (){
+	var Obj = {
+		fileRename: $("a[name=fileRename]"),
+		fileDelete: $("a[name=fileDelete]")
+	}
+	Obj.fileRename.colorbox();
+	Obj.fileRename.click(function (){
+		$(this).attr("href",$(this).attr("href"));
+	});
+
+	//文件删除
+	Obj.fileDelete.click(function (){
+		var articleid = getArticleID();
+		var d = {
+			articleid: articleid
+		};
+		$.post("__APP__/index.php?s=Article/recoverArticle",d,function (data){
+			alert(data.info);
+			if (!data.status) location.href = location.href;
+		},'json');
+	});
+}
+fileClass();
+});
+</script>
+{include file="public/control_bottom.html"}

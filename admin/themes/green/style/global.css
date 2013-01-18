@@ -100,6 +100,9 @@
 .contentTableList a:link, .contentTableList a:visited {
     text-decoration: underline;
 }
+.contentTableList a.nonetextdecoration {
+    text-decoration: none;
+}
 .table_list_title, .table_list {
     position: relative;
     height: 30px;
@@ -130,6 +133,9 @@
     text-indent: 5px;
     overflow: hidden;
     border-left: 1px solid #B5D0D9;
+}
+.table_list_l span.icon {
+  padding-left: 18px;
 }
 .table_list_center {
     width: 100%;
@@ -696,7 +702,7 @@ form ul.formbody li .edui-default span {
   font-weight: 600;
 }
 .box .boxContent .boxFrom ul {
-
+  padding:5px 10px;
 }
 .box .boxContent .boxFrom ul li {
   border-bottom: 1px dashed #CCC;

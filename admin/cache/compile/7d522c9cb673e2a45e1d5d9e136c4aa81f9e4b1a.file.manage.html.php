@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-01-11 16:44:13
+<?php /* Smarty version Smarty-3.1.12, created on 2013-01-18 17:34:58
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\Group\manage.html" */ ?>
-<?php /*%%SmartyHeaderCode:1345250efd0dd88a4c3-09496725%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:3004450f917420af7a9-79409948%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '7d522c9cb673e2a45e1d5d9e136c4aa81f9e4b1a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\green\\Group\\manage.html',
-      1 => 1355897215,
+      1 => 1358501572,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1345250efd0dd88a4c3-09496725',
+  'nocache_hash' => '3004450f917420af7a9-79409948',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50efd0dda216b6_36853966',
+  'unifunc' => 'content_50f917421e6a60_11469057',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50efd0dda216b6_36853966')) {function content_50efd0dda216b6_36853966($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_50f917421e6a60_11469057')) {function content_50f917421e6a60_11469057($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <!-- <div class="control_nav">
 	<h3>添加组</h3>
@@ -35,7 +35,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <div class="formContainer" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
 >
 	<div class="formtitle"><h5>新组节点表单</h5></div>
-	<form name="newform" action="__APP__/?s=Group/saveGroup" method="post" id="addajaxform" class="newform">
+	<form name="newform" action="__APP__/?s=Group/saveGroup" method="post" id="ajaxform" class="newform">
 		<input type="hidden" name="" />
 		<ul class="formbody">
 			<li class="formblock">

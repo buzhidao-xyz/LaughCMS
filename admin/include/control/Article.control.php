@@ -303,7 +303,7 @@ class ArticleControl extends CommonControl
 	{
 		$articleid = $this->_getArticleID();
 		$action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
-		if ($action == 'move') {
+		if ($action == 'save') {
 			
 		} else {
 			$this->assign("articleid", $articleid);

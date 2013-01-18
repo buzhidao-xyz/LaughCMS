@@ -8,12 +8,6 @@ class FileManage
 	//要管理的文件夹
 	private $_folder = null;
 
-	//文件扩展名处理 - 获取该文件类型的图标
-	private $_fileicon = array(
-		'txt' => array('txt','sql','log'),
-		'php' => array(),
-	);
-
 	//初始化构造函数
 	public function __construct($_folder=null)
 	{

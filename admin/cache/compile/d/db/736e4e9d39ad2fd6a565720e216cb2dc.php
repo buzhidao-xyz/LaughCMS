@@ -6,7 +6,7 @@
 <link type="text/css" rel="stylesheet" href="themes/green/style/common.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/green/style/base.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/green/style/global.css" media="screen">
-<script type="text/javascript" src="themes/green/js/jquery.js"></script>
+<script type="text/javascript" src="public/js/jquery.js"></script>
 <script type="text/javascript" src="themes/green/js/div_window.js"></script>
 <!-- <script type="text/javascript" src="themes/blue/js/PIE.js"></script> -->
 <title>管理中心</title>
@@ -31,7 +31,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 </div> -->
 <div class="formContainer" accessStatus=1>
 	<div class="formtitle"><h5>新组节点表单</h5></div>
-	<form name="newform" action="/laugh/admin/?s=Group/saveGroup" method="post" id="addajaxform" class="newform">
+	<form name="newform" action="/laugh/admin/?s=Group/saveGroup" method="post" id="ajaxform" class="newform">
 		<input type="hidden" name="" />
 		<ul class="formbody">
 			<li class="formblock">
@@ -142,8 +142,9 @@ var JS_APPM = 'http://localhost:82/laugh';
 	</ul>
 </div>
 </body>
-<script type="text/javascript" src="themes/blue/js/jquery.corner.js"></script>
-<script type="text/javascript" src="themes/blue/js/public.js"></script>
-<script type="text/javascript" src="themes/blue/js/common.js"></script>
-<script type="text/javascript" src="themes/blue/js/ajax.js"></script>
+<script type="text/javascript" src="themes/green/js/jquery.corner.js"></script>
+<script type="text/javascript" src="themes/green/js/public.js"></script>
+<script type="text/javascript" src="themes/green/js/common.js"></script>
+<script type="text/javascript" src="themes/green/js/ajax.js"></script>
+<script type="text/javascript" src="public/js/jquery.idTabs.min.js"></script>
 </html>

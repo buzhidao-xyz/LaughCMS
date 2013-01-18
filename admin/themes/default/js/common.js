@@ -39,16 +39,16 @@ $(document).ready(function() {
 
 
     /*添加的FORM ajax提交方法*/
-    $('#addajaxform').submit(function(){
-        // $("#addajaxform input:[type=submit]").attr('disabled','disabled');
-        if($('#addajaxform').length>0){
-            var data = $("#addajaxform").serialize();
-            var url = $('#addajaxform').attr('action');
+    $('#ajaxform').submit(function(){
+        // $("#ajaxform input:[type=submit]").attr('disabled','disabled');
+        if($('#ajaxform').length>0){
+            var data = $("#ajaxform").serialize();
+            var url = $('#ajaxform').attr('action');
             $.post(url,data,function(data){
                 alert(data.info);
                 if (!data.status) {
                     location.href = location.href;
-                    // $("#addajaxform input:[type=submit]").removeAttr('disabled');
+                    // $("#ajaxform input:[type=submit]").removeAttr('disabled');
                 }
             }, 'json');
             return false;
