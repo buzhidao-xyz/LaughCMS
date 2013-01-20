@@ -7,48 +7,51 @@ class PluginControl extends CommonControl
 		parent::__construct();
 	}
 
+    private function _newFileManage()
+    {
+        $dir = urldecode(q("dir"));
+        $root = ROOT_DIR;
+
+        import("Lib.Plugin.FileManage");
+        return new FileManage($root,$dir);
+    }
+
     //文件管理器插件
     public function fileManage()
     {
-        $c = '.';
-        $ROOT_DIR = ROOT_DIR;
+        $fileManage = $this->_newFileManage();
+        $fileArray = $fileManage->getFileArray();
 
-        import("Lib.Plugin.FileManage");
-        $fileManage = new FileManage($ROOT_DIR);
-
-        $dir = q("dir");
-        //当前需要管理的目录 物理路径
-        $mdir = $dir && $dir != $c ? $ROOT_DIR."/".$dir : $ROOT_DIR;
-        $filelist = $fileManage->index($mdir);
-        $this->assign("filelist", $filelist);
-
-        //当前目录 相对路径
-        $cdir = $dir ? $dir : $c;
-        $this->assign("dir", $cdir);
-
-        //上级目录
-        $pdir = $dir && $dir != $c ? substr($dir,0,strrpos($dir, '/')) : $c;
-        $this->assign("pdir", $pdir);
+        $this->assign("fileArray", $fileArray);
         $this->display("FileManage/index.html");
     }
 
     //文件编辑
     public function fileEdit()
     {
-        $dir = q('dir');
-        $file = q('file');
+        $filename = q('filename');
         $action = q('action');
     }
 
     //文件改名
     public function fileRename()
     {
-        $dir = q('dir');
+        $dir = urldecode(q("dir"));
         $filename = q('filename');
         $action = q('action');
         if ($action == "save") {
-            
+            $oldfilename = q('oldfilename');
+            $newfilename = q('newfilename');
+            if (!$newfilename) $this->ajaxReturn(1,'请输入新名称！');
+            $fileManage = $this->_newFileManage();
+            $return = $fileManage->fileRename($dir,$oldfilename,$newfilename);
+            if ($return['state']) {
+                $this->ajaxReturn(0,'修改成功！');
+            } else {
+                $this->ajaxReturn(1,$return['msg']);
+            }
         } else {
+            $this->assign('dir', $dir);
             $this->assign('oldfilename', $filename);
             $this->display("FileManage/fileRename.html");
         }
@@ -57,15 +60,19 @@ class PluginControl extends CommonControl
     //文件删除
     public function fileDelete()
     {
-        $dir = q('dir');
-        $file = q('file');
-        $action = q('action');
+        $filename = q('filename');
+        $fileManage = $this->_newFileManage();
+        $return = $fileManage->fileRename($dir,$oldfilename,$newfilename);
+        if ($return['state']) {
+            $this->ajaxReturn(0,'修改成功！');
+        } else {
+            $this->ajaxReturn(1,$return['msg']);
+        }
     }
 
     //文件移动
     public function fileMove()
     {
-        $dir = q('dir');
         $file = q('file');
         $action = q('action');
     }
