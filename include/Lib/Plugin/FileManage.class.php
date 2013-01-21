@@ -10,7 +10,7 @@ class FileManage
 	private $_root = null;
 	private $_dir = null;
 
-	private $_encoding = array('UTF-8','UTF-32','GB2312','GBK');
+	private $_encoding = array('UTF-8','UTF-32','GB2312','GBK','ASCII');
 
 	//管理文件数组返回
 	public $_fileArray = array(
@@ -177,9 +177,10 @@ class FileManage
 	private function _checkCoding($file=null)
 	{
 		if (!$file) return false;
-		foreach ($this->_encoding as $v) {
-			if (mb_check_encoding($file, $v)) return $v;
-		}
+		// foreach ($this->_encoding as $v) {
+		// 	if (mb_check_encoding($file, $v)) return $v;
+		// }
+		return mb_detect_encoding($file, $this->_encoding);
 	}
 
 	//编码转换
@@ -188,7 +189,8 @@ class FileManage
 		if (!$file) return false;
 		$incoding = $incoding ? $incoding : $this->_checkCoding($file);
 		$outcoding = $outcoding ? $outcoding : $this->_checkCoding($file);
-		return iconv($incoding, $outcoding, $file);
+		//用//IGNORE忽略掉未知的字符编码
+		return iconv($incoding, $outcoding."//IGNORE", $file);
 	}
 
 	//得到正确的编码的目录和文件名
@@ -202,15 +204,47 @@ class FileManage
 				}
 			}
 		}
-		if ($file && !is_file($dir."/".$file)) {
+		if ($file && (!is_dir($dir."/".$file) && !is_file($dir."/".$file))) {
 			foreach ($this->_encoding as $v) {
 				$nfile = $this->_convertCoding($file,'UTF-8',$v);
-				if (is_file($dir."/".$nfile)) {
+				if (is_dir($dir."/".$nfile) || is_file($dir."/".$nfile)) {
 					$file = $nfile; break;
 				}
 			}
 		}
 		return $file ? $dir."/".$file : $dir;
+	}
+
+	//获取文件内容
+	public function getFileContent($dir,$filename)
+	{
+		if (!$dir || !$filename) return false;
+		$mdir = $this->_getMDir($dir);
+		$file = $this->_makeCoding($mdir,$filename);
+		$filecontent = file_get_contents($file);
+		$filecontent = $this->_convertCoding($filecontent,$this->_checkCoding($filecontent),'UTF-8');
+		return htmlspecialchars($filecontent);
+	}
+
+	/**
+	 * 保存新文件
+	 * @param $dir string 文件存放目录
+	 * @param $filename string 文件名
+	 * @param $filecontent string 文件内容
+	 */
+	public function fileSave($dir,$filename,$filecontent='')
+	{
+		if (!$dir || !$filename) return false;
+		if (!$this->_checkFileName($filename))
+			return array('state'=>0, 'msg'=>'新文件名错误！');
+
+		$mdir = $this->_getMDir($dir);
+		$mdir = $this->_mkdir($mdir);
+		$return = file_put_contents($mdir."/".$this->_convertCoding($filename,'UTF-8',$this->_checkCoding($mdir)), $filecontent);
+		if ($return)
+			return array('state'=>1, 'msg'=>'OK');
+		else
+			return array('state'=>0, 'msg'=>'保存失败！');
 	}
 
 	/**
@@ -226,7 +260,7 @@ class FileManage
 
 		$mdir = $this->_getMDir($dir);
 		$oldfile = $this->_makeCoding($mdir,$oldfilename);
-		$newfile = $mdir."/".$newfilename;
+		$newfile = $mdir."/".$this->_convertCoding($newfilename,'UTF-8',$this->_checkCoding($oldfile));
 
 		if (rename($oldfile, $newfile))
 			return array('state'=>1, 'msg'=>'OK');
@@ -239,12 +273,45 @@ class FileManage
 	 * @param $dir string 文件路径
 	 * @param $filename string 文件名
 	 */
-	public function fileDelete($dir,$filename)
+	public function fileDelete($dir,$filename=null)
 	{
 		$mdir = $this->_getMDir($dir);
-		if (unlink($mdir."/".$filename))
+		$file = $this->_makeCoding($mdir,$filename);
+
+		$return = false;
+		if (is_file($file)) {
+			$return = unlink($file);
+		} else if (is_dir($file)) {
+			if(file_exists($file.'/Thumbs.db')) unlink($file.'/Thumbs.db');
+			$dh = opendir($file);
+			$n = 0;
+			while ($f = readdir($dh) !== false) $n++;
+			closedir($dh);
+			if ($n > 2) $msg = '删除失败！该目录非空！';
+			else {
+				$return = rmdir($file);
+			}
+		}
+		if ($return)
 			return array('state'=>1, 'msg'=>'OK');
 		else
-			return array('state'=>0, 'msg'=>'删除失败！');
+			return array('state'=>0, 'msg'=>isset($msg) ? $msg : '删除失败！');
+	}
+
+	//循环创建目录文件夹
+	private function _mkdir($dir=null)
+	{
+		if (!$dir) return false;
+		$dirArray = explode("/", $dir);
+		$ndir = null;
+		foreach ($dirArray as $v) {
+			$ndir = $this->_makeCoding($ndir);
+			// $v = $this->_convertCoding($v,'UTF-8','GB2312');
+			$ndir .= $ndir ? "/".$v : $v;
+			if (!is_dir($ndir)) {
+				mkdir($ndir,0777);
+			}
+		}
+		return $dir;
 	}
 }

@@ -29,15 +29,36 @@ class PluginControl extends CommonControl
     //文件编辑
     public function fileEdit()
     {
-        $filename = q('filename');
+        $dir = urldecode(q("dir"));
         $action = q('action');
+
+        $fileManage = $this->_newFileManage();
+        if ($action == "save") {
+            $newdir = q("newdir");
+            $oldfilename = q('oldfilename');
+            $newfilename = q('newfilename');
+            $filecontent = q('filecontent');
+
+            $return = $fileManage->fileDelete($dir,$oldfilename);
+            $return = $fileManage->fileSave($newdir,$newfilename,$filecontent);
+            if ($return['state']) {
+                $this->display("Common/success.html");
+            } else {
+                $this->display("Common/error.html");
+            }
+        } else {
+            $filename = q('filename');
+            $this->assign('dir', $dir);
+            $this->assign('oldfilename', $filename);
+            $this->assign('filecontent', $fileManage->getFileContent($dir,$filename));
+            $this->display("FileManage/fileEdit.html");
+        }
     }
 
     //文件改名
     public function fileRename()
     {
         $dir = urldecode(q("dir"));
-        $filename = q('filename');
         $action = q('action');
         if ($action == "save") {
             $oldfilename = q('oldfilename');
@@ -51,6 +72,7 @@ class PluginControl extends CommonControl
                 $this->ajaxReturn(1,$return['msg']);
             }
         } else {
+            $filename = q('filename');
             $this->assign('dir', $dir);
             $this->assign('oldfilename', $filename);
             $this->display("FileManage/fileRename.html");
@@ -60,11 +82,12 @@ class PluginControl extends CommonControl
     //文件删除
     public function fileDelete()
     {
+        $dir = urldecode(q("dir"));
         $filename = q('filename');
         $fileManage = $this->_newFileManage();
-        $return = $fileManage->fileRename($dir,$oldfilename,$newfilename);
+        $return = $fileManage->fileDelete($dir,$filename);
         if ($return['state']) {
-            $this->ajaxReturn(0,'修改成功！');
+            $this->ajaxReturn(0,'删除成功！');
         } else {
             $this->ajaxReturn(1,$return['msg']);
         }
@@ -73,7 +96,15 @@ class PluginControl extends CommonControl
     //文件移动
     public function fileMove()
     {
-        $file = q('file');
+        $dir = urldecode(q("dir"));
         $action = q('action');
+        if ($action == "save") {
+
+        } else {
+            $filename = q('filename');
+            $this->assign('dir', $dir);
+            $this->assign('filename', $filename);
+            $this->display("FileManage/fileMove.html");
+        }
     }
 }

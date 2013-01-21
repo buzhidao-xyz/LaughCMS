@@ -718,3 +718,8 @@ form ul.formbody li .edui-default span {
   text-align: right;
   color: #027263;
 }
+.box .boxContent .boxFrom ul li div.caption {
+  height: 20px;
+  line-height: 20px;
+  padding: 10px;
+}

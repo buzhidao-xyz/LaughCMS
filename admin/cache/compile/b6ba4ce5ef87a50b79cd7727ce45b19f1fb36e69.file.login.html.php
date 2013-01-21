@@ -1,4 +1,30 @@
-{include file="include/head.html"}
+<?php /* Smarty version Smarty-3.1.12, created on 2013-01-21 09:26:25
+         compiled from "C:\xampp\htdocs\laugh\admin\themes\green\login.html" */ ?>
+<?php /*%%SmartyHeaderCode:987950fc994195af85-97017002%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'b6ba4ce5ef87a50b79cd7727ce45b19f1fb36e69' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\green\\login.html',
+      1 => 1358731583,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '987950fc994195af85-97017002',
+  'function' => 
+  array (
+  ),
+  'variables' => 
+  array (
+    'ecode' => 0,
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.12',
+  'unifunc' => 'content_50fc99419b04b3_24729096',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_50fc99419b04b3_24729096')) {function content_50fc99419b04b3_24729096($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 <link type="text/css" rel="stylesheet" href="themes/green/style/login.css" media="screen">
 <div id="loginTop"></div>
 <div id="loginCenter">
@@ -10,7 +36,8 @@
             <div class="login logTop">
                 <h3>网站后台管理系统</h3>
             </div>
-            <div id="logError">{$ecode}</div>
+            <div id="logError"><?php echo $_smarty_tpl->tpl_vars['ecode']->value;?>
+</div>
             <div class="login logForm">
                 <form name="loginform" method="post" action="__APP__/index.php?s=login/loginCheck">
                     <ul>
@@ -62,4 +89,5 @@ $(document).ready(function(){
     });
 });
 </script>
-{include file="include/foot.html"}
+<?php echo $_smarty_tpl->getSubTemplate ("include/foot.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php }} ?>

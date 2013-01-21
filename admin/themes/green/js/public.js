@@ -38,4 +38,9 @@ $(document).ready(function() {
         $(".shtabcontentc .shtabcontent").removeClass("shtabcontentcurrent");
         $(".shtabcontentc .shtabcontent:eq("+index+")").addClass("shtabcontentcurrent");
     });
+
+    //返回上一页
+    $("#goback").click(function (){
+        window.history.go(-1);
+    });
 });

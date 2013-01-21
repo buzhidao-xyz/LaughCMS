@@ -52,7 +52,8 @@ $(document).ready(function (){
 var fileClass = function (){
 	var Obj = {
 		fileRename: $("a[name=fileRename]"),
-		fileDelete: $("a[name=fileDelete]")
+		fileDelete: $("a[name=fileDelete]"),
+		fileMove: $("a[name=fileMove]")
 	}
 	Obj.fileRename.colorbox();
 	Obj.fileRename.click(function (){
@@ -70,6 +71,12 @@ var fileClass = function (){
 			},'json');
 		}
 		return false;
+	});
+
+	//文件移动
+	Obj.fileMove.colorbox();
+	Obj.fileMove.click(function (){
+		$(this).attr("href",$(this).attr("href"));
 	});
 }
 fileClass();
