@@ -636,6 +636,7 @@ form ul.formbody li .edui-default span {
 .box {
   width: 480px;
   overflow: hidden;
+  margin: 0 auto;
   border: 1px solid #027263;
 }
 .boxLeft {
@@ -678,6 +679,7 @@ form ul.formbody li .edui-default span {
 }
 .box .boxContent {
   padding: 5px 10px;
+  background: #FFF;
 }
 .box .boxContent a {
   padding: 5px;
@@ -719,7 +721,6 @@ form ul.formbody li .edui-default span {
   color: #027263;
 }
 .box .boxContent .boxFrom ul li div.caption {
-  height: 20px;
-  line-height: 20px;
-  padding: 10px;
+  float: left;
+  padding: 10px 5px;
 }

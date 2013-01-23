@@ -19,6 +19,7 @@ class PluginControl extends CommonControl
     //文件管理器插件
     public function fileManage()
     {
+        $this->showMessage('啊实打实的口号是大口径',0);
         $fileManage = $this->_newFileManage();
         $fileArray = $fileManage->getFileArray();
 
@@ -97,14 +98,91 @@ class PluginControl extends CommonControl
     public function fileMove()
     {
         $dir = urldecode(q("dir"));
+        $filename = q('filename');
         $action = q('action');
         if ($action == "save") {
-
+            $newdir = q("newdir");
+            $fileManage = $this->_newFileManage();
+            $return = $fileManage->fileMove($dir,$newdir,$filename);
+            if ($return['state']) {
+                $this->ajaxReturn(0,'移动成功！');
+            } else {
+                $this->ajaxReturn(1,$return['msg']);
+            }
         } else {
-            $filename = q('filename');
             $this->assign('dir', $dir);
             $this->assign('filename', $filename);
             $this->display("FileManage/fileMove.html");
         }
+    }
+
+    //新建文件
+    public function newFile()
+    {
+        $dir = urldecode(q("dir"));
+        $action = q('action');
+
+        if ($action == "save") {
+            $filename = q('filename');
+            $filecontent = q('filecontent');
+
+            $fileManage = $this->_newFileManage();
+            $return = $fileManage->fileSave($dir,$filename,$filecontent);
+            if ($return['state']) {
+                $this->display("Common/success.html");
+            } else {
+                $this->display("Common/error.html");
+            }
+        } else {
+            $this->assign('dir', $dir);
+            $this->display("FileManage/newfile.html");
+        }
+    }
+
+    //新建目录
+    public function newDir()
+    {
+        $dir = urldecode(q("dir"));
+        $action = q('action');
+
+        if ($action == "save") {
+            $newdir = q("newdir");
+            $fileManage = $this->_newFileManage();
+            $return = $fileManage->saveDir($dir,$newdir);
+            if ($return['state']) {
+                $this->ajaxReturn(0,'创建成功！');
+            } else {
+                $this->ajaxReturn(1,$return['msg']);
+            }
+        } else {
+            $this->assign('dir', $dir);
+            $this->display("FileManage/newdir.html");
+        }
+    }
+
+    //文件上传
+    public function fileUpload()
+    {
+        $dir = urldecode(q("dir"));
+        $action = q('action');
+
+        if ($action == "save") {
+            $fileManage = $this->_newFileManage();
+            $return = $fileManage->fileUpload($dir);
+            $this->showMessage($return['msg'],$return['state']);
+        } else {
+            $this->assign('dir', $dir);
+            $this->display("FileManage/fileupload.html");
+        }
+    }
+
+    //空间检查
+    public function spaceCheck()
+    {
+        $dir = urldecode(q("dir"));
+        $fileManage = $this->_newFileManage();
+        $diskSpace = $fileManage->getDiskSpace($dir);
+        $this->assign('diskSpace', formatBytes($diskSpace));
+        $this->display("FileManage/spaceCheck.html");
     }
 }

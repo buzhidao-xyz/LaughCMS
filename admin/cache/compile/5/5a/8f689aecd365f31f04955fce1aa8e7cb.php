@@ -4,17 +4,17 @@
 	<div class="boxTitle">
 		<h5>文件移动</h5>
 	</div>
-	<form name="boxform" action="__APP__/index.php?s=Plugin/fileMove&action=save" method="post" id="ajaxform">
-	<input type="hidden" name="dir" value="{$dir}" />
-	<input type="hidden" name="filename" value="{$filename}" />
+	<form name="boxform" action="/laugh/admin/index.php?s=Plugin/fileMove&action=save" method="post" id="ajaxform">
+	<input type="hidden" name="dir" value="." />
+	<input type="hidden" name="filename" value="index.php" />
 	<ul>
 		<li class="formblock">
 			<span>文件：</span>
-			<div class="caption">{$filename}</div>
+			<div class="caption">index.php</div>
 		</li>
 		<li class="formblock">
 			<span>原目录：</span>
-			<div class="caption">{$dir}</div>
+			<div class="caption">.</div>
 		</li>
 		<li class="formblock">
 			<span>新目录：</span>

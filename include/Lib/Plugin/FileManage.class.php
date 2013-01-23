@@ -9,6 +9,7 @@ class FileManage
 	//要管理的文件夹
 	private $_root = null;
 	private $_dir = null;
+	private $_diskSpace = 0; //目录大小 默认0B
 
 	private $_encoding = array('UTF-8','UTF-32','GB2312','GBK','ASCII');
 
@@ -21,7 +22,15 @@ class FileManage
 	);
 
 	//文件名过滤
-	private $_nameFilter = '#[/\:*;"?<>|]+#';
+	private $_nameFilter = array(
+		'#([/\:*;"?<>|]+)#',
+		'#^\.*$#'
+	);
+
+	//可编辑的文件扩展名
+	private $_fileEditExt = array(
+		'php','asp','aspx','jsp','txt','inc','html','htm','js','css','tpl','htaccess'
+	);
 
 	//初始化构造函数
 	public function __construct($_root=null,$_dir=null)
@@ -54,7 +63,8 @@ class FileManage
 			            	'filename' => $filename,
 			            	'filetype' => 'dir',
 			            	'filesize' => '',
-			            	'filemtime'=> ''
+			            	'filemtime'=> '',
+			            	'editable' => false
 			            );
 			        } else {
 		            	$fileInfo = pathinfo($filedir);
@@ -63,7 +73,8 @@ class FileManage
 			            	'filename' => $filename,
 			            	'filetype' => $fileInfo['extension'],
 			            	'filesize' => formatBytes(filesize($filedir)),
-			            	'filemtime'=> mkdate(filemtime($filedir))
+			            	'filemtime'=> mkdate(filemtime($filedir)),
+			            	'editable' => in_array(strtolower($fileInfo['extension']), $this->_fileEditExt) ? true : false
 			            );
 			        }
 			    }
@@ -82,8 +93,9 @@ class FileManage
 	private function _getMDir($dir=null,$flag=1)
 	{
 		$dir = $dir ? $dir : $this->_dir;
-		$dir = $dir && $dir != $this->_c ? $this->_root."/".substr($dir,2) : $this->_root;
-
+		if (!$dir || $dir == $this->_c) $dir = $this->_root;
+		if ($dir && substr($dir,0,2)==$this->_c."/") $dir = $this->_root."/".substr($dir,2);
+		
 		return $flag ? $this->_makeCoding($dir) : $dir;
 	}
 
@@ -169,7 +181,9 @@ class FileManage
 	private function _checkFileName($filename=null)
 	{
 		if (!$filename) return false;
-		if (preg_match($this->_nameFilter, $filename)) return false;
+		foreach ($this->_nameFilter as $v) {
+			if (preg_match($v, $filename)) return false;
+		}
 		return true;
 	}
 
@@ -240,11 +254,13 @@ class FileManage
 
 		$mdir = $this->_getMDir($dir);
 		$mdir = $this->_mkdir($mdir);
-		$return = file_put_contents($mdir."/".$this->_convertCoding($filename,'UTF-8',$this->_checkCoding($mdir)), $filecontent);
+		$file = $mdir."/".$this->_convertCoding($filename,'UTF-8',$this->_checkCoding($mdir));
+		if (file_exists($file)) return array('state'=>0, 'msg'=>'文件已存在！');
+		$return = file_put_contents($file, $filecontent);
 		if ($return)
-			return array('state'=>1, 'msg'=>'OK');
+			return array('state'=>1, 'msg'=>'文件保存成功！');
 		else
-			return array('state'=>0, 'msg'=>'保存失败！');
+			return array('state'=>0, 'msg'=>'文件保存失败！');
 	}
 
 	/**
@@ -261,11 +277,11 @@ class FileManage
 		$mdir = $this->_getMDir($dir);
 		$oldfile = $this->_makeCoding($mdir,$oldfilename);
 		$newfile = $mdir."/".$this->_convertCoding($newfilename,'UTF-8',$this->_checkCoding($oldfile));
-
+		if (file_exists($newfile)) return array('state'=>0, 'msg'=>'文件已存在！');
 		if (rename($oldfile, $newfile))
-			return array('state'=>1, 'msg'=>'OK');
+			return array('state'=>1, 'msg'=>'文件名修改成功！');
 		else
-			return array('state'=>0, 'msg'=>'修改失败！');
+			return array('state'=>0, 'msg'=>'文件名修改失败！');
 	}
 
 	/**
@@ -293,9 +309,42 @@ class FileManage
 			}
 		}
 		if ($return)
-			return array('state'=>1, 'msg'=>'OK');
+			return array('state'=>1, 'msg'=>'文件删除成功！');
 		else
-			return array('state'=>0, 'msg'=>isset($msg) ? $msg : '删除失败！');
+			return array('state'=>0, 'msg'=>isset($msg) ? $msg : '文件删除失败！');
+	}
+
+	/**
+	 * 文件移动
+	 * @param $dir string 文件原目录
+	 * @param $newdir string 文件新目录
+	 * @param $filename string 文件名
+	 */
+	public function fileMove($dir=null,$newdir=null,$filename=null)
+	{
+		if (!$dir || !$newdir || !$filename) return false;
+
+		$dir = $this->_getMDir($dir);
+		$newdir = $this->_getMDir($this->_mkdir($newdir));
+
+		$oldfile = $this->_makeCoding($dir,$filename);
+		$newfile = $this->_makeCoding($newdir,$filename);
+
+		if (rename($oldfile, $newfile))
+			return array('state'=>1, 'msg'=>'文件移动成功！');
+		else
+			return array('state'=>0, 'msg'=>'文件移动失败！');
+	}
+
+	//新建保存目录
+	public function saveDir($dir,$newdir)
+	{
+		if (!$dir) return false;
+		if (!$this->_checkFileName($newdir))
+			return array('state'=>0, 'msg'=>'目录名错误！');
+		$dir = $this->_getMDir($dir);
+		$this->_mkdir($dir."/".$newdir);
+		return array('state'=>1, 'msg'=>'目录新建成功！');
 	}
 
 	//循环创建目录文件夹
@@ -313,5 +362,48 @@ class FileManage
 			}
 		}
 		return $dir;
+	}
+
+	//获取目录的大小(使用空间)
+	public function getDiskSpace($dir=null)
+	{
+		if (!$dir) return false;
+		$dir = $this->_getMDir($dir);
+		$dh = opendir($dir);
+		while (($filename = readdir($dh)) !== false) {
+			if ($filename != "." && $filename != "..") {
+				$file = $dir."/".$filename;
+				if(is_dir($file)) {
+					$this->getDiskSpace($file);
+				} else {
+					$this->_diskSpace += filesize($file);
+				}
+			}
+		}
+		closedir($dh);
+		return $this->_diskSpace;
+	}
+
+	//上传文件到目录
+	public function fileUpload($dir=null)
+	{
+		if (!$dir) return false;
+		$upload = new UploadHelper();
+        $upload->maxSize  = 5242880; //5M
+        $upload->savePath =  $this->_getMDir($dir)."/";
+        //同名文件不覆盖
+        $upload->uploadReplace = false;
+        if(!$upload->upload()) {
+            return array('state'=>0, 'msg'=>$upload->getErrorMsg());
+        } else {
+            $info = $upload->getUploadFileInfo();
+            if (file_exists($dir."/".$info[0]['name'])) {
+            	$this->fileDelete($dir,$info[0]['savename']);
+            	return array('state'=>0, 'msg'=>'文件已存在！');
+            } else {
+            	$this->fileRename($dir,$info[0]['savename'],$info[0]['name']);
+            	return array('state'=>1, 'msg'=>'文件上传成功！');
+            }
+        }
 	}
 }

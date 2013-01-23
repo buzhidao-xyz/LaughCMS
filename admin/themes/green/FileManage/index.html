@@ -29,7 +29,7 @@
     	<li class="table_list_l table_list_l150">{$d.filemtime}</li>
     	{if $accessStatus == 1}
     	<li class="table_list_l table_list_l200" accessStatus={$accessStatus}>
-    		{if $d.filetype!="dir"}
+    		{if $d.editable}
     			<a name="fileEdit" href="__APP__/index.php?s=Plugin/fileEdit&dir={$fileArray.cdir|urlencode}&filename={$d.filename|urlencode}">编辑</a>
     		{/if}
     		<a name="fileRename" href="__APP__/index.php?s=Plugin/fileRename&dir={$fileArray.cdir|urlencode}&filename={$d.filename|urlencode}">改名</a>
@@ -45,6 +45,13 @@
     <ul class="table_list"><li class="table_list_center">空</li></ul>
     {/if}
 </div>
+<div id="opBottom" class="opBottom">
+	<a href="__APP__/index.php?s=Plugin/fileManage&dir=.">根目录</a>
+	<a name="newfile" href="__APP__/index.php?s=Plugin/newFile&dir={$fileArray.cdir|urlencode}">新建文件</a>
+	<a name="newdir" href="__APP__/index.php?s=Plugin/newDir&dir={$fileArray.cdir|urlencode}">新建目录</a>
+	<a name="fileupload" href="__APP__/index.php?s=Plugin/fileUpload&dir={$fileArray.cdir|urlencode}">文件上传</a>
+	<a name="spacecheck" href="__APP__/index.php?s=Plugin/spaceCheck&dir={$fileArray.cdir|urlencode}">目录空间</a>
+</div>
 <link type="text/css" rel="stylesheet" href="public/plugin/colorbox/colorbox.css" media="screen">
 <script type="text/javascript" src="public/plugin/colorbox/jquery.colorbox.js"></script>
 <script type="text/javascript">
@@ -53,7 +60,11 @@ var fileClass = function (){
 	var Obj = {
 		fileRename: $("a[name=fileRename]"),
 		fileDelete: $("a[name=fileDelete]"),
-		fileMove: $("a[name=fileMove]")
+		fileMove: $("a[name=fileMove]"),
+		newfile: $("a[name=newfile]"),
+		newdir: $("a[name=newdir]"),
+		spacecheck: $("a[name=spacecheck]"),
+		fileupload: $("a[name=fileupload]")
 	}
 	Obj.fileRename.colorbox();
 	Obj.fileRename.click(function (){
@@ -76,6 +87,21 @@ var fileClass = function (){
 	//文件移动
 	Obj.fileMove.colorbox();
 	Obj.fileMove.click(function (){
+		$(this).attr("href",$(this).attr("href"));
+	});
+	//新建目录
+	Obj.newdir.colorbox();
+	Obj.newdir.click(function (){
+		$(this).attr("href",$(this).attr("href"));
+	});
+	//文件上传
+	Obj.fileupload.colorbox();
+	Obj.fileupload.click(function (){
+		$(this).attr("href",$(this).attr("href"));
+	});
+	//空间检查
+	Obj.spacecheck.colorbox();
+	Obj.spacecheck.click(function (){
 		$(this).attr("href",$(this).attr("href"));
 	});
 }

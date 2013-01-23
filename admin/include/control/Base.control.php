@@ -114,18 +114,6 @@ class BaseControl
     }
 
     /**
-     * 操作错误跳转的快捷方法
-     * @access protected
-     * @param string $message 错误信息
-     * @param string $jumpUrl 页面跳转地址
-     * @param Boolean $waitSecond 跳转等待时间
-     * @return void
-     */
-    protected function error($message,$jumpUrl='',$waitSecond=0) {
-        $this->dispatchJump($message,0,$jumpUrl,$waitSecond);
-    }
-
-    /**
      * 操作成功跳转的快捷方法
      * @access protected
      * @param string $message 提示信息
@@ -133,8 +121,22 @@ class BaseControl
      * @param Boolean $waitSecond 跳转等待时间
      * @return void
      */
-    protected function success($message,$jumpUrl='',$waitSecond=0) {
-        $this->dispatchJump($message,1,$jumpUrl,$waitSecond);
+    protected function success($message) {
+        if($this->isAjax()) $this->ajaxReturn($status, $message);
+        $this->display("Common/success.html");
+    }
+
+    /**
+     * 操作错误跳转的快捷方法
+     * @access protected
+     * @param string $message 错误信息
+     * @param string $jumpUrl 页面跳转地址
+     * @param Boolean $waitSecond 跳转等待时间
+     * @return void
+     */
+    protected function error($message) {
+        if($this->isAjax()) $this->ajaxReturn($status, $message);
+        $this->display("Common/error.html");
     }
 
     /**
@@ -148,31 +150,18 @@ class BaseControl
      * @access private
      * @return void
      */
-    private function dispatchJump($message,$status=1,$jumpUrl='',$waitSecond=0) {
+    protected function showMessage($message,$status=1,$jumpUrl='',$waitSecond=3) {
         if($this->isAjax()) $this->ajaxReturn($status, $message, $jumpUrl);
 
-        if(!empty($jumpUrl)) $this->assign('jumpUrl', $jumpUrl);
         // 提示标题
-        $this->assign('msgTitle', $status ? "操作成功" : "操作失败");
+        $this->assign('msgTitle', "系统提示信息");
         $this->assign('status',$status);
-
-        //发送成功信息
-        if ($status) {
-            $this->assign('message',$message);// 提示信息
-            // 成功操作后默认停留1秒
-            if(!$waitSecond) $this->assign('waitSecond','1');
-            // 默认操作成功自动返回操作前页面
-            if(!$jumpUrl) $this->assign("jumpUrl",$_SERVER["HTTP_REFERER"]);
-            $this->display("Common/success.html");
-        } else {
-            $this->assign('error',$message);// 提示信息
-            //发生错误时候默认停留3秒
-            if(!$waitSecond) $this->assign('waitSecond','3');
-            // 默认发生错误的话自动返回上页
-            if(!$jumpUrl) $this->assign('jumpUrl',"javascript:history.back(-1);");
-            $this->display("Common/error.html");
-            exit ;
-        }
+        $this->assign('message',$status ? '<font color="green">'.$message.'</font>' : '<font color="red">'.$message.'</font>');// 提示信息
+        // 默认停留3秒
+        $this->assign('waitSecond',$waitSecond);
+        // 默认操作成功自动返回操作前页面
+        $this->assign("jumpUrl",!empty($jumpUrl) ? $jumpUrl : $_SERVER["HTTP_REFERER"]);
+        $this->display("Common/showMessage.html");
     }
 
     /**
