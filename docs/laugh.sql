@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2013-01-18 17:38:33
+Date: 2013-01-24 16:27:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,7 +37,7 @@ CREATE TABLE `la_admin` (
 -- ----------------------------
 -- Records of la_admin
 -- ----------------------------
-INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1358406147', '2130706433', '91', '1');
+INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1359016026', '2130706433', '103', '1');
 INSERT INTO `la_admin` VALUES ('2', 'luochuan', '624879b3fff70462132a21eb1cd8eb75', 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '1355368421', '2130706433', '12', '0');
 
 -- ----------------------------
@@ -184,7 +184,7 @@ CREATE TABLE `la_group` (
 -- Records of la_group
 -- ----------------------------
 INSERT INTO `la_group` VALUES ('1', '系统管理', '1332390538', '1332390538', '1', '1');
-INSERT INTO `la_group` VALUES ('2', '用户中心', '1332390538', '1332390538', '2', '1');
+INSERT INTO `la_group` VALUES ('2', '会员中心', '1332390538', '1332390538', '2', '1');
 INSERT INTO `la_group` VALUES ('3', '核心内容', '1332390538', '1332390538', '3', '1');
 INSERT INTO `la_group` VALUES ('4', '网站更新', '1332390538', '1332390538', '4', '1');
 INSERT INTO `la_group` VALUES ('5', '系统插件', '1332390538', '1332390538', '5', '1');
@@ -200,49 +200,59 @@ CREATE TABLE `la_node` (
   `remark` varchar(255) DEFAULT NULL,
   `control` varchar(50) NOT NULL,
   `action` varchar(50) NOT NULL,
-  `sort` int(5) unsigned DEFAULT '0',
   `pid` smallint(6) unsigned NOT NULL,
-  `level` tinyint(1) unsigned DEFAULT NULL,
   `groupid` tinyint(3) unsigned DEFAULT '0',
   `createtime` int(10) NOT NULL,
   `updatetime` int(10) NOT NULL,
   `isshow` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
-  KEY `level` (`level`),
   KEY `pid` (`pid`)
-) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_node
 -- ----------------------------
-INSERT INTO `la_node` VALUES ('2', '角色管理', '管理角色信息 可编辑角色权限/改变用户的角色', '', '', '2', '0', '1', '1', '0', '0', '1');
-INSERT INTO `la_node` VALUES ('3', '日志管理', '日志模块', '', '', '3', '0', '1', '1', '0', '0', '1');
-INSERT INTO `la_node` VALUES ('4', '组管理', '节点组管理', '', '', '4', '0', '1', '1', '0', '0', '1');
-INSERT INTO `la_node` VALUES ('5', '节点管理', '管理模块下的节点信息', '', '', '5', '0', '1', '1', '0', '0', '1');
-INSERT INTO `la_node` VALUES ('6', '管理员用户管理', '管理员账号管理中心', '', '', '6', '0', '1', '1', '0', '0', '1');
-INSERT INTO `la_node` VALUES ('7', '用户搜索', '搜索用户信息', '', '', '1', '0', '1', '2', '0', '0', '1');
-INSERT INTO `la_node` VALUES ('8', '管理组', '', 'Group', 'manageGroup', '2', '4', '2', '0', '0', '0', '1');
-INSERT INTO `la_node` VALUES ('9', '添加节点', null, 'Node', 'newNode', '1', '5', '0', '0', '0', '0', '1');
-INSERT INTO `la_node` VALUES ('10', '管理节点', '', 'Node', 'manageNode', '0', '5', '0', '0', '1352711650', '0', '1');
-INSERT INTO `la_node` VALUES ('11', '添加角色', '', 'Role', 'newRole', '0', '2', '0', '0', '1352856214', '0', '1');
-INSERT INTO `la_node` VALUES ('12', '管理角色', '', 'Role', 'manageRole', '0', '2', '0', '0', '1352856238', '0', '1');
-INSERT INTO `la_node` VALUES ('13', '日志列表', '', 'Log', 'Index', '0', '3', '0', '0', '1352857554', '0', '1');
-INSERT INTO `la_node` VALUES ('14', '新管理员', '', 'Admin', 'newAdmin', '0', '6', '0', '0', '1352858914', '0', '1');
-INSERT INTO `la_node` VALUES ('15', '管理员列表', '', 'Admin', 'adminList', '0', '6', '0', '0', '1352944271', '0', '1');
-INSERT INTO `la_node` VALUES ('16', '栏目管理', '管理网站栏目', '', '', '0', '0', '0', '3', '1353313113', '0', '1');
-INSERT INTO `la_node` VALUES ('17', '添加栏目', '', 'Column', 'newColumn', '0', '16', '0', '0', '1353313186', '0', '1');
-INSERT INTO `la_node` VALUES ('18', '文档管理', '', '', '', '0', '0', '0', '3', '1353316137', '0', '1');
-INSERT INTO `la_node` VALUES ('19', '发布新文档', '', 'Article', 'newArticle', '0', '18', '0', '0', '1353316212', '0', '1');
-INSERT INTO `la_node` VALUES ('20', '自动更新', '', '', '', '0', '0', '0', '4', '1353316369', '0', '1');
-INSERT INTO `la_node` VALUES ('21', '一键更新网站', '', 'Make', 'makeHtml', '0', '20', '0', '0', '1353316415', '0', '1');
-INSERT INTO `la_node` VALUES ('22', '更新系统缓存', '', 'System', 'upSystemCache', '0', '20', '0', '0', '1353316474', '0', '1');
-INSERT INTO `la_node` VALUES ('25', '基本设置', '', '', '', '0', '0', '0', '6', '1353316554', '0', '1');
-INSERT INTO `la_node` VALUES ('26', '数据库', '', '', '', '0', '0', '0', '6', '1353316597', '0', '1');
-INSERT INTO `la_node` VALUES ('23', '辅助插件', '', '', '', '0', '0', '0', '5', '1353316622', '0', '1');
-INSERT INTO `la_node` VALUES ('24', '文件管理器', '', 'Plugin', 'fileManage', '0', '23', '0', '0', '1353316736', '0', '1');
-INSERT INTO `la_node` VALUES ('27', '网站栏目', '', 'Column', 'index', '0', '16', null, '0', '1355898117', '1355898117', '1');
-INSERT INTO `la_node` VALUES ('28', '文档列表', '', 'Article', 'index', '0', '18', null, '0', '1356507108', '1356507108', '1');
-INSERT INTO `la_node` VALUES ('29', '回收站', '文档回收站', 'Article', 'recover', '0', '18', null, '0', '1357722182', '1357722182', '1');
+INSERT INTO `la_node` VALUES ('1', '角色管理', '管理角色信息 可编辑角色权限/改变用户的角色', '', '', '0', '1', '0', '0', '1');
+INSERT INTO `la_node` VALUES ('2', '添加角色', '', 'Role', 'newRole', '1', '0', '0', '0', '1');
+INSERT INTO `la_node` VALUES ('3', '管理角色', '', 'Role', 'manageRole', '1', '0', '0', '0', '1');
+INSERT INTO `la_node` VALUES ('4', '日志管理', '', '', '', '0', '1', '0', '0', '1');
+INSERT INTO `la_node` VALUES ('5', '日志列表', '', 'Log', 'Index', '4', '0', '0', '0', '1');
+INSERT INTO `la_node` VALUES ('6', '组管理', '', '', '', '0', '1', '0', '0', '1');
+INSERT INTO `la_node` VALUES ('7', '管理组', '', 'Group', 'manageGroup', '6', '0', '0', '0', '1');
+INSERT INTO `la_node` VALUES ('8', '节点管理', null, '', '', '0', '1', '0', '0', '1');
+INSERT INTO `la_node` VALUES ('9', '添加节点', '', 'Node', 'newNode', '8', '0', '1352711650', '0', '1');
+INSERT INTO `la_node` VALUES ('10', '管理节点', '', 'Node', 'manageNode', '8', '0', '1352856214', '0', '1');
+INSERT INTO `la_node` VALUES ('11', '管理员用户管理', '管理员账号管理中心', '', '', '0', '1', '1352856238', '0', '1');
+INSERT INTO `la_node` VALUES ('12', '新管理员', '', 'Admin', 'newAdmin', '11', '0', '1352857554', '0', '1');
+INSERT INTO `la_node` VALUES ('13', '管理员列表', '', 'Admin', 'adminList', '11', '0', '1352858914', '0', '1');
+INSERT INTO `la_node` VALUES ('14', '会员管理', '', '', '', '0', '2', '1352944271', '0', '1');
+INSERT INTO `la_node` VALUES ('15', '会员列表', '', 'User', 'userList', '14', '0', '1353313113', '0', '1');
+INSERT INTO `la_node` VALUES ('16', '会员级别', '', 'User', 'userRank', '14', '0', '1353313186', '0', '1');
+INSERT INTO `la_node` VALUES ('17', '栏目管理', '管理网站栏目', '', '', '0', '3', '1353316137', '0', '1');
+INSERT INTO `la_node` VALUES ('18', '添加栏目', '', 'Column', 'newColumn', '17', '0', '1353316212', '0', '1');
+INSERT INTO `la_node` VALUES ('19', '网站栏目', '', 'Column', 'index', '17', '0', '1353316369', '0', '1');
+INSERT INTO `la_node` VALUES ('20', '文档管理', '', '', '', '0', '3', '1353316415', '0', '1');
+INSERT INTO `la_node` VALUES ('21', '发布新文档', '', 'Article', 'newArticle', '20', '0', '1353316474', '0', '1');
+INSERT INTO `la_node` VALUES ('22', '文档列表', '', 'Article', 'index', '20', '0', '1353316554', '0', '1');
+INSERT INTO `la_node` VALUES ('23', '文档回收站', '', 'Article', 'recover', '20', '0', '1353316597', '0', '1');
+INSERT INTO `la_node` VALUES ('24', '模型管理', '', '', '', '0', '3', '1353316622', '0', '1');
+INSERT INTO `la_node` VALUES ('25', '单页模型', '', 'CTModel', 'singlePage', '24', '0', '1353316736', '0', '1');
+INSERT INTO `la_node` VALUES ('26', '内容模型', '', 'CTModel', 'ColumnModel', '24', '0', '1355898117', '1355898117', '1');
+INSERT INTO `la_node` VALUES ('27', '自动更新', '', '', '', '0', '4', '1356507108', '1356507108', '1');
+INSERT INTO `la_node` VALUES ('28', '一键更新网站', '', 'Cache', 'updateAll', '27', '0', '1357722182', '1357722182', '1');
+INSERT INTO `la_node` VALUES ('29', '更新系统缓存', '', 'Cache', 'systemCache', '27', '0', '1358997259', '1358997259', '1');
+INSERT INTO `la_node` VALUES ('30', '系统插件', '', '', '', '0', '5', '1358999125', '1358999125', '1');
+INSERT INTO `la_node` VALUES ('31', '留言板', '', 'Plugin', '', '30', '0', '1358999272', '1358999272', '1');
+INSERT INTO `la_node` VALUES ('32', '友情链接', '', 'Plugin', 'flinkManage', '30', '0', '1359010748', '1359010748', '1');
+INSERT INTO `la_node` VALUES ('33', '文件管理器', '', 'Plugin', 'fileManage', '30', '0', '1359010791', '1359010791', '1');
+INSERT INTO `la_node` VALUES ('34', '基本设置', '', '', '', '0', '6', '1359011153', '1359011153', '1');
+INSERT INTO `la_node` VALUES ('35', '系统基本参数', '', 'System', 'setInfo', '34', '0', '1359011177', '1359011177', '1');
+INSERT INTO `la_node` VALUES ('36', '系统日志管理', '', 'System', 'sysLog', '34', '0', '1359011220', '1359011220', '1');
+INSERT INTO `la_node` VALUES ('37', '图片水印设置', '', 'System', 'imageMark', '34', '0', '1359011294', '1359011294', '1');
+INSERT INTO `la_node` VALUES ('38', '数据库管理', '', '', '', '0', '6', '1359011349', '1359011349', '1');
+INSERT INTO `la_node` VALUES ('39', '数据库备份', '', 'DataBase', 'backUp', '38', '0', '1359011410', '1359011410', '1');
+INSERT INTO `la_node` VALUES ('40', '数据库还原', '', 'DataBase', 'restore', '38', '0', '1359015999', '1359015999', '1');
+INSERT INTO `la_node` VALUES ('41', 'SQL命令行工具', '', 'DataBase', 'SQLClient', '38', '0', '1359016018', '1359016018', '1');
 
 -- ----------------------------
 -- Table structure for `la_role`

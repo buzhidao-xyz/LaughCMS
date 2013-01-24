@@ -28,7 +28,8 @@ var JS_APPM = 'http://localhost:82/laugh';
 	<div id="controlContent">
 <div class="captitle">
 	<h5>当前目录 <font color="red">.</font></h5> |
-	<h5>权限 <font color="red">drwxrwxrwx</font></h5>
+	<h5>权限 <font color="red">drwxrwxrwx</font></h5> |
+	<h5><font color="red">.</font> 表示根目录</h5>
 </div>
 <ul class="table_list_title">
 	<li class="table_list_l table_list_l350">文件名</li>
@@ -49,6 +50,17 @@ var JS_APPM = 'http://localhost:82/laugh';
     	    	<li class="table_list_l table_list_l200" accessStatus=1>
     		    		<a name="fileRename" href="/laugh/admin/index.php?s=Plugin/fileRename&dir=.&filename=.git">改名</a>
     		<a name="fileDelete" href="/laugh/admin/index.php?s=Plugin/fileDelete&dir=.&filename=.git">删除</a>
+    		    	</li>
+    	    </ul>
+        <ul class="table_list">
+		<li class="table_list_l table_list_l350">
+						<a class="nonetextdecoration" href="/laugh/admin/index.php?s=Plugin/fileManage&dir=./a"><span class="icon" style="background:url(themes/green/images/fileicon/dir.gif) no-repeat;">a</span></a>
+					</li>
+    	<li class="table_list_l table_list_l150"></li>
+    	<li class="table_list_l table_list_l150"></li>
+    	    	<li class="table_list_l table_list_l200" accessStatus=1>
+    		    		<a name="fileRename" href="/laugh/admin/index.php?s=Plugin/fileRename&dir=.&filename=a">改名</a>
+    		<a name="fileDelete" href="/laugh/admin/index.php?s=Plugin/fileDelete&dir=.&filename=a">删除</a>
     		    	</li>
     	    </ul>
         <ul class="table_list">
@@ -153,32 +165,6 @@ var JS_APPM = 'http://localhost:82/laugh';
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l350">
-						<span class="icon" style="background:url(themes/green/images/fileicon/php.gif) no-repeat;">1358931482_i8nyx3_4827.php</span>
-					</li>
-    	<li class="table_list_l table_list_l150">874B</li>
-    	<li class="table_list_l table_list_l150">2013-01-23 16:58:02</li>
-    	    	<li class="table_list_l table_list_l200" accessStatus=1>
-    		    			<a name="fileEdit" href="/laugh/admin/index.php?s=Plugin/fileEdit&dir=.&filename=1358931482_i8nyx3_4827.php">编辑</a>
-    		    		<a name="fileRename" href="/laugh/admin/index.php?s=Plugin/fileRename&dir=.&filename=1358931482_i8nyx3_4827.php">改名</a>
-    		<a name="fileDelete" href="/laugh/admin/index.php?s=Plugin/fileDelete&dir=.&filename=1358931482_i8nyx3_4827.php">删除</a>
-    		    			<a name="fileMove" href="/laugh/admin/index.php?s=Plugin/fileMove&dir=.&filename=1358931482_i8nyx3_4827.php">移动</a>
-    		    	</li>
-    	    </ul>
-        <ul class="table_list">
-		<li class="table_list_l table_list_l350">
-						<span class="icon" style="background:url(themes/green/images/fileicon/php.gif) no-repeat;">1358931779_nzjaja_3470.php</span>
-					</li>
-    	<li class="table_list_l table_list_l150">874B</li>
-    	<li class="table_list_l table_list_l150">2013-01-23 17:02:59</li>
-    	    	<li class="table_list_l table_list_l200" accessStatus=1>
-    		    			<a name="fileEdit" href="/laugh/admin/index.php?s=Plugin/fileEdit&dir=.&filename=1358931779_nzjaja_3470.php">编辑</a>
-    		    		<a name="fileRename" href="/laugh/admin/index.php?s=Plugin/fileRename&dir=.&filename=1358931779_nzjaja_3470.php">改名</a>
-    		<a name="fileDelete" href="/laugh/admin/index.php?s=Plugin/fileDelete&dir=.&filename=1358931779_nzjaja_3470.php">删除</a>
-    		    			<a name="fileMove" href="/laugh/admin/index.php?s=Plugin/fileMove&dir=.&filename=1358931779_nzjaja_3470.php">移动</a>
-    		    	</li>
-    	    </ul>
-        <ul class="table_list">
-		<li class="table_list_l table_list_l350">
 						<span class="icon" style="background:url(themes/green/images/fileicon/php.gif) no-repeat;">index.php</span>
 					</li>
     	<li class="table_list_l table_list_l150">119B</li>
@@ -213,19 +199,6 @@ var JS_APPM = 'http://localhost:82/laugh';
     		    		<a name="fileRename" href="/laugh/admin/index.php?s=Plugin/fileRename&dir=.&filename=route.php">改名</a>
     		<a name="fileDelete" href="/laugh/admin/index.php?s=Plugin/fileDelete&dir=.&filename=route.php">删除</a>
     		    			<a name="fileMove" href="/laugh/admin/index.php?s=Plugin/fileMove&dir=.&filename=route.php">移动</a>
-    		    	</li>
-    	    </ul>
-        <ul class="table_list">
-		<li class="table_list_l table_list_l350">
-						<span class="icon" style="background:url(themes/green/images/fileicon/php.gif) no-repeat;">tags.php</span>
-					</li>
-    	<li class="table_list_l table_list_l150">874B</li>
-    	<li class="table_list_l table_list_l150">2013-01-23 16:39:57</li>
-    	    	<li class="table_list_l table_list_l200" accessStatus=1>
-    		    			<a name="fileEdit" href="/laugh/admin/index.php?s=Plugin/fileEdit&dir=.&filename=tags.php">编辑</a>
-    		    		<a name="fileRename" href="/laugh/admin/index.php?s=Plugin/fileRename&dir=.&filename=tags.php">改名</a>
-    		<a name="fileDelete" href="/laugh/admin/index.php?s=Plugin/fileDelete&dir=.&filename=tags.php">删除</a>
-    		    			<a name="fileMove" href="/laugh/admin/index.php?s=Plugin/fileMove&dir=.&filename=tags.php">移动</a>
     		    	</li>
     	    </ul>
         </div>

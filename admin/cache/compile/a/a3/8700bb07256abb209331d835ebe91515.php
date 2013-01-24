@@ -32,137 +32,198 @@ var JS_APPM = 'http://localhost:82/laugh';
 <div class="formContainer">
 	<div class="formtitle"><h5>修改文件</h5></div>
 	<form name="newform" action="/laugh/admin/index.php?s=Plugin/fileEdit&action=save" method="post" class="newform">
-		<input type="hidden" name="dir" value="./themes/default/Public" />
-		<input type="hidden" name="oldfilename" value="blindwindow.html" />
+		<input type="hidden" name="dir" value="./admin/include/control" />
+		<input type="hidden" name="oldfilename" value="Plugin.control.php" />
 		<ul class="formbody">
 			<li class="formblock">
 				<span>文件目录:</span>
-				<input type="text" name="newdir" value="./themes/default/Public" class="input w250" />（. 表示根目录 ，不允许用 “..” 形式的路径） 
+				<input type="text" name="newdir" value="./admin/include/control" class="input w250" />（. 表示根目录 ，不允许用 “..” 形式的路径） 
 			</li>
 			<li class="formblock">
 				<span>文件名称:</span>
-				<input type="text" name="newfilename" value="blindwindow.html" class="input w250" />
+				<input type="text" name="newfilename" value="Plugin.control.php" class="input w250" />
 			</li>
 			<li class="formautoblock">
 				<span>文件内容:</span>
-				<textarea name="filecontent" rows="35" cols="110">&lt;ul id=&quot;menu&quot;&gt;
-	&lt;li&gt;
-		&lt;a href=&quot;#&quot;&gt;Weblog Tools&lt;/a&gt;
-		&lt;ul&gt;
-			&lt;li&gt;&lt;a class=&quot;current&quot; href=&quot;#&quot;&gt;PivotX&lt;/a&gt;&lt;/li&gt;
-			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;WordPress&lt;/a&gt;&lt;/li&gt;
-			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Textpattern&lt;/a&gt;&lt;/li&gt;
-			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Typo&lt;/a&gt;&lt;/li&gt;
-		&lt;/ul&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-		&lt;a href=&quot;#&quot;&gt;Programming Languages&lt;/a&gt;
-		&lt;ul&gt;
-			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;PHP&lt;/a&gt;&lt;/li&gt;
-			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Ruby&lt;/a&gt;&lt;/li&gt;
-			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Python&lt;/a&gt;&lt;/li&gt;
-			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;PERL&lt;/a&gt;&lt;/li&gt;
-			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Java&lt;/a&gt;&lt;/li&gt;
-			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;C#&lt;/a&gt;&lt;/li&gt;
-		&lt;/ul&gt;
-	&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Marco's blog (no submenu)&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;
-		&lt;a href=&quot;#&quot;&gt;Cool Stuff&lt;/a&gt;
-		&lt;ul&gt;
-			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Apple&lt;/a&gt;&lt;/li&gt;
-			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Nikon&lt;/a&gt;&lt;/li&gt;
-			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;XBOX360&lt;/a&gt;&lt;/li&gt;
-			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Nintendo&lt;/a&gt;&lt;/li&gt;
-		&lt;/ul&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-		&lt;a href=&quot;#&quot;&gt;Search Engines&lt;/a&gt;
-		&lt;ul&gt;
-			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Yahoo!&lt;/a&gt;&lt;/li&gt;
-			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Google&lt;/a&gt;&lt;/li&gt;
-			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Ask.com&lt;/a&gt;&lt;/li&gt;
-			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Live Search&lt;/a&gt;&lt;/li&gt;
-		&lt;/ul&gt;
-	&lt;/li&gt;
-&lt;/ul&gt;
-&lt;style type=&quot;text/css&quot;&gt;
-body {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 0.9em;
-}
+				<textarea name="filecontent" rows="35" cols="110">&lt;?php
+class PluginControl extends CommonControl
+{
+	//初始化构造函数
+	public function __construct()
+	{
+		parent::__construct();
+	}
 
-p {
-  line-height: 1.5em;
-}
+    private function _newFileManage()
+    {
+        $dir = urldecode(q(&quot;dir&quot;));
+        $root = ROOT_DIR;
 
-ul#menu, ul#menu ul {
-  list-style-type:none;
-  margin: 0;
-  padding: 0;
-  width: 15em;
-}
+        import(&quot;Lib.Plugin.FileManage&quot;);
+        return new FileManage($root,$dir);
+    }
 
-ul#menu a {
-  display: block;
-  text-decoration: none;	
-}
+    //文件管理器插件
+    public function fileManage()
+    {
+        $fileManage = $this-&gt;_newFileManage();
+        $fileArray = $fileManage-&gt;getFileArray();
 
-ul#menu li {
-  margin-top: 1px;
-}
+        $this-&gt;assign(&quot;fileArray&quot;, $fileArray);
+        $this-&gt;display(&quot;FileManage/index.html&quot;);
+    }
 
-ul#menu li a {
-  background: #333;
-  color: #fff;	
-  padding: 0.5em;
-}
+    //文件编辑
+    public function fileEdit()
+    {
+        $dir = urldecode(q(&quot;dir&quot;));
+        $action = q('action');
 
-ul#menu li a:hover {
-  background: #000;
-}
+        $fileManage = $this-&gt;_newFileManage();
+        if ($action == &quot;save&quot;) {
+            $newdir = q(&quot;newdir&quot;);
+            $oldfilename = q('oldfilename');
+            $newfilename = q('newfilename');
+            $filecontent = q('filecontent');
 
-ul#menu li ul li a {
-  background: #ccc;
-  color: #000;
-  padding-left: 20px;
-}
-
-ul#menu li ul li a:hover,ul#menu li ul .current a {
-  background: #aaa;
-  border-left: 5px #000 solid;
-  padding-left: 15px;
-}
-
-.code { border: 1px solid #ccc; list-style-type: decimal-leading-zero; padding: 5px; margin: 0; }
-.code code { display: block; padding: 3px; margin-bottom: 0; }
-.code li { background: #ddd; border: 1px solid #ccc; margin: 0 0 2px 2.2em; }
-.indent1 { padding-left: 1em; }
-.indent2 { padding-left: 2em; }
-&lt;/style&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-function initMenu() {
-  $('#menu ul').hide();
-  $('#menu ul').children('.current').parent().show();
-  //$('#menu ul:first').show();
-  $('#menu li a').click(
-    function() {
-      var checkElement = $(this).next();
-      if((checkElement.is('ul')) &amp;&amp; (checkElement.is(':visible'))) {
-        return false;
+            $return = $fileManage-&gt;fileDelete($dir,$oldfilename);
+            $return = $fileManage-&gt;fileSave($newdir,$newfilename,$filecontent);
+            $this-&gt;showMessage($return['msg'],$return['state'],/laugh/admin.&quot;/index.php?s=Plugin/fileManage&amp;dir=&quot;.urlencode($dir));
+        } else {
+            $filename = q('filename');
+            $this-&gt;assign('dir', $dir);
+            $this-&gt;assign('oldfilename', $filename);
+            $this-&gt;assign('filecontent', $fileManage-&gt;getFileContent($dir,$filename));
+            $this-&gt;display(&quot;FileManage/fileEdit.html&quot;);
         }
-      if((checkElement.is('ul')) &amp;&amp; (!checkElement.is(':visible'))) {
-        $('#menu ul:visible').slideUp('normal');
-        checkElement.slideDown('normal');
-        return false;
+    }
+
+    //文件改名
+    public function fileRename()
+    {
+        $dir = urldecode(q(&quot;dir&quot;));
+        $action = q('action');
+        if ($action == &quot;save&quot;) {
+            $oldfilename = q('oldfilename');
+            $newfilename = q('newfilename');
+            if (!$newfilename) $this-&gt;ajaxReturn(1,'请输入新名称！');
+            $fileManage = $this-&gt;_newFileManage();
+            $return = $fileManage-&gt;fileRename($dir,$oldfilename,$newfilename);
+            if ($return['state']) {
+                $this-&gt;ajaxReturn(0,'修改成功！');
+            } else {
+                $this-&gt;ajaxReturn(1,$return['msg']);
+            }
+        } else {
+            $filename = q('filename');
+            $this-&gt;assign('dir', $dir);
+            $this-&gt;assign('oldfilename', $filename);
+            $this-&gt;display(&quot;FileManage/fileRename.html&quot;);
         }
-      }
-    );
-  }
-$(document).ready(function() {
-	initMenu();
-});
-&lt;/script&gt;</textarea>
+    }
+
+    //文件删除
+    public function fileDelete()
+    {
+        $dir = urldecode(q(&quot;dir&quot;));
+        $filename = q('filename');
+        $fileManage = $this-&gt;_newFileManage();
+        $return = $fileManage-&gt;fileDelete($dir,$filename);
+        if ($return['state']) {
+            $this-&gt;ajaxReturn(0,'删除成功！');
+        } else {
+            $this-&gt;ajaxReturn(1,$return['msg']);
+        }
+    }
+
+    //文件移动
+    public function fileMove()
+    {
+        $dir = urldecode(q(&quot;dir&quot;));
+        $filename = q('filename');
+        $action = q('action');
+        if ($action == &quot;save&quot;) {
+            $newdir = q(&quot;newdir&quot;);
+            $fileManage = $this-&gt;_newFileManage();
+            $return = $fileManage-&gt;fileMove($dir,$newdir,$filename);
+            if ($return['state']) {
+                $this-&gt;ajaxReturn(0,'移动成功！');
+            } else {
+                $this-&gt;ajaxReturn(1,$return['msg']);
+            }
+        } else {
+            $this-&gt;assign('dir', $dir);
+            $this-&gt;assign('filename', $filename);
+            $this-&gt;display(&quot;FileManage/fileMove.html&quot;);
+        }
+    }
+
+    //新建文件
+    public function newFile()
+    {
+        $dir = urldecode(q(&quot;dir&quot;));
+        $action = q('action');
+
+        if ($action == &quot;save&quot;) {
+            $filename = q('filename');
+            $filecontent = q('filecontent');
+
+            $fileManage = $this-&gt;_newFileManage();
+            $return = $fileManage-&gt;fileSave($dir,$filename,$filecontent);
+            $this-&gt;showMessage($return['msg'],$return['state'],/laugh/admin.&quot;/index.php?s=Plugin/fileManage&amp;dir=&quot;.urlencode($dir));
+        } else {
+            $this-&gt;assign('dir', $dir);
+            $this-&gt;display(&quot;FileManage/newfile.html&quot;);
+        }
+    }
+
+    //新建目录
+    public function newDir()
+    {
+        $dir = urldecode(q(&quot;dir&quot;));
+        $action = q('action');
+
+        if ($action == &quot;save&quot;) {
+            $newdir = q(&quot;newdir&quot;);
+            $fileManage = $this-&gt;_newFileManage();
+            $return = $fileManage-&gt;saveDir($dir,$newdir);
+            if ($return['state']) {
+                $this-&gt;ajaxReturn(0,'创建成功！');
+            } else {
+                $this-&gt;ajaxReturn(1,$return['msg']);
+            }
+        } else {
+            $this-&gt;assign('dir', $dir);
+            $this-&gt;display(&quot;FileManage/newdir.html&quot;);
+        }
+    }
+
+    //文件上传
+    public function fileUpload()
+    {
+        $dir = urldecode(q(&quot;dir&quot;));
+        $action = q('action');
+
+        if ($action == &quot;save&quot;) {
+            $fileManage = $this-&gt;_newFileManage();
+            $return = $fileManage-&gt;fileUpload($dir);
+            $this-&gt;showMessage($return['msg'],$return['state']);
+        } else {
+            $this-&gt;assign('dir', $dir);
+            $this-&gt;display(&quot;FileManage/fileupload.html&quot;);
+        }
+    }
+
+    //空间检查
+    public function spaceCheck()
+    {
+        $dir = urldecode(q(&quot;dir&quot;));
+        $fileManage = $this-&gt;_newFileManage();
+        $diskSpace = $fileManage-&gt;getDiskSpace($dir);
+        $this-&gt;assign('diskSpace', formatBytes($diskSpace));
+        $this-&gt;display(&quot;FileManage/spaceCheck.html&quot;);
+    }
+}</textarea>
 			</li>
 			<li class="formblock bordernone">
 				<input type="submit" name="subut" class="button btngreen2 fleft" value="保存" />
@@ -171,9 +232,6 @@ $(document).ready(function() {
 		</ul>
 	</form>
 </div>
-<script type="text/javascript">
-
-</script>
     </div>
     <ul class="controlBottom">
 		<li class="controlLeftBottom"></li>

@@ -396,8 +396,9 @@ class FileManage
         if(!$upload->upload()) {
             return array('state'=>0, 'msg'=>$upload->getErrorMsg());
         } else {
+        	$mdir = $this->_getMDir($dir);
             $info = $upload->getUploadFileInfo();
-            if (file_exists($dir."/".$info[0]['name'])) {
+            if (file_exists($mdir."/".$info[0]['name'])) {
             	$this->fileDelete($dir,$info[0]['savename']);
             	return array('state'=>0, 'msg'=>'文件已存在！');
             } else {

@@ -26,13 +26,13 @@ var JS_APPM = 'http://localhost:82/laugh';
 </div>
 <div class="headerNav">
     <div class="uinfo">
-        您好 , admin [ <a href="/laugh/admin/index.php?s=index/logout">退出</a> ] | <a href="/laugh/admin/index.php?s=index">系统主页</a> | <a href="http://localhost:82/laugh/index.php?s=index" target="_blank">网站主页</a> | <a href="javascript:;">系统设置</a>
+        您好 , admin [ <a href="/laugh/admin/index.php?s=index/logout">退出</a> ] | <a href="/laugh/admin/index.php?s=index">系统主页</a> | <a href="http://localhost:82/laugh/index.php?s=index" target="_blank">网站主页</a>
     </div>
     <div class="nav">
         <ul class="hmenu">
             <li class="navon"><a hidefocus="true" href="javascript:;" groupid="0" title="管理中心" class="navHeadMenu">管理中心</a></li>
                         <li><a hidefocus="true" href="javascript:;" groupid="1" title="系统管理" class="navHeadMenu">系统管理</a></li>
-                        <li><a hidefocus="true" href="javascript:;" groupid="2" title="用户中心" class="navHeadMenu">用户中心</a></li>
+                        <li><a hidefocus="true" href="javascript:;" groupid="2" title="会员中心" class="navHeadMenu">会员中心</a></li>
                         <li><a hidefocus="true" href="javascript:;" groupid="3" title="核心内容" class="navHeadMenu">核心内容</a></li>
                         <li><a hidefocus="true" href="javascript:;" groupid="4" title="网站更新" class="navHeadMenu">网站更新</a></li>
                         <li><a hidefocus="true" href="javascript:;" groupid="5" title="系统插件" class="navHeadMenu">系统插件</a></li>

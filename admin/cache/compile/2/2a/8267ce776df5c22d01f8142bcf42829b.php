@@ -35,7 +35,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<ul class="formbody">
 			<li class="formblock">
 				<span>文件目录:</span>
-				<input type="text" name="dir" value="./Uploads" class="input w250" />（. 表示根目录 ，不允许用 “..” 形式的路径） 
+				<input type="text" name="dir" value="." class="input w250" />（. 表示根目录 ，不允许用 “..” 形式的路径） 
 			</li>
 			<li class="formblock">
 				<span>文件名称:</span>

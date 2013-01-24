@@ -35,21 +35,28 @@
 	padding-top: 30px;
 	text-align: center;
 }
-.box .boxMessage .jump{
-	padding-top: 10px;
+.box .boxMessage .jump {
+	padding-top: 5px;
 	text-align: center;
+}
+.box .boxMessage .jumpUrl {
+	padding-top: 5px;
+	text-align: center;
+}
+.box .boxMessage .jumpUrl a {
+	text-decoration: underline;
 }
 </style>
 <script type="text/javascript">
 (function(){
-var wait = document.getElementById('wait'),href = document.getElementById('href').href;
-// var interval = setInterval(function(){
-// 	var time = --wait.innerHTML;
-// 	if(time == 0) {
-// 		location.href = href;
-// 		clearInterval(interval);
-// 	};
-// }, 1000);
+var interval = setInterval(function(){
+	var time = parseInt($("#wait").text())-1;
+	$("#wait").text(time);
+	if(time == 0) {
+		location.href = $("#href").attr("href");
+		clearInterval(interval);
+	};
+}, 1000);
 })();
 </script>
 {include file="include/foot.html"}

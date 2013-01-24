@@ -24,13 +24,13 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<h5>系统提示信息</h5>
 	</div>
 	<div class="boxMessage">
-		<div class="message"><font color="red">啊实打实的口号是大口径</font></div>
+		<div class="message"><font color="green">文件保存成功！</font></div>
 		<div class="jump">
 			页面即将自动跳转 
 			等待时间 <b id="wait">3</b> 秒
 		</div>
 		<div class="jumpUrl">
-			<a id="href" href="http://localhost:82/laugh/admin/index.php?s=index">如果你的浏览器没反应，请点击这里...</a>
+			<a id="href" href="/laugh/admin/index.php?s=Plugin/fileManage&dir=.%2Fadmin">如果你的浏览器没反应，请点击这里...</a>
 		</div>
 	</div>
 </div>
@@ -53,21 +53,28 @@ var JS_APPM = 'http://localhost:82/laugh';
 	padding-top: 30px;
 	text-align: center;
 }
-.box .boxMessage .jump{
-	padding-top: 10px;
+.box .boxMessage .jump {
+	padding-top: 5px;
 	text-align: center;
+}
+.box .boxMessage .jumpUrl {
+	padding-top: 5px;
+	text-align: center;
+}
+.box .boxMessage .jumpUrl a {
+	text-decoration: underline;
 }
 </style>
 <script type="text/javascript">
 (function(){
-var wait = document.getElementById('wait'),href = document.getElementById('href').href;
-// var interval = setInterval(function(){
-// 	var time = --wait.innerHTML;
-// 	if(time == 0) {
-// 		location.href = href;
-// 		clearInterval(interval);
-// 	};
-// }, 1000);
+var interval = setInterval(function(){
+	var time = parseInt($("#wait").text())-1;
+	$("#wait").text(time);
+	if(time == 0) {
+		location.href = $("#href").attr("href");
+		clearInterval(interval);
+	};
+}, 1000);
 })();
 </script>
 </body>

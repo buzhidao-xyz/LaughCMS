@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-01-23 17:19:47
+<?php /* Smarty version Smarty-3.1.12, created on 2013-01-24 16:27:06
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\public\header.html" */ ?>
-<?php /*%%SmartyHeaderCode:2814550ffab336b9936-84454228%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:323065100f05a72af83-90330847%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'ab2127b4a6039282c82f8d30ef0fcf6be1cdc1f4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\green\\public\\header.html',
-      1 => 1357885830,
+      1 => 1359012450,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2814550ffab336b9936-84454228',
+  'nocache_hash' => '323065100f05a72af83-90330847',
   'function' => 
   array (
   ),
@@ -23,16 +23,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50ffab336fcd54_84312224',
+  'unifunc' => 'content_5100f05a773fc7_57990368',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50ffab336fcd54_84312224')) {function content_50ffab336fcd54_84312224($_smarty_tpl) {?><!-- header -->
+<?php if ($_valid && !is_callable('content_5100f05a773fc7_57990368')) {function content_5100f05a773fc7_57990368($_smarty_tpl) {?><!-- header -->
 <div class="logo">
     <h1>管理中心</h1>
 </div>
 <div class="headerNav">
     <div class="uinfo">
         您好 , <?php echo $_smarty_tpl->tpl_vars['userInfo']->value['username'];?>
- [ <a href="__APP__/index.php?s=index/logout">退出</a> ] | <a href="__APP__/index.php?s=index">系统主页</a> | <a href="__APPM__/index.php?s=index" target="_blank">网站主页</a> | <a href="javascript:;">系统设置</a>
+ [ <a href="__APP__/index.php?s=index/logout">退出</a> ] | <a href="__APP__/index.php?s=index">系统主页</a> | <a href="__APPM__/index.php?s=index" target="_blank">网站主页</a>
     </div>
     <div class="nav">
         <ul class="hmenu">

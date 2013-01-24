@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-01-23 17:29:07
+<?php /* Smarty version Smarty-3.1.12, created on 2013-01-24 10:45:09
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\Common\showMessage.html" */ ?>
-<?php /*%%SmartyHeaderCode:1456150ffad63c7d587-12853495%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:293775100a0356cee62-63909742%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'cfc08302bcecb4e1ec62cd06f1739ac806dc06e8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\green\\Common\\showMessage.html',
-      1 => 1358933345,
+      1 => 1358991066,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1456150ffad63c7d587-12853495',
+  'nocache_hash' => '293775100a0356cee62-63909742',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_50ffad63cedbc8_80318065',
+  'unifunc' => 'content_5100a035743297_87201046',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_50ffad63cedbc8_80318065')) {function content_50ffad63cedbc8_80318065($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_5100a035743297_87201046')) {function content_5100a035743297_87201046($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="box">
 <div class="boxContent">
@@ -68,21 +68,28 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	padding-top: 30px;
 	text-align: center;
 }
-.box .boxMessage .jump{
-	padding-top: 10px;
+.box .boxMessage .jump {
+	padding-top: 5px;
 	text-align: center;
+}
+.box .boxMessage .jumpUrl {
+	padding-top: 5px;
+	text-align: center;
+}
+.box .boxMessage .jumpUrl a {
+	text-decoration: underline;
 }
 </style>
 <script type="text/javascript">
 (function(){
-var wait = document.getElementById('wait'),href = document.getElementById('href').href;
-// var interval = setInterval(function(){
-// 	var time = --wait.innerHTML;
-// 	if(time == 0) {
-// 		location.href = href;
-// 		clearInterval(interval);
-// 	};
-// }, 1000);
+var interval = setInterval(function(){
+	var time = parseInt($("#wait").text())-1;
+	$("#wait").text(time);
+	if(time == 0) {
+		location.href = $("#href").attr("href");
+		clearInterval(interval);
+	};
+}, 1000);
 })();
 </script>
 <?php echo $_smarty_tpl->getSubTemplate ("include/foot.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>

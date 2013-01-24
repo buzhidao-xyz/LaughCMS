@@ -19,7 +19,6 @@ class PluginControl extends CommonControl
     //文件管理器插件
     public function fileManage()
     {
-        $this->showMessage('啊实打实的口号是大口径',0);
         $fileManage = $this->_newFileManage();
         $fileArray = $fileManage->getFileArray();
 
@@ -42,11 +41,7 @@ class PluginControl extends CommonControl
 
             $return = $fileManage->fileDelete($dir,$oldfilename);
             $return = $fileManage->fileSave($newdir,$newfilename,$filecontent);
-            if ($return['state']) {
-                $this->display("Common/success.html");
-            } else {
-                $this->display("Common/error.html");
-            }
+            $this->showMessage($return['msg'],$return['state'],__APP__."/index.php?s=Plugin/fileManage&dir=".urlencode($dir));
         } else {
             $filename = q('filename');
             $this->assign('dir', $dir);
@@ -128,11 +123,7 @@ class PluginControl extends CommonControl
 
             $fileManage = $this->_newFileManage();
             $return = $fileManage->fileSave($dir,$filename,$filecontent);
-            if ($return['state']) {
-                $this->display("Common/success.html");
-            } else {
-                $this->display("Common/error.html");
-            }
+            $this->showMessage($return['msg'],$return['state'],__APP__."/index.php?s=Plugin/fileManage&dir=".urlencode($dir));
         } else {
             $this->assign('dir', $dir);
             $this->display("FileManage/newfile.html");

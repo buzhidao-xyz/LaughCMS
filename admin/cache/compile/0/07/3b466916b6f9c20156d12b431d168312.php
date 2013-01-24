@@ -5,11 +5,11 @@
 		<h5>新建目录</h5>
 	</div>
 	<form name="boxform" action="/laugh/admin/index.php?s=Plugin/newDir&action=save" method="post" id="ajaxform">
-	<input type="hidden" name="dir" value="./docs" class="input w200" />
+	<input type="hidden" name="dir" value="." class="input w200" />
 	<ul>
 		<li class="formblock">
 			<span>当前目录：</span>
-			<div class="caption">./docs</div>
+			<div class="caption">.</div>
 		</li>
 		<li class="formblock">
 			<span>目录名：</span>
