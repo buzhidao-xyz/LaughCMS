@@ -10,6 +10,7 @@ ul.headerNavigation {
 	font-weight: 700;
 	background:transparent url(../images/blueslate_background.gif) repeat-x top left;
 	text-transform:uppercase;
+	margin: 0 auto;
 }
 ul.headerNavigation li {
 	display:block;

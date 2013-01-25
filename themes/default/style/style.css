@@ -1,5 +1,3 @@
-#WrapContainer {
+.wrapWidth {
 	width: 1000px;
-	margin: 0 auto;
-	height: auto;
 }

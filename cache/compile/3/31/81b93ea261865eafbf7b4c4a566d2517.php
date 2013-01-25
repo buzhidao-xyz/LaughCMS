@@ -4,18 +4,30 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="keywords" content="">
 <link type="text/css" rel="stylesheet" href="themes/default/style/common.css" media="screen">
+<link type="text/css" rel="stylesheet" href="themes/default/style/frame.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/default/style/style.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/default/style/global.css" media="screen">
-<link type="text/css" rel="stylesheet" href="themes/default/style/header.css" media="screen">
-<link type="text/css" rel="stylesheet" href="themes/default/style/footer.css" media="screen">
 <script type="text/javascript" src="public/js/jquery.js"></script>
-<title>主页</title>
+<script type="text/javascript" src="themes/default/js/common.js"></script>
+<script type="text/javascript" src="themes/default/js/frame.js"></script>
+<title>Laugh CMS - 内容管理系统</title>
+<script type="text/javascript">
+var JS_APP = '/laugh';
+</script>
 </head>
 
 <body>
-<div id="WrapContainer">
-<div id="header">
-	<link type="text/css" rel="stylesheet" href="public/plugin/superfish/css/superfish.css" media="screen">
+<div id="Top">
+	
+</div>
+<div id="Header">
+	<div id="HeaderMain" class="wrapWidth">
+		<div id="HeaderStatus">
+			<div id="Logo">
+				<a href="/laugh"><img src="/laugh/themes/default/images/logo.png" /></a>
+			</div>
+		</div>
+		<link type="text/css" rel="stylesheet" href="public/plugin/superfish/css/superfish.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/default/style/navigation.css" media="screen">
 <ul class="headerNavigation">
 	<li>
@@ -55,7 +67,15 @@
 <script type="text/javascript">
 	$('ul.headerNavigation').superfish();
 </script>
+	</div>
 </div>
+<div id="WrapContainer">
+	<div class="wrapper">
+		
+	</div>
+</div>
+<div id="Footer">
+	
 </div>
 </body>
 </html>
