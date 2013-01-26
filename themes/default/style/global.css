@@ -1,0 +1,11 @@
+.wrap {
+	width: 1000px;
+}
+.block {
+    margin: 10px auto 0;
+	background: #CACCCD;
+}
+.adBanner {
+	width: 100%;
+	height: 80px;
+}

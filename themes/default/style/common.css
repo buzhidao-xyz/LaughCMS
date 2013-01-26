@@ -38,11 +38,11 @@ h5 {
     display: inline;
 }
 a:link, a:visited{
-    color: #027263;
+    color: #5F9729;
     text-decoration:none;
 }
 a:hover{
-    color: #FF6600;
+    color: #FF6633;
     text-decoration:underline;
 }
 div{
@@ -56,7 +56,7 @@ div{
 }
 ul, li {
     list-style:none;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 input{
     width:20px;
