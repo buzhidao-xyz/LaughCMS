@@ -1,11 +1,78 @@
+/**********************************公共CSS**********************************/
+.fleft {
+	float: left;
+}
+
 .wrap {
 	width: 1000px;
 }
 .block {
     margin: 10px auto 0;
-	background: #CACCCD;
+	/*background: #CACCCD;*/
 }
 .adBanner {
 	width: 100%;
 	height: 80px;
+}
+
+.w300 {
+	width: 300px;
+}
+.w690 {
+	width: 690px;
+}
+
+.pleft10 {
+	padding-left: 10px;
+}
+
+.mleft10 {
+	margin-left: 10px;
+}
+
+.mtop5 {
+	margin-top: 5px;
+}
+.mtop10 {
+	margin-top: 10px;
+}
+.mtop15 {
+	margin-top: 15px;
+}
+
+/**********************************flash图片caption**********************************/
+#ImageFlash #SImageCaption h1 {
+	color: #BF691A;
+	font-size: 23px;
+}
+#ImageFlash #SImageCaption h2 {
+	color: #525252;
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 20px;
+}
+#ImageFlash #SImageCaption h3 {
+	color: #333;
+	font-size: 13px;
+	font-weight: 700;
+	line-height: 20px;
+}
+#ImageFlash #SImageCaption h4 {
+	color: #747474;
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 20px;
+}
+
+/**********************************boxBlock**********************************/
+.boxBlock {
+	background: #FFFFFF;
+}
+.boxBlock .boxBlockTitle {
+	height: 35px;
+	line-height: 35px;
+	color: #FFFFFF;
+	font-weight: 700;
+	text-indent: 10px;
+	background: url("../images/navigation_bg.gif") repeat scroll left top transparent;
 }

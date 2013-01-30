@@ -99,10 +99,18 @@
 }
 #ImageFlash #SImageCaption {
 	float: left;
-	width: 240px;
-	height: 300px;
+	width: 230px;
+	height: 295px;
 	margin: 0 0 0 7px;
-	background: #FFFFFF;
+	background: #E5E5E5;
+    padding: 5px 0 0 10px;
+    font: 12px/1.5 '宋体',Tahoma,Srial,helvetica,Geneva,sans-serif;
+}
+#ImageFlash #SImageCaption a#downloadbtn {
+    width: 205px;
+    height: 62px;
+    display: block;
+    background: url("../images/downico.png") no-repeat;
 }
 #CenterShow {
 	height: 200px;

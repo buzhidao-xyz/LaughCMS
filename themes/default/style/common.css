@@ -3,7 +3,7 @@ body {
     margin:0px;
     color:#000000;
     text-align:center;
-    font: 13px Arial,Helvetica,sans-serif;
+    font: 13px "arial","宋体","sans-serif","Microsoft YaHei","tahoma";
     background: url("../images/body_bg.jpg") repeat #E8E8EA;
 }
 * {
@@ -17,23 +17,23 @@ form, h1, h2, h3, h4, h5, ul, li, p, pre, em {
     font-style: normal;
 }
 h1 {
-    color: #014A47;
+    color: #5F9729;
     font-size: 23px;
 }
 h2 {
-    color: #014A47;
+    color: #5F9729;
     font-size: 18px;
 }
 h3 {
-    color: #014A47;
+    color: #5F9729;
     font-size: 15px;
 }
 h4 {
-    color: #014A47;
+    color: #5F9729;
     font-size: 13px;
 }
 h5 {
-    color: #014A47;
+    color: #5F9729;
     font-size: 13px;
     display: inline;
 }
