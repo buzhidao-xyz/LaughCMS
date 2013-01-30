@@ -88,8 +88,8 @@
 }
 #ImageFlash {
     padding: 10px;
-    overflow: hidden;
 	background: #CACCCD;
+    overflow: hidden;
 }
 #ImageFlash #SImageContainer {
 	float: left;
@@ -101,7 +101,7 @@
 	float: left;
 	width: 240px;
 	height: 300px;
-	margin: 0 0 0 10px;
+	margin: 0 0 0 7px;
 	background: #FFFFFF;
 }
 #CenterShow {

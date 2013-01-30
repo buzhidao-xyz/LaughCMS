@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-01-29 15:24:21
+<?php /* Smarty version Smarty-3.1.12, created on 2013-01-30 18:06:14
          compiled from "C:\xampp\htdocs\laugh\themes\default\Public\navigation.html" */ ?>
-<?php /*%%SmartyHeaderCode:2038451077925946944-46585194%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:108185108f0962869b7-78619482%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,15 +11,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2038451077925946944-46585194',
+  'nocache_hash' => '108185108f0962869b7-78619482',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_51077925969d88_46992794',
+  'unifunc' => 'content_5108f09628a5a9_90214699',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51077925969d88_46992794')) {function content_51077925969d88_46992794($_smarty_tpl) {?><link type="text/css" rel="stylesheet" href="public/plugin/superfish/css/superfish.css" media="screen">
+<?php if ($_valid && !is_callable('content_5108f09628a5a9_90214699')) {function content_5108f09628a5a9_90214699($_smarty_tpl) {?><link type="text/css" rel="stylesheet" href="public/plugin/superfish/css/superfish.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/default/style/navigation.css" media="screen">
 <ul class="headerNavigation">
 	<li>

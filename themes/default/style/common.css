@@ -298,3 +298,7 @@ select {
     cursor:pointer;
     text-decoration:none;
 }
+
+.clear {
+    clear: both;
+}
