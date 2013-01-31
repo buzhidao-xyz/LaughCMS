@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-01-30 23:54:24
+<?php /* Smarty version Smarty-3.1.12, created on 2013-02-01 00:26:40
          compiled from "G:\website\laugh\themes\default\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:125251094230afa9d2-41676461%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:19226510a9b403fe502-59303204%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'edeaac6efa5d4100610b986d2fdaf430c423e600' => 
     array (
       0 => 'G:\\website\\laugh\\themes\\default\\index.html',
-      1 => 1359561261,
+      1 => 1359649596,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '125251094230afa9d2-41676461',
+  'nocache_hash' => '19226510a9b403fe502-59303204',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_51094230b67331_36538725',
+  'unifunc' => 'content_510a9b4045c971_28969660',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51094230b67331_36538725')) {function content_51094230b67331_36538725($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_510a9b4045c971_28969660')) {function content_510a9b4045c971_28969660($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate ("Public/Top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
@@ -34,7 +34,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<h2 class="mtop5">LaughCMS企业网站管理系统,是一款代码完全开源免费PHP+MYSQL系统.系统安全,效率,易用并且可扩展性非常好。
 			</h2>
 			<h3 class="mtop10">系统版本: Laugh CMS 正式版</h3>
-			<h4>软件语言: 简体中文 UTF-8</h4>
+			<h4>软件语言: 简体中文UTF-8</h4>
 			<h4>环境要求: IIS/Apache/Nginx + PHP5 + MySQL5</h4>
 			<h4>用户手册: <a href="javascript:;" target="_blank">在线手册</a></h4>
 			<h4>在线演示: <a href="javascript:;" target="_blank">演示地址</a></h4>
@@ -43,23 +43,121 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<div class="clear"></div>
 	</div>
 	<div id="CenterShow" class="block">
-		<div class="boxBlock fleft w300">
-			<div class="boxBlockTitle">新闻咨询</div>
-			<div class="boxBlockBody">body</div>
+		<div class="boxBlock fleft w350">
+			<div class="boxBlockTitle">
+				<span class="title">新闻资讯</span>
+				<span class="link"><a href="javascript:;">更多>></a></span>
+			</div>
+			<div class="boxBlockBody h170">
+				<ul class="articleList">
+					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
+					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
+					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
+					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
+					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
+					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
+				</ul>
+			</div>
 		</div>
-		<div class="boxBlock fleft w690 mleft10">
-			<div class="boxBlockTitle">关于我们</div>
-			<div class="boxBlockBody">body</div>
+		<div class="boxBlock fleft w640 mleft10">
+			<div class="boxBlockTitle">
+				<span class="title">关于我们</span>
+			</div>
+			<div class="boxBlockBody h170">
+				<div class="boxBlockImg fleft">
+					<img src="themes/default/images/aboutus_img.png" width="130" height="150" />
+				</div>
+				<div class="boxBlockText fleft w450">
+					<span class="text">LaughCMS企业网站管理系统，是一款代码完全开源免费的PHP+MYSQL系统。</span>
+					<span class="text">程序内置SEO优化机制，使企业网站更容易被推广。拥有企业网站常用的模块功能（企业简介模块、新闻模块、产品模块、下载模块、图片模块、招聘模块、在线留言、友情链接、会员与权限管理）。强大灵活的后台管理功能、静态页面生成功能、自定义模型功能、自制插件安装管理功能等可为企业打造出大气漂亮且具有营销力的精品网站...</span>
+					<a href="javascript:;" class="viewbtn">阅读全文</a>
+				</div>
+			</div>
 		</div>
+		<div class="clear"></div>
 	</div>
 	<div class="adBanner block">
-		广告banner图片1000*80
+		<a href="javascript:;" target="_blank"><img src="themes/default/images/ad_banner.png" width="1000" height="80" /></a>
 	</div>
 	<div id="BottomShow" class="block">
-		产品展示 联系我们
+		<div class="boxBlock fleft w740">
+			<div class="boxBlockTitle">
+				<span class="title">产品展示</span>
+				<span class="link"><a href="javascript:;">更多>></a></span>
+				<ul id="ImgboxTab" class="boxTab fleft">
+					<li><a href="#boxTab1">分类一</a></li>
+					<li><a href="#boxTab2">分类二</a></li>
+				</ul>
+			</div>
+			<div class="boxBlockBody h330">
+				<div id="boxTab1" class="boxTabContent">
+					<ul class="imgList">
+						<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
+						<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
+						<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
+						<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
+						<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
+						<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
+						<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
+						<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
+					</ul>
+				</div>
+				<div id="boxTab2" class="boxTabContent">
+					<ul class="imgList">
+						<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
+						<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
+						<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
+						<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
+						<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
+						<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
+						<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
+						<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="boxBlock fleft w250 mleft10">
+			<div class="boxBlockTitle">
+				<span class="title">联系我们</span>
+			</div>
+			<div class="boxBlockBody h330">
+				<div class="contactUS">
+					<h5>电 话: XXXXXXXX</h5>
+					<h5>邮 编: XXXXXXXX</h5>
+					<h5>网 址: www.xxx.com</h5>
+					<h5>Email: admin@admin.com</h5>
+					<h5>联系地址: 江苏省苏州市工业园区若水路1号</h5>
+					<h5>联系人: XXX</h5>
+					<h4>Laugh CMS 软件科技公司</h4>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
 	</div>
-	<div id="Flink" class="block">
-		友情链接
+	<div id="Flink" class="boxBlock block">
+		<div class="FlinkTitle">
+			<span class="title">友情链接</span>
+			<ul id="FlinkboxTab" class="boxTab fleft">
+				<li><a href="#flinkboxTab1" class="bordernone">分类一</a></li>
+				<li><a href="#flinkboxTab2">分类二</a></li>
+			</ul>
+		</div>
+		<div class="FlinkBody">
+			<div id="flinkboxTab1" class="boxTabContent">
+				<ul class="flinkList">
+					<li><a href="javascript:;">链接一</a></li>
+					<li><a href="javascript:;">链接二三</a></li>
+					<li><a href="javascript:;">链接四四四四</a></li>
+					<li><a href="javascript:;">链接六六六</a></li>
+					<li><a href="javascript:;">链接五六七八九十</a></li>
+				</ul>
+			</div>
+			<div id="flinkboxTab2" class="boxTabContent">
+				<ul class="flinkList">
+					<li><a href="javascript:;">链接二</a></li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </div>
 <?php echo $_smarty_tpl->getSubTemplate ("include/foot.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>

@@ -226,3 +226,79 @@ ul.boxTab li a.selected {
 	margin-top: 5px;
 }
 
+/**********************************友情链接样式**********************************/
+#Flink .FlinkTitle {
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px solid #999;
+}
+#Flink .FlinkTitle span.title {
+	float: left;
+	text-indent: 10px;
+	font-weight: 700;
+	color: #333333;
+}
+#Flink .FlinkTitle ul.boxTab {
+	padding-right: 10px;
+}
+#Flink .FlinkTitle ul.boxTab li {
+	float: left;
+	margin: 0;
+	height: 30px;
+	line-height: 30px;
+}
+#Flink .FlinkTitle ul.boxTab li a {
+	color: #333333;
+	font-weight: 700;
+	padding: 0 10px;
+	border: 0;
+	background: none;
+	border-left: 1px solid #999;
+}
+#Flink .FlinkTitle ul.boxTab li a.bordernone {
+	border-left: 0;
+}
+#Flink .FlinkTitle ul.boxTab li a.selected {
+	color: #5F9729;
+	background: none;
+}
+#Flink ul.flinkList {
+	padding: 5px;
+	overflow: hidden;
+}
+#Flink ul.flinkList li {
+	float: left;
+	padding: 4px 7px;
+}
+#Flink ul.flinkList li a {
+	color: #333333;
+}
+#Flink ul.flinkList li a:hover {
+	color: #5F9729;
+	text-decoration: underline;
+}
+
+/**********************************底部样式**********************************/
+#Footer ul#Link {
+	width: 365px;
+	overflow: hidden;
+	margin: 0 auto;
+	padding: 20px 10px 10px 10px;
+}
+#Footer ul#Link li {
+	float: left;
+	padding: 0 10px;
+	border-left: 1px solid #CCCCCC;
+}
+#Footer ul#Link li.bordernone {
+	border-left: 0;
+}
+#Footer ul#Link li a {
+	color: #CCCCCC;
+}
+#Footer #copyright {
+	color: #FFFFFF;
+	padding: 0 10px;
+	text-align: center;
+	line-height: 22px;
+}

@@ -119,9 +119,9 @@
 	
 }
 #Flink {
-	min-height: 50px;
     background: #FFFFFF;
     padding: 5px;
+    border: 1px solid #DDDDDD;
 }
 #Footer {
 	width: 100%;
