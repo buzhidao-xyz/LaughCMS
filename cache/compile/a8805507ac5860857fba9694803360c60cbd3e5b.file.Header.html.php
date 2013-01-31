@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-01-30 18:06:14
+<?php /* Smarty version Smarty-3.1.12, created on 2013-01-31 17:27:41
          compiled from "C:\xampp\htdocs\laugh\themes\default\Public\Header.html" */ ?>
-<?php /*%%SmartyHeaderCode:267655108f0962514a1-17525238%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:11300510a390dcdbc82-24252115%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'a8805507ac5860857fba9694803360c60cbd3e5b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\Public\\Header.html',
-      1 => 1359182379,
+      1 => 1359593843,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '267655108f0962514a1-17525238',
+  'nocache_hash' => '11300510a390dcdbc82-24252115',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5108f09627e5c0_03937984',
+  'unifunc' => 'content_510a390dd03832_90940597',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5108f09627e5c0_03937984')) {function content_5108f09627e5c0_03937984($_smarty_tpl) {?><div id="Header">
+<?php if ($_valid && !is_callable('content_510a390dd03832_90940597')) {function content_510a390dd03832_90940597($_smarty_tpl) {?><div id="Header">
 	<div id="HeaderMain">
 		<div id="HeaderStatus">
 			<div class="Logo">
@@ -34,7 +34,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</div>
 				<div class="Search">
 					<form method="POST" action="__APP__/index.php?s=Search">
-						<input type="text" onfocus="if (this.value=='Search...') this.value='';" onblur="if (this.value=='') this.value='搜索...';" value="搜索..." size="20" class="sinput" name="keyword">
+						<input type="text" onfocus="if (this.value=='搜索...') this.value='';" onblur="if (this.value=='') this.value='搜索...';" value="搜索..." size="20" class="sinput" name="keyword">
 						<input type="submit" class="sbutton" value="GO">
 					</form>
 				</div>

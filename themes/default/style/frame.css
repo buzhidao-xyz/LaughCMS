@@ -6,8 +6,8 @@
     left: 0;
     right: 0;
     top: 0;
-	border-bottom: 1px solid #DDDDDD;
-    background: url("../images/top_bg.jpg") repeat #FFFFFF;
+    box-shadow: 0 1px 1px #DDDDDD;
+    background: url("../images/top_bg.png") repeat #FFFFFF;
     opacity: 1;
     z-index: 9999;
 }
@@ -113,13 +113,15 @@
     background: url("../images/downico.png") no-repeat;
 }
 #CenterShow {
-	height: 200px;
+	
 }
 #BottomShow {
-	height: 300px;
+	
 }
 #Flink {
 	min-height: 50px;
+    background: #FFFFFF;
+    padding: 5px;
 }
 #Footer {
 	width: 100%;

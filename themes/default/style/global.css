@@ -1,8 +1,4 @@
 /**********************************公共CSS**********************************/
-.fleft {
-	float: left;
-}
-
 .wrap {
 	width: 1000px;
 }
@@ -15,11 +11,39 @@
 	height: 80px;
 }
 
+.w250 {
+	width: 250px;
+}
 .w300 {
 	width: 300px;
 }
+.w350 {
+	width: 350px;
+}
+.w450 {
+	width: 450px;
+}
+.w640 {
+	width: 640px;
+}
 .w690 {
 	width: 690px;
+}
+.w740 {
+	width: 740px;
+}
+
+.h170 {
+	height: 170px;
+}
+.h200 {
+	height: 200px;
+}
+.h300 {
+	height: 300px;
+}
+.h330 {
+	height: 330px;
 }
 
 .pleft10 {
@@ -66,13 +90,139 @@
 
 /**********************************boxBlock**********************************/
 .boxBlock {
-	background: #FFFFFF;
+    /*border: 1px solid #DEDEDE;*/
+    /*border-top: none;*/
+	background: #CCC;
 }
 .boxBlock .boxBlockTitle {
 	height: 35px;
-	line-height: 35px;
 	color: #FFFFFF;
 	font-weight: 700;
 	text-indent: 10px;
 	background: url("../images/navigation_bg.gif") repeat scroll left top transparent;
 }
+.boxBlock .boxBlockTitle span.title {
+	float: left;
+	line-height: 35px;
+}
+.boxBlock .boxBlockTitle span.link {
+	float: right;
+	padding-right: 10px;
+	line-height: 35px;
+}
+.boxBlock .boxBlockTitle span.link a {
+	color: #FFFFFF;
+	font-weight: 500;
+}
+.boxBlock .boxBlockBody {
+	background: #FFFFFF;
+	margin: 0 1px 1px 1px;
+	padding: 0 1px;
+	overflow: hidden;
+}
+.boxBlock .boxBlockBody .boxBlockImg {
+	padding:10px 20px 5px 20px;
+}
+.boxBlock .boxBlockBody .boxBlockText {
+	word-wrap: break-word;
+	padding: 10px 0 0 0;
+}
+.boxBlock .boxBlockBody .boxBlockText span.text {
+	display: block;
+	margin-top: 5px;
+	line-height: 18px;
+	text-indent: 26px;
+}
+.boxBlock .boxBlockBody .boxBlockText a.viewbtn {
+	float: right;
+	display: block;
+	padding: 0 10px 0 15px;
+	background: url("../images/morebtn.png") no-repeat left 2px;
+}
+
+/**********************************articleList文档列表样式**********************************/
+ul.articleList {
+	width: auto;
+	height: auto;
+	overflow: hidden;
+	padding: 5px 5px 3px 10px;
+}
+ul.articleList li {
+	height: 25px;
+	line-height: 25px;
+	text-indent: 10px;
+	/*padding: 0 10px;*/
+	border-bottom: 1px dashed #EEEEEE;
+	background: url("../images/arrow-0.png") no-repeat 0 9px;
+}
+ul.articleList li a {
+	color: #333333;
+}
+ul.articleList li a:hover {
+	color: #333333;
+}
+
+/**********************************imgList产品列表样式**********************************/
+ul.imgList {
+	padding: 0 7px;
+	overflow: hidden;
+}
+ul.imgList li {
+	float: left;
+	width: 180px;
+	height: 150px;
+	padding-top: 10px;
+}
+ul.imgList li img {
+	width: 160px;
+	height: 130px;
+	border: 1px solid #DDD;
+}
+ul.imgList li a {
+	display: block;
+	text-align: center;
+}
+
+/**********************************boxTab样式**********************************/
+ul.boxTab {
+	float: right;
+	text-indent: 0;
+}
+ul.boxTab li {
+	float: left;
+	margin-left: 3px;
+	text-indent: 0;
+	margin-top: 5px;
+	height: 30px;
+	line-height: 30px;
+}
+ul.boxTab li a {
+	color: #FFFFFF;
+    padding: 6px 10px;
+    text-decoration: none;
+	background: #747474;
+    border-bottom: 1px solid #747474;
+}
+ul.boxTab li a.selected {
+	color: #333;
+	background: #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+}
+.boxTabContent {
+	overflow: hidden;
+}
+
+/**********************************其他样式 联系我们、关于我们等**********************************/
+.contactUS {
+	padding: 20px;
+}
+.contactUS h5 {
+	font-weight: 500;
+	display: block;
+	padding: 3px 0;
+}
+.contactUS h4 {
+	color: #BF691A;
+	margin-top: 5px;
+}
+

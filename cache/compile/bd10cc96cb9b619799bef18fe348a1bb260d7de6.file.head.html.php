@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-01-30 18:06:14
+<?php /* Smarty version Smarty-3.1.12, created on 2013-01-31 17:27:41
          compiled from "C:\xampp\htdocs\laugh\themes\default\include\head.html" */ ?>
-<?php /*%%SmartyHeaderCode:188715108f09623a292-20943075%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:30646510a390dcc8af1-12031362%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'bd10cc96cb9b619799bef18fe348a1bb260d7de6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\include\\head.html',
-      1 => 1359183258,
+      1 => 1359623090,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '188715108f09623a292-20943075',
+  'nocache_hash' => '30646510a390dcc8af1-12031362',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5108f09623d2e3_23642596',
+  'unifunc' => 'content_510a390dccbd50_60805665',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5108f09623d2e3_23642596')) {function content_5108f09623d2e3_23642596($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_510a390dccbd50_60805665')) {function content_510a390dccbd50_60805665($_smarty_tpl) {?><!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -28,6 +28,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <link type="text/css" rel="stylesheet" href="themes/default/style/frame.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/default/style/global.css" media="screen">
 <script type="text/javascript" src="public/js/jquery.js"></script>
+<script type="text/javascript" src="public/js/jquery.idTabs.min.js"></script>
 <script type="text/javascript" src="themes/default/js/common.js"></script>
 <script type="text/javascript" src="themes/default/js/frame.js"></script>
 <title>Laugh CMS - 内容管理系统</title>
