@@ -31,8 +31,8 @@ var JS_APPM = 'http://localhost:82/laugh';
 	<div class="boxTitle">
 		<h5>·&nbsp;快捷操作</h5>
 		<ul class="boxTab">
-			<li><a href="#boxTab1">管理</a></li>
-			<li><a href="#boxTab2">新增</a></li>
+			<li><a tabid="#boxTab1" href="javascript:;">管理</a></li>
+			<li><a tabid="#boxTab2" href="javascript:;">新增</a></li>
 		</ul>
 	</div>
 	<div id="boxTab1" class="boxContent boxTabContent">
@@ -87,11 +87,11 @@ var JS_APPM = 'http://localhost:82/laugh';
 </div>
 <script type="text/javascript">
 $(document).ready(function(){
-	$(".boxTitle ul.boxTab").idTabs(function(id,list,set){ 
-    	$("a",set).removeClass("selected").filter("[href='"+id+"']",set).addClass("selected"); 
-    	for(i in list) $(list[i]).hide(); 
-    	$(id).fadeIn(); 
-    	return false; 
+	$(".boxTitle ul.boxTab").idTabs(function(id,list,set){
+    	$("a",set).removeClass("selected").filter("[tabid='"+id+"']",set).addClass("selected"); 
+    	for(i in list) $(list[i]).hide();
+    	$(id).fadeIn();
+    	return false;
 	});
 });
 </script>

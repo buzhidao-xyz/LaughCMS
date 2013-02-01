@@ -6,6 +6,9 @@
  */
 class ArticleControl extends CommonControl
 {
+	//控制器名
+    protected $_control = 'article';
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -14,7 +17,7 @@ class ArticleControl extends CommonControl
 	//主入口
 	public function index()
 	{
-		
+		$this->display("Article/index.html");
 	}
 
 	//获取文档ID

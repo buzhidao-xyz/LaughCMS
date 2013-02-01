@@ -1,4 +1,4 @@
-{if $page && $page.page|@count >1}
+{if isset($page) && $page && $page.page|@count >1}
 <div id="{if isset($isface)}facepage{else}compage{/if}" class="pagination">
 	{if $page.firstpage.row}
 	<a class="pageprev graya fleft" href="{if $page.firstpage.href}{$page.firstpage.href}{else}javascript:;{/if}">首页</a> 

@@ -5,8 +5,13 @@
  */
 class CommonControl extends BaseControl
 {
+	//控制器名
+    protected $_control = "common";
+
     public function __construct()
     {
         parent::__construct();
+
+        $this->assign("control", $this->_control);
     }
 }

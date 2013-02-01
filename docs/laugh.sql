@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2013-01-26 15:40:40
+Date: 2013-02-01 16:55:10
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,7 +37,7 @@ CREATE TABLE `la_admin` (
 -- ----------------------------
 -- Records of la_admin
 -- ----------------------------
-INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1359016315', '2130706433', '104', '1');
+INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1359444257', '2130706433', '105', '1');
 INSERT INTO `la_admin` VALUES ('2', 'luochuan', '624879b3fff70462132a21eb1cd8eb75', 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '1355368421', '2130706433', '12', '0');
 
 -- ----------------------------
@@ -140,15 +140,22 @@ CREATE TABLE `la_column` (
   `createtime` int(10) NOT NULL,
   `updatetime` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_column
 -- ----------------------------
-INSERT INTO `la_column` VALUES ('1', '栏目1', '0', '0', '1', null, null, '1', '栏目1', '', '', '&lt;p&gt;栏目一&lt;strong&gt;&lt;img src=&quot;/Uploads/Scrawl/201212/25/1356406180_tkbjyl_4121.png&quot; /&gt;&lt;/strong&gt;内容&lt;br /&gt;&lt;/p&gt;', '1', '1356402068', '1358325807');
-INSERT INTO `la_column` VALUES ('2', '子栏目1', '1', '1', '1', null, null, '1', '', '', '', '&lt;p&gt;子栏目1&lt;br /&gt;&lt;/p&gt;', '1', '1356405490', '1358325833');
-INSERT INTO `la_column` VALUES ('3', '子子栏目1', '2', '1', '1', null, null, '1', '', '', '', '&lt;p&gt;子子&lt;strong&gt;&lt;img src=&quot;/Uploads/Scrawl/201212/25/1356406180_tkbjyl_4121.png&quot; /&gt;&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;', '1', '1356406231', '1356406231');
-INSERT INTO `la_column` VALUES ('4', '栏目2', '0', '0', '1', null, null, '2', '', '', '', '&lt;p&gt;栏目2&lt;br /&gt;&lt;/p&gt;', '1', '1356414942', '1356414942');
+INSERT INTO `la_column` VALUES ('1', '网站首页', '0', '0', '1', null, null, '1', 'Laugh CMS 内容管理系统', '', '', '', '1', '1356402068', '1359689666');
+INSERT INTO `la_column` VALUES ('2', '新闻资讯', '0', '0', '1', null, null, '2', '', '', '', '', '1', '1356405490', '1359689694');
+INSERT INTO `la_column` VALUES ('3', '子栏目一', '2', '2', '1', null, null, '1', '', '', '', '', '1', '1356406231', '1356406231');
+INSERT INTO `la_column` VALUES ('4', '子栏目二', '2', '2', '1', null, null, '2', '', '', '', '', '1', '1356414942', '1359689721');
+INSERT INTO `la_column` VALUES ('5', '子子栏目一', '4', '2', '1', null, null, '1', '', '', '', '', '1', '1359689764', '1359689764');
+INSERT INTO `la_column` VALUES ('6', '产品展示', '0', '0', '1', null, null, '3', '', '', '', '', '1', '1359690256', '1359690256');
+INSERT INTO `la_column` VALUES ('7', '客户案例', '0', '0', '1', null, null, '4', '', '', '', '', '1', '1359690270', '1359690270');
+INSERT INTO `la_column` VALUES ('8', '下载中心', '0', '0', '1', null, null, '5', '', '', '', '', '1', '1359690280', '1359690280');
+INSERT INTO `la_column` VALUES ('9', '招贤纳士', '0', '0', '1', null, null, '6', '', '', '', '', '1', '1359690294', '1359690294');
+INSERT INTO `la_column` VALUES ('10', '关于我们', '0', '0', '1', null, null, '7', '', '', '', '', '1', '1359690307', '1359690307');
+INSERT INTO `la_column` VALUES ('11', '联系我们', '0', '0', '1', null, null, '8', '', '', '', '', '1', '1359690316', '1359690316');
 
 -- ----------------------------
 -- Table structure for `la_comment`

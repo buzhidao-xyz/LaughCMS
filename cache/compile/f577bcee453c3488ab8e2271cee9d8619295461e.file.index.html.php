@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-01-31 17:27:41
+<?php /* Smarty version Smarty-3.1.12, created on 2013-02-01 16:51:35
          compiled from "C:\xampp\htdocs\laugh\themes\default\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:29521510a390dc67a61-48936474%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:30414510b82171f09b7-02831086%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'f577bcee453c3488ab8e2271cee9d8619295461e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\index.html',
-      1 => 1359624460,
+      1 => 1359701300,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '29521510a390dc67a61-48936474',
+  'nocache_hash' => '30414510b82171f09b7-02831086',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_510a390dcbf4c8_42480034',
+  'unifunc' => 'content_510b8217252c72_86937918',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_510a390dcbf4c8_42480034')) {function content_510a390dcbf4c8_42480034($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_510b8217252c72_86937918')) {function content_510b8217252c72_86937918($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate ("Public/Top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
@@ -55,7 +55,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
 					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
 					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
-					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
 				</ul>
 			</div>
 		</div>
@@ -80,42 +79,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<a href="javascript:;" target="_blank"><img src="themes/default/images/ad_banner.png" width="1000" height="80" /></a>
 	</div>
 	<div id="BottomShow" class="block">
-		<div class="boxBlock fleft w740">
-			<div class="boxBlockTitle">
-				<span class="title">产品展示</span>
-				<span class="link"><a href="javascript:;">更多>></a></span>
-				<ul id="boxTabDOM1" class="boxTab fleft">
-					<li><a href="#boxTab1">分类一</a></li>
-					<li><a href="#boxTab2">分类二</a></li>
-				</ul>
-			</div>
-			<div class="boxBlockBody h330">
-				<div id="boxTab1" class="boxTabContent">
-					<ul class="imgList">
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-					</ul>
-				</div>
-				<div id="boxTab2" class="boxTabContent">
-					<ul class="imgList">
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
+		<?php echo $_smarty_tpl->getSubTemplate ("Public/ImgListBlock.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 		<div class="boxBlock fleft w250 mleft10">
 			<div class="boxBlockTitle">
 				<span class="title">联系我们</span>
@@ -128,33 +93,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<h5>Email: admin@admin.com</h5>
 					<h5>联系地址: 江苏省苏州市工业园区若水路1号</h5>
 					<h5>联系人: XXX</h5>
-					<h4>Laugh CMS软件科技公司</h4>
+					<h4>Laugh CMS 软件科技公司</h4>
 				</div>
 			</div>
 		</div>
 		<div class="clear"></div>
 	</div>
-	<div id="Flink" class="block">
-		<div class="boxBlockTitle">
-				<span class="title">友情链接</span>
-				<ul id="boxTabDOM2" class="boxTab fleft">
-					<li><a href="#boxTab1">分类一</a></li>
-					<li><a href="#boxTab2">分类二</a></li>
-				</ul>
-			</div>
-			<div class="boxBlockBody">
-				<div id="boxTab1" class="boxTabContent">
-					<ul class="flinkList">
-						<li><a href="javascript:;">产品一</a></li>
-					</ul>
-				</div>
-				<div id="boxTab2" class="boxTabContent">
-					<ul class="flinkList">
-						<li><a href="javascript:;">产品一</a></li>
-					</ul>
-				</div>
-			</div>
-	</div>
+	<?php echo $_smarty_tpl->getSubTemplate ("Public/Flink.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 </div>
 <?php echo $_smarty_tpl->getSubTemplate ("include/foot.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 <?php }} ?>

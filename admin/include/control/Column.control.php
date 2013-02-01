@@ -206,9 +206,9 @@ class ColumnControl extends CommonControl
 									<a href="'.__APP__.'/index.php?s=Column/updateColumn&columnid='.$v['id'].'">编辑</a> |
 									<a delurl="'.__APP__.'/index.php?s=Column/deleteColumn&columnid='.$v['id'].'" href="javascript:;" name="del" msg="确定删除该栏目吗？">删除</a>
 								</div>
-							</div>';
+							</div>
+							<div class="ul columnSubList"></div>';
 	        }
-	        $dataTree .= '<div class="ul columnSubList"></div>';
 	    }
 	    $this->ajaxReturn(0,1,$dataTree);
 	}

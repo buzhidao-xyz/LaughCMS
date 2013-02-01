@@ -45,29 +45,17 @@ var JS_APP = '/laugh';
 <link type="text/css" rel="stylesheet" href="themes/default/style/navigation.css" media="screen">
 <ul class="headerNavigation">
 	<li>
-		<a href="#a" class="navon">网站首页</a>
+		<a href="/laugh/index.php" class="navon">网站首页</a>
 	</li>
 	<li>
-		<a href="#">新闻资讯</a>
+		<a href="/laugh/index.php?s=article">新闻资讯</a>
 		<ul class="SubNavigation">
 			<li>
-				<a href="#ab">子菜单一</a>
+				<a href="#">子菜单一</a>
 			</li>
 			<li>
-				<a href="#">子菜单一二三</a>
+				<a href="#">子菜单二</a>
 				<ul>
-					<li><a href="#">子子栏目一</a></li>
-					<li><a href="#">子子栏目一</a></li>
-					<li><a href="#">子子栏目一</a></li>
-					<li><a href="#">子子栏目一</a></li>
-					<li><a href="#">子子栏目一</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#">子菜单三</a>
-				<ul>
-					<li><a href="#">子子栏目一</a></li>
-					<li><a href="#">子子栏目一</a></li>
 					<li><a href="#">子子栏目一</a></li>
 					<li><a href="#">子子栏目一</a></li>
 					<li><a href="#">子子栏目一</a></li>
@@ -203,7 +191,6 @@ $("#SImageContainer").Xslider({
 					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
 					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
 					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
-					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
 				</ul>
 			</div>
 		</div>
@@ -228,42 +215,53 @@ $("#SImageContainer").Xslider({
 		<a href="javascript:;" target="_blank"><img src="themes/default/images/ad_banner.png" width="1000" height="80" /></a>
 	</div>
 	<div id="BottomShow" class="block">
-		<div class="boxBlock fleft w740">
-			<div class="boxBlockTitle">
-				<span class="title">产品展示</span>
-				<span class="link"><a href="javascript:;">更多>></a></span>
-				<ul id="boxTabDOM1" class="boxTab fleft">
-					<li><a href="#boxTab1">分类一</a></li>
-					<li><a href="#boxTab2">分类二</a></li>
-				</ul>
-			</div>
-			<div class="boxBlockBody h330">
-				<div id="boxTab1" class="boxTabContent">
-					<ul class="imgList">
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-					</ul>
-				</div>
-				<div id="boxTab2" class="boxTabContent">
-					<ul class="imgList">
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-						<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-					</ul>
-				</div>
-			</div>
+		<div id="ImgListBlock" class="boxBlock fleft w740">
+	<div class="boxBlockTitle">
+		<span class="title">产品展示</span>
+		<span class="link"><a href="javascript:;">更多>></a></span>
+		<ul id="ImgboxTab" class="boxTab fleft">
+			<li><a tabid="#boxTab1" href="javascript:;">分类一</a></li>
+			<li><a tabid="#boxTab2" href="javascript:;">分类二</a></li>
+		</ul>
+	</div>
+	<div class="boxBlockBody h330">
+		<div id="boxTab1" class="boxTabContent">
+			<ul class="imgList">
+				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
+				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
+				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
+				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
+				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
+				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
+				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
+				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
+			</ul>
 		</div>
+		<div id="boxTab2" class="boxTabContent">
+			<ul class="imgList">
+				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
+				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
+				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
+				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
+				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
+				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
+				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
+				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+//图片切换tab
+$("#ImgListBlock ul#ImgboxTab").idTabs(function(id,list,set){ 
+	$("a",set).removeClass("selected").filter("[tabid='"+id+"']",set).addClass("selected"); 
+	for(i in list) $(list[i]).hide(); 
+	$(id).fadeIn(); 
+	return false; 
+});
+});
+</script>
 		<div class="boxBlock fleft w250 mleft10">
 			<div class="boxBlockTitle">
 				<span class="title">联系我们</span>
@@ -276,36 +274,62 @@ $("#SImageContainer").Xslider({
 					<h5>Email: admin@admin.com</h5>
 					<h5>联系地址: 江苏省苏州市工业园区若水路1号</h5>
 					<h5>联系人: XXX</h5>
-					<h4>Laugh CMS软件科技公司</h4>
+					<h4>Laugh CMS 软件科技公司</h4>
 				</div>
 			</div>
 		</div>
 		<div class="clear"></div>
 	</div>
-	<div id="Flink" class="block">
-		<div class="boxBlockTitle">
-				<span class="title">友情链接</span>
-				<ul id="boxTabDOM2" class="boxTab fleft">
-					<li><a href="#boxTab1">分类一</a></li>
-					<li><a href="#boxTab2">分类二</a></li>
-				</ul>
-			</div>
-			<div class="boxBlockBody">
-				<div id="boxTab1" class="boxTabContent">
-					<ul class="flinkList">
-						<li><a href="javascript:;">产品一</a></li>
-					</ul>
-				</div>
-				<div id="boxTab2" class="boxTabContent">
-					<ul class="flinkList">
-						<li><a href="javascript:;">产品一</a></li>
-					</ul>
-				</div>
-			</div>
+	<div id="Flink" class="boxBlock block">
+	<div class="FlinkTitle">
+		<span class="title">友情链接</span>
+		<ul id="FlinkboxTab" class="boxTab fleft">
+			<li><a tabid="#flinkboxTab1" href="javascript:;" class="bordernone">分类一</a></li>
+			<li><a tabid="#flinkboxTab2" href="javascript:;">分类二</a></li>
+		</ul>
+	</div>
+	<div class="FlinkBody">
+		<div id="flinkboxTab1" class="boxTabContent">
+			<ul class="flinkList">
+				<li><a href="javascript:;">链接一</a></li>
+				<li><a href="javascript:;">链接二三</a></li>
+				<li><a href="javascript:;">链接四四四四</a></li>
+				<li><a href="javascript:;">链接六六六</a></li>
+				<li><a href="javascript:;">链接五六七八九十</a></li>
+			</ul>
+		</div>
+		<div id="flinkboxTab2" class="boxTabContent">
+			<ul class="flinkList">
+				<li><a href="javascript:;">链接二</a></li>
+			</ul>
+		</div>
 	</div>
 </div>
+<script type="text/javascript">
+$(document).ready(function() {
+//友情链接切换tab
+$("#Flink ul#FlinkboxTab").idTabs(function(id,list,set){
+	$("a",set).removeClass("selected").filter("[tabid='"+id+"']",set).addClass("selected"); 
+	for(i in list) $(list[i]).hide();
+	$(id).fadeIn();
+	return false;
+});
+});
+</script>
+</div>
 <div id="Footer">
-	
+	<ul id="Link">
+		<li class="bordernone"><a href="javascript:;">招贤纳士</a></li>
+		<li><a href="javascript:;">关于我们</a></li>
+		<li><a href="javascript:;">联系我们</a></li>
+		<li><a href="javascript:;">在线手册</a></li>
+		<li><a href="javascript:;">帮助中心</a></li>
+	</ul>
+	<div id="copyright">
+		Laugh CMS 软件科技公司
+		<br/>
+		Powered by <a target="_blank" href="javascript:;">LaughCMS v1.0 Released</a> 版权所有 © 2012-2013, All right reserved. 
+	</div>
 </div>
 </body>
 </html>

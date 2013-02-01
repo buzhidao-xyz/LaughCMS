@@ -11,6 +11,9 @@
 	height: 80px;
 }
 
+.w50 {
+	width: 50px;
+}
 .w250 {
 	width: 250px;
 }
@@ -33,6 +36,9 @@
 	width: 740px;
 }
 
+.h50 {
+	height: 50px;
+}
 .h170 {
 	height: 170px;
 }
@@ -44,6 +50,9 @@
 }
 .h330 {
 	height: 330px;
+}
+.h576 {
+	height: 576px;
 }
 
 .pleft10 {
@@ -116,9 +125,10 @@
 }
 .boxBlock .boxBlockBody {
 	background: #FFFFFF;
-	margin: 0 1px 1px 1px;
+	margin: 0 1px;
 	padding: 0 1px;
 	overflow: hidden;
+	border-bottom: 1px solid #CCCCCC;
 }
 .boxBlock .boxBlockBody .boxBlockImg {
 	padding:10px 20px 5px 20px;
@@ -148,18 +158,22 @@ ul.articleList {
 	padding: 5px 5px 3px 10px;
 }
 ul.articleList li {
-	height: 25px;
-	line-height: 25px;
+	height: 30px;
+	line-height: 30px;
 	text-indent: 10px;
-	/*padding: 0 10px;*/
-	border-bottom: 1px dashed #EEEEEE;
-	background: url("../images/arrow-0.png") no-repeat 0 9px;
+	border-bottom: 1px dashed #DEDEDE;
+	background: url("../images/arrow-0.png") no-repeat 0 11px;
 }
 ul.articleList li a {
 	color: #333333;
 }
 ul.articleList li a:hover {
-	color: #333333;
+	color: #5F9729;
+}
+ul.articleList li span.pubdate {
+	float: right;
+	color: #AAAAAA;
+	padding-right: 10px;
 }
 
 /**********************************imgList产品列表样式**********************************/
@@ -181,6 +195,24 @@ ul.imgList li img {
 ul.imgList li a {
 	display: block;
 	text-align: center;
+}
+
+/**********************************快捷导航样式**********************************/
+ul.SideNavList {
+	overflow: hidden;
+	padding: 3px 5px;
+}
+ul.SideNavList li {
+	padding: 2px 0;
+	border-bottom: 1px dashed #DEDEDE;
+}
+ul.SideNavList li a {
+	display: block;
+	padding: 8px 25px;
+	background: url("../images/arrow-0.png") no-repeat 10px 13px;
+}
+ul.SideNavList li a:hover {
+	background: url("../images/arrow-0.png") no-repeat 10px 13px #F1F1F1;
 }
 
 /**********************************boxTab样式**********************************/
@@ -223,6 +255,7 @@ ul.boxTab li a.selected {
 }
 .contactUS h4 {
 	color: #BF691A;
+	font-size: 15px;
 	margin-top: 5px;
 }
 
@@ -278,12 +311,26 @@ ul.boxTab li a.selected {
 	text-decoration: underline;
 }
 
+/**********************************当前位置样式**********************************/
+.CurPosition {
+	padding: 5px 10px;
+	background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    font-family: "Courier","Candara";
+}
+.CurPosition a {
+	color: #40661C;
+}
+.CurPosition a:hover {
+	color: #FF6633;
+}
+
 /**********************************底部样式**********************************/
 #Footer ul#Link {
 	width: 365px;
 	overflow: hidden;
 	margin: 0 auto;
-	padding: 20px 10px 10px 10px;
+	padding: 20px 20px 10px 10px;
 }
 #Footer ul#Link li {
 	float: left;
@@ -301,4 +348,50 @@ ul.boxTab li a.selected {
 	padding: 0 10px;
 	text-align: center;
 	line-height: 22px;
+}
+
+/**********************************分页样式**********************************/
+.pagination {
+	float: right;
+	zoom: 1;
+	clear: both;
+	position: relative;
+	padding: 20px 10px 10px 10px;
+	overflow: hidden;
+	font-family: "Simsun";
+}
+.pagination a {
+	text-decoration: none;
+}
+a.pagenext, a.pageprev {
+	display: inline-block;
+	margin: 0 3px;
+	padding: 4px 5px;
+	color: #40661C;
+	text-align: center;
+	border: 1px solid #40661C;
+}
+a.pagenext:hover, a.pageprev:hover {
+	color: #FF6633;
+}
+.pageList {
+	overflow: hidden;
+	background: #FFFFFF;
+}
+.pageList a, .pageList .current {
+	display: block;
+	color: #5F9729;
+	margin-left: 3px;
+	padding: 4px 8px;
+	text-align: center;
+	border: 1px solid #5F9729;
+}
+.pageList .current {
+	color: #FFFFFF;
+	background: #5F9729;
+	border: 1px solid #5F9729;
+}
+.pageList a:hover {
+	color: #FF6633;
+	background: #E7E7E7;
 }
