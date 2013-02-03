@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-02-01 00:26:40
+<?php /* Smarty version Smarty-3.1.12, created on 2013-02-04 00:43:21
          compiled from "G:\website\laugh\themes\default\include\foot.html" */ ?>
-<?php /*%%SmartyHeaderCode:24297510a9b404e1ea4-93749844%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:7105510e93a94f2177-88458551%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '75b3f32ff80b9bbffc0a07b3f96723a4aa6a0eb2' => 
     array (
       0 => 'G:\\website\\laugh\\themes\\default\\include\\foot.html',
-      1 => 1359649530,
+      1 => 1359818714,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '24297510a9b404e1ea4-93749844',
+  'nocache_hash' => '7105510e93a94f2177-88458551',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_510a9b404e5da2_89211248',
+  'unifunc' => 'content_510e93a94f5375_53113001',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_510a9b404e5da2_89211248')) {function content_510a9b404e5da2_89211248($_smarty_tpl) {?><div id="Footer">
+<?php if ($_valid && !is_callable('content_510e93a94f5375_53113001')) {function content_510e93a94f5375_53113001($_smarty_tpl) {?><div id="Footer">
 	<ul id="Link">
 		<li class="bordernone"><a href="javascript:;">招贤纳士</a></li>
 		<li><a href="javascript:;">关于我们</a></li>
@@ -33,5 +33,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		Powered by <a target="_blank" href="javascript:;">LaughCMS v1.0 Released</a> 版权所有 © 2012-2013, All right reserved. 
 	</div>
 </div>
+<script type="text/javascript" src="public/js/scrollToTop.js"></script>
 </body>
 </html><?php }} ?>

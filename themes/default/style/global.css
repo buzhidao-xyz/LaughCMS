@@ -14,6 +14,15 @@
 .w50 {
 	width: 50px;
 }
+.w100 {
+	width: 100px;
+}
+.w150 {
+	width: 150px;
+}
+.w200 {
+	width: 200px;
+}
 .w250 {
 	width: 250px;
 }
@@ -45,14 +54,17 @@
 .h200 {
 	height: 200px;
 }
+.h250 {
+	height: 250px;
+}
 .h300 {
 	height: 300px;
 }
-.h330 {
-	height: 330px;
+.h350 {
+	height: 350px;
 }
-.h576 {
-	height: 576px;
+.h550 {
+	height: 550px;
 }
 
 .pleft10 {
@@ -176,25 +188,112 @@ ul.articleList li span.pubdate {
 	padding-right: 10px;
 }
 
-/**********************************imgList产品列表样式**********************************/
-ul.imgList {
-	padding: 0 7px;
+/**********************************ProductList产品列表样式**********************************/
+ul.ProductList {
+	padding: 5px 7px;
 	overflow: hidden;
 }
-ul.imgList li {
+ul.ProductList li {
 	float: left;
 	width: 180px;
-	height: 150px;
+	height: 155px;
 	padding-top: 10px;
 }
-ul.imgList li img {
+ul.ProductList li img {
 	width: 160px;
 	height: 130px;
 	border: 1px solid #DDD;
 }
-ul.imgList li a {
+ul.ProductList li a {
+	padding: 3px 0 0 0;
 	display: block;
 	text-align: center;
+}
+
+/**********************************图集列表样式**********************************/
+ul.ImageList {
+	padding: 5px 7px;
+	overflow: hidden;
+}
+ul.ImageList li {
+	float: left;
+	width: 180px;
+	height: 170px;
+	padding-top: 10px;
+}
+ul.ImageList li img {
+	width: 153px;
+	height: 113px;
+}
+ul.ImageList li a {
+	padding: 5px 0 0 0;
+	display: block;
+	text-align: center;
+}
+ul.ImageList li a.ImageBG {
+	padding: 3px 3px 3px 3px;
+	background: url("../images/ImageList_bg.gif") no-repeat 12px;
+}
+ul.ImageList li span {
+	padding: 8px 5px 0 5px;
+	display: block;
+	text-align: center;
+	color: #747474;
+}
+
+/**********************************下载列表样式**********************************/
+.downloadList {
+	padding: 10px 5px;
+}
+.downloadList ul.downloadTitle {
+	overflow: hidden;
+	background: #5F9729;
+}
+.downloadList ul.downloadTitle li {
+	float: left;
+	padding: 8px 5px;
+	color: #FFFFFF;
+	font-weight: 700;
+}
+.downloadList ul.downloadBody {
+	overflow: hidden;
+	border-bottom: 1px dashed #DEDEDE;
+}
+.downloadList ul.downloadBody li {
+	float: left;
+	padding: 10px 5px;
+	color: #333333;
+	font-weight: 500;
+}
+
+/**********************************下载列表样式**********************************/
+.CooperationList {
+	overflow: hidden;
+	padding: 10px 5px;
+}
+.CooperationList .CooperationListTitle {
+	padding: 5px 20px;
+	margin: 5px auto;
+	background: #DEDEDE;
+	background: url("../images/arrow-1.gif") no-repeat 10px #DEDEDE;
+}
+.CooperationList .CooperationListTitle a {
+	color: #333333;
+	text-decoration: none;
+}
+.CooperationList ul {
+	overflow: hidden;
+	padding: 5px 30px;
+}
+.CooperationList ul li {
+	padding: 5px 0;
+}
+.CooperationList ul li span.title {
+	color: #333333;
+}
+.CooperationList ul li span.content {
+	color: #666666;
+	padding-left: 10px;
 }
 
 /**********************************快捷导航样式**********************************/
@@ -335,13 +434,16 @@ ul.boxTab li a.selected {
 #Footer ul#Link li {
 	float: left;
 	padding: 0 10px;
-	border-left: 1px solid #CCCCCC;
+	border-left: 1px solid #616161;
 }
 #Footer ul#Link li.bordernone {
 	border-left: 0;
 }
 #Footer ul#Link li a {
-	color: #CCCCCC;
+	color: #DDDDDD;
+}
+#Footer ul#Link li a:hover {
+	color: #FFFFFF;
 }
 #Footer #copyright {
 	color: #FFFFFF;

@@ -1,4 +1,25 @@
-<div id="Header">
+<?php /* Smarty version Smarty-3.1.12, created on 2013-02-04 00:43:21
+         compiled from "G:\website\laugh\themes\default\Common\Header.html" */ ?>
+<?php /*%%SmartyHeaderCode:15689510e93a9478210-86232828%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'c7ba86aa66717b3b01958e2a0485ab448eea0210' => 
+    array (
+      0 => 'G:\\website\\laugh\\themes\\default\\Common\\Header.html',
+      1 => 1359808420,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '15689510e93a9478210-86232828',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.12',
+  'unifunc' => 'content_510e93a949c9b2_21766275',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_510e93a949c9b2_21766275')) {function content_510e93a949c9b2_21766275($_smarty_tpl) {?><div id="Header">
 	<div id="HeaderMain">
 		<div id="HeaderStatus">
 			<div class="Logo">
@@ -19,7 +40,8 @@
 				</div>
 			</div>
 		</div>
-		{include file="Public/navigation.html"}
+		<?php echo $_smarty_tpl->getSubTemplate ("Common/Navigation.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 	</div>
 </div>
 <script type="text/javascript">
@@ -63,4 +85,4 @@ $(document).ready(function (){
 		AddFavorite(window.location.href,$("title").text());
 	});
 });
-</script>
+</script><?php }} ?>

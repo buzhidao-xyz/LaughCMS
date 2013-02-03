@@ -22,7 +22,7 @@ var JS_APPM = 'http://localhost/laugh';
 <div id="loginCenter">
     <div id="loginasdf">
         <div id="loginCaption">
-            <!-- <img src="themes/green/images/login_caption_logo.png" width="173" height="60" /> -->
+            <a href="http://localhost/laugh" target="_blank"><img src="themes/green/images/logo.png" width="173" height="60" /></a>
         </div>
         <div id="loginPanel">
             <div class="login logTop">

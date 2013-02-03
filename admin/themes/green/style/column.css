@@ -5,8 +5,8 @@
 	background: #014A47;
     color: #FFFFFF;
     font-weight: 700;
-    height: 24px;
-    line-height: 24px;
+    height: 30px;
+    line-height: 30px;
     padding: 0 10px;
     border-bottom: 1px solid #DDDDDD;
 }
@@ -42,7 +42,7 @@
 #columnList div.columnListTable .columnlistd .columnplus {
 	width: 11px;
 	height: 11px;
-	margin-top: 6px;
+	margin-top: 9px;
 	background: url("../images/column_plus.gif") no-repeat left top;
 	cursor: pointer;
 }

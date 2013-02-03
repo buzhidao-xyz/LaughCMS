@@ -17,6 +17,7 @@ class ArticleControl extends CommonControl
 	//主入口
 	public function index()
 	{
+		$this->assign("page", getPage(170,15));
 		$this->display("Article/index.html");
 	}
 

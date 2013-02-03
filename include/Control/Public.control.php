@@ -19,6 +19,6 @@ class PublicControl extends CommonControl
 	//关于我们
 	public function AboutUS()
 	{
-		$this->display("common/aboutus.html");
+		$this->display("Public/aboutus.html");
 	}
 }
