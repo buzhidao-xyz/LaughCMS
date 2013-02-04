@@ -64,22 +64,22 @@ var JS_APP = '/laugh';
 		</ul>
 	</li>
 	<li>
-		<a href="#">产品展示</a>
+		<a href="/laugh/index.php?s=Product">产品展示</a>
 	</li>
 	<li>
-		<a href="#">下载中心</a>
+		<a href="/laugh/index.php?s=Download">下载中心</a>
 	</li>
 	<li>
-		<a href="#">客户案例</a>
+		<a href="/laugh/index.php?s=Image">客户案例</a>
 	</li>
 	<li>
-		<a href="#">招贤纳士</a>
+		<a href="/laugh/index.php?s=Cooperate">招贤纳士</a>
 	</li>
 	<li>
-		<a href="#">关于我们</a>
+		<a href="/laugh/index.php?s=Public/AboutUS">关于我们</a>
 	</li>
 	<li>
-		<a href="#">联系我们</a>
+		<a href="/laugh/index.php?s=Public/ContactUS">联系我们</a>
 	</li>
 </ul>
 <script type="text/javascript" src="public/plugin/superfish/js/hoverIntent.js"></script>
@@ -224,9 +224,9 @@ $("#SImageContainer").Xslider({
 			<li><a tabid="#boxTab2" href="javascript:;">分类二</a></li>
 		</ul>
 	</div>
-	<div class="boxBlockBody h330">
+	<div class="boxBlockBody h350">
 		<div id="boxTab1" class="boxTabContent">
-			<ul class="imgList">
+			<ul class="ProductList">
 				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
 				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
 				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
@@ -238,7 +238,7 @@ $("#SImageContainer").Xslider({
 			</ul>
 		</div>
 		<div id="boxTab2" class="boxTabContent">
-			<ul class="imgList">
+			<ul class="ProductList">
 				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
 				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
 				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
@@ -266,7 +266,7 @@ $("#ImgListBlock ul#ImgboxTab").idTabs(function(id,list,set){
 			<div class="boxBlockTitle">
 				<span class="title">联系我们</span>
 			</div>
-			<div class="boxBlockBody h330">
+			<div class="boxBlockBody h350">
 				<div class="contactUS">
 					<h5>电 话: XXXXXXXX</h5>
 					<h5>邮 编: XXXXXXXX</h5>
@@ -319,11 +319,11 @@ $("#Flink ul#FlinkboxTab").idTabs(function(id,list,set){
 </div>
 <div id="Footer">
 	<ul id="Link">
-		<li class="bordernone"><a href="javascript:;">招贤纳士</a></li>
-		<li><a href="javascript:;">关于我们</a></li>
-		<li><a href="javascript:;">联系我们</a></li>
+		<li class="bordernone"><a href="/laugh/index.php?s=Cooperate">招贤纳士</a></li>
+		<li><a href="/laugh/index.php?s=Public/AboutUS">关于我们</a></li>
+		<li><a href="/laugh/index.php?s=Cooperate">联系我们</a></li>
 		<li><a href="javascript:;">在线手册</a></li>
-		<li><a href="javascript:;">帮助中心</a></li>
+		<li><a href="/laugh/index.php?s=Plugin/QA">帮助中心</a></li>
 	</ul>
 	<div id="copyright">
 		Laugh CMS 软件科技公司
@@ -331,5 +331,6 @@ $("#Flink ul#FlinkboxTab").idTabs(function(id,list,set){
 		Powered by <a target="_blank" href="javascript:;">LaughCMS v1.0 Released</a> 版权所有 © 2012-2013, All right reserved. 
 	</div>
 </div>
+<script type="text/javascript" src="public/js/scrollToTop.js"></script>
 </body>
 </html>

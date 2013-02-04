@@ -1,33 +1,33 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-02-01 16:51:35
+<?php /* Smarty version Smarty-3.1.12, created on 2013-02-04 17:25:16
          compiled from "C:\xampp\htdocs\laugh\themes\default\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:30414510b82171f09b7-02831086%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:27306510f7e7c8ca819-86697273%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'f577bcee453c3488ab8e2271cee9d8619295461e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\index.html',
-      1 => 1359701300,
+      1 => 1359940001,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '30414510b82171f09b7-02831086',
+  'nocache_hash' => '27306510f7e7c8ca819-86697273',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_510b8217252c72_86937918',
+  'unifunc' => 'content_510f7e7c92ea69_11450890',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_510b8217252c72_86937918')) {function content_510b8217252c72_86937918($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_510f7e7c92ea69_11450890')) {function content_510f7e7c92ea69_11450890($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-<?php echo $_smarty_tpl->getSubTemplate ("Public/Top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php echo $_smarty_tpl->getSubTemplate ("Common/Top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-<?php echo $_smarty_tpl->getSubTemplate ("Public/Header.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php echo $_smarty_tpl->getSubTemplate ("Common/Header.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div id="WrapContainer" class="wrap">
 	<div id="ImageFlash" class="block">
-		<?php echo $_smarty_tpl->getSubTemplate ("Public/ImageFlash1.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+		<?php echo $_smarty_tpl->getSubTemplate ("Common/ImageFlash1.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 		<div id="SImageCaption">
 			<h1>Laugh CMS 正式版</h1>
@@ -79,13 +79,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<a href="javascript:;" target="_blank"><img src="themes/default/images/ad_banner.png" width="1000" height="80" /></a>
 	</div>
 	<div id="BottomShow" class="block">
-		<?php echo $_smarty_tpl->getSubTemplate ("Public/ImgListBlock.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+		<?php echo $_smarty_tpl->getSubTemplate ("Common/ProductList.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 		<div class="boxBlock fleft w250 mleft10">
 			<div class="boxBlockTitle">
 				<span class="title">联系我们</span>
 			</div>
-			<div class="boxBlockBody h330">
+			<div class="boxBlockBody h350">
 				<div class="contactUS">
 					<h5>电 话: XXXXXXXX</h5>
 					<h5>邮 编: XXXXXXXX</h5>
@@ -99,7 +99,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		</div>
 		<div class="clear"></div>
 	</div>
-	<?php echo $_smarty_tpl->getSubTemplate ("Public/Flink.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+	<?php echo $_smarty_tpl->getSubTemplate ("Common/Flink.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 </div>
 <?php echo $_smarty_tpl->getSubTemplate ("include/foot.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>

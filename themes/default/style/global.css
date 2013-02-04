@@ -85,6 +85,10 @@
 	margin-top: 15px;
 }
 
+.vcode {
+    vertical-align: middle;
+}
+
 /**********************************flash图片caption**********************************/
 #ImageFlash #SImageCaption h1 {
 	color: #BF691A;
@@ -231,7 +235,7 @@ ul.ImageList li a {
 	text-align: center;
 }
 ul.ImageList li a.ImageBG {
-	padding: 3px 3px 3px 3px;
+	padding: 3px 3px 3px 4px;
 	background: url("../images/ImageList_bg.gif") no-repeat 12px;
 }
 ul.ImageList li span {
@@ -266,7 +270,7 @@ ul.ImageList li span {
 	font-weight: 500;
 }
 
-/**********************************下载列表样式**********************************/
+/**********************************招贤纳士样式**********************************/
 .CooperationList {
 	overflow: hidden;
 	padding: 10px 5px;
@@ -274,19 +278,29 @@ ul.ImageList li span {
 .CooperationList .CooperationListTitle {
 	padding: 5px 20px;
 	margin: 5px auto;
-	background: #DEDEDE;
-	background: url("../images/arrow-1.gif") no-repeat 10px #DEDEDE;
+	border-bottom: 1px dashed #333333;
+	background: url("../images/arrow-1.gif") no-repeat 10px;
 }
 .CooperationList .CooperationListTitle a {
 	color: #333333;
+	font-size: 16px;
+	font-weight: 700;
 	text-decoration: none;
+}
+.CooperationList .CooperationListTitle a:hover {
+	color: #5F9729;
 }
 .CooperationList ul {
 	overflow: hidden;
 	padding: 5px 30px;
 }
 .CooperationList ul li {
+	float: left;
+	width: 330px;
 	padding: 5px 0;
+}
+.CooperationList ul li.caption {
+	width: 100%;
 }
 .CooperationList ul li span.title {
 	color: #333333;
@@ -294,6 +308,24 @@ ul.ImageList li span {
 .CooperationList ul li span.content {
 	color: #666666;
 	padding-left: 10px;
+}
+.CooperationList ul li.caption span.title {
+	float: left;
+	display: block;
+}
+.CooperationList ul li.caption span.content {
+	float: left;
+	display: block;
+	width: 600px;
+	line-height: 20px;
+}
+
+/**********************************问答QA列表样式**********************************/
+.qaList {
+	padding: 5px;
+}
+.qaList ul {
+	margin: 5px auto;
 }
 
 /**********************************快捷导航样式**********************************/
@@ -344,6 +376,9 @@ ul.boxTab li a.selected {
 }
 
 /**********************************其他样式 联系我们、关于我们等**********************************/
+.contentBlock {
+	padding: 10px 5px;
+}
 .contactUS {
 	padding: 20px;
 }
@@ -356,6 +391,48 @@ ul.boxTab li a.selected {
 	color: #BF691A;
 	font-size: 15px;
 	margin-top: 5px;
+}
+
+/**********************************标签云样式**********************************/
+.tagCloud {
+	padding: 10px;
+}
+
+/**********************************留言板样式**********************************/
+.MessageBoard {
+	padding: 10px;
+	clear: both;
+	border: 1px solid #DEDEDE;
+}
+.MessageBoard .title {
+	padding: 7px 10px;
+	border-bottom: 1px solid #DEDEDE;
+}
+.MessageBoard .title a {
+	font-size: 16px;
+	font-weight: 700;
+	color: #5F9729;
+	text-decoration: none;
+}
+.MessageBoard .body {
+	padding: 5px 10px;
+}
+.MessageBoard .body form ul li {
+	clear: both;
+	overflow: hidden;
+}
+.MessageBoard .body form ul li span.title {
+	float: left;
+	display: block;
+	width: 80px;
+	text-align: right;
+	padding: 7px;
+	border-bottom: 0;
+}
+.MessageBoard .body form ul li span.content {
+	float: left;
+	display: block;
+	padding-left: 5px;
 }
 
 /**********************************友情链接样式**********************************/

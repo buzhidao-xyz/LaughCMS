@@ -21,4 +21,10 @@ class PublicControl extends CommonControl
 	{
 		$this->display("Public/aboutus.html");
 	}
+
+	//联系我们
+	public function ContactUS()
+	{
+		$this->display("Public/contactus.html");
+	}
 }

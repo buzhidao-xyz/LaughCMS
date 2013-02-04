@@ -1,0 +1,17 @@
+<div class="MessageBoard">
+	<div class="title">
+		<a href="javascript:;">留言板</a>
+	</div>
+	<div class="body">
+		<form name="MessageForm" method="post" action="__APP__/index.php?s=Message/save" id="ajaxform">
+			<ul>
+				<li><span class="title">姓名:</span><span class="content"><input name="username" class="w150" /></span></li>
+				<li><span class="title">邮箱:</span><span class="content"><input name="email" class="w200" /></span></li>
+				<li><span class="title">留言主题:</span><span class="content"><input name="title" class="w250" /></span></li>
+				<li><span class="title">留言内容:</span><span class="content"><textarea name="content" rows="7" cols="50"></textarea></span></li>
+				<li><span class="title">验证码:</span><span class="content"><input name="vcode" class="w50" />&nbsp;<img src="__APP__/index.php?s=Org/MessageBoardVcode" class="vcode" /></span></li>
+				<li><input type="submit" name="subut" value="提交" class="button btngreen2" /></li>
+			</ul>
+		</form>
+	</div>
+</div>

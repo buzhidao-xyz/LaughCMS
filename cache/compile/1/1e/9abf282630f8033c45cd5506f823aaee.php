@@ -64,22 +64,22 @@ var JS_APP = '/laugh';
 		</ul>
 	</li>
 	<li>
-		<a href="#">产品展示</a>
+		<a href="/laugh/index.php?s=Product">产品展示</a>
 	</li>
 	<li>
-		<a href="#">下载中心</a>
+		<a href="/laugh/index.php?s=Download">下载中心</a>
 	</li>
 	<li>
-		<a href="#">客户案例</a>
+		<a href="/laugh/index.php?s=Image">客户案例</a>
 	</li>
 	<li>
-		<a href="#">招贤纳士</a>
+		<a href="/laugh/index.php?s=Cooperate">招贤纳士</a>
 	</li>
 	<li>
-		<a href="#">关于我们</a>
+		<a href="/laugh/index.php?s=Public/AboutUS">关于我们</a>
 	</li>
 	<li>
-		<a href="#">联系我们</a>
+		<a href="/laugh/index.php?s=Public/ContactUS">联系我们</a>
 	</li>
 </ul>
 <script type="text/javascript" src="public/plugin/superfish/js/hoverIntent.js"></script>
@@ -145,7 +145,7 @@ $(document).ready(function (){
 					<span class="title">新闻资讯</span>
 					<!-- <span class="link"><a href="javascript:;">更多>></a></span> -->
 				</div>
-				<div class="boxBlockBody h576">
+				<div class="boxBlockBody">
 					<ul class="articleList">
 						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
 						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
@@ -162,44 +162,78 @@ $(document).ready(function (){
 						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
 						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
 						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
 					</ul>
-					
+					<div id="compage" class="pagination">
+		<a class="pageprev graya fleft" href="/laugh/index.php?s=article&page=1">首页</a>
+		<a class="pageprev graya fleft" href="javascript:;">上一页</a> 
+	<span class="pageList none">
+									<span class="current fleft" href="" style=""> 1 </span>
+								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=article&page=2"> 2 </a>
+								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=article&page=3"> 3 </a>
+								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=article&page=4"> 4 </a>
+								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=article&page=5"> 5 </a>
+								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=article&page=6"> 6 </a>
+								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=article&page=7"> 7 </a>
+								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=article&page=8"> 8 </a>
+								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=article&page=9"> 9 </a>
+								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=article&page=10"> 10 </a>
+								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=article&page=11"> 11 </a>
+				</span>
+	<a class="pagenext graya fleft" href="/laugh/index.php?s=article&page=2">下一页</a>
+		<a class="pageprev graya fleft" href="/laugh/index.php?s=article&page=12">末页</a>
+	</div>
+
+<script>
+var bindpage = function($obj){
+    $obj.find('.pagecur').hover(function(){
+		$obj.find('.pageList').show();
+	},function(){
+		$obj.find('.pageList').hide();
+	})
+}
+if($('#compage').length>0){
+    //bindpage($('#compage'));
+} else if ($('#facepage').length>0) {
+    //bindpage($('#facepage'));   
+}
+</script>
+
+
 				</div>
 			</div>
 		</div>
 		<div id="sideBlock" class="fleft w250 mleft10">
-			<div class="boxBlock">
-				<div class="boxBlockTitle">
-					<span class="title">快捷导航</span>
-				</div>
-				<div class="boxBlockBody h200">
-					<ul class="SideNavList">
-						<li><a href="javascript:;">新闻资讯</a></li>
-						<li><a href="javascript:;">产品展示</a></li>
-						<li><a href="javascript:;">招贤纳士</a></li>
-						<li><a href="javascript:;">关于我们</a></li>
-						<li><a href="javascript:;">联系我们</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="boxBlock mtop10">
-				<div class="boxBlockTitle">
-					<span class="title">联系我们</span>
-				</div>
-				<div class="boxBlockBody h330">
-					<div class="contactUS">
-						<h5>电 话: XXXXXXXX</h5>
-						<h5>邮 编: XXXXXXXX</h5>
-						<h5>网 址: www.xxx.com</h5>
-						<h5>Email: admin@admin.com</h5>
-						<h5>联系地址: 江苏省苏州市工业园区若水路1号</h5>
-						<h5>联系人: XXX</h5>
-						<h4>Laugh CMS 软件科技公司</h4>
-					</div>
-				</div>
+	<div class="boxBlock">
+		<div class="boxBlockTitle">
+			<span class="title">快捷导航</span>
+		</div>
+		<div class="boxBlockBody h200">
+			<ul class="SideNavList">
+				<li><a href="javascript:;">新闻资讯</a></li>
+				<li><a href="javascript:;">产品展示</a></li>
+				<li><a href="javascript:;">招贤纳士</a></li>
+				<li><a href="javascript:;">关于我们</a></li>
+				<li><a href="javascript:;">联系我们</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="boxBlock mtop10">
+		<div class="boxBlockTitle">
+			<span class="title">联系我们</span>
+		</div>
+		<div class="boxBlockBody h250">
+			<div class="contactUS">
+				<h5>电 话: XXXXXXXX</h5>
+				<h5>邮 编: XXXXXXXX</h5>
+				<h5>网 址: www.xxx.com</h5>
+				<h5>Email: admin@admin.com</h5>
+				<h5>联系地址: 江苏省苏州市工业园区若水路1号</h5>
+				<h5>联系人: XXX</h5>
+				<h4>Laugh CMS 软件科技公司</h4>
 			</div>
 		</div>
+	</div>
+</div>
 		<div class="clear"></div>
 	</div>
 	<div id="Flink" class="boxBlock block">
@@ -253,5 +287,6 @@ $("#Flink ul#FlinkboxTab").idTabs(function(id,list,set){
 		Powered by <a target="_blank" href="javascript:;">LaughCMS v1.0 Released</a> 版权所有 © 2012-2013, All right reserved. 
 	</div>
 </div>
+<script type="text/javascript" src="public/js/scrollToTop.js"></script>
 </body>
 </html>

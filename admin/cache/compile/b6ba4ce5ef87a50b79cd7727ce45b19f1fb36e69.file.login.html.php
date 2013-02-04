@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-01-29 15:24:11
+<?php /* Smarty version Smarty-3.1.12, created on 2013-02-04 15:16:16
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\login.html" */ ?>
-<?php /*%%SmartyHeaderCode:225315107791bdb8218-84867508%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:8058510f60405ee122-56933234%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'b6ba4ce5ef87a50b79cd7727ce45b19f1fb36e69' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\green\\login.html',
-      1 => 1358731583,
+      1 => 1359940001,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '225315107791bdb8218-84867508',
+  'nocache_hash' => '8058510f60405ee122-56933234',
   'function' => 
   array (
   ),
@@ -21,16 +21,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5107791c086ad2_16185371',
+  'unifunc' => 'content_510f60406456f2_64474908',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5107791c086ad2_16185371')) {function content_5107791c086ad2_16185371($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_510f60406456f2_64474908')) {function content_510f60406456f2_64474908($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <link type="text/css" rel="stylesheet" href="themes/green/style/login.css" media="screen">
 <div id="loginTop"></div>
 <div id="loginCenter">
     <div id="loginasdf">
         <div id="loginCaption">
-            <!-- <img src="themes/green/images/login_caption_logo.png" width="173" height="60" /> -->
+            <a href="__APPM__" target="_blank"><img src="themes/green/images/logo.png" width="173" height="60" /></a>
         </div>
         <div id="loginPanel">
             <div class="login logTop">

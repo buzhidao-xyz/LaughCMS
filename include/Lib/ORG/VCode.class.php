@@ -17,6 +17,9 @@ class VCode
 
     static private $_code;
 
+    //session名
+    static private $_SessionName = 'vcode';
+
     //验证码字符选择区间
     static private $_codes = array(
         0 => '0123456789',
@@ -61,9 +64,9 @@ class VCode
         array('0X00','0X00','0XCD'),
     );
     
-    public function __construct()
+    public function __construct($SessionName=null)
     {
-        
+        self::$_SessionName .= $SessionName ? "_".$SessionName : "";
     }
     
     /**
@@ -214,6 +217,6 @@ class VCode
     static private function _setVcode()
     {
         $code = self::$_code ? md5(self::$_code) : $_SESSION['verify'];
-        session('vcode', $code);
+        session(self::$_SessionName, $code);
     }
 }
