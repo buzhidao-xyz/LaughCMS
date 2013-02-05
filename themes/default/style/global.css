@@ -324,8 +324,21 @@ ul.ImageList li span {
 .qaList {
 	padding: 5px;
 }
-.qaList ul {
+.qaList dl {
 	margin: 5px auto;
+	padding-bottom: 5px;
+	border-bottom: 1px dotted #AAAAAA;
+}
+.qaList dl dt {
+	padding: 5px 20px;
+}
+.qaList dl dt {
+	background: url("../images/arrow-1.gif") no-repeat 10px;
+}
+.qaList dl dd {
+	padding-top: 3px;
+	line-height: 20px;
+	text-indent: 26px;
 }
 
 /**********************************快捷导航样式**********************************/

@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-02-04 17:27:12
+<?php /* Smarty version Smarty-3.1.12, created on 2013-02-05 17:25:31
          compiled from "C:\xampp\htdocs\laugh\themes\default\QA\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:6550510f7ef0b3a7f9-00937574%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:259315110d00bae6ec2-10103455%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '99c9e5a543c4ef46b90c31dba2bf1f0983f6204c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\QA\\index.html',
-      1 => 1359969939,
+      1 => 1360052766,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '6550510f7ef0b3a7f9-00937574',
+  'nocache_hash' => '259315110d00bae6ec2-10103455',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_510f7ef0b98ae1_77933502',
+  'unifunc' => 'content_5110d00bb4d689_32698930',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_510f7ef0b98ae1_77933502')) {function content_510f7ef0b98ae1_77933502($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_5110d00bb4d689_32698930')) {function content_5110d00bb4d689_32698930($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate ("Common/Top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
@@ -40,12 +40,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</div>
 				<div class="boxBlockBody h576">
 					<div class="contentBlock">
-						<div class="qaList">
-							<ul>
-								<li><a href="javascript:;">LaughCMS是完全开源免费的吗？</a></li>
-								<li>LaughCMS企业网站管理系统,是一款代码完全开源免费PHP+MYSQL系统.系统安全,效率,易用并且可扩展性非常好。 </li>
-							</ul>
-						</div>
+						<?php echo $_smarty_tpl->getSubTemplate ("Common/qaList.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 					</div>
 				</div>
 			</div>

@@ -146,12 +146,35 @@ $(document).ready(function (){
 				</div>
 				<div class="boxBlockBody h576">
 					<div class="contentBlock">
-						<div class="qaList">
-							<ul>
-								<li><a href="javascript:;">LaughCMS是完全开源免费的吗？</a></li>
-								<li>LaughCMS企业网站管理系统,是一款代码完全开源免费PHP+MYSQL系统.系统安全,效率,易用并且可扩展性非常好。 </li>
-							</ul>
-						</div>
+						<style>
+	.qaList dd{
+		display:none;
+	}
+	.qaList .qaHover dd{
+		display:block;
+	}
+</style>
+<div class="qaList">
+	<dl>
+		<dt><a class="qTitle" href="javascript:;">LaughCMS是完全开源免费的吗？</a></dt>
+		<dd>LaughCMS企业网站管理系统,是一款代码完全开源免费PHP+MYSQL系统.系统安全,效率,易用并且可扩展性非常好。非常好 非常好。LaughCMS企业网站管理系统,是一款代码完全开源免费PHP+MYSQL系统.系统安全,效率,易用并且可扩展性非常好。 </dd>
+	</dl>
+	<dl>
+		<dt><a class="qTitle" href="javascript:;">LaughCMS是完全开源免费的吗？</a></dt>
+		<dd>LaughCMS企业网站管理系统,是一款代码完全开源免费PHP+MYSQL系统.系统安全,效率,易用并且可扩展性非常好。非常好 非常好。LaughCMS企业网站管理系统,是一款代码完全开源免费PHP+MYSQL系统.系统安全,效率,易用并且可扩展性非常好。 </dd>
+	</dl>
+	<dl>
+		<dt><a class="qTitle" href="javascript:;">LaughCMS是完全开源免费的吗？</a></dt>
+		<dd>LaughCMS企业网站管理系统,是一款代码完全开源免费PHP+MYSQL系统.系统安全,效率,易用并且可扩展性非常好。非常好 非常好。LaughCMS企业网站管理系统,是一款代码完全开源免费PHP+MYSQL系统.系统安全,效率,易用并且可扩展性非常好。 </dd>
+	</dl>
+</div>
+<script type="text/javascript">
+$(document).ready(function (){
+	$(".qTitle").click(function (){
+		$(this).parents("dl").addClass("qaHover");
+	});
+});
+</script>
 					</div>
 				</div>
 			</div>

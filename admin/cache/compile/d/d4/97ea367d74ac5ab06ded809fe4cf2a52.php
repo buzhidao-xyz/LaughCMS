@@ -20,7 +20,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 <link rel="stylesheet" type="text/css" href="themes/green/style/frame.css" />
 <link rel="stylesheet" type="text/css" href="themes/green/style/header.css" />
 <div id="header">
-	<!-- header -->
+<!-- header -->
 <div class="logo">
     <h1>管理中心</h1>
 </div>
@@ -42,7 +42,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 </div>
 </div>
 <div id="menuTree">
-	<!-- menu -->
+<!-- menu -->
 <div class="menu">
     <ul>
         <li class="menulist">
@@ -64,10 +64,10 @@ $(document).ready(function (){
 </script>
 </div>
 <div id="main">
-	<iframe frameborder="0" name="main" src="/laugh/admin/index.php?s=public/welcome" scrolling="yes"></iframe>
+<iframe frameborder="0" name="main" src="/laugh/admin/index.php?s=public/welcome" scrolling="yes"></iframe>
 </div>
 <div id="bottom">
-	Copyright &copy; xxx. 2012-2015
+Copyright &copy; xxx. 2012-2015
 </div>
 </body>
 <script type="text/javascript" src="themes/green/js/jquery.corner.js"></script>
