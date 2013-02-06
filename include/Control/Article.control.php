@@ -33,4 +33,10 @@ class ArticleControl extends CommonControl
 	{
 		$articleid = $this->_getArticleID();
 	}
+
+	//显示文章内容
+	public function article()
+	{
+		$this->display("Article/article.html");
+	}
 }

@@ -6,6 +6,7 @@
 <link type="text/css" rel="stylesheet" href="themes/default/style/common.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/default/style/frame.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/default/style/global.css" media="screen">
+<link type="text/css" rel="stylesheet" href="themes/default/style/style.css" media="screen">
 <script type="text/javascript" src="public/js/jquery.js"></script>
 <script type="text/javascript" src="public/js/jquery.idTabs.min.js"></script>
 <script type="text/javascript" src="themes/default/js/common.js"></script>
@@ -273,11 +274,11 @@ $("#Flink ul#FlinkboxTab").idTabs(function(id,list,set){
 </div>
 <div id="Footer">
 	<ul id="Link">
-		<li class="bordernone"><a href="javascript:;">招贤纳士</a></li>
-		<li><a href="javascript:;">关于我们</a></li>
-		<li><a href="javascript:;">联系我们</a></li>
+		<li class="bordernone"><a href="/laugh/index.php?s=Cooperate">招贤纳士</a></li>
+		<li><a href="/laugh/index.php?s=Public/AboutUS">关于我们</a></li>
+		<li><a href="/laugh/index.php?s=Cooperate">联系我们</a></li>
 		<li><a href="javascript:;">在线手册</a></li>
-		<li><a href="javascript:;">帮助中心</a></li>
+		<li><a href="/laugh/index.php?s=Plugin/QA">帮助中心</a></li>
 	</ul>
 	<div id="copyright">
 		Laugh CMS 软件科技公司
@@ -286,5 +287,15 @@ $("#Flink ul#FlinkboxTab").idTabs(function(id,list,set){
 	</div>
 </div>
 <script type="text/javascript" src="public/js/scrollToTop.js"></script>
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=1&amp;pos=left&amp;uid=6599680" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+var bds_config = {
+	"bdTop": 170
+};
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>
+<!-- Baidu Button END -->
 </body>
 </html>

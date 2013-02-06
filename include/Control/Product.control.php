@@ -20,4 +20,10 @@ class ProductControl extends CommonControl
 		$this->assign("page", getPage(170,15));
 		$this->display("Product/index.html");
 	}
+
+	//显示产品详情
+	public function product()
+	{
+		$this->display("Product/product.html");
+	}
 }

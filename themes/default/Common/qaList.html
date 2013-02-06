@@ -1,11 +1,3 @@
-<style>
-	.qaList dd{
-		display:none;
-	}
-	.qaList .qaHover dd{
-		display:block;
-	}
-</style>
 <div class="qaList">
 	<dl>
 		<dt><a class="qTitle" href="javascript:;">LaughCMS是完全开源免费的吗？</a></dt>
@@ -23,7 +15,7 @@
 <script type="text/javascript">
 $(document).ready(function (){
 	$(".qTitle").click(function (){
-		$(this).parents("dl").addClass("qaHover");
+		$(this).parents("dl").find("dd").slideToggle("fast");
 	});
 });
 </script>
