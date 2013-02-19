@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-02-06 17:27:17
+<?php /* Smarty version Smarty-3.1.12, created on 2013-02-19 17:53:46
          compiled from "C:\xampp\htdocs\laugh\themes\default\Product\product_tpl.html" */ ?>
-<?php /*%%SmartyHeaderCode:10893511221f5280096-08367006%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2208151234baa239326-11665711%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'dba2a31e3f0a265e1fca1f9525cd09e801f9ea47' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\Product\\product_tpl.html',
-      1 => 1360142768,
+      1 => 1361266095,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '10893511221f5280096-08367006',
+  'nocache_hash' => '2208151234baa239326-11665711',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_511221f52a9ea4_37149110',
+  'unifunc' => 'content_51234baa2616d5_27919523',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_511221f52a9ea4_37149110')) {function content_511221f52a9ea4_37149110($_smarty_tpl) {?><div class="productTpl">
+<?php if ($_valid && !is_callable('content_51234baa2616d5_27919523')) {function content_51234baa2616d5_27919523($_smarty_tpl) {?><div class="productTpl">
 	<h2 class="title">CTI融合通信专业资讯网</h2>
 	<div class="status">
 		<span class="title">点击次数:</span>
@@ -40,7 +40,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		</div>
 		<div class="productInfo">
 			<div class="infoTitle">
-				<ul id="productInfoboxTab" class="boxTab fleft">
+				<ul id="productInfoboxTab" class="infoboxTab fleft">
 					<li><a tabid="#productInfoboxTab1" href="javascript:;">规格参数</a></li>
 					<li><a tabid="#productInfoboxTab2" href="javascript:;">详细描述</a></li>
 				</ul>
