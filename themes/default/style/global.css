@@ -413,8 +413,26 @@ ul.infoboxTab li a.selected {
 	background: #747474;
     border-bottom: 1px solid #747474;
 }
-.boxTabContent {
+.productInfoContent {
+	padding: 10px 25px;
+}
+.productInfoContent dl {
+	padding: 3px 0;
 	overflow: hidden;
+	clear: both;
+}
+.productInfoContent dl dt {
+	float: left;
+	width: 55px;
+	text-align: right;
+	color: #333;
+	font-weight: 700;
+}
+.productInfoContent dl dd {
+	float: left;
+	padding-left: 7px;
+	color: #525252;
+	font-weight: 500;
 }
 
 /**********************************其他样式 联系我们、关于我们等**********************************/

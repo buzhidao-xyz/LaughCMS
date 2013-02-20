@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-02-19 17:53:46
+<?php /* Smarty version Smarty-3.1.12, created on 2013-02-20 17:20:23
          compiled from "C:\xampp\htdocs\laugh\themes\default\Product\product_tpl.html" */ ?>
-<?php /*%%SmartyHeaderCode:2208151234baa239326-11665711%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1499351249557ce6cf5-19216200%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'dba2a31e3f0a265e1fca1f9525cd09e801f9ea47' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\Product\\product_tpl.html',
-      1 => 1361266095,
+      1 => 1361352021,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2208151234baa239326-11665711',
+  'nocache_hash' => '1499351249557ce6cf5-19216200',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_51234baa2616d5_27919523',
+  'unifunc' => 'content_51249557d0e165_63041322',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51234baa2616d5_27919523')) {function content_51234baa2616d5_27919523($_smarty_tpl) {?><div class="productTpl">
+<?php if ($_valid && !is_callable('content_51249557d0e165_63041322')) {function content_51249557d0e165_63041322($_smarty_tpl) {?><div class="productTpl">
 	<h2 class="title">CTI融合通信专业资讯网</h2>
 	<div class="status">
 		<span class="title">点击次数:</span>
@@ -46,19 +46,39 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</ul>
 			</div>
 			<div class="infoBody">
-				<div id="productInfoboxTab1" class="boxTabContent">
-					<ul class="flinkList">
-						<li><a href="javascript:;">链接一</a></li>
-						<li><a href="javascript:;">链接二三</a></li>
-						<li><a href="javascript:;">链接四四四四</a></li>
-						<li><a href="javascript:;">链接六六六</a></li>
-						<li><a href="javascript:;">链接五六七八九十</a></li>
-					</ul>
+				<div id="productInfoboxTab1" class="boxTabContent productInfoContent">
+					<dl>
+						<dt>型号:</dt>
+						<dd>ZXTFG-SCV-001</dd>
+					</dl>
+					<dl>
+						<dt>品牌:</dt>
+						<dd>凯迪拉克</dd>
+					</dl>
+					<dl>
+						<dt>颜色:</dt>
+						<dd>白色 黑色</dd>
+					</dl>
+					<dl>
+						<dt>材质:</dt>
+						<dd>木棉</dd>
+					</dl>
+					<dl>
+						<dt>尺寸:</dt>
+						<dd>300*90*40mm</dd>
+					</dl>
+					<dl>
+						<dt>价格:</dt>
+						<dd>57.5万 元</dd>
+					</dl>
+					<dl>
+						<dt>数量:</dt>
+						<dd>1000 件</dd>
+					</dl>
 				</div>
-				<div id="productInfoboxTab2" class="boxTabContent">
-					<ul class="flinkList">
-						<li><a href="javascript:;">链接二</a></li>
-					</ul>
+				<div id="productInfoboxTab2" class="boxTabContent productInfoContent">
+					LaughCMS企业网站管理系统,是一款代码完全开源免费PHP+MYSQL系统.系统安全,效率,易用并且可扩展性非常好。<br/>
+					程序内置SEO优化机制，使企业网站更容易被推广。拥有企业网站常用的模块功能（企业简介模块、新闻模块、产品模块、下载模块、图片模块、招聘模块、在线留言、友情链接、会员与权限管理）。强大灵活的后台管理功能、静态页面生成功能、自定义模型功能、自制插件安装管理功能等可为企业打造出大气漂亮且具有营销力的精品网站...
 				</div>
 			</div>
 		</div>
