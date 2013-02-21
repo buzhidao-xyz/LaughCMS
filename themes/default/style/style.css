@@ -85,7 +85,7 @@
 	line-height: 20px;
 }
 .productTpl .body .ImageShow {
-	padding: 10px 0;
+	padding: 7px;
 	clear: both;
 	overflow: hidden;
 	border: 1px solid #DEDEDE;
@@ -131,4 +131,25 @@
 }
 .productTpl .body .productInfo .infoTitle ul {
 	float: left;
+}
+.productInfoContent {
+	padding: 10px 25px;
+}
+.productInfoContent dl {
+	padding: 3px 0;
+	overflow: hidden;
+	clear: both;
+}
+.productInfoContent dl dt {
+	float: left;
+	width: 55px;
+	text-align: right;
+	color: #333;
+	font-weight: 700;
+}
+.productInfoContent dl dd {
+	float: left;
+	padding-left: 7px;
+	color: #525252;
+	font-weight: 500;
 }

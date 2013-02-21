@@ -413,9 +413,6 @@ ul.infoboxTab li a.selected {
 	background: #747474;
     border-bottom: 1px solid #747474;
 }
-.boxTabContent {
-	overflow: hidden;
-}
 
 /**********************************其他样式 联系我们、关于我们等**********************************/
 .contentBlock {
