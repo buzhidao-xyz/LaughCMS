@@ -29,6 +29,6 @@ class CTModelControl extends CommonControl
     //内容模型
     public function ColumnModel()
     {
-
+        $this->display("ColumnModel/index.html");
     }
 }

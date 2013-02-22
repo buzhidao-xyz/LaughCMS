@@ -17,12 +17,12 @@ class Column extends Base
 	 */
 	public function getColumn($columnid=null)
 	{
-
+		
 	}
 
 	/**
 	 * 获取栏目内容
-	 * @param $
+	 * @param $parentid 父栏目ID
 	 */
 	private function getColumnList($parentid=null)
 	{
