@@ -26,22 +26,37 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="controlRightTop"></li>
 	</ul>
 	<div id="controlContent">
-<div class="opTop">
-	<a href="/laugh/admin/index.php?s=CTModel/addColumnModel">新增模型</a>
-	<a href="/laugh/admin/index.php?s=CTModel/ColumnModel">模型管理</a>
+<div class="formContainer" accessStatus=1>
+	<div class="formtitle"><h5>添加新内容模型</h5></div>
+	<form name="newcolumnform" action="/laugh/admin/index.php?s=CTModel/saveColumnModel" method="post" class="newform">
+		<ul class="formbody">
+			<li class="formblock">
+				<span>模型名称: </span>
+				<input type="text" name="name" value="" class="input w200" />
+			</li>
+			<li class="formblock">
+				<span>模型表名: </span>
+				<input type="text" name="table" value="" class="input w150" />
+			</li>
+			<li class="formblock">
+				<span>模型控制器: </span>
+				<input type="text" name="control" value="" class="input w150" />
+			</li>
+			<li class="formblock">
+				<span>前台调用字段:</span>
+				<input type="text" name="" value="*" class="input w250" />
+				*代表所有字段
+			</li>
+			<li class="formautoblock">
+				<span>模型简介:</span>
+				<textarea name="description" rows="4" cols="47"></textarea>
+			</li>
+			<li class="formblock bordernone">
+				<input type="submit" name="subut" class="button btngreen2" value="添加" />
+			</li>
+		</ul>
+	</form>
 </div>
-<div class="captitle"><h5>内容模型列表【目前共有0条数据】</h5></div>
-<ul class="table_list_title">
-	<li class="table_list_l table_list_l120">模型名称</li>
-	<li class="table_list_l table_list_l120">模型表名</li>
-	<li class="table_list_l table_list_l100">控制器</li>
-	<li class="table_list_l table_list_l300">模型描述</li>
-		<li class="table_list_l table_list_l150" accessStatus=1>管理操作</li>
-	</ul>
-<div class="contentTableList">
-		<ul class="table_list"><li class="table_list_center">空</li></ul>
-	</div>
-
     </div>
     <ul class="controlBottom">
 		<li class="controlLeftBottom"></li>

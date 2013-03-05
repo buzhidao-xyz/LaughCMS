@@ -259,9 +259,9 @@ class DBDriver implements DBDriver_Interface
      *        between操作 array('field'=>array('between',array(value1,value2)))
      * @param $op 操作符 AND/OR/BETWEEN
      */
-    public function where($where,$op='')
+    public function where($where=array(),$op='')
     {
-        if (!$where) return $this;
+        if (empty($where)) return $this;
 
         if (is_array($where) && !empty($where)) {
             $whereArray = array();

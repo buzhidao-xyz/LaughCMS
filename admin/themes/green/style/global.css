@@ -616,11 +616,11 @@ form ul.formbody li .edui-default span {
 }
 
 /******************文档列表****************/
-.opBottom {
+.opTop , .opBottom {
   height: 35px;
   line-height: 35px;
 }
-.opBottom a {
+.opTop a , .opBottom a {
   color: #000000;
   text-decoration: none;
   background: url("../images/allbtbg.gif") repeat-x left bottom #CCCCCC;
