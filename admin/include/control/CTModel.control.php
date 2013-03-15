@@ -44,6 +44,12 @@ class CTModelControl extends CommonControl
         return q("control");
     }
 
+    //获取前台可调用字段
+    public function getUseFields()
+    {
+        return q("usefields");
+    }
+
     //单页模型
     public function singlePage()
     {
@@ -71,10 +77,38 @@ class CTModelControl extends CommonControl
     //保存新内容模型
     public function saveColumnModel()
     {
-        $name = q("name");
-        $table = q("table");
-        $control = q("control");
-        $usefields = q("usefields");
-        $description = q("description");
+        $name = $this->getName();
+        $description = $this->getDescription();
+        $table = $this->getTable();
+        $control = $this->getControl();
+        $usefields = $this->getUseFields();
+
+        $data = array(
+            'name' => $name,
+            'description' => $description,
+            'table' => $table,
+            'control' => $control,
+            'usefields' => $usefields,
+            'createtime' => TIMESTAMP
+        );
+
+        $return = M("CTModel")->saveColumnModel($data);
+        if ($return) {
+            $this->showMessage("新增内容模型成功！",1);
+        } else {
+            $this->showMessage("新增内容模型失败！",0);
+        }
+    }
+
+    //模型字段
+    public function ModelField()
+    {
+        $this->display("ColumnModel/ModelField.html");
+    }
+
+    //更新内容模型
+    public function UpdateModel()
+    {
+        $this->display("ColumnModel/ModelField.html");
     }
 }

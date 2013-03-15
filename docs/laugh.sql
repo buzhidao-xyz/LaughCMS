@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2013-02-01 16:55:10
+Date: 2013-03-15 13:12:47
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,7 +37,7 @@ CREATE TABLE `la_admin` (
 -- ----------------------------
 -- Records of la_admin
 -- ----------------------------
-INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1359444257', '2130706433', '105', '1');
+INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1363076813', '2130706433', '117', '1');
 INSERT INTO `la_admin` VALUES ('2', 'luochuan', '624879b3fff70462132a21eb1cd8eb75', 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '1355368421', '2130706433', '12', '0');
 
 -- ----------------------------
@@ -156,6 +156,35 @@ INSERT INTO `la_column` VALUES ('8', '下载中心', '0', '0', '1', null, null, 
 INSERT INTO `la_column` VALUES ('9', '招贤纳士', '0', '0', '1', null, null, '6', '', '', '', '', '1', '1359690294', '1359690294');
 INSERT INTO `la_column` VALUES ('10', '关于我们', '0', '0', '1', null, null, '7', '', '', '', '', '1', '1359690307', '1359690307');
 INSERT INTO `la_column` VALUES ('11', '联系我们', '0', '0', '1', null, null, '8', '', '', '', '', '1', '1359690316', '1359690316');
+
+-- ----------------------------
+-- Table structure for `la_column_model`
+-- ----------------------------
+DROP TABLE IF EXISTS `la_column_model`;
+CREATE TABLE `la_column_model` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `description` varchar(200) DEFAULT NULL,
+  `type` tinyint(1) DEFAULT '0',
+  `issystem` tinyint(1) DEFAULT '0',
+  `table` varchar(50) DEFAULT NULL,
+  `usefields` varchar(300) DEFAULT '*' COMMENT '前台调用字段',
+  `control` varchar(50) DEFAULT NULL,
+  `status` tinyint(1) DEFAULT '1' COMMENT '0禁用1启用',
+  `createtime` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of la_column_model
+-- ----------------------------
+INSERT INTO `la_column_model` VALUES ('1', '文章模型', '文章模型', '0', '0', 'article', '', 'Article', '1', null);
+INSERT INTO `la_column_model` VALUES ('2', '图片模型', '图集模型', '0', '0', 'picture', '', 'Picture', '1', null);
+INSERT INTO `la_column_model` VALUES ('3', '下载模型', '下载模型', '0', '0', 'download', '', 'Download', '1', null);
+INSERT INTO `la_column_model` VALUES ('4', '专题模型', '专题模型', '0', '0', 'spec', '', 'Special', '1', '1363315175');
+INSERT INTO `la_column_model` VALUES ('5', '软件模型', '', '0', '0', 'soft', '', 'Soft', '1', '1363315203');
+INSERT INTO `la_column_model` VALUES ('6', '产品模型', '', '0', '0', 'product', '', 'Product', '1', '1363315247');
+INSERT INTO `la_column_model` VALUES ('7', '分类信息模型', '', '0', '0', 'info', '', 'Info', '1', '1363315306');
 
 -- ----------------------------
 -- Table structure for `la_comment`

@@ -17,6 +17,7 @@ class IndexControl extends CommonControl
         parent::__construct();
     }
     
+    //主页
     public function index()
     {
         $this->display('index.html');

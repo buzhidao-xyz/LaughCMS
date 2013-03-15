@@ -10,7 +10,7 @@
 	<li class="table_list_l table_list_l100">控制器</li>
 	<li class="table_list_l table_list_l300">模型描述</li>
 	{if $accessStatus == 1}
-	<li class="table_list_l table_list_l150" accessStatus={$accessStatus}>管理操作</li>
+	<li class="table_list_l table_list_l170" accessStatus={$accessStatus}>管理操作</li>
 	{/if}
 </ul>
 <div class="contentTableList">
@@ -22,7 +22,7 @@
 		<li class="table_list_l table_list_l100">{$d.control}</li>
 		<li class="table_list_l table_list_l300">{$d.description}</li>
 		{if $accessStatus == 1}
-		<li class="table_list_l table_list_l150" accessStatus={$accessStatus}>
+		<li class="table_list_l table_list_l170" accessStatus={$accessStatus}>
 			<a href="__APP__/index.php?s=CTModel/ModelField">模型字段</a>
 			<a href="__APP__/index.php?s=CTModel/UpdateModel">修改</a>
 			<a href="__APP__/index.php?s=CTModel/UpdateModelStatus&status=0">已启用</a>
