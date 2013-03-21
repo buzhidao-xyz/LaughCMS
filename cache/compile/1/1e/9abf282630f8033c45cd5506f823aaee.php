@@ -45,44 +45,42 @@ var JS_APP = '/laugh';
 		<link type="text/css" rel="stylesheet" href="public/plugin/superfish/css/superfish.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/default/style/navigation.css" media="screen">
 <ul class="headerNavigation">
-	<li>
-		<a href="/laugh/index.php" class="navon">网站首页</a>
-	</li>
-	<li>
-		<a href="/laugh/index.php?s=article">新闻资讯</a>
-		<ul class="SubNavigation">
-			<li>
-				<a href="#">子菜单一</a>
+		<li>
+		<a href="/laugh/index.php?s=Index/index&columnid=1" class="">网站首页</a>
 			</li>
-			<li>
-				<a href="#">子菜单二</a>
-				<ul>
-					<li><a href="#">子子栏目一</a></li>
-					<li><a href="#">子子栏目一</a></li>
-					<li><a href="#">子子栏目一</a></li>
-				</ul>
+		<li>
+		<a href="/laugh/index.php?s=Article/index&columnid=2" class="navon">新闻资讯</a>
+				<ul class="SubNavigation">
+						<li>
+				<a href="/laugh/index.php?s=Article/index&columnid=3">IT知识</a>
+							</li>
+						<li>
+				<a href="/laugh/index.php?s=Article/index&columnid=4">网络知识</a>
+								<ul>
+										<li><a href="/laugh/index.php?s=Article/index&columnid=5">前端知识</a></li>
+									</ul>
+							</li>
+					</ul>
 			</li>
-		</ul>
-	</li>
-	<li>
-		<a href="/laugh/index.php?s=Product">产品展示</a>
-	</li>
-	<li>
-		<a href="/laugh/index.php?s=Download">下载中心</a>
-	</li>
-	<li>
-		<a href="/laugh/index.php?s=Image">客户案例</a>
-	</li>
-	<li>
-		<a href="/laugh/index.php?s=Cooperate">招贤纳士</a>
-	</li>
-	<li>
-		<a href="/laugh/index.php?s=Public/AboutUS">关于我们</a>
-	</li>
-	<li>
-		<a href="/laugh/index.php?s=Public/ContactUS">联系我们</a>
-	</li>
-</ul>
+		<li>
+		<a href="/laugh/index.php?s=Product/index&columnid=6" class="">产品展示</a>
+			</li>
+		<li>
+		<a href="/laugh/index.php?s=Image/index&columnid=7" class="">客户案例</a>
+			</li>
+		<li>
+		<a href="/laugh/index.php?s=Download/index&columnid=8" class="">下载中心</a>
+			</li>
+		<li>
+		<a href="/laugh/index.php?s=Cooperate/index&columnid=9" class="">招贤纳士</a>
+			</li>
+		<li>
+		<a href="/laugh/index.php?s=Public/AboutUS&columnid=10" class="">关于我们</a>
+			</li>
+		<li>
+		<a href="/laugh/index.php?s=Public/ContactUS&columnid=11" class="">联系我们</a>
+			</li>
+	</ul>
 <script type="text/javascript" src="public/plugin/superfish/js/hoverIntent.js"></script>
 <script type="text/javascript" src="public/plugin/superfish/js/superfish.js"></script>
 <script type="text/javascript">
@@ -144,62 +142,27 @@ $(document).ready(function (){
 			<div class="boxBlock">
 				<div class="boxBlockTitle">
 					<span class="title">新闻资讯</span>
-					<!-- <span class="link"><a href="javascript:;">更多>></a></span> -->
 				</div>
 				<div class="boxBlockBody">
 					<ul class="articleList">
-						<li><a href="/laugh/index.php?s=article/article">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-					</ul>
-					<div id="compage" class="pagination">
-		<a class="pageprev graya fleft" href="/laugh/index.php?s=article&page=1">首页</a>
-		<a class="pageprev graya fleft" href="javascript:;">上一页</a> 
-	<span class="pageList none">
-									<span class="current fleft" href="" style=""> 1 </span>
-								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=article&page=2"> 2 </a>
-								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=article&page=3"> 3 </a>
-								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=article&page=4"> 4 </a>
-								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=article&page=5"> 5 </a>
-								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=article&page=6"> 6 </a>
-								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=article&page=7"> 7 </a>
-								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=article&page=8"> 8 </a>
-								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=article&page=9"> 9 </a>
-								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=article&page=10"> 10 </a>
-								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=article&page=11"> 11 </a>
-				</span>
-	<a class="pagenext graya fleft" href="/laugh/index.php?s=article&page=2">下一页</a>
-		<a class="pageprev graya fleft" href="/laugh/index.php?s=article&page=12">末页</a>
-	</div>
-
-<script>
-var bindpage = function($obj){
-    $obj.find('.pagecur').hover(function(){
-		$obj.find('.pageList').show();
-	},function(){
-		$obj.find('.pageList').hide();
-	})
-}
-if($('#compage').length>0){
-    //bindpage($('#compage'));
-} else if ($('#facepage').length>0) {
-    //bindpage($('#facepage'));   
-}
-</script>
-
-
+																		<li>
+							<a href="/laugh/index.php?s=article/view&columnid=2&articleid=4">MongoDB:下一代MySQL？</a>
+							<span class="pubdate">[2013-03-21]</span>
+						</li>
+												<li>
+							<a href="/laugh/index.php?s=article/view&columnid=2&articleid=3">企业用网站进行网络宣传的优势</a>
+							<span class="pubdate">[2013-03-21]</span>
+						</li>
+												<li>
+							<a href="/laugh/index.php?s=article/view&columnid=2&articleid=2">第二篇测试文章</a>
+							<span class="pubdate">[2013-01-10]</span>
+						</li>
+												<li>
+							<a href="/laugh/index.php?s=article/view&columnid=2&articleid=1">这是一篇测试文章</a>
+							<span class="pubdate">[2013-01-09]</span>
+						</li>
+																	</ul>
+					
 				</div>
 			</div>
 		</div>

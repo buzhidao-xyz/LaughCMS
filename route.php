@@ -89,8 +89,12 @@ class Route
      */
     static private function _call()
     {
-        $_control  = self::$_query['control'];
+        $_control = self::$_query['control'];
         $_action = self::$_query['action'];
+
+        //定义CONTROL和ACTION
+        define("CONTROL", str_replace(self::$_control, "", $_control));
+        define("ACTION", $_action);
         
         $obj = new $_control(self::$_query);
         $obj->$_action();

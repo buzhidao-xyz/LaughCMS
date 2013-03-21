@@ -55,6 +55,10 @@ class ArticleControl extends CommonControl
 	private function _getpublishtime()
 	{
 		$publishtime = q("publishtime");
+		$publishtime = explode(" ", $publishtime);
+		$publishtime1 = explode("-", $publishtime[0]);
+		$publishtime2 = explode(":", $publishtime[1]);
+		$publishtime = mktime($publishtime2[0],$publishtime2[1],$publishtime2[2],$publishtime1[1],$publishtime1[2],$publishtime1[0]);
 
 		return $publishtime;
 	}

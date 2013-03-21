@@ -13,40 +13,74 @@ class Column extends Base
 
 	/**
 	 * 获取栏目列表
-	 * @param $columnid int 栏目ID
+	 * @param $parentid mixed 父栏目ID
 	 */
-	public function getColumn($columnid=null)
+	public function getColumnList($parentid=null,$where=array())
 	{
-		$where = array();
-		if ($columnid) $where['id'] = is_array($columnid) ? array("in", $columnid) : $columnid;
+		if ($parentid) $where['a.parentid'] = is_array($parentid) ? array("in", $parentid) : $parentid;
 
-		$data = T("Column")->where($where)->select();
+		$data = T("Column")->join(' '.TBF.'column_model as b on a.columnmodel=b.id ')->field("a.*,b.table,b.usefields,b.control")->where($where)->order("a.id")->select();
 		$data = $this->makeColumnList($data);
 
 		return $data;
 	}
 
-	//格式化栏目列表
+	/**
+	 * 格式化栏目列表
+	 * @param $ColumnList array() 栏目列表
+	 */
 	public function makeColumnList($ColumnList=array())
 	{
 		$data = array();
 
 		if (empty($ColumnList)) return false;
 		foreach ($ColumnList as $column) {
-			if ($column['parentid']) {
-				
+			$column['control'] = $column['control'] ? $column['control'] : 'Index';
+			$column['action'] = $column['action'] ? $column['action'] : 'index';
+
+			if (!$column['parentid']) {
+				if ($column['control'] == CONTROL && $column['action'] == ACTION) $column['navon'] = true;
+				$data[] = $column;
+			} else {
+				foreach ($data as $k=>$d) {
+					if ($column['parentid'] == $d['id']) {
+						if ($column['control'] == CONTROL && $column['action'] == ACTION) $data[$k]['navon'] = true;
+						$data[$k]['SubColumnList'][] = $column;
+					} else {
+						if (isset($d['SubColumnList'])&&!empty($d['SubColumnList'])) {
+							foreach ($d['SubColumnList'] as $k1=>$d1) {
+								if ($column['parentid'] == $d1['id']) {
+									if ($column['control'] == CONTROL && $column['action'] == ACTION) $data[$k]['navon'] = true;
+									$data[$k]['SubColumnList'][$k1]['SubColumnList'][] = $column;
+								} else {
+									if (isset($d1['SubColumnList'])&&!empty($d1['SubColumnList'])) {
+										foreach ($d1['SubColumnList'] as $k2=>$d2) {
+											if ($column['parentid'] == $d2['id']) {
+												if ($column['control'] == CONTROL && $column['action'] == ACTION) $data[$k]['navon'] = true;
+												$data[$k]['SubColumnList'][$k1]['SubColumnList'][$k2]['SubColumnList'][] = $column;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 		}
-
 		return $data;
 	}
 
 	/**
-	 * 获取栏目内容
-	 * @param $parentid 父栏目ID
+	 * 获取某个栏目内容
+	 * @param $columnid int 栏目ID
 	 */
-	private function getColumnList($parentid=null)
+	public function getColumn($columnid=null,$where=array())
 	{
+		if (!$columnid) return false;
+		$where['a.id'] = $columnid;
+		$column = T("Column")->join(' '.TBF.'column_model as b on a.columnmodel=b.id ')->field("a.*,b.table,b.usefields,b.control")->where($where)->find();
 
+		return $column;
 	}
 }

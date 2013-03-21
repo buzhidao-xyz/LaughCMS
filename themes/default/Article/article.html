@@ -1,30 +1,30 @@
-{include file="include/head.html"}
-{include file="Common/Top.html"}
-{include file="Common/Header.html"}
-<div id="WrapContainer" class="wrap">
-	<div class="adBanner block">
-		<a href="javascript:;" target="_blank"><img src="themes/default/images/ad_banner.png" width="1000" height="80" /></a>
+<div class="articleTpl">
+	<h2 class="title">{$articleInfo.title}</h2>
+	<div class="status">
+		<span class="title">点击次数:</span>
+		<span class="content">{$articleInfo.clicknum} 次</span>
+		<span class="title">发布时间:</span>
+		<span class="content">{$articleInfo.publishtime|mkdate}</span>
+		<span class="title">作者:</span>
+		<span class="content">{$articleInfo.author}</span>
 	</div>
-	<div class="CurPosition mtop5">
-		当前位置: <a href="__APP__">首页</a> > <a href="__APP__/index.php?s=article">新闻资讯</a>
-	</div>
-	<div id="CenterShow" class="block mtop5">
-		<div id="mainBlock" class="fleft w740">
-			<div class="boxBlock">
-				<div class="boxBlockTitle">
-					<span class="title">新闻资讯</span>
-					<!-- <span class="link"><a href="javascript:;">更多>></a></span> -->
-				</div>
-				<div class="boxBlockBody">
-					<div class="contentBlock">
-						{include file="Article/article_tpl.html"}
-					</div>
-				</div>
-			</div>
+	<div class="body">
+		<div class="articleContent">
+			{$articleInfo.content|html_entity_decode}
 		</div>
-		{include file="Common/SideBlock.html"}
-		<div class="clear"></div>
 	</div>
-	{include file="Common/Flink.html"}
+	<div class="operate">
+		{include file="include/share0.html"}
+		<div class="operateLink"><a href="javascript:;">[打印此页]</a>&nbsp;&nbsp;&nbsp;<a href="javascript:self.close();">[关闭]</a></div>
+	</div>
+	<div class="about">
+		<dl>
+			<dt>上一篇:</dt>
+			<dd><a href="javascript:;">新手使用MetInfo建站步骤？</a></dd>
+		</dl>
+		<dl>
+			<dt>下一篇:</dt>
+			<dd><a href="javascript:;">新手使用MetInfo建站步骤？</a></dd>
+		</dl>
+	</div>
 </div>
-{include file="include/foot.html"}

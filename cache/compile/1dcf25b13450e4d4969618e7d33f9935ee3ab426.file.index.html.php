@@ -1,25 +1,31 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-03-15 09:24:03
+<?php /* Smarty version Smarty-3.1.12, created on 2013-03-21 17:28:53
          compiled from "C:\xampp\htdocs\laugh\themes\default\Article\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:3173151427832f3a895-44583895%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:21548514ad2d5cc3ff6-77650217%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '1dcf25b13450e4d4969618e7d33f9935ee3ab426' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\Article\\index.html',
-      1 => 1360129039,
+      1 => 1363858129,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3173151427832f3a895-44583895',
+  'nocache_hash' => '21548514ad2d5cc3ff6-77650217',
   'function' => 
   array (
   ),
+  'variables' => 
+  array (
+    'ArticleList' => 0,
+    'columnid' => 0,
+    'd' => 0,
+  ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5142783307f528_90171591',
+  'unifunc' => 'content_514ad2d5d7ecf0_88060173',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5142783307f528_90171591')) {function content_5142783307f528_90171591($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_514ad2d5d7ecf0_88060173')) {function content_514ad2d5d7ecf0_88060173($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate ("Common/Top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
@@ -37,25 +43,25 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<div class="boxBlock">
 				<div class="boxBlockTitle">
 					<span class="title">新闻资讯</span>
-					<!-- <span class="link"><a href="javascript:;">更多>></a></span> -->
 				</div>
 				<div class="boxBlockBody">
 					<ul class="articleList">
-						<li><a href="__APP__/index.php?s=article/article">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
+						<?php if (isset($_smarty_tpl->tpl_vars['ArticleList']->value)&&!empty($_smarty_tpl->tpl_vars['ArticleList']->value)){?>
+						<?php  $_smarty_tpl->tpl_vars['d'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['d']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['ArticleList']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['d']->key => $_smarty_tpl->tpl_vars['d']->value){
+$_smarty_tpl->tpl_vars['d']->_loop = true;
+?>
+						<li>
+							<a href="__APP__/index.php?s=article/view&columnid=<?php echo $_smarty_tpl->tpl_vars['columnid']->value;?>
+&articleid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['d']->value['title'];?>
+</a>
+							<span class="pubdate">[<?php echo mkdate($_smarty_tpl->tpl_vars['d']->value['publishtime'],'d');?>
+]</span>
+						</li>
+						<?php } ?>
+						<?php }?>
 					</ul>
 					<?php echo $_smarty_tpl->getSubTemplate ("common/Page.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 

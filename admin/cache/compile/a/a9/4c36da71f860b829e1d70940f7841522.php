@@ -30,7 +30,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 	<a href="/laugh/admin/index.php?s=CTModel/addColumnModel">新增模型</a>
 	<a href="/laugh/admin/index.php?s=CTModel/ColumnModel">模型管理</a>
 </div>
-<div class="captitle"><h5>内容模型列表【目前共有7条数据】</h5></div>
+<div class="captitle"><h5>内容模型列表【目前共有9条数据】</h5></div>
 <ul class="table_list_title">
 	<li class="table_list_l table_list_l120">模型名称</li>
 	<li class="table_list_l table_list_l120">模型表名</li>
@@ -53,8 +53,8 @@ var JS_APPM = 'http://localhost:82/laugh';
 			</ul>
 		<ul class="table_list">
 		<li class="table_list_l table_list_l120">图片模型</li>
-		<li class="table_list_l table_list_l120">picture</li>
-		<li class="table_list_l table_list_l100">Picture</li>
+		<li class="table_list_l table_list_l120">image</li>
+		<li class="table_list_l table_list_l100">Image</li>
 		<li class="table_list_l table_list_l300">图集模型</li>
 				<li class="table_list_l table_list_l170" accessStatus=1>
 			<a href="/laugh/admin/index.php?s=CTModel/ModelField">模型字段</a>
@@ -115,6 +115,30 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="table_list_l table_list_l120">分类信息模型</li>
 		<li class="table_list_l table_list_l120">info</li>
 		<li class="table_list_l table_list_l100">Info</li>
+		<li class="table_list_l table_list_l300"></li>
+				<li class="table_list_l table_list_l170" accessStatus=1>
+			<a href="/laugh/admin/index.php?s=CTModel/ModelField">模型字段</a>
+			<a href="/laugh/admin/index.php?s=CTModel/UpdateModel">修改</a>
+			<a href="/laugh/admin/index.php?s=CTModel/UpdateModelStatus&status=0">已启用</a>
+			<a href="/laugh/admin/index.php?s=CTModel/DeleteModel">删除</a>
+		</li>
+			</ul>
+		<ul class="table_list">
+		<li class="table_list_l table_list_l120">人才招聘模型</li>
+		<li class="table_list_l table_list_l120">cooperate</li>
+		<li class="table_list_l table_list_l100">Cooperate</li>
+		<li class="table_list_l table_list_l300"></li>
+				<li class="table_list_l table_list_l170" accessStatus=1>
+			<a href="/laugh/admin/index.php?s=CTModel/ModelField">模型字段</a>
+			<a href="/laugh/admin/index.php?s=CTModel/UpdateModel">修改</a>
+			<a href="/laugh/admin/index.php?s=CTModel/UpdateModelStatus&status=0">已启用</a>
+			<a href="/laugh/admin/index.php?s=CTModel/DeleteModel">删除</a>
+		</li>
+			</ul>
+		<ul class="table_list">
+		<li class="table_list_l table_list_l120">公共模型</li>
+		<li class="table_list_l table_list_l120">public</li>
+		<li class="table_list_l table_list_l100">Public</li>
 		<li class="table_list_l table_list_l300"></li>
 				<li class="table_list_l table_list_l170" accessStatus=1>
 			<a href="/laugh/admin/index.php?s=CTModel/ModelField">模型字段</a>

@@ -42,10 +42,6 @@ class Article extends Base
 		if ($length) $obj = $obj->limit($start,$length);
 		$data = $obj->select();
 
-		// foreach ($data as $k=>$v) {
-			
-		// }
-
 		return array('total'=>$total, 'data'=>$data);
 	}
 

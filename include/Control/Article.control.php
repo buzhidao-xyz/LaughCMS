@@ -14,13 +14,6 @@ class ArticleControl extends CommonControl
 		parent::__construct();
 	}
 
-	//主入口
-	public function index()
-	{
-		$this->assign("page", getPage(170,15));
-		$this->display("Article/index.html");
-	}
-
 	//获取文档ID
 	public function _getArticleID()
 	{
@@ -28,10 +21,25 @@ class ArticleControl extends CommonControl
 		return $articleid;
 	}
 
+	//主入口 获取文档
+	public function index()
+	{
+		list($start,$length) = $this->getPages();
+		$ArticleList = M("Article")->getArticle(null,$start,$length,array(),1);
+
+		$this->assign("ArticleList", $ArticleList['data']);
+		$this->assign("page", getPage($ArticleList['total'],$this->_pagesize));
+		$this->display("Article/index.html");
+	}
+
 	//获取文档内容
-	public function getArticle()
+	public function view()
 	{
 		$articleid = $this->_getArticleID();
+		$articleInfo = M("Article")->getArticleInfo($this->_columnid,$articleid);
+
+		$this->assign("articleInfo",$articleInfo);
+		$this->display("Article/view.html");
 	}
 
 	//显示文章内容

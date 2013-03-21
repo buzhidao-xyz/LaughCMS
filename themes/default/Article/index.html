@@ -13,25 +13,17 @@
 			<div class="boxBlock">
 				<div class="boxBlockTitle">
 					<span class="title">新闻资讯</span>
-					<!-- <span class="link"><a href="javascript:;">更多>></a></span> -->
 				</div>
 				<div class="boxBlockBody">
 					<ul class="articleList">
-						<li><a href="__APP__/index.php?s=article/article">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
-						<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a><span class="pubdate">[2012-02-01]</span></li>
+						{if isset($ArticleList)&&!empty($ArticleList)}
+						{foreach $ArticleList as $d}
+						<li>
+							<a href="__APP__/index.php?s=article/view&columnid={$columnid}&articleid={$d.id}">{$d.title}</a>
+							<span class="pubdate">[{$d.publishtime|mkdate:d}]</span>
+						</li>
+						{/foreach}
+						{/if}
 					</ul>
 					{include file="common/Page.html"}
 				</div>
