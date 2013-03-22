@@ -26,7 +26,7 @@ class Column extends Base
 	}
 
 	/**
-	 * 格式化栏目列表
+	 * 格式化栏目列表 最多支持四级栏目格式化
 	 * @param $ColumnList array() 栏目列表
 	 */
 	public function makeColumnList($ColumnList=array())
@@ -82,5 +82,15 @@ class Column extends Base
 		$column = T("Column")->join(' '.TBF.'column_model as b on a.columnmodel=b.id ')->field("a.*,b.table,b.usefields,b.control")->where($where)->find();
 
 		return $column;
+	}
+
+	/**
+	 * 根据栏目id获取其所有子栏目id
+	 * @param $columnid int 栏目id
+	 */
+	public function getChildrenColumnID($columnid=null)
+	{
+		if (!$columnid) return array();
+		
 	}
 }

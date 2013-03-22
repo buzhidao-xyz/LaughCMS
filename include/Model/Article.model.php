@@ -75,7 +75,6 @@ class Article extends Base
 		$articleIndex = $this->getArticleContent($articleid);
 		$articleInfo['content'] = $articleIndex[0]['content'];
 
-
 		$prevarticle = $this->getPrevArticle($columnid,$articleid);
 		$articleInfo['prev'] = $prevarticle;
 		$nextarticle = $this->getNextArticle($columnid,$articleid);
@@ -90,11 +89,14 @@ class Article extends Base
 	 */
 	public function getPrevArticle($columnid=null,$articleid=null)
 	{
-		if (!$articleid) return false;
+		if (empty($columnid)||!$articleid) return false;
 
 		$where = array();
-		
-		$article = T("Article")->where($where)->find();
+
+		$columnids = array();
+		$where['columnid'] = array("in", $columnids);
+		$where['id'] = array("lt",$articleid);
+		$article = T("Article")->where($where)->order("id","asc")->find();
 		dump($columnid);exit;
 	}
 
