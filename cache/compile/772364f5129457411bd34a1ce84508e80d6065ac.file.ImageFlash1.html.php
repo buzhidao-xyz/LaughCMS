@@ -1,35 +1,54 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-03-22 09:28:09
+<?php /* Smarty version Smarty-3.1.12, created on 2013-03-26 15:06:06
          compiled from "C:\xampp\htdocs\laugh\themes\default\Common\ImageFlash1.html" */ ?>
-<?php /*%%SmartyHeaderCode:11690514bb3a925dc20-92993979%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:25391515148de0ff2e9-33380830%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '772364f5129457411bd34a1ce84508e80d6065ac' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\Common\\ImageFlash1.html',
-      1 => 1359940001,
+      1 => 1364281562,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '11690514bb3a925dc20-92993979',
+  'nocache_hash' => '25391515148de0ff2e9-33380830',
   'function' => 
   array (
   ),
+  'variables' => 
+  array (
+    'HomeScrollIMageList' => 0,
+    'd' => 0,
+    'HomeScrollIMageListCount' => 0,
+  ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_514bb3a9264f54_82716787',
+  'unifunc' => 'content_515148de15ba96_11495841',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_514bb3a9264f54_82716787')) {function content_514bb3a9264f54_82716787($_smarty_tpl) {?><link media="screen" href="public/plugin/xslider/xslider.css" rel="stylesheet" type="text/css">
+<?php if ($_valid && !is_callable('content_515148de15ba96_11495841')) {function content_515148de15ba96_11495841($_smarty_tpl) {?><link media="screen" href="public/plugin/xslider/xslider.css" rel="stylesheet" type="text/css">
 <div id="SImageContainer" class="slider">
 	<div class="conbox">
-		<div><a href="javascript:;" title="title1"><img src="themes/default/images/flash/flash_img1.jpg" alt="Slide 1"></a></div>
-		<div><a href="javascript:;" title="title1"><img src="themes/default/images/flash/flash_img2.jpg" alt="Slide 1"></a></div>
-		<div><a href="javascript:;" title="title1"><img src="themes/default/images/flash/flash_img3.jpg" alt="Slide 1"></a></div>
+		<?php  $_smarty_tpl->tpl_vars['d'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['d']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['HomeScrollIMageList']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['d']->key => $_smarty_tpl->tpl_vars['d']->value){
+$_smarty_tpl->tpl_vars['d']->_loop = true;
+?>
+		<div><a href="<?php echo $_smarty_tpl->tpl_vars['d']->value['link'];?>
+" title="<?php echo $_smarty_tpl->tpl_vars['d']->value['title'];?>
+"><img src="__APP__<?php echo $_smarty_tpl->tpl_vars['d']->value['path'];?>
+" alt="<?php echo $_smarty_tpl->tpl_vars['d']->value['title'];?>
+" width="730" height="300"></a></div>
+		<?php } ?>
 	</div>
 	<div class="switcher">
-		<a href="#" class="cur">1</a>
-		<a href="#">2</a>
-		<a href="#">3</a>
+		<?php  $_smarty_tpl->tpl_vars['d'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['d']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['HomeScrollIMageListCount']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['d']->key => $_smarty_tpl->tpl_vars['d']->value){
+$_smarty_tpl->tpl_vars['d']->_loop = true;
+?>
+		<a href="javascript:;" <?php if ($_smarty_tpl->tpl_vars['d']->value==1){?>class="cur"<?php }?>><?php echo $_smarty_tpl->tpl_vars['d']->value;?>
+</a>
+		<?php } ?>
 	</div>
 </div><!--slider end-->
 <script type="text/javascript" src="public/plugin/xslider/jquery.Xslider.js"></script>

@@ -20,11 +20,23 @@
 	<div class="about">
 		<dl>
 			<dt>上一篇:</dt>
-			<dd><a href="javascript:;">新手使用MetInfo建站步骤？</a></dd>
+			<dd>
+				{if !empty($articleInfo.prev)}
+				<a href="__APP__/index.php?s=article/view&columnid={$columnid}&articleid={$articleInfo.prev.id}" title="{$articleInfo.prev.title}">{$articleInfo.prev.title}</a>
+				{else}
+				<font color="grey">没有了！</font>
+				{/if}
+			</dd>
 		</dl>
 		<dl>
 			<dt>下一篇:</dt>
-			<dd><a href="javascript:;">新手使用MetInfo建站步骤？</a></dd>
+			<dd>
+				{if !empty($articleInfo.next)}
+				<a href="__APP__/index.php?s=article/view&columnid={$columnid}&articleid={$articleInfo.next.id}" title="{$articleInfo.next.title}">{$articleInfo.next.title}</a>
+				{else}
+				<font color="grey">没有了！</font>
+				{/if}
+			</dd>
 		</dl>
 	</div>
 </div>

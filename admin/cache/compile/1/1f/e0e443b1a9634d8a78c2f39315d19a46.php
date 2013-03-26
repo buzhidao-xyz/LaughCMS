@@ -31,8 +31,8 @@ var JS_APPM = 'http://localhost:82/laugh';
 <div class="opinfo">
 	<div class="opinfo_msg">操作成功！</div>
 	<div class="opinfo_Link">
-		
-	</div>
+						<a href="/laugh/admin/index.php?s=Article/upArticle&articleid=7">查看修改</a>&nbsp;&nbsp;&nbsp;
+					</div>
 </div>
 <style type="text/css">
 .opinfo {

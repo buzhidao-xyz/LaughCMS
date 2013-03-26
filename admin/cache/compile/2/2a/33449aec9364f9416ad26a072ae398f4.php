@@ -9,7 +9,7 @@
 	<ul>
 		<li class="formblock">
 			<span>原名称: </span>
-			<input type="text" name="oldfilename" value="README" readonly class="input w200" />
+			<input type="text" name="oldfilename" value="cache" readonly class="input w200" />
 		</li>
 		<li class="formblock">
 			<span>新名称: </span>

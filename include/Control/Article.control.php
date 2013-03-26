@@ -25,7 +25,7 @@ class ArticleControl extends CommonControl
 	public function index()
 	{
 		list($start,$length) = $this->getPages();
-		$ArticleList = M("Article")->getArticle(null,$start,$length,array(),1);
+		$ArticleList = $this->getAllArticle();
 
 		$this->assign("ArticleList", $ArticleList['data']);
 		$this->assign("page", getPage($ArticleList['total'],$this->_pagesize));

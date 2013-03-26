@@ -34,7 +34,7 @@ class Column extends Base
 	//获取顶级栏目
 	public function getTopColumn()
 	{
-		$data = T("Column")->where(array("topid"=>0))->select();
+		$data = T("Column")->where(array("parentid"=>0))->select();
 
 		return $data;
 	}

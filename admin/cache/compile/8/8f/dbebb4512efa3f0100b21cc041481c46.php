@@ -26,7 +26,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="controlRightTop"></li>
 	</ul>
 	<div id="controlContent">
-<div class="captitle"><h5>文档列表 【目前共有4条文档】</h5></div>
+<div class="captitle"><h5>文档列表 【目前共有7条文档】</h5></div>
 <ul class="table_list_title">
 	<li class="table_list_l table_list_l30"></li>
 	<li class="table_list_l table_list_l50">ID</li>
@@ -40,6 +40,63 @@ var JS_APPM = 'http://localhost:82/laugh';
 	</ul>
 <div class="contentTableList">
             <ul class="table_list">
+		<li class="table_list_l table_list_l30">
+			<input type="checkbox" name="articleid[]" value="7" flag="articleID" class="checkbox" />
+		</li>
+		<li class="table_list_l table_list_l50">7</li>
+		<li class="table_list_l table_list_l300" title="PHP实现异步操作">
+			PHP实现异步操作
+		</li>
+    	<li class="table_list_l table_list_l150">2013-03-26 09:51:57</li>
+    	<li class="table_list_l table_list_l120">PHP知识</li>
+		<li class="table_list_l table_list_l100">admin</li>
+		<li class="table_list_l table_list_l80">0</li>
+		<li class="table_list_l table_list_l80">0</li>
+    	    	<li class="table_list_l table_list_l120" accessStatus=1>
+    		<a href="http://localhost:82/laugh/index.php?s=Article/View&articleid=7" target="_blank">预览</a>
+    		<a href="/laugh/admin/index.php?s=Article/upArticle&articleid=7">修改</a>
+    		<a delurl="/laugh/admin/index.php?s=Article/recoverArticle&articleid=7" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
+    	    </ul>
+        <ul class="table_list">
+		<li class="table_list_l table_list_l30">
+			<input type="checkbox" name="articleid[]" value="6" flag="articleID" class="checkbox" />
+		</li>
+		<li class="table_list_l table_list_l50">6</li>
+		<li class="table_list_l table_list_l300" title="PHP基本点知识">
+			PHP基本点知识
+		</li>
+    	<li class="table_list_l table_list_l150">2013-03-25 16:51:20</li>
+    	<li class="table_list_l table_list_l120">IT知识</li>
+		<li class="table_list_l table_list_l100">admin</li>
+		<li class="table_list_l table_list_l80">0</li>
+		<li class="table_list_l table_list_l80">0</li>
+    	    	<li class="table_list_l table_list_l120" accessStatus=1>
+    		<a href="http://localhost:82/laugh/index.php?s=Article/View&articleid=6" target="_blank">预览</a>
+    		<a href="/laugh/admin/index.php?s=Article/upArticle&articleid=6">修改</a>
+    		<a delurl="/laugh/admin/index.php?s=Article/recoverArticle&articleid=6" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
+    	    </ul>
+        <ul class="table_list">
+		<li class="table_list_l table_list_l30">
+			<input type="checkbox" name="articleid[]" value="5" flag="articleID" class="checkbox" />
+		</li>
+		<li class="table_list_l table_list_l50">5</li>
+		<li class="table_list_l table_list_l300" title="页面(PAGE)标记(TAGS)">
+			页面(PAGE)标记(TAGS)
+		</li>
+    	<li class="table_list_l table_list_l150">2013-03-25 15:51:29</li>
+    	<li class="table_list_l table_list_l120">前端知识</li>
+		<li class="table_list_l table_list_l100">admin</li>
+		<li class="table_list_l table_list_l80">0</li>
+		<li class="table_list_l table_list_l80">0</li>
+    	    	<li class="table_list_l table_list_l120" accessStatus=1>
+    		<a href="http://localhost:82/laugh/index.php?s=Article/View&articleid=5" target="_blank">预览</a>
+    		<a href="/laugh/admin/index.php?s=Article/upArticle&articleid=5">修改</a>
+    		<a delurl="/laugh/admin/index.php?s=Article/recoverArticle&articleid=5" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
+    	    </ul>
+        <ul class="table_list">
 		<li class="table_list_l table_list_l30">
 			<input type="checkbox" name="articleid[]" value="4" flag="articleID" class="checkbox" />
 		</li>
@@ -82,10 +139,10 @@ var JS_APPM = 'http://localhost:82/laugh';
 			<input type="checkbox" name="articleid[]" value="2" flag="articleID" class="checkbox" />
 		</li>
 		<li class="table_list_l table_list_l50">2</li>
-		<li class="table_list_l table_list_l300" title="第二篇测试文章">
-			第二篇测试文章
+		<li class="table_list_l table_list_l300" title="确认在左，取消在右?">
+			确认在左，取消在右?
 		</li>
-    	<li class="table_list_l table_list_l150">2013-01-09 11:13:22</li>
+    	<li class="table_list_l table_list_l150">2013-03-25 11:49:17</li>
     	<li class="table_list_l table_list_l120">新闻资讯</li>
 		<li class="table_list_l table_list_l100">admin</li>
 		<li class="table_list_l table_list_l80">233</li>

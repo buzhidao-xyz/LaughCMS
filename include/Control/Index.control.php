@@ -20,6 +20,25 @@ class IndexControl extends CommonControl
     //主页
     public function index()
     {
+        $ArticleList = $this->getAllArticle(2,5);
+        $this->assign("ArticleList", $ArticleList['data']);
+
+        $this->getHomeScrollImage();
+
         $this->display('index.html');
+    }
+
+    //获取轮播图片
+    public function getHomeScrollImage()
+    {
+        $HomeScrollIMageListCount = array();
+        $HomeScrollIMageList = M("Image")->getHomeScrollImage();
+
+        $count = count($HomeScrollIMageList);
+        for ($i= 1; $i<= $count; $i++) {
+            $HomeScrollIMageListCount[] = $i;
+        }
+        $this->assign("HomeScrollIMageListCount", $HomeScrollIMageListCount);
+        $this->assign("HomeScrollIMageList", $HomeScrollIMageList);
     }
 }

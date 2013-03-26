@@ -7,6 +7,8 @@ class PluginControl extends CommonControl
 		parent::__construct();
 	}
 
+    public function index(){}
+
     private function _newFileManage()
     {
         $dir = urldecode(q("dir"));

@@ -26,7 +26,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="controlRightTop"></li>
 	</ul>
 	<div id="controlContent">
-<div class="captitle"><h5>节点列表 【目前共有41条数据】</h5></div>
+<div class="captitle"><h5>节点列表 【目前共有44条数据】</h5></div>
 <ul class="table_list_title">
 	<li class="table_list_l table_list_l150">名称</li>
 	<li class="table_list_l table_list_l200">描述</li>
@@ -386,14 +386,14 @@ var JS_APPM = 'http://localhost:82/laugh';
     	</li>
     	    </ul>
         <ul class="table_list">
-		<li class="table_list_l table_list_l150">系统插件</li>
+		<li class="table_list_l table_list_l150">常规插件</li>
 		<li class="table_list_l table_list_l200" tooltip=1 title=""></li>
     	<li class="table_list_l table_list_l100"></li>
     	<li class="table_list_l table_list_l120"></li>
     	<li class="table_list_l table_list_l150">2013-01-24 11:45:25</li>
     	<li class="table_list_l table_list_l80">显</li>
     	    	<li class="table_list_l table_list_l100" accessStatus=1>
-    		<a href="javascript:;" name="modify" id="30" title="系统插件" remark="" groupid="5" pid="0" control="" action="" isshow="1">修改</a>&nbsp;&nbsp;
+    		<a href="javascript:;" name="modify" id="30" title="常规插件" remark="" groupid="5" pid="0" control="" action="" isshow="1">修改</a>&nbsp;&nbsp;
     		<a delurl="/laugh/admin/index.php?s=Node/deleteNode&id=30" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>
     	    </ul>

@@ -192,8 +192,8 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="table_list_l table_list_l350">
 						<span class="icon" style="background:url(themes/green/images/fileicon/php.gif) no-repeat;">route.php</span>
 					</li>
-    	<li class="table_list_l table_list_l150">2.52KB</li>
-    	<li class="table_list_l table_list_l150">2012-12-21 15:40:18</li>
+    	<li class="table_list_l table_list_l150">2.66KB</li>
+    	<li class="table_list_l table_list_l150">2013-03-19 16:12:25</li>
     	    	<li class="table_list_l table_list_l200" accessStatus=1>
     		    			<a name="fileEdit" href="/laugh/admin/index.php?s=Plugin/fileEdit&dir=.&filename=route.php">编辑</a>
     		    		<a name="fileRename" href="/laugh/admin/index.php?s=Plugin/fileRename&dir=.&filename=route.php">改名</a>

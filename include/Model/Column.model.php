@@ -39,24 +39,24 @@ class Column extends Base
 			$column['action'] = $column['action'] ? $column['action'] : 'index';
 
 			if (!$column['parentid']) {
-				if ($column['control'] == CONTROL && $column['action'] == ACTION) $column['navon'] = true;
+				// if ($column['control'] == CONTROL && $column['action'] == ACTION) $column['navon'] = true;
 				$data[] = $column;
 			} else {
 				foreach ($data as $k=>$d) {
 					if ($column['parentid'] == $d['id']) {
-						if ($column['control'] == CONTROL && $column['action'] == ACTION) $data[$k]['navon'] = true;
+						// if ($column['control'] == CONTROL && $column['action'] == ACTION) $data[$k]['navon'] = true;
 						$data[$k]['SubColumnList'][] = $column;
 					} else {
 						if (isset($d['SubColumnList'])&&!empty($d['SubColumnList'])) {
 							foreach ($d['SubColumnList'] as $k1=>$d1) {
 								if ($column['parentid'] == $d1['id']) {
-									if ($column['control'] == CONTROL && $column['action'] == ACTION) $data[$k]['navon'] = true;
+									// if ($column['control'] == CONTROL && $column['action'] == ACTION) $data[$k]['navon'] = true;
 									$data[$k]['SubColumnList'][$k1]['SubColumnList'][] = $column;
 								} else {
 									if (isset($d1['SubColumnList'])&&!empty($d1['SubColumnList'])) {
 										foreach ($d1['SubColumnList'] as $k2=>$d2) {
 											if ($column['parentid'] == $d2['id']) {
-												if ($column['control'] == CONTROL && $column['action'] == ACTION) $data[$k]['navon'] = true;
+												// if ($column['control'] == CONTROL && $column['action'] == ACTION) $data[$k]['navon'] = true;
 												$data[$k]['SubColumnList'][$k1]['SubColumnList'][$k2]['SubColumnList'][] = $column;
 											}
 										}
@@ -85,12 +85,25 @@ class Column extends Base
 	}
 
 	/**
-	 * 根据栏目id获取其所有子栏目id
-	 * @param $columnid int 栏目id
+	 * 根据栏目id获取其所有子栏目id 递归方法
+	 * @param $columnid mixed 栏目id
 	 */
-	public function getChildrenColumnID($columnid=null)
+	public function getChildrenColumnID($columnid=null,$data=array())
 	{
-		if (!$columnid) return array();
-		
+		if (empty($columnid)) return array();
+
+		$data = is_array($columnid) ? $columnid : array($columnid);
+		$where = is_array($columnid) ? array("parentid"=>array("in",$columnid)) : array("parentid"=>$columnid);
+
+		$columnids = array(); $return = array();
+		$columnList = T("Column")->where($where)->select();
+		if (is_array($columnList) && !empty($columnList)) {
+			foreach ($columnList as $d) {
+				$columnids[] = $d['id'];
+			}
+			$return = $this->getChildrenColumnID($columnids,$data);
+		}
+
+		return array_merge($data,$return);
 	}
 }

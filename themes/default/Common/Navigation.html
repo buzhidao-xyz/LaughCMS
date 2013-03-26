@@ -3,7 +3,7 @@
 <ul class="headerNavigation">
 	{foreach $ColumnList as $d}
 	<li>
-		<a href="__APP__/index.php?s={$d.control}/{$d.action}&columnid={$d.id}" class="{if isset($d.navon)&&$d.navon}navon{/if}">{$d.columnname}</a>
+		<a href="__APP__/index.php?s={$d.control}/{$d.action}&columnid={$d.id}" class="{if ($d.id==$Column.topid)||(!$Column.topid&&$d.id==1)}navon{/if}">{$d.columnname}</a>
 		{if isset($d.SubColumnList)&&!empty($d.SubColumnList)}
 		<ul class="SubNavigation">
 			{foreach $d.SubColumnList as $d1}

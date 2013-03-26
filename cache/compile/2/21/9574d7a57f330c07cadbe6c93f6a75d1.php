@@ -46,39 +46,39 @@ var JS_APP = '/laugh';
 <link type="text/css" rel="stylesheet" href="themes/default/style/navigation.css" media="screen">
 <ul class="headerNavigation">
 		<li>
-		<a href="/laugh/index.php?s=Index/index" class="">网站首页</a>
+		<a href="/laugh/index.php?s=Index/index&columnid=1" class="">网站首页</a>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Article/index" class="">新闻资讯</a>
+		<a href="/laugh/index.php?s=Article/index&columnid=2" class="">新闻资讯</a>
 				<ul class="SubNavigation">
 						<li>
-				<a href="/laugh/index.php?s=Article/index">子栏目一</a>
+				<a href="/laugh/index.php?s=Article/index&columnid=3">IT知识</a>
 							</li>
 						<li>
-				<a href="/laugh/index.php?s=Article/index">子栏目二</a>
+				<a href="/laugh/index.php?s=Article/index&columnid=4">网络知识</a>
 								<ul>
-										<li><a href="/laugh/index.php?s=Article/index">子子栏目一</a></li>
+										<li><a href="/laugh/index.php?s=Article/index&columnid=5">前端知识</a></li>
 									</ul>
 							</li>
 					</ul>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Product/index" class="navon">产品展示</a>
+		<a href="/laugh/index.php?s=Product/index&columnid=6" class="navon">产品展示</a>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Image/index" class="">客户案例</a>
+		<a href="/laugh/index.php?s=Image/index&columnid=7" class="">客户案例</a>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Download/index" class="">下载中心</a>
+		<a href="/laugh/index.php?s=Download/index&columnid=8" class="">下载中心</a>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Cooperate/index" class="">招贤纳士</a>
+		<a href="/laugh/index.php?s=Cooperate/index&columnid=9" class="">招贤纳士</a>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Public/AboutUS" class="">关于我们</a>
+		<a href="/laugh/index.php?s=Public/AboutUS&columnid=10" class="">关于我们</a>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Public/ContactUS" class="">联系我们</a>
+		<a href="/laugh/index.php?s=Public/ContactUS&columnid=11" class="">联系我们</a>
 			</li>
 	</ul>
 <script type="text/javascript" src="public/plugin/superfish/js/hoverIntent.js"></script>
@@ -135,7 +135,7 @@ $(document).ready(function (){
 		<a href="javascript:;" target="_blank"><img src="themes/default/images/ad_banner.png" width="1000" height="80" /></a>
 	</div>
 	<div class="CurPosition mtop5">
-		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=article">产品展示</a>
+		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=Product/index&columnid=6">产品展示</a>
 	</div>
 	<div id="CenterShow" class="block mtop5">
 		<div id="mainBlock" class="fleft w740">
@@ -150,23 +150,23 @@ $(document).ready(function (){
 						<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
 					</ul>
 					<div id="compage" class="pagination">
-		<a class="pageprev graya fleft" href="/laugh/index.php?s=Product%2Findex&page=1">首页</a>
+		<a class="pageprev graya fleft" href="/laugh/index.php?s=Product%2Findex&columnid=6&page=1">首页</a>
 		<a class="pageprev graya fleft" href="javascript:;">上一页</a> 
 	<span class="pageList none">
 									<span class="current fleft" href="" style=""> 1 </span>
-								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=Product%2Findex&page=2"> 2 </a>
-								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=Product%2Findex&page=3"> 3 </a>
-								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=Product%2Findex&page=4"> 4 </a>
-								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=Product%2Findex&page=5"> 5 </a>
-								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=Product%2Findex&page=6"> 6 </a>
-								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=Product%2Findex&page=7"> 7 </a>
-								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=Product%2Findex&page=8"> 8 </a>
-								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=Product%2Findex&page=9"> 9 </a>
-								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=Product%2Findex&page=10"> 10 </a>
-								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=Product%2Findex&page=11"> 11 </a>
+								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=Product%2Findex&columnid=6&page=2"> 2 </a>
+								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=Product%2Findex&columnid=6&page=3"> 3 </a>
+								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=Product%2Findex&columnid=6&page=4"> 4 </a>
+								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=Product%2Findex&columnid=6&page=5"> 5 </a>
+								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=Product%2Findex&columnid=6&page=6"> 6 </a>
+								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=Product%2Findex&columnid=6&page=7"> 7 </a>
+								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=Product%2Findex&columnid=6&page=8"> 8 </a>
+								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=Product%2Findex&columnid=6&page=9"> 9 </a>
+								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=Product%2Findex&columnid=6&page=10"> 10 </a>
+								<a class="jumpPageBtn fleft" href="/laugh/index.php?s=Product%2Findex&columnid=6&page=11"> 11 </a>
 				</span>
-	<a class="pagenext graya fleft" href="/laugh/index.php?s=Product%2Findex&page=2">下一页</a>
-		<a class="pageprev graya fleft" href="/laugh/index.php?s=Product%2Findex&page=12">末页</a>
+	<a class="pagenext graya fleft" href="/laugh/index.php?s=Product%2Findex&columnid=6&page=2">下一页</a>
+		<a class="pageprev graya fleft" href="/laugh/index.php?s=Product%2Findex&columnid=6&page=12">末页</a>
 	</div>
 
 <script>

@@ -75,11 +75,8 @@ class Article extends Base
 		$articleIndex = $this->getArticleContent($articleid);
 		$articleInfo['content'] = $articleIndex[0]['content'];
 
-		$prevarticle = $this->getPrevArticle($columnid,$articleid);
-		$articleInfo['prev'] = $prevarticle;
-		$nextarticle = $this->getNextArticle($columnid,$articleid);
-		$articleInfo['next'] = $nextarticle;
-
+		$articleInfo['prev'] = $this->getPrevArticle($columnid,$articleid);
+		$articleInfo['next'] = $this->getNextArticle($columnid,$articleid);
 		return $articleInfo;
 	}
 
@@ -93,11 +90,13 @@ class Article extends Base
 
 		$where = array();
 
-		$columnids = array();
+		$columnids = M("Column")->getChildrenColumnID($columnid);
+
 		$where['columnid'] = array("in", $columnids);
 		$where['id'] = array("lt",$articleid);
-		$article = T("Article")->where($where)->order("id","asc")->find();
-		dump($columnid);exit;
+		$article = T("Article")->where($where)->order("id","desc")->find();
+
+		return $article;
 	}
 
 	/**
@@ -106,7 +105,16 @@ class Article extends Base
 	 */
 	public function getNextArticle($columnid=null,$articleid=null)
 	{
-		if (!$articleid) return false;
+		if (empty($columnid)||!$articleid) return false;
 
+		$where = array();
+
+		$columnids = M("Column")->getChildrenColumnID($columnid);
+
+		$where['columnid'] = array("in", $columnids);
+		$where['id'] = array("gt",$articleid);
+		$article = T("Article")->where($where)->order("id","asc")->find();
+
+		return $article;
 	}
 }

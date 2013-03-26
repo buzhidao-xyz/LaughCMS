@@ -139,8 +139,9 @@ class ColumnControl extends CommonControl
 			'updatetime'  => TIMESTAMP
 		);
 
-		$return = M("Column")->addColumn($data);
-		if ($return) {
+		$columnid = M("Column")->addColumn($data);
+		if ($columnid) {
+			if (!$topid) M("Column")->updateColumn($columnid,array("topid"=>$columnid));
 			$this->display("Common/success.html");
 		} else {
 			$this->display("Common/error.html");
@@ -261,6 +262,7 @@ class ColumnControl extends CommonControl
 
 		$return = M("Column")->updateColumn($columnid,$data);
 		if ($return) {
+			if (!$topid) M("Column")->updateColumn($columnid,array("topid"=>$columnid));
 			$this->display("Common/success.html");
 		} else {
 			$this->display("Common/error.html");

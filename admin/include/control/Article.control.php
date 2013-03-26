@@ -195,6 +195,10 @@ class ArticleControl extends CommonControl
 			);
 			$return = M('Article')->saveArticleContent($arcdata);
 			if ($return) {
+				$NextOperation = array(
+					array('name'=>'查看修改', 'link'=>__APP__.'/index.php?s=Article/upArticle&articleid='.$articleid)
+				);
+				$this->assign("NextOperation", $NextOperation);
 				$this->display("Common/success.html");
 			} else {
 				$this->display("Common/error.html");
@@ -236,6 +240,10 @@ class ArticleControl extends CommonControl
 			);
 			$return = M("Article")->upArticleContent($articleID, $data);
 			if ($return) {
+				$NextOperation = array(
+					array('name'=>'查看修改', 'link'=>__APP__.'/index.php?s=Article/upArticle&articleid='.$articleID)
+				);
+				$this->assign("NextOperation", $NextOperation);
 				$this->display("Common/success.html");
 			} else {
 				$this->display("Common/error.html");

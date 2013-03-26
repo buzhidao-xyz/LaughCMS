@@ -25,11 +25,9 @@
 			</div>
 			<div class="boxBlockBody h170">
 				<ul class="articleList">
-					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
-					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
-					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
-					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
-					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
+					{foreach $ArticleList as $d}
+					<li><a href="__APP__/index.php?s=article/view&columnid={$d.columnid}&articleid={$d.id}">{$d.title}</a></li>
+					{/foreach}
 				</ul>
 			</div>
 		</div>

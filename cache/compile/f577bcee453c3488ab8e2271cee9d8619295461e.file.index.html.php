@@ -1,25 +1,30 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-03-22 09:28:09
+<?php /* Smarty version Smarty-3.1.12, created on 2013-03-26 15:06:05
          compiled from "C:\xampp\htdocs\laugh\themes\default\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:30681514bb3a90a3a57-14238746%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:9922515148dde583b4-82938273%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'f577bcee453c3488ab8e2271cee9d8619295461e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\index.html',
-      1 => 1359940001,
+      1 => 1364267573,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '30681514bb3a90a3a57-14238746',
+  'nocache_hash' => '9922515148dde583b4-82938273',
   'function' => 
   array (
   ),
+  'variables' => 
+  array (
+    'ArticleList' => 0,
+    'd' => 0,
+  ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_514bb3a9108213_03287472',
+  'unifunc' => 'content_515148ddeead37_60939215',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_514bb3a9108213_03287472')) {function content_514bb3a9108213_03287472($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_515148ddeead37_60939215')) {function content_515148ddeead37_60939215($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate ("Common/Top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
@@ -50,11 +55,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			</div>
 			<div class="boxBlockBody h170">
 				<ul class="articleList">
-					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
-					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
-					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
-					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
-					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
+					<?php  $_smarty_tpl->tpl_vars['d'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['d']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['ArticleList']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['d']->key => $_smarty_tpl->tpl_vars['d']->value){
+$_smarty_tpl->tpl_vars['d']->_loop = true;
+?>
+					<li><a href="__APP__/index.php?s=article/view&columnid=<?php echo $_smarty_tpl->tpl_vars['d']->value['columnid'];?>
+&articleid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['d']->value['title'];?>
+</a></li>
+					<?php } ?>
 				</ul>
 			</div>
 		</div>

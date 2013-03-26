@@ -1,29 +1,30 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-03-21 17:01:03
+<?php /* Smarty version Smarty-3.1.12, created on 2013-03-26 09:52:00
          compiled from "C:\xampp\htdocs\laugh\themes\default\Article\article.html" */ ?>
-<?php /*%%SmartyHeaderCode:27481514acc4f2b4633-63836766%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:104515150ff4035cb23-63795594%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '9d058c71fe0a49d721c3548d523f2c22f20e8e7a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\Article\\article.html',
-      1 => 1363854841,
+      1 => 1364182054,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '27481514acc4f2b4633-63836766',
+  'nocache_hash' => '104515150ff4035cb23-63795594',
   'function' => 
   array (
   ),
   'variables' => 
   array (
     'articleInfo' => 0,
+    'columnid' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_514acc4f2f47a7_05959876',
+  'unifunc' => 'content_5150ff40410e47_68162058',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_514acc4f2f47a7_05959876')) {function content_514acc4f2f47a7_05959876($_smarty_tpl) {?><div class="articleTpl">
+<?php if ($_valid && !is_callable('content_5150ff40410e47_68162058')) {function content_5150ff40410e47_68162058($_smarty_tpl) {?><div class="articleTpl">
 	<h2 class="title"><?php echo $_smarty_tpl->tpl_vars['articleInfo']->value['title'];?>
 </h2>
 	<div class="status">
@@ -51,11 +52,31 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<div class="about">
 		<dl>
 			<dt>上一篇:</dt>
-			<dd><a href="javascript:;">新手使用MetInfo建站步骤？</a></dd>
+			<dd>
+				<?php if (!empty($_smarty_tpl->tpl_vars['articleInfo']->value['prev'])){?>
+				<a href="__APP__/index.php?s=article/view&columnid=<?php echo $_smarty_tpl->tpl_vars['columnid']->value;?>
+&articleid=<?php echo $_smarty_tpl->tpl_vars['articleInfo']->value['prev']['id'];?>
+" title="<?php echo $_smarty_tpl->tpl_vars['articleInfo']->value['prev']['title'];?>
+"><?php echo $_smarty_tpl->tpl_vars['articleInfo']->value['prev']['title'];?>
+</a>
+				<?php }else{ ?>
+				<font color="grey">没有了！</font>
+				<?php }?>
+			</dd>
 		</dl>
 		<dl>
 			<dt>下一篇:</dt>
-			<dd><a href="javascript:;">新手使用MetInfo建站步骤？</a></dd>
+			<dd>
+				<?php if (!empty($_smarty_tpl->tpl_vars['articleInfo']->value['next'])){?>
+				<a href="__APP__/index.php?s=article/view&columnid=<?php echo $_smarty_tpl->tpl_vars['columnid']->value;?>
+&articleid=<?php echo $_smarty_tpl->tpl_vars['articleInfo']->value['next']['id'];?>
+" title="<?php echo $_smarty_tpl->tpl_vars['articleInfo']->value['next']['title'];?>
+"><?php echo $_smarty_tpl->tpl_vars['articleInfo']->value['next']['title'];?>
+</a>
+				<?php }else{ ?>
+				<font color="grey">没有了！</font>
+				<?php }?>
+			</dd>
 		</dl>
 	</div>
 </div><?php }} ?>

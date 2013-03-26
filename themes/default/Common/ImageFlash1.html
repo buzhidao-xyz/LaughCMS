@@ -1,14 +1,14 @@
 <link media="screen" href="public/plugin/xslider/xslider.css" rel="stylesheet" type="text/css">
 <div id="SImageContainer" class="slider">
 	<div class="conbox">
-		<div><a href="javascript:;" title="title1"><img src="themes/default/images/flash/flash_img1.jpg" alt="Slide 1"></a></div>
-		<div><a href="javascript:;" title="title1"><img src="themes/default/images/flash/flash_img2.jpg" alt="Slide 1"></a></div>
-		<div><a href="javascript:;" title="title1"><img src="themes/default/images/flash/flash_img3.jpg" alt="Slide 1"></a></div>
+		{foreach $HomeScrollIMageList as $d}
+		<div><a href="{$d.link}" title="{$d.title}"><img src="__APP__{$d.path}" alt="{$d.title}" width="730" height="300"></a></div>
+		{/foreach}
 	</div>
 	<div class="switcher">
-		<a href="#" class="cur">1</a>
-		<a href="#">2</a>
-		<a href="#">3</a>
+		{foreach $HomeScrollIMageListCount as $d}
+		<a href="javascript:;" {if $d==1}class="cur"{/if}>{$d}</a>
+		{/foreach}
 	</div>
 </div><!--slider end-->
 <script type="text/javascript" src="public/plugin/xslider/jquery.Xslider.js"></script>

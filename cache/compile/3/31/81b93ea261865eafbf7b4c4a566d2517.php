@@ -53,6 +53,9 @@ var JS_APP = '/laugh';
 				<ul class="SubNavigation">
 						<li>
 				<a href="/laugh/index.php?s=Article/index&columnid=3">IT知识</a>
+								<ul>
+										<li><a href="/laugh/index.php?s=Index/index&columnid=12">PHP知识</a></li>
+									</ul>
 							</li>
 						<li>
 				<a href="/laugh/index.php?s=Article/index&columnid=4">网络知识</a>
@@ -135,15 +138,15 @@ $(document).ready(function (){
 		<link media="screen" href="public/plugin/xslider/xslider.css" rel="stylesheet" type="text/css">
 <div id="SImageContainer" class="slider">
 	<div class="conbox">
-		<div><a href="javascript:;" title="title1"><img src="themes/default/images/flash/flash_img1.jpg" alt="Slide 1"></a></div>
-		<div><a href="javascript:;" title="title1"><img src="themes/default/images/flash/flash_img2.jpg" alt="Slide 1"></a></div>
-		<div><a href="javascript:;" title="title1"><img src="themes/default/images/flash/flash_img3.jpg" alt="Slide 1"></a></div>
-	</div>
+				<div><a href="#" title="剑侠情缘叁明教"><img src="/laugh/Uploads/ScrollImage/1364279943_qg83i3_3808.jpg" alt="剑侠情缘叁明教" width="730" height="300"></a></div>
+				<div><a href="#" title="绿色屏保"><img src="/laugh/Uploads/ScrollImage/1364280038_2l6n4e_8019.jpg" alt="绿色屏保" width="730" height="300"></a></div>
+				<div><a href="#" title="豪车"><img src="/laugh/Uploads/ScrollImage/1364280067_duvmp8_5013.jpg" alt="豪车" width="730" height="300"></a></div>
+			</div>
 	<div class="switcher">
-		<a href="#" class="cur">1</a>
-		<a href="#">2</a>
-		<a href="#">3</a>
-	</div>
+				<a href="javascript:;" class="cur">1</a>
+				<a href="javascript:;" >2</a>
+				<a href="javascript:;" >3</a>
+			</div>
 </div><!--slider end-->
 <script type="text/javascript" src="public/plugin/xslider/jquery.Xslider.js"></script>
 <script type="text/javascript">
@@ -185,12 +188,12 @@ $("#SImageContainer").Xslider({
 			</div>
 			<div class="boxBlockBody h170">
 				<ul class="articleList">
-					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
-					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
-					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
-					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
-					<li><a href="javascript:;">LaughCMS V1.00 UTF-8 正式版发布了欢迎下载</a></li>
-				</ul>
+										<li><a href="/laugh/index.php?s=article/view&columnid=12&articleid=7">PHP实现异步操作</a></li>
+										<li><a href="/laugh/index.php?s=article/view&columnid=3&articleid=6">PHP基本点知识</a></li>
+										<li><a href="/laugh/index.php?s=article/view&columnid=5&articleid=5">页面(PAGE)标记(TAGS)</a></li>
+										<li><a href="/laugh/index.php?s=article/view&columnid=3&articleid=4">MongoDB:下一代MySQL？</a></li>
+										<li><a href="/laugh/index.php?s=article/view&columnid=2&articleid=3">企业用网站进行网络宣传的优势</a></li>
+									</ul>
 			</div>
 		</div>
 		<div class="boxBlock fleft w640 mleft10">

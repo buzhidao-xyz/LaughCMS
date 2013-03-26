@@ -4,7 +4,11 @@
 <div class="opinfo">
 	<div class="opinfo_msg">操作成功！</div>
 	<div class="opinfo_Link">
-		
+		{if isset($NextOperation) && is_array($NextOperation) && !empty($NextOperation)}
+		{foreach $NextOperation as $d}
+		<a href="{$d.link}">{$d.name}</a>&nbsp;&nbsp;&nbsp;
+		{/foreach}
+		{/if}
 	</div>
 </div>
 <style type="text/css">

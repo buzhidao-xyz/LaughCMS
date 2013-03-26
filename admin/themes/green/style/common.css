@@ -146,6 +146,9 @@ select {
     text-align: center;
     border: 0;
 }
+.inputfile {
+    height: 22px;
+}
 .btnyellow2 {
     width:60px;
     color: #6F590A;

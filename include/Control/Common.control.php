@@ -15,6 +15,8 @@ class CommonControl extends BaseControl
 
     //栏目id
     protected $_columnid;
+    //栏目内容
+    protected $_Column;
 
     //初始化构造函数
     public function __construct()
@@ -25,6 +27,8 @@ class CommonControl extends BaseControl
         $this->ColumnList();
         //获取栏目详情
         $this->getColumn();
+        //计算当前目录
+        $this->getCurrentPosition();
 
         $this->assign("control", $this->_control);
         $this->assign("action", $this->_action);
@@ -78,6 +82,45 @@ class CommonControl extends BaseControl
     {
         $columnid = $this->_getColumnID();
         $Column = M("Column")->getColumn($columnid);
+        $this->_Column = $Column;
         $this->assign("Column", $Column);
+    }
+
+    //计算当前目录
+    public function getCurrentPosition()
+    {
+        $CurrentPosition = '<a href="'.__APP__.'">首页</a>';
+        $Position = ' > <a href="'.__APP__.'/index.php?s='.$this->_Column['control'].'/'.$this->_Column['action'].'&columnid='.$this->_Column['id'].'">'.$this->_Column['columnname'].'</a>';
+
+        $Position = $this->getParentColumnPosition($this->_Column['parentid'],$Position);
+
+        $CurrentPosition .= $Position;
+        $this->assign("CurrentPosition", $CurrentPosition);
+    }
+
+    //获取父栏目当前位置
+    public function getParentColumnPosition($columnid=null,$Position=null)
+    {
+        $Column = M("Column")->getColumn($columnid);
+        if (!empty($Column)) {
+            $Position = ' > <a href="'.__APP__.'/index.php?s='.$Column['control'].'/'.$Column['action'].'&columnid='.$Column['id'].'">'.$Column['columnname'].'</a>'.$Position;
+            if ($Column['parentid']) $Position = $this->getParentColumnPosition($Column['parentid'],$Position);
+        }
+
+        return $Position;
+    }
+
+    /**
+     * 获取某个栏目下面的所有文档
+     * @param $columnid int 栏目id
+     * @param $num int 要获取的条数
+     */
+    public function getAllArticle($columnid=null,$num=0)
+    {
+        $columnid = $columnid ? $columnid : $this->_columnid;
+        $columnids = M("Column")->getChildrenColumnID($columnid);
+
+        $where = empty($columnids) ? array() : array("columnid"=>array("in",$columnids));
+        return M("Article")->getArticle(null,0,$num,$where,1);
     }
 }
