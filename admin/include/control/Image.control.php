@@ -59,6 +59,37 @@ class ImageControl extends CommonControl
 		}
 	}
 
+	//修改首页轮播图片
+	public function updateHomeScrollImage()
+	{
+		$this->assign("accessStatus",1);
+
+		$id = q('id');
+		$HomeScrollImageInfo = M("Image")->getHomeScrollImage($id);
+		$HomeScrollImageInfo = $HomeScrollImageInfo['data'][0];
+		$this->assign("HomeScrollImageInfo",$HomeScrollImageInfo);
+
+		$this->display("Image/updateHomeScrollImage.html");
+	}
+
+	//保存修改
+	public function saveUpdateHomeScrollImage()
+	{
+		$id = q('id');
+		$path = $this->_getImage();
+		$title = q("title");
+		$link = q("link");
+
+		$data = array(
+			'title' => $title,
+			'link'  => $link
+		);
+		if ($path) $data['path'] = $path;
+
+		$return = M("Image")->UpdateHomeScrollImage($id,$data);
+		$this->showMessage('图片修改成功！',1);
+	}
+
 	//修改首页轮播图片状态
 	public function UpdateHomeScrollImageStatus()
 	{
@@ -66,11 +97,23 @@ class ImageControl extends CommonControl
 		$isshow = q('isshow');
 
 		$data = array('isshow'=>$isshow);
-		$return = M("Image")->UpdateHomeScrollImageStatus($id,$data);
+		$return = M("Image")->UpdateHomeScrollImage($id,$data);
 		if ($return) {
 			$this->ajaxReturn(0,"状态切换成功！");
 		} else {
 			$this->ajaxReturn(1,"状态切换失败！");
+		}
+	}
+
+	//删除首页轮播图片状态
+	public function deleteHomeScrollImage()
+	{
+		$id = q('id');
+		$return = M("Image")->deleteHomeScrollImage($id);
+		if ($return) {
+			$this->ajaxReturn(0,"删除成功！");
+		} else {
+			$this->ajaxReturn(1,"删除失败！");
 		}
 	}
 }

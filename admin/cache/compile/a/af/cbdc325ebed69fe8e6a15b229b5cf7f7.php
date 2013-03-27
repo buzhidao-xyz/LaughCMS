@@ -29,7 +29,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 <div class="formContainer" accessStatus=1>
 	<div class="formtitle"><h5>更新栏目信息</h5></div>
 	<form name="newcolumnform" action="/laugh/admin/index.php?s=Column/saveUpdateColumn" enctype="multipart/form-data" method="post" class="newform">
-		<input type="hidden" name="columnid" value="5" />
+		<input type="hidden" name="columnid" value="10" />
 		<ul class="formbody">
 			<div class="shtabtitlec">
 				<div class="shtabtitle shtabcurrent"><a href="javascript:;"><span>常规内容</span></a></div>
@@ -41,16 +41,16 @@ var JS_APPM = 'http://localhost:82/laugh';
 				<li class="formblock">
 					<span>上级栏目: </span>
 					<select id="select" name="parentid" style="width:230px;">
-						<option value="">|-请选择栏目...</option><option value="1">&nbsp;&nbsp;|-网站首页</option><option value="2">&nbsp;&nbsp;|-新闻资讯</option><option value="3" >&nbsp;&nbsp;&nbsp;&nbsp;|-IT知识</option><option value="4" >&nbsp;&nbsp;&nbsp;&nbsp;|-网络知识</option><option value="5" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-子子栏目一</option><option value="6">&nbsp;&nbsp;|-产品展示</option><option value="7">&nbsp;&nbsp;|-客户案例</option><option value="8">&nbsp;&nbsp;|-下载中心</option><option value="9">&nbsp;&nbsp;|-招贤纳士</option><option value="10">&nbsp;&nbsp;|-关于我们</option><option value="11">&nbsp;&nbsp;|-联系我们</option>
+						<option value="">|-请选择栏目...</option><option value="1">&nbsp;&nbsp;|-网站首页</option><option value="2">&nbsp;&nbsp;|-新闻资讯</option><option value="3" >&nbsp;&nbsp;&nbsp;&nbsp;|-IT知识</option><option value="12" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-PHP知识</option><option value="4" >&nbsp;&nbsp;&nbsp;&nbsp;|-网络知识</option><option value="5" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-前端知识</option><option value="6">&nbsp;&nbsp;|-产品展示</option><option value="7">&nbsp;&nbsp;|-客户案例</option><option value="8">&nbsp;&nbsp;|-下载中心</option><option value="9">&nbsp;&nbsp;|-招贤纳士</option><option value="10">&nbsp;&nbsp;|-关于我们</option><option value="11">&nbsp;&nbsp;|-联系我们</option>
 					</select>
 				</li>
 				<li class="formblock">
 					<span>栏目名称:</span>
-					<input type="text" name="columnname" value="子子栏目一" class="input w200" />
+					<input type="text" name="columnname" value="关于我们" class="input w200" />
 				</li>
 				<li class="formblock">
 					<span>排列顺序:</span>
-					<input type="text" name="sortrank" value="1" class="input w100" />
+					<input type="text" name="sortrank" value="7" class="input w100" />
 				</li>
 				<li class="formautoblock">
 					<span>栏目属性:</span>
@@ -116,7 +116,7 @@ var JS_APPM = 'http://localhost:82/laugh';
     	}
     });
     $("select[name=parentid]").find("option").each(function (){
-    	if ($(this).val()=="4") $(this).attr("selected",true);
+    	if ($(this).val()=="0") $(this).attr("selected",true);
     });
 </script>
     </div>

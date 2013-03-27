@@ -24,13 +24,13 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<h5>系统提示信息</h5>
 	</div>
 	<div class="boxMessage">
-		<div class="message"><font color="green">图片保存成功！</font></div>
+		<div class="message"><font color="green">图片修改成功！</font></div>
 		<div class="jump">
 			页面即将自动跳转 
 			等待时间 <b id="wait">3</b> 秒
 		</div>
 		<div class="jumpUrl">
-			<a id="href" href="http://localhost:82/laugh/admin/index.php?s=Image/HomeScrollImage">如果你的浏览器没反应，请点击这里...</a>
+			<a id="href" href="http://localhost:82/laugh/admin/index.php?s=Image/UpdateHomeScrollImage&id=1">如果你的浏览器没反应，请点击这里...</a>
 		</div>
 	</div>
 </div>

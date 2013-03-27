@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-03-26 10:49:57
+<?php /* Smarty version Smarty-3.1.12, created on 2013-03-27 16:15:19
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:1574551510cd5cf5fe3-08706238%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:84195152aa97d86b87-86920927%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,15 +11,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1574551510cd5cf5fe3-08706238',
+  'nocache_hash' => '84195152aa97d86b87-86920927',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_51510cd5d4c6e0_79682766',
+  'unifunc' => 'content_5152aa97dda019_89703868',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51510cd5d4c6e0_79682766')) {function content_51510cd5d4c6e0_79682766($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_5152aa97dda019_89703868')) {function content_5152aa97dda019_89703868($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <link rel="stylesheet" type="text/css" href="themes/green/style/frame.css" />
 <link rel="stylesheet" type="text/css" href="themes/green/style/header.css" />

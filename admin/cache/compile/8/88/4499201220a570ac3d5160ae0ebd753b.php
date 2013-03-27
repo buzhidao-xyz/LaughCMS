@@ -27,7 +27,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 	</ul>
 	<div id="controlContent">
 <div class="formContainer" accessStatus=1>
-	<div class="formtitle"><h5>新组节点表单</h5></div>
+	<div class="formtitle"><h5>添加首页轮播图片</h5></div>
 	<form name="newform" action="/laugh/admin/index.php?s=Image/saveHomeScrollImage" method="post" class="newform" enctype="multipart/form-data">
 		<ul class="formbody">
 			<li class="formblock">
@@ -64,8 +64,8 @@ var JS_APPM = 'http://localhost:82/laugh';
 				<li class="table_list_l table_list_l200" accessStatus=1>
 			<a name="imageview" href="http://localhost:82/laugh/Uploads/ScrollImage/1364279943_qg83i3_3808.jpg">查看图片</a>
 			<a href="/laugh/admin/index.php?s=Image/UpdateHomeScrollImage&id=1">修改</a>
-			<a href="/laugh/admin/index.php?s=Image/UpdateHomeScrollImageStatus&id=1&isshow=0">显示/隐藏</a>
-			<a href="/laugh/admin/index.php?s=Image/DeleteHomeScrollImage&id=1">删除</a>
+			<a name="ajax" href="/laugh/admin/index.php?s=Image/UpdateHomeScrollImageStatus&id=1&isshow=0">显示/隐藏</a>
+			<a name="ajax" msg="确定删除吗？" href="/laugh/admin/index.php?s=Image/DeleteHomeScrollImage&id=1">删除</a>
 		</li>
 			</ul>
 		<ul class="table_list">
@@ -75,8 +75,8 @@ var JS_APPM = 'http://localhost:82/laugh';
 				<li class="table_list_l table_list_l200" accessStatus=1>
 			<a name="imageview" href="http://localhost:82/laugh/Uploads/ScrollImage/1364280038_2l6n4e_8019.jpg">查看图片</a>
 			<a href="/laugh/admin/index.php?s=Image/UpdateHomeScrollImage&id=2">修改</a>
-			<a href="/laugh/admin/index.php?s=Image/UpdateHomeScrollImageStatus&id=2&isshow=0">显示/隐藏</a>
-			<a href="/laugh/admin/index.php?s=Image/DeleteHomeScrollImage&id=2">删除</a>
+			<a name="ajax" href="/laugh/admin/index.php?s=Image/UpdateHomeScrollImageStatus&id=2&isshow=0">显示/隐藏</a>
+			<a name="ajax" msg="确定删除吗？" href="/laugh/admin/index.php?s=Image/DeleteHomeScrollImage&id=2">删除</a>
 		</li>
 			</ul>
 		<ul class="table_list">
@@ -86,8 +86,8 @@ var JS_APPM = 'http://localhost:82/laugh';
 				<li class="table_list_l table_list_l200" accessStatus=1>
 			<a name="imageview" href="http://localhost:82/laugh/Uploads/ScrollImage/1364280067_duvmp8_5013.jpg">查看图片</a>
 			<a href="/laugh/admin/index.php?s=Image/UpdateHomeScrollImage&id=3">修改</a>
-			<a href="/laugh/admin/index.php?s=Image/UpdateHomeScrollImageStatus&id=3&isshow=0">显示/隐藏</a>
-			<a href="/laugh/admin/index.php?s=Image/DeleteHomeScrollImage&id=3">删除</a>
+			<a name="ajax" href="/laugh/admin/index.php?s=Image/UpdateHomeScrollImageStatus&id=3&isshow=0">显示/隐藏</a>
+			<a name="ajax" msg="确定删除吗？" href="/laugh/admin/index.php?s=Image/DeleteHomeScrollImage&id=3">删除</a>
 		</li>
 			</ul>
 		</div>
@@ -95,9 +95,20 @@ var JS_APPM = 'http://localhost:82/laugh';
 <script type="text/javascript" src="public/plugin/colorbox/jquery.colorbox.js"></script>
 <script type="text/javascript">
 $(document).ready(function (){
+$("form[name=newform]").submit(function (){
+	if (!$("input[name=path]").val()) {
+		alert("请选择图片！");
+		return false;
+	}
+	if (!$("input[name=link]").val()) {
+		alert("请填写链接！");
+		return false;
+	}
+});
 var ImageClass = function (){
 	var Obj = {
-		imageview: $("a[name=imageview]")
+		imageview: $("a[name=imageview]"),
+		updatestatus: $("a[name=updatestatus]")
 	}
 	Obj.imageview.colorbox();
 }

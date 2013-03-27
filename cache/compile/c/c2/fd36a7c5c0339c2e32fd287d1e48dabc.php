@@ -46,13 +46,16 @@ var JS_APP = '/laugh';
 <link type="text/css" rel="stylesheet" href="themes/default/style/navigation.css" media="screen">
 <ul class="headerNavigation">
 		<li>
-		<a href="/laugh/index.php?s=Index/index&columnid=1" class="">网站首页</a>
+		<a href="/laugh/index.php?s=Index/index&columnid=1" class="navon">网站首页</a>
 			</li>
 		<li>
 		<a href="/laugh/index.php?s=Article/index&columnid=2" class="">新闻资讯</a>
 				<ul class="SubNavigation">
 						<li>
 				<a href="/laugh/index.php?s=Article/index&columnid=3">IT知识</a>
+								<ul>
+										<li><a href="/laugh/index.php?s=Index/index&columnid=12">PHP知识</a></li>
+									</ul>
 							</li>
 						<li>
 				<a href="/laugh/index.php?s=Article/index&columnid=4">网络知识</a>
@@ -142,7 +145,6 @@ $(document).ready(function (){
 			<div class="boxBlock">
 				<div class="boxBlockTitle">
 					<span class="title">CTI融合通信专业资讯网</span>
-					<!-- <span class="link"><a href="javascript:;">更多>></a></span> -->
 				</div>
 				<div class="boxBlockBody">
 					<div class="contentBlock">

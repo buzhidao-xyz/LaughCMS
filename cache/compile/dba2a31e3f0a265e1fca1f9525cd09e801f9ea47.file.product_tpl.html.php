@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-03-25 17:11:58
+<?php /* Smarty version Smarty-3.1.12, created on 2013-03-27 16:29:06
          compiled from "C:\xampp\htdocs\laugh\themes\default\Product\product_tpl.html" */ ?>
-<?php /*%%SmartyHeaderCode:783515014de770334-42453105%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:288895152add2e15e17-42447663%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,15 +11,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '783515014de770334-42453105',
+  'nocache_hash' => '288895152add2e15e17-42447663',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_515014de799b63_58355223',
+  'unifunc' => 'content_5152add2e748d1_09797360',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_515014de799b63_58355223')) {function content_515014de799b63_58355223($_smarty_tpl) {?><div class="productTpl">
+<?php if ($_valid && !is_callable('content_5152add2e748d1_09797360')) {function content_5152add2e748d1_09797360($_smarty_tpl) {?><div class="productTpl">
 	<h2 class="title">CTI融合通信专业资讯网</h2>
 	<div class="status">
 		<span class="title">点击次数:</span>

@@ -36,7 +36,6 @@ var JS_APPM = 'http://localhost:82/laugh';
 	<li class="table_list_l table_list_l100">文档作者</li>
 	<li class="table_list_l table_list_l80">点击数</li>
 	<li class="table_list_l table_list_l80">评论数</li>
-		<li class="table_list_l table_list_l120" accessStatus=1>操作</li>
 	</ul>
 <div class="contentTableList">
         <ul class="table_list"><li class="table_list_center">空</li></ul>

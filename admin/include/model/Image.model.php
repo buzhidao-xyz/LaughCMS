@@ -25,6 +25,7 @@ class Image extends Base
 	public function getHomeScrollImage($id=null,$where=array())
 	{
 		if ($id) $where['id'] = $id;
+		$where['isdelete'] = 0;
 
 		$total = T("scrollimage")->where($where)->count();
 		$data = T("scrollimage")->where($where)->select();
@@ -32,9 +33,17 @@ class Image extends Base
 		return array("total"=>$total,"data"=>$data);
 	}
 
-	//切换首页轮播图片状态
-	public function UpdateHomeScrollImageStatus($id=null,$data=array())
+	//保存修改首页轮播图片
+	public function UpdateHomeScrollImage($id=null,$data=array())
 	{
-		
+		if (!$id) return false;
+		return T("scrollimage")->where(array("id"=>$id))->update($data);
+	}
+
+	//删除首页轮播图片
+	public function deleteHomeScrollImage($id=null)
+	{
+		if (!$id) return false;
+		return T("scrollimage")->where(array("id"=>$id))->update(array("isdelete"=>1));
 	}
 }

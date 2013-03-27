@@ -5,11 +5,10 @@
  */
 class CommonControl extends BaseControl
 {
+    static protected $_Control = 'Common';
+
     //用户权限
     protected $userAccess;
-
-    //缓存当前访问的控制器名
-    static protected $_control;
 
     //分页 每页显示数据数
     protected $_pagesize = 30;
@@ -25,6 +24,8 @@ class CommonControl extends BaseControl
 
         $this->getUserAccess();
         $this->setUserAccess();
+
+        $this->assign("Control", self::$_Control);
     }
 
     //获取用户权限信息

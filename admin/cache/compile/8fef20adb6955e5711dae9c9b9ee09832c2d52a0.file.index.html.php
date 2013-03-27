@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-03-26 11:25:47
+<?php /* Smarty version Smarty-3.1.12, created on 2013-03-27 13:59:10
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\ColumnModel\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:197505151153ba5eaf5-83825232%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2989951528aaeac3805-68218266%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '197505151153ba5eaf5-83825232',
+  'nocache_hash' => '2989951528aaeac3805-68218266',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5151153bb2cf99_28681156',
+  'unifunc' => 'content_51528aaeb8ff07_91662561',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5151153bb2cf99_28681156')) {function content_5151153bb2cf99_28681156($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_51528aaeb8ff07_91662561')) {function content_51528aaeb8ff07_91662561($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="opTop">
 	<a href="__APP__/index.php?s=CTModel/addColumnModel">新增模型</a>

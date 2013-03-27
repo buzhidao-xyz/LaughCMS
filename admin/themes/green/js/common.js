@@ -181,7 +181,7 @@ $(document).ready(function() {
                 if(ullilist.alertres(data)){
                     that.parent().parent().hide();
                 };          
-            }, 'json'); 
+            }, 'json');
         };      
     }
     /*删除按钮方法*/
@@ -191,4 +191,25 @@ $(document).ready(function() {
             ullilist.delajax($(this));
         });
     }
+
+    //监控ajax请求链接
+    $("a[name=ajax]").click(function (){
+        var d = {
+            data: $(this).attr("data")
+        }
+
+        var msg = $(this).attr("msg");
+        if (msg && confirm(msg)) {
+            $.post($(this).attr("href"), d, function(data){
+                alert(data.info);
+                if (!data.status) location.href = location.href;
+            }, 'json');
+        } else {
+            $.post($(this).attr("href"), d, function(data){
+                alert(data.info);
+                if (!data.status) location.href = location.href;
+            }, 'json');
+        }
+        return false;
+    });
 });

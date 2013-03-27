@@ -26,7 +26,12 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="controlRightTop"></li>
 	</ul>
 	<div id="controlContent">
-<div class="captitle"><h5>文档列表 【目前共有7条文档】</h5></div>
+<div class="opTop">
+	<a href="/laugh/admin/index.php?s=Article/index">文章列表</a>
+	<a href="/laugh/admin/index.php?s=Article/add">发布新文章</a>
+	<a href="/laugh/admin/index.php?s=Article/recover">回收站</a>
+</div>
+<div class="captitle"><h5>文档列表 【目前共有0条文档】</h5></div>
 <ul class="table_list_title">
 	<li class="table_list_l table_list_l30"></li>
 	<li class="table_list_l table_list_l50">ID</li>
@@ -39,140 +44,8 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="table_list_l table_list_l120" accessStatus=1>操作</li>
 	</ul>
 <div class="contentTableList">
-            <ul class="table_list">
-		<li class="table_list_l table_list_l30">
-			<input type="checkbox" name="articleid[]" value="7" flag="articleID" class="checkbox" />
-		</li>
-		<li class="table_list_l table_list_l50">7</li>
-		<li class="table_list_l table_list_l300" title="PHP实现异步操作">
-			PHP实现异步操作
-		</li>
-    	<li class="table_list_l table_list_l150">2013-03-26 09:51:57</li>
-    	<li class="table_list_l table_list_l120">PHP知识</li>
-		<li class="table_list_l table_list_l100">admin</li>
-		<li class="table_list_l table_list_l80">0</li>
-		<li class="table_list_l table_list_l80">0</li>
-    	    	<li class="table_list_l table_list_l120" accessStatus=1>
-    		<a href="http://localhost:82/laugh/index.php?s=Article/View&articleid=7" target="_blank">预览</a>
-    		<a href="/laugh/admin/index.php?s=Article/upArticle&articleid=7">修改</a>
-    		<a delurl="/laugh/admin/index.php?s=Article/recoverArticle&articleid=7" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
-    	</li>
-    	    </ul>
-        <ul class="table_list">
-		<li class="table_list_l table_list_l30">
-			<input type="checkbox" name="articleid[]" value="6" flag="articleID" class="checkbox" />
-		</li>
-		<li class="table_list_l table_list_l50">6</li>
-		<li class="table_list_l table_list_l300" title="PHP基本点知识">
-			PHP基本点知识
-		</li>
-    	<li class="table_list_l table_list_l150">2013-03-25 16:51:20</li>
-    	<li class="table_list_l table_list_l120">IT知识</li>
-		<li class="table_list_l table_list_l100">admin</li>
-		<li class="table_list_l table_list_l80">0</li>
-		<li class="table_list_l table_list_l80">0</li>
-    	    	<li class="table_list_l table_list_l120" accessStatus=1>
-    		<a href="http://localhost:82/laugh/index.php?s=Article/View&articleid=6" target="_blank">预览</a>
-    		<a href="/laugh/admin/index.php?s=Article/upArticle&articleid=6">修改</a>
-    		<a delurl="/laugh/admin/index.php?s=Article/recoverArticle&articleid=6" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
-    	</li>
-    	    </ul>
-        <ul class="table_list">
-		<li class="table_list_l table_list_l30">
-			<input type="checkbox" name="articleid[]" value="5" flag="articleID" class="checkbox" />
-		</li>
-		<li class="table_list_l table_list_l50">5</li>
-		<li class="table_list_l table_list_l300" title="页面(PAGE)标记(TAGS)">
-			页面(PAGE)标记(TAGS)
-		</li>
-    	<li class="table_list_l table_list_l150">2013-03-25 15:51:29</li>
-    	<li class="table_list_l table_list_l120">前端知识</li>
-		<li class="table_list_l table_list_l100">admin</li>
-		<li class="table_list_l table_list_l80">0</li>
-		<li class="table_list_l table_list_l80">0</li>
-    	    	<li class="table_list_l table_list_l120" accessStatus=1>
-    		<a href="http://localhost:82/laugh/index.php?s=Article/View&articleid=5" target="_blank">预览</a>
-    		<a href="/laugh/admin/index.php?s=Article/upArticle&articleid=5">修改</a>
-    		<a delurl="/laugh/admin/index.php?s=Article/recoverArticle&articleid=5" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
-    	</li>
-    	    </ul>
-        <ul class="table_list">
-		<li class="table_list_l table_list_l30">
-			<input type="checkbox" name="articleid[]" value="4" flag="articleID" class="checkbox" />
-		</li>
-		<li class="table_list_l table_list_l50">4</li>
-		<li class="table_list_l table_list_l300" title="MongoDB:下一代MySQL？">
-			MongoDB:下一代MySQL？
-		</li>
-    	<li class="table_list_l table_list_l150">2013-03-21 17:06:23</li>
-    	<li class="table_list_l table_list_l120">IT知识</li>
-		<li class="table_list_l table_list_l100">admin</li>
-		<li class="table_list_l table_list_l80">0</li>
-		<li class="table_list_l table_list_l80">0</li>
-    	    	<li class="table_list_l table_list_l120" accessStatus=1>
-    		<a href="http://localhost:82/laugh/index.php?s=Article/View&articleid=4" target="_blank">预览</a>
-    		<a href="/laugh/admin/index.php?s=Article/upArticle&articleid=4">修改</a>
-    		<a delurl="/laugh/admin/index.php?s=Article/recoverArticle&articleid=4" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
-    	</li>
-    	    </ul>
-        <ul class="table_list">
-		<li class="table_list_l table_list_l30">
-			<input type="checkbox" name="articleid[]" value="3" flag="articleID" class="checkbox" />
-		</li>
-		<li class="table_list_l table_list_l50">3</li>
-		<li class="table_list_l table_list_l300" title="企业用网站进行网络宣传的优势">
-			企业用网站进行网络宣传的优势
-		</li>
-    	<li class="table_list_l table_list_l150">2013-03-21 16:26:22</li>
-    	<li class="table_list_l table_list_l120">新闻资讯</li>
-		<li class="table_list_l table_list_l100">admin</li>
-		<li class="table_list_l table_list_l80">132</li>
-		<li class="table_list_l table_list_l80">0</li>
-    	    	<li class="table_list_l table_list_l120" accessStatus=1>
-    		<a href="http://localhost:82/laugh/index.php?s=Article/View&articleid=3" target="_blank">预览</a>
-    		<a href="/laugh/admin/index.php?s=Article/upArticle&articleid=3">修改</a>
-    		<a delurl="/laugh/admin/index.php?s=Article/recoverArticle&articleid=3" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
-    	</li>
-    	    </ul>
-        <ul class="table_list">
-		<li class="table_list_l table_list_l30">
-			<input type="checkbox" name="articleid[]" value="2" flag="articleID" class="checkbox" />
-		</li>
-		<li class="table_list_l table_list_l50">2</li>
-		<li class="table_list_l table_list_l300" title="确认在左，取消在右?">
-			确认在左，取消在右?
-		</li>
-    	<li class="table_list_l table_list_l150">2013-03-25 11:49:17</li>
-    	<li class="table_list_l table_list_l120">新闻资讯</li>
-		<li class="table_list_l table_list_l100">admin</li>
-		<li class="table_list_l table_list_l80">233</li>
-		<li class="table_list_l table_list_l80">0</li>
-    	    	<li class="table_list_l table_list_l120" accessStatus=1>
-    		<a href="http://localhost:82/laugh/index.php?s=Article/View&articleid=2" target="_blank">预览</a>
-    		<a href="/laugh/admin/index.php?s=Article/upArticle&articleid=2">修改</a>
-    		<a delurl="/laugh/admin/index.php?s=Article/recoverArticle&articleid=2" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
-    	</li>
-    	    </ul>
-        <ul class="table_list">
-		<li class="table_list_l table_list_l30">
-			<input type="checkbox" name="articleid[]" value="1" flag="articleID" class="checkbox" />
-		</li>
-		<li class="table_list_l table_list_l50">1</li>
-		<li class="table_list_l table_list_l300" title="这是一篇测试文章">
-			这是一篇测试文章
-		</li>
-    	<li class="table_list_l table_list_l150">2013-03-21 17:02:57</li>
-    	<li class="table_list_l table_list_l120">新闻资讯</li>
-		<li class="table_list_l table_list_l100">admin</li>
-		<li class="table_list_l table_list_l80">1352</li>
-		<li class="table_list_l table_list_l80">0</li>
-    	    	<li class="table_list_l table_list_l120" accessStatus=1>
-    		<a href="http://localhost:82/laugh/index.php?s=Article/View&articleid=1" target="_blank">预览</a>
-    		<a href="/laugh/admin/index.php?s=Article/upArticle&articleid=1">修改</a>
-    		<a delurl="/laugh/admin/index.php?s=Article/recoverArticle&articleid=1" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
-    	</li>
-    	    </ul>
-        </div>
+        <ul class="table_list"><li class="table_list_center">空</li></ul>
+    </div>
 <div id="opBottom" class="opBottom">
 	<a href="javascript:;" name="checkAll">全选</a>
 	<a href="javascript:;" name="unCheckAll">取消</a>

@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-03-26 16:37:31
+<?php /* Smarty version Smarty-3.1.12, created on 2013-03-27 13:46:35
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\Image\HomeScrollImage.html" */ ?>
-<?php /*%%SmartyHeaderCode:2981851515e4b570833-52974905%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:18274515287bb7a4e78-34912437%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '38dc96f5be14c526d9d819aac14681b891b22a2e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\green\\Image\\HomeScrollImage.html',
-      1 => 1364287048,
+      1 => 1364354700,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2981851515e4b570833-52974905',
+  'nocache_hash' => '18274515287bb7a4e78-34912437',
   'function' => 
   array (
   ),
@@ -24,14 +24,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_51515e4b686117_01029683',
+  'unifunc' => 'content_515287bb8cefc0_63276878',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51515e4b686117_01029683')) {function content_51515e4b686117_01029683($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_515287bb8cefc0_63276878')) {function content_515287bb8cefc0_63276878($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
 <div class="formContainer" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
 >
-	<div class="formtitle"><h5>新组节点表单</h5></div>
+	<div class="formtitle"><h5>添加首页轮播图片</h5></div>
 	<form name="newform" action="__APP__/index.php?s=Image/saveHomeScrollImage" method="post" class="newform" enctype="multipart/form-data">
 		<ul class="formbody">
 			<li class="formblock">
@@ -87,9 +87,9 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 ">查看图片</a>
 			<a href="__APP__/index.php?s=Image/UpdateHomeScrollImage&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 ">修改</a>
-			<a href="__APP__/index.php?s=Image/UpdateHomeScrollImageStatus&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
-&isshow=0">显示/隐藏</a>
-			<a href="__APP__/index.php?s=Image/DeleteHomeScrollImage&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+			<a name="ajax" href="__APP__/index.php?s=Image/UpdateHomeScrollImageStatus&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+&isshow=<?php if ($_smarty_tpl->tpl_vars['d']->value['isshow']){?>0<?php }else{ ?>1<?php }?>">显示/隐藏</a>
+			<a name="ajax" msg="确定删除吗？" href="__APP__/index.php?s=Image/DeleteHomeScrollImage&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 ">删除</a>
 		</li>
 		<?php }?>
@@ -103,9 +103,20 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 <script type="text/javascript" src="public/plugin/colorbox/jquery.colorbox.js"></script>
 <script type="text/javascript">
 $(document).ready(function (){
+$("form[name=newform]").submit(function (){
+	if (!$("input[name=path]").val()) {
+		alert("请选择图片！");
+		return false;
+	}
+	if (!$("input[name=link]").val()) {
+		alert("请填写链接！");
+		return false;
+	}
+});
 var ImageClass = function (){
 	var Obj = {
-		imageview: $("a[name=imageview]")
+		imageview: $("a[name=imageview]"),
+		updatestatus: $("a[name=updatestatus]")
 	}
 	Obj.imageview.colorbox();
 }

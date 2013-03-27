@@ -29,7 +29,7 @@ class ArticleControl extends CommonControl
 
 		$this->assign("ArticleList", $ArticleList['data']);
 		$this->assign("page", getPage($ArticleList['total'],$this->_pagesize));
-		$this->display("Article/index.html");
+		$this->display("Article/list.html");
 	}
 
 	//获取文档内容
@@ -39,7 +39,7 @@ class ArticleControl extends CommonControl
 		$articleInfo = M("Article")->getArticleInfo($this->_columnid,$articleid);
 
 		$this->assign("articleInfo",$articleInfo);
-		$this->display("Article/view.html");
+		$this->display("Article/body.html");
 	}
 
 	//显示文章内容

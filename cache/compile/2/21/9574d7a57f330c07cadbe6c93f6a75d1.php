@@ -53,6 +53,9 @@ var JS_APP = '/laugh';
 				<ul class="SubNavigation">
 						<li>
 				<a href="/laugh/index.php?s=Article/index&columnid=3">IT知识</a>
+								<ul>
+										<li><a href="/laugh/index.php?s=Index/index&columnid=12">PHP知识</a></li>
+									</ul>
 							</li>
 						<li>
 				<a href="/laugh/index.php?s=Article/index&columnid=4">网络知识</a>

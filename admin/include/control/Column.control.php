@@ -148,17 +148,20 @@ class ColumnControl extends CommonControl
 		}
 	}
 
-	//获取栏目树
-	public function getColumnTree()
+	/**
+	 * 获取栏目树
+	 * @param $control string 内容模型控制器
+	 */
+	public function getColumnTree($control=null)
 	{
-		$data = M("Column")->getTopColumn();
+		$data = M("Column")->getTopColumn($control);
 
 		$dataTree  = null;
         $dataTree .= '<option value="">|-请选择栏目...</option>';
         if (is_array($data) && !empty($data)) {
 	        foreach ($data as $v) {
 	            $dataTree .= '<option value="'.$v['id'].'">&nbsp;&nbsp;|-'.$v['columnname'].'</option>';
-	            $dataTree .= $this->getSubColumnTree($v['id'],2);
+	            $dataTree .= $this->getSubColumnTree($v['id'],$control,2);
 	        }
 	    }
 
@@ -166,17 +169,17 @@ class ColumnControl extends CommonControl
 	}
 
 	//获取子栏目树
-	public function getSubColumnTree($columnid=null,$depth=0)
+	public function getSubColumnTree($columnid=null,$control=null,$depth=0)
 	{
 		if (!$columnid) return null;
 		$nbsp = array_fill(0, $depth, "&nbsp;&nbsp;");
-		$data = M("Column")->getSubColumn($columnid);
+		$data = M("Column")->getSubColumn($columnid,$control);
 
 		$dataTree  = null;
         if (is_array($data) && !empty($data)) {
 	        foreach ($data as $v) {
 	            $dataTree .= '<option value="'.$v['id'].'" >'.implode($nbsp,"").'|-'.$v['columnname'].'</option>';
-	            $dataTree .= $this->getSubColumnTree($v['id'],$depth+1);
+	            $dataTree .= $this->getSubColumnTree($v['id'],$control,$depth+1);
 	        }
 	    }
 

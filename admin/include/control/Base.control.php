@@ -5,8 +5,7 @@
  */
 class BaseControl
 {
-    static protected $_control = 'Base';
-    
+    static protected $_Control = 'Base';
     static protected $_control_suffix = 'Control';
 
     protected $_template;   //模板解析类对象

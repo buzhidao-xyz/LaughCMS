@@ -21,7 +21,7 @@ class Column extends Base
 	 * 获取栏目
 	 * @param $columnid int 栏目id
 	 */
-	public function getColumn($columnid = null)
+	public function getColumn($columnid=null)
 	{
 		$where = array();
 		if ($columnid) $where['id'] = is_array($columnid) ? array("in", $columnid) : $columnid;
@@ -32,20 +32,26 @@ class Column extends Base
 	}
 
 	//获取顶级栏目
-	public function getTopColumn()
+	public function getTopColumn($control=null)
 	{
-		$data = T("Column")->where(array("parentid"=>0))->select();
+		$where = array(
+			'a.parentid' => 0,
+			'b.control' => $control
+		);
+		$data = T("column")->join(" ".TBF."column_model as b on a.columnmodel=b.id")->field("a.*,b.control")->where($where)->select();
 
 		return $data;
 	}
 
 	//获取子栏目
-	public function getSubColumn($columnid = null)
+	public function getSubColumn($columnid=null,$control)
 	{
-		$where = array();
-		if ($columnid) $where['parentid'] = is_array($columnid) ? array("in", $columnid) : $columnid;
+		$where = array(
+			'b.control' => $control
+		);
+		if ($columnid) $where['a.parentid'] = is_array($columnid) ? array("in", $columnid) : $columnid;
 
-		$data = T("Column")->where($where)->select();
+		$data = T("Column")->join(" ".TBF."column_model as b on a.columnmodel=b.id")->field("a.*,b.control")->where($where)->select();
 
 		return $data;
 	}

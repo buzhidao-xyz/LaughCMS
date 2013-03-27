@@ -1,7 +1,7 @@
 {include file="public/control_top.html"}
 {if $accessStatus == 1}
 <div class="formContainer" accessStatus={$accessStatus}>
-	<div class="formtitle"><h5>新组节点表单</h5></div>
+	<div class="formtitle"><h5>添加首页轮播图片</h5></div>
 	<form name="newform" action="__APP__/index.php?s=Image/saveHomeScrollImage" method="post" class="newform" enctype="multipart/form-data">
 		<ul class="formbody">
 			<li class="formblock">
@@ -44,8 +44,8 @@
 		<li class="table_list_l table_list_l200" accessStatus={$accessStatus}>
 			<a name="imageview" href="__APPM__{$d.path}">查看图片</a>
 			<a href="__APP__/index.php?s=Image/UpdateHomeScrollImage&id={$d.id}">修改</a>
-			<a href="__APP__/index.php?s=Image/UpdateHomeScrollImageStatus&id={$d.id}&isshow={if $d.isshow}0{else}1{/if}">显示/隐藏</a>
-			<a href="__APP__/index.php?s=Image/DeleteHomeScrollImage&id={$d.id}">删除</a>
+			<a name="ajax" href="__APP__/index.php?s=Image/UpdateHomeScrollImageStatus&id={$d.id}&isshow={if $d.isshow}0{else}1{/if}">显示/隐藏</a>
+			<a name="ajax" msg="确定删除吗？" href="__APP__/index.php?s=Image/DeleteHomeScrollImage&id={$d.id}">删除</a>
 		</li>
 		{/if}
 	</ul>
@@ -58,9 +58,20 @@
 <script type="text/javascript" src="public/plugin/colorbox/jquery.colorbox.js"></script>
 <script type="text/javascript">
 $(document).ready(function (){
+$("form[name=newform]").submit(function (){
+	if (!$("input[name=path]").val()) {
+		alert("请选择图片！");
+		return false;
+	}
+	if (!$("input[name=link]").val()) {
+		alert("请填写链接！");
+		return false;
+	}
+});
 var ImageClass = function (){
 	var Obj = {
-		imageview: $("a[name=imageview]")
+		imageview: $("a[name=imageview]"),
+		updatestatus: $("a[name=updatestatus]")
 	}
 	Obj.imageview.colorbox();
 }

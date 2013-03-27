@@ -1,7 +1,7 @@
 <?php
 /**
- * 栏目模型
- * by laucen 2012-9-6
+ * 文章模型
+ * by laucen 2013-03-22
  */
 class Article extends Base
 {

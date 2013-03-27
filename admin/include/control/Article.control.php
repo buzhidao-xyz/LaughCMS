@@ -1,10 +1,13 @@
 <?php
 /**
- * 文档控制器
+ * 文章控制器
  * by buzhidao 2012-12-26
  */
 class ArticleControl extends CommonControl
 {
+	//控制器名
+	static protected $_Control = "Article";
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -133,12 +136,13 @@ class ArticleControl extends CommonControl
 	}
 
 	//新文档
-	public function newArticle()
+	public function add()
 	{
+		$this->assign("accessStatus",1);
 		$this->assign("timestamp",TIMESTAMP);
 		$this->assign("userInfo",$this->userInfo);
-		$this->assign("columnTree", D("Column")->getColumnTree());
-		$this->display("Article/newarticle.html");
+		$this->assign("columnTree", D("Column")->getColumnTree(self::$_Control));
+		$this->display("Article/add.html");
 	}
 
 	/**
@@ -223,7 +227,7 @@ class ArticleControl extends CommonControl
 		$this->assign("articleInfo", $articleInfo);
 
 		$this->assign("columnTree", D("Column")->getColumnTree());
-		$this->display("Article/uparticle.html");
+		$this->display("Article/edit.html");
 	}
 
 	//保存更新文档信息
@@ -320,7 +324,7 @@ class ArticleControl extends CommonControl
 		} else {
 			$this->assign("articleid", $articleid);
 			$this->assign("columnTree", D("Column")->getColumnTree());
-			$this->display("Article/movearticle.html");
+			$this->display("Article/move.html");
 		}
 	}
 }

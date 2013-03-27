@@ -15,6 +15,9 @@ class Image extends Base
 	public function getHomeScrollImage($id=null,$where=array())
 	{
 		if ($id) $where['id'] = $id;
+
+		$where['isshow'] = 1;
+		$where['isdelete'] = 0;
 		return T("scrollimage")->where($where)->select();
 	}
 }
