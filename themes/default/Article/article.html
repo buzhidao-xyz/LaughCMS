@@ -22,7 +22,7 @@
 			<dt>上一篇:</dt>
 			<dd>
 				{if !empty($articleInfo.prev)}
-				<a href="__APP__/index.php?s=article/view&columnid={$columnid}&articleid={$articleInfo.prev.id}" title="{$articleInfo.prev.title}">{$articleInfo.prev.title}</a>
+				<a href="__APP__/index.php?s=article/view&columnid={$columnid}&archiveid={$articleInfo.prev.id}" title="{$articleInfo.prev.title}">{$articleInfo.prev.title}</a>
 				{else}
 				<font color="grey">没有了！</font>
 				{/if}
@@ -32,7 +32,7 @@
 			<dt>下一篇:</dt>
 			<dd>
 				{if !empty($articleInfo.next)}
-				<a href="__APP__/index.php?s=article/view&columnid={$columnid}&articleid={$articleInfo.next.id}" title="{$articleInfo.next.title}">{$articleInfo.next.title}</a>
+				<a href="__APP__/index.php?s=article/view&columnid={$columnid}&archiveid={$articleInfo.next.id}" title="{$articleInfo.next.title}">{$articleInfo.next.title}</a>
 				{else}
 				<font color="grey">没有了！</font>
 				{/if}

@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-03-27 16:29:02
+<?php /* Smarty version Smarty-3.1.12, created on 2013-03-28 17:21:29
          compiled from "C:\xampp\htdocs\laugh\themes\default\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:102005152adceb64832-08032598%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2116251540b9924cb83-36242675%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'f577bcee453c3488ab8e2271cee9d8619295461e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\index.html',
-      1 => 1364267573,
+      1 => 1364461906,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '102005152adceb64832-08032598',
+  'nocache_hash' => '2116251540b9924cb83-36242675',
   'function' => 
   array (
   ),
@@ -22,9 +22,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5152adcebfecd9_70485654',
+  'unifunc' => 'content_51540b992daf67_94193211',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5152adcebfecd9_70485654')) {function content_5152adcebfecd9_70485654($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_51540b992daf67_94193211')) {function content_51540b992daf67_94193211($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate ("Common/Top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
@@ -61,7 +61,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['d']->key => $_smarty_tpl->tpl_vars['d
 $_smarty_tpl->tpl_vars['d']->_loop = true;
 ?>
 					<li><a href="__APP__/index.php?s=article/view&columnid=<?php echo $_smarty_tpl->tpl_vars['d']->value['columnid'];?>
-&articleid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+&archiveid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['d']->value['title'];?>
 </a></li>
 					<?php } ?>

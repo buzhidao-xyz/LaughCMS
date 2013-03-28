@@ -31,7 +31,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 	<a href="/laugh/admin/index.php?s=Article/add">发布新文章</a>
 	<a href="/laugh/admin/index.php?s=Article/recover">回收站</a>
 </div>
-<div class="captitle"><h5>文档列表 【目前共有0条文档】</h5></div>
+<div class="captitle"><h5>文档列表 【目前共有8条文档】</h5></div>
 <ul class="table_list_title">
 	<li class="table_list_l table_list_l30"></li>
 	<li class="table_list_l table_list_l50">ID</li>
@@ -44,8 +44,159 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="table_list_l table_list_l120" accessStatus=1>操作</li>
 	</ul>
 <div class="contentTableList">
-        <ul class="table_list"><li class="table_list_center">空</li></ul>
-    </div>
+            <ul class="table_list">
+		<li class="table_list_l table_list_l30">
+			<input type="checkbox" name="archiveid[]" value="8" flag="archiveID" class="checkbox" />
+		</li>
+		<li class="table_list_l table_list_l50">8</li>
+		<li class="table_list_l table_list_l300" title="PHP单例模式经典讲解">
+			PHP单例模式经典讲解
+		</li>
+    	<li class="table_list_l table_list_l150">2013-03-28 15:51:04</li>
+    	<li class="table_list_l table_list_l120">IT知识</li>
+		<li class="table_list_l table_list_l100">admin</li>
+		<li class="table_list_l table_list_l80">0</li>
+		<li class="table_list_l table_list_l80">0</li>
+    	    	<li class="table_list_l table_list_l120" accessStatus=1>
+    		<a href="http://localhost:82/laugh/index.php?s=Article/View&archiveid=8" target="_blank">预览</a>
+    		<a href="/laugh/admin/index.php?s=Article/edit&archiveid=8">修改</a>
+    		<a delurl="/laugh/admin/index.php?s=Article/recoverArticle&archiveid=8" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
+    	    </ul>
+        <ul class="table_list">
+		<li class="table_list_l table_list_l30">
+			<input type="checkbox" name="archiveid[]" value="7" flag="archiveID" class="checkbox" />
+		</li>
+		<li class="table_list_l table_list_l50">7</li>
+		<li class="table_list_l table_list_l300" title="PHP实现异步操作">
+			PHP实现异步操作
+		</li>
+    	<li class="table_list_l table_list_l150">2013-03-26 09:51:57</li>
+    	<li class="table_list_l table_list_l120">PHP知识</li>
+		<li class="table_list_l table_list_l100">admin</li>
+		<li class="table_list_l table_list_l80">0</li>
+		<li class="table_list_l table_list_l80">0</li>
+    	    	<li class="table_list_l table_list_l120" accessStatus=1>
+    		<a href="http://localhost:82/laugh/index.php?s=Article/View&archiveid=7" target="_blank">预览</a>
+    		<a href="/laugh/admin/index.php?s=Article/edit&archiveid=7">修改</a>
+    		<a delurl="/laugh/admin/index.php?s=Article/recoverArticle&archiveid=7" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
+    	    </ul>
+        <ul class="table_list">
+		<li class="table_list_l table_list_l30">
+			<input type="checkbox" name="archiveid[]" value="6" flag="archiveID" class="checkbox" />
+		</li>
+		<li class="table_list_l table_list_l50">6</li>
+		<li class="table_list_l table_list_l300" title="PHP基本点知识">
+			PHP基本点知识
+		</li>
+    	<li class="table_list_l table_list_l150">2013-03-25 16:51:20</li>
+    	<li class="table_list_l table_list_l120">IT知识</li>
+		<li class="table_list_l table_list_l100">admin</li>
+		<li class="table_list_l table_list_l80">0</li>
+		<li class="table_list_l table_list_l80">0</li>
+    	    	<li class="table_list_l table_list_l120" accessStatus=1>
+    		<a href="http://localhost:82/laugh/index.php?s=Article/View&archiveid=6" target="_blank">预览</a>
+    		<a href="/laugh/admin/index.php?s=Article/edit&archiveid=6">修改</a>
+    		<a delurl="/laugh/admin/index.php?s=Article/recoverArticle&archiveid=6" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
+    	    </ul>
+        <ul class="table_list">
+		<li class="table_list_l table_list_l30">
+			<input type="checkbox" name="archiveid[]" value="5" flag="archiveID" class="checkbox" />
+		</li>
+		<li class="table_list_l table_list_l50">5</li>
+		<li class="table_list_l table_list_l300" title="页面(PAGE)标记(TAGS)">
+			页面(PAGE)标记(TAGS)
+		</li>
+    	<li class="table_list_l table_list_l150">2013-03-25 15:51:29</li>
+    	<li class="table_list_l table_list_l120">前端知识</li>
+		<li class="table_list_l table_list_l100">admin</li>
+		<li class="table_list_l table_list_l80">0</li>
+		<li class="table_list_l table_list_l80">0</li>
+    	    	<li class="table_list_l table_list_l120" accessStatus=1>
+    		<a href="http://localhost:82/laugh/index.php?s=Article/View&archiveid=5" target="_blank">预览</a>
+    		<a href="/laugh/admin/index.php?s=Article/edit&archiveid=5">修改</a>
+    		<a delurl="/laugh/admin/index.php?s=Article/recoverArticle&archiveid=5" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
+    	    </ul>
+        <ul class="table_list">
+		<li class="table_list_l table_list_l30">
+			<input type="checkbox" name="archiveid[]" value="4" flag="archiveID" class="checkbox" />
+		</li>
+		<li class="table_list_l table_list_l50">4</li>
+		<li class="table_list_l table_list_l300" title="MongoDB:下一代MySQL？">
+			MongoDB:下一代MySQL？
+		</li>
+    	<li class="table_list_l table_list_l150">2013-03-21 17:06:23</li>
+    	<li class="table_list_l table_list_l120">IT知识</li>
+		<li class="table_list_l table_list_l100">admin</li>
+		<li class="table_list_l table_list_l80">0</li>
+		<li class="table_list_l table_list_l80">0</li>
+    	    	<li class="table_list_l table_list_l120" accessStatus=1>
+    		<a href="http://localhost:82/laugh/index.php?s=Article/View&archiveid=4" target="_blank">预览</a>
+    		<a href="/laugh/admin/index.php?s=Article/edit&archiveid=4">修改</a>
+    		<a delurl="/laugh/admin/index.php?s=Article/recoverArticle&archiveid=4" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
+    	    </ul>
+        <ul class="table_list">
+		<li class="table_list_l table_list_l30">
+			<input type="checkbox" name="archiveid[]" value="3" flag="archiveID" class="checkbox" />
+		</li>
+		<li class="table_list_l table_list_l50">3</li>
+		<li class="table_list_l table_list_l300" title="企业用网站进行网络宣传的优势">
+			企业用网站进行网络宣传的优势
+		</li>
+    	<li class="table_list_l table_list_l150">2013-03-21 16:26:22</li>
+    	<li class="table_list_l table_list_l120">新闻资讯</li>
+		<li class="table_list_l table_list_l100">admin</li>
+		<li class="table_list_l table_list_l80">132</li>
+		<li class="table_list_l table_list_l80">0</li>
+    	    	<li class="table_list_l table_list_l120" accessStatus=1>
+    		<a href="http://localhost:82/laugh/index.php?s=Article/View&archiveid=3" target="_blank">预览</a>
+    		<a href="/laugh/admin/index.php?s=Article/edit&archiveid=3">修改</a>
+    		<a delurl="/laugh/admin/index.php?s=Article/recoverArticle&archiveid=3" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
+    	    </ul>
+        <ul class="table_list">
+		<li class="table_list_l table_list_l30">
+			<input type="checkbox" name="archiveid[]" value="2" flag="archiveID" class="checkbox" />
+		</li>
+		<li class="table_list_l table_list_l50">2</li>
+		<li class="table_list_l table_list_l300" title="确认在左，取消在右?">
+			确认在左，取消在右?
+		</li>
+    	<li class="table_list_l table_list_l150">2013-03-25 11:49:17</li>
+    	<li class="table_list_l table_list_l120">新闻资讯</li>
+		<li class="table_list_l table_list_l100">admin</li>
+		<li class="table_list_l table_list_l80">233</li>
+		<li class="table_list_l table_list_l80">0</li>
+    	    	<li class="table_list_l table_list_l120" accessStatus=1>
+    		<a href="http://localhost:82/laugh/index.php?s=Article/View&archiveid=2" target="_blank">预览</a>
+    		<a href="/laugh/admin/index.php?s=Article/edit&archiveid=2">修改</a>
+    		<a delurl="/laugh/admin/index.php?s=Article/recoverArticle&archiveid=2" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
+    	    </ul>
+        <ul class="table_list">
+		<li class="table_list_l table_list_l30">
+			<input type="checkbox" name="archiveid[]" value="1" flag="archiveID" class="checkbox" />
+		</li>
+		<li class="table_list_l table_list_l50">1</li>
+		<li class="table_list_l table_list_l300" title="这是一篇测试文章">
+			这是一篇测试文章
+		</li>
+    	<li class="table_list_l table_list_l150">2013-03-28 15:50:12</li>
+    	<li class="table_list_l table_list_l120">新闻资讯</li>
+		<li class="table_list_l table_list_l100">admin</li>
+		<li class="table_list_l table_list_l80">1352</li>
+		<li class="table_list_l table_list_l80">0</li>
+    	    	<li class="table_list_l table_list_l120" accessStatus=1>
+    		<a href="http://localhost:82/laugh/index.php?s=Article/View&archiveid=1" target="_blank">预览</a>
+    		<a href="/laugh/admin/index.php?s=Article/edit&archiveid=1">修改</a>
+    		<a delurl="/laugh/admin/index.php?s=Article/recoverArticle&archiveid=1" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
+    	    </ul>
+        </div>
 <div id="opBottom" class="opBottom">
 	<a href="javascript:;" name="checkAll">全选</a>
 	<a href="javascript:;" name="unCheckAll">取消</a>
@@ -68,32 +219,32 @@ var articleClass = function (){
 		articleMove: $("#opBottom a[name=articleMove]"),
 		articleDelete: $("#opBottom a[name=articleDelete]")
 	}
-	var getArticleID = function (){
-		var articleid= "";
-		$("input[name='articleid[]']").each(function (){
-			if ($(this).attr("checked")) articleid += articleid ? ","+$(this).val() : $(this).val();
+	var getArchiveID = function (){
+		var archiveid= "";
+		$("input[name='archiveid[]']").each(function (){
+			if ($(this).attr("checked")) archiveid += archiveid ? ","+$(this).val() : $(this).val();
 		});
-		return articleid;
+		return archiveid;
 	};
 	articleObj.checkAll.click(function (){
-		$("input[flag=articleID]").attr("checked","checked");
+		$("input[flag=archiveID]").attr("checked","checked");
 	});
 	articleObj.unCheckAll.click(function (){
-		$("input[flag=articleID]").attr("checked",false);
+		$("input[flag=archiveID]").attr("checked",false);
 	});
 
 	//移动栏目
 	articleObj.articleMove.colorbox();
 	articleObj.articleMove.click(function (){
-		var articleid = getArticleID();
-		$(this).attr("href",$(this).attr("href")+"&articleid="+articleid);
+		var archiveid = getArchiveID();
+		$(this).attr("href",$(this).attr("href")+"&archiveid="+archiveid);
 	});
 	
 	//删除文档
 	articleObj.articleDelete.click(function (){
-		var articleid = getArticleID();
+		var archiveid = getArchiveID();
 		var d = {
-			articleid: articleid
+			archiveid: archiveid
 		};
 		$.post("/laugh/admin/index.php?s=Article/recoverArticle",d,function (data){
 			alert(data.info);

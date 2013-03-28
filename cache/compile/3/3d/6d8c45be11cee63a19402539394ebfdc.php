@@ -54,7 +54,7 @@ var JS_APP = '/laugh';
 						<li>
 				<a href="/laugh/index.php?s=Article/index&columnid=3">IT知识</a>
 								<ul>
-										<li><a href="/laugh/index.php?s=Index/index&columnid=12">PHP知识</a></li>
+										<li><a href="/laugh/index.php?s=Article/index&columnid=12">PHP知识</a></li>
 									</ul>
 							</li>
 						<li>
@@ -62,6 +62,9 @@ var JS_APP = '/laugh';
 								<ul>
 										<li><a href="/laugh/index.php?s=Article/index&columnid=5">前端知识</a></li>
 									</ul>
+							</li>
+						<li>
+				<a href="/laugh/index.php?s=Article/index&columnid=13">数据库知识</a>
 							</li>
 					</ul>
 			</li>
@@ -138,27 +141,47 @@ $(document).ready(function (){
 		<a href="javascript:;" target="_blank"><img src="themes/default/images/ad_banner.png" width="1000" height="80" /></a>
 	</div>
 	<div class="CurPosition mtop5">
-		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=Article/index&columnid=2">新闻资讯</a> > <a href="/laugh/index.php?s=Article/index&columnid=3">IT知识</a>
+		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=Article/index&columnid=2">新闻资讯</a>
 	</div>
 	<div id="CenterShow" class="block mtop5">
 		<div id="mainBlock" class="fleft w740">
 			<div class="boxBlock">
 				<div class="boxBlockTitle">
-					<span class="title">IT知识</span>
+					<span class="title">新闻资讯</span>
 				</div>
 				<div class="boxBlockBody">
 					<ul class="articleList">
 																		<li>
-							<a href="/laugh/index.php?s=article/view&columnid=3&articleid=7">PHP实现异步操作</a>
+							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=8">PHP单例模式经典讲解</a>
+							<span class="pubdate">[2013-03-28]</span>
+						</li>
+												<li>
+							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=7">PHP实现异步操作</a>
 							<span class="pubdate">[2013-03-26]</span>
 						</li>
 												<li>
-							<a href="/laugh/index.php?s=article/view&columnid=3&articleid=6">PHP基本点知识</a>
+							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=6">PHP基本点知识</a>
 							<span class="pubdate">[2013-03-25]</span>
 						</li>
 												<li>
-							<a href="/laugh/index.php?s=article/view&columnid=3&articleid=4">MongoDB:下一代MySQL？</a>
+							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=5">页面(PAGE)标记(TAGS)</a>
+							<span class="pubdate">[2013-03-25]</span>
+						</li>
+												<li>
+							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=1">这是一篇测试文章</a>
 							<span class="pubdate">[2013-03-21]</span>
+						</li>
+												<li>
+							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=4">MongoDB:下一代MySQL？</a>
+							<span class="pubdate">[2013-03-21]</span>
+						</li>
+												<li>
+							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=3">企业用网站进行网络宣传的优势</a>
+							<span class="pubdate">[2013-03-21]</span>
+						</li>
+												<li>
+							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=2">确认在左，取消在右?</a>
+							<span class="pubdate">[2013-01-09]</span>
 						</li>
 																	</ul>
 					

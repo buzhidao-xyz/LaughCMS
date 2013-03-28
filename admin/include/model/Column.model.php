@@ -35,21 +35,19 @@ class Column extends Base
 	public function getTopColumn($control=null)
 	{
 		$where = array(
-			'a.parentid' => 0,
-			'b.control' => $control
+			'a.parentid' => 0
 		);
+		if ($control) $where['b.control'] = $control;
 		$data = T("column")->join(" ".TBF."column_model as b on a.columnmodel=b.id")->field("a.*,b.control")->where($where)->select();
 
 		return $data;
 	}
 
 	//获取子栏目
-	public function getSubColumn($columnid=null,$control)
+	public function getSubColumn($columnid=null,$control=null,$where=array())
 	{
-		$where = array(
-			'b.control' => $control
-		);
 		if ($columnid) $where['a.parentid'] = is_array($columnid) ? array("in", $columnid) : $columnid;
+		if ($control) $where['b.control'] = $control;
 
 		$data = T("Column")->join(" ".TBF."column_model as b on a.columnmodel=b.id")->field("a.*,b.control")->where($where)->select();
 

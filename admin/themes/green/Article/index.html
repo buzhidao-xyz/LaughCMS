@@ -23,7 +23,7 @@
     {foreach $dataList as $d}
     <ul class="table_list">
 		<li class="table_list_l table_list_l30">
-			<input type="checkbox" name="articleid[]" value="{$d.id}" flag="articleID" class="checkbox" />
+			<input type="checkbox" name="archiveid[]" value="{$d.id}" flag="archiveID" class="checkbox" />
 		</li>
 		<li class="table_list_l table_list_l50">{$d.id}</li>
 		<li class="table_list_l table_list_l300" title="{$d.title}">
@@ -36,9 +36,9 @@
 		<li class="table_list_l table_list_l80">{$d.commentnum}</li>
     	{if $accessStatus == 1}
     	<li class="table_list_l table_list_l120" accessStatus={$accessStatus}>
-    		<a href="__APPM__/index.php?s=Article/View&articleid={$d.id}" target="_blank">预览</a>
-    		<a href="__APP__/index.php?s=Article/upArticle&articleid={$d.id}">修改</a>
-    		<a delurl="__APP__/index.php?s=Article/recoverArticle&articleid={$d.id}" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    		<a href="__APPM__/index.php?s=Article/View&archiveid={$d.id}" target="_blank">预览</a>
+    		<a href="__APP__/index.php?s=Article/edit&archiveid={$d.id}">修改</a>
+    		<a delurl="__APP__/index.php?s=Article/recoverArticle&archiveid={$d.id}" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>
     	{/if}
     </ul>
@@ -69,32 +69,32 @@ var articleClass = function (){
 		articleMove: $("#opBottom a[name=articleMove]"),
 		articleDelete: $("#opBottom a[name=articleDelete]")
 	}
-	var getArticleID = function (){
-		var articleid= "";
-		$("input[name='articleid[]']").each(function (){
-			if ($(this).attr("checked")) articleid += articleid ? ","+$(this).val() : $(this).val();
+	var getArchiveID = function (){
+		var archiveid= "";
+		$("input[name='archiveid[]']").each(function (){
+			if ($(this).attr("checked")) archiveid += archiveid ? ","+$(this).val() : $(this).val();
 		});
-		return articleid;
+		return archiveid;
 	};
 	articleObj.checkAll.click(function (){
-		$("input[flag=articleID]").attr("checked","checked");
+		$("input[flag=archiveID]").attr("checked","checked");
 	});
 	articleObj.unCheckAll.click(function (){
-		$("input[flag=articleID]").attr("checked",false);
+		$("input[flag=archiveID]").attr("checked",false);
 	});
 
 	//移动栏目
 	articleObj.articleMove.colorbox();
 	articleObj.articleMove.click(function (){
-		var articleid = getArticleID();
-		$(this).attr("href",$(this).attr("href")+"&articleid="+articleid);
+		var archiveid = getArchiveID();
+		$(this).attr("href",$(this).attr("href")+"&archiveid="+archiveid);
 	});
 	
 	//删除文档
 	articleObj.articleDelete.click(function (){
-		var articleid = getArticleID();
+		var archiveid = getArchiveID();
 		var d = {
-			articleid: articleid
+			archiveid: archiveid
 		};
 		$.post("__APP__/index.php?s=Article/recoverArticle",d,function (data){
 			alert(data.info);

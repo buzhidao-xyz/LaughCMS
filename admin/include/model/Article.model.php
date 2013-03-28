@@ -3,25 +3,28 @@
  * 文章模型
  * by laucen 2013-03-22
  */
-class Article extends Base
+class Article extends Archive
 {
 	public function __construct()
 	{
 		parent::__construct();
 	}
 
-	//添加文档
-	public function saveArticle($data=array())
+	/**
+	 * 保存文章
+	 * @param $archiveid int 文档ID
+	 * @param $content string 文档内容
+	 */
+	public function saveArticle($archiveid=null,$content=null)
 	{
-		if (!is_array($data) || empty($data)) return false;
-		return T("article")->add($data);
-	}
+		if (!$archiveid) return false;
 
-	//添加文档内容
-	public function saveArticleContent($data=array())
-	{
-		if (!is_array($data) || empty($data)) return false;
-		return T("article_index")->add($data);
+		$data = array(
+			'archiveid'  => $archiveid,
+			'content'    => $content,
+			"updatetime" => TIMESTAMP
+		);
+		return T("article")->add($data);
 	}
 
 	/**
@@ -31,52 +34,40 @@ class Article extends Base
 	 * @param int $length 分页结束记录号
 	 * @param array $where 条件数组
 	 */
-	public function getArticle($id=null,$start=0,$length=0,$where=array())
+	public function getArticle($id=null,$start=0,$length=0,$state=1,$columnids=array(),$control=null)
 	{
-		$where = is_array($where) ? $where : array();
-		if ($id) $where['a.id'] = is_array($id) ? array('in', $id) : $id;
+		$where = array('state'=>$state);
+		if (is_array($columnids) && !empty($columnids)) $where['columnid'] = array("in", $columnids);
+		if ($control) $where['control'] = $control;
 
-		$total = T("article")->where($where)->count();
-
-		$obj = T("article")->join(' '.TBF.'Column as b on a.columnid=b.id ')->field('a.*,b.columnname,b.columntype')->where($where)->order("a.id","desc");
-		if ($length) $obj = $obj->limit($start,$length);
-		$data = $obj->select();
-
-		return array('total'=>$total, 'data'=>$data);
+		return $this->getArchive($id,$start,$length,$where);
 	}
 
 	/**
 	 * 获取文档内容
-	 * @param int $articleid 文档id
+	 * @param int $archiveid 文档id
 	 */
-	public function getArticleContent($articleid=null)
+	public function getArticleContent($archiveid=null)
 	{
-		if (!$articleid) return null;
+		if (!$archiveid) return null;
 
-		$content = T("article_index")->where(array("articleid"=>$articleid))->find();
-		return isset($content['content']) ? $content['content'] : null;
+		$data = T("article")->where(array("archiveid"=>$archiveid))->find();
+		return isset($data['content']) ? $data['content'] : null;
 	}
 
 	/**
-	 * 更新文档信息
-	 * @param int $articleid 文档id
-	 * @param array $data 更新内容信息
+	 * 更新文档内容
+	 * @param int $archiveid 文档id
 	 */
-	public function upArticle($articleid=null, $data=array())
+	public function upArticleContent($archiveid=null,$content=null)
 	{
-		$where = array();
-		if (empty($articleid)) return null;
-		$where['id'] = is_array($articleid) ? array("in",$articleid) : $articleid;
+		if (empty($archiveid)) return null;
 
-		return T("article")->where($where)->update($data);
-	}
-
-	//更新文档内容
-	public function upArticleContent($articleid=null, $data=array())
-	{
-		if (empty($articleid)) return null;
-
-		return T("article_index")->where(array("articleid"=>$articleid))->update($data);
+		$data = array(
+			"content"    => $content,
+			"updatetime" => TIMESTAMP
+		);
+		return T("article")->where(array("archiveid"=>$archiveid))->update($data);
 	}
 
 	//删除文档

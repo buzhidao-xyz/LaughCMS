@@ -24,11 +24,24 @@ class ColumnControl extends CommonControl
 		return $parentid;
 	}
 
+	private function _getColumnModel()
+	{
+		$ColumnModel = q("ColumnModel");
+		return $ColumnModel;
+	}
+
 	private function _getColumnName()
 	{
 		$columnname = q("columnname");
 		if (!$columnname) return false;
 		return $columnname;
+	}
+
+	private function _getAction()
+	{
+		$action = q("action");
+		if (!$action) return false;
+		return $action;
 	}
 
 	private function _getsortrank()
@@ -106,6 +119,15 @@ class ColumnControl extends CommonControl
 		$columnid = $this->_getColumnID();
 		$this->assign("columnid",$columnid);
 		$this->assign("columnTree", $this->getColumnTree());
+
+		$columnModelTree  = null;
+        $columnModelTree .= '<option value="">|-请选择内容模型...</option>';
+		$columnModelList = M("CTModel")->ColumnModelList();
+		foreach ($columnModelList['data'] as $v) {
+			$columnModelTree .= '<option value="'.$v['id'].'">&nbsp;&nbsp;|-'.$v['name'].'</option>';
+		}
+		$this->assign("columnModelTree", $columnModelTree);
+
 		$this->display("Column/newcolumn.html");
 	}
 
@@ -114,6 +136,7 @@ class ColumnControl extends CommonControl
 	{
 		$columnname  = $this->_getColumnName();
 		$parentid    = $this->_getparentid();
+		$columnmodel = $this->_getColumnModel();
 		$sortrank    = $this->_getsortrank();
 		$columntype  = $this->_getcolumntype();
 		$isshow      = $this->_getisshow();
@@ -127,6 +150,7 @@ class ColumnControl extends CommonControl
 		$data = array(
 			'columnname'  => $columnname,
 			'parentid'    => $parentid,
+			'columnmodel' => $columnmodel,
 			'topid'       => $topid,
 			'sortrank'    => $sortrank,
 			'columntype'  => $columntype,
@@ -151,8 +175,9 @@ class ColumnControl extends CommonControl
 	/**
 	 * 获取栏目树
 	 * @param $control string 内容模型控制器
+	 * @param $columnid string 当前内容模型id
 	 */
-	public function getColumnTree($control=null)
+	public function getColumnTree($control=null,$parentid=null)
 	{
 		$data = M("Column")->getTopColumn($control);
 
@@ -160,8 +185,12 @@ class ColumnControl extends CommonControl
         $dataTree .= '<option value="">|-请选择栏目...</option>';
         if (is_array($data) && !empty($data)) {
 	        foreach ($data as $v) {
-	            $dataTree .= '<option value="'.$v['id'].'">&nbsp;&nbsp;|-'.$v['columnname'].'</option>';
-	            $dataTree .= $this->getSubColumnTree($v['id'],$control,2);
+	        	if ($v['id'] == $parentid) {
+		            $dataTree .= '<option value="'.$v['id'].'" selected>&nbsp;&nbsp;|-'.$v['columnname'].'</option>';
+	        	} else {
+		            $dataTree .= '<option value="'.$v['id'].'">&nbsp;&nbsp;|-'.$v['columnname'].'</option>';
+		        }
+	            $dataTree .= $this->getSubColumnTree($v['id'],$control,2,$parentid);
 	        }
 	    }
 
@@ -169,7 +198,7 @@ class ColumnControl extends CommonControl
 	}
 
 	//获取子栏目树
-	public function getSubColumnTree($columnid=null,$control=null,$depth=0)
+	public function getSubColumnTree($columnid=null,$control=null,$depth=0,$parentid=null)
 	{
 		if (!$columnid) return null;
 		$nbsp = array_fill(0, $depth, "&nbsp;&nbsp;");
@@ -178,8 +207,13 @@ class ColumnControl extends CommonControl
 		$dataTree  = null;
         if (is_array($data) && !empty($data)) {
 	        foreach ($data as $v) {
-	            $dataTree .= '<option value="'.$v['id'].'" >'.implode($nbsp,"").'|-'.$v['columnname'].'</option>';
-	            $dataTree .= $this->getSubColumnTree($v['id'],$control,$depth+1);
+	        	if ($v['id'] == $parentid) {
+		            $dataTree .= '<option value="'.$v['id'].'" selected>'.implode($nbsp,"").'|-'.$v['columnname'].'</option>';
+	        	} else {
+		            $dataTree .= '<option value="'.$v['id'].'">'.implode($nbsp,"").'|-'.$v['columnname'].'</option>';
+		        }
+	            
+	            $dataTree .= $this->getSubColumnTree($v['id'],$control,$depth+1,$parentid);
 	        }
 	    }
 
@@ -190,7 +224,6 @@ class ColumnControl extends CommonControl
 	public function getSubColumn()
 	{
 		$columnid = $this->_getColumnID();
-		if (!FilterHelper::C_Int($columnid)) $this->ajaxReturn(1,'栏目ID错误！');
 		$data = M("Column")->getSubColumn($columnid);
 
 		$dataTree  = null;
@@ -222,17 +255,29 @@ class ColumnControl extends CommonControl
 	{
 		$this->assign("accessStatus", 1);
 		$columnid = $this->_getColumnID();
-		if (!FilterHelper::C_int($columnid)) $this->display("Common/error.html");
 
 		$columnInfo = M("Column")->getColumn($columnid);
 		$columnInfo = $columnInfo[0];
 		$this->assign("ColumnInfo", $columnInfo);
-		$this->assign("columnTree", $this->getColumnTree());
-		$this->display("Column/updatecolumn.html");
+		$this->assign("columnTree", $this->getColumnTree(null,$columnInfo['parentid']));
+
+		$columnModelTree  = null;
+        $columnModelTree .= '<option value="">|-请选择内容模型...</option>';
+		$columnModelList = M("CTModel")->ColumnModelList();
+		foreach ($columnModelList['data'] as $v) {
+			if ($v['id'] == $columnInfo['columnmodel']) {
+				$columnModelTree .= '<option value="'.$v['id'].'" selected>&nbsp;&nbsp;|-'.$v['name'].'</option>';
+			} else {
+				$columnModelTree .= '<option value="'.$v['id'].'">&nbsp;&nbsp;|-'.$v['name'].'</option>';
+			}
+		}
+		$this->assign("columnModelTree", $columnModelTree);
+
+		$this->display("Column/upColumn.html");
 	}
 
 	//保存编辑栏目信息
-	public function saveUpdateColumn()
+	public function saveUpColumn()
 	{
 		$columnid = $this->_getColumnID();
 		if (!FilterHelper::C_int($columnid)) $this->display("Common/error.html");

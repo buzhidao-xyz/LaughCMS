@@ -39,13 +39,23 @@ var JS_APPM = 'http://localhost:82/laugh';
 			<div class="shtabcontent shtabcontentcurrent">
 				<li class="formblock">
 					<span>上级栏目: </span>
-					<select id="select" name="parentid" style="width:230px;">
-						<option value="">|-请选择栏目...</option><option value="1">&nbsp;&nbsp;|-网站首页</option><option value="2">&nbsp;&nbsp;|-新闻资讯</option><option value="3" >&nbsp;&nbsp;&nbsp;&nbsp;|-IT知识</option><option value="4" >&nbsp;&nbsp;&nbsp;&nbsp;|-网络知识</option><option value="5" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-前端知识</option><option value="6">&nbsp;&nbsp;|-产品展示</option><option value="7">&nbsp;&nbsp;|-客户案例</option><option value="8">&nbsp;&nbsp;|-下载中心</option><option value="9">&nbsp;&nbsp;|-招贤纳士</option><option value="10">&nbsp;&nbsp;|-关于我们</option><option value="11">&nbsp;&nbsp;|-联系我们</option>
+					<select name="parentid" style="width:230px;">
+						<option value="">|-请选择栏目...</option><option value="1">&nbsp;&nbsp;|-网站首页</option><option value="2">&nbsp;&nbsp;|-新闻资讯</option><option value="3">&nbsp;&nbsp;&nbsp;&nbsp;|-IT知识</option><option value="12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-PHP知识</option><option value="4">&nbsp;&nbsp;&nbsp;&nbsp;|-网络知识</option><option value="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-前端知识</option><option value="13">&nbsp;&nbsp;&nbsp;&nbsp;|-数据库知识</option><option value="6">&nbsp;&nbsp;|-产品展示</option><option value="7">&nbsp;&nbsp;|-客户案例</option><option value="8">&nbsp;&nbsp;|-下载中心</option><option value="9">&nbsp;&nbsp;|-招贤纳士</option><option value="10">&nbsp;&nbsp;|-关于我们</option><option value="11">&nbsp;&nbsp;|-联系我们</option>
+					</select>
+				</li>
+				<li class="formblock">
+					<span>内容模型: </span>
+					<select name="columnmodel" style="width:230px;">
+						<option value="">|-请选择内容模型...</option><option value="1">&nbsp;&nbsp;|-文章模型</option><option value="2">&nbsp;&nbsp;|-图片模型</option><option value="3">&nbsp;&nbsp;|-下载模型</option><option value="4">&nbsp;&nbsp;|-专题模型</option><option value="5">&nbsp;&nbsp;|-软件模型</option><option value="6">&nbsp;&nbsp;|-产品模型</option><option value="7">&nbsp;&nbsp;|-分类信息模型</option><option value="8">&nbsp;&nbsp;|-人才招聘模型</option><option value="9">&nbsp;&nbsp;|-公共模型</option>
 					</select>
 				</li>
 				<li class="formblock">
 					<span>栏目名称:</span>
 					<input type="text" name="columnname" value="" class="input w200" />
+				</li>
+				<li class="formblock">
+					<span>访问Action:</span>
+					<input type="text" name="action" value="" class="input w100" />
 				</li>
 				<li class="formblock">
 					<span>排列顺序:</span>
@@ -115,7 +125,7 @@ var JS_APPM = 'http://localhost:82/laugh';
     	}
     });
     $("select[name=parentid]").find("option").each(function (){
-    	if ($(this).val()=="3") $(this).attr("selected",true);
+    	if ($(this).val()=="") $(this).attr("selected",true);
     });
 </script>
     </div>

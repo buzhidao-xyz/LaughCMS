@@ -13,13 +13,23 @@
 			<div class="shtabcontent shtabcontentcurrent">
 				<li class="formblock">
 					<span>上级栏目: </span>
-					<select id="select" name="parentid" style="width:230px;">
+					<select name="parentid" style="width:230px;">
 						{$columnTree}
+					</select>
+				</li>
+				<li class="formblock">
+					<span>内容模型: </span>
+					<select name="columnmodel" style="width:230px;">
+						{$columnModelTree}
 					</select>
 				</li>
 				<li class="formblock">
 					<span>栏目名称:</span>
 					<input type="text" name="columnname" value="" class="input w200" />
+				</li>
+				<li class="formblock">
+					<span>访问Action:</span>
+					<input type="text" name="action" value="" class="input w100" />
 				</li>
 				<li class="formblock">
 					<span>排列顺序:</span>

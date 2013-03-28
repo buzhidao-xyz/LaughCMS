@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-03-27 14:06:00
+<?php /* Smarty version Smarty-3.1.12, created on 2013-03-28 17:26:15
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\Article\recover.html" */ ?>
-<?php /*%%SmartyHeaderCode:2936551528c483f3a14-80317465%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:175151540cb796a508-87218388%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '567b7500947d46d664f600866203c66fb935616a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\green\\Article\\recover.html',
-      1 => 1357780540,
+      1 => 1364460289,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2936551528c483f3a14-80317465',
+  'nocache_hash' => '175151540cb796a508-87218388',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_51528c48524014_91099933',
+  'unifunc' => 'content_51540cb7a9f979_18807508',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51528c48524014_91099933')) {function content_51528c48524014_91099933($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_51540cb7a9f979_18807508')) {function content_51540cb7a9f979_18807508($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="captitle"><h5>文档回收站 【目前共有<?php if ($_smarty_tpl->tpl_vars['total']->value){?><?php echo $_smarty_tpl->tpl_vars['total']->value;?>
 <?php }else{ ?>0<?php }?>条文档】</h5></div>
@@ -53,8 +53,8 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 ?>
     <ul class="table_list">
 		<li class="table_list_l table_list_l30">
-			<input type="checkbox" name="articleid[]" value="<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
-" flag="articleID" class="checkbox" />
+			<input type="checkbox" name="archiveid[]" value="<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+" flag="archiveID" class="checkbox" />
 		</li>
 		<li class="table_list_l table_list_l50"><?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 </li>
@@ -76,11 +76,11 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
     	<?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
     	<li class="table_list_l table_list_l120" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
 >
-    		<a href="__APP__/index.php?s=Article/upArticle&articleid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+    		<a href="__APP__/index.php?s=Article/edit&archiveid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 ">修改</a>
-    		<a delurl="__APP__/index.php?s=Article/backArticle&articleid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+    		<a delurl="__APP__/index.php?s=Article/backArticle&archiveid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 " href="javascript:;" name="del" msg="确定还原吗？">还原</a>
-    		<a delurl="__APP__/index.php?s=Article/deleteArticle&articleid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+    		<a delurl="__APP__/index.php?s=Article/deleteArticle&archiveid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 " href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>
     	<?php }?>
@@ -107,24 +107,23 @@ var articleClass = function (){
 		articleBack: $("#opBottom a[name=articleBack]"),
 		articleDelete: $("#opBottom a[name=articleDelete]")
 	}
-	var getArticleID = function (){
-		var articleid= "";
-		$("input[name='articleid[]']").each(function (){
-			if ($(this).attr("checked")) articleid += articleid ? ","+$(this).val() : $(this).val();
+	var getArchiveID = function (){
+		var archiveid= "";
+		$("input[name='archiveid[]']").each(function (){
+			if ($(this).attr("checked")) archiveid += archiveid ? ","+$(this).val() : $(this).val();
 		});
-		return articleid;
+		return archiveid;
 	};
 	articleObj.checkAll.click(function (){
-		$("input[flag=articleID]").attr("checked","checked");
+		$("input[flag=archiveID]").attr("checked","checked");
 	});
 	articleObj.unCheckAll.click(function (){
-		$("input[flag=articleID]").attr("checked",false);
+		$("input[flag=archiveID]").attr("checked",false);
 	});
 	//回收文档
 	articleObj.articleBack.click(function (){
-		var articleid = getArticleID();
 		var d = {
-			articleid: articleid
+			archiveid: getArchiveID()
 		};
 		$.post("__APP__/index.php?s=Article/backArticle",d,function (data){
 			alert(data.info);
@@ -133,9 +132,8 @@ var articleClass = function (){
 	});
 	//删除文档
 	articleObj.articleDelete.click(function (){
-		var articleid = getArticleID();
 		var d = {
-			articleid: articleid
+			archiveid: getArchiveID()
 		};
 		$.post("__APP__/index.php?s=Article/deleteArticle",d,function (data){
 			alert(data.info);

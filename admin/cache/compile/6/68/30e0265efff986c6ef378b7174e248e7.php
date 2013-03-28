@@ -36,6 +36,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 	<li class="table_list_l table_list_l100">文档作者</li>
 	<li class="table_list_l table_list_l80">点击数</li>
 	<li class="table_list_l table_list_l80">评论数</li>
+		<li class="table_list_l table_list_l120" accessStatus=1>操作</li>
 	</ul>
 <div class="contentTableList">
         <ul class="table_list"><li class="table_list_center">空</li></ul>
@@ -56,24 +57,23 @@ var articleClass = function (){
 		articleBack: $("#opBottom a[name=articleBack]"),
 		articleDelete: $("#opBottom a[name=articleDelete]")
 	}
-	var getArticleID = function (){
-		var articleid= "";
-		$("input[name='articleid[]']").each(function (){
-			if ($(this).attr("checked")) articleid += articleid ? ","+$(this).val() : $(this).val();
+	var getArchiveID = function (){
+		var archiveid= "";
+		$("input[name='archiveid[]']").each(function (){
+			if ($(this).attr("checked")) archiveid += archiveid ? ","+$(this).val() : $(this).val();
 		});
-		return articleid;
+		return archiveid;
 	};
 	articleObj.checkAll.click(function (){
-		$("input[flag=articleID]").attr("checked","checked");
+		$("input[flag=archiveID]").attr("checked","checked");
 	});
 	articleObj.unCheckAll.click(function (){
-		$("input[flag=articleID]").attr("checked",false);
+		$("input[flag=archiveID]").attr("checked",false);
 	});
 	//回收文档
 	articleObj.articleBack.click(function (){
-		var articleid = getArticleID();
 		var d = {
-			articleid: articleid
+			archiveid: getArchiveID()
 		};
 		$.post("/laugh/admin/index.php?s=Article/backArticle",d,function (data){
 			alert(data.info);
@@ -82,9 +82,8 @@ var articleClass = function (){
 	});
 	//删除文档
 	articleObj.articleDelete.click(function (){
-		var articleid = getArticleID();
 		var d = {
-			articleid: articleid
+			archiveid: getArchiveID()
 		};
 		$.post("/laugh/admin/index.php?s=Article/deleteArticle",d,function (data){
 			alert(data.info);

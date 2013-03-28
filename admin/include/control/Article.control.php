@@ -3,7 +3,7 @@
  * 文章控制器
  * by buzhidao 2012-12-26
  */
-class ArticleControl extends CommonControl
+class ArticleControl extends ArchiveControl
 {
 	//控制器名
 	static protected $_Control = "Article";
@@ -13,121 +13,24 @@ class ArticleControl extends CommonControl
 		parent::__construct();
 	}
 
-	private function _getArticleID()
+	//获取文章ID
+	protected function _getArticleID()
 	{
 		$articleid = q("articleid");
 
 		return $articleid;
 	}
 
-	private function _getTitle()
-	{
-		$title = q("title");
-
-		return $title;
-	}
-
-	private function _getTag()
-	{
-		$tag = q("tag");
-
-		return $tag;
-	}
-
-	private function _getsource()
-	{
-		$source = q("source");
-
-		return $source;
-	}
-
-	private function _getauthor()
-	{
-		$author = q("author");
-
-		return $author;
-	}
-
-	private function _getcolumnid()
-	{
-		$columnid = q("columnid");
-
-		return $columnid;
-	}
-
-	private function _getpublishtime()
-	{
-		$publishtime = q("publishtime");
-		$publishtime = explode(" ", $publishtime);
-		$publishtime1 = explode("-", $publishtime[0]);
-		$publishtime2 = explode(":", $publishtime[1]);
-		$publishtime = mktime($publishtime2[0],$publishtime2[1],$publishtime2[2],$publishtime1[1],$publishtime1[2],$publishtime1[0]);
-
-		return $publishtime;
-	}
-
-	private function _getstatus()
-	{
-		$status = q("status");
-
-		return $status;
-	}
-
-	private function _getseotitle()
-	{
-		$seotitle = q("seotitle");
-
-		return $seotitle;
-	}
-
-	private function _getkeyword()
-	{
-		$keyword = q("keyword");
-
-		return $keyword;
-	}
-
-	private function _getdescription()
-	{
-		$description = q("description");
-
-		return $description;
-	}
-
-	private function _getcontent()
-	{
-		$content = q("content");
-
-		return $content;
-	}
-
-	private function _getImage()
-	{
-		$upload = new UploadHelper();
-		$upload->maxSize  = 2097152; //2M
-		$upload->savePath =  C("UPLOAD_PATH")."/Image/".date("Ym/d/");
-		if(!$upload->upload()) {
-			return false;
-		} else {
-			$info = $upload->getUploadFileInfo();
-			$url = str_replace(ROOT_DIR, "", $info[0]['savepath'].$info[0]['savename']);
-			return $url;
-		}
-	}
-
-	//主控制 文档列表
+	//主入口文档列表
 	public function index()
 	{
-		$where = array('state'=>1);
-		$columnid = q("columnid");
-		if ($columnid) {
-			$columnids = M("Column")->getSubColumnID($columnid);
-			$columnids[] = $columnid;
-			$where['columnid'] = array('in', $columnids);
-		}
+		$columnid = $this->_getColumnID();
+
+		$columnids = array();
+		if ($columnid) $columnids = array_merge(M("Column")->getSubColumnID($columnid),array($columnid));
 
 		list($start,$length) = $this->getPages();
-        $articleList = M("Article")->getArticle(null,$start,$length,$where);
+        $articleList = M("Article")->getArticle(null,$start,$length,1,$columnids,self::$_Control);
         $this->assign("total", $articleList['total']);
         $this->assign("dataList", $articleList['data']);
 
@@ -139,47 +42,11 @@ class ArticleControl extends CommonControl
 	public function add()
 	{
 		$this->assign("accessStatus",1);
-		$this->assign("timestamp",TIMESTAMP);
+
 		$this->assign("userInfo",$this->userInfo);
 		$this->assign("columnTree", D("Column")->getColumnTree(self::$_Control));
+
 		$this->display("Article/add.html");
-	}
-
-	/**
-	 * 处理前端提交过来的文章信息
-	 * @param array $filter 被过滤的字段 不需要更新的
-	 */
-	private function dealArticleSubmit($filter=array())
-	{
-		$title = $this->_getTitle();
-		$tag = $this->_getTag();
-		$source = $this->_getsource();
-		$author = $this->_getauthor();
-		$columnid = $this->_getcolumnid();
-		$status = $this->_getstatus();
-		$seotitle = $this->_getseotitle();
-		$keyword = $this->_getkeyword();
-		$description = $this->_getdescription();
-		$image = $this->_getImage();
-
-		$data = array(
-			'title' => $title,
-			'author'=> $this->userInfo['username'],
-			'tag'   => $tag,
-			'source'   => $source,
-			'author'   => $author,
-			'columnid' => $columnid,
-			'status'   => $status,
-			'seotitle' => $seotitle,
-			'keyword'  => $keyword,
-			'description' => $description,
-			'updatetime'  => TIMESTAMP
-		);
-		if ($image) $data['thumbimage'] = $image;
-
-		if (!in_array("publishtime", $filter)) $data['publishtime'] = $this->_getpublishtime();
-
-		return $data;
 	}
 
 	/**
@@ -188,19 +55,15 @@ class ArticleControl extends CommonControl
 	 */
 	public function saveArticle()
 	{
-		$data = $this->dealArticleSubmit();
-		$articleid = M('Article')->saveArticle($data);
-		if ($articleid) {
-			$content = $this->_getcontent();
-			$arcdata = array(
-				'articleid' => $articleid,
-				'content'   => $content,
-				'updatetime' => TIMESTAMP
-			);
-			$return = M('Article')->saveArticleContent($arcdata);
-			if ($return) {
+		$data = $this->dealArchiveSubmit();
+		$archiveid = M("Archive")->saveArchive($data['title'],$data['tag'],$data['source'],$data['author'],$data['columnid'],$data['status'],$data['seotitle'],$data['keyword'],$data['description'],$data['image'],$data['publishtime']);
+		
+		if ($archiveid) {
+			$content = $this->_getContent();
+			$articleid = M('Article')->saveArticle($archiveid,$content);
+			if ($articleid) {
 				$NextOperation = array(
-					array('name'=>'查看修改', 'link'=>__APP__.'/index.php?s=Article/upArticle&articleid='.$articleid)
+					array('name'=>'查看修改', 'link'=>__APP__.'/index.php?s=Article/edit&archiveid='.$archiveid)
 				);
 				$this->assign("NextOperation", $NextOperation);
 				$this->display("Common/success.html");
@@ -213,12 +76,12 @@ class ArticleControl extends CommonControl
 	}
 
 	//更新文档信息
-	public function upArticle()
+	public function edit()
 	{
 		$this->assign("accessStatus", 1);
 
-		$articleID = $this->_getArticleID();
-		$articleInfo = M("Article")->getArticle($articleID);
+		$ArchiveID = $this->_getArchiveID();
+		$articleInfo = M("Article")->getArticle($ArchiveID,0,0,0);
 		$articleInfo = !empty($articleInfo['data']) ? $articleInfo['data'][0] : array();
 
 		if (empty($articleInfo)) $this->display("Common/error.html");
@@ -231,21 +94,17 @@ class ArticleControl extends CommonControl
 	}
 
 	//保存更新文档信息
-	public function saveUpArticle()
+	public function saveEdit()
 	{
-		$articleID = $this->_getArticleID();
-		$data = $this->dealArticleSubmit();
-		$return = M("Article")->upArticle($articleID, $data);
+		$ArchiveID = $this->_getArchiveID();
+		$data = $this->dealArchiveSubmit();
+		$return = M("Archive")->upArchive($ArchiveID,$data['title'],$data['tag'],$data['source'],$data['author'],$data['columnid'],$data['status'],$data['seotitle'],$data['keyword'],$data['description'],$data['image'],$data['publishtime']);
 		if ($return) {
-			$content = $this->_getcontent();
-			$data = array(
-				'content' => $content,
-				'updatetime' => TIMESTAMP
-			);
-			$return = M("Article")->upArticleContent($articleID, $data);
+			$content = $this->_getContent();
+			$return = M("Article")->upArticleContent($ArchiveID,$content);
 			if ($return) {
 				$NextOperation = array(
-					array('name'=>'查看修改', 'link'=>__APP__.'/index.php?s=Article/upArticle&articleid='.$articleID)
+					array('name'=>'查看修改', 'link'=>__APP__.'/index.php?s=Article/edit&archiveid='.$ArchiveID)
 				);
 				$this->assign("NextOperation", $NextOperation);
 				$this->display("Common/success.html");
@@ -260,25 +119,7 @@ class ArticleControl extends CommonControl
 	//回收文档 进入回收站
 	public function recoverArticle()
 	{
-		$articleID = $this->_getArticleID();
-		$articleID = explode(",", $articleID);
-		$data = array(
-			'state' => 0
-		);
-		$return = M("Article")->upArticle($articleID, $data);
-		if ($return) {
-			$this->ajaxReturn(0,"删除成功！");
-		} else {
-			$this->ajaxReturn(1,"删除失败！");
-		}
-	}
-
-	//彻底删除文档
-	public function deleteArticle()
-	{
-		$articleID = $this->_getArticleID();
-		$articleID = explode(",", $articleID);
-		$return = M("Article")->deleteArticle($articleID);
+		$return = $this->recoverArchive();
 		if ($return) {
 			$this->ajaxReturn(0,"删除成功！");
 		} else {
@@ -289,8 +130,10 @@ class ArticleControl extends CommonControl
 	//文档回收站
 	public function recover()
 	{
+		$this->assign("accessStatus", 1);
+
 		list($start,$length) = $this->getPages();
-        $articleList = M("Article")->getArticle(null,$start,$length,array('state'=>0));
+        $articleList = M("Article")->getArticle(null,$start,$length,0,null,self::$_Control);
         $this->assign("total", $articleList['total']);
         $this->assign("dataList", $articleList['data']);
 
@@ -301,12 +144,7 @@ class ArticleControl extends CommonControl
 	//还原文档
 	public function backArticle()
 	{
-		$articleID = $this->_getArticleID();
-		$articleID = explode(",", $articleID);
-		$data = array(
-			'state' => 1
-		);
-		$return = M("Article")->upArticle($articleID, $data);
+		$return = $this->backArchive();
 		if ($return) {
 			$this->ajaxReturn(0,"还原成功！");
 		} else {
@@ -314,16 +152,27 @@ class ArticleControl extends CommonControl
 		}
 	}
 
+	//彻底删除文档
+	public function deleteArticle()
+	{
+		$return = $this->deleteArchive();
+		if ($return) {
+			$this->ajaxReturn(0,"删除成功！");
+		} else {
+			$this->ajaxReturn(1,"删除失败！");
+		}
+	}
+
 	//移动文档
 	public function moveArticle()
 	{
-		$articleid = $this->_getArticleID();
+		$ArchiveID = $this->_getArchiveID();
 		$action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
 		if ($action == 'save') {
 			
 		} else {
-			$this->assign("articleid", $articleid);
-			$this->assign("columnTree", D("Column")->getColumnTree());
+			$this->assign("ArchiveID", $ArchiveID);
+			$this->assign("columnTree", D("Column")->getColumnTree(self::$_Control));
 			$this->display("Article/move.html");
 		}
 	}

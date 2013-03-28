@@ -2,7 +2,7 @@
 {if $accessStatus == 1}
 <div class="formContainer" accessStatus={$accessStatus}>
 	<div class="formtitle"><h5>更新栏目信息</h5></div>
-	<form name="newcolumnform" action="__APP__/index.php?s=Column/saveUpdateColumn" enctype="multipart/form-data" method="post" class="newform">
+	<form name="newcolumnform" action="__APP__/index.php?s=Column/saveUpColumn" enctype="multipart/form-data" method="post" class="newform">
 		<input type="hidden" name="columnid" value="{$ColumnInfo.id}" />
 		<ul class="formbody">
 			<div class="shtabtitlec">
@@ -19,8 +19,18 @@
 					</select>
 				</li>
 				<li class="formblock">
+					<span>内容模型: </span>
+					<select name="columnmodel" style="width:230px;">
+						{$columnModelTree}
+					</select>
+				</li>
+				<li class="formblock">
 					<span>栏目名称:</span>
 					<input type="text" name="columnname" value="{$ColumnInfo.columnname}" class="input w200" />
+				</li>
+				<li class="formblock">
+					<span>访问Action:</span>
+					<input type="text" name="action" value="{$ColumnInfo.action}" class="input w100" />
 				</li>
 				<li class="formblock">
 					<span>排列顺序:</span>
@@ -89,9 +99,6 @@
     		alert("请填写栏目排序位置!");
     		return false;
     	}
-    });
-    $("select[name=parentid]").find("option").each(function (){
-    	if ($(this).val()=="{$ColumnInfo.parentid}") $(this).attr("selected",true);
     });
 </script>
 {include file="public/control_bottom.html"}

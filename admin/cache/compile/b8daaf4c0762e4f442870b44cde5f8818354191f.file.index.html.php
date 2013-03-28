@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-03-27 17:20:03
+<?php /* Smarty version Smarty-3.1.12, created on 2013-03-28 17:26:17
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\Article\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:13195152b9c33c5712-30002918%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2773051540cb915acb1-56908592%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'b8daaf4c0762e4f442870b44cde5f8818354191f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\green\\Article\\index.html',
-      1 => 1364372707,
+      1 => 1364459253,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '13195152b9c33c5712-30002918',
+  'nocache_hash' => '2773051540cb915acb1-56908592',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5152b9c34fc5b6_52190549',
+  'unifunc' => 'content_51540cb928c399_02544642',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5152b9c34fc5b6_52190549')) {function content_5152b9c34fc5b6_52190549($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_51540cb928c399_02544642')) {function content_51540cb928c399_02544642($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="opTop">
 	<a href="__APP__/index.php?s=Article/index">文章列表</a>
@@ -58,8 +58,8 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 ?>
     <ul class="table_list">
 		<li class="table_list_l table_list_l30">
-			<input type="checkbox" name="articleid[]" value="<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
-" flag="articleID" class="checkbox" />
+			<input type="checkbox" name="archiveid[]" value="<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+" flag="archiveID" class="checkbox" />
 		</li>
 		<li class="table_list_l table_list_l50"><?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 </li>
@@ -81,11 +81,11 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
     	<?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
     	<li class="table_list_l table_list_l120" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
 >
-    		<a href="__APPM__/index.php?s=Article/View&articleid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+    		<a href="__APPM__/index.php?s=Article/View&archiveid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 " target="_blank">预览</a>
-    		<a href="__APP__/index.php?s=Article/upArticle&articleid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+    		<a href="__APP__/index.php?s=Article/edit&archiveid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 ">修改</a>
-    		<a delurl="__APP__/index.php?s=Article/recoverArticle&articleid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+    		<a delurl="__APP__/index.php?s=Article/recoverArticle&archiveid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 " href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>
     	<?php }?>
@@ -118,32 +118,32 @@ var articleClass = function (){
 		articleMove: $("#opBottom a[name=articleMove]"),
 		articleDelete: $("#opBottom a[name=articleDelete]")
 	}
-	var getArticleID = function (){
-		var articleid= "";
-		$("input[name='articleid[]']").each(function (){
-			if ($(this).attr("checked")) articleid += articleid ? ","+$(this).val() : $(this).val();
+	var getArchiveID = function (){
+		var archiveid= "";
+		$("input[name='archiveid[]']").each(function (){
+			if ($(this).attr("checked")) archiveid += archiveid ? ","+$(this).val() : $(this).val();
 		});
-		return articleid;
+		return archiveid;
 	};
 	articleObj.checkAll.click(function (){
-		$("input[flag=articleID]").attr("checked","checked");
+		$("input[flag=archiveID]").attr("checked","checked");
 	});
 	articleObj.unCheckAll.click(function (){
-		$("input[flag=articleID]").attr("checked",false);
+		$("input[flag=archiveID]").attr("checked",false);
 	});
 
 	//移动栏目
 	articleObj.articleMove.colorbox();
 	articleObj.articleMove.click(function (){
-		var articleid = getArticleID();
-		$(this).attr("href",$(this).attr("href")+"&articleid="+articleid);
+		var archiveid = getArchiveID();
+		$(this).attr("href",$(this).attr("href")+"&archiveid="+archiveid);
 	});
 	
 	//删除文档
 	articleObj.articleDelete.click(function (){
-		var articleid = getArticleID();
+		var archiveid = getArchiveID();
 		var d = {
-			articleid: articleid
+			archiveid: archiveid
 		};
 		$.post("__APP__/index.php?s=Article/recoverArticle",d,function (data){
 			alert(data.info);

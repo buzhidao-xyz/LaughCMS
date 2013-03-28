@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-03-27 16:01:04
+<?php /* Smarty version Smarty-3.1.12, created on 2013-03-28 17:26:24
          compiled from "C:\xampp\htdocs\laugh\themes\default\Article\article.html" */ ?>
-<?php /*%%SmartyHeaderCode:192895152a740693419-72664084%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2713951540cc0279a30-73298385%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '9d058c71fe0a49d721c3548d523f2c22f20e8e7a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\Article\\article.html',
-      1 => 1364182054,
+      1 => 1364461887,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '192895152a740693419-72664084',
+  'nocache_hash' => '2713951540cc0279a30-73298385',
   'function' => 
   array (
   ),
@@ -22,9 +22,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5152a7407518e6_46190144',
+  'unifunc' => 'content_51540cc0332e89_62546819',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5152a7407518e6_46190144')) {function content_5152a7407518e6_46190144($_smarty_tpl) {?><div class="articleTpl">
+<?php if ($_valid && !is_callable('content_51540cc0332e89_62546819')) {function content_51540cc0332e89_62546819($_smarty_tpl) {?><div class="articleTpl">
 	<h2 class="title"><?php echo $_smarty_tpl->tpl_vars['articleInfo']->value['title'];?>
 </h2>
 	<div class="status">
@@ -55,7 +55,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<dd>
 				<?php if (!empty($_smarty_tpl->tpl_vars['articleInfo']->value['prev'])){?>
 				<a href="__APP__/index.php?s=article/view&columnid=<?php echo $_smarty_tpl->tpl_vars['columnid']->value;?>
-&articleid=<?php echo $_smarty_tpl->tpl_vars['articleInfo']->value['prev']['id'];?>
+&archiveid=<?php echo $_smarty_tpl->tpl_vars['articleInfo']->value['prev']['id'];?>
 " title="<?php echo $_smarty_tpl->tpl_vars['articleInfo']->value['prev']['title'];?>
 "><?php echo $_smarty_tpl->tpl_vars['articleInfo']->value['prev']['title'];?>
 </a>
@@ -69,7 +69,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<dd>
 				<?php if (!empty($_smarty_tpl->tpl_vars['articleInfo']->value['next'])){?>
 				<a href="__APP__/index.php?s=article/view&columnid=<?php echo $_smarty_tpl->tpl_vars['columnid']->value;?>
-&articleid=<?php echo $_smarty_tpl->tpl_vars['articleInfo']->value['next']['id'];?>
+&archiveid=<?php echo $_smarty_tpl->tpl_vars['articleInfo']->value['next']['id'];?>
 " title="<?php echo $_smarty_tpl->tpl_vars['articleInfo']->value['next']['title'];?>
 "><?php echo $_smarty_tpl->tpl_vars['articleInfo']->value['next']['title'];?>
 </a>

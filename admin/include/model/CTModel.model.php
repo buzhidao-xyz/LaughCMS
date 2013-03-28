@@ -11,9 +11,8 @@ class CTModel extends Base
 	}
 
 	//获取内容模型列表
-	public function ColumnModelList($id=0)
+	public function ColumnModelList($id=0,$where=array())
 	{
-		$where = array();
 		if ($id) $where["id"] = is_array($id) ? array("in",$id) : $id;
 
 		$total = T("column_model")->where($where)->count();
@@ -28,5 +27,13 @@ class CTModel extends Base
 		if (empty($data)) return false;
 
 		return T("column_model")->add($data);
+	}
+
+	//通过栏目模型控制器获取模型信息
+	public function getColumnModelByControl($control=null)
+	{
+		if (!$control) return array();
+
+		return T("column_model")->where(array("control"=>$control))->find();
 	}
 }

@@ -2,8 +2,8 @@
 {if $accessStatus == 1}
 <div class="formContainer" accessStatus={$accessStatus}>
 	<div class="formtitle"><h5>修改文档资料</h5></div>
-	<form name="newform" action="__APP__/index.php?s=Article/saveUpArticle" enctype="multipart/form-data" method="post" class="newform">
-		<input type="hidden" name="articleid" value="{$articleInfo.id}" />
+	<form name="newform" action="__APP__/index.php?s=Article/saveEdit" enctype="multipart/form-data" method="post" class="newform">
+		<input type="hidden" name="archiveid" value="{$articleInfo.id}" />
 		<ul class="formbody">
 			<div class="shtabtitlec">
 				<div class="shtabtitle shtabcurrent"><a href="javascript:;"><span>常规内容</span></a></div>

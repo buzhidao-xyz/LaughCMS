@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-03-27 16:11:13
+<?php /* Smarty version Smarty-3.1.12, created on 2013-03-28 17:28:37
          compiled from "C:\xampp\htdocs\laugh\themes\default\Article\list.html" */ ?>
-<?php /*%%SmartyHeaderCode:75135152a9a1b3da95-57758225%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1598951540d45e32fa5-55125396%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '4dda769e103274afc8b8fb71004edb9d090f4895' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\Article\\list.html',
-      1 => 1364261414,
+      1 => 1364461858,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '75135152a9a1b3da95-57758225',
+  'nocache_hash' => '1598951540d45e32fa5-55125396',
   'function' => 
   array (
   ),
@@ -25,9 +25,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5152a9a1c0fc48_48428516',
+  'unifunc' => 'content_51540d45f07986_60270528',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5152a9a1c0fc48_48428516')) {function content_5152a9a1c0fc48_48428516($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_51540d45f07986_60270528')) {function content_51540d45f07986_60270528($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate ("Common/Top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
@@ -58,7 +58,7 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 ?>
 						<li>
 							<a href="__APP__/index.php?s=article/view&columnid=<?php echo $_smarty_tpl->tpl_vars['columnid']->value;?>
-&articleid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+&archiveid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['d']->value['title'];?>
 </a>
 							<span class="pubdate">[<?php echo mkdate($_smarty_tpl->tpl_vars['d']->value['publishtime'],'d');?>

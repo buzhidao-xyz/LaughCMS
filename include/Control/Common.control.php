@@ -115,12 +115,12 @@ class CommonControl extends BaseControl
      * @param $columnid int 栏目id
      * @param $num int 要获取的条数
      */
-    public function getAllArticle($columnid=null,$num=0)
+    public function getAllArchive($columnid=null,$num=0)
     {
         $columnid = $columnid ? $columnid : $this->_columnid;
         $columnids = M("Column")->getChildrenColumnID($columnid);
 
         $where = empty($columnids) ? array() : array("columnid"=>array("in",$columnids));
-        return M("Article")->getArticle(null,0,$num,$where,1);
+        return M("Archive")->getArchive(null,0,$num,$where,1);
     }
 }

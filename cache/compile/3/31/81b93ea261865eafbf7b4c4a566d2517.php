@@ -46,15 +46,15 @@ var JS_APP = '/laugh';
 <link type="text/css" rel="stylesheet" href="themes/default/style/navigation.css" media="screen">
 <ul class="headerNavigation">
 		<li>
-		<a href="/laugh/index.php?s=Index/index&columnid=1" class="navon">网站首页</a>
+		<a href="/laugh/index.php?s=Index/index&columnid=1" class="">网站首页</a>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Article/index&columnid=2" class="">新闻资讯</a>
+		<a href="/laugh/index.php?s=Article/index&columnid=2" class="navon">新闻资讯</a>
 				<ul class="SubNavigation">
 						<li>
 				<a href="/laugh/index.php?s=Article/index&columnid=3">IT知识</a>
 								<ul>
-										<li><a href="/laugh/index.php?s=Index/index&columnid=12">PHP知识</a></li>
+										<li><a href="/laugh/index.php?s=Article/index&columnid=12">PHP知识</a></li>
 									</ul>
 							</li>
 						<li>
@@ -62,6 +62,9 @@ var JS_APP = '/laugh';
 								<ul>
 										<li><a href="/laugh/index.php?s=Article/index&columnid=5">前端知识</a></li>
 									</ul>
+							</li>
+						<li>
+				<a href="/laugh/index.php?s=Index/index&columnid=13">数据库知识</a>
 							</li>
 					</ul>
 			</li>
@@ -188,11 +191,11 @@ $("#SImageContainer").Xslider({
 			</div>
 			<div class="boxBlockBody h170">
 				<ul class="articleList">
-										<li><a href="/laugh/index.php?s=article/view&columnid=12&articleid=7">PHP实现异步操作</a></li>
-										<li><a href="/laugh/index.php?s=article/view&columnid=3&articleid=6">PHP基本点知识</a></li>
-										<li><a href="/laugh/index.php?s=article/view&columnid=5&articleid=5">页面(PAGE)标记(TAGS)</a></li>
-										<li><a href="/laugh/index.php?s=article/view&columnid=3&articleid=4">MongoDB:下一代MySQL？</a></li>
-										<li><a href="/laugh/index.php?s=article/view&columnid=2&articleid=3">企业用网站进行网络宣传的优势</a></li>
+										<li><a href="/laugh/index.php?s=article/view&columnid=3&archiveid=6">PHP基本点知识</a></li>
+										<li><a href="/laugh/index.php?s=article/view&columnid=5&archiveid=5">页面(PAGE)标记(TAGS)</a></li>
+										<li><a href="/laugh/index.php?s=article/view&columnid=2&archiveid=1">这是一篇测试文章</a></li>
+										<li><a href="/laugh/index.php?s=article/view&columnid=2&archiveid=3">企业用网站进行网络宣传的优势</a></li>
+										<li><a href="/laugh/index.php?s=article/view&columnid=2&archiveid=2">确认在左，取消在右?</a></li>
 									</ul>
 			</div>
 		</div>

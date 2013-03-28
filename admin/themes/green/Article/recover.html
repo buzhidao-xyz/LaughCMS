@@ -18,7 +18,7 @@
     {foreach $dataList as $d}
     <ul class="table_list">
 		<li class="table_list_l table_list_l30">
-			<input type="checkbox" name="articleid[]" value="{$d.id}" flag="articleID" class="checkbox" />
+			<input type="checkbox" name="archiveid[]" value="{$d.id}" flag="archiveID" class="checkbox" />
 		</li>
 		<li class="table_list_l table_list_l50">{$d.id}</li>
 		<li class="table_list_l table_list_l300" title="{$d.title}">
@@ -31,9 +31,9 @@
 		<li class="table_list_l table_list_l80">{$d.commentnum}</li>
     	{if $accessStatus == 1}
     	<li class="table_list_l table_list_l120" accessStatus={$accessStatus}>
-    		<a href="__APP__/index.php?s=Article/upArticle&articleid={$d.id}">修改</a>
-    		<a delurl="__APP__/index.php?s=Article/backArticle&articleid={$d.id}" href="javascript:;" name="del" msg="确定还原吗？">还原</a>
-    		<a delurl="__APP__/index.php?s=Article/deleteArticle&articleid={$d.id}" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    		<a href="__APP__/index.php?s=Article/edit&archiveid={$d.id}">修改</a>
+    		<a delurl="__APP__/index.php?s=Article/backArticle&archiveid={$d.id}" href="javascript:;" name="del" msg="确定还原吗？">还原</a>
+    		<a delurl="__APP__/index.php?s=Article/deleteArticle&archiveid={$d.id}" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>
     	{/if}
     </ul>
@@ -58,24 +58,23 @@ var articleClass = function (){
 		articleBack: $("#opBottom a[name=articleBack]"),
 		articleDelete: $("#opBottom a[name=articleDelete]")
 	}
-	var getArticleID = function (){
-		var articleid= "";
-		$("input[name='articleid[]']").each(function (){
-			if ($(this).attr("checked")) articleid += articleid ? ","+$(this).val() : $(this).val();
+	var getArchiveID = function (){
+		var archiveid= "";
+		$("input[name='archiveid[]']").each(function (){
+			if ($(this).attr("checked")) archiveid += archiveid ? ","+$(this).val() : $(this).val();
 		});
-		return articleid;
+		return archiveid;
 	};
 	articleObj.checkAll.click(function (){
-		$("input[flag=articleID]").attr("checked","checked");
+		$("input[flag=archiveID]").attr("checked","checked");
 	});
 	articleObj.unCheckAll.click(function (){
-		$("input[flag=articleID]").attr("checked",false);
+		$("input[flag=archiveID]").attr("checked",false);
 	});
 	//回收文档
 	articleObj.articleBack.click(function (){
-		var articleid = getArticleID();
 		var d = {
-			articleid: articleid
+			archiveid: getArchiveID()
 		};
 		$.post("__APP__/index.php?s=Article/backArticle",d,function (data){
 			alert(data.info);
@@ -84,9 +83,8 @@ var articleClass = function (){
 	});
 	//删除文档
 	articleObj.articleDelete.click(function (){
-		var articleid = getArticleID();
 		var d = {
-			articleid: articleid
+			archiveid: getArchiveID()
 		};
 		$.post("__APP__/index.php?s=Article/deleteArticle",d,function (data){
 			alert(data.info);

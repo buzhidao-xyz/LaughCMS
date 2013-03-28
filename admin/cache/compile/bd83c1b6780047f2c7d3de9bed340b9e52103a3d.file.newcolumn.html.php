@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-03-26 09:49:20
+<?php /* Smarty version Smarty-3.1.12, created on 2013-03-28 17:30:57
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\Column\newcolumn.html" */ ?>
-<?php /*%%SmartyHeaderCode:19325150fea0a9aae1-39988310%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:103851540dd10c50c3-96418067%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'bd83c1b6780047f2c7d3de9bed340b9e52103a3d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\green\\Column\\newcolumn.html',
-      1 => 1359687998,
+      1 => 1364463054,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '19325150fea0a9aae1-39988310',
+  'nocache_hash' => '103851540dd10c50c3-96418067',
   'function' => 
   array (
   ),
@@ -19,13 +19,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'accessStatus' => 0,
     'columnTree' => 0,
+    'columnModelTree' => 0,
     'columnid' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5150fea0b0efd1_22895750',
+  'unifunc' => 'content_51540dd11426c0_12721476',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5150fea0b0efd1_22895750')) {function content_5150fea0b0efd1_22895750($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_51540dd11426c0_12721476')) {function content_51540dd11426c0_12721476($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
 <div class="formContainer" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
@@ -42,14 +43,25 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<div class="shtabcontent shtabcontentcurrent">
 				<li class="formblock">
 					<span>上级栏目: </span>
-					<select id="select" name="parentid" style="width:230px;">
+					<select name="parentid" style="width:230px;">
 						<?php echo $_smarty_tpl->tpl_vars['columnTree']->value;?>
+
+					</select>
+				</li>
+				<li class="formblock">
+					<span>内容模型: </span>
+					<select name="columnmodel" style="width:230px;">
+						<?php echo $_smarty_tpl->tpl_vars['columnModelTree']->value;?>
 
 					</select>
 				</li>
 				<li class="formblock">
 					<span>栏目名称:</span>
 					<input type="text" name="columnname" value="" class="input w200" />
+				</li>
+				<li class="formblock">
+					<span>访问Action:</span>
+					<input type="text" name="action" value="" class="input w100" />
 				</li>
 				<li class="formblock">
 					<span>排列顺序:</span>

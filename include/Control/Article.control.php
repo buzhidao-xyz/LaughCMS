@@ -1,20 +1,20 @@
 <?php
 /**
  * 文档控制器
- * by wbq 2011-12-01
+ * by wbq 2013-03-28
  * 处理逻辑数据 执行具体的功能操作
  */
-class ArticleControl extends CommonControl
+class ArticleControl extends ArchiveControl
 {
 	//控制器名
-    protected $_control = 'article';
+    protected $_control = 'Article';
 
 	public function __construct()
 	{
 		parent::__construct();
 	}
 
-	//获取文档ID
+	//获取文章ID
 	public function _getArticleID()
 	{
 		$articleid = q("articleid");
@@ -25,7 +25,7 @@ class ArticleControl extends CommonControl
 	public function index()
 	{
 		list($start,$length) = $this->getPages();
-		$ArticleList = $this->getAllArticle();
+		$ArticleList = $this->getAllArchive();
 
 		$this->assign("ArticleList", $ArticleList['data']);
 		$this->assign("page", getPage($ArticleList['total'],$this->_pagesize));
@@ -35,16 +35,10 @@ class ArticleControl extends CommonControl
 	//获取文档内容
 	public function view()
 	{
-		$articleid = $this->_getArticleID();
-		$articleInfo = M("Article")->getArticleInfo($this->_columnid,$articleid);
+		$archiveid = $this->_getArchiveID();
+		$articleInfo = M("Article")->getArticleInfo($this->_columnid,$archiveid);
 
 		$this->assign("articleInfo",$articleInfo);
 		$this->display("Article/body.html");
-	}
-
-	//显示文章内容
-	public function article()
-	{
-		$this->display("Article/article.html");
 	}
 }

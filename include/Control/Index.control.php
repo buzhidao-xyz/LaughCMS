@@ -20,7 +20,8 @@ class IndexControl extends CommonControl
     //主页
     public function index()
     {
-        $ArticleList = $this->getAllArticle(2,5);
+        //新闻资讯栏目id=2
+        $ArticleList = $this->getAllArchive(2,5);
         $this->assign("ArticleList", $ArticleList['data']);
 
         $this->getHomeScrollImage();

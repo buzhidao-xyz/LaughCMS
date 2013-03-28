@@ -48,7 +48,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 				<li class="formblock">
 					<span>文档主栏目: </span>
 					<select id="select" name="columnid" style="width:230px;">
-						<option value="">|-请选择栏目...</option><option value="2">&nbsp;&nbsp;|-新闻资讯</option><option value="3" >&nbsp;&nbsp;&nbsp;&nbsp;|-IT知识</option><option value="4" >&nbsp;&nbsp;&nbsp;&nbsp;|-网络知识</option><option value="5" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-前端知识</option>
+						<option value="">|-请选择栏目...</option><option value="2">&nbsp;&nbsp;|-新闻资讯</option><option value="3">&nbsp;&nbsp;&nbsp;&nbsp;|-IT知识</option><option value="12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-PHP知识</option><option value="4">&nbsp;&nbsp;&nbsp;&nbsp;|-网络知识</option><option value="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-前端知识</option>
 					</select>
 				</li>
 				<li class="formblock">
@@ -65,7 +65,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 				</li>
 				<li class="formblock">
 					<span>发布时间:</span>
-					<input type="text" id="dpicker0" name="publishtime" value="2013-03-27 17:19:57" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="input w150" />
+					<input type="text" id="dpicker0" name="publishtime" value="2013-03-28 15:11:45" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="input w150" />
 					<img width="16" height="22" align="absmiddle" onclick="WdatePicker({el:'dpicker0',dateFmt:'yyyy-MM-dd HH:mm:ss'})" style="cursor:pointer" src="public/plugin/My97DatePicker/skin/datePicker.gif">
 				</li>
 				<li class="formblock">

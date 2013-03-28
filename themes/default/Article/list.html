@@ -19,7 +19,7 @@
 						{if isset($ArticleList)&&!empty($ArticleList)}
 						{foreach $ArticleList as $d}
 						<li>
-							<a href="__APP__/index.php?s=article/view&columnid={$columnid}&articleid={$d.id}">{$d.title}</a>
+							<a href="__APP__/index.php?s=article/view&columnid={$columnid}&archiveid={$d.id}">{$d.title}</a>
 							<span class="pubdate">[{$d.publishtime|mkdate:d}]</span>
 						</li>
 						{/foreach}
