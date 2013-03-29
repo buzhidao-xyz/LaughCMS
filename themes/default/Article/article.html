@@ -40,3 +40,17 @@
 		</dl>
 	</div>
 </div>
+<link type="text/css" rel="stylesheet" href="themes/default/style/shCoreDefault.css" media="screen">
+<script type="text/javascript" src="themes/default/js/shCore.js"></script>
+<script type="text/javascript">
+//为了在编辑器之外能展示高亮代码
+SyntaxHighlighter.highlight();
+//调整左右对齐
+for(var i=0,di;di=SyntaxHighlighter.highlightContainers[i++];){
+    var tds = di.getElementsByTagName('td');
+    for(var j=0,li,ri;li=tds[0].childNodes[j];j++){
+        ri = tds[1].firstChild.childNodes[j];
+        ri.style.height = li.style.height = ri.offsetHeight + 'px';
+    }
+}
+</script>

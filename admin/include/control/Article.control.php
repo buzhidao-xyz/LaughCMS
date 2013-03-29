@@ -17,7 +17,6 @@ class ArticleControl extends ArchiveControl
 	protected function _getArticleID()
 	{
 		$articleid = q("articleid");
-
 		return $articleid;
 	}
 
@@ -38,7 +37,7 @@ class ArticleControl extends ArchiveControl
 		$this->display("Article/index.html");
 	}
 
-	//新文档
+	//新文章
 	public function add()
 	{
 		$this->assign("accessStatus",1);
@@ -50,10 +49,10 @@ class ArticleControl extends ArchiveControl
 	}
 
 	/**
-	 * 保存文档入库
+	 * 保存文章入库
 	 * @param $title string 文章标题 必须
 	 */
-	public function saveArticle()
+	public function save()
 	{
 		$data = $this->dealArchiveSubmit();
 		$archiveid = M("Archive")->saveArchive($data['title'],$data['tag'],$data['source'],$data['author'],$data['columnid'],$data['status'],$data['seotitle'],$data['keyword'],$data['description'],$data['image'],$data['publishtime']);
@@ -81,7 +80,7 @@ class ArticleControl extends ArchiveControl
 		$this->assign("accessStatus", 1);
 
 		$ArchiveID = $this->_getArchiveID();
-		$articleInfo = M("Article")->getArticle($ArchiveID,0,0,0);
+		$articleInfo = M("Article")->getArticle($ArchiveID,0,0,null);
 		$articleInfo = !empty($articleInfo['data']) ? $articleInfo['data'][0] : array();
 
 		if (empty($articleInfo)) $this->display("Common/error.html");

@@ -5,6 +5,9 @@
  */
 class ImageControl extends CommonControl
 {
+	//图片最大size
+	static protected $_ImageSize = 5242880; //5M
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -27,7 +30,7 @@ class ImageControl extends CommonControl
 	private function _getImage()
 	{
 		$upload = new UploadHelper();
-		$upload->maxSize  = 5242880; //5M
+		$upload->maxSize  = self::$_ImageSize;
 		$upload->savePath =  C("UPLOAD_PATH")."/ScrollImage/";
 		if(!$upload->upload()) {
 			return false;
@@ -114,6 +117,36 @@ class ImageControl extends CommonControl
 			$this->ajaxReturn(0,"删除成功！");
 		} else {
 			$this->ajaxReturn(1,"删除失败！");
+		}
+	}
+
+	//图片上传
+	public function saveUploadImage()
+	{
+		$imageTitle = q("imageTitle");
+		$imageLink = null;
+		$archiveid = null;
+
+		$upload = new UploadHelper();
+		$upload->maxSize  = self::$_ImageSize;
+		$upload->savePath =  C("UPLOAD_PATH")."/Image/".date("Ym/d/");
+		if(!$upload->upload()) {
+			$this->ajaxReturn(1,"图片上传失败！");
+		} else {
+			$info = $upload->getUploadFileInfo();
+			$imagepath = str_replace(ROOT_DIR, "", $info[0]['savepath'].$info[0]['savename']);
+			// dump(__APPM__.$imagepath);exit;
+			$imageid = M("Image")->saveUploadImage($imagepath,$imageTitle,$imageLink,$archiveid);
+			if ($imageid) {
+				$data = '<div class="imageBlock">
+							<input type="hidden" name="imageids[]" value="'.$imageid.'" />
+							<span class="imageBlockimage"><img src="'.__APPM__.$imagepath.'" width="150" height="auto" /></span>
+							<span class="imageBlocktitle">'.$imageTitle.'</span>
+						</div>';
+				$this->ajaxReturn(0,"图片上传成功！",$data);
+			} else {
+				$this->ajaxReturn(1,"图片上传失败！");
+			}
 		}
 	}
 }

@@ -28,7 +28,7 @@ class Article extends Archive
 	}
 
 	/**
-	 * 获取文档列表
+	 * 获取文章列表
 	 * @param string/array $id 文档ID
 	 * @param int $start 分页开始记录号
 	 * @param int $length 分页结束记录号
@@ -36,7 +36,8 @@ class Article extends Archive
 	 */
 	public function getArticle($id=null,$start=0,$length=0,$state=1,$columnids=array(),$control=null)
 	{
-		$where = array('state'=>$state);
+		$where = array();
+		if ($state!==null) $where['state'] = $state;
 		if (is_array($columnids) && !empty($columnids)) $where['columnid'] = array("in", $columnids);
 		if ($control) $where['control'] = $control;
 

@@ -46,4 +46,23 @@ class Image extends Base
 		if (!$id) return false;
 		return T("scrollimage")->where(array("id"=>$id))->update(array("isdelete"=>1));
 	}
+
+	/**
+	 * 保存上传的图片 产品图片/图片集等
+	 * @param $imagepath string 图片地址
+	 * @param $imageTitle string 图片标题描述
+	 * @param $imageLink string 图片链接
+	 * @param $archiveid int 文档ID
+	 */
+	public function saveUploadImage($imagepath=null,$imagetitle=null,$imagelink=null,$archiveid=0)
+	{
+		if (!$imagepath) return false;
+
+		$data = array('imagepath'=>$imagepath);
+		if ($imagetitle) $data['imagetitle'] = $imagetitle;
+		if ($imagelink) $data['imagelink'] = $imagelink;
+		if ($archiveid) $data['archiveid'] = $archiveid;
+
+		return T("images")->add($data);
+	}
 }

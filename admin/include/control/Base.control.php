@@ -93,7 +93,7 @@ class BaseControl
      * @param $data mixed 返回数据
      * @param $type string 数据编码类型 默认为json
      */
-    static protected function ajaxReturn($status=0,$info='',$data=array(),$type='json')
+    static protected function ajaxReturn($status=0,$info='',$data=null,$type='json')
     {
         $return = array(
             'status' => $status,
