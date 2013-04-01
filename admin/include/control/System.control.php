@@ -6,7 +6,7 @@
 class SystemControl extends CommonControl
 {
     //控制器
-    static protected $_control = 'System';
+    protected $_Control = 'System';
 
     private $_SYSTEM;
 

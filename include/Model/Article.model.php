@@ -26,7 +26,11 @@ class Article extends Archive
 		return T("article")->where($where)->select();
 	}
 
-	//获取某个文档详情
+	/**
+	 * 获取某个文章详情
+	 * @param $columnid int 栏目id
+	 * @param $archiveid int 文档id
+	 */
 	public function getArticleInfo($columnid=null,$archiveid=null,$where=array())
 	{
 		$articleInfo = $this->getArchive($archiveid,0,0,$where);

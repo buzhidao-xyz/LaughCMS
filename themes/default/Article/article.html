@@ -1,16 +1,16 @@
 <div class="articleTpl">
-	<h2 class="title">{$articleInfo.title}</h2>
+	<h2 class="title">{$archiveInfo.title}</h2>
 	<div class="status">
 		<span class="title">点击次数:</span>
-		<span class="content">{$articleInfo.clicknum} 次</span>
+		<span class="content">{$archiveInfo.clicknum} 次</span>
 		<span class="title">发布时间:</span>
-		<span class="content">{$articleInfo.publishtime|mkdate}</span>
+		<span class="content">{$archiveInfo.publishtime|mkdate}</span>
 		<span class="title">作者:</span>
-		<span class="content">{$articleInfo.author}</span>
+		<span class="content">{$archiveInfo.author}</span>
 	</div>
 	<div class="body">
 		<div class="articleContent">
-			{$articleInfo.content|html_entity_decode}
+			{$archiveInfo.content|html_entity_decode}
 		</div>
 	</div>
 	<div class="operate">
@@ -21,8 +21,8 @@
 		<dl>
 			<dt>上一篇:</dt>
 			<dd>
-				{if !empty($articleInfo.prev)}
-				<a href="__APP__/index.php?s=article/view&columnid={$columnid}&archiveid={$articleInfo.prev.id}" title="{$articleInfo.prev.title}">{$articleInfo.prev.title}</a>
+				{if !empty($archiveInfo.prev)}
+				<a href="__APP__/index.php?s=article/view&columnid={$columnid}&archiveid={$archiveInfo.prev.id}" title="{$archiveInfo.prev.title}">{$archiveInfo.prev.title}</a>
 				{else}
 				<font color="grey">没有了！</font>
 				{/if}
@@ -31,8 +31,8 @@
 		<dl>
 			<dt>下一篇:</dt>
 			<dd>
-				{if !empty($articleInfo.next)}
-				<a href="__APP__/index.php?s=article/view&columnid={$columnid}&archiveid={$articleInfo.next.id}" title="{$articleInfo.next.title}">{$articleInfo.next.title}</a>
+				{if !empty($archiveInfo.next)}
+				<a href="__APP__/index.php?s=article/view&columnid={$columnid}&archiveid={$archiveInfo.next.id}" title="{$archiveInfo.next.title}">{$archiveInfo.next.title}</a>
 				{else}
 				<font color="grey">没有了！</font>
 				{/if}

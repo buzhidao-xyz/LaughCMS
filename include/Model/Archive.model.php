@@ -79,4 +79,14 @@ class Archive extends Base
 		$where['id'] = array("gt",$archiveid);
 		return T("archive")->where($where)->order("id","asc")->find();
 	}
+
+	/**
+	 * 获取文档图片
+	 * @param $archiveid int 文档ID
+	 */
+	public function getArchiveImages($archiveid=null)
+	{
+		if (!$archiveid) return false;
+		return T("images")->where(array("archiveid"=>$archiveid))->select();
+	}
 }

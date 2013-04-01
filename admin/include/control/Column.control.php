@@ -26,8 +26,8 @@ class ColumnControl extends CommonControl
 
 	private function _getColumnModel()
 	{
-		$ColumnModel = q("ColumnModel");
-		return $ColumnModel;
+		$columnmodel = q("columnmodel");
+		return $columnmodel;
 	}
 
 	private function _getColumnName()
@@ -137,6 +137,7 @@ class ColumnControl extends CommonControl
 		$columnname  = $this->_getColumnName();
 		$parentid    = $this->_getparentid();
 		$columnmodel = $this->_getColumnModel();
+		$action      = $this->_getAction();
 		$sortrank    = $this->_getsortrank();
 		$columntype  = $this->_getcolumntype();
 		$isshow      = $this->_getisshow();
@@ -151,6 +152,7 @@ class ColumnControl extends CommonControl
 			'columnname'  => $columnname,
 			'parentid'    => $parentid,
 			'columnmodel' => $columnmodel,
+			'action'      => $action,
 			'topid'       => $topid,
 			'sortrank'    => $sortrank,
 			'columntype'  => $columntype,
@@ -284,6 +286,8 @@ class ColumnControl extends CommonControl
 
 		$columnname  = $this->_getColumnName();
 		$parentid    = $this->_getparentid();
+		$columnmodel = $this->_getColumnModel();
+		$action      = $this->_getAction();
 		$sortrank    = $this->_getsortrank();
 		$columntype  = $this->_getcolumntype();
 		$isshow      = $this->_getisshow();
@@ -297,6 +301,8 @@ class ColumnControl extends CommonControl
 		$data = array(
 			'columnname'  => $columnname,
 			'parentid'    => $parentid,
+			'columnmodel' => $columnmodel,
+			'action'      => $action,
 			'topid'       => $topid,
 			'sortrank'    => $sortrank,
 			'columntype'  => $columntype,

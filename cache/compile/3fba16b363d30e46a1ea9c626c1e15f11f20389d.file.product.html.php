@@ -1,12 +1,41 @@
-<div class="productTpl">
-	<h2 class="title">CTI融合通信专业资讯网</h2>
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-01 17:32:05
+         compiled from "C:\xampp\htdocs\laugh\themes\default\Product\product.html" */ ?>
+<?php /*%%SmartyHeaderCode:372151595415bb5074-12523440%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '3fba16b363d30e46a1ea9c626c1e15f11f20389d' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\Product\\product.html',
+      1 => 1364808723,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '372151595415bb5074-12523440',
+  'function' => 
+  array (
+  ),
+  'variables' => 
+  array (
+    'archiveInfo' => 0,
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.12',
+  'unifunc' => 'content_51595415c49e58_12074012',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_51595415c49e58_12074012')) {function content_51595415c49e58_12074012($_smarty_tpl) {?><div class="productTpl">
+	<h2 class="title"><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['title'];?>
+</h2>
 	<div class="status">
 		<span class="title">点击次数:</span>
-		<span class="content">202次</span>
+		<span class="content"><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['clicknum'];?>
+ 次</span>
 		<span class="title">发布时间:</span>
-		<span class="content">2012-02-06 10:13:55</span>
+		<span class="content"><?php echo mkdate($_smarty_tpl->tpl_vars['archiveInfo']->value['publishtime']);?>
+</span>
 		<span class="title">作者:</span>
-		<span class="content">admin</span>
+		<span class="content"><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['author'];?>
+</span>
 	</div>
 	<div class="body">
 		<div class="ImageShow">
@@ -28,42 +57,50 @@
 				<div id="productInfoboxTab1" class="boxTabContent productInfoContent">
 					<dl>
 						<dt>型号:</dt>
-						<dd>ZXTFG-SCV-001</dd>
+						<dd><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['model'];?>
+</dd>
 					</dl>
 					<dl>
 						<dt>品牌:</dt>
-						<dd>凯迪拉克</dd>
+						<dd><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['brand'];?>
+</dd>
 					</dl>
 					<dl>
 						<dt>颜色:</dt>
-						<dd>白色 黑色</dd>
+						<dd><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['color'];?>
+</dd>
 					</dl>
 					<dl>
 						<dt>材质:</dt>
-						<dd>木棉</dd>
+						<dd><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['material'];?>
+</dd>
 					</dl>
 					<dl>
 						<dt>尺寸:</dt>
-						<dd>300*90*40mm</dd>
+						<dd><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['size'];?>
+</dd>
 					</dl>
 					<dl>
 						<dt>价格:</dt>
-						<dd>57.5万 元</dd>
+						<dd><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['price'];?>
+</dd>
 					</dl>
 					<dl>
 						<dt>数量:</dt>
-						<dd>1000 件</dd>
+						<dd><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['total'];?>
+</dd>
 					</dl>
 				</div>
 				<div id="productInfoboxTab2" class="boxTabContent productInfoContent">
-					LaughCMS企业网站管理系统,是一款代码完全开源免费PHP+MYSQL系统.系统安全,效率,易用并且可扩展性非常好。<br/>
-					程序内置SEO优化机制，使企业网站更容易被推广。拥有企业网站常用的模块功能（企业简介模块、新闻模块、产品模块、下载模块、图片模块、招聘模块、在线留言、友情链接、会员与权限管理）。强大灵活的后台管理功能、静态页面生成功能、自定义模型功能、自制插件安装管理功能等可为企业打造出大气漂亮且具有营销力的精品网站...
+					<?php echo html_entity_decode($_smarty_tpl->tpl_vars['archiveInfo']->value['instruction']);?>
+
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="operate">
-		{include file="include/share0.html"}
+		<?php echo $_smarty_tpl->getSubTemplate ("include/share0.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 		<div class="operateLink"><a href="javascript:;">[打印此页]</a>&nbsp;&nbsp;&nbsp;<a href="javascript:self.close();">[关闭]</a></div>
 	</div>
 	<div class="about">
@@ -171,4 +208,4 @@ $(".productInfo ul#productInfoboxTab").idTabs(function(id,list,set){
 	return false;
 });
 });
-</script>
+</script><?php }} ?>

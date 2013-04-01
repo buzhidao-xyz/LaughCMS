@@ -6,7 +6,7 @@
 class DebugControl extends CommonControl
 {
 	//控制器名
-	static protected $_control = 'Debug';
+	protected $_Control = 'Debug';
 
 	//定义查询字符串
     static private $_query;

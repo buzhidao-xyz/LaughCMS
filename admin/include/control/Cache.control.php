@@ -6,7 +6,7 @@
 class CacheControl extends CommonControl
 {
     //定义类名
-    static protected $_control = 'DataBase';
+    protected $_control = 'DataBase';
     
     public function __construct()
     {

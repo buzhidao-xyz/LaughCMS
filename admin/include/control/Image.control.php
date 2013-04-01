@@ -135,14 +135,14 @@ class ImageControl extends CommonControl
 		} else {
 			$info = $upload->getUploadFileInfo();
 			$imagepath = str_replace(ROOT_DIR, "", $info[0]['savepath'].$info[0]['savename']);
-			// dump(__APPM__.$imagepath);exit;
 			$imageid = M("Image")->saveUploadImage($imagepath,$imageTitle,$imageLink,$archiveid);
 			if ($imageid) {
-				$data = '<div class="imageBlock">
-							<input type="hidden" name="imageids[]" value="'.$imageid.'" />
-							<span class="imageBlockimage"><img src="'.__APPM__.$imagepath.'" width="150" height="auto" /></span>
-							<span class="imageBlocktitle">'.$imageTitle.'</span>
-						</div>';
+				$data = '';
+				$data = array(
+					'imageid' => $imageid,
+					'src'     => __APPM__.$imagepath,
+					'imageTitle' => $imageTitle
+				);
 				$this->ajaxReturn(0,"图片上传成功！",$data);
 			} else {
 				$this->ajaxReturn(1,"图片上传失败！");

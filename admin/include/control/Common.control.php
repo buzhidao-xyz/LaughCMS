@@ -5,7 +5,7 @@
  */
 class CommonControl extends BaseControl
 {
-    static protected $_Control = 'Common';
+    protected $_Control = 'Common';
 
     //用户权限
     protected $userAccess;
@@ -25,7 +25,7 @@ class CommonControl extends BaseControl
         $this->getUserAccess();
         $this->setUserAccess();
 
-        $this->assign("Control", self::$_Control);
+        $this->assign("Control", $this->_Control);
     }
 
     //获取用户权限信息

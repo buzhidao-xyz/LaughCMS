@@ -6,7 +6,7 @@
 class LoginControl extends BaseControl
 {
     //控制器类名
-    static protected $_control = 'Login';
+    protected $_Control = 'Login';
     
     /**
      * 管理中心登录入口启用/停用控制

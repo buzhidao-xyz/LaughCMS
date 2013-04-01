@@ -32,8 +32,8 @@
     	{if $accessStatus == 1}
     	<li class="table_list_l table_list_l120" accessStatus={$accessStatus}>
     		<a href="__APP__/index.php?s=Article/edit&archiveid={$d.id}">修改</a>
-    		<a delurl="__APP__/index.php?s=Article/backArticle&archiveid={$d.id}" href="javascript:;" name="del" msg="确定还原吗？">还原</a>
-    		<a delurl="__APP__/index.php?s=Article/deleteArticle&archiveid={$d.id}" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    		<a delurl="__APP__/index.php?s=Archive/backArchive&archiveid={$d.id}" href="javascript:;" name="del" msg="确定还原吗？">还原</a>
+    		<a delurl="__APP__/index.php?s=Archive/deleteArchive&archiveid={$d.id}" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>
     	{/if}
     </ul>
@@ -42,57 +42,6 @@
     <ul class="table_list"><li class="table_list_center">空</li></ul>
     {/if}
 </div>
-<div id="opBottom" class="opBottom">
-	<a href="javascript:;" name="checkAll">全选</a>
-	<a href="javascript:;" name="unCheckAll">取消</a>
-	<a href="javascript:;" name="articleBack">还原</a>
-	<a href="javascript:;" name="articleDelete">删除</a>
-</div>
 {include file="public/page.html"}
-<script type="text/javascript">
-$(document).ready(function (){
-var articleClass = function (){
-	var articleObj = {
-		checkAll: $("#opBottom a[name=checkAll]"),
-		unCheckAll: $("#opBottom a[name=unCheckAll]"),
-		articleBack: $("#opBottom a[name=articleBack]"),
-		articleDelete: $("#opBottom a[name=articleDelete]")
-	}
-	var getArchiveID = function (){
-		var archiveid= "";
-		$("input[name='archiveid[]']").each(function (){
-			if ($(this).attr("checked")) archiveid += archiveid ? ","+$(this).val() : $(this).val();
-		});
-		return archiveid;
-	};
-	articleObj.checkAll.click(function (){
-		$("input[flag=archiveID]").attr("checked","checked");
-	});
-	articleObj.unCheckAll.click(function (){
-		$("input[flag=archiveID]").attr("checked",false);
-	});
-	//回收文档
-	articleObj.articleBack.click(function (){
-		var d = {
-			archiveid: getArchiveID()
-		};
-		$.post("__APP__/index.php?s=Article/backArticle",d,function (data){
-			alert(data.info);
-			if (!data.status) location.href = location.href;
-		},'json');
-	});
-	//删除文档
-	articleObj.articleDelete.click(function (){
-		var d = {
-			archiveid: getArchiveID()
-		};
-		$.post("__APP__/index.php?s=Article/deleteArticle",d,function (data){
-			alert(data.info);
-			if (!data.status) location.href = location.href;
-		},'json');
-	});
-}
-articleClass();
-});
-</script>
+{include file="Archive/recoverOpBottom.html"}
 {include file="public/control_bottom.html"}

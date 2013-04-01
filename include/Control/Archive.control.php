@@ -8,6 +8,8 @@ class ArchiveControl extends CommonControl
 {
 	//控制器名
     protected $_control = 'Archive';
+    //分页每页记录数
+    protected $_pagesize = 15;
 
 	public function __construct()
 	{

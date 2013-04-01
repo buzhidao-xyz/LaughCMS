@@ -6,7 +6,7 @@
 class AccessControl extends BaseControl
 {
 	//控制器名
-	static protected $_control = 'Access';
+	protected $_control = 'Access';
 
     //超级管理员账户id数组
     private $_super_admin;

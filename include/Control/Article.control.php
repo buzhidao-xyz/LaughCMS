@@ -25,10 +25,10 @@ class ArticleControl extends ArchiveControl
 	public function index()
 	{
 		list($start,$length) = $this->getPages();
-		$ArticleList = $this->getAllArchive();
+		$ArchiveList = $this->getAllArchive();
 
-		$this->assign("ArticleList", $ArticleList['data']);
-		$this->assign("page", getPage($ArticleList['total'],$this->_pagesize));
+		$this->assign("ArchiveList", $ArchiveList['data']);
+		$this->assign("page", getPage($ArchiveList['total'],$this->_pagesize));
 		$this->display("Article/list.html");
 	}
 
@@ -36,9 +36,9 @@ class ArticleControl extends ArchiveControl
 	public function view()
 	{
 		$archiveid = $this->_getArchiveID();
-		$articleInfo = M("Article")->getArticleInfo($this->_columnid,$archiveid);
-
-		$this->assign("articleInfo",$articleInfo);
+		$archiveInfo = M("Article")->getArticleInfo($this->_columnid,$archiveid);
+		$this->assign("archiveInfo",$archiveInfo);
+		
 		$this->display("Article/body.html");
 	}
 }

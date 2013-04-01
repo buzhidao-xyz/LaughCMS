@@ -6,7 +6,7 @@
 class UserControl extends CommonControl
 {
     //定义类名
-    static protected $_control = 'User';
+    protected $_Control = 'User';
     
     //定义缓存有效时间(秒)
     static public $_life_time = 10;

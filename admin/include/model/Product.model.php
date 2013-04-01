@@ -19,11 +19,24 @@ class Product extends Archive
 	 */
 	public function getProduct($id=null,$start=0,$length=0,$state=1,$columnids=array(),$control=null)
 	{
-		$where = array('state'=>$state);
+		$where = array();
+		if ($state !== null) $where['state'] = $state;
 		if (is_array($columnids) && !empty($columnids)) $where['columnid'] = array("in", $columnids);
 		if ($control) $where['control'] = $control;
 
 		return $this->getArchive($id,$start,$length,$where);
+	}
+
+	/**
+	 * 获取产品信息
+	 * @param $archiveid int 文档ID
+	 */
+	public function getProductDetail($archiveid=null)
+	{
+		if (!$archiveid) return null;
+
+		$data = T("product")->where(array("archiveid"=>$archiveid))->find();
+		return $data;
 	}
 
 	/**
@@ -47,5 +60,27 @@ class Product extends Archive
 			'updatetime' => TIMESTAMP
 		);
 		return T("product")->add($data);
+	}
+
+	/**
+	 * 保存产品信息
+	 * @param $archiveid int 文档ID
+	 */
+	public function upProduct($archiveid,$model,$brand,$color,$material,$size,$price,$total,$instruction)
+	{
+		if (!$archiveid) return false;
+
+		$data = array(
+			'model' => $model,
+			'brand' => $brand,
+			'color' => $color,
+			'material' => $material,
+			'size' => $size,
+			'price' => $price,
+			'total' => $total,
+			'instruction' => $instruction,
+			'updatetime' => TIMESTAMP
+		);
+		return T("product")->where(array("archiveid"=>$archiveid))->update($data);
 	}
 }

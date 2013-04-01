@@ -35,6 +35,10 @@
 	display: block;
 	padding-bottom: 3px;
 }
+#imageUpload #imageBox .imageBlock span.imageBlockimage img {
+	max-width: 150px;
+	max-height: 160px;
+}
 #imageUpload #imageBox .imageBlock span.imageBlocktitle {
 	height: 20px;
 	line-height: 20px;

@@ -16,8 +16,8 @@
 				</div>
 				<div class="boxBlockBody">
 					<ul class="articleList">
-						{if isset($ArticleList)&&!empty($ArticleList)}
-						{foreach $ArticleList as $d}
+						{if isset($ArchiveList)&&!empty($ArchiveList)}
+						{foreach $ArchiveList as $d}
 						<li>
 							<a href="__APP__/index.php?s=article/view&columnid={$columnid}&archiveid={$d.id}">{$d.title}</a>
 							<span class="pubdate">[{$d.publishtime|mkdate:d}]</span>

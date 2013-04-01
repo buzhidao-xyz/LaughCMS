@@ -5,7 +5,7 @@
 class ProductControl extends ArchiveControl
 {
 	//控制器名
-	static protected $_Control = "Product";
+	protected $_Control = "Product";
 
 	public function __construct()
 	{
@@ -68,6 +68,13 @@ class ProductControl extends ArchiveControl
 		return $total;
 	}
 
+	//获取产品图片id
+	public function _getImageids()
+	{
+		$imageids = q("imageids");
+		return $imageids;
+	}
+
 	//主入口
 	public function index()
 	{
@@ -77,11 +84,12 @@ class ProductControl extends ArchiveControl
 		if ($columnid) $columnids = array_merge(M("Column")->getSubColumnID($columnid),array($columnid));
 
 		list($start,$length) = $this->getPages();
-        $articleList = M("Product")->getProduct(null,$start,$length,1,$columnids,self::$_Control);
-        $this->assign("total", $articleList['total']);
-        $this->assign("dataList", $articleList['data']);
+        $archiveList = M("Product")->getProduct(null,$start,$length,1,$columnids,$this->_Control);
+        // dump($archiveList);exit;
+        $this->assign("total", $archiveList['total']);
+        $this->assign("dataList", $archiveList['data']);
 
-        $this->assign("page", getPage($articleList['total'],$this->_pagesize));
+        $this->assign("page", getPage($archiveList['total'],$this->_pagesize));
 		$this->display("Product/index.html");
 	}
 
@@ -91,7 +99,7 @@ class ProductControl extends ArchiveControl
 		$this->assign("accessStatus",1);
 
 		$this->assign("userInfo",$this->userInfo);
-		$this->assign("columnTree", D("Column")->getColumnTree(self::$_Control));
+		$this->assign("columnTree", D("Column")->getColumnTree($this->_Control));
 
 		$this->display("Product/add.html");
 	}
@@ -114,8 +122,68 @@ class ProductControl extends ArchiveControl
 
 			$productid = M('Product')->saveProduct($archiveid,$model,$brand,$color,$material,$size,$price,$total,$instruction);
 			if ($productid) {
+				//保存产品图片
+				$imageids = $this->_getImageids();
+				M("Product")->addArchiveImages($archiveid,$imageids);
+
 				$NextOperation = array(
 					array('name'=>'查看修改', 'link'=>__APP__.'/index.php?s=Product/edit&archiveid='.$archiveid)
+				);
+				$this->assign("NextOperation", $NextOperation);
+				$this->display("Common/success.html");
+			} else {
+				$this->display("Common/error.html");
+			}
+		} else {
+			$this->display("Common/error.html");
+		}
+	}
+
+	//修改产品信息
+	public function edit()
+	{
+		$this->assign("accessStatus", 1);
+
+		$ArchiveID = $this->_getArchiveID();
+		$ArchiveInfo = M("Product")->getProduct($ArchiveID,0,0,null);
+		$ArchiveInfo = !empty($ArchiveInfo['data']) ? $ArchiveInfo['data'][0] : array();
+
+		if (empty($ArchiveInfo)) $this->display("Common/error.html");
+
+		$productDetail = M("Product")->getProductDetail($ArchiveID);
+		$ArchiveInfo = array_merge($productDetail,$ArchiveInfo);
+		$ArchiveInfo['archiveImage'] = M("Archive")->getArchiveImages($ArchiveID);
+
+		$this->assign("ArchiveInfo", $ArchiveInfo);
+		$this->assign("columnTree", D("Column")->getColumnTree());
+		$this->display("Product/edit.html");
+	}
+
+	//保存修改的产品信息
+	public function saveEdit()
+	{
+		$ArchiveID = $this->_getArchiveID();
+		$data = $this->dealArchiveSubmit();
+		$return = M("Archive")->upArchive($ArchiveID,$data['title'],$data['tag'],$data['source'],$data['author'],$data['columnid'],$data['status'],$data['seotitle'],$data['keyword'],$data['description'],$data['image'],$data['publishtime']);
+		if ($return) {
+			$model = $this->_getModel();
+			$brand = $this->_getBrand();
+			$color = $this->_getColor();
+			$material = $this->_getMaterial();
+			$size = $this->_getSize();
+			$price = $this->_getPrice();
+			$total = $this->_getTotal();
+			$instruction = $this->_getContent();
+
+			$return = M('Product')->upProduct($ArchiveID,$model,$brand,$color,$material,$size,$price,$total,$instruction);
+			if ($return) {
+				//保存产品图片
+				$imageids = $this->_getImageids();
+				M("Product")->deleteArchiveImages($ArchiveID);
+				M("Product")->addArchiveImages($ArchiveID,$imageids);
+
+				$NextOperation = array(
+					array('name'=>'查看修改', 'link'=>__APP__.'/index.php?s=Product/edit&archiveid='.$ArchiveID)
 				);
 				$this->assign("NextOperation", $NextOperation);
 				$this->display("Common/success.html");
@@ -130,6 +198,14 @@ class ProductControl extends ArchiveControl
 	//产品回收站
 	public function recover()
 	{
+		$this->assign("accessStatus", 1);
+
+		list($start,$length) = $this->getPages();
+        $productList = M("Product")->getProduct(null,$start,$length,0,null,$this->_Control);
+        $this->assign("total", $productList['total']);
+        $this->assign("dataList", $productList['data']);
+
+        $this->assign("page", getPage($productList['total'],$this->_pagesize));
 		$this->display("Product/recover.html");
 	}
 }

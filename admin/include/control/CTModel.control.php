@@ -6,7 +6,7 @@
 class CTModelControl extends CommonControl
 {
     //控制器
-    static protected $_control = 'CTModel';
+    protected $_Control = 'CTModel';
 
     private $_CTModel;
 

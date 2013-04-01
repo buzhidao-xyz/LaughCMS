@@ -13,27 +13,6 @@
 			</div>
 			<div class="shtabcontentc">
 			<div class="shtabcontent shtabcontentcurrent">
-				<div id="imageUpload">
-					<div id="imageTitle">产品图片:</div>
-					<div id="imageBody">
-						<div id="imageBox">
-							
-						</div>
-						<div id="imageUploadBox" ajaxUrl="__APP__/index.php?s=Image/saveUploadImage">
-							<span>
-								图片: <input type="file" id="images" name="images" class="input w230 inputfile" />
-							</span>
-							<span>
-								描述: <input type="text" name="imageTitle" value="" class="input w300" />
-							</span>
-							<span>
-								<input type="button" name="imagesubt" class="button btngreen2 btupload" value="上传" />
-							</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="shtabcontent">
 				<li class="formblock">
 					<span>文档标题:</span>
 					<input type="text" name="title" value="" class="input w300" />
@@ -119,6 +98,9 @@
 				</li>
 			</div>
 			<div class="shtabcontent">
+				{include file="public/imageUpload.html"}
+			</div>
+			<div class="shtabcontent">
 				<li class="formautoblock">
 					<span>详细描述:</span>
 					<div class="FullTextEditor">
@@ -133,8 +115,6 @@
 	</form>
 </div>
 {/if}
-<link type="text/css" rel="stylesheet" href="themes/green/style/imageUpload.css" media="screen">
-<script type="text/javascript" src="themes/green/js/ajaxfileupload.js"></script>
 <script src="public/plugin/UEditor/editor_config.js" type="text/javascript"></script>
 <script src="public/plugin/UEditor/editor_all_min.js" type="text/javascript"></script>
 <script src="public/plugin/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
@@ -153,32 +133,6 @@ $(document).ready(function (){
 			alert("请选择文档所在主栏目!");
 			return false;
 		}
-	});
-
-	//图片上传
-	$("input[name=imagesubt]").click(function (){
-		if (!$("input[name=images]").val()) {
-			alert("请选择图片！");
-			return false;
-		}
-		var url = $("#imageUploadBox").attr("ajaxUrl");
-		$.ajaxFileUpload ({
-			url : url,
-			secureuri :false,
-			fileElementId :'images',
-			dataType : 'json',
-			success : function (data, status){
-				alert(1);
-				alert(data.info);
-				if (!data.status) {
-					$("#imageBox").html($("#imageBox").html()+data.data);
-				}
-			},
-			error: function (s, data, status, e){
-				alert(2);
-				alert(e);
-			}
-		})
 	});
 })
 </script>

@@ -6,7 +6,7 @@
 class NodeControl extends CommonControl
 {
     //控制器
-    static protected $_control = 'Node';
+    protected $_Control = 'Node';
 
     private $_GROUP = null;
     private $_NODE = null;

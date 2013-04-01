@@ -6,7 +6,7 @@
 class ArchiveControl extends CommonControl
 {
 	//控制器名
-	static protected $_Control = "Archive";
+	protected $_Control = "Archive";
 
 	//缩略图最大字节
 	static protected $_ImageSize = 2097152; //2M
@@ -164,7 +164,12 @@ class ArchiveControl extends CommonControl
 		$ArchiveID = $this->_getArchiveID();
 		$ArchiveID = explode(",", $ArchiveID);
 
-		return M("Archive")->recoverArchive($ArchiveID);
+		$return = M("Archive")->recoverArchive($ArchiveID);
+		if ($return) {
+			$this->ajaxReturn(0,"删除成功！");
+		} else {
+			$this->ajaxReturn(1,"删除失败！");
+		}
 	}
 
 	//还原文档
@@ -173,7 +178,12 @@ class ArchiveControl extends CommonControl
 		$ArchiveID = $this->_getArchiveID();
 		$ArchiveID = explode(",", $ArchiveID);
 
-		return M("Archive")->backArchive($ArchiveID);
+		$return = M("Archive")->backArchive($ArchiveID);
+		if ($return) {
+			$this->ajaxReturn(0,"还原成功！");
+		} else {
+			$this->ajaxReturn(1,"还原失败！");
+		}
 	}
 
 	//彻底删除文档
@@ -182,6 +192,32 @@ class ArchiveControl extends CommonControl
 		$ArchiveID = $this->_getArchiveID();
 		$ArchiveID = explode(",", $ArchiveID);
 
-		return M("Archive")->deleteArchive($ArchiveID);
+		$return = M("Archive")->deleteArchive($ArchiveID);
+		if ($return) {
+			$this->ajaxReturn(0,"删除成功！");
+		} else {
+			$this->ajaxReturn(1,"删除失败！");
+		}
+	}
+
+	//移动文档
+	public function moveArchive()
+	{
+		$ArchiveID = $this->_getArchiveID();
+		$action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
+		if ($action == 'save') {
+			$ArchiveID = explode(",", $ArchiveID);
+			$ColumnID = $this->_getColumnID();
+			$return = M("Archive")->upArchiveColumn($ArchiveID,$ColumnID);
+			if ($return) {
+				$this->ajaxReturn(0,"移动成功！");
+			} else {
+				$this->ajaxReturn(1,"移动失败！");
+			}
+		} else {
+			$this->assign("ArchiveID", $ArchiveID);
+			$this->assign("columnTree", D("Column")->getColumnTree($this->_Control));
+			$this->display("Archive/move.html");
+		}
 	}
 }

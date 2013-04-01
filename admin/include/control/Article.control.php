@@ -6,7 +6,7 @@
 class ArticleControl extends ArchiveControl
 {
 	//控制器名
-	static protected $_Control = "Article";
+	protected $_Control = "Article";
 
 	public function __construct()
 	{
@@ -29,7 +29,7 @@ class ArticleControl extends ArchiveControl
 		if ($columnid) $columnids = array_merge(M("Column")->getSubColumnID($columnid),array($columnid));
 
 		list($start,$length) = $this->getPages();
-        $articleList = M("Article")->getArticle(null,$start,$length,1,$columnids,self::$_Control);
+        $articleList = M("Article")->getArticle(null,$start,$length,1,$columnids,$this->_Control);
         $this->assign("total", $articleList['total']);
         $this->assign("dataList", $articleList['data']);
 
@@ -43,7 +43,7 @@ class ArticleControl extends ArchiveControl
 		$this->assign("accessStatus",1);
 
 		$this->assign("userInfo",$this->userInfo);
-		$this->assign("columnTree", D("Column")->getColumnTree(self::$_Control));
+		$this->assign("columnTree", D("Column")->getColumnTree($this->_Control));
 
 		$this->display("Article/add.html");
 	}
@@ -80,13 +80,13 @@ class ArticleControl extends ArchiveControl
 		$this->assign("accessStatus", 1);
 
 		$ArchiveID = $this->_getArchiveID();
-		$articleInfo = M("Article")->getArticle($ArchiveID,0,0,null);
-		$articleInfo = !empty($articleInfo['data']) ? $articleInfo['data'][0] : array();
+		$ArchiveInfo = M("Article")->getArticle($ArchiveID,0,0,null);
+		$ArchiveInfo = !empty($ArchiveInfo['data']) ? $ArchiveInfo['data'][0] : array();
 
-		if (empty($articleInfo)) $this->display("Common/error.html");
+		if (empty($ArchiveInfo)) $this->display("Common/error.html");
 
-		$articleInfo['content'] = M("Article")->getArticleContent($articleInfo["id"]);
-		$this->assign("articleInfo", $articleInfo);
+		$ArchiveInfo['content'] = M("Article")->getArticleContent($ArchiveInfo["id"]);
+		$this->assign("ArchiveInfo", $ArchiveInfo);
 
 		$this->assign("columnTree", D("Column")->getColumnTree());
 		$this->display("Article/edit.html");
@@ -115,64 +115,17 @@ class ArticleControl extends ArchiveControl
 		}
 	}
 
-	//回收文档 进入回收站
-	public function recoverArticle()
-	{
-		$return = $this->recoverArchive();
-		if ($return) {
-			$this->ajaxReturn(0,"删除成功！");
-		} else {
-			$this->ajaxReturn(1,"删除失败！");
-		}
-	}
-
 	//文档回收站
 	public function recover()
 	{
 		$this->assign("accessStatus", 1);
 
 		list($start,$length) = $this->getPages();
-        $articleList = M("Article")->getArticle(null,$start,$length,0,null,self::$_Control);
+        $articleList = M("Article")->getArticle(null,$start,$length,0,null,$this->_Control);
         $this->assign("total", $articleList['total']);
         $this->assign("dataList", $articleList['data']);
 
         $this->assign("page", getPage($articleList['total'],$this->_pagesize));
 		$this->display("Article/recover.html");
-	}
-
-	//还原文档
-	public function backArticle()
-	{
-		$return = $this->backArchive();
-		if ($return) {
-			$this->ajaxReturn(0,"还原成功！");
-		} else {
-			$this->ajaxReturn(1,"还原失败！");
-		}
-	}
-
-	//彻底删除文档
-	public function deleteArticle()
-	{
-		$return = $this->deleteArchive();
-		if ($return) {
-			$this->ajaxReturn(0,"删除成功！");
-		} else {
-			$this->ajaxReturn(1,"删除失败！");
-		}
-	}
-
-	//移动文档
-	public function moveArticle()
-	{
-		$ArchiveID = $this->_getArchiveID();
-		$action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
-		if ($action == 'save') {
-			
-		} else {
-			$this->assign("ArchiveID", $ArchiveID);
-			$this->assign("columnTree", D("Column")->getColumnTree(self::$_Control));
-			$this->display("Article/move.html");
-		}
 	}
 }

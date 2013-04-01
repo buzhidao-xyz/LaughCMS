@@ -6,7 +6,7 @@
 class IndexControl extends CommonControl
 {
     //定义类名
-    static protected $_control = 'Index';
+    protected $_Control = 'Index';
     
     //定义缓存有效时间(秒)
     static public $_life_time = 10;

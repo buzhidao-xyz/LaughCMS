@@ -6,8 +6,8 @@
 class DataBaseControl extends CommonControl
 {
     //定义类名
-    static protected $_control = 'DataBase';
-    
+    protected $_Control = 'DataBase';
+
     public function __construct()
     {
 		parent::__construct();

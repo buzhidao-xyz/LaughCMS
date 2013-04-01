@@ -125,4 +125,58 @@ class Archive extends Base
 		$where = array("id"=>array("in",$ArchiveID));
 		return T("archive")->where($where)->delete();
 	}
+
+	/**
+	 * 删除文档图片
+	 * @param $archiveid int/array 文档ID
+	 * @param $imageids int/array 图片ID
+	 */
+	public function deleteArchiveImages($archiveid=null)
+	{
+		if (!$archiveid) return false;
+
+		$where['archiveid'] = is_array($archiveid) ? array("in",$archiveid) : $archiveid;
+
+		return T("images")->where($where)->update(array("archiveid"=>0));
+	}
+
+	/**
+	 * 保存文档图片
+	 * @param $archiveid int 文档ID
+	 * @param $imageids int/array 图片ID
+	 */
+	public function addArchiveImages($archiveid=null,$imageids=null)
+	{
+		if (!$archiveid || empty($imageids)) return false;
+
+		$where = array();
+		$where['id'] = is_array($imageids) ? array("in",$imageids) : $imageids;
+
+		$data = array("archiveid"=>$archiveid);
+		return T("images")->where($where)->update($data);
+	}
+
+	/**
+	 * 获取文档图片
+	 * @param $archiveid int 文档ID
+	 */
+	public function getArchiveImages($archiveid=null)
+	{
+		if (!$archiveid) return false;
+		return T("images")->where(array("archiveid"=>$archiveid))->select();
+	}
+
+	/**
+	 * 获取文档图片
+	 * @param $archiveid int 文档ID
+	 * @param $columnid int 栏目ID
+	 */
+	public function upArchiveColumn($archiveid=null,$columnid=null)
+	{
+		if (empty($archiveid)||!$columnid) return false;
+		$where = array(
+			'id' => is_array($archiveid) ? array("in",$archiveid) : $archiveid
+		);
+		return T("archive")->where($where)->update(array("columnid"=>$columnid));
+	}
 }

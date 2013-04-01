@@ -6,7 +6,7 @@
 class GroupControl extends CommonControl
 {
     //控制器
-    static protected $_control = 'Group';
+    protected $_Control = 'Group';
 
     private $_GROUP;
 

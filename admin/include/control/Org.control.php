@@ -7,7 +7,7 @@
  */
 class OrgControl extends BaseControl
 {
-    static protected $_control = 'Org';
+    protected $_Control = 'Org';
 
 	public function __construct()
     {

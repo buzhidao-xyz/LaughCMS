@@ -37,7 +37,7 @@ class Article extends Archive
 	public function getArticle($id=null,$start=0,$length=0,$state=1,$columnids=array(),$control=null)
 	{
 		$where = array();
-		if ($state!==null) $where['state'] = $state;
+		if ($state !== null) $where['state'] = $state;
 		if (is_array($columnids) && !empty($columnids)) $where['columnid'] = array("in", $columnids);
 		if ($control) $where['control'] = $control;
 

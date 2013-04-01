@@ -5,6 +5,8 @@
  */
 class RoleControl extends CommonControl
 {
+	protected $_Control = "Role";
+
 	private $_status = array(
 		0 => '禁用',
 		1 => '启用'
