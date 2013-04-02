@@ -2,6 +2,213 @@
 /**
  * 文件上传类 控制文件上传流程 包括文件安全性检测 BUG检测等
  * by wbq 2012-02-22
+ * ﻿文件上传
+ * 上传类使用ORG.Net.UpdateFile类，最新版本的上传类包含的功能如下（有些功能需要结合ThinkPHP系统其他类库）：
+ *
+ * 基本上传功能
+ *
+ * 支持批量上传
+ *
+ * 支持生成图片缩略图
+ *
+ * 自定义参数上传
+ *
+ * 上传检测（包括大小、后缀和类型）
+ *
+ * 支持覆盖方式上传
+ *
+ * 支持上传类型、附件大小、上传路径定义
+ *
+ * 支持哈希或者日期子目录保存上传文件
+ *
+ * 上传图片的安全性检测
+ *
+ * 支持上传文件命名规则
+ *
+ * 支持对上传文件的Hash验证
+ *
+ * 在ThinkPHP中使用上传功能无需进行特别处理。例如，下面是一个带有附件上传的表单提交：
+ *
+ * <form METHOD=POST action="__URL__/upload" enctype="multipart/form-data" >
+ *
+ * <input type="text" NAME="name" >
+ *
+ * <input type="text" NAME="email" >
+ *
+ * <input type="file" name="photo" >
+ *
+ * <input type="submit" value="保 存" >
+ *
+ * </form>
+ *
+ * 注意表单的Form标签中一定要添加 enctype="multipart/form-data"文件才能上传。因为表单提交到当前模块的upload操作方法，所以我们在模块类里面添加下面的upload方法即可：
+ *
+ * Public function upload(){
+ *
+ * import("ORG.Net.UploadFile");
+ *
+ * $upload = new UploadFile();// 实例化上传类
+ *
+ * $upload->maxSize = 3145728 ;// 设置附件上传大小
+ *
+ * $upload->allowExts = array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+ *
+ * $upload->savePath = './Public/Uploads/';// 设置附件上传目录
+ *
+ * if(!$upload->upload()) {// 上传错误提示错误信息
+ *
+ * $this->error($upload->getErrorMsg());
+ *
+ * }else{// 上传成功 获取上传文件信息
+ *
+ * $info = $upload->getUploadFileInfo();
+ *
+ * }
+ *
+ * // 保存表单数据 包括附件数据
+ *
+ * $User = M("User"); // 实例化User对象
+ *
+ * $User->create(); // 创建数据对象
+ *
+ * $User->photo = $info[0]["savename"]; // 保存上传的照片 根据需要自行组装
+ *
+ * $User->add(); // 写入用户数据到数据库
+ *
+ * $this->success("数据保存成功！");
+ *
+ * }
+ *
+ * 首先是实例化上传类
+ *
+ * import("ORG.Net.UploadFile");
+ *
+ * $upload = new UploadFile();// 实例化上传类
+ *
+ * 实例化上传类之后，就可以设置一些上传的属性（参数），支持的属性有：
+ *
+ * maxSize
+ * 文件上传的最大文件大小（以字节为单位）默认为-1 不限大小
+ *
+ * savePath
+ * 文件保存路径，如果留空会取UPLOAD_PATH常量定义的路径
+ *
+ * saveRule
+ * 上传文件的保存规则，必须是一个无需任何参数的函数名，例如可以是 time、 uniqid com_create_guid 等，但必须能保证生成的文件名是唯一的，默认是uniqid
+ *
+ * hashType
+ * 上传文件的哈希验证方法，默认是md5_file
+ *
+ * autoCheck
+ * 是否自动检测附件，默认为自动检测
+ *
+ * uploadReplace
+ * 存在同名文件是否是覆盖
+ *
+ * allowExts
+ * 允许上传的文件后缀（留空为不限制），使用数组设置，默认为空数组
+ *
+ * allowTypes
+ * 允许上传的文件类型（留空为不限制），使用数组设置，默认为空数组
+ *
+ * thumb
+ * 是否需要对图片文件进行缩略图处理，默认为false
+ *
+ * thumbMaxWidth
+ * 缩略图的最大宽度，多个使用逗号分隔
+ *
+ * thumbMaxHeight
+ * 缩略图的最大高度，多个使用逗号分隔
+ *
+ * thumbPrefix
+ * 缩略图的文件前缀，默认为thumb_
+ *
+ * thumbSuffix
+ * 缩略图的文件后缀，默认为空
+ *
+ * thumbPath
+ * 缩略图的保存路径，留空的话取文件上传目录本身
+ *
+ * thumbFile
+ * 指定缩略图的文件名
+ *
+ * thumbRemoveOrigin
+ * 生成缩略图后是否删除原图
+ *
+ * autoSub
+ * 是否使用子目录保存上传文件
+ *
+ * subType
+ * 子目录创建方式，默认为hash，可以设置为hash或者date
+ *
+ * dateFormat
+ * 子目录方式为date的时候指定日期格式
+ *
+ * hashLevel
+ * 子目录保存的层次，默认为一层
+ *
+ *
+ * 以上属性都可以直接设置，例如：
+ *
+ * $upload->thumb = true
+ *
+ * $upload->thumbMaxWidth = "50,200"
+ *
+ * $upload->thumbMaxHeight = "50,200"
+ *
+ * 其中生成缩略图功能需要Image类的支持。
+ *
+ * 设置好上传的参数后，就可以调用UploadFile类的upload方法进行附件上传，如果失败，返回false，并且用getErrorMsg方法获取错误提示信息；如果上传成功，可以通过调用getUploadFileInfo方法获取成功上传的附件信息列表。因此getUploadFileInfo方法的返回值是一个数组，其中的每个元素就是上传的附件信息。每个附件信息又是一个记录了下面信息的数组，包括：
+ *
+ * key
+ * 附件上传的表单名称
+ *
+ * savepath
+ * 上传文件的保存路径
+ *
+ * name
+ * 上传文件的原始名称
+ *
+ * savename
+ * 上传文件的保存名称
+ *
+ * size
+ * 上传文件的大小
+ *
+ * type
+ * 上传文件的MIME类型
+ *
+ * extension
+ * 上传文件的后缀类型
+ *
+ * hash
+ * 上传文件的哈希验证字符串
+ *
+ *
+ * 文件上传成功后，就可以通过这些附件信息来进行其他的数据存取操作，例如保存到当前数据表或者单独的附件数据表都可以。
+ *
+ * 如果需要使用多个文件上传，只需要修改表单，把
+ *
+ * <input type="file" name="photo" >
+ *
+ * 改为
+ *
+ * <input type="file" name="photo1" >
+ *
+ * <input type="file" name="photo2" >
+ *
+ * <input type="file" name="photo3" >
+ *
+ * 或者
+ *
+ * <input type="file" name="photo[]" >
+ *
+ * <input type="file" name="photo[]" >
+ *
+ * <input type="file" name="photo[]" >
+ *
+ * 两种方式的多附件上传系统的文件上传类都可以自动识别。
+ *
  */
 class UploadHelper
 {
@@ -65,6 +272,9 @@ class UploadHelper
     // 上传成功的文件信息
     private $uploadFileInfo ;
 
+    // 缩略图信息
+    private $thumbImage;
+
     /**
      * 架构函数
      * @access public
@@ -123,12 +333,12 @@ class UploadHelper
             $image =  getimagesize($filename);
             if(false !== $image) {
                 //是图像文件生成缩略图
-                $thumbWidth     =   explode(',',$this->thumbMaxWidth);
-                $thumbHeight        =   explode(',',$this->thumbMaxHeight);
-                $thumbPrefix        =   explode(',',$this->thumbPrefix);
+                $thumbWidth  = explode(',',$this->thumbMaxWidth);
+                $thumbHeight = explode(',',$this->thumbMaxHeight);
+                $thumbPrefix = explode(',',$this->thumbPrefix);
                 $thumbSuffix = explode(',',$this->thumbSuffix);
-                $thumbFile          =   explode(',',$this->thumbFile);
-                $thumbPath    =  $this->thumbPath?$this->thumbPath:$file['savepath'];
+                $thumbFile   = explode(',',$this->thumbFile);
+                $thumbPath   = $this->thumbPath?$this->thumbPath:$file['savepath'];
                 // 生成图像缩略图
                 import($this->imageClassPath);
                 $realFilename  =  $this->autoSub?basename($file['savename']):$file['savename'];
@@ -136,6 +346,7 @@ class UploadHelper
                     $thumbname  =   $thumbPath.$thumbPrefix[$i].substr($realFilename,0,strrpos($realFilename, '.')).$thumbSuffix[$i].'.'.$file['extension'];
                     Image::thumb($filename,$thumbname,'',$thumbWidth[$i],$thumbHeight[$i],true);
                 }
+                $this->thumbImage = $thumbname;
                 if($this->thumbRemoveOrigin) {
                     // 生成缩略图之后删除原图
                     unlink($filename);
@@ -207,6 +418,8 @@ class UploadHelper
                 }
                 //上传成功后保存文件信息，供其他地方调用
                 unset($file['tmp_name'],$file['error']);
+                //添加缩略图信息
+                if ($this->thumbImage) $file['thumb'] = $this->thumbImage;
                 $fileInfo[] = $file;
                 $isUpload   = true;
             }

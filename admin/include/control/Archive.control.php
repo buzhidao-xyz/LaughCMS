@@ -8,6 +8,9 @@ class ArchiveControl extends CommonControl
 	//控制器名
 	protected $_Control = "Archive";
 
+	//缩略图标准宽高
+	static protected $_Width = 320;
+	static protected $_Height = 260;
 	//缩略图最大字节
 	static protected $_ImageSize = 2097152; //2M
 
@@ -105,6 +108,11 @@ class ArchiveControl extends CommonControl
 	protected function _getImage()
 	{
 		$upload = new UploadHelper();
+		$upload->thumb = true;
+		$upload->thumbMaxWidth = self::$_Width;
+		$upload->thumbMaxHeight = self::$_Height;
+		$upload->thumbPrefix = "";
+		// $upload->thumbRemoveOrigin = true;
 		$upload->maxSize  = self::$_ImageSize;
 		$upload->savePath =  C("UPLOAD_PATH")."/Image/".date("Ym/d/");
 		if(!$upload->upload()) {

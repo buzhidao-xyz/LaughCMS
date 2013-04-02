@@ -129,28 +129,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 	<div id="imageTitle">产品图片:</div>
 	<div id="imageBody">
 		<div id="imageBox">
-									<div class="imageBlock">
-				<input type="hidden" name="imageids[]" value="7" />
-				<span class="imageBlockimage">
-					<img src="http://localhost:82/laugh/Uploads/Image/201304/01/1364805925_z5oqwm_6762.jpg" width="150" height="auto" />
-				</span>
-				<span class="imageBlocktitle">产品图片1</span>
-			</div>
-						<div class="imageBlock">
-				<input type="hidden" name="imageids[]" value="8" />
-				<span class="imageBlockimage">
-					<img src="http://localhost:82/laugh/Uploads/Image/201304/01/1364805935_emcm7q_9353.jpg" width="150" height="auto" />
-				</span>
-				<span class="imageBlocktitle">图片2</span>
-			</div>
-						<div class="imageBlock">
-				<input type="hidden" name="imageids[]" value="9" />
-				<span class="imageBlockimage">
-					<img src="http://localhost:82/laugh/Uploads/Image/201304/01/1364805947_quf74b_9652.jpg" width="150" height="auto" />
-				</span>
-				<span class="imageBlocktitle">图片3</span>
-			</div>
-								</div>
+											</div>
 		<div id="imageUploadBox" ajaxUrl="/laugh/admin/index.php?s=Image/saveUploadImage">
 			<span>
 				图片: <input type="file" id="images" name="images" class="input w230 inputfile" />

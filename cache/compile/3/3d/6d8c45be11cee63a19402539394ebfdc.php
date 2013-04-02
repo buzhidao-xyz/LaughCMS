@@ -157,12 +157,20 @@ $(document).ready(function (){
 				<div class="boxBlockBody">
 					<ul class="articleList">
 																		<li>
+							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=13">DNS污染【备忘】</a>
+							<span class="pubdate">[2013-04-02]</span>
+						</li>
+												<li>
 							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=10">Web服务攻击反侦查痕迹检测</a>
 							<span class="pubdate">[2013-04-01]</span>
 						</li>
 												<li>
 							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=8">PHP单例模式经典讲解</a>
 							<span class="pubdate">[2013-03-29]</span>
+						</li>
+												<li>
+							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=1">这是一篇测试文章</a>
+							<span class="pubdate">[2013-03-28]</span>
 						</li>
 												<li>
 							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=7">PHP实现异步操作</a>
@@ -175,10 +183,6 @@ $(document).ready(function (){
 												<li>
 							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=5">页面(PAGE)标记(TAGS)</a>
 							<span class="pubdate">[2013-03-25]</span>
-						</li>
-												<li>
-							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=1">这是一篇测试文章</a>
-							<span class="pubdate">[2013-03-21]</span>
 						</li>
 												<li>
 							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=4">MongoDB:下一代MySQL？</a>

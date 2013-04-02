@@ -5,6 +5,10 @@
  */
 class ImageControl extends CommonControl
 {
+	//缩略图标准宽高
+	static protected $_Width = 550;
+	static protected $_Height = 350;
+
 	//图片最大size
 	static protected $_ImageSize = 5242880; //5M
 
@@ -19,7 +23,7 @@ class ImageControl extends CommonControl
 	//首页轮播图片管理
 	public function HomeScrollImage()
 	{
-		$HomeScrollImageList = M("Image")->getHomeScrollImage();
+		$HomeScrollImageList = M("Images")->getHomeScrollImage();
 		$this->assign("total",$HomeScrollImageList['total']);
 		$this->assign("dataList",$HomeScrollImageList['data']);
 
@@ -54,7 +58,7 @@ class ImageControl extends CommonControl
 			'link'  => $link
 		);
 
-		$return = M("Image")->saveHomeScrollImage($data);
+		$return = M("Images")->saveHomeScrollImage($data);
 		if ($return) {
 			$this->showMessage('图片保存成功！',1);
 		} else {
@@ -68,7 +72,7 @@ class ImageControl extends CommonControl
 		$this->assign("accessStatus",1);
 
 		$id = q('id');
-		$HomeScrollImageInfo = M("Image")->getHomeScrollImage($id);
+		$HomeScrollImageInfo = M("Images")->getHomeScrollImage($id);
 		$HomeScrollImageInfo = $HomeScrollImageInfo['data'][0];
 		$this->assign("HomeScrollImageInfo",$HomeScrollImageInfo);
 
@@ -89,7 +93,7 @@ class ImageControl extends CommonControl
 		);
 		if ($path) $data['path'] = $path;
 
-		$return = M("Image")->UpdateHomeScrollImage($id,$data);
+		$return = M("Images")->UpdateHomeScrollImage($id,$data);
 		$this->showMessage('图片修改成功！',1);
 	}
 
@@ -100,7 +104,7 @@ class ImageControl extends CommonControl
 		$isshow = q('isshow');
 
 		$data = array('isshow'=>$isshow);
-		$return = M("Image")->UpdateHomeScrollImage($id,$data);
+		$return = M("Images")->UpdateHomeScrollImage($id,$data);
 		if ($return) {
 			$this->ajaxReturn(0,"状态切换成功！");
 		} else {
@@ -112,7 +116,7 @@ class ImageControl extends CommonControl
 	public function deleteHomeScrollImage()
 	{
 		$id = q('id');
-		$return = M("Image")->deleteHomeScrollImage($id);
+		$return = M("Images")->deleteHomeScrollImage($id);
 		if ($return) {
 			$this->ajaxReturn(0,"删除成功！");
 		} else {
@@ -128,19 +132,22 @@ class ImageControl extends CommonControl
 		$archiveid = null;
 
 		$upload = new UploadHelper();
+		$upload->thumb = true;
+		$upload->thumbMaxWidth = self::$_Width;
+		$upload->thumbMaxHeight = self::$_Height;
 		$upload->maxSize  = self::$_ImageSize;
 		$upload->savePath =  C("UPLOAD_PATH")."/Image/".date("Ym/d/");
-		if(!$upload->upload()) {
+		if (!$upload->upload()) {
 			$this->ajaxReturn(1,"图片上传失败！");
 		} else {
 			$info = $upload->getUploadFileInfo();
 			$imagepath = str_replace(ROOT_DIR, "", $info[0]['savepath'].$info[0]['savename']);
-			$imageid = M("Image")->saveUploadImage($imagepath,$imageTitle,$imageLink,$archiveid);
+			$thumbpath = str_replace(ROOT_DIR, "", $info[0]["thumb"]);
+			$imageid = M("Images")->saveUploadImage($imagepath,$thumbpath,$imageTitle,$imageLink,$archiveid,$info[0]['name'],$info[0]['savename'],$info[0]['size']);
 			if ($imageid) {
-				$data = '';
 				$data = array(
 					'imageid' => $imageid,
-					'src'     => __APPM__.$imagepath,
+					'src'     => __APPM__.$thumbpath,
 					'imageTitle' => $imageTitle
 				);
 				$this->ajaxReturn(0,"图片上传成功！",$data);

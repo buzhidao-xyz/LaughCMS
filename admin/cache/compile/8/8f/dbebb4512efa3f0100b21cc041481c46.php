@@ -31,7 +31,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 	<a href="/laugh/admin/index.php?s=Article/add">发布新文章</a>
 	<a href="/laugh/admin/index.php?s=Article/recover">回收站</a>
 </div>
-<div class="captitle"><h5>文档列表 【目前共有9条文档】</h5></div>
+<div class="captitle"><h5>文档列表 【目前共有10条文档】</h5></div>
 <ul class="table_list_title">
 	<li class="table_list_l table_list_l30"></li>
 	<li class="table_list_l table_list_l50">ID</li>
@@ -45,6 +45,25 @@ var JS_APPM = 'http://localhost:82/laugh';
 	</ul>
 <div class="contentTableList">
             <ul class="table_list">
+		<li class="table_list_l table_list_l30">
+			<input type="checkbox" name="archiveid[]" value="13" flag="archiveID" class="checkbox" />
+		</li>
+		<li class="table_list_l table_list_l50">13</li>
+		<li class="table_list_l table_list_l300" title="DNS污染【备忘】">
+			DNS污染【备忘】
+		</li>
+    	<li class="table_list_l table_list_l150">2013-04-02 14:51:07</li>
+    	<li class="table_list_l table_list_l120">网络知识</li>
+		<li class="table_list_l table_list_l100">admin</li>
+		<li class="table_list_l table_list_l80">0</li>
+		<li class="table_list_l table_list_l80">0</li>
+    	    	<li class="table_list_l table_list_l120" accessStatus=1>
+    		<a href="http://localhost:82/laugh/index.php?s=Article/View&archiveid=13" target="_blank">预览</a>
+    		<a href="/laugh/admin/index.php?s=Article/edit&archiveid=13">修改</a>
+    		<a delurl="/laugh/admin/index.php?s=Archive/recoverArchive&archiveid=13" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
+    	    </ul>
+        <ul class="table_list">
 		<li class="table_list_l table_list_l30">
 			<input type="checkbox" name="archiveid[]" value="10" flag="archiveID" class="checkbox" />
 		</li>
@@ -204,7 +223,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="table_list_l table_list_l300" title="这是一篇测试文章">
 			这是一篇测试文章
 		</li>
-    	<li class="table_list_l table_list_l150">2013-03-28 15:50:12</li>
+    	<li class="table_list_l table_list_l150">2013-04-02 11:46:17</li>
     	<li class="table_list_l table_list_l120">新闻资讯</li>
 		<li class="table_list_l table_list_l100">admin</li>
 		<li class="table_list_l table_list_l80">1352</li>

@@ -21,12 +21,26 @@ class IndexControl extends CommonControl
     public function index()
     {
         //新闻资讯栏目id=2
-        $ArticleList = $this->getAllArchive(2,5);
+        $columnid = 2;
+        $ArticleList = $this->getAllArchive($columnid,5);
         $this->assign("ArticleList", $ArticleList['data']);
+
+        $ProductList = $this->getIndexProductList();
 
         $this->getHomeScrollImage();
 
         $this->display('index.html');
+    }
+
+    //获取首页产品列表
+    public function getIndexProductList()
+    {
+        //产品展示栏目id=6
+        $columnid = 6;
+
+        $ProductList = $this->getAllArchive($columnid,8);
+        $this->assign("ProductList", $ProductList['data']);
+        // dump($ProductList['data']);exit;
     }
 
     //获取轮播图片

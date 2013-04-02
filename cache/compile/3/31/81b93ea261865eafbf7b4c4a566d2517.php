@@ -74,6 +74,9 @@ var JS_APP = '/laugh';
 						<li>
 				<a href="/laugh/index.php?s=Product/index&columnid=14">网络产品</a>
 							</li>
+						<li>
+				<a href="/laugh/index.php?s=Product/index&columnid=15">电子产品</a>
+							</li>
 					</ul>
 			</li>
 		<li>
@@ -196,11 +199,11 @@ $("#SImageContainer").Xslider({
 			</div>
 			<div class="boxBlockBody h170">
 				<ul class="articleList">
+										<li><a href="/laugh/index.php?s=article/view&columnid=4&archiveid=13">DNS污染【备忘】</a></li>
 										<li><a href="/laugh/index.php?s=article/view&columnid=12&archiveid=10">Web服务攻击反侦查痕迹检测</a></li>
 										<li><a href="/laugh/index.php?s=article/view&columnid=3&archiveid=8">PHP单例模式经典讲解</a></li>
+										<li><a href="/laugh/index.php?s=article/view&columnid=2&archiveid=1">这是一篇测试文章</a></li>
 										<li><a href="/laugh/index.php?s=article/view&columnid=12&archiveid=7">PHP实现异步操作</a></li>
-										<li><a href="/laugh/index.php?s=article/view&columnid=4&archiveid=6">PHP基本点知识</a></li>
-										<li><a href="/laugh/index.php?s=article/view&columnid=5&archiveid=5">页面(PAGE)标记(TAGS)</a></li>
 									</ul>
 			</div>
 		</div>

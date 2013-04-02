@@ -74,6 +74,9 @@ var JS_APP = '/laugh';
 						<li>
 				<a href="/laugh/index.php?s=Product/index&columnid=14">网络产品</a>
 							</li>
+						<li>
+				<a href="/laugh/index.php?s=Product/index&columnid=15">电子产品</a>
+							</li>
 					</ul>
 			</li>
 		<li>
@@ -157,22 +160,22 @@ $(document).ready(function (){
 				<div class="boxBlockBody">
 					<ul class="ProductList">
 																		<li>
-							<a href="/laugh/index.php?s=Product/view&columnid=6&archiveid=12">
-								<img src="/laugh/Uploads/Image/201304/01/1364805937_ukep6i_1138.jpg" />
+							<a href="/laugh/index.php?s=Product/view&columnid=6&archiveid=9">
+								<img src="/laugh/Uploads/Image/201304/02/1364884203_zxvkaj_4664.png" />
 							</a>
-							<a href="/laugh/index.php?s=Product/view&columnid=6&archiveid=12" class="title">CTI融合通信专业资讯网</a>
+							<a href="/laugh/index.php?s=Product/view&columnid=6&archiveid=9" class="title">Web服务攻击反侦查痕迹检测</a>
+						</li>
+												<li>
+							<a href="/laugh/index.php?s=Product/view&columnid=6&archiveid=12">
+								<img src="/laugh/Uploads/Image/201304/02/1364884946_37uz4d_4967.png" />
+							</a>
+							<a href="/laugh/index.php?s=Product/view&columnid=6&archiveid=12" class="title">Vim文本编辑器 v7.3 正式版</a>
 						</li>
 												<li>
 							<a href="/laugh/index.php?s=Product/view&columnid=6&archiveid=11">
-								<img src="/laugh/Uploads/Image/201304/01/1364804934_y4ay7i_9189.png" />
+								<img src="/laugh/Uploads/Image/201304/02/1364884636_tpajd4_786.png" />
 							</a>
 							<a href="/laugh/index.php?s=Product/view&columnid=6&archiveid=11" class="title">4 款 Linux 下开源的个人日记管理软件</a>
-						</li>
-												<li>
-							<a href="/laugh/index.php?s=Product/view&columnid=6&archiveid=9">
-								<img src="/laugh/Uploads/Image/201304/01/1364805470_7aigr6_2372.png" />
-							</a>
-							<a href="/laugh/index.php?s=Product/view&columnid=6&archiveid=9" class="title">Web服务攻击反侦查痕迹检测</a>
 						</li>
 																	</ul>
 					

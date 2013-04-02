@@ -46,7 +46,7 @@ var JS_APP = '/laugh';
 <link type="text/css" rel="stylesheet" href="themes/default/style/navigation.css" media="screen">
 <ul class="headerNavigation">
 		<li>
-		<a href="/laugh/index.php?s=Index/index&columnid=1" class="">网站首页</a>
+		<a href="/laugh/index.php?s=Index/index&columnid=1" class="navon">网站首页</a>
 			</li>
 		<li>
 		<a href="/laugh/index.php?s=Article/index&columnid=2" class="">新闻资讯</a>
@@ -69,7 +69,7 @@ var JS_APP = '/laugh';
 					</ul>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Product/index&columnid=6" class="navon">产品展示</a>
+		<a href="/laugh/index.php?s=Product/index&columnid=6" class="">产品展示</a>
 				<ul class="SubNavigation">
 						<li>
 				<a href="/laugh/index.php?s=Product/index&columnid=14">网络产品</a>
@@ -146,23 +146,23 @@ $(document).ready(function (){
 		<a href="javascript:;" target="_blank"><img src="themes/default/images/ad_banner.png" width="1000" height="80" /></a>
 	</div>
 	<div class="CurPosition mtop5">
-		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=Product/index&columnid=6">产品展示</a>
+		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=/&columnid="></a>
 	</div>
 	<div id="CenterShow" class="block mtop5">
 		<div id="mainBlock" class="fleft w740">
 			<div class="boxBlock">
 				<div class="boxBlockTitle">
-					<span class="title">CTI融合通信专业资讯网</span>
+					<span class="title">Vim文本编辑器 v7.3 正式版</span>
 				</div>
 				<div class="boxBlockBody">
 					<div class="contentBlock">
 						<div class="productTpl">
-	<h2 class="title">CTI融合通信专业资讯网</h2>
+	<h2 class="title">Vim文本编辑器 v7.3 正式版</h2>
 	<div class="status">
 		<span class="title">点击次数:</span>
 		<span class="content">0 次</span>
 		<span class="title">发布时间:</span>
-		<span class="content">2013-04-01 16:45:37</span>
+		<span class="content">2013-04-01 16:45:49</span>
 		<span class="title">作者:</span>
 		<span class="content">admin</span>
 	</div>
@@ -170,10 +170,10 @@ $(document).ready(function (){
 		<div class="ImageShow">
 			<div id="mainImage"></div>
 			<ul class="galleryFlash galleryImage">
-			    <li class="active"><img src="themes/default/images/product/detail_img1.jpg" alt="1" title="产品详情图123"></li>
-			    <li><img src="themes/default/images/product/detail_img2.jpg" alt="2" title="产品详情图2"></li>
-			    <li><img src="themes/default/images/product/detail_img3.jpg" alt="3" title="产品详情图3"></li>
-			</ul>
+							    <li class="active">
+			    	<img src="/laugh/Uploads/Image/201304/02/thumb_1364884923_r8r51t_4822.png" alt="预览图1" title="预览图1">
+			    </li>
+			    			</ul>
 		</div>
 		<div class="productInfo">
 			<div class="infoTitle">
@@ -186,15 +186,15 @@ $(document).ready(function (){
 				<div id="productInfoboxTab1" class="boxTabContent productInfoContent">
 					<dl>
 						<dt>型号:</dt>
-						<dd>asd</dd>
+						<dd>VIM</dd>
 					</dl>
 					<dl>
 						<dt>品牌:</dt>
-						<dd></dd>
+						<dd>开源软件</dd>
 					</dl>
 					<dl>
 						<dt>颜色:</dt>
-						<dd>1</dd>
+						<dd>黑色</dd>
 					</dl>
 					<dl>
 						<dt>材质:</dt>
@@ -210,11 +210,11 @@ $(document).ready(function (){
 					</dl>
 					<dl>
 						<dt>数量:</dt>
-						<dd></dd>
+						<dd>1</dd>
 					</dl>
 				</div>
 				<div id="productInfoboxTab2" class="boxTabContent productInfoContent">
-					
+					<p><span style="font-family:&#39;comic sans ms&#39;, cursive;"><span style="font-size:14px;">Vim是一个类似于Vi的文本编辑器，不过在Vi的基础上增加了很多新的特性，Vim普遍被推崇为类Vi编辑器中最好的一个，事实上真正的劲敌来自Emacs的不同变体。</span></span></p><p><span style="font-family:&#39;comic sans ms&#39;, cursive;"><span style="font-size:14px;">1999 年Emacs被选为Linuxworld文本编辑分类的优胜者，Vim屈居第二。但在2000年2月Vim赢得了Slashdot Beanie的最佳开放源代码文本编辑器大奖，又将Emacs推至二线， 总的来看， Vim和Emacs同样都是非常优秀的文本编辑器。</span></span></p><p><br /></p>
 				</div>
 			</div>
 		</div>
@@ -237,11 +237,15 @@ $(document).ready(function (){
 	<div class="about">
 		<dl>
 			<dt>上一篇:</dt>
-			<dd><a href="javascript:;">新手使用MetInfo建站步骤？</a></dd>
+			<dd>
+								<font color="grey">没有了！</font>
+							</dd>
 		</dl>
 		<dl>
 			<dt>下一篇:</dt>
-			<dd><a href="javascript:;">新手使用MetInfo建站步骤？</a></dd>
+			<dd>
+								<font color="grey">没有了！</font>
+							</dd>
 		</dl>
 	</div>
 </div>
@@ -339,6 +343,20 @@ $(".productInfo ul#productInfoboxTab").idTabs(function(id,list,set){
 	return false;
 });
 });
+</script>
+<link type="text/css" rel="stylesheet" href="themes/default/style/shCoreDefault.css" media="screen">
+<script type="text/javascript" src="themes/default/js/shCore.js"></script>
+<script type="text/javascript">
+//为了在编辑器之外能展示高亮代码
+SyntaxHighlighter.highlight();
+//调整左右对齐
+for(var i=0,di;di=SyntaxHighlighter.highlightContainers[i++];){
+    var tds = di.getElementsByTagName('td');
+    for(var j=0,li,ri;li=tds[0].childNodes[j];j++){
+        ri = tds[1].firstChild.childNodes[j];
+        ri.style.height = li.style.height = ri.offsetHeight + 'px';
+    }
+}
 </script>
 					</div>
 				</div>

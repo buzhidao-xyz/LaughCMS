@@ -49,10 +49,10 @@ var JS_APPM = 'http://localhost:82/laugh';
 			<input type="checkbox" name="archiveid[]" value="12" flag="archiveID" class="checkbox" />
 		</li>
 		<li class="table_list_l table_list_l50">12</li>
-		<li class="table_list_l table_list_l300" title="CTI融合通信专业资讯网">
-			CTI融合通信专业资讯网
+		<li class="table_list_l table_list_l300" title="Vim文本编辑器 v7.3 正式版">
+			Vim文本编辑器 v7.3 正式版
 		</li>
-    	<li class="table_list_l table_list_l150">2013-04-01 16:45:49</li>
+    	<li class="table_list_l table_list_l150">2013-04-02 14:42:26</li>
     	<li class="table_list_l table_list_l120">网络产品</li>
 		<li class="table_list_l table_list_l100">admin</li>
 		<li class="table_list_l table_list_l80">0</li>
@@ -71,7 +71,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="table_list_l table_list_l300" title="4 款 Linux 下开源的个人日记管理软件">
 			4 款 Linux 下开源的个人日记管理软件
 		</li>
-    	<li class="table_list_l table_list_l150">2013-04-01 16:28:54</li>
+    	<li class="table_list_l table_list_l150">2013-04-02 14:37:16</li>
     	<li class="table_list_l table_list_l120">网络产品</li>
 		<li class="table_list_l table_list_l100">admin</li>
 		<li class="table_list_l table_list_l80">0</li>
@@ -90,7 +90,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="table_list_l table_list_l300" title="Web服务攻击反侦查痕迹检测">
 			Web服务攻击反侦查痕迹检测
 		</li>
-    	<li class="table_list_l table_list_l150">2013-04-01 16:37:49</li>
+    	<li class="table_list_l table_list_l150">2013-04-02 14:34:38</li>
     	<li class="table_list_l table_list_l120">产品展示</li>
 		<li class="table_list_l table_list_l100">admin</li>
 		<li class="table_list_l table_list_l80">0</li>

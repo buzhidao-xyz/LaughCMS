@@ -123,7 +123,7 @@ var JS_APPM = 'http://localhost:82/laugh';
     	}
     });
     $("select[name=parentid]").find("option").each(function (){
-    	if ($(this).val()=="") $(this).attr("selected",true);
+    	if ($(this).val()=="6") $(this).attr("selected",true);
     });
 </script>
     </div>

@@ -3,7 +3,7 @@
  * 图片管理模型
  * by buzhidao 2013-03-26
  */
-class Image extends Base
+class Images extends Base
 {
 	public function __construct()
 	{
@@ -50,18 +50,28 @@ class Image extends Base
 	/**
 	 * 保存上传的图片 产品图片/图片集等
 	 * @param $imagepath string 图片地址
+	 * @param $thumbpath string 缩略图地址
 	 * @param $imageTitle string 图片标题描述
 	 * @param $imageLink string 图片链接
 	 * @param $archiveid int 文档ID
+	 * @param $imagename string 图片原始名称
+	 * @param $savename string 图片保存名称
+	 * @param $imagesize int 图片大小
 	 */
-	public function saveUploadImage($imagepath=null,$imagetitle=null,$imagelink=null,$archiveid=0)
+	public function saveUploadImage($imagepath=null,$thumbpath=null,$imagetitle=null,$imagelink=null,$archiveid=0,$imagename=null,$savename=null,$imagesize=0)
 	{
 		if (!$imagepath) return false;
 
-		$data = array('imagepath'=>$imagepath);
-		if ($imagetitle) $data['imagetitle'] = $imagetitle;
-		if ($imagelink) $data['imagelink'] = $imagelink;
-		if ($archiveid) $data['archiveid'] = $archiveid;
+		$data = array(
+			'imagepath'  => $imagepath,
+			'thumbpath'  => $thumbpath,
+			'imagetitle' => $imagetitle,
+			'imagelink'  => $imagelink,
+			'archiveid'  => $archiveid,
+			'imagename'  => $imagename,
+			'savename'  => $savename,
+		);
+		if ($imagesize) $data['imagesize'] = $imagesize;
 
 		return T("images")->add($data);
 	}

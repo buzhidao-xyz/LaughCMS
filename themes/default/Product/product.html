@@ -12,9 +12,11 @@
 		<div class="ImageShow">
 			<div id="mainImage"></div>
 			<ul class="galleryFlash galleryImage">
-			    <li class="active"><img src="themes/default/images/product/detail_img1.jpg" alt="1" title="产品详情图123"></li>
-			    <li><img src="themes/default/images/product/detail_img2.jpg" alt="2" title="产品详情图2"></li>
-			    <li><img src="themes/default/images/product/detail_img3.jpg" alt="3" title="产品详情图3"></li>
+				{foreach $archiveInfo.archiveImage as $image}
+			    <li class="active">
+			    	<img src="__APP__{$image.thumbpath}" alt="{$image.imagetitle}" title="{$image.imagetitle}">
+			    </li>
+			    {/foreach}
 			</ul>
 		</div>
 		<div class="productInfo">
@@ -68,11 +70,23 @@
 	<div class="about">
 		<dl>
 			<dt>上一篇:</dt>
-			<dd><a href="javascript:;">新手使用MetInfo建站步骤？</a></dd>
+			<dd>
+				{if !empty($archiveInfo.prev)}
+				<a href="__APP__/index.php?s=Product/view&columnid={$columnid}&archiveid={$archiveInfo.prev.id}" title="{$archiveInfo.prev.title}">{$archiveInfo.prev.title}</a>
+				{else}
+				<font color="grey">没有了！</font>
+				{/if}
+			</dd>
 		</dl>
 		<dl>
 			<dt>下一篇:</dt>
-			<dd><a href="javascript:;">新手使用MetInfo建站步骤？</a></dd>
+			<dd>
+				{if !empty($archiveInfo.next)}
+				<a href="__APP__/index.php?s=Product/view&columnid={$columnid}&archiveid={$archiveInfo.next.id}" title="{$archiveInfo.next.title}">{$archiveInfo.next.title}</a>
+				{else}
+				<font color="grey">没有了！</font>
+				{/if}
+			</dd>
 		</dl>
 	</div>
 </div>
@@ -170,4 +184,18 @@ $(".productInfo ul#productInfoboxTab").idTabs(function(id,list,set){
 	return false;
 });
 });
+</script>
+<link type="text/css" rel="stylesheet" href="themes/default/style/shCoreDefault.css" media="screen">
+<script type="text/javascript" src="themes/default/js/shCore.js"></script>
+<script type="text/javascript">
+//为了在编辑器之外能展示高亮代码
+SyntaxHighlighter.highlight();
+//调整左右对齐
+for(var i=0,di;di=SyntaxHighlighter.highlightContainers[i++];){
+    var tds = di.getElementsByTagName('td');
+    for(var j=0,li,ri;li=tds[0].childNodes[j];j++){
+        ri = tds[1].firstChild.childNodes[j];
+        ri.style.height = li.style.height = ri.offsetHeight + 'px';
+    }
+}
 </script>
