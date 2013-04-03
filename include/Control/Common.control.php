@@ -123,4 +123,22 @@ class CommonControl extends BaseControl
         $where = empty($columnids) ? array() : array("columnid"=>array("in",$columnids));
         return M("Archive")->getArchive(null,0,$num,$where,1);
     }
+
+    /**
+     * 格式化文档列表
+     * @param $data array 文档数组列表
+     */
+    public function dealArchive($data=array())
+    {
+        if (!is_array($data) || empty($data)) return array();
+
+        //加入文档号
+        $i = 1;
+        foreach ($data as $k=>$d) {
+            $data[$k]['AutoIndex'] = $i;
+            $i++;
+        }
+
+        return $data;
+    }
 }

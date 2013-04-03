@@ -21,12 +21,12 @@
 		<div class="boxBlock fleft w350">
 			<div class="boxBlockTitle">
 				<span class="title">新闻资讯</span>
-				<span class="link"><a href="javascript:;">更多>></a></span>
+				<span class="link"><a href="__APP__/index.php?s=Article/index&columnid={$ArticleColumnID}">更多>></a></span>
 			</div>
 			<div class="boxBlockBody h170">
 				<ul class="articleList">
 					{foreach $ArticleList as $d}
-					<li><a href="__APP__/index.php?s=article/view&columnid={$d.columnid}&archiveid={$d.id}">{$d.title}</a></li>
+					<li><a href="__APP__/index.php?s=Article/view&columnid={$d.columnid}&archiveid={$d.id}">{$d.title}</a></li>
 					{/foreach}
 				</ul>
 			</div>

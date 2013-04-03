@@ -1,37 +1,32 @@
 <div id="ImgListBlock" class="boxBlock fleft w740">
 	<div class="boxBlockTitle">
 		<span class="title">产品展示</span>
-		<span class="link"><a href="javascript:;">更多>></a></span>
+		<span class="link"><a href="__APP__/index.php?s=Product/index&columnid={$ProductColumnID}">更多>></a></span>
 		<ul id="ImgboxTab" class="boxTab fleft">
-			<li><a tabid="#boxTab1" href="javascript:;">分类一</a></li>
-			<li><a tabid="#boxTab2" href="javascript:;">分类二</a></li>
+			{if is_array($SubColumnList) && !empty($SubColumnList)}
+			{foreach $SubColumnList as $d}
+			<li><a tabid="#boxTab{$d.AutoIndex}" href="javascript:;">{$d.columnname}</a></li>
+			{/foreach}
+			{/if}
 		</ul>
 	</div>
 	<div class="boxBlockBody h350">
-		<div id="boxTab1" class="boxTabContent">
-			<ul class="ProductList">
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
+		{if is_array($SubColumnList) && !empty($SubColumnList)}
+		{foreach $SubColumnList as $d}
+		<div id="boxTab{$d.AutoIndex}" class="boxTabContent">
+			<ul class="ProductList h335">
+				{if isset($d.ProductList) && is_array($d.ProductList) && !empty($d.ProductList)}
+				{foreach $d.ProductList as $v}
+				<li>
+					<a class="img" href="__APP__/index.php?s=Product/view&columnid={$d.id}&archiveid={$v.id}"><img src="__APP__{$v.thumbimage}" /></a>
+					<a class="title" href="__APP__/index.php?s=Product/view&columnid={$d.id}&archiveid={$v.id}">{$v.title}</a>
+				</li>
+				{/foreach}
+				{/if}
 			</ul>
 		</div>
-		<div id="boxTab2" class="boxTabContent">
-			<ul class="ProductList">
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-			</ul>
-		</div>
+		{/foreach}
+		{/if}
 	</div>
 </div>
 <script type="text/javascript">

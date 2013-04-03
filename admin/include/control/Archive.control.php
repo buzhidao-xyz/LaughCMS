@@ -8,17 +8,9 @@ class ArchiveControl extends CommonControl
 	//控制器名
 	protected $_Control = "Archive";
 
-	//缩略图标准宽高
-	static protected $_Width = 320;
-	static protected $_Height = 260;
-	//缩略图最大字节
-	static protected $_ImageSize = 2097152; //2M
-
 	public function __construct()
 	{
 		parent::__construct();
-
-		$this->assign("timestamp",TIMESTAMP);
 	}
 
 	protected function _getArchiveID()

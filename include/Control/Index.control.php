@@ -24,8 +24,9 @@ class IndexControl extends CommonControl
         $columnid = 2;
         $ArticleList = $this->getAllArchive($columnid,5);
         $this->assign("ArticleList", $ArticleList['data']);
+        $this->assign("ArticleColumnID",$columnid);
 
-        $ProductList = $this->getIndexProductList();
+        $this->getIndexProductList();
 
         $this->getHomeScrollImage();
 
@@ -37,10 +38,19 @@ class IndexControl extends CommonControl
     {
         //产品展示栏目id=6
         $columnid = 6;
-
-        $ProductList = $this->getAllArchive($columnid,8);
-        $this->assign("ProductList", $ProductList['data']);
-        // dump($ProductList['data']);exit;
+        $SubColumnList = M("Column")->getSubColumn($columnid,3);
+        if (is_array($SubColumnList) && !empty($SubColumnList)) {
+            $i = 1;
+            foreach ($SubColumnList as $k=>$v) {
+                $SubColumnList[$k]['AutoIndex'] = $i;
+                $i++;
+                $ProductList = $this->getAllArchive($v['id'],8);
+                $SubColumnList[$k]['ProductList'] = $ProductList['data'];
+            }
+        }
+        
+        $this->assign("ProductColumnID",$columnid);
+        $this->assign("SubColumnList", $SubColumnList);
     }
 
     //获取轮播图片

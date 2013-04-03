@@ -72,7 +72,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 			4 款 Linux 下开源的个人日记管理软件
 		</li>
     	<li class="table_list_l table_list_l150">2013-04-02 14:37:16</li>
-    	<li class="table_list_l table_list_l120">网络产品</li>
+    	<li class="table_list_l table_list_l120">电子产品</li>
 		<li class="table_list_l table_list_l100">admin</li>
 		<li class="table_list_l table_list_l80">0</li>
 		<li class="table_list_l table_list_l80">0</li>
@@ -91,7 +91,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 			Web服务攻击反侦查痕迹检测
 		</li>
     	<li class="table_list_l table_list_l150">2013-04-02 14:34:38</li>
-    	<li class="table_list_l table_list_l120">产品展示</li>
+    	<li class="table_list_l table_list_l120">电子产品</li>
 		<li class="table_list_l table_list_l100">admin</li>
 		<li class="table_list_l table_list_l80">0</li>
 		<li class="table_list_l table_list_l80">0</li>

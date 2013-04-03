@@ -1,30 +1,31 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-02 17:21:11
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-03 17:18:04
          compiled from "C:\xampp\htdocs\laugh\themes\default\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:23863515aa3075e0253-55323733%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:30224515bf3cc548ea3-67971740%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'f577bcee453c3488ab8e2271cee9d8619295461e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\index.html',
-      1 => 1364461906,
+      1 => 1364955931,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '23863515aa3075e0253-55323733',
+  'nocache_hash' => '30224515bf3cc548ea3-67971740',
   'function' => 
   array (
   ),
   'variables' => 
   array (
+    'ArticleColumnID' => 0,
     'ArticleList' => 0,
     'd' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_515aa30766d317_15850867',
+  'unifunc' => 'content_515bf3cc5e8715_40238174',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_515aa30766d317_15850867')) {function content_515aa30766d317_15850867($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_515bf3cc5e8715_40238174')) {function content_515bf3cc5e8715_40238174($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate ("Common/Top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
@@ -51,7 +52,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<div class="boxBlock fleft w350">
 			<div class="boxBlockTitle">
 				<span class="title">新闻资讯</span>
-				<span class="link"><a href="javascript:;">更多>></a></span>
+				<span class="link"><a href="__APP__/index.php?s=Article/index&columnid=<?php echo $_smarty_tpl->tpl_vars['ArticleColumnID']->value;?>
+">更多>></a></span>
 			</div>
 			<div class="boxBlockBody h170">
 				<ul class="articleList">
@@ -60,7 +62,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 foreach ($_from as $_smarty_tpl->tpl_vars['d']->key => $_smarty_tpl->tpl_vars['d']->value){
 $_smarty_tpl->tpl_vars['d']->_loop = true;
 ?>
-					<li><a href="__APP__/index.php?s=article/view&columnid=<?php echo $_smarty_tpl->tpl_vars['d']->value['columnid'];?>
+					<li><a href="__APP__/index.php?s=Article/view&columnid=<?php echo $_smarty_tpl->tpl_vars['d']->value['columnid'];?>
 &archiveid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['d']->value['title'];?>
 </a></li>

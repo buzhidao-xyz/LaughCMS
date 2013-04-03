@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-02 17:16:37
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-03 13:40:11
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\Column\newcolumn.html" */ ?>
-<?php /*%%SmartyHeaderCode:32168515aa1f56633b2-27040992%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:19959515bc0bb399150-19445741%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'bd83c1b6780047f2c7d3de9bed340b9e52103a3d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\green\\Column\\newcolumn.html',
-      1 => 1364524112,
+      1 => 1364967350,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '32168515aa1f56633b2-27040992',
+  'nocache_hash' => '19959515bc0bb399150-19445741',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_515aa1f5725a79_83631020',
+  'unifunc' => 'content_515bc0bb415b94_43571691',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_515aa1f5725a79_83631020')) {function content_515aa1f5725a79_83631020($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_515bc0bb415b94_43571691')) {function content_515bc0bb415b94_43571691($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
 <div class="formContainer" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
@@ -57,7 +57,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</li>
 				<li class="formblock">
 					<span>栏目名称:</span>
-					<input type="text" name="columnname" value="" class="input w200" />
+					<input type="text" name="columnname" value="" class="input w200 ruler" />
 				</li>
 				<li class="formblock">
 					<span>访问Action:</span>

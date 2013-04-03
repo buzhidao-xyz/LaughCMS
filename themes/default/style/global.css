@@ -60,6 +60,9 @@
 .h300 {
 	height: 300px;
 }
+.h335 {
+	height: 335px;
+}
 .h350 {
 	height: 350px;
 }
@@ -202,7 +205,7 @@ ul.ProductList li {
 	float: left;
 	width: 180px;
 	height: 155px;
-	padding: 10px 0;
+	padding: 7px 0;
 }
 ul.ProductList li img {
 	width: 160px;
@@ -215,8 +218,13 @@ ul.ProductList li a {
 	text-align: center;
 	overflow: hidden;
 }
+ul.ProductList li a.img {
+	
+}
 ul.ProductList li a.title {
 	height: 18px;
+	padding-left: 7px;
+	padding-right: 7px;
 }
 
 /**********************************图集列表样式**********************************/

@@ -29,7 +29,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 <div class="formContainer" accessStatus=1>
 	<div class="formtitle"><h5>更新栏目信息</h5></div>
 	<form name="newcolumnform" action="/laugh/admin/index.php?s=Column/saveUpColumn" enctype="multipart/form-data" method="post" class="newform">
-		<input type="hidden" name="columnid" value="14" />
+		<input type="hidden" name="columnid" value="10" />
 		<ul class="formbody">
 			<div class="shtabtitlec">
 				<div class="shtabtitle shtabcurrent"><a href="javascript:;"><span>常规内容</span></a></div>
@@ -41,26 +41,26 @@ var JS_APPM = 'http://localhost:82/laugh';
 				<li class="formblock">
 					<span>上级栏目: </span>
 					<select id="select" name="parentid" style="width:230px;">
-						<option value="">|-请选择栏目...</option><option value="1">&nbsp;&nbsp;|-网站首页</option><option value="2">&nbsp;&nbsp;|-新闻资讯</option><option value="3">&nbsp;&nbsp;&nbsp;&nbsp;|-IT知识</option><option value="12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-PHP知识</option><option value="4">&nbsp;&nbsp;&nbsp;&nbsp;|-网络知识</option><option value="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-前端知识</option><option value="13">&nbsp;&nbsp;&nbsp;&nbsp;|-数据库知识</option><option value="6" selected>&nbsp;&nbsp;|-产品展示</option><option value="14">&nbsp;&nbsp;&nbsp;&nbsp;|-网络产品</option><option value="7">&nbsp;&nbsp;|-客户案例</option><option value="8">&nbsp;&nbsp;|-下载中心</option><option value="9">&nbsp;&nbsp;|-招贤纳士</option><option value="10">&nbsp;&nbsp;|-关于我们</option><option value="11">&nbsp;&nbsp;|-联系我们</option>
+						<option value="">|-请选择栏目...</option><option value="1">&nbsp;&nbsp;|-网站首页</option><option value="2">&nbsp;&nbsp;|-新闻资讯</option><option value="3">&nbsp;&nbsp;&nbsp;&nbsp;|-IT知识</option><option value="12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-PHP知识</option><option value="4">&nbsp;&nbsp;&nbsp;&nbsp;|-网络知识</option><option value="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-前端知识</option><option value="13">&nbsp;&nbsp;&nbsp;&nbsp;|-数据库知识</option><option value="6">&nbsp;&nbsp;|-产品展示</option><option value="14">&nbsp;&nbsp;&nbsp;&nbsp;|-网络产品</option><option value="15">&nbsp;&nbsp;&nbsp;&nbsp;|-电子产品</option><option value="7">&nbsp;&nbsp;|-客户案例</option><option value="8">&nbsp;&nbsp;|-下载中心</option><option value="9">&nbsp;&nbsp;|-招贤纳士</option><option value="10">&nbsp;&nbsp;|-关于我们</option><option value="11">&nbsp;&nbsp;|-联系我们</option>
 					</select>
 				</li>
 				<li class="formblock">
 					<span>内容模型: </span>
 					<select name="columnmodel" style="width:230px;">
-						<option value="">|-请选择内容模型...</option><option value="1">&nbsp;&nbsp;|-文章模型</option><option value="2">&nbsp;&nbsp;|-图片模型</option><option value="3">&nbsp;&nbsp;|-下载模型</option><option value="4">&nbsp;&nbsp;|-专题模型</option><option value="5">&nbsp;&nbsp;|-软件模型</option><option value="6" selected>&nbsp;&nbsp;|-产品模型</option><option value="7">&nbsp;&nbsp;|-分类信息模型</option><option value="8">&nbsp;&nbsp;|-人才招聘模型</option><option value="9">&nbsp;&nbsp;|-公共模型</option>
+						<option value="">|-请选择内容模型...</option><option value="1">&nbsp;&nbsp;|-文章模型</option><option value="2">&nbsp;&nbsp;|-图片模型</option><option value="3">&nbsp;&nbsp;|-下载模型</option><option value="4">&nbsp;&nbsp;|-专题模型</option><option value="5">&nbsp;&nbsp;|-软件模型</option><option value="6">&nbsp;&nbsp;|-产品模型</option><option value="7">&nbsp;&nbsp;|-分类信息模型</option><option value="8">&nbsp;&nbsp;|-人才招聘模型</option><option value="9" selected>&nbsp;&nbsp;|-公共模型</option>
 					</select>
 				</li>
 				<li class="formblock">
 					<span>栏目名称:</span>
-					<input type="text" name="columnname" value="网络产品" class="input w200" />
+					<input type="text" name="columnname" value="关于我们" class="input w200" />
 				</li>
 				<li class="formblock">
 					<span>访问Action:</span>
-					<input type="text" name="action" value="index" class="input w100" />
+					<input type="text" name="action" value="AboutUS" class="input w100" />
 				</li>
 				<li class="formblock">
 					<span>排列顺序:</span>
-					<input type="text" name="sortrank" value="1" class="input w100" />
+					<input type="text" name="sortrank" value="7" class="input w100" />
 				</li>
 				<li class="formautoblock">
 					<span>栏目属性:</span>
@@ -96,7 +96,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 				<li class="formautoblock">
 					<span>栏目内容:</span>
 					<div class="FullTextEditor">
-						<textarea name="content" id="myEditor" rows="3" cols="50"></textarea>
+						<textarea name="content" id="myEditor" rows="3" cols="50">&lt;p&gt;&lt;span class=&quot;text&quot;&gt; &amp;nbsp; &amp;nbsp;LaughCMS企业网站管理系统，是一款代码完全开源免费的PHP+MYSQL系统。&lt;/span&gt;&lt;span class=&quot;text&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span class=&quot;text&quot;&gt; &amp;nbsp; &amp;nbsp;程序内置SEO优化机制，使企业网站更容易被推广。拥有企业网站常用的模块功能（企业简介模块、新闻模块、产品模块、下载模块、图片模块、招聘模块、在线留言、友情链接、会员与权限管理）。强大灵活的后台管理功能、静态页面生成功能、自定义模型功能、自制插件安装管理功能等可为企业打造出大气漂亮且具有营销力的精品网站&lt;/span&gt;&lt;br /&gt;&lt;/p&gt;</textarea>
 					</div>
 				</li>
 			</div>

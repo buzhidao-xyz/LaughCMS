@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2013-04-02 17:28:05
+Date: 2013-04-03 17:16:32
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -90,9 +90,9 @@ INSERT INTO `la_archive` VALUES ('5', '页面(PAGE)标记(TAGS)', 'admin', '5', 
 INSERT INTO `la_archive` VALUES ('6', 'PHP基本点知识', 'admin', '4', null, '', '', '', '', '', '1', '1', '0', '0', '1364201027', '1364201480');
 INSERT INTO `la_archive` VALUES ('7', 'PHP实现异步操作', 'admin', '12', null, '', '', '', '', '', '1', '1', '0', '0', '1364262615', '1364262717');
 INSERT INTO `la_archive` VALUES ('8', 'PHP单例模式经典讲解', 'admin', '3', null, 'PHP,单利模式', '', '', '', '', '1', '1', '0', '0', '1364537100', '1364537721');
-INSERT INTO `la_archive` VALUES ('9', 'Web服务攻击反侦查痕迹检测', 'admin', '6', '/Uploads/Image/201304/02/1364884203_zxvkaj_4664.png', '', '', 'Web服务攻击反侦查痕迹检测', '', '', '1', '1', '0', '0', '1364884203', '1364884478');
+INSERT INTO `la_archive` VALUES ('9', 'Web服务攻击反侦查痕迹检测', 'admin', '15', '/Uploads/Image/201304/02/1364884203_zxvkaj_4664.png', '', '', 'Web服务攻击反侦查痕迹检测', '', '', '1', '1', '0', '0', '1364884203', '1364884478');
 INSERT INTO `la_archive` VALUES ('10', 'Web服务攻击反侦查痕迹检测', 'admin', '12', null, '', '', 'Web服务攻击反侦查痕迹检测', '', '', '1', '1', '0', '0', '1364796550', '1364799883');
-INSERT INTO `la_archive` VALUES ('11', '4 款 Linux 下开源的个人日记管理软件', 'admin', '14', '/Uploads/Image/201304/02/1364884636_tpajd4_786.png', '', '', '4 款 Linux 下开源的个人日记管理软件', '', '4 款 Linux 下开源的个人日记管理软件', '1', '1', '0', '0', '1364804934', '1364884636');
+INSERT INTO `la_archive` VALUES ('11', '4 款 Linux 下开源的个人日记管理软件', 'admin', '15', '/Uploads/Image/201304/02/1364884636_tpajd4_786.png', '', '', '4 款 Linux 下开源的个人日记管理软件', '', '4 款 Linux 下开源的个人日记管理软件', '1', '1', '0', '0', '1364804934', '1364884636');
 INSERT INTO `la_archive` VALUES ('12', 'Vim文本编辑器 v7.3 正式版', 'admin', '14', '/Uploads/Image/201304/02/1364884946_37uz4d_4967.png', '', '', 'Vim文本编辑器 v7.3 正式版', '', 'Vim文本编辑器 v7.3 正式版', '1', '1', '0', '0', '1364805949', '1364884946');
 INSERT INTO `la_archive` VALUES ('13', 'DNS污染【备忘】', 'admin', '4', null, '', '', 'DNS污染【备忘】', '', 'DNS污染【备忘】', '1', '1', '0', '0', '1364885413', '1364885467');
 
@@ -173,7 +173,7 @@ INSERT INTO `la_column` VALUES ('2', '新闻资讯', '0', '2', '1', '1', null, '
 INSERT INTO `la_column` VALUES ('3', 'IT知识', '2', '2', '1', '1', null, 'index', '1', '', '', '', '', 'Article/index.html', 'Article/list.html', 'Article/body.html', '1', '1356406231', '1363856604');
 INSERT INTO `la_column` VALUES ('4', '网络知识', '2', '2', '1', '1', null, 'index', '2', '', '', '', '', 'Article/index.html', 'Article/list.html', 'Article/body.html', '1', '1356414942', '1363856617');
 INSERT INTO `la_column` VALUES ('5', '前端知识', '4', '2', '1', '1', null, 'index', '1', '', '', '', '', 'Article/index.html', 'Article/list.html', 'Article/body.html', '1', '1359689764', '1363856760');
-INSERT INTO `la_column` VALUES ('6', '产品展示', '0', '6', '1', '6', null, 'index', '3', '', '', '', '', null, null, null, '1', '1359690256', '1359690256');
+INSERT INTO `la_column` VALUES ('6', '产品展示', '0', '6', '1', '6', null, 'index', '3', '', '', '', '', 'Product/index.html', 'Product/list.html', 'Product/body.html', '1', '1359690256', '1359690256');
 INSERT INTO `la_column` VALUES ('7', '客户案例', '0', '7', '1', '2', null, 'index', '4', '', '', '', '', null, null, null, '1', '1359690270', '1359690270');
 INSERT INTO `la_column` VALUES ('8', '下载中心', '0', '8', '1', '3', null, 'index', '5', '', '', '', '', null, null, null, '1', '1359690280', '1359690280');
 INSERT INTO `la_column` VALUES ('9', '招贤纳士', '0', '9', '1', '8', null, 'index', '6', '', '', '', '', null, null, null, '1', '1359690294', '1359690294');
@@ -181,8 +181,8 @@ INSERT INTO `la_column` VALUES ('10', '关于我们', '0', '10', '1', '9', null,
 INSERT INTO `la_column` VALUES ('11', '联系我们', '0', '11', '1', '9', null, 'ContactUS', '8', '', '', '', '', null, null, null, '1', '1359690316', '1359690316');
 INSERT INTO `la_column` VALUES ('12', 'PHP知识', '3', '2', '1', '1', null, 'index', '1', '', '', '', '', null, null, null, '1', '1364262577', '1364262577');
 INSERT INTO `la_column` VALUES ('13', '数据库知识', '2', '2', '1', '1', null, 'index', '1', '', '', '', '', null, null, null, '1', '1364452588', '1364452588');
-INSERT INTO `la_column` VALUES ('14', '网络产品', '6', '6', '1', '6', null, 'index', '1', '', '', '', '', null, null, null, '1', '1364804231', '1364804761');
-INSERT INTO `la_column` VALUES ('15', '电子产品', '6', '6', '1', '6', null, 'index', '1', '', '', '', '', null, null, null, '1', '1364894217', '1364894217');
+INSERT INTO `la_column` VALUES ('14', '网络产品', '6', '6', '1', '6', null, 'index', '1', '', '', '', '', 'Product/index.html', 'Product/list.html', 'Product/body.html', '1', '1364804231', '1364960571');
+INSERT INTO `la_column` VALUES ('15', '电子产品', '6', '6', '1', '6', null, 'index', '1', '', '', '', '', 'Product/index.html', 'Product/list.html', 'Product/body.html', '1', '1364894217', '1364960612');
 
 -- ----------------------------
 -- Table structure for `la_column_model`
@@ -216,7 +216,7 @@ INSERT INTO `la_column_model` VALUES ('5', '软件模型', '', '0', '0', 'soft',
 INSERT INTO `la_column_model` VALUES ('6', '产品模型', '', '0', '0', 'product', '', 'Product', 'Product/index.html', 'Product/add.html', 'Product/edit.html', '1', '1363315247');
 INSERT INTO `la_column_model` VALUES ('7', '分类信息模型', '', '0', '0', 'info', '', 'Info', null, null, null, '1', '1363315306');
 INSERT INTO `la_column_model` VALUES ('8', '人才招聘模型', '', '0', '0', 'cooperate', '', 'Cooperate', null, null, null, '1', '1363597871');
-INSERT INTO `la_column_model` VALUES ('9', '公共模型', '', '0', '0', 'public', '', 'Public', null, null, null, '1', '1363598752');
+INSERT INTO `la_column_model` VALUES ('9', '公共模型', '公共模型 关于我们、联系我们等', '0', '0', 'public', '', 'Public', null, null, null, '1', '1364969716');
 
 -- ----------------------------
 -- Table structure for `la_comment`
@@ -470,6 +470,39 @@ CREATE TABLE `la_scrollimage` (
 INSERT INTO `la_scrollimage` VALUES ('1', '/Uploads/ScrollImage/1364279943_qg83i3_3808.jpg', '剑侠情缘叁明教', '#', '1', '0');
 INSERT INTO `la_scrollimage` VALUES ('2', '/Uploads/ScrollImage/1364280038_2l6n4e_8019.jpg', '绿色屏保', '#', '1', '0');
 INSERT INTO `la_scrollimage` VALUES ('3', '/Uploads/ScrollImage/1364280067_duvmp8_5013.jpg', '豪车', '#', '1', '0');
+
+-- ----------------------------
+-- Table structure for `la_singlepage`
+-- ----------------------------
+DROP TABLE IF EXISTS `la_singlepage`;
+CREATE TABLE `la_singlepage` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL COMMENT '单页页面标题',
+  `tag` varchar(50) DEFAULT NULL COMMENT '单页页面标签',
+  `author` varchar(50) DEFAULT NULL,
+  `thumbimage` varchar(100) DEFAULT NULL COMMENT '缩略图',
+  `seotitle` varchar(100) DEFAULT NULL,
+  `keyword` varchar(100) DEFAULT NULL,
+  `description` varchar(300) DEFAULT NULL,
+  `filename` varchar(100) DEFAULT NULL,
+  `template` varchar(50) DEFAULT NULL,
+  `content` longtext COMMENT '页面内容',
+  `state` tinyint(1) NOT NULL DEFAULT '1' COMMENT '文章状态 0:回收站 1:正常发布 2:草稿箱',
+  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '评论状态 0:禁止评论 1:允许评论',
+  `clicknum` int(10) NOT NULL DEFAULT '0',
+  `commentnum` int(10) NOT NULL DEFAULT '0',
+  `publishtime` int(10) NOT NULL DEFAULT '0',
+  `updatetime` int(10) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of la_singlepage
+-- ----------------------------
+INSERT INTO `la_singlepage` VALUES ('1', '关于我们页面123', '', 'admin', null, '关于我们页面123', '', '关于我们页面123', '/a/index1.html', '/SinglePage/singlepage.html', '&lt;p&gt;关于我们页面123&lt;/p&gt;', '1', '1', '0', '0', '1364975265', '1364979339');
+INSERT INTO `la_singlepage` VALUES ('2', '关于我们页面', '', 'admin', null, '关于我们页面', '', '关于我们页面', '/a/index1.html', '/SinglePage/singlepage.html', '&lt;p&gt;关于我们页面&lt;/p&gt;', '1', '1', '0', '0', '1364975265', '1364979252');
+INSERT INTO `la_singlepage` VALUES ('3', '关于我们页面1', '', 'admin', null, '关于我们页面', '', '关于我们页面', '/a/index1.html', '/SinglePage/singlepage.html', '&lt;p&gt;关于我们页面123&lt;/p&gt;', '0', '1', '0', '0', '1364975265', '1364979268');
+INSERT INTO `la_singlepage` VALUES ('4', '关于我们页面', '', 'admin', null, '关于我们页面', '', '关于我们页面', '/a/index1.html', '/SinglePage/singlepage.html', '&lt;p&gt;关于我们页面&lt;/p&gt;', '1', '1', '0', '0', '1364975265', '1364979277');
 
 -- ----------------------------
 -- Table structure for `la_soft`

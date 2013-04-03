@@ -29,6 +29,7 @@ class Archive extends Base
 		$obj = T("Archive")->where($where);
 		if ($length) $obj = $obj->limit($start,$length);
 		$data = $obj->order("publishtime","desc")->select();
+		$data = $this->dealArchive($data);
 
 		return array('total'=>$total, 'data'=>$data);
 	}
@@ -46,6 +47,24 @@ class Archive extends Base
 		$articleList = $this->getArchive(null,0,0,$where);
 
 		return $ArchiveList['data'];
+	}
+
+	/**
+	 * 格式化文档列表
+	 * @param $data array 文档数组列表
+	 */
+	public function dealArchive($data=array())
+	{
+		if (!is_array($data) || empty($data)) return array();
+
+		//加入文档号
+		$i = 1;
+		foreach ($data as $k=>$d) {
+			$data[$k]['AutoIndex'] = $i;
+			$i++;
+		}
+
+		return $data;
 	}
 
 	/**

@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-02 17:16:59
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-03 17:18:00
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\Column\column.html" */ ?>
-<?php /*%%SmartyHeaderCode:23347515aa20b37a4a0-17729007%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:9332515bf3c8b5e8c9-38116693%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '23347515aa20b37a4a0-17729007',
+  'nocache_hash' => '9332515bf3c8b5e8c9-38116693',
   'function' => 
   array (
   ),
@@ -22,9 +22,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_515aa20b442fc2_82300301',
+  'unifunc' => 'content_515bf3c8c29e21_41526626',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_515aa20b442fc2_82300301')) {function content_515aa20b442fc2_82300301($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_515bf3c8c29e21_41526626')) {function content_515bf3c8c29e21_41526626($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="captitle"><h5>栏目列表</h5></div>
 <div id="columnList">

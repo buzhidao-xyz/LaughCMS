@@ -195,15 +195,15 @@ $("#SImageContainer").Xslider({
 		<div class="boxBlock fleft w350">
 			<div class="boxBlockTitle">
 				<span class="title">新闻资讯</span>
-				<span class="link"><a href="javascript:;">更多>></a></span>
+				<span class="link"><a href="/laugh/index.php?s=Article/index&columnid=2">更多>></a></span>
 			</div>
 			<div class="boxBlockBody h170">
 				<ul class="articleList">
-										<li><a href="/laugh/index.php?s=article/view&columnid=4&archiveid=13">DNS污染【备忘】</a></li>
-										<li><a href="/laugh/index.php?s=article/view&columnid=12&archiveid=10">Web服务攻击反侦查痕迹检测</a></li>
-										<li><a href="/laugh/index.php?s=article/view&columnid=3&archiveid=8">PHP单例模式经典讲解</a></li>
-										<li><a href="/laugh/index.php?s=article/view&columnid=2&archiveid=1">这是一篇测试文章</a></li>
-										<li><a href="/laugh/index.php?s=article/view&columnid=12&archiveid=7">PHP实现异步操作</a></li>
+										<li><a href="/laugh/index.php?s=Article/view&columnid=4&archiveid=13">DNS污染【备忘】</a></li>
+										<li><a href="/laugh/index.php?s=Article/view&columnid=12&archiveid=10">Web服务攻击反侦查痕迹检测</a></li>
+										<li><a href="/laugh/index.php?s=Article/view&columnid=3&archiveid=8">PHP单例模式经典讲解</a></li>
+										<li><a href="/laugh/index.php?s=Article/view&columnid=2&archiveid=1">这是一篇测试文章</a></li>
+										<li><a href="/laugh/index.php?s=Article/view&columnid=12&archiveid=7">PHP实现异步操作</a></li>
 									</ul>
 			</div>
 		</div>
@@ -231,38 +231,34 @@ $("#SImageContainer").Xslider({
 		<div id="ImgListBlock" class="boxBlock fleft w740">
 	<div class="boxBlockTitle">
 		<span class="title">产品展示</span>
-		<span class="link"><a href="javascript:;">更多>></a></span>
+		<span class="link"><a href="/laugh/index.php?s=Product/index&columnid=6">更多>></a></span>
 		<ul id="ImgboxTab" class="boxTab fleft">
-			<li><a tabid="#boxTab1" href="javascript:;">分类一</a></li>
-			<li><a tabid="#boxTab2" href="javascript:;">分类二</a></li>
-		</ul>
+									<li><a tabid="#boxTab1" href="javascript:;">网络产品</a></li>
+						<li><a tabid="#boxTab2" href="javascript:;">电子产品</a></li>
+								</ul>
 	</div>
 	<div class="boxBlockBody h350">
-		<div id="boxTab1" class="boxTabContent">
-			<ul class="ProductList">
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img1.jpg" /></a><a href="javascript:;">产品一</a></li>
-			</ul>
+						<div id="boxTab1" class="boxTabContent">
+			<ul class="ProductList h335">
+												<li>
+					<a class="img" href="/laugh/index.php?s=Product/view&columnid=14&archiveid=12"><img src="/laugh/Uploads/Image/201304/02/1364884946_37uz4d_4967.png" /></a>
+					<a class="title" href="/laugh/index.php?s=Product/view&columnid=14&archiveid=12">Vim文本编辑器 v7.3 正式版</a>
+				</li>
+											</ul>
 		</div>
-		<div id="boxTab2" class="boxTabContent">
-			<ul class="ProductList">
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-				<li><a href="javascript:;"><img src="themes/default/images/product/product_img2.jpg" /></a><a href="javascript:;">产品一</a></li>
-			</ul>
+				<div id="boxTab2" class="boxTabContent">
+			<ul class="ProductList h335">
+												<li>
+					<a class="img" href="/laugh/index.php?s=Product/view&columnid=15&archiveid=9"><img src="/laugh/Uploads/Image/201304/02/1364884203_zxvkaj_4664.png" /></a>
+					<a class="title" href="/laugh/index.php?s=Product/view&columnid=15&archiveid=9">Web服务攻击反侦查痕迹检测</a>
+				</li>
+								<li>
+					<a class="img" href="/laugh/index.php?s=Product/view&columnid=15&archiveid=11"><img src="/laugh/Uploads/Image/201304/02/1364884636_tpajd4_786.png" /></a>
+					<a class="title" href="/laugh/index.php?s=Product/view&columnid=15&archiveid=11">4 款 Linux 下开源的个人日记管理软件</a>
+				</li>
+											</ul>
 		</div>
-	</div>
+					</div>
 </div>
 <script type="text/javascript">
 $(document).ready(function() {

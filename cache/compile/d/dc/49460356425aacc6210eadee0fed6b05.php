@@ -46,7 +46,7 @@ var JS_APP = '/laugh';
 <link type="text/css" rel="stylesheet" href="themes/default/style/navigation.css" media="screen">
 <ul class="headerNavigation">
 		<li>
-		<a href="/laugh/index.php?s=Index/index&columnid=1" class="navon">网站首页</a>
+		<a href="/laugh/index.php?s=Index/index&columnid=1" class="">网站首页</a>
 			</li>
 		<li>
 		<a href="/laugh/index.php?s=Article/index&columnid=2" class="">新闻资讯</a>
@@ -69,10 +69,13 @@ var JS_APP = '/laugh';
 					</ul>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Product/index&columnid=6" class="">产品展示</a>
+		<a href="/laugh/index.php?s=Product/index&columnid=6" class="navon">产品展示</a>
 				<ul class="SubNavigation">
 						<li>
 				<a href="/laugh/index.php?s=Product/index&columnid=14">网络产品</a>
+							</li>
+						<li>
+				<a href="/laugh/index.php?s=Product/index&columnid=15">电子产品</a>
 							</li>
 					</ul>
 			</li>
@@ -146,23 +149,23 @@ $(document).ready(function (){
 		<a href="javascript:;" target="_blank"><img src="themes/default/images/ad_banner.png" width="1000" height="80" /></a>
 	</div>
 	<div class="CurPosition mtop5">
-		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=/&columnid="></a>
+		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=Product/index&columnid=6">产品展示</a> > <a href="/laugh/index.php?s=Product/index&columnid=15">电子产品</a>
 	</div>
 	<div id="CenterShow" class="block mtop5">
 		<div id="mainBlock" class="fleft w740">
 			<div class="boxBlock">
 				<div class="boxBlockTitle">
-					<span class="title">Vim文本编辑器 v7.3 正式版</span>
+					<span class="title">4 款 Linux 下开源的个人日记管理软件</span>
 				</div>
 				<div class="boxBlockBody">
 					<div class="contentBlock">
 						<div class="productTpl">
-	<h2 class="title">Vim文本编辑器 v7.3 正式版</h2>
+	<h2 class="title">4 款 Linux 下开源的个人日记管理软件</h2>
 	<div class="status">
 		<span class="title">点击次数:</span>
 		<span class="content">0 次</span>
 		<span class="title">发布时间:</span>
-		<span class="content">2013-04-01 16:45:49</span>
+		<span class="content">2013-04-01 16:28:54</span>
 		<span class="title">作者:</span>
 		<span class="content">admin</span>
 	</div>
@@ -171,7 +174,13 @@ $(document).ready(function (){
 			<div id="mainImage"></div>
 			<ul class="galleryFlash galleryImage">
 							    <li class="active">
-			    	<img src="/laugh/Uploads/Image/201304/02/thumb_1364884923_r8r51t_4822.png" alt="预览图1" title="预览图1">
+			    	<img src="/laugh/Uploads/Image/201304/02/thumb_1364884599_fye754_8577.png" alt="图1" title="图1">
+			    </li>
+			    			    <li class="active">
+			    	<img src="/laugh/Uploads/Image/201304/02/thumb_1364884614_qub9zq_7492.png" alt="图2" title="图2">
+			    </li>
+			    			    <li class="active">
+			    	<img src="/laugh/Uploads/Image/201304/02/thumb_1364884625_dxb7k2_7142.jpg" alt="图3" title="图3">
 			    </li>
 			    			</ul>
 		</div>
@@ -186,15 +195,15 @@ $(document).ready(function (){
 				<div id="productInfoboxTab1" class="boxTabContent productInfoContent">
 					<dl>
 						<dt>型号:</dt>
-						<dd>VIM</dd>
+						<dd>1234</dd>
 					</dl>
 					<dl>
 						<dt>品牌:</dt>
-						<dd>开源软件</dd>
+						<dd>222</dd>
 					</dl>
 					<dl>
 						<dt>颜色:</dt>
-						<dd>黑色</dd>
+						<dd>333</dd>
 					</dl>
 					<dl>
 						<dt>材质:</dt>
@@ -202,7 +211,7 @@ $(document).ready(function (){
 					</dl>
 					<dl>
 						<dt>尺寸:</dt>
-						<dd></dd>
+						<dd>123</dd>
 					</dl>
 					<dl>
 						<dt>价格:</dt>
@@ -210,11 +219,11 @@ $(document).ready(function (){
 					</dl>
 					<dl>
 						<dt>数量:</dt>
-						<dd>1</dd>
+						<dd></dd>
 					</dl>
 				</div>
 				<div id="productInfoboxTab2" class="boxTabContent productInfoContent">
-					<p><span style="font-family:&#39;comic sans ms&#39;, cursive;"><span style="font-size:14px;">Vim是一个类似于Vi的文本编辑器，不过在Vi的基础上增加了很多新的特性，Vim普遍被推崇为类Vi编辑器中最好的一个，事实上真正的劲敌来自Emacs的不同变体。</span></span></p><p><span style="font-family:&#39;comic sans ms&#39;, cursive;"><span style="font-size:14px;">1999 年Emacs被选为Linuxworld文本编辑分类的优胜者，Vim屈居第二。但在2000年2月Vim赢得了Slashdot Beanie的最佳开放源代码文本编辑器大奖，又将Emacs推至二线， 总的来看， Vim和Emacs同样都是非常优秀的文本编辑器。</span></span></p><p><br /></p>
+					<p>1. RedNotebook</p><p>　　RedNotebook 是一款不错的可以运行在Linux环境桌面日记本，不论是拿来写日记，还是写些简单的每日计划，都非常适用。</p><p>　　界面还是很简洁的。 右边的边栏是个单独的区域，可以在里面建立分类的文本，非常适合来记录计划、灵感，或者今日大事</p><p>2. Lifeograph</p><p>　　Lifeograph 是一个开源的离线和私人的日志和记事应用软件。提供作为一个日记应用的所有标准工具。</p><p>　　功能：</p><p>　　支持加密和非加密日记</p><p>　　长时间未使用自动退出登录</p><p>　　自动格式化条目标题和子标题</p><p>　　类似 Wiki 风格的富文本格式化 (*bold*, _italic_, =strikeout=, etc&hellip;)</p><p>　　基本的搜索、过滤和替换文本功能</p><p>　　编辑器支持主题</p><p>　　可收藏日记</p><p>　　支持标签</p><p>　　拼写检查</p><p>　　条目之间的链接</p><p>　　支持多种 URI 格式(http://, file://, mailto://, etc&hellip;)</p><p>　　自动备份</p><p>　　打印</p><p>　　基本统计图表</p><p>　　图像缩略图</p><p>3. Kontact</p><p>　　Kontact 是KDE的个人信息管理和套装软件。提供日历、通讯簿、笔记、待办事项、新闻和电子邮件的功能。使用KPart来嵌入各种应用程式(KMail、KAddressBook、Akregator等)放入到容器应用程序。</p><p>4. ThotKeeper</p><p>　　ThotKeeper 是一个使用 Python 编写的跨平台的个人日记管理程序。</p><p>　　功能：</p><p>　　跨平台支持</p><p>　　简单易于浏览的接口</p><p>　　XML 存储格式</p><p>　　支持每天多篇日记</p><p>　　支持不同的日记作者</p><p>　　层次化标签</p><p><br /></p>
 				</div>
 			</div>
 		</div>
@@ -238,7 +247,7 @@ $(document).ready(function (){
 		<dl>
 			<dt>上一篇:</dt>
 			<dd>
-								<font color="grey">没有了！</font>
+								<a href="/laugh/index.php?s=Product/view&columnid=15&archiveid=9" title="Web服务攻击反侦查痕迹检测">Web服务攻击反侦查痕迹检测</a>
 							</dd>
 		</dl>
 		<dl>

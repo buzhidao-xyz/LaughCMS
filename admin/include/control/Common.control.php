@@ -12,6 +12,12 @@ class CommonControl extends BaseControl
 
     //分页 每页显示数据数
     protected $_pagesize = 30;
+    
+    //缩略图标准宽高
+    static protected $_Width = 320;
+    static protected $_Height = 260;
+    //缩略图最大字节
+    static protected $_ImageSize = 2097152; //2M
 
     /**
      * 初始化并读取用户权限信息
@@ -25,6 +31,7 @@ class CommonControl extends BaseControl
         $this->getUserAccess();
         $this->setUserAccess();
 
+        $this->assign("timestamp",TIMESTAMP);
         $this->assign("Control", $this->_Control);
     }
 

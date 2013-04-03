@@ -124,10 +124,18 @@ input,textarea,select {
 select {
     *margin-top: 8px;
 }
+input.ruler {
+    background: url("../images/ruler.gif") repeat-x scroll 0 5px transparent;
+}
+input.ruler:hover,input.ruler:focus {
+    border-color:#A5C760;
+    box-shadow: 0 0 3px #A5C760;
+    background: #F5F9FD;
+    background: url("../images/ruler.gif") repeat-x scroll 0 5px #F5F9FD;
+}
 .input:hover,.input:focus,textarea:hover,textarea:focus {
-    /*border-color:#1D3647;*/
     border-color: #FF6600;
-    background:#F5F9FD;
+    background: #F5F9FD;
 }
 .input_textarea_hover {
     /*border-color:#1D3647;*/

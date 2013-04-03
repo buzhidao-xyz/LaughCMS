@@ -74,6 +74,9 @@ var JS_APP = '/laugh';
 						<li>
 				<a href="/laugh/index.php?s=Product/index&columnid=14">网络产品</a>
 							</li>
+						<li>
+				<a href="/laugh/index.php?s=Product/index&columnid=15">电子产品</a>
+							</li>
 					</ul>
 			</li>
 		<li>

@@ -139,7 +139,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="table_list_l table_list_l120">公共模型</li>
 		<li class="table_list_l table_list_l120">public</li>
 		<li class="table_list_l table_list_l100">Public</li>
-		<li class="table_list_l table_list_l300"></li>
+		<li class="table_list_l table_list_l300">公共模型 关于我们、联系我们等</li>
 				<li class="table_list_l table_list_l170" accessStatus=1>
 			<a href="/laugh/admin/index.php?s=CTModel/ModelField">模型字段</a>
 			<a href="/laugh/admin/index.php?s=CTModel/UpdateModel">修改</a>
