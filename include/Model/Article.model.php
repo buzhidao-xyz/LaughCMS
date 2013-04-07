@@ -33,15 +33,15 @@ class Article extends Archive
 	 */
 	public function getArticleInfo($columnid=null,$archiveid=null,$where=array())
 	{
-		$articleInfo = $this->getArchive($archiveid,0,0,$where);
-		if (!$articleInfo['total']) return false;
+		$archiveInfo = $this->getArchive($archiveid,0,0,$where);
+		if (!$archiveInfo['total']) return false;
 
-		$articleInfo = $articleInfo['data'][0];
+		$archiveInfo = $archiveInfo['data'][0];
 		$articleIndex = $this->getArticleContent($archiveid);
-		$articleInfo['content'] = $articleIndex[0]['content'];
+		$archiveInfo['content'] = $articleIndex[0]['content'];
 
-		$articleInfo['prev'] = $this->getPrevArchive($columnid,$archiveid);
-		$articleInfo['next'] = $this->getNextArchive($columnid,$archiveid);
-		return $articleInfo;
+		$archiveInfo['prev'] = $this->getPrevArchive($columnid,$archiveid);
+		$archiveInfo['next'] = $this->getNextArchive($columnid,$archiveid);
+		return $archiveInfo;
 	}
 }

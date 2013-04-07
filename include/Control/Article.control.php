@@ -33,7 +33,7 @@ class ArticleControl extends ArchiveControl
 	}
 
 	//获取文档内容
-	public function view()
+	public function View()
 	{
 		$archiveid = $this->_getArchiveID();
 		$archiveInfo = M("Article")->getArticleInfo($this->_columnid,$archiveid);

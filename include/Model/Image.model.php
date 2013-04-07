@@ -4,14 +4,18 @@
  * by buzhidao 2013-03-26
  * 图片操作 轮播图片 增删改查
  */
-class Image extends Base
+class Image extends Archive
 {
 	public function __construct()
 	{
 		parent::__construct();
 	}
 
-	//获取首页轮播图片
+	/**
+	 * 获取首页轮播图片
+	 * @param $id int 图片id
+	 * @param $where array 条件数组
+	 */
 	public function getHomeScrollImage($id=null,$where=array())
 	{
 		if ($id) $where['id'] = $id;
@@ -19,5 +23,38 @@ class Image extends Base
 		$where['isshow'] = 1;
 		$where['isdelete'] = 0;
 		return T("scrollimage")->where($where)->select();
+	}
+
+	/**
+	 * 获取图集内容
+	 * @param $archiveid int 文章id
+	 */
+	public function getImageDetail($archiveid=null)
+	{
+		if (empty($archiveid)) return false;
+
+		$where = array();
+		$where['archiveid'] = is_array($archiveid) ? array("in", $archiveid) : $archiveid;
+		
+		return T("images")->where($where)->select();
+	}
+
+	/**
+	 * 获取某个图集详情
+	 * @param $columnid int 栏目id
+	 * @param $archiveid int 文档id
+	 */
+	public function getImageInfo($columnid=null,$archiveid=null,$where=array())
+	{
+		$archiveInfo = $this->getArchive($archiveid,0,0,$where);
+		if (!$archiveInfo['total']) return false;
+
+		$archiveInfo = $archiveInfo['data'][0];
+		$imageDetail = $this->getImageDetail($archiveid);
+		$archiveInfo = array_merge($imageDetail[0],$archiveInfo);
+
+		$archiveInfo['prev'] = $this->getPrevArchive($columnid,$archiveid);
+		$archiveInfo['next'] = $this->getNextArchive($columnid,$archiveid);
+		return $archiveInfo;
 	}
 }

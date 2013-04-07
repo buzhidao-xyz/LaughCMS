@@ -28,7 +28,7 @@ var JS_APPM = 'http://localhost:82/laugh';
             <div class="login logTop">
                 <h3>网站后台管理系统</h3>
             </div>
-            <div id="logError"></div>
+            <div id="logError">用户名或密码错误!</div>
             <div class="login logForm">
                 <form name="loginform" method="post" action="/laugh/admin/index.php?s=login/loginCheck">
                     <ul>

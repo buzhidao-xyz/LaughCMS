@@ -108,4 +108,12 @@ class Archive extends Base
 		if (!$archiveid) return false;
 		return T("images")->where(array("archiveid"=>$archiveid))->select();
 	}
+
+	/**
+	 * 获取文档内容详情
+	 */
+	public function getArchiveInfo($columnid=null,$archiveid=null,$where=array())
+	{
+		
+	}
 }

@@ -22,4 +22,21 @@ class ArchiveControl extends CommonControl
 		$archiveid = q("archiveid");
 		return $archiveid;
 	}
+
+	//主入口 获取文档
+	public function index()
+	{
+		list($start,$length) = $this->getPages();
+		$ArchiveList = $this->getAllArchive();
+
+		$this->assign("ArchiveList", $ArchiveList['data']);
+		$this->assign("page", getPage($ArchiveList['total'],$this->_pagesize));
+		$this->display("Archive/list.html");
+	}
+
+	//获取文档内容
+	public function View()
+	{
+		$this->display("Archive/body.html");
+	}
 }
