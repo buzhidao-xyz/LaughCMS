@@ -58,7 +58,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="table_list_l table_list_l80">0</li>
 		<li class="table_list_l table_list_l80">0</li>
     	    	<li class="table_list_l table_list_l120" accessStatus=1>
-    		<a href="http://localhost:82/laugh/index.php?s=Product/View&archiveid=12" target="_blank">预览</a>
+    		<a href="http://localhost:82/laugh/index.php?s=Product/View&columnid=14&archiveid=12" target="_blank">预览</a>
     		<a href="/laugh/admin/index.php?s=Product/edit&archiveid=12">修改</a>
     		<a delurl="/laugh/admin/index.php?s=Archive/recoverArchive&archiveid=12" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>
@@ -77,7 +77,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="table_list_l table_list_l80">0</li>
 		<li class="table_list_l table_list_l80">0</li>
     	    	<li class="table_list_l table_list_l120" accessStatus=1>
-    		<a href="http://localhost:82/laugh/index.php?s=Product/View&archiveid=11" target="_blank">预览</a>
+    		<a href="http://localhost:82/laugh/index.php?s=Product/View&columnid=15&archiveid=11" target="_blank">预览</a>
     		<a href="/laugh/admin/index.php?s=Product/edit&archiveid=11">修改</a>
     		<a delurl="/laugh/admin/index.php?s=Archive/recoverArchive&archiveid=11" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>
@@ -96,7 +96,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="table_list_l table_list_l80">0</li>
 		<li class="table_list_l table_list_l80">0</li>
     	    	<li class="table_list_l table_list_l120" accessStatus=1>
-    		<a href="http://localhost:82/laugh/index.php?s=Product/View&archiveid=9" target="_blank">预览</a>
+    		<a href="http://localhost:82/laugh/index.php?s=Product/View&columnid=15&archiveid=9" target="_blank">预览</a>
     		<a href="/laugh/admin/index.php?s=Product/edit&archiveid=9">修改</a>
     		<a delurl="/laugh/admin/index.php?s=Archive/recoverArchive&archiveid=9" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>

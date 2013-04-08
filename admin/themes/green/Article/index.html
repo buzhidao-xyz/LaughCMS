@@ -36,7 +36,7 @@
 		<li class="table_list_l table_list_l80">{$d.commentnum}</li>
     	{if $accessStatus == 1}
     	<li class="table_list_l table_list_l120" accessStatus={$accessStatus}>
-    		<a href="__APPM__/index.php?s=Article/View&archiveid={$d.id}" target="_blank">预览</a>
+    		<a href="__APPM__/index.php?s=Article/View&columnid={$d.columnid}&archiveid={$d.id}" target="_blank">预览</a>
     		<a href="__APP__/index.php?s=Article/edit&archiveid={$d.id}">修改</a>
     		<a delurl="__APP__/index.php?s=Archive/recoverArchive&archiveid={$d.id}" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>

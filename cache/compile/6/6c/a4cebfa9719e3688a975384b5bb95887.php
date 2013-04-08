@@ -159,16 +159,17 @@ $(document).ready(function (){
 				</div>
 				<div class="boxBlockBody">
 					<ul class="ImageList">
-						<li>
-							<a href="/laugh/index.php?s=Image/View&columnid=7&archiveid=<pre class='xdebug-var-dump' dir='ltr'><small>string</small> <font color='#cc0000'>'&lt;font color=red&gt;127.0.0.1 系统发生错误: Undefined index: d, in C:\xampp\htdocs\laugh\cache\compile\5fd64fa661d6c4184e91778ab806a8ed8ce7a0e0.file.list.html.php on line 54&lt;/font&gt;'</font> <i>(length=182)</i>
-</pre><pre class='xdebug-var-dump' dir='ltr'><small>string</small> <font color='#cc0000'>'&lt;font color=red&gt;127.0.0.1 系统发生错误: Trying to get property of non-object, in C:\xampp\htdocs\laugh\cache\compile\5fd64fa661d6c4184e91778ab806a8ed8ce7a0e0.file.list.html.php on line 54&lt;/font&gt;'</font> <i>(length=200)</i>
-</pre>" class="ImageBG"><img src="themes/default/images/product/product_img1.jpg" /></a>
-							<a href="/laugh/index.php?s=Image/View&columnid=7&archiveid=<pre class='xdebug-var-dump' dir='ltr'><small>string</small> <font color='#cc0000'>'&lt;font color=red&gt;127.0.0.1 系统发生错误: Undefined index: d, in C:\xampp\htdocs\laugh\cache\compile\5fd64fa661d6c4184e91778ab806a8ed8ce7a0e0.file.list.html.php on line 57&lt;/font&gt;'</font> <i>(length=182)</i>
-</pre><pre class='xdebug-var-dump' dir='ltr'><small>string</small> <font color='#cc0000'>'&lt;font color=red&gt;127.0.0.1 系统发生错误: Trying to get property of non-object, in C:\xampp\htdocs\laugh\cache\compile\5fd64fa661d6c4184e91778ab806a8ed8ce7a0e0.file.list.html.php on line 57&lt;/font&gt;'</font> <i>(length=200)</i>
-</pre>">案例一</a>
-							<span>最后更新: 2012-02-03</span>
+																		<li>
+							<a href="/laugh/index.php?s=Image/View&columnid=7&archiveid=15" class="ImageBG"><img src="/laugh/Uploads/Image/201304/08/1365414070_zo95z4_7377.jpg" /></a>
+							<a href="/laugh/index.php?s=Image/View&columnid=7&archiveid=15">客户案例二</a>
+							<span>最后更新: <font color="#999999">2013-04-08</font></span>
 						</li>
-					</ul>
+												<li>
+							<a href="/laugh/index.php?s=Image/View&columnid=7&archiveid=14" class="ImageBG"><img src="/laugh/Uploads/Image/201304/08/1365413072_9nqiqs_5725.jpeg" /></a>
+							<a href="/laugh/index.php?s=Image/View&columnid=7&archiveid=14">客户案例一</a>
+							<span>最后更新: <font color="#999999">2013-04-08</font></span>
+						</li>
+																	</ul>
 					
 				</div>
 			</div>

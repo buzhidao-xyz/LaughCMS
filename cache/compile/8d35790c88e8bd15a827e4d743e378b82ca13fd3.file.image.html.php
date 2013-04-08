@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-07 17:24:58
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-08 17:46:25
          compiled from "C:\xampp\htdocs\laugh\themes\default\Image\image.html" */ ?>
-<?php /*%%SmartyHeaderCode:1456751613b6af072d4-32883161%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:27777516291f1ca37b2-60225190%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '8d35790c88e8bd15a827e4d743e378b82ca13fd3' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\Image\\image.html',
-      1 => 1365326652,
+      1 => 1365409476,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1456751613b6af072d4-32883161',
+  'nocache_hash' => '27777516291f1ca37b2-60225190',
   'function' => 
   array (
   ),
@@ -22,9 +22,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_51613b6b090699_88538512',
+  'unifunc' => 'content_516291f1d77ee0_19102672',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51613b6b090699_88538512')) {function content_51613b6b090699_88538512($_smarty_tpl) {?><div class="articleTpl imageTpl">
+<?php if ($_valid && !is_callable('content_516291f1d77ee0_19102672')) {function content_516291f1d77ee0_19102672($_smarty_tpl) {?><div class="articleTpl imageTpl">
 	<h2 class="title"><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['title'];?>
 </h2>
 	<div class="status">
@@ -42,47 +42,47 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<div id="container" class="transitions-enabled infinite-scroll clearfix">
 		  <div class="box col2">
 		    <p>
-		      <a href="__APP__/themes/default/images/product/detail_img1.jpg" title=""><img src="__APP__/themes/default/images/product/detail_img1.jpg"  /></a>
+		      <a rel="group" href="__APP__/themes/default/images/product/detail_img1.jpg" title="图片一"><img src="__APP__/themes/default/images/product/detail_img1.jpg"  /></a>
 		    </p>
 		  </div>
 		  <div class="box col1">
 		    <p>
-		      <a href="__APP__/themes/default/images/product/detail_img2.jpg" title=""><img src="__APP__/themes/default/images/product/detail_img2.jpg"  /></a>
+		      <a rel="group" href="__APP__/themes/default/images/product/detail_img2.jpg" title="图片二"><img src="__APP__/themes/default/images/product/detail_img2.jpg"  /></a>
 		    </p>
 		  </div>
 		  <div class="box col3">
 		    <p>
-		      <a href="__APP__/themes/default/images/product/detail_img3.jpg" title=""><img src="__APP__/themes/default/images/product/detail_img3.jpg"  /></a>
+		      <a rel="group" href="__APP__/themes/default/images/product/detail_img3.jpg" title="图片三"><img src="__APP__/themes/default/images/product/detail_img3.jpg"  /></a>
 		    </p>
 		  </div>
 		  <div class="box col1">
 		    <p>
-		      <a href="__APP__/themes/default/images/product/detail_img1.jpg" title=""><img src="__APP__/themes/default/images/product/detail_img1.jpg"  /></a>
+		      <a rel="group" href="__APP__/themes/default/images/product/detail_img1.jpg" title="图片四"><img src="__APP__/themes/default/images/product/detail_img1.jpg"  /></a>
 		    </p>
 		  </div>
 		  <div class="box col2">
 		    <p>
-		      <a href="__APP__/themes/default/images/product/detail_img2.jpg" title=""><img src="__APP__/themes/default/images/product/detail_img2.jpg"  /></a>
+		      <a rel="group" href="__APP__/themes/default/images/product/detail_img2.jpg" title="图片五"><img src="__APP__/themes/default/images/product/detail_img2.jpg"  /></a>
 		    </p>
 		  </div>
 		  <div class="box col1">
 		    <p>
-		      <a href="__APP__/themes/default/images/product/detail_img3.jpg" title=""><img src="__APP__/themes/default/images/product/detail_img3.jpg"  /></a>
+		      <a rel="group" href="__APP__/themes/default/images/product/detail_img3.jpg" title="图片六"><img src="__APP__/themes/default/images/product/detail_img3.jpg"  /></a>
 		    </p>
 		  </div>
 		  <div class="box col5">
 		    <p>
-		      <a href="__APP__/themes/default/images/product/detail_img3.jpg" title=""><img src="__APP__/themes/default/images/product/detail_img3.jpg"  /></a>
+		      <a rel="group" href="__APP__/themes/default/images/product/detail_img3.jpg" title="图片七"><img src="__APP__/themes/default/images/product/detail_img3.jpg"  /></a>
 		    </p>
 		  </div>
 		  <div class="box col1">
 		    <p>
-		      <a href="__APP__/themes/default/images/product/product_img2.jpg" title=""><img src="__APP__/themes/default/images/product/product_img2.jpg"  /></a>
+		      <a rel="group" href="__APP__/themes/default/images/product/product_img2.jpg" title="图片八"><img src="__APP__/themes/default/images/product/product_img2.jpg"  /></a>
 		    </p>
 		  </div>
 		  <div class="box col1">
 		    <p>
-		      <a href="__APP__/themes/default/images/product/product_img1.jpg" title=""><img src="__APP__/themes/default/images/product/product_img1.jpg"  /></a>
+		      <a rel="group" href="__APP__/themes/default/images/product/product_img1.jpg" title="图片九"><img src="__APP__/themes/default/images/product/product_img1.jpg"  /></a>
 		    </p>
 		  </div>
 		</div>
@@ -161,12 +161,36 @@ $(function(){
 			$newElems.imagesLoaded(function(){
 				// show elems now they're ready
 				$newElems.animate({ opacity: 1 });
-				$container.masonry( 'appended', $newElems, true ); 
+				$container.masonry( 'appended', $newElems, true );
+				//colorbox展示大图
+			    $("#container .box a").colorbox({
+			    	//图集标记
+			    	rel: "group",
+			    	//图集图片自动切换
+			    	slideshow: true,
+			    	//图片切换时间间隔
+			    	slideshowSpeed : 30000,
+			    	//图片标题
+			    	title: function (){
+			    		return $(this).attr("title");
+			    	}
+			    });
 			});
 		}
     );
 
     //colorbox展示大图
-    $("#container .box a").colorbox();
+    $("#container .box a").colorbox({
+    	//图集标记
+    	rel: "group",
+    	//图集图片自动切换
+    	slideshow: true,
+    	//图片切换时间间隔
+    	slideshowSpeed : 30000,
+    	//图片标题
+    	title: function (){
+    		return $(this).attr("title");
+    	}
+    });
 });
 </script><?php }} ?>

@@ -38,6 +38,6 @@ class ImageControl extends ArchiveControl
 	//瀑布流展示图集详细内容
 	public function Msonary()
 	{
-		// $this->display("Image/Msonary.html");
+		$this->display("Image/Msonary.html");
 	}
 }

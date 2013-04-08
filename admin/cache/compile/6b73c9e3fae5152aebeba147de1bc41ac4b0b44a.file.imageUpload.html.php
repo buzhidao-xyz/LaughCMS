@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-02 15:03:04
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-08 17:40:45
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\public\imageUpload.html" */ ?>
-<?php /*%%SmartyHeaderCode:3861515a82a832a685-09073794%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:260795162909dec8a47-37875506%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3861515a82a832a685-09073794',
+  'nocache_hash' => '260795162909dec8a47-37875506',
   'function' => 
   array (
   ),
@@ -22,9 +22,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_515a82a83774c7_24393081',
+  'unifunc' => 'content_5162909df1a708_07372471',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_515a82a83774c7_24393081')) {function content_515a82a83774c7_24393081($_smarty_tpl) {?><div id="imageUpload">
+<?php if ($_valid && !is_callable('content_5162909df1a708_07372471')) {function content_5162909df1a708_07372471($_smarty_tpl) {?><div id="imageUpload">
 	<div id="imageTitle">产品图片:</div>
 	<div id="imageBody">
 		<div id="imageBox">

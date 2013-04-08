@@ -58,7 +58,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="table_list_l table_list_l80">0</li>
 		<li class="table_list_l table_list_l80">0</li>
     	    	<li class="table_list_l table_list_l120" accessStatus=1>
-    		<a href="http://localhost:82/laugh/index.php?s=Article/View&archiveid=13" target="_blank">预览</a>
+    		<a href="http://localhost:82/laugh/index.php?s=Article/View&columnid=4&archiveid=13" target="_blank">预览</a>
     		<a href="/laugh/admin/index.php?s=Article/edit&archiveid=13">修改</a>
     		<a delurl="/laugh/admin/index.php?s=Archive/recoverArchive&archiveid=13" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>
@@ -77,7 +77,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="table_list_l table_list_l80">0</li>
 		<li class="table_list_l table_list_l80">0</li>
     	    	<li class="table_list_l table_list_l120" accessStatus=1>
-    		<a href="http://localhost:82/laugh/index.php?s=Article/View&archiveid=10" target="_blank">预览</a>
+    		<a href="http://localhost:82/laugh/index.php?s=Article/View&columnid=12&archiveid=10" target="_blank">预览</a>
     		<a href="/laugh/admin/index.php?s=Article/edit&archiveid=10">修改</a>
     		<a delurl="/laugh/admin/index.php?s=Archive/recoverArchive&archiveid=10" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>
@@ -96,7 +96,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="table_list_l table_list_l80">0</li>
 		<li class="table_list_l table_list_l80">0</li>
     	    	<li class="table_list_l table_list_l120" accessStatus=1>
-    		<a href="http://localhost:82/laugh/index.php?s=Article/View&archiveid=8" target="_blank">预览</a>
+    		<a href="http://localhost:82/laugh/index.php?s=Article/View&columnid=3&archiveid=8" target="_blank">预览</a>
     		<a href="/laugh/admin/index.php?s=Article/edit&archiveid=8">修改</a>
     		<a delurl="/laugh/admin/index.php?s=Archive/recoverArchive&archiveid=8" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>
@@ -115,7 +115,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="table_list_l table_list_l80">0</li>
 		<li class="table_list_l table_list_l80">0</li>
     	    	<li class="table_list_l table_list_l120" accessStatus=1>
-    		<a href="http://localhost:82/laugh/index.php?s=Article/View&archiveid=7" target="_blank">预览</a>
+    		<a href="http://localhost:82/laugh/index.php?s=Article/View&columnid=12&archiveid=7" target="_blank">预览</a>
     		<a href="/laugh/admin/index.php?s=Article/edit&archiveid=7">修改</a>
     		<a delurl="/laugh/admin/index.php?s=Archive/recoverArchive&archiveid=7" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>
@@ -134,7 +134,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="table_list_l table_list_l80">0</li>
 		<li class="table_list_l table_list_l80">0</li>
     	    	<li class="table_list_l table_list_l120" accessStatus=1>
-    		<a href="http://localhost:82/laugh/index.php?s=Article/View&archiveid=6" target="_blank">预览</a>
+    		<a href="http://localhost:82/laugh/index.php?s=Article/View&columnid=4&archiveid=6" target="_blank">预览</a>
     		<a href="/laugh/admin/index.php?s=Article/edit&archiveid=6">修改</a>
     		<a delurl="/laugh/admin/index.php?s=Archive/recoverArchive&archiveid=6" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>
@@ -153,7 +153,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="table_list_l table_list_l80">0</li>
 		<li class="table_list_l table_list_l80">0</li>
     	    	<li class="table_list_l table_list_l120" accessStatus=1>
-    		<a href="http://localhost:82/laugh/index.php?s=Article/View&archiveid=5" target="_blank">预览</a>
+    		<a href="http://localhost:82/laugh/index.php?s=Article/View&columnid=5&archiveid=5" target="_blank">预览</a>
     		<a href="/laugh/admin/index.php?s=Article/edit&archiveid=5">修改</a>
     		<a delurl="/laugh/admin/index.php?s=Archive/recoverArchive&archiveid=5" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>
@@ -172,7 +172,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="table_list_l table_list_l80">0</li>
 		<li class="table_list_l table_list_l80">0</li>
     	    	<li class="table_list_l table_list_l120" accessStatus=1>
-    		<a href="http://localhost:82/laugh/index.php?s=Article/View&archiveid=4" target="_blank">预览</a>
+    		<a href="http://localhost:82/laugh/index.php?s=Article/View&columnid=3&archiveid=4" target="_blank">预览</a>
     		<a href="/laugh/admin/index.php?s=Article/edit&archiveid=4">修改</a>
     		<a delurl="/laugh/admin/index.php?s=Archive/recoverArchive&archiveid=4" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>
@@ -191,7 +191,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="table_list_l table_list_l80">132</li>
 		<li class="table_list_l table_list_l80">0</li>
     	    	<li class="table_list_l table_list_l120" accessStatus=1>
-    		<a href="http://localhost:82/laugh/index.php?s=Article/View&archiveid=3" target="_blank">预览</a>
+    		<a href="http://localhost:82/laugh/index.php?s=Article/View&columnid=4&archiveid=3" target="_blank">预览</a>
     		<a href="/laugh/admin/index.php?s=Article/edit&archiveid=3">修改</a>
     		<a delurl="/laugh/admin/index.php?s=Archive/recoverArchive&archiveid=3" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>
@@ -210,7 +210,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="table_list_l table_list_l80">233</li>
 		<li class="table_list_l table_list_l80">0</li>
     	    	<li class="table_list_l table_list_l120" accessStatus=1>
-    		<a href="http://localhost:82/laugh/index.php?s=Article/View&archiveid=2" target="_blank">预览</a>
+    		<a href="http://localhost:82/laugh/index.php?s=Article/View&columnid=4&archiveid=2" target="_blank">预览</a>
     		<a href="/laugh/admin/index.php?s=Article/edit&archiveid=2">修改</a>
     		<a delurl="/laugh/admin/index.php?s=Archive/recoverArchive&archiveid=2" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>
@@ -229,7 +229,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="table_list_l table_list_l80">1352</li>
 		<li class="table_list_l table_list_l80">0</li>
     	    	<li class="table_list_l table_list_l120" accessStatus=1>
-    		<a href="http://localhost:82/laugh/index.php?s=Article/View&archiveid=1" target="_blank">预览</a>
+    		<a href="http://localhost:82/laugh/index.php?s=Article/View&columnid=2&archiveid=1" target="_blank">预览</a>
     		<a href="/laugh/admin/index.php?s=Article/edit&archiveid=1">修改</a>
     		<a delurl="/laugh/admin/index.php?s=Archive/recoverArchive&archiveid=1" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>

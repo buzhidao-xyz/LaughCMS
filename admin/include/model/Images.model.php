@@ -3,7 +3,7 @@
  * 图片管理模型
  * by buzhidao 2013-03-26
  */
-class Images extends Base
+class Images extends Archive
 {
 	public function __construct()
 	{
@@ -58,7 +58,7 @@ class Images extends Base
 	 * @param $savename string 图片保存名称
 	 * @param $imagesize int 图片大小
 	 */
-	public function saveUploadImage($imagepath=null,$thumbpath=null,$imagetitle=null,$imagelink=null,$archiveid=0,$imagename=null,$savename=null,$imagesize=0)
+	public function saveUploadImage($imagepath=null,$thumbpath=null,$imagetitle=null,$imagelink=null,$archiveid=0,$imagename=null,$savename=null,$imagesize=0,$width=0,$height=0,$createtime=0)
 	{
 		if (!$imagepath) return false;
 
@@ -70,9 +70,29 @@ class Images extends Base
 			'archiveid'  => $archiveid,
 			'imagename'  => $imagename,
 			'savename'  => $savename,
+			'width'     => $width,
+			'height'    => $height,
+			'createtime'=> $createtime
 		);
 		if ($imagesize) $data['imagesize'] = $imagesize;
 
 		return T("images")->add($data);
+	}
+
+	/**
+	 * 获取图集列表
+	 * @param string/array $id 文档ID
+	 * @param int $start 分页开始记录号
+	 * @param int $length 分页结束记录号
+	 * @param array $where 条件数组
+	 */
+	public function getImages($id=null,$start=0,$length=0,$state=1,$columnids=array(),$control=null)
+	{
+		$where = array();
+		if ($state !== null) $where['state'] = $state;
+		if (is_array($columnids) && !empty($columnids)) $where['columnid'] = array("in", $columnids);
+		if ($control) $where['control'] = $control;
+
+		return $this->getArchive($id,$start,$length,$where);
 	}
 }

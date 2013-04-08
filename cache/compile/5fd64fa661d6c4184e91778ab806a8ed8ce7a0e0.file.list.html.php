@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-07 11:48:17
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-08 17:43:29
          compiled from "C:\xampp\htdocs\laugh\themes\default\Image\list.html" */ ?>
-<?php /*%%SmartyHeaderCode:177315160ec81c46cf4-34413445%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:7901516291412f1811-28212363%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '5fd64fa661d6c4184e91778ab806a8ed8ce7a0e0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\Image\\list.html',
-      1 => 1365305717,
+      1 => 1365414207,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '177315160ec81c46cf4-34413445',
+  'nocache_hash' => '7901516291412f1811-28212363',
   'function' => 
   array (
   ),
@@ -19,14 +19,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'CurrentPosition' => 0,
     'Column' => 0,
+    'ArchiveList' => 0,
     'columnid' => 0,
     'd' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5160ec81cdf593_38951916',
+  'unifunc' => 'content_516291413d2d25_91965421',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5160ec81cdf593_38951916')) {function content_5160ec81cdf593_38951916($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_516291413d2d25_91965421')) {function content_516291413d2d25_91965421($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate ("Common/Top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
@@ -49,15 +50,26 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</div>
 				<div class="boxBlockBody">
 					<ul class="ImageList">
+						<?php if (isset($_smarty_tpl->tpl_vars['ArchiveList']->value)&&!empty($_smarty_tpl->tpl_vars['ArchiveList']->value)){?>
+						<?php  $_smarty_tpl->tpl_vars['d'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['d']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['ArchiveList']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['d']->key => $_smarty_tpl->tpl_vars['d']->value){
+$_smarty_tpl->tpl_vars['d']->_loop = true;
+?>
 						<li>
 							<a href="__APP__/index.php?s=Image/View&columnid=<?php echo $_smarty_tpl->tpl_vars['columnid']->value;?>
 &archiveid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
-" class="ImageBG"><img src="themes/default/images/product/product_img1.jpg" /></a>
+" class="ImageBG"><img src="__APP__<?php echo $_smarty_tpl->tpl_vars['d']->value['thumbimage'];?>
+" /></a>
 							<a href="__APP__/index.php?s=Image/View&columnid=<?php echo $_smarty_tpl->tpl_vars['columnid']->value;?>
 &archiveid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
-">案例一</a>
-							<span>最后更新: 2012-02-03</span>
+"><?php echo $_smarty_tpl->tpl_vars['d']->value['title'];?>
+</a>
+							<span>最后更新: <font color="#999999"><?php echo mkdate($_smarty_tpl->tpl_vars['d']->value['updatetime'],'d');?>
+</font></span>
 						</li>
+						<?php } ?>
+						<?php }?>
 					</ul>
 					<?php echo $_smarty_tpl->getSubTemplate ("common/Page.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 

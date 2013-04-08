@@ -6,7 +6,7 @@
 	// Default settings object.
 	// See http://jacklmoore.com/colorbox for details.
 	defaults = {
-		transition: "slideshow",
+		transition: "图片滑动",
 		speed: 300,
 		width: false,
 		initialWidth: "80",
@@ -29,12 +29,12 @@
 		opacity: 0.3,
 		preloading: true,
 
-		current: "image {current} of {total}",
-		previous: "previous",
-		next: "next",
-		close: "close",
-		xhrError: "This content failed to load.",
-		imgError: "This image failed to load.",
+		current: "图集 {current}/{total}",
+		previous: "前",
+		next: "后",
+		close: "关闭",
+		xhrError: "加载失败!",
+		imgError: "图片加载失败!",
 
 		open: false,
 		returnFocus: true,
@@ -43,8 +43,8 @@
 		slideshow: false,
 		slideshowAuto: true,
 		slideshowSpeed: 2500,
-		slideshowStart: "start slideshow",
-		slideshowStop: "stop slideshow",
+		slideshowStart: "开始",
+		slideshowStop: "停止",
 		onOpen: false,
 		onLoad: false,
 		onComplete: false,

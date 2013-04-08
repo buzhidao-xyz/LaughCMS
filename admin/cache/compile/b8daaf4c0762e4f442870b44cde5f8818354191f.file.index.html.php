@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-07 10:52:14
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-08 17:36:36
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\Article\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:239285160df5e788525-40442806%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:3205051628fa42dde63-65323371%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'b8daaf4c0762e4f442870b44cde5f8818354191f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\green\\Article\\index.html',
-      1 => 1364787797,
+      1 => 1365413776,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '239285160df5e788525-40442806',
+  'nocache_hash' => '3205051628fa42dde63-65323371',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5160df5e8efae9_24326217',
+  'unifunc' => 'content_51628fa43fe747_46497532',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5160df5e8efae9_24326217')) {function content_5160df5e8efae9_24326217($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_51628fa43fe747_46497532')) {function content_51628fa43fe747_46497532($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="opTop">
 	<a href="__APP__/index.php?s=Article/index">文章列表</a>
@@ -81,7 +81,8 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
     	<?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
     	<li class="table_list_l table_list_l120" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
 >
-    		<a href="__APPM__/index.php?s=Article/View&archiveid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+    		<a href="__APPM__/index.php?s=Article/View&columnid=<?php echo $_smarty_tpl->tpl_vars['d']->value['columnid'];?>
+&archiveid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 " target="_blank">预览</a>
     		<a href="__APP__/index.php?s=Article/edit&archiveid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 ">修改</a>

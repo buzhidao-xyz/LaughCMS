@@ -83,6 +83,13 @@ class ArchiveControl extends CommonControl
 		return $description;
 	}
 
+	//获取图片id数组
+	public function _getImageids()
+	{
+		$imageids = q("imageids");
+		return $imageids;
+	}
+
 	protected function _getPublishtime()
 	{
 		$publishtime = q("publishtime");

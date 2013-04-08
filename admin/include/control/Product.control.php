@@ -68,13 +68,6 @@ class ProductControl extends ArchiveControl
 		return $total;
 	}
 
-	//获取产品图片id
-	public function _getImageids()
-	{
-		$imageids = q("imageids");
-		return $imageids;
-	}
-
 	//主入口
 	public function index()
 	{

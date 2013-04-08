@@ -3,8 +3,11 @@
  * 图片控制器
  * by buzhidao 2013-03-26
  */
-class ImageControl extends CommonControl
+class ImageControl extends ArchiveControl
 {
+	//控制器名
+	protected $_Control = "Image";
+
 	//缩略图标准宽高
 	static protected $_Width = 550;
 	static protected $_Height = 350;
@@ -17,8 +20,97 @@ class ImageControl extends CommonControl
 		parent::__construct();
 	}
 
-	//入口
-	public function index(){}
+	//图集列表
+	public function index()
+	{
+		$columnid = $this->_getColumnID();
+
+		$columnids = array();
+		if ($columnid) $columnids = array_merge(M("Column")->getSubColumnID($columnid),array($columnid));
+
+		list($start,$length) = $this->getPages();
+        $archiveList = M("Images")->getImages(null,$start,$length,1,$columnids,$this->_Control);
+        $this->assign("total", $archiveList['total']);
+        $this->assign("dataList", $archiveList['data']);
+
+        $this->assign("page", getPage($archiveList['total'],$this->_pagesize));
+		$this->display("Image/index.html");
+	}
+
+	//新建图集
+	public function add()
+	{
+		$this->assign("accessStatus",1);
+
+		$this->assign("userInfo",$this->userInfo);
+		$this->assign("columnTree", D("Column")->getColumnTree($this->_Control));
+
+		$this->display("Image/add.html");
+	}
+
+	/**
+	 * 保存图集入库
+	 * @param $title string 图集标题 必须
+	 */
+	public function save()
+	{
+		$data = $this->dealArchiveSubmit();
+		$archiveid = M("Archive")->saveArchive($data['title'],$data['tag'],$data['source'],$data['author'],$data['columnid'],$data['status'],$data['seotitle'],$data['keyword'],$data['description'],$data['image'],$data['publishtime']);
+		
+		if ($archiveid) {
+			//保存图集图片
+			$imageids = $this->_getImageids();
+			M("Archive")->addArchiveImages($archiveid,$imageids);
+
+			$NextOperation = array(
+				array('name'=>'查看修改', 'link'=>__APP__.'/index.php?s=Image/edit&archiveid='.$archiveid)
+			);
+			$this->assign("NextOperation", $NextOperation);
+			$this->display("Common/success.html");
+		} else {
+			$this->display("Common/error.html");
+		}
+	}
+
+	//修改图集信息
+	public function edit()
+	{
+		$this->assign("accessStatus", 1);
+
+		$ArchiveID = $this->_getArchiveID();
+		$ArchiveInfo = M("Product")->getProduct($ArchiveID,0,0,null);
+		$ArchiveInfo = !empty($ArchiveInfo['data']) ? $ArchiveInfo['data'][0] : array();
+
+		if (empty($ArchiveInfo)) $this->display("Common/error.html");
+
+		$ArchiveInfo['archiveImage'] = M("Archive")->getArchiveImages($ArchiveID);
+
+		$this->assign("ArchiveInfo", $ArchiveInfo);
+		$this->assign("columnTree", D("Column")->getColumnTree());
+		$this->display("Image/edit.html");
+	}
+
+	//保存修改的图集信息
+	public function saveEdit()
+	{
+		$ArchiveID = $this->_getArchiveID();
+		$data = $this->dealArchiveSubmit();
+		$return = M("Archive")->upArchive($ArchiveID,$data['title'],$data['tag'],$data['source'],$data['author'],$data['columnid'],$data['status'],$data['seotitle'],$data['keyword'],$data['description'],$data['image'],$data['publishtime']);
+		if ($return) {
+			//保存图集图片
+			$imageids = $this->_getImageids();
+			M("Product")->deleteArchiveImages($ArchiveID);
+			M("Product")->addArchiveImages($ArchiveID,$imageids);
+
+			$NextOperation = array(
+				array('name'=>'查看修改', 'link'=>__APP__.'/index.php?s=Image/edit&archiveid='.$ArchiveID)
+			);
+			$this->assign("NextOperation", $NextOperation);
+			$this->display("Common/success.html");
+		} else {
+			$this->display("Common/error.html");
+		}
+	}
 
 	//首页轮播图片管理
 	public function HomeScrollImage()
@@ -31,7 +123,7 @@ class ImageControl extends CommonControl
 	}
 
 	//获取轮播图片
-	private function _getImage()
+	private function _getScrollImage()
 	{
 		$upload = new UploadHelper();
 		$upload->maxSize  = self::$_ImageSize;
@@ -48,7 +140,7 @@ class ImageControl extends CommonControl
 	//保存首页轮播图片
 	public function saveHomeScrollImage()
 	{
-		$path = $this->_getImage();
+		$path = $this->_getScrollImage();
 		$title = q("title");
 		$link = q("link");
 
@@ -79,11 +171,11 @@ class ImageControl extends CommonControl
 		$this->display("Image/updateHomeScrollImage.html");
 	}
 
-	//保存修改
+	//保存修改首页轮播图片
 	public function saveUpdateHomeScrollImage()
 	{
 		$id = q('id');
-		$path = $this->_getImage();
+		$path = $this->_getScrollImage();
 		$title = q("title");
 		$link = q("link");
 
@@ -143,7 +235,8 @@ class ImageControl extends CommonControl
 			$info = $upload->getUploadFileInfo();
 			$imagepath = str_replace(ROOT_DIR, "", $info[0]['savepath'].$info[0]['savename']);
 			$thumbpath = str_replace(ROOT_DIR, "", $info[0]["thumb"]);
-			$imageid = M("Images")->saveUploadImage($imagepath,$thumbpath,$imageTitle,$imageLink,$archiveid,$info[0]['name'],$info[0]['savename'],$info[0]['size']);
+			$imageInfo = getimagesize(__APPM__.$imagepath);
+			$imageid = M("Images")->saveUploadImage($imagepath,$thumbpath,$imageTitle,$imageLink,$archiveid,$info[0]['name'],$info[0]['savename'],$info[0]['size'],$imageInfo[0],$imageInfo[1],TIMESTAMP);
 			if ($imageid) {
 				$data = array(
 					'imageid' => $imageid,

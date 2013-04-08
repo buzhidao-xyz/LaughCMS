@@ -49,7 +49,7 @@ var JS_APP = '/laugh';
 		<a href="/laugh/index.php?s=Index/index&columnid=1" class="">网站首页</a>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Article/index&columnid=2" class="">新闻资讯</a>
+		<a href="/laugh/index.php?s=Article/index&columnid=2" class="navon">新闻资讯</a>
 				<ul class="SubNavigation">
 						<li>
 				<a href="/laugh/index.php?s=Article/index&columnid=3">IT知识</a>
@@ -80,7 +80,7 @@ var JS_APP = '/laugh';
 					</ul>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Image/index&columnid=7" class="navon">客户案例</a>
+		<a href="/laugh/index.php?s=Image/index&columnid=7" class="">客户案例</a>
 			</li>
 		<li>
 		<a href="/laugh/index.php?s=Download/index&columnid=8" class="">下载中心</a>
@@ -149,29 +149,29 @@ $(document).ready(function (){
 		<a href="javascript:;" target="_blank"><img src="themes/default/images/ad_banner.png" width="1000" height="80" /></a>
 	</div>
 	<div class="CurPosition mtop5">
-		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=Image/index&columnid=7">客户案例</a>
+		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=Article/index&columnid=2">新闻资讯</a> > <a href="/laugh/index.php?s=Article/index&columnid=4">网络知识</a>
 	</div>
 	<div id="CenterShow" class="block mtop5">
 		<div id="mainBlock" class="fleft w740">
 			<div class="boxBlock">
 				<div class="boxBlockTitle">
-					<span class="title"></span>
+					<span class="title">DNS污染【备忘】</span>
 				</div>
 				<div class="boxBlockBody">
 					<div class="contentBlock">
 						<div class="articleTpl">
-	<h2 class="title"></h2>
+	<h2 class="title">DNS污染【备忘】</h2>
 	<div class="status">
 		<span class="title">点击次数:</span>
-		<span class="content"> 次</span>
+		<span class="content">0 次</span>
 		<span class="title">发布时间:</span>
-		<span class="content"></span>
+		<span class="content">2013-04-02 14:50:13</span>
 		<span class="title">作者:</span>
-		<span class="content"></span>
+		<span class="content">admin</span>
 	</div>
 	<div class="body">
 		<div class="articleContent">
-			
+			<p>DNS污染，又称为<strong>域名服务器缓存污染</strong>（DNS cache pollution）或<strong>域名服务器缓存投毒</strong>（DNS cache poisoning）</p><p>是指一些刻意制造或无意中制造出来的域名服务器<a href="http://zh.wikipedia.org/wiki/%E5%B0%81%E5%8C%85" title="分组" class="mw-redirect">分组</a>，把域名指往不正确的IP地址。一般来说，外间在<a href="http://zh.wikipedia.org/wiki/%E4%BA%92%E8%81%AF%E7%B6%B2" title="互联网" class="mw-redirect">互联网</a>上一般都有可信赖的<a href="http://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E5%99%A8" title="域名服务器" class="mw-redirect">域名服务器</a>，但为减免网络上的交通，一般的域名都会把外间的域名服务器数据暂存起来，待下次有其他机器要求解析域名时，可以立即提供服务。一旦有关网域的局域域名服务器的缓存受到污染，就会把网域内的电脑导引往错误的服务器或服务器的网址。</p><p>域名服务器缓存污染可能是通过域名服务器软件上的设计错误而产生，但亦可能由别有用心者通过研究<a href="http://zh.wikipedia.org/w/index.php?title=%E9%96%8B%E6%94%BE%E6%9E%B6%E6%A7%8B&amp;action=edit&amp;redlink=1" class="new" title="开放架构（页面不存在）">开放架构</a>的域名服务器系统来利用当中的漏洞。</p><h2><a name="t0"></a><span class="mw-headline" id=".E7.B7.A9.E5.AD.98.E6.B1.A1.E6.9F.93.E6.94.BB.E6.93.8A">缓存污染攻击</span></h2><p>一般来说，一部连上了互联网的电脑都会使用<a href="http://zh.wikipedia.org/wiki/%E4%BA%92%E8%81%AF%E7%B6%B2%E6%9C%8D%E5%8B%99%E4%BE%9B%E6%87%89%E5%95%86" title="互联网服务提供商" class="mw-redirect">互联网服务提供商</a>提供的域名服务器。这个服务器一般只会为供应商的客户来服务，通常都会储蓄起部分客户曾经请求过的域名的缓存。缓存污染攻击就是针对这一种服务器，以影响服务器的用户或下游服务。</p><h2><a name="t1"></a><span class="mw-headline" id=".E9.98.B2.E7.81.AB.E9.95.B7.E5.9F.8E.E7.9A.84.E7.B7.A9.E5.AD.98.E6.B1.A1.E6.9F.93.E6.94.BB.E6.93.8A">防火长城的缓存污染攻击</span></h2><p>在中国大陆，对于所有经过<a href="http://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%B7%E5%9F%8E" title="防火长城" class="mw-redirect">防火长城</a>的在UDP的53端口上的域名查询进行IDS<a href="http://zh.wikipedia.org/wiki/%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B" title="入侵检测" class="mw-redirect">入侵检测</a>，一经发现与黑名单关键词相匹配的域名查询请求，其会马上伪装成目标域名的解析服务器给查询者返回虚假结果。由于通常的域名查询没有任何认证机制，而且域名查询通常基于的UDP协议是无连接不可靠的协议，查询者只能接受最先到达的格式正确结果，并丢弃之后的结果。<sup id="cite_ref-gfw_2-0" class="reference"><a href="http://zh.wikipedia.org/wiki/DNS%E6%B1%A1%E6%9F%93#cite_note-gfw-2">[2]</a></sup></p><ul class=" list-paddingleft-2"><li><p>对于不了解相关知识的网民来说也就是，由于系统默认使用的<a href="http://zh.wikipedia.org/wiki/ISP" title="ISP">ISP</a>提供的域名查询服务器查询国外的权威服务器时即被防火长城被污染，使其缓存受到污染，因而默认情况下查询ISP的服务器就会获得虚假IP地址；而用户直接查询境外域名查询服务器（比如<a href="http://zh.wikipedia.org/wiki/Google_Public_DNS" title="Google Public DNS">Google Public DNS</a>）有可能会被防火长城污染，从而在没有任何防范机制的情况下仍然不能获得目标网站正确的IP地址。<sup id="cite_ref-gfw_2-1" class="reference"><a href="http://zh.wikipedia.org/wiki/DNS%E6%B1%A1%E6%9F%93#cite_note-gfw-2">[2]</a></sup></p></li></ul><ul class=" list-paddingleft-2"><li><p>防火长城暂时未对TCP协议下的域名查询进行污染，故现在能通过强制使用TCP协议查询真实的IP地址：Windows下打开<a href="http://zh.wikipedia.org/wiki/%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E7%AC%A6" title="命令提示符" class="mw-redirect">命令提示符</a>，输入nslookup -vc 要查询的域名 境外DNS服务器的IP地址（必须支持TCP协议查询，否则不会返回查询结果），回车后能返回正确的目标服务器IP地址。而现实的情况是，防火长城对于真实的IP地址也可能会采取其它的手段进行封锁，故能否真正访问可能还需要其它<a href="http://zh.wikipedia.org/wiki/%E7%BF%BB%E5%A2%99" title="翻墙" class="mw-redirect">翻墙</a>的手段。</p></li></ul><h2 class="headline-1 bk-sidecatalog-title"><a name="t2"></a><span class="headline-content">验证DNS污染的办法</span></h2><div class="para">我们在命令行下通过这样一条命令 nslookup 域名 144.223.234.234，即可判断该域名是否被污染，由于144.223.234.234不存在，理应没有任何返回。但我们却得到了一个错误的IP（不确定）。即可证明这个域名已经被DNS污染了。</div><p><br /></p><div><span style="font-size:14px"><strong>解决DNS污染方案</strong></span></div><div></div><div>1、修改hosts文件，操作系统中Hosts文件的优先级高于DNS服务器，操作系统在访问某个域名时，会先检测HOSTS文件，然后再查询DNS服务器。可以在hosts添加受到污染的DNS地址来解决DNS污染和DNS劫持。</div><div></div><div>2、如果你是Firefox only用户，并且只用Firefox，又懒得折腾，直接打开Firefox的远程DNS解析就行了。在地址栏中输入about:config找到network.proxy.socks_remote_dns一项改成true。</div><div></div><div>3、使用各种SSH加密代理，在加密代理里进行远程DNS解析，或者使用VPN上网。</div><div></div><div>4、通过一些软件编程处理，可以直接忽略返回结果是虚假IP地址的数据包，直接解决DNS污染的问题。</div><p><br /></p>
 		</div>
 	</div>
 	<div class="operate">
@@ -193,7 +193,7 @@ $(document).ready(function (){
 		<dl>
 			<dt>上一篇:</dt>
 			<dd>
-								<font color="grey">没有了！</font>
+								<a href="/laugh/index.php?s=article/view&columnid=4&archiveid=6" title="PHP基本点知识">PHP基本点知识</a>
 							</dd>
 		</dl>
 		<dl>

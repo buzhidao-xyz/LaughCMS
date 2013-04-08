@@ -12,47 +12,47 @@
 		<div id="container" class="transitions-enabled infinite-scroll clearfix">
 		  <div class="box col2">
 		    <p>
-		      <a href="__APP__/themes/default/images/product/detail_img1.jpg" title=""><img src="__APP__/themes/default/images/product/detail_img1.jpg"  /></a>
+		      <a rel="group" href="__APP__/themes/default/images/product/detail_img1.jpg" title="图片一"><img src="__APP__/themes/default/images/product/detail_img1.jpg"  /></a>
 		    </p>
 		  </div>
 		  <div class="box col1">
 		    <p>
-		      <a href="__APP__/themes/default/images/product/detail_img2.jpg" title=""><img src="__APP__/themes/default/images/product/detail_img2.jpg"  /></a>
+		      <a rel="group" href="__APP__/themes/default/images/product/detail_img2.jpg" title="图片二"><img src="__APP__/themes/default/images/product/detail_img2.jpg"  /></a>
 		    </p>
 		  </div>
 		  <div class="box col3">
 		    <p>
-		      <a href="__APP__/themes/default/images/product/detail_img3.jpg" title=""><img src="__APP__/themes/default/images/product/detail_img3.jpg"  /></a>
+		      <a rel="group" href="__APP__/themes/default/images/product/detail_img3.jpg" title="图片三"><img src="__APP__/themes/default/images/product/detail_img3.jpg"  /></a>
 		    </p>
 		  </div>
 		  <div class="box col1">
 		    <p>
-		      <a href="__APP__/themes/default/images/product/detail_img1.jpg" title=""><img src="__APP__/themes/default/images/product/detail_img1.jpg"  /></a>
+		      <a rel="group" href="__APP__/themes/default/images/product/detail_img1.jpg" title="图片四"><img src="__APP__/themes/default/images/product/detail_img1.jpg"  /></a>
 		    </p>
 		  </div>
 		  <div class="box col2">
 		    <p>
-		      <a href="__APP__/themes/default/images/product/detail_img2.jpg" title=""><img src="__APP__/themes/default/images/product/detail_img2.jpg"  /></a>
+		      <a rel="group" href="__APP__/themes/default/images/product/detail_img2.jpg" title="图片五"><img src="__APP__/themes/default/images/product/detail_img2.jpg"  /></a>
 		    </p>
 		  </div>
 		  <div class="box col1">
 		    <p>
-		      <a href="__APP__/themes/default/images/product/detail_img3.jpg" title=""><img src="__APP__/themes/default/images/product/detail_img3.jpg"  /></a>
+		      <a rel="group" href="__APP__/themes/default/images/product/detail_img3.jpg" title="图片六"><img src="__APP__/themes/default/images/product/detail_img3.jpg"  /></a>
 		    </p>
 		  </div>
 		  <div class="box col5">
 		    <p>
-		      <a href="__APP__/themes/default/images/product/detail_img3.jpg" title=""><img src="__APP__/themes/default/images/product/detail_img3.jpg"  /></a>
+		      <a rel="group" href="__APP__/themes/default/images/product/detail_img3.jpg" title="图片七"><img src="__APP__/themes/default/images/product/detail_img3.jpg"  /></a>
 		    </p>
 		  </div>
 		  <div class="box col1">
 		    <p>
-		      <a href="__APP__/themes/default/images/product/product_img2.jpg" title=""><img src="__APP__/themes/default/images/product/product_img2.jpg"  /></a>
+		      <a rel="group" href="__APP__/themes/default/images/product/product_img2.jpg" title="图片八"><img src="__APP__/themes/default/images/product/product_img2.jpg"  /></a>
 		    </p>
 		  </div>
 		  <div class="box col1">
 		    <p>
-		      <a href="__APP__/themes/default/images/product/product_img1.jpg" title=""><img src="__APP__/themes/default/images/product/product_img1.jpg"  /></a>
+		      <a rel="group" href="__APP__/themes/default/images/product/product_img1.jpg" title="图片九"><img src="__APP__/themes/default/images/product/product_img1.jpg"  /></a>
 		    </p>
 		  </div>
 		</div>
@@ -120,12 +120,36 @@ $(function(){
 			$newElems.imagesLoaded(function(){
 				// show elems now they're ready
 				$newElems.animate({ opacity: 1 });
-				$container.masonry( 'appended', $newElems, true ); 
+				$container.masonry( 'appended', $newElems, true );
+				//colorbox展示大图
+			    $("#container .box a").colorbox({
+			    	//图集标记
+			    	rel: "group",
+			    	//图集图片自动切换
+			    	slideshow: true,
+			    	//图片切换时间间隔
+			    	slideshowSpeed : 30000,
+			    	//图片标题
+			    	title: function (){
+			    		return $(this).attr("title");
+			    	}
+			    });
 			});
 		}
     );
 
     //colorbox展示大图
-    $("#container .box a").colorbox();
+    $("#container .box a").colorbox({
+    	//图集标记
+    	rel: "group",
+    	//图集图片自动切换
+    	slideshow: true,
+    	//图片切换时间间隔
+    	slideshowSpeed : 30000,
+    	//图片标题
+    	title: function (){
+    		return $(this).attr("title");
+    	}
+    });
 });
 </script>

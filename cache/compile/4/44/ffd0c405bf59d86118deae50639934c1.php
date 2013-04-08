@@ -155,69 +155,69 @@ $(document).ready(function (){
 		<div id="mainBlock" class="fleft w740">
 			<div class="boxBlock">
 				<div class="boxBlockTitle">
-					<span class="title"></span>
+					<span class="title">客户案例二</span>
 				</div>
 				<div class="boxBlockBody">
 					<div class="contentBlock">
 						<div class="articleTpl imageTpl">
-	<h2 class="title"></h2>
+	<h2 class="title">客户案例二</h2>
 	<div class="status">
 		<span class="title">点击次数:</span>
-		<span class="content"> 次</span>
+		<span class="content">0 次</span>
 		<span class="title">发布时间:</span>
-		<span class="content"></span>
+		<span class="content">2013-04-08 17:27:36</span>
 		<span class="title">作者:</span>
-		<span class="content"></span>
+		<span class="content">admin</span>
 	</div>
 	<div class="body">
 		<div id="container" class="transitions-enabled infinite-scroll clearfix">
 		  <div class="box col2">
 		    <p>
-		      <a href="/laugh/themes/default/images/product/detail_img1.jpg" title=""><img src="/laugh/themes/default/images/product/detail_img1.jpg"  /></a>
+		      <a rel="group" href="/laugh/themes/default/images/product/detail_img1.jpg" title="图片一"><img src="/laugh/themes/default/images/product/detail_img1.jpg"  /></a>
 		    </p>
 		  </div>
 		  <div class="box col1">
 		    <p>
-		      <a href="/laugh/themes/default/images/product/detail_img2.jpg" title=""><img src="/laugh/themes/default/images/product/detail_img2.jpg"  /></a>
+		      <a rel="group" href="/laugh/themes/default/images/product/detail_img2.jpg" title="图片二"><img src="/laugh/themes/default/images/product/detail_img2.jpg"  /></a>
 		    </p>
 		  </div>
 		  <div class="box col3">
 		    <p>
-		      <a href="/laugh/themes/default/images/product/detail_img3.jpg" title=""><img src="/laugh/themes/default/images/product/detail_img3.jpg"  /></a>
+		      <a rel="group" href="/laugh/themes/default/images/product/detail_img3.jpg" title="图片三"><img src="/laugh/themes/default/images/product/detail_img3.jpg"  /></a>
 		    </p>
 		  </div>
 		  <div class="box col1">
 		    <p>
-		      <a href="/laugh/themes/default/images/product/detail_img1.jpg" title=""><img src="/laugh/themes/default/images/product/detail_img1.jpg"  /></a>
+		      <a rel="group" href="/laugh/themes/default/images/product/detail_img1.jpg" title="图片四"><img src="/laugh/themes/default/images/product/detail_img1.jpg"  /></a>
 		    </p>
 		  </div>
 		  <div class="box col2">
 		    <p>
-		      <a href="/laugh/themes/default/images/product/detail_img2.jpg" title=""><img src="/laugh/themes/default/images/product/detail_img2.jpg"  /></a>
+		      <a rel="group" href="/laugh/themes/default/images/product/detail_img2.jpg" title="图片五"><img src="/laugh/themes/default/images/product/detail_img2.jpg"  /></a>
 		    </p>
 		  </div>
 		  <div class="box col1">
 		    <p>
-		      <a href="/laugh/themes/default/images/product/detail_img3.jpg" title=""><img src="/laugh/themes/default/images/product/detail_img3.jpg"  /></a>
+		      <a rel="group" href="/laugh/themes/default/images/product/detail_img3.jpg" title="图片六"><img src="/laugh/themes/default/images/product/detail_img3.jpg"  /></a>
 		    </p>
 		  </div>
 		  <div class="box col5">
 		    <p>
-		      <a href="/laugh/themes/default/images/product/detail_img3.jpg" title=""><img src="/laugh/themes/default/images/product/detail_img3.jpg"  /></a>
+		      <a rel="group" href="/laugh/themes/default/images/product/detail_img3.jpg" title="图片七"><img src="/laugh/themes/default/images/product/detail_img3.jpg"  /></a>
 		    </p>
 		  </div>
 		  <div class="box col1">
 		    <p>
-		      <a href="/laugh/themes/default/images/product/product_img2.jpg" title=""><img src="/laugh/themes/default/images/product/product_img2.jpg"  /></a>
+		      <a rel="group" href="/laugh/themes/default/images/product/product_img2.jpg" title="图片八"><img src="/laugh/themes/default/images/product/product_img2.jpg"  /></a>
 		    </p>
 		  </div>
 		  <div class="box col1">
 		    <p>
-		      <a href="/laugh/themes/default/images/product/product_img1.jpg" title=""><img src="/laugh/themes/default/images/product/product_img1.jpg"  /></a>
+		      <a rel="group" href="/laugh/themes/default/images/product/product_img1.jpg" title="图片九"><img src="/laugh/themes/default/images/product/product_img1.jpg"  /></a>
 		    </p>
 		  </div>
 		</div>
-		<nav id="page-nav"><a href="/laugh/index.php?s=Image/Msonary&columnid=7&archiveid=&page=2"></a></nav>
+		<nav id="page-nav"><a href="/laugh/index.php?s=Image/Msonary&columnid=7&archiveid=15&page=2"></a></nav>
 	</div>
 	<div class="operate">
 		<!-- Baidu Button BEGIN -->
@@ -238,7 +238,7 @@ $(document).ready(function (){
 		<dl>
 			<dt>上一篇:</dt>
 			<dd>
-								<font color="grey">没有了！</font>
+								<a href="/laugh/index.php?s=article/view&columnid=7&archiveid=14" title="客户案例一">客户案例一</a>
 							</dd>
 		</dl>
 		<dl>
@@ -284,13 +284,37 @@ $(function(){
 			$newElems.imagesLoaded(function(){
 				// show elems now they're ready
 				$newElems.animate({ opacity: 1 });
-				$container.masonry( 'appended', $newElems, true ); 
+				$container.masonry( 'appended', $newElems, true );
+				//colorbox展示大图
+			    $("#container .box a").colorbox({
+			    	//图集标记
+			    	rel: "group",
+			    	//图集图片自动切换
+			    	slideshow: true,
+			    	//图片切换时间间隔
+			    	slideshowSpeed : 30000,
+			    	//图片标题
+			    	title: function (){
+			    		return $(this).attr("title");
+			    	}
+			    });
 			});
 		}
     );
 
     //colorbox展示大图
-    $("#container .box a").colorbox();
+    $("#container .box a").colorbox({
+    	//图集标记
+    	rel: "group",
+    	//图集图片自动切换
+    	slideshow: true,
+    	//图片切换时间间隔
+    	slideshowSpeed : 30000,
+    	//图片标题
+    	title: function (){
+    		return $(this).attr("title");
+    	}
+    });
 });
 </script>
 					</div>
