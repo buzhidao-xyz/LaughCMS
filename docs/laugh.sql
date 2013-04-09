@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2013-04-08 17:54:05
+Date: 2013-04-09 17:33:35
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -95,7 +95,7 @@ INSERT INTO `la_archive` VALUES ('10', 'Web服务攻击反侦查痕迹检测', '
 INSERT INTO `la_archive` VALUES ('11', '4 款 Linux 下开源的个人日记管理软件', 'admin', '15', '/Uploads/Image/201304/02/1364884636_tpajd4_786.png', '', '', '4 款 Linux 下开源的个人日记管理软件', '', '4 款 Linux 下开源的个人日记管理软件', '1', '1', '0', '0', '1364804934', '1364884636');
 INSERT INTO `la_archive` VALUES ('12', 'Vim文本编辑器 v7.3 正式版', 'admin', '14', '/Uploads/Image/201304/02/1364884946_37uz4d_4967.png', '', '', 'Vim文本编辑器 v7.3 正式版', '', 'Vim文本编辑器 v7.3 正式版', '1', '1', '0', '0', '1364805949', '1364884946');
 INSERT INTO `la_archive` VALUES ('13', 'DNS污染【备忘】', 'admin', '4', null, '', '', 'DNS污染【备忘】', '', 'DNS污染【备忘】', '1', '1', '0', '0', '1364885413', '1364885467');
-INSERT INTO `la_archive` VALUES ('14', '客户案例一', 'admin', '7', '/Uploads/Image/201304/08/1365413072_9nqiqs_5725.jpeg', '', '', '客户案例一', '客户案例一', '客户案例一', '1', '1', '0', '0', '1365413072', '1365413643');
+INSERT INTO `la_archive` VALUES ('14', '客户案例一', 'admin', '7', '/Uploads/Image/201304/08/1365413072_9nqiqs_5725.jpeg', '', '', '客户案例一', '客户案例一', '客户案例一', '1', '1', '0', '0', '1365487321', '1365492655');
 INSERT INTO `la_archive` VALUES ('15', '客户案例二', 'admin', '7', '/Uploads/Image/201304/08/1365414070_zo95z4_7377.jpg', '', '', '客户案例二', '客户案例二', '客户案例二', '1', '1', '0', '0', '1365413256', '1365414070');
 
 -- ----------------------------
@@ -197,7 +197,7 @@ INSERT INTO `la_column` VALUES ('4', '网络知识', '2', '2', '1', '1', null, '
 INSERT INTO `la_column` VALUES ('5', '前端知识', '4', '2', '1', '1', null, 'index', '1', '', '', '', '', 'Article/index.html', 'Article/list.html', 'Article/body.html', '1', '1359689764', '1363856760');
 INSERT INTO `la_column` VALUES ('6', '产品展示', '0', '6', '1', '6', null, 'index', '3', '', '', '', '', 'Product/index.html', 'Product/list.html', 'Product/body.html', '1', '1359690256', '1359690256');
 INSERT INTO `la_column` VALUES ('7', '客户案例', '0', '7', '1', '2', null, 'index', '4', '', '', '', '', null, null, null, '1', '1359690270', '1359690270');
-INSERT INTO `la_column` VALUES ('8', '下载中心', '0', '8', '1', '3', null, 'index', '5', '', '', '', '', null, null, null, '1', '1359690280', '1359690280');
+INSERT INTO `la_column` VALUES ('8', '下载中心', '0', '8', '1', '3', null, 'index', '5', '', '', '', '', 'Download/index.html', 'Download/list.html', 'Download/body.html', '1', '1359690280', '1359690280');
 INSERT INTO `la_column` VALUES ('9', '招贤纳士', '0', '9', '1', '8', null, 'index', '6', '', '', '', '', null, null, null, '1', '1359690294', '1359690294');
 INSERT INTO `la_column` VALUES ('10', '关于我们', '0', '10', '1', '9', null, 'AboutUS', '7', '', '', '', '&lt;p&gt;&lt;span class=&quot;text&quot;&gt; &amp;nbsp; &amp;nbsp;LaughCMS企业网站管理系统，是一款代码完全开源免费的PHP+MYSQL系统。&lt;/span&gt;&lt;span class=&quot;text&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span class=&quot;text&quot;&gt; &amp;nbsp; &amp;nbsp;程序内置SEO优化机制，使企业网站更容易被推广。拥有企业网站常用的模块功能（企业简介模块、新闻模块、产品模块、下载模块、图片模块、招聘模块、在线留言、友情链接、会员与权限管理）。强大灵活的后台管理功能、静态页面生成功能、自定义模型功能、自制插件安装管理功能等可为企业打造出大气漂亮且具有营销力的精品网站&lt;/span&gt;&lt;br /&gt;&lt;/p&gt;', null, null, null, '1', '1359690307', '1364356336');
 INSERT INTO `la_column` VALUES ('11', '联系我们', '0', '11', '1', '9', null, 'ContactUS', '8', '', '', '', '', null, null, null, '1', '1359690316', '1359690316');
@@ -311,7 +311,7 @@ CREATE TABLE `la_images` (
   `height` int(10) NOT NULL DEFAULT '0' COMMENT '图片高度',
   `createtime` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_images
@@ -328,6 +328,16 @@ INSERT INTO `la_images` VALUES ('9', '/Uploads/Image/201304/08/1365413198_7mvw2a
 INSERT INTO `la_images` VALUES ('10', '/Uploads/Image/201304/08/1365413238_ba18vv_4128.jpg', '/Uploads/Image/201304/08/thumb_1365413238_ba18vv_4128.jpg', '案例图片一', '', '15', 'detail_img1.jpg', '1365413238_ba18vv_4128.jpg', '61293', '700', '438', '1365413238');
 INSERT INTO `la_images` VALUES ('11', '/Uploads/Image/201304/08/1365413254_szckqh_6029.jpg', '/Uploads/Image/201304/08/thumb_1365413254_szckqh_6029.jpg', '案例图片二', '', '15', 'detail_img2.jpg', '1365413254_szckqh_6029.jpg', '113916', '700', '438', '1365413254');
 INSERT INTO `la_images` VALUES ('12', '/Uploads/Image/201304/08/1365413641_bydp7p_7088.jpg', '/Uploads/Image/201304/08/thumb_1365413641_bydp7p_7088.jpg', '案例图片一', '', '14', 'detail_img3.jpg', '1365413641_bydp7p_7088.jpg', '141070', '730', '300', '1365413641');
+INSERT INTO `la_images` VALUES ('13', '/Uploads/Image/201304/09/1365474374_4s7jxa_5777.jpg', '/Uploads/Image/201304/09/thumb_1365474374_4s7jxa_5777.jpg', '案例图片二', '', '14', 'detail_img1.jpg', '1365474374_4s7jxa_5777.jpg', '61293', '700', '438', '1365474374');
+INSERT INTO `la_images` VALUES ('14', '/Uploads/Image/201304/09/1365474384_lld6f7_2865.jpg', '/Uploads/Image/201304/09/thumb_1365474384_lld6f7_2865.jpg', '案例图片三', '', '14', 'detail_img2.jpg', '1365474384_lld6f7_2865.jpg', '113916', '700', '438', '1365474384');
+INSERT INTO `la_images` VALUES ('15', '/Uploads/Image/201304/09/1365474406_tzcrus_885.jpg', '/Uploads/Image/201304/09/thumb_1365474406_tzcrus_885.jpg', '案例图片四', '', '14', 'detail_img2.jpg', '1365474406_tzcrus_885.jpg', '113916', '700', '438', '1365474406');
+INSERT INTO `la_images` VALUES ('16', '/Uploads/Image/201304/09/1365474438_z5r3pz_3874.jpg', '/Uploads/Image/201304/09/thumb_1365474438_z5r3pz_3874.jpg', '案例图片五', '', '14', 'avatar_wang.jpg', '1365474438_z5r3pz_3874.jpg', '400072', '602', '602', '1365474438');
+INSERT INTO `la_images` VALUES ('17', '/Uploads/Image/201304/09/1365474465_e4anmy_3273.jpg', '/Uploads/Image/201304/09/thumb_1365474465_e4anmy_3273.jpg', '案例图片六', '', '14', '震撼！精选立体设计壁纸.jpg', '1365474465_e4anmy_3273.jpg', '42231', '640', '480', '1365474465');
+INSERT INTO `la_images` VALUES ('18', '/Uploads/Image/201304/09/1365474477_zuf1eo_2534.JPG', '/Uploads/Image/201304/09/thumb_1365474477_zuf1eo_2534.JPG', '案例图片七', '', '14', '未命名1231.JPG', '1365474477_zuf1eo_2534.JPG', '91042', '571', '338', '1365474477');
+INSERT INTO `la_images` VALUES ('19', '/Uploads/Image/201304/09/1365474490_nc8o3r_168.jpg', '/Uploads/Image/201304/09/thumb_1365474490_nc8o3r_168.jpg', '案例图片八', '', '14', '大道.jpg', '1365474490_nc8o3r_168.jpg', '234678', '640', '480', '1365474490');
+INSERT INTO `la_images` VALUES ('20', '/Uploads/Image/201304/09/1365487039_z77rqj_6345.jpg', '/Uploads/Image/201304/09/thumb_1365487039_z77rqj_6345.jpg', '案例图片九', '', '14', 'Winter.jpg', '1365487039_z77rqj_6345.jpg', '105542', '800', '600', '1365487039');
+INSERT INTO `la_images` VALUES ('21', '/Uploads/Image/201304/09/1365487318_rkq34w_7563.jpg', '/Uploads/Image/201304/09/thumb_1365487318_rkq34w_7563.jpg', '案例图片十', '', '14', 'Sunset.jpg', '1365487318_rkq34w_7563.jpg', '71189', '800', '600', '1365487318');
+INSERT INTO `la_images` VALUES ('22', '/Uploads/Image/201304/09/1365492652_osb45h_8463.jpg', '/Uploads/Image/201304/09/thumb_1365492652_osb45h_8463.jpg', '案例图片十一', '', '14', '2008413123199462.jpg', '1365492652_osb45h_8463.jpg', '1126280', '1600', '1200', '1365492652');
 
 -- ----------------------------
 -- Table structure for `la_node`
