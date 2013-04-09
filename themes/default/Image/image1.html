@@ -14,9 +14,11 @@
 				<span id="sLeftBtnA" class="sLeftBtnABan"></span>
 				<span id="sRightBtnA" class="sRightBtnA"></span>
 				<ul class="ulBigPic">
-					<li class="liSelected">
+					{if isset($archiveInfo.archiveImage)&&!empty($archiveInfo.archiveImage)}
+					{foreach $archiveInfo.archiveImage as $image}
+					<li class="">
 						<span class="sPic">
-							<i class="iBigPic"><a href="javascript:;" target="_blank" title=""><img alt="" src="public/plugin/slidebox/images/01.jpg" /></a></i>	
+							<i class="iBigPic"><a href="javascript:;" target="_blank" title="{$image.imagetitle}"><img alt="{$image.imagetitle}" src="__APP__{$image.imagepath}" /></a></i>
 						</span>
 						<!-- <span class="sSideBox">
 							<span class="sTitle"><a href="javascript:;" target="_blank" title="">图片标题</a></span>
@@ -24,41 +26,8 @@
 							<span class="sMore"><a href="javascript:;" target="_blank">查看详细方案&gt;&gt;</a></span>
 						</span> -->
 					</li>
-					<li>
-						<span class="sPic">
-							<i class="iBigPic"><a href="javascript:;" target="_blank" title=""><img alt="大图" src="public/plugin/slidebox/images/02.jpg" /></a></i>
-						</span>
-					</li>	
-					<li>
-						<span class="sPic">
-							<i class="iBigPic"><a href="javascript:;" target="_blank" title=""><img alt="大图" src="public/plugin/slidebox/images/03.jpg" /></a></i>
-						</span>
-					</li>	
-					<li>
-						<span class="sPic">
-							<i class="iBigPic"><a href="javascript:;" target="_blank" title=""><img alt="大图" src="public/plugin/slidebox/images/04.jpg" /></a></i>
-						</span>
-					</li>
-					<li>
-						<span class="sPic">
-							<i class="iBigPic"><a href="javascript:;" target="_blank" title=""><img alt="大图" src="public/plugin/slidebox/images/05.jpg" /></a></i>
-						</span>
-					</li>
-					<li>
-						<span class="sPic">
-							<i class="iBigPic"><a href="javascript:;" target="_blank" title=""><img alt="大图" src="public/plugin/slidebox/images/06.jpg" /></a></i>
-						</span>
-					</li>
-					<li>
-						<span class="sPic">
-							<i class="iBigPic"><a href="javascript:;" target="_blank" title=""><img alt="大图" src="public/plugin/slidebox/images/07.jpg" /></a></i>
-						</span>
-					</li>
-					<li>
-						<span class="sPic">
-							<i class="iBigPic"><a href="javascript:;" target="_blank" title=""><img alt="大图" src="public/plugin/slidebox/images/08.jpg" /></a></i>
-						</span>
-					</li>
+				  	{/foreach}
+				  	{/if}
 				</ul><!--ulBigPic end-->
 				<div class="dPicStatus">
 					<div class="dPicStatusTag">&gt;</div>
@@ -69,38 +38,14 @@
 				<div class="dSmallPicBox">
 					<div class="dSmallPic">
 						<ul class="ulSmallPic" style="width:2646px;left:0px" rel="stop">
-							<li class="liSelected">
-								<span class="sPic"><img alt="方案图片一" src="public/plugin/slidebox/images/s01.jpg" width="125" height="100" /></span>
-								<span class="sTitle">方案图片一</span>
+							{if isset($archiveInfo.archiveImage)&&!empty($archiveInfo.archiveImage)}
+							{foreach $archiveInfo.archiveImage as $image}
+							<li class="">
+								<span class="sPic"><img alt="{$image.imagetitle}" src="__APP__{$image.thumbpath}" width="125" height="100" /></span>
+								<span class="sTitle">{$image.imagetitle}</span>
 							</li>
-							<li>
-								<span class="sPic"><img alt="方案图片二" src="public/plugin/slidebox/images/s02.jpg" width="125" height="100" /></span>
-								<span class="sTitle">方案图片二</span>
-							</li>
-							<li>
-								<span class="sPic"><img alt="方案图片三" src="public/plugin/slidebox/images/s03.jpg" width="125" height="100" /></span>
-								<span class="sTitle">方案图片三</span>
-							</li>
-							<li>
-								<span class="sPic"><img alt="方案图片四" src="public/plugin/slidebox/images/s04.jpg" width="125" height="100" /></span>
-								<span class="sTitle">方案图片四</span>
-							</li>
-							<li>
-								<span class="sPic"><img alt="方案图片五" src="public/plugin/slidebox/images/s05.jpg" width="125" height="100" /></span>
-								<span class="sTitle">方案图片五</span>
-							</li>
-							<li>
-								<span class="sPic"><img alt="方案图片六" src="public/plugin/slidebox/images/s06.jpg" width="125" height="100" /></span>
-								<span class="sTitle">方案图片六</span>
-							</li>
-							<li>
-								<span class="sPic"><img alt="方案图片七" src="public/plugin/slidebox/images/s07.jpg" width="125" height="100" /></span>
-								<span class="sTitle">方案图片七</span>
-							</li>
-							<li>
-								<span class="sPic"><img alt="方案图片八" src="public/plugin/slidebox/images/s08.jpg" width="125" height="100" /></span>
-								<span class="sTitle">方案图片八</span>
-							</li>
+						  	{/foreach}
+						  	{/if}
 						</ul>
 					</div>
 					<span id="sLeftBtnB" class="sLeftBtnBBan"></span>
@@ -118,7 +63,7 @@
 			<dt>上一篇:</dt>
 			<dd>
 				{if !empty($archiveInfo.prev)}
-				<a href="__APP__/index.php?s=article/view&columnid={$columnid}&archiveid={$archiveInfo.prev.id}" title="{$archiveInfo.prev.title}">{$archiveInfo.prev.title}</a>
+				<a href="__APP__/index.php?s=Image/view&columnid={$columnid}&archiveid={$archiveInfo.prev.id}" title="{$archiveInfo.prev.title}">{$archiveInfo.prev.title}</a>
 				{else}
 				<font color="grey">没有了！</font>
 				{/if}
@@ -128,7 +73,7 @@
 			<dt>下一篇:</dt>
 			<dd>
 				{if !empty($archiveInfo.next)}
-				<a href="__APP__/index.php?s=article/view&columnid={$columnid}&archiveid={$archiveInfo.next.id}" title="{$archiveInfo.next.title}">{$archiveInfo.next.title}</a>
+				<a href="__APP__/index.php?s=Image/view&columnid={$columnid}&archiveid={$archiveInfo.next.id}" title="{$archiveInfo.next.title}">{$archiveInfo.next.title}</a>
 				{else}
 				<font color="grey">没有了！</font>
 				{/if}
@@ -140,6 +85,7 @@
 <script type="text/javascript" src="public/plugin/slidebox/slidebox.js"></script>
 <script type="text/javascript">
 $(document).ready(function (){
+$(".scrolltab .ulSmallPic li:eq(0)").addClass("liSelected");
 $(".scrolltab .dPicStatus .dPicStatusTitle").html($(".scrolltab .ulSmallPic li:eq(0) span.sTitle").text());
 });
 </script>

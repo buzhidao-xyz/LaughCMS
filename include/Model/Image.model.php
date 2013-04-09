@@ -41,10 +41,12 @@ class Image extends Archive
 
 	/**
 	 * 获取某个图集详情
+	 * @param $start int 分页记录开始数
+	 * @param $length int 每页记录数
 	 * @param $columnid int 栏目id
 	 * @param $archiveid int 文档id
 	 */
-	public function getImageInfo($columnid=null,$archiveid=null,$where=array())
+	public function getImageInfo($start=0,$length=0,$columnid=null,$archiveid=null,$where=array())
 	{
 		$archiveInfo = $this->getArchive($archiveid,0,0,$where);
 		if (!$archiveInfo['total']) return false;
@@ -52,6 +54,7 @@ class Image extends Archive
 		$archiveInfo = $archiveInfo['data'][0];
 		$imageDetail = $this->getImageDetail($archiveid);
 		$archiveInfo = array_merge($imageDetail[0],$archiveInfo);
+		$archiveInfo['archiveImage'] = $this->getArchiveImages($archiveid,$start,$length);
 
 		$archiveInfo['prev'] = $this->getPrevArchive($columnid,$archiveid);
 		$archiveInfo['next'] = $this->getNextArchive($columnid,$archiveid);

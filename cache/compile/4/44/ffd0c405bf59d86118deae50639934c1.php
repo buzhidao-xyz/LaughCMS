@@ -155,69 +155,64 @@ $(document).ready(function (){
 		<div id="mainBlock" class="fleft w740">
 			<div class="boxBlock">
 				<div class="boxBlockTitle">
-					<span class="title">客户案例二</span>
+					<span class="title">客户案例一</span>
 				</div>
 				<div class="boxBlockBody">
 					<div class="contentBlock">
 						<div class="articleTpl imageTpl">
-	<h2 class="title">客户案例二</h2>
+	<h2 class="title">客户案例一</h2>
 	<div class="status">
 		<span class="title">点击次数:</span>
 		<span class="content">0 次</span>
 		<span class="title">发布时间:</span>
-		<span class="content">2013-04-08 17:27:36</span>
+		<span class="content">2013-04-09 14:02:01</span>
 		<span class="title">作者:</span>
 		<span class="content">admin</span>
 	</div>
 	<div class="body">
 		<div id="container" class="transitions-enabled infinite-scroll clearfix">
-		  <div class="box col2">
-		    <p>
-		      <a rel="group" href="/laugh/themes/default/images/product/detail_img1.jpg" title="图片一"><img src="/laugh/themes/default/images/product/detail_img1.jpg"  /></a>
-		    </p>
-		  </div>
-		  <div class="box col1">
-		    <p>
-		      <a rel="group" href="/laugh/themes/default/images/product/detail_img2.jpg" title="图片二"><img src="/laugh/themes/default/images/product/detail_img2.jpg"  /></a>
-		    </p>
-		  </div>
-		  <div class="box col3">
-		    <p>
-		      <a rel="group" href="/laugh/themes/default/images/product/detail_img3.jpg" title="图片三"><img src="/laugh/themes/default/images/product/detail_img3.jpg"  /></a>
-		    </p>
-		  </div>
-		  <div class="box col1">
-		    <p>
-		      <a rel="group" href="/laugh/themes/default/images/product/detail_img1.jpg" title="图片四"><img src="/laugh/themes/default/images/product/detail_img1.jpg"  /></a>
-		    </p>
-		  </div>
-		  <div class="box col2">
-		    <p>
-		      <a rel="group" href="/laugh/themes/default/images/product/detail_img2.jpg" title="图片五"><img src="/laugh/themes/default/images/product/detail_img2.jpg"  /></a>
-		    </p>
-		  </div>
-		  <div class="box col1">
-		    <p>
-		      <a rel="group" href="/laugh/themes/default/images/product/detail_img3.jpg" title="图片六"><img src="/laugh/themes/default/images/product/detail_img3.jpg"  /></a>
-		    </p>
-		  </div>
-		  <div class="box col5">
-		    <p>
-		      <a rel="group" href="/laugh/themes/default/images/product/detail_img3.jpg" title="图片七"><img src="/laugh/themes/default/images/product/detail_img3.jpg"  /></a>
-		    </p>
-		  </div>
-		  <div class="box col1">
-		    <p>
-		      <a rel="group" href="/laugh/themes/default/images/product/product_img2.jpg" title="图片八"><img src="/laugh/themes/default/images/product/product_img2.jpg"  /></a>
-		    </p>
-		  </div>
-		  <div class="box col1">
-		    <p>
-		      <a rel="group" href="/laugh/themes/default/images/product/product_img1.jpg" title="图片九"><img src="/laugh/themes/default/images/product/product_img1.jpg"  /></a>
-		    </p>
-		  </div>
-		</div>
-		<nav id="page-nav"><a href="/laugh/index.php?s=Image/Msonary&columnid=7&archiveid=15&page=2"></a></nav>
+								  	<div class="box col2">
+		    	<p>
+		      		<a rel="group" href="/laugh/Uploads/Image/201304/08/1365413641_bydp7p_7088.jpg" title="案例图片一"><img src="/laugh/Uploads/Image/201304/08/thumb_1365413641_bydp7p_7088.jpg" alt="案例图片一" /></a>
+		    	</p>
+		  	</div>
+		  			  	<div class="box col2">
+		    	<p>
+		      		<a rel="group" href="/laugh/Uploads/Image/201304/09/1365474374_4s7jxa_5777.jpg" title="案例图片二"><img src="/laugh/Uploads/Image/201304/09/thumb_1365474374_4s7jxa_5777.jpg" alt="案例图片二" /></a>
+		    	</p>
+		  	</div>
+		  			  	<div class="box col2">
+		    	<p>
+		      		<a rel="group" href="/laugh/Uploads/Image/201304/09/1365474384_lld6f7_2865.jpg" title="案例图片三"><img src="/laugh/Uploads/Image/201304/09/thumb_1365474384_lld6f7_2865.jpg" alt="案例图片三" /></a>
+		    	</p>
+		  	</div>
+		  			  	<div class="box col2">
+		    	<p>
+		      		<a rel="group" href="/laugh/Uploads/Image/201304/09/1365474406_tzcrus_885.jpg" title="案例图片四"><img src="/laugh/Uploads/Image/201304/09/thumb_1365474406_tzcrus_885.jpg" alt="案例图片四" /></a>
+		    	</p>
+		  	</div>
+		  			  	<div class="box col2">
+		    	<p>
+		      		<a rel="group" href="/laugh/Uploads/Image/201304/09/1365474438_z5r3pz_3874.jpg" title="案例图片五"><img src="/laugh/Uploads/Image/201304/09/thumb_1365474438_z5r3pz_3874.jpg" alt="案例图片五" /></a>
+		    	</p>
+		  	</div>
+		  			  	<div class="box col2">
+		    	<p>
+		      		<a rel="group" href="/laugh/Uploads/Image/201304/09/1365474465_e4anmy_3273.jpg" title="案例图片六"><img src="/laugh/Uploads/Image/201304/09/thumb_1365474465_e4anmy_3273.jpg" alt="案例图片六" /></a>
+		    	</p>
+		  	</div>
+		  			  	<div class="box col2">
+		    	<p>
+		      		<a rel="group" href="/laugh/Uploads/Image/201304/09/1365474477_zuf1eo_2534.JPG" title="案例图片七"><img src="/laugh/Uploads/Image/201304/09/thumb_1365474477_zuf1eo_2534.JPG" alt="案例图片七" /></a>
+		    	</p>
+		  	</div>
+		  			  	<div class="box col2">
+		    	<p>
+		      		<a rel="group" href="/laugh/Uploads/Image/201304/09/1365474490_nc8o3r_168.jpg" title="案例图片八"><img src="/laugh/Uploads/Image/201304/09/thumb_1365474490_nc8o3r_168.jpg" alt="案例图片八" /></a>
+		    	</p>
+		  	</div>
+		  			  			</div>
+		<nav id="page-nav"><a href="/laugh/index.php?s=Image/Msonary&columnid=7&archiveid=14&page=2"></a></nav>
 	</div>
 	<div class="operate">
 		<!-- Baidu Button BEGIN -->
@@ -238,13 +233,13 @@ $(document).ready(function (){
 		<dl>
 			<dt>上一篇:</dt>
 			<dd>
-								<a href="/laugh/index.php?s=article/view&columnid=7&archiveid=14" title="客户案例一">客户案例一</a>
+								<font color="grey">没有了！</font>
 							</dd>
 		</dl>
 		<dl>
 			<dt>下一篇:</dt>
 			<dd>
-								<font color="grey">没有了！</font>
+								<a href="/laugh/index.php?s=Image/view&columnid=7&archiveid=15" title="客户案例二">客户案例二</a>
 							</dd>
 		</dl>
 	</div>
@@ -262,7 +257,7 @@ $(function(){
     $container.imagesLoaded(function(){
 		$container.masonry({
 			itemSelector: '.box',
-			columnWidth: 100,
+			columnWidth: 1,
         	isAnimated: !Modernizr.csstransitions
 		});
     });
@@ -285,36 +280,28 @@ $(function(){
 				// show elems now they're ready
 				$newElems.animate({ opacity: 1 });
 				$container.masonry( 'appended', $newElems, true );
-				//colorbox展示大图
-			    $("#container .box a").colorbox({
-			    	//图集标记
-			    	rel: "group",
-			    	//图集图片自动切换
-			    	slideshow: true,
-			    	//图片切换时间间隔
-			    	slideshowSpeed : 30000,
-			    	//图片标题
-			    	title: function (){
-			    		return $(this).attr("title");
-			    	}
-			    });
+
+				colorBoxImageShow();
 			});
 		}
     );
 
-    //colorbox展示大图
-    $("#container .box a").colorbox({
-    	//图集标记
-    	rel: "group",
-    	//图集图片自动切换
-    	slideshow: true,
-    	//图片切换时间间隔
-    	slideshowSpeed : 30000,
-    	//图片标题
-    	title: function (){
-    		return $(this).attr("title");
-    	}
-    });
+	//colorbox展示大图
+	var colorBoxImageShow = function (){
+	    $("#container .box a").colorbox({
+	    	//图集标记
+	    	rel: "group",
+	    	//图集图片自动切换
+	    	slideshow: true,
+	    	//图片切换时间间隔
+	    	slideshowSpeed : 30000,
+	    	//图片标题
+	    	title: function (){
+	    		return $(this).attr("title");
+	    	}
+	    });
+	}
+    colorBoxImageShow();
 });
 </script>
 					</div>

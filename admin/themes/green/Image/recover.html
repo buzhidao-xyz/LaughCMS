@@ -1,5 +1,5 @@
 {include file="public/control_top.html"}
-<div class="captitle"><h5>文档回收站 【目前共有{if $total}{$total}{else}0{/if}条文档】</h5></div>
+<div class="captitle"><h5>图集回收站 【目前共有{if $total}{$total}{else}0{/if}条文档】</h5></div>
 <ul class="table_list_title">
 	<li class="table_list_l table_list_l30"></li>
 	<li class="table_list_l table_list_l50">ID</li>
@@ -31,7 +31,7 @@
 		<li class="table_list_l table_list_l80">{$d.commentnum}</li>
     	{if $accessStatus == 1}
     	<li class="table_list_l table_list_l120" accessStatus={$accessStatus}>
-    		<a href="__APP__/index.php?s=Product/edit&archiveid={$d.id}">修改</a>
+    		<a href="__APP__/index.php?s=Image/edit&archiveid={$d.id}">修改</a>
     		<a delurl="__APP__/index.php?s=Archive/backArchive&archiveid={$d.id}" href="javascript:;" name="del" msg="确定还原吗？">还原</a>
     		<a delurl="__APP__/index.php?s=Archive/deleteArchive&archiveid={$d.id}" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>

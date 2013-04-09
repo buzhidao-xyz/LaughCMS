@@ -12,12 +12,18 @@ class ImageControl extends ArchiveControl
 	static protected $_Width = 550;
 	static protected $_Height = 350;
 
+	//图集图片缩略图标准宽高
+	static protected $_Album_Width = 480;
+	static protected $_Album_Height = 320;
+
 	//图片最大size
 	static protected $_ImageSize = 5242880; //5M
 
 	public function __construct()
 	{
 		parent::__construct();
+
+		$this->assign("imageUploadAction", "");
 	}
 
 	//图集列表
@@ -42,9 +48,10 @@ class ImageControl extends ArchiveControl
 	{
 		$this->assign("accessStatus",1);
 
-		$this->assign("userInfo",$this->userInfo);
+		$this->assign("userInfo", $this->userInfo);
 		$this->assign("columnTree", D("Column")->getColumnTree($this->_Control));
 
+		$this->assign("imageUploadAction", "Album");
 		$this->display("Image/add.html");
 	}
 
@@ -110,6 +117,20 @@ class ImageControl extends ArchiveControl
 		} else {
 			$this->display("Common/error.html");
 		}
+	}
+
+	//文档回收站
+	public function recover()
+	{
+		$this->assign("accessStatus", 1);
+
+		list($start,$length) = $this->getPages();
+        $articleList = M("Images")->getImages(null,$start,$length,0,null,$this->_Control);
+        $this->assign("total", $articleList['total']);
+        $this->assign("dataList", $articleList['data']);
+
+        $this->assign("page", getPage($articleList['total'],$this->_pagesize));
+		$this->display("Article/recover.html");
 	}
 
 	//首页轮播图片管理
@@ -219,14 +240,20 @@ class ImageControl extends ArchiveControl
 	//图片上传
 	public function saveUploadImage()
 	{
+		$imageUploadAction = q("imageUploadAction");
 		$imageTitle = q("imageTitle");
 		$imageLink = null;
 		$archiveid = null;
 
 		$upload = new UploadHelper();
 		$upload->thumb = true;
-		$upload->thumbMaxWidth = self::$_Width;
-		$upload->thumbMaxHeight = self::$_Height;
+		if ($imageUploadAction = "Album") {
+			$upload->thumbMaxWidth = self::$_Album_Width;
+			$upload->thumbMaxHeight = self::$_Album_Height;
+		} else {
+			$upload->thumbMaxWidth = self::$_Width;
+			$upload->thumbMaxHeight = self::$_Height;
+		}
 		$upload->maxSize  = self::$_ImageSize;
 		$upload->savePath =  C("UPLOAD_PATH")."/Image/".date("Ym/d/");
 		if (!$upload->upload()) {

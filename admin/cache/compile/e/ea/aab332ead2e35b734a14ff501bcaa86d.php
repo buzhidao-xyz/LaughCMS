@@ -71,7 +71,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="table_list_l table_list_l300" title="客户案例一">
 			客户案例一
 		</li>
-    	<li class="table_list_l table_list_l150">2013-04-08 17:34:03</li>
+    	<li class="table_list_l table_list_l150">2013-04-09 15:30:55</li>
     	<li class="table_list_l table_list_l120">客户案例</li>
 		<li class="table_list_l table_list_l100">admin</li>
 		<li class="table_list_l table_list_l80">0</li>

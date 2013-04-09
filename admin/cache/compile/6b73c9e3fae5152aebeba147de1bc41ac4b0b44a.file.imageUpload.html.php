@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-08 17:40:45
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-09 17:13:48
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\public\imageUpload.html" */ ?>
-<?php /*%%SmartyHeaderCode:260795162909dec8a47-37875506%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:195655163dbccee2531-67877956%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '6b73c9e3fae5152aebeba147de1bc41ac4b0b44a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\green\\public\\imageUpload.html',
-      1 => 1364871458,
+      1 => 1365491585,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '260795162909dec8a47-37875506',
+  'nocache_hash' => '195655163dbccee2531-67877956',
   'function' => 
   array (
   ),
@@ -19,12 +19,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'ArchiveInfo' => 0,
     'image' => 0,
+    'imageUploadAction' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5162909df1a708_07372471',
+  'unifunc' => 'content_5163dbccf34a35_15174723',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5162909df1a708_07372471')) {function content_5162909df1a708_07372471($_smarty_tpl) {?><div id="imageUpload">
+<?php if ($_valid && !is_callable('content_5163dbccf34a35_15174723')) {function content_5163dbccf34a35_15174723($_smarty_tpl) {?><div id="imageUpload">
 	<div id="imageTitle">产品图片:</div>
 	<div id="imageBody">
 		<div id="imageBox">
@@ -55,6 +56,8 @@ $_smarty_tpl->tpl_vars['image']->_loop = true;
 				描述: <input type="text" name="imageTitle" value="" class="input w300" />
 			</span>
 			<span>
+				<input type="hidden" name="imageUploadAction" value="<?php echo $_smarty_tpl->tpl_vars['imageUploadAction']->value;?>
+" />
 				<input type="button" name="imageUploadButton" class="button btngreen2 btupload" value="上传" />
 			</span>
 		</div>

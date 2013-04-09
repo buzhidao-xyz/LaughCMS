@@ -1,30 +1,31 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-08 17:46:25
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-09 17:28:22
          compiled from "C:\xampp\htdocs\laugh\themes\default\Image\image.html" */ ?>
-<?php /*%%SmartyHeaderCode:27777516291f1ca37b2-60225190%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:291785163df3623c4b1-35130386%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '8d35790c88e8bd15a827e4d743e378b82ca13fd3' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\Image\\image.html',
-      1 => 1365409476,
+      1 => 1365499695,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '27777516291f1ca37b2-60225190',
+  'nocache_hash' => '291785163df3623c4b1-35130386',
   'function' => 
   array (
   ),
   'variables' => 
   array (
     'archiveInfo' => 0,
+    'image' => 0,
     'columnid' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_516291f1d77ee0_19102672',
+  'unifunc' => 'content_5163df3635e433_17305654',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_516291f1d77ee0_19102672')) {function content_516291f1d77ee0_19102672($_smarty_tpl) {?><div class="articleTpl imageTpl">
+<?php if ($_valid && !is_callable('content_5163df3635e433_17305654')) {function content_5163df3635e433_17305654($_smarty_tpl) {?><div class="articleTpl imageTpl">
 	<h2 class="title"><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['title'];?>
 </h2>
 	<div class="status">
@@ -40,51 +41,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	</div>
 	<div class="body">
 		<div id="container" class="transitions-enabled infinite-scroll clearfix">
-		  <div class="box col2">
-		    <p>
-		      <a rel="group" href="__APP__/themes/default/images/product/detail_img1.jpg" title="图片一"><img src="__APP__/themes/default/images/product/detail_img1.jpg"  /></a>
-		    </p>
-		  </div>
-		  <div class="box col1">
-		    <p>
-		      <a rel="group" href="__APP__/themes/default/images/product/detail_img2.jpg" title="图片二"><img src="__APP__/themes/default/images/product/detail_img2.jpg"  /></a>
-		    </p>
-		  </div>
-		  <div class="box col3">
-		    <p>
-		      <a rel="group" href="__APP__/themes/default/images/product/detail_img3.jpg" title="图片三"><img src="__APP__/themes/default/images/product/detail_img3.jpg"  /></a>
-		    </p>
-		  </div>
-		  <div class="box col1">
-		    <p>
-		      <a rel="group" href="__APP__/themes/default/images/product/detail_img1.jpg" title="图片四"><img src="__APP__/themes/default/images/product/detail_img1.jpg"  /></a>
-		    </p>
-		  </div>
-		  <div class="box col2">
-		    <p>
-		      <a rel="group" href="__APP__/themes/default/images/product/detail_img2.jpg" title="图片五"><img src="__APP__/themes/default/images/product/detail_img2.jpg"  /></a>
-		    </p>
-		  </div>
-		  <div class="box col1">
-		    <p>
-		      <a rel="group" href="__APP__/themes/default/images/product/detail_img3.jpg" title="图片六"><img src="__APP__/themes/default/images/product/detail_img3.jpg"  /></a>
-		    </p>
-		  </div>
-		  <div class="box col5">
-		    <p>
-		      <a rel="group" href="__APP__/themes/default/images/product/detail_img3.jpg" title="图片七"><img src="__APP__/themes/default/images/product/detail_img3.jpg"  /></a>
-		    </p>
-		  </div>
-		  <div class="box col1">
-		    <p>
-		      <a rel="group" href="__APP__/themes/default/images/product/product_img2.jpg" title="图片八"><img src="__APP__/themes/default/images/product/product_img2.jpg"  /></a>
-		    </p>
-		  </div>
-		  <div class="box col1">
-		    <p>
-		      <a rel="group" href="__APP__/themes/default/images/product/product_img1.jpg" title="图片九"><img src="__APP__/themes/default/images/product/product_img1.jpg"  /></a>
-		    </p>
-		  </div>
+			<?php if (isset($_smarty_tpl->tpl_vars['archiveInfo']->value['archiveImage'])&&!empty($_smarty_tpl->tpl_vars['archiveInfo']->value['archiveImage'])){?>
+			<?php  $_smarty_tpl->tpl_vars['image'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['image']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['archiveInfo']->value['archiveImage']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['image']->key => $_smarty_tpl->tpl_vars['image']->value){
+$_smarty_tpl->tpl_vars['image']->_loop = true;
+?>
+		  	<div class="box col<?php echo $_smarty_tpl->tpl_vars['image']->value['coln'];?>
+">
+		    	<p>
+		      		<a rel="group" href="__APP__<?php echo $_smarty_tpl->tpl_vars['image']->value['imagepath'];?>
+" title="<?php echo $_smarty_tpl->tpl_vars['image']->value['imagetitle'];?>
+"><img src="__APP__<?php echo $_smarty_tpl->tpl_vars['image']->value['thumbpath'];?>
+" alt="<?php echo $_smarty_tpl->tpl_vars['image']->value['imagetitle'];?>
+" /></a>
+		    	</p>
+		  	</div>
+		  	<?php } ?>
+		  	<?php }?>
 		</div>
 		<nav id="page-nav"><a href="__APP__/index.php?s=Image/Msonary&columnid=<?php echo $_smarty_tpl->tpl_vars['columnid']->value;?>
 &archiveid=<?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['id'];?>
@@ -100,7 +74,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<dt>上一篇:</dt>
 			<dd>
 				<?php if (!empty($_smarty_tpl->tpl_vars['archiveInfo']->value['prev'])){?>
-				<a href="__APP__/index.php?s=article/view&columnid=<?php echo $_smarty_tpl->tpl_vars['columnid']->value;?>
+				<a href="__APP__/index.php?s=Image/view&columnid=<?php echo $_smarty_tpl->tpl_vars['columnid']->value;?>
 &archiveid=<?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['prev']['id'];?>
 " title="<?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['prev']['title'];?>
 "><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['prev']['title'];?>
@@ -114,7 +88,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<dt>下一篇:</dt>
 			<dd>
 				<?php if (!empty($_smarty_tpl->tpl_vars['archiveInfo']->value['next'])){?>
-				<a href="__APP__/index.php?s=article/view&columnid=<?php echo $_smarty_tpl->tpl_vars['columnid']->value;?>
+				<a href="__APP__/index.php?s=Image/view&columnid=<?php echo $_smarty_tpl->tpl_vars['columnid']->value;?>
 &archiveid=<?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['next']['id'];?>
 " title="<?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['next']['title'];?>
 "><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['next']['title'];?>
@@ -139,7 +113,7 @@ $(function(){
     $container.imagesLoaded(function(){
 		$container.masonry({
 			itemSelector: '.box',
-			columnWidth: 100,
+			columnWidth: 1,
         	isAnimated: !Modernizr.csstransitions
 		});
     });
@@ -162,35 +136,27 @@ $(function(){
 				// show elems now they're ready
 				$newElems.animate({ opacity: 1 });
 				$container.masonry( 'appended', $newElems, true );
-				//colorbox展示大图
-			    $("#container .box a").colorbox({
-			    	//图集标记
-			    	rel: "group",
-			    	//图集图片自动切换
-			    	slideshow: true,
-			    	//图片切换时间间隔
-			    	slideshowSpeed : 30000,
-			    	//图片标题
-			    	title: function (){
-			    		return $(this).attr("title");
-			    	}
-			    });
+
+				colorBoxImageShow();
 			});
 		}
     );
 
-    //colorbox展示大图
-    $("#container .box a").colorbox({
-    	//图集标记
-    	rel: "group",
-    	//图集图片自动切换
-    	slideshow: true,
-    	//图片切换时间间隔
-    	slideshowSpeed : 30000,
-    	//图片标题
-    	title: function (){
-    		return $(this).attr("title");
-    	}
-    });
+	//colorbox展示大图
+	var colorBoxImageShow = function (){
+	    $("#container .box a").colorbox({
+	    	//图集标记
+	    	rel: "group",
+	    	//图集图片自动切换
+	    	slideshow: true,
+	    	//图片切换时间间隔
+	    	slideshowSpeed : 30000,
+	    	//图片标题
+	    	title: function (){
+	    		return $(this).attr("title");
+	    	}
+	    });
+	}
+    colorBoxImageShow();
 });
 </script><?php }} ?>

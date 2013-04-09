@@ -54,7 +54,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 				</li>
 				<li class="formblock">
 					<span>文档缩略图:</span>
-					<input type="file" name="image" value="" class="input w150" style="height: 22px;" />
+					<input type="file" name="image" value="/Uploads/Image/201304/08/1365414070_zo95z4_7377.jpg" class="input w150" style="height: 22px;" />
 				</li>
 				<li class="formblock">
 					<span>文档来源:</span>
@@ -66,7 +66,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 				</li>
 				<li class="formblock">
 					<span>更新时间:</span>
-					<input type="text" id="dpicker0" name="publishtime" value="2013-04-08 17:27:36" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="input w150" />
+					<input type="text" id="dpicker0" name="publishtime" value="2013-04-08 17:41:10" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="input w150" />
 					<img width="16" height="22" align="absmiddle" onclick="WdatePicker({el:'dpicker0',dateFmt:'yyyy-MM-dd HH:mm:ss'})" style="cursor:pointer" src="public/plugin/My97DatePicker/skin/datePicker.gif">
 				</li>
 				<li class="formblock">
@@ -119,6 +119,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 				描述: <input type="text" name="imageTitle" value="" class="input w300" />
 			</span>
 			<span>
+				<input type="hidden" name="imageUploadAction" value="" />
 				<input type="button" name="imageUploadButton" class="button btngreen2 btupload" value="上传" />
 			</span>
 		</div>

@@ -41,17 +41,21 @@ class CommonControl extends BaseControl
         return $page;
     }
 
-    //获取分页开始和条数
-    protected function getPages()
+    /**
+     * 获取分页开始和条数
+     * @param int $pagesize 每页显示记录数
+     */
+    protected function getPages($pagesize=10)
     {
+        $pagesize = $pagesize ? $pagesize : $this->_pagesize;
+
         $page = $this->getPage();
-        $start = ($page-1)*$this->_pagesize;
-        $length = $this->_pagesize;
+        $start = ($page-1)*$pagesize;
 
         $this->assign('start',$start);
-        $this->assign('length',$length);
+        $this->assign('length',$pagesize);
 
-        return array($start, $length);
+        return array($start, $pagesize);
     }
 
     //跳转到主页

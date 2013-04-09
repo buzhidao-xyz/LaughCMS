@@ -7,11 +7,13 @@ $("input[name=imageUploadButton]").click(function (){
 		return false;
 	}
 	var imageTitle = $("input[name=imageTitle]").val();
-	var url = $("#imageUploadBox").attr("ajaxUrl");
+	var imageUploadAction = $("input[name=imageUploadAction]").val();
+	var imageUploadUrl = $("#imageUploadBox").attr("ajaxUrl")+"&imageUploadAction="+imageUploadAction+"&imageTitle="+imageTitle;
+	
 	$.ajaxFileUpload ({
-		url : url+"&imageTitle="+imageTitle,
-		secureuri :false,
-		fileElementId :'images',
+		url : imageUploadUrl,
+		secureuri : false,
+		fileElementId : 'images',
 		dataType : 'json',
 		success : function (data, status){
 			alert(data.info);

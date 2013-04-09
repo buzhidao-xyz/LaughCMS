@@ -1,30 +1,9 @@
-<div class="box col2">
-  <p>
-    <a rel="group" href="__APP__/themes/default/images/product/detail_img2.jpg" title="图片十"><img src="__APP__/themes/default/images/product/detail_img2.jpg"  /></a>
-  </p>
-</div>
-<div class="box col1">
-  <p>
-    <a rel="group" href="__APP__/themes/default/images/product/detail_img3.jpg" title="图片十一"><img src="__APP__/themes/default/images/product/detail_img3.jpg"  /></a>
-  </p>
-</div>
-<div class="box col1">
-  <p>
-    <a rel="group" href="__APP__/themes/default/images/product/product_img1.jpg" title="图片十二"><img src="__APP__/themes/default/images/product/product_img1.jpg"  /></a>
-  </p>
-</div>
-<div class="box col3">
-  <p>
-    <a rel="group" href="__APP__/themes/default/images/product/detail_img2.jpg" title="图片十三"><img src="__APP__/themes/default/images/product/detail_img2.jpg"  /></a>
-  </p>
-</div>
-<div class="box col2">
-  <p>
-    <a rel="group" href="__APP__/themes/default/images/product/product_img1.jpg" title="图片十四"><img src="__APP__/themes/default/images/product/detail_img1.jpg"  /></a>
-  </p>
-</div>
-<div class="box col2">
-  <p>
-    <a rel="group" href="__APP__/themes/default/images/product/detail_img3.jpg" title="图片十五"><img src="__APP__/themes/default/images/product/detail_img3.jpg"  /></a>
-  </p>
-</div>
+{if isset($archiveInfo.archiveImage)&&!empty($archiveInfo.archiveImage)}
+{foreach $archiveInfo.archiveImage as $image}
+  <div class="box col{$image.coln}">
+    <p>
+        <a rel="group" href="__APP__{$image.imagepath}" title="{$image.imagetitle}"><img src="__APP__{$image.thumbpath}" alt="{$image.imagetitle}" /></a>
+    </p>
+  </div>
+{/foreach}
+{/if}

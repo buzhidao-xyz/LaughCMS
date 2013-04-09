@@ -160,13 +160,13 @@ $(document).ready(function (){
 				<div class="boxBlockBody">
 					<ul class="ImageList">
 																		<li>
-							<a href="/laugh/index.php?s=Image/View&columnid=7&archiveid=15" class="ImageBG"><img src="/laugh/Uploads/Image/201304/08/1365414070_zo95z4_7377.jpg" /></a>
-							<a href="/laugh/index.php?s=Image/View&columnid=7&archiveid=15">客户案例二</a>
-							<span>最后更新: <font color="#999999">2013-04-08</font></span>
-						</li>
-												<li>
 							<a href="/laugh/index.php?s=Image/View&columnid=7&archiveid=14" class="ImageBG"><img src="/laugh/Uploads/Image/201304/08/1365413072_9nqiqs_5725.jpeg" /></a>
 							<a href="/laugh/index.php?s=Image/View&columnid=7&archiveid=14">客户案例一</a>
+							<span>最后更新: <font color="#999999">2013-04-09</font></span>
+						</li>
+												<li>
+							<a href="/laugh/index.php?s=Image/View&columnid=7&archiveid=15" class="ImageBG"><img src="/laugh/Uploads/Image/201304/08/1365414070_zo95z4_7377.jpg" /></a>
+							<a href="/laugh/index.php?s=Image/View&columnid=7&archiveid=15">客户案例二</a>
 							<span>最后更新: <font color="#999999">2013-04-08</font></span>
 						</li>
 																	</ul>

@@ -103,10 +103,13 @@ class Archive extends Base
 	 * 获取文档图片
 	 * @param $archiveid int 文档ID
 	 */
-	public function getArchiveImages($archiveid=null)
+	public function getArchiveImages($archiveid=null,$start=0,$length=0)
 	{
 		if (!$archiveid) return false;
-		return T("images")->where(array("archiveid"=>$archiveid))->select();
+
+		$obj = T("images")->where(array("archiveid"=>$archiveid));
+		if ($length) $obj = $obj->limit($start,$length);
+		return $obj->order("id","asc")->select();
 	}
 
 	/**
