@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2013-04-09 17:33:35
+Date: 2013-04-10 17:30:11
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,7 +37,7 @@ CREATE TABLE `la_admin` (
 -- ----------------------------
 -- Records of la_admin
 -- ----------------------------
-INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1365303128', '2130706433', '127', '1');
+INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1365564113', '2130706433', '127', '1');
 INSERT INTO `la_admin` VALUES ('2', 'luochuan', '624879b3fff70462132a21eb1cd8eb75', 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '1355368421', '2130706433', '12', '0');
 
 -- ----------------------------
@@ -77,7 +77,7 @@ CREATE TABLE `la_archive` (
   `updatetime` int(10) DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`),
   KEY `catalog` (`author`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of la_archive
@@ -97,6 +97,7 @@ INSERT INTO `la_archive` VALUES ('12', 'Vim文本编辑器 v7.3 正式版', 'adm
 INSERT INTO `la_archive` VALUES ('13', 'DNS污染【备忘】', 'admin', '4', null, '', '', 'DNS污染【备忘】', '', 'DNS污染【备忘】', '1', '1', '0', '0', '1364885413', '1364885467');
 INSERT INTO `la_archive` VALUES ('14', '客户案例一', 'admin', '7', '/Uploads/Image/201304/08/1365413072_9nqiqs_5725.jpeg', '', '', '客户案例一', '客户案例一', '客户案例一', '1', '1', '0', '0', '1365487321', '1365492655');
 INSERT INTO `la_archive` VALUES ('15', '客户案例二', 'admin', '7', '/Uploads/Image/201304/08/1365414070_zo95z4_7377.jpg', '', '', '客户案例二', '客户案例二', '客户案例二', '1', '1', '0', '0', '1365413256', '1365414070');
+INSERT INTO `la_archive` VALUES ('16', 'LaughCMS', 'admin', '8', null, '', '', '', '', '', '1', '1', '0', '0', '1365584177', '1365584197');
 
 -- ----------------------------
 -- Table structure for `la_article`
@@ -108,7 +109,7 @@ CREATE TABLE `la_article` (
   `content` longtext COMMENT '文档内容',
   `updatetime` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_article
@@ -123,6 +124,13 @@ INSERT INTO `la_article` VALUES ('7', '7', '&lt;p style=&quot;padding:0px;margin
 INSERT INTO `la_article` VALUES ('8', '8', '&lt;p&gt;&lt;span style=&quot;font-size:14px;&quot;&gt;&lt;span style=&quot;font-family:arial, helvetica, sans-serif;&quot;&gt;首先我们要知道明确单例模式这个概念，那么什么是单例模式呢？&lt;br /&gt;单例模式顾名思义，就是只有一个实例。&lt;br /&gt;作为对象的创建模式， 单例模式确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例，&lt;br /&gt;这个类我们称之为单例类。&lt;br /&gt;单例模式的要点有三个：&lt;br /&gt;一是某个类只能有一个实例；&lt;br /&gt;二是它必须自行创建这个实例；&lt;br /&gt;三是它必须自行向整个系统提供这个实例。&lt;br /&gt;下面我们讨论下为什么要使用PHP单例模式？&lt;br /&gt;多数 人都是从单例模式的字面上的意思来理解它的用途, 认为这是对系统资源的节省, 可以避免重复实例化, 是一种&rdquo;计划生育&rdquo;. 而PHP每次执行完页面都是会从内存中清理掉所有的资源. 因而PHP中的单例实际每次运行都是需要重新实例化的, 这样就失去了单例重复实例化的意义了. 单单从这个方面来说, PHP的单例的确有点让各位失望. 但是单例仅仅只有这个功能和应用吗? 答案是否定的,我们一起来看看。&lt;br /&gt;1. php的应用主要在于数据库应用, 所以一个应用中会存在大量的数据库操作, 在使用面向对象的方式开发时(废话), 如果使用单例模式, 则可以避免大量的new 操作消耗的资源。&lt;br /&gt;2. 如果系统中需要有一个类来全局控制某些配置信息, 那么使用单例模式可以很方便的实现. 这个可以参看zend Framework的FrontController部分。&lt;br /&gt;3. 在一次页面请求中, 便于进行调试, 因为所有的代码(例如数据库操作类db)都集中在一个类中, 我们可以在类中设置钩子, 输出日志，从而避免到处var_dump, echo。&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;pre class=&quot;brush:php;toolbar:false;&quot;&gt;/**\r\n* 设计模式之单例模式\r\n* $_instance必须声明为静态的私有变量\r\n* 构造函数和析构函数必须声明为私有,防止外部程序new\r\n* 类从而失去单例模式的意义\r\n* getInstance()方法必须设置为公有的,必须调用此方法\r\n* 以返回实例的一个引用\r\n* ::操作符只能访问静态变量和静态函数\r\n* new对象都会消耗内存\r\n* 使用场景:最常用的地方是数据库连接。\r\n* 使用单例模式生成一个对象后，\r\n* 该对象可以被其它众多对象所使用。\r\n*/\r\nclass Example\r\n{\r\n    //保存例实例在此属性中\r\n    private static $_instance;\r\n                    \r\n    //构造函数声明为private,防止直接创建对象\r\n    private function __construct()\r\n    {\r\n        echo &lsquo;I am Construceted&rsquo;;\r\n    }\r\n                    \r\n    //单例方法\r\n    public static function singleton()\r\n    {\r\n        if(!isset(self::$_instance))\r\n        {\r\n            $c=__CLASS__;\r\n            self::$_instance=new $c;\r\n        }\r\n        return self::$_instance;\r\n    }\r\n                    \r\n    //阻止用户复制对象实例\r\n    public function __clone()\r\n    {\r\n        trigger_error(&lsquo;Clone is not allow&rsquo; ,E_USER_ERROR);\r\n    }\r\n                    \r\n    function test()\r\n    {\r\n        echo(&ldquo;test&rdquo;);\r\n    }\r\n}\r\n                \r\n// 这个写法会出错，因为构造方法被声明为private\r\n$test = new Example;\r\n                \r\n// 下面将得到Example类的单例对象\r\n$test = Example::singleton();\r\n$test-&amp;gt;test();\r\n                \r\n// 复制对象将导致一个E_USER_ERROR.\r\n$test_clone = clone $test;&lt;/pre&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;', '1364537721');
 INSERT INTO `la_article` VALUES ('9', '10', '&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;web站点默认80为服务端口，关于它的各种安全问题不断的发布出来，这些漏洞中一些甚至允许攻击者获得系统管理员的权限进入站点内部，以下是Zenomorph对一些80端口攻击方式的痕迹的研究，和告诉你怎样从日志记录中发现问题。&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;&lt;strong style=&quot;text-align:center;&quot;&gt;详细描述&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;下面部分通过一些列子，展示对web服务器和其上的应用程序普遍的攻击，和其留下的痕迹，这些列子仅仅是代表了主要的攻击方式，并没有列出所有的攻击形式，这部分将详细描述每种攻击的作用，和其怎样利用这些漏洞进行攻击。&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;（1）&rdquo;.&rdquo; &ldquo;..&rdquo; 和 &ldquo;&hellip;&rdquo; 请求&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;这些攻击痕迹是非常普遍的用于web应用程序和web服务器，它用于允许攻击者或者蠕虫病毒程序改变web服务器的路径，获得访问非公开的区域。大多数的CGI程序漏洞含有这些&rdquo;..&rdquo;请求。&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;Example:&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;http://host/cgi-bin/lame.cgi?file=../../../../etc/motd&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;这个列子展示了攻击者请求mosd这个文件，如果攻击者有能力突破web服务器根目录，那么可以获得更多的信息，并进一步的获得特权。&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;（2）&rdquo;%20&Prime; 请求&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;%20是表示空格的16进制数值，虽然这个并不代表你能够利用什么，但是在你浏览日志的时候会发现它，一些web服务器上运行的应用程序中这个字符可能会被有效的执行，所以，你应该仔细的查看日志。另一方面，这个请求有时可以帮助执行一些命令。&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;Example:&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;http://host/cgi-bin/lame.cgi?page=ls%20-al│&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;这个列子展示了攻击者执行了一个unix的命令，列出请求的整个目录的文件，导致攻击者访问你系统中重要的文件，帮助他进一步取得特权提供条件。&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;（3）&rdquo;%00&Prime; 请求&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;%00表示16进制的空字节，他能够用于愚弄web应用程序，并请求不同类型的文件。&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;Examples:&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;http://host/cgi-bin/lame.cgi?page=index.html&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;这可能是个有效的请求在这个机子上，如果攻击者注意到这个请求动作成功，他会进一步寻找这个cgi程序的问题。&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;http://host/cgi-bin/lame.cgi?page=../../../../etc/motd&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;也许这个cgi程序不接受这个请求，原因在于它要检查这个请求文件的后缀名，如：html.shtml或者其他类型的文件。大多数的程序会告诉你所请求的文件类型无效，这个时候它会告诉攻击者请求的文件必须是一某个字符后缀的文件类型，这样，攻击者可以获得系统的路径，文件名，导致在你的系统获得更多的敏感信息&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;http://host/cgi-bin/lame.cgi?page=../../../../etc/motd%00html&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;注意这个请求，它将骗取cgi程序认为这个文件是个确定的可接受的文件类型，一些应用程序由于愚蠢的检查有效的请求文件，这是攻击者常用的方法。&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;（4）&rdquo;│&rdquo; 请求&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;这是个管道字符，在unix系统用于帮助在一个请求中同时执行多个系统命令。&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;Example:&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;# cat access_log│ grep -i &ldquo;..&rdquo;&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;（这个命令将显示日志中的&ldquo;..&ldquo;请求，常用于发现攻击者和蠕虫攻击）&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;常可以看到有很多web应用程序用这个字符，这也导致IDS日志中错误的报警。&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;在你的程序仔细的检查中，这样是有好处的，可以降低错误的警报在入侵检测系统中。&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;下面给出一些列子：&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;http://host/cgi-bin/lame.cgi?page=../../../../bin/ls│&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;这个请求命令执行，下面是一些变化的列子&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;http://host/cgi-bin/lame.cgi?page=../../../../bin/ls%20-al%20/etc│&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;这个请求在unix系统中列出/etc目录的所有文件&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;http://host/cgi-bin/lame.cgi?page=cat%20access_log│grep%20-i%20&Prime;lame&rdquo;&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;这个请求cat命令的执行并且grep命令也将执行，查询出&rdquo;lame&rdquo;&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;(5)&rdquo;;&rdquo; 请求&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;在unix系统，这个字符允许多个命令在一行执行&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;Example:&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;# id;uname -a&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;（执行id命令后，紧跟着执行uname命令）&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;一些web程序用这个字符，可能导致在你的IDS日志中失败的警告，你应该仔细的检查你的web程序，让你的IDS警报失败的几率降低。&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;（6）&rdquo;&amp;quot; 请求&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;应该检查你的日志记录中这两个字符，众多的原因中，首要的一个是这个字符表明了添加数据在文件中&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;Example 1:&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;# echo &ldquo;your hax0red h0 h0&Prime; &amp;gt;&amp;gt; /etc/motd （请求写信息在motd这个文件中)&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;一个攻击者可以容易的用象上面的这个请求篡改你的web页面。比如著名的RDS exploit常被攻击者用于更改web主页面。&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;Example 2:&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;http://www.2cto.com /something.php=Hi%20mom%20Im%20Bold!&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;你会注意到这里html语言的标志，他同样用了&ldquo;〈&rdquo;，&ldquo;〉&rdquo;字符，这种攻击不能导致攻击者对系统进行访问，它迷惑人们认为这是个合法的信息在web 站点中（导致人们在访问这个联结的时候访问到攻击者设定的地址，这种请求可能会被转变成16进制的编码字符形式，使攻击的痕迹不那么明显）&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;（7）&rdquo;!&rdquo;请求&lt;/p&gt;&lt;p style=&quot;margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;&quot;&gt;这种字符请求常用语对SS(Server Side Include) I进行攻击，如果攻击者迷惑用户点击被攻击者设定的联结，和上面的一样。&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;', '1364799883');
 INSERT INTO `la_article` VALUES ('10', '13', '&lt;p&gt;DNS污染，又称为&lt;strong&gt;域名服务器缓存污染&lt;/strong&gt;（DNS cache pollution）或&lt;strong&gt;域名服务器缓存投毒&lt;/strong&gt;（DNS cache poisoning）&lt;/p&gt;&lt;p&gt;是指一些刻意制造或无意中制造出来的域名服务器&lt;a href=&quot;http://zh.wikipedia.org/wiki/%E5%B0%81%E5%8C%85&quot; title=&quot;分组&quot; class=&quot;mw-redirect&quot;&gt;分组&lt;/a&gt;，把域名指往不正确的IP地址。一般来说，外间在&lt;a href=&quot;http://zh.wikipedia.org/wiki/%E4%BA%92%E8%81%AF%E7%B6%B2&quot; title=&quot;互联网&quot; class=&quot;mw-redirect&quot;&gt;互联网&lt;/a&gt;上一般都有可信赖的&lt;a href=&quot;http://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E5%99%A8&quot; title=&quot;域名服务器&quot; class=&quot;mw-redirect&quot;&gt;域名服务器&lt;/a&gt;，但为减免网络上的交通，一般的域名都会把外间的域名服务器数据暂存起来，待下次有其他机器要求解析域名时，可以立即提供服务。一旦有关网域的局域域名服务器的缓存受到污染，就会把网域内的电脑导引往错误的服务器或服务器的网址。&lt;/p&gt;&lt;p&gt;域名服务器缓存污染可能是通过域名服务器软件上的设计错误而产生，但亦可能由别有用心者通过研究&lt;a href=&quot;http://zh.wikipedia.org/w/index.php?title=%E9%96%8B%E6%94%BE%E6%9E%B6%E6%A7%8B&amp;amp;action=edit&amp;amp;redlink=1&quot; class=&quot;new&quot; title=&quot;开放架构（页面不存在）&quot;&gt;开放架构&lt;/a&gt;的域名服务器系统来利用当中的漏洞。&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;t0&quot;&gt;&lt;/a&gt;&lt;span class=&quot;mw-headline&quot; id=&quot;.E7.B7.A9.E5.AD.98.E6.B1.A1.E6.9F.93.E6.94.BB.E6.93.8A&quot;&gt;缓存污染攻击&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;一般来说，一部连上了互联网的电脑都会使用&lt;a href=&quot;http://zh.wikipedia.org/wiki/%E4%BA%92%E8%81%AF%E7%B6%B2%E6%9C%8D%E5%8B%99%E4%BE%9B%E6%87%89%E5%95%86&quot; title=&quot;互联网服务提供商&quot; class=&quot;mw-redirect&quot;&gt;互联网服务提供商&lt;/a&gt;提供的域名服务器。这个服务器一般只会为供应商的客户来服务，通常都会储蓄起部分客户曾经请求过的域名的缓存。缓存污染攻击就是针对这一种服务器，以影响服务器的用户或下游服务。&lt;/p&gt;&lt;h2&gt;&lt;a name=&quot;t1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;mw-headline&quot; id=&quot;.E9.98.B2.E7.81.AB.E9.95.B7.E5.9F.8E.E7.9A.84.E7.B7.A9.E5.AD.98.E6.B1.A1.E6.9F.93.E6.94.BB.E6.93.8A&quot;&gt;防火长城的缓存污染攻击&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;在中国大陆，对于所有经过&lt;a href=&quot;http://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%B7%E5%9F%8E&quot; title=&quot;防火长城&quot; class=&quot;mw-redirect&quot;&gt;防火长城&lt;/a&gt;的在UDP的53端口上的域名查询进行IDS&lt;a href=&quot;http://zh.wikipedia.org/wiki/%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B&quot; title=&quot;入侵检测&quot; class=&quot;mw-redirect&quot;&gt;入侵检测&lt;/a&gt;，一经发现与黑名单关键词相匹配的域名查询请求，其会马上伪装成目标域名的解析服务器给查询者返回虚假结果。由于通常的域名查询没有任何认证机制，而且域名查询通常基于的UDP协议是无连接不可靠的协议，查询者只能接受最先到达的格式正确结果，并丢弃之后的结果。&lt;sup id=&quot;cite_ref-gfw_2-0&quot; class=&quot;reference&quot;&gt;&lt;a href=&quot;http://zh.wikipedia.org/wiki/DNS%E6%B1%A1%E6%9F%93#cite_note-gfw-2&quot;&gt;[2]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;&lt;ul class=&quot; list-paddingleft-2&quot;&gt;&lt;li&gt;&lt;p&gt;对于不了解相关知识的网民来说也就是，由于系统默认使用的&lt;a href=&quot;http://zh.wikipedia.org/wiki/ISP&quot; title=&quot;ISP&quot;&gt;ISP&lt;/a&gt;提供的域名查询服务器查询国外的权威服务器时即被防火长城被污染，使其缓存受到污染，因而默认情况下查询ISP的服务器就会获得虚假IP地址；而用户直接查询境外域名查询服务器（比如&lt;a href=&quot;http://zh.wikipedia.org/wiki/Google_Public_DNS&quot; title=&quot;Google Public DNS&quot;&gt;Google Public DNS&lt;/a&gt;）有可能会被防火长城污染，从而在没有任何防范机制的情况下仍然不能获得目标网站正确的IP地址。&lt;sup id=&quot;cite_ref-gfw_2-1&quot; class=&quot;reference&quot;&gt;&lt;a href=&quot;http://zh.wikipedia.org/wiki/DNS%E6%B1%A1%E6%9F%93#cite_note-gfw-2&quot;&gt;[2]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;ul class=&quot; list-paddingleft-2&quot;&gt;&lt;li&gt;&lt;p&gt;防火长城暂时未对TCP协议下的域名查询进行污染，故现在能通过强制使用TCP协议查询真实的IP地址：Windows下打开&lt;a href=&quot;http://zh.wikipedia.org/wiki/%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E7%AC%A6&quot; title=&quot;命令提示符&quot; class=&quot;mw-redirect&quot;&gt;命令提示符&lt;/a&gt;，输入nslookup -vc 要查询的域名 境外DNS服务器的IP地址（必须支持TCP协议查询，否则不会返回查询结果），回车后能返回正确的目标服务器IP地址。而现实的情况是，防火长城对于真实的IP地址也可能会采取其它的手段进行封锁，故能否真正访问可能还需要其它&lt;a href=&quot;http://zh.wikipedia.org/wiki/%E7%BF%BB%E5%A2%99&quot; title=&quot;翻墙&quot; class=&quot;mw-redirect&quot;&gt;翻墙&lt;/a&gt;的手段。&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h2 class=&quot;headline-1 bk-sidecatalog-title&quot;&gt;&lt;a name=&quot;t2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;headline-content&quot;&gt;验证DNS污染的办法&lt;/span&gt;&lt;/h2&gt;&lt;div class=&quot;para&quot;&gt;我们在命令行下通过这样一条命令 nslookup 域名 144.223.234.234，即可判断该域名是否被污染，由于144.223.234.234不存在，理应没有任何返回。但我们却得到了一个错误的IP（不确定）。即可证明这个域名已经被DNS污染了。&lt;/div&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;div&gt;&lt;span style=&quot;font-size:14px&quot;&gt;&lt;strong&gt;解决DNS污染方案&lt;/strong&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;1、修改hosts文件，操作系统中Hosts文件的优先级高于DNS服务器，操作系统在访问某个域名时，会先检测HOSTS文件，然后再查询DNS服务器。可以在hosts添加受到污染的DNS地址来解决DNS污染和DNS劫持。&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;2、如果你是Firefox only用户，并且只用Firefox，又懒得折腾，直接打开Firefox的远程DNS解析就行了。在地址栏中输入about:config找到network.proxy.socks_remote_dns一项改成true。&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;3、使用各种SSH加密代理，在加密代理里进行远程DNS解析，或者使用VPN上网。&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;4、通过一些软件编程处理，可以直接忽略返回结果是虚假IP地址的数据包，直接解决DNS污染的问题。&lt;/div&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;', '1364885467');
+INSERT INTO `la_article` VALUES ('11', '16', '', '1365580583');
+INSERT INTO `la_article` VALUES ('12', '17', '', '1365580768');
+INSERT INTO `la_article` VALUES ('13', '18', '', '1365580953');
+INSERT INTO `la_article` VALUES ('14', '19', '', '1365580984');
+INSERT INTO `la_article` VALUES ('15', '20', '', '1365581050');
+INSERT INTO `la_article` VALUES ('16', '21', '', '1365581060');
+INSERT INTO `la_article` VALUES ('17', '22', '', '1365581122');
 
 -- ----------------------------
 -- Table structure for `la_attachment`
@@ -136,13 +144,15 @@ CREATE TABLE `la_attachment` (
   `savename` varchar(100) DEFAULT NULL COMMENT '文件保存名称',
   `filesize` int(10) NOT NULL DEFAULT '0',
   `filetype` varchar(20) DEFAULT NULL COMMENT '文件类型(后缀名)',
+  `downloadnum` int(10) NOT NULL DEFAULT '0' COMMENT '下载次数',
   `createtime` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_attachment
 -- ----------------------------
+INSERT INTO `la_attachment` VALUES ('1', '16', '/Uploads/Attachment/201304/10/1365584197_8gvt71_1658.zip', 'LaughCMS.zip', '1365584197_8gvt71_1658.zip', '168', 'zip', '0', '1365584197');
 
 -- ----------------------------
 -- Table structure for `la_class`
@@ -225,20 +235,19 @@ CREATE TABLE `la_column_model` (
   `status` tinyint(1) DEFAULT '1' COMMENT '0禁用1启用',
   `createtime` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_column_model
 -- ----------------------------
 INSERT INTO `la_column_model` VALUES ('1', '文章模型', '文章模型', '0', '0', 'article', '', 'Article', 'Article/index.html', 'Article/add.html', 'Article/edit.html', '1', null);
-INSERT INTO `la_column_model` VALUES ('2', '图片模型', '图集模型', '0', '0', 'image', '', 'Image', null, null, null, '1', null);
-INSERT INTO `la_column_model` VALUES ('3', '下载模型', '下载模型', '0', '0', 'download', '', 'Download', null, null, null, '1', null);
-INSERT INTO `la_column_model` VALUES ('4', '专题模型', '专题模型', '0', '0', 'spec', '', 'Special', null, null, null, '1', '1363315175');
+INSERT INTO `la_column_model` VALUES ('2', '图片模型', '图集模型', '0', '0', 'image', '', 'Image', 'Image/index.html', 'Image/add.html', 'Image/edit.html', '1', null);
+INSERT INTO `la_column_model` VALUES ('3', '下载模型', '下载模型', '0', '0', 'download', '', 'Download', 'Download/index.html', 'Download/add.html', 'Download/edit.html', '1', null);
+INSERT INTO `la_column_model` VALUES ('4', '专题模型', '专题模型', '0', '0', 'topic', '', 'Topic', 'Topic/index.html', 'Topic/add.html', 'Topic/edit.html', '1', '1363315175');
 INSERT INTO `la_column_model` VALUES ('5', '软件模型', '', '0', '0', 'soft', '', 'Soft', null, null, null, '1', '1363315203');
 INSERT INTO `la_column_model` VALUES ('6', '产品模型', '', '0', '0', 'product', '', 'Product', 'Product/index.html', 'Product/add.html', 'Product/edit.html', '1', '1363315247');
 INSERT INTO `la_column_model` VALUES ('7', '分类信息模型', '', '0', '0', 'info', '', 'Info', null, null, null, '1', '1363315306');
-INSERT INTO `la_column_model` VALUES ('8', '人才招聘模型', '', '0', '0', 'cooperate', '', 'Cooperate', null, null, null, '1', '1363597871');
-INSERT INTO `la_column_model` VALUES ('9', '公共模型', '公共模型 关于我们、联系我们等', '0', '0', 'public', '', 'Public', null, null, null, '1', '1364969716');
+INSERT INTO `la_column_model` VALUES ('8', '公共模型', '公共模型 关于我们、联系我们等', '0', '0', 'public', '', 'Public', null, null, null, '1', '1364969716');
 
 -- ----------------------------
 -- Table structure for `la_comment`
@@ -254,19 +263,6 @@ CREATE TABLE `la_comment` (
 
 -- ----------------------------
 -- Records of la_comment
--- ----------------------------
-
--- ----------------------------
--- Table structure for `la_download`
--- ----------------------------
-DROP TABLE IF EXISTS `la_download`;
-CREATE TABLE `la_download` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of la_download
 -- ----------------------------
 
 -- ----------------------------
@@ -311,7 +307,7 @@ CREATE TABLE `la_images` (
   `height` int(10) NOT NULL DEFAULT '0' COMMENT '图片高度',
   `createtime` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_images
@@ -337,7 +333,6 @@ INSERT INTO `la_images` VALUES ('18', '/Uploads/Image/201304/09/1365474477_zuf1e
 INSERT INTO `la_images` VALUES ('19', '/Uploads/Image/201304/09/1365474490_nc8o3r_168.jpg', '/Uploads/Image/201304/09/thumb_1365474490_nc8o3r_168.jpg', '案例图片八', '', '14', '大道.jpg', '1365474490_nc8o3r_168.jpg', '234678', '640', '480', '1365474490');
 INSERT INTO `la_images` VALUES ('20', '/Uploads/Image/201304/09/1365487039_z77rqj_6345.jpg', '/Uploads/Image/201304/09/thumb_1365487039_z77rqj_6345.jpg', '案例图片九', '', '14', 'Winter.jpg', '1365487039_z77rqj_6345.jpg', '105542', '800', '600', '1365487039');
 INSERT INTO `la_images` VALUES ('21', '/Uploads/Image/201304/09/1365487318_rkq34w_7563.jpg', '/Uploads/Image/201304/09/thumb_1365487318_rkq34w_7563.jpg', '案例图片十', '', '14', 'Sunset.jpg', '1365487318_rkq34w_7563.jpg', '71189', '800', '600', '1365487318');
-INSERT INTO `la_images` VALUES ('22', '/Uploads/Image/201304/09/1365492652_osb45h_8463.jpg', '/Uploads/Image/201304/09/thumb_1365492652_osb45h_8463.jpg', '案例图片十一', '', '14', '2008413123199462.jpg', '1365492652_osb45h_8463.jpg', '1126280', '1600', '1200', '1365492652');
 
 -- ----------------------------
 -- Table structure for `la_node`
@@ -356,7 +351,7 @@ CREATE TABLE `la_node` (
   `isshow` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `pid` (`pid`)
-) ENGINE=MyISAM AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_node
@@ -392,8 +387,8 @@ INSERT INTO `la_node` VALUES ('28', '一键更新网站', '', 'Cache', 'updateAl
 INSERT INTO `la_node` VALUES ('29', '更新系统缓存', '', 'Cache', 'systemCache', '27', '0', '1358997259', '1358997259', '1');
 INSERT INTO `la_node` VALUES ('30', '常规插件', '', '', '', '0', '5', '1358999125', '1358999125', '1');
 INSERT INTO `la_node` VALUES ('31', '留言板', '', 'Plugin', '', '30', '0', '1358999272', '1358999272', '1');
-INSERT INTO `la_node` VALUES ('32', '友情链接', '', 'Plugin', 'flinkManage', '30', '0', '1359010748', '1359010748', '1');
-INSERT INTO `la_node` VALUES ('33', '文件管理器', '', 'Plugin', 'fileManage', '30', '0', '1359010791', '1359010791', '1');
+INSERT INTO `la_node` VALUES ('32', '人才招聘', '', 'Plugin', 'Cooperate', '30', '0', '1359010748', '1359010748', '1');
+INSERT INTO `la_node` VALUES ('33', '友情链接', '', 'Plugin', 'flinkManage', '30', '0', '1359010791', '1359010791', '1');
 INSERT INTO `la_node` VALUES ('34', '基本设置', '', '', '', '0', '6', '1359011153', '1359011153', '1');
 INSERT INTO `la_node` VALUES ('35', '系统基本参数', '', 'System', 'setInfo', '34', '0', '1359011177', '1359011177', '1');
 INSERT INTO `la_node` VALUES ('36', '系统日志管理', '', 'System', 'sysLog', '34', '0', '1359011220', '1359011220', '1');
@@ -407,6 +402,10 @@ INSERT INTO `la_node` VALUES ('43', '顶部广告', '', 'Advertise', 'TopAd', '4
 INSERT INTO `la_node` VALUES ('44', '首页中部banner', '', 'Advertise', 'HomeCenterAd', '42', '0', '1364264199', '1364264199', '1');
 INSERT INTO `la_node` VALUES ('45', '图片管理', '', '', '', '0', '3', '1364265992', '1364265992', '1');
 INSERT INTO `la_node` VALUES ('46', '首页轮播图片', '', 'Image', 'HomeScrollImage', '45', '0', '1364266173', '1364266173', '1');
+INSERT INTO `la_node` VALUES ('47', '下载管理', '', 'Download', 'index', '20', '0', '1365562641', '1365562641', '1');
+INSERT INTO `la_node` VALUES ('48', '文件管理器', '', 'Plugin', 'fileManage', '30', '0', '1365562785', '1365562785', '1');
+INSERT INTO `la_node` VALUES ('49', '专题管理', '', 'Topic', 'index', '20', '0', '1365562964', '1365562964', '1');
+INSERT INTO `la_node` VALUES ('50', '软件管理', '', 'Soft', 'index', '20', '0', '1365563043', '1365563043', '1');
 
 -- ----------------------------
 -- Table structure for `la_product`

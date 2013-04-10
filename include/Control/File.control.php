@@ -93,7 +93,7 @@ class FileControl extends CommonControl
 	public function upFile()
 	{
 		$upload = new UploadHelper();
-		$upload->savePath =  $this->makeSavePath("File");
+		$upload->savePath =  $this->makeSavePath("Attachment");
 
 		if(!$upload->upload()) {
 			$this->fileUploadReturn("","","",$upload->getErrorMsg());

@@ -266,6 +266,9 @@ class UploadHelper
     // 例如可以是 md5_file sha1_file 等
     public $hashType = 'md5_file';
 
+    // input名称
+    public $inputName;
+
     // 错误信息
     private $error = '';
 
@@ -533,25 +536,28 @@ class UploadHelper
      * @access private
      * @param array $files  上传的文件变量
      * @return array
+     * edit by buzhidao FILES数组匹配inputname才进入数组
      */
     private function dealFiles($files) {
-       $fileArray = array();
-       $n = 0;
-       foreach ($files as $file){
-           if(is_array($file['name'])) {
-               $keys = array_keys($file);
-               $count    =   count($file['name']);
-               for ($i=0; $i<$count; $i++) {
-                   foreach ($keys as $key)
-                       $fileArray[$n][$key] = $file[$key][$i];
-                   $n++;
-               }
-           }else{
-               $fileArray[$n] = $file;
-               $n++;
-           }
-       }
-       return $fileArray;
+        $fileArray = array();
+        $n = 0;
+        foreach ($files as $key=>$file){
+            if ($key == $this->inputName) {
+                if(is_array($file['name'])) {
+                    $keys = array_keys($file);
+                    $count    =   count($file['name']);
+                    for ($i=0; $i<$count; $i++) {
+                        foreach ($keys as $key)
+                           $fileArray[$n][$key] = $file[$key][$i];
+                        $n++;
+                    }
+                }else{
+                    $fileArray[$n] = $file;
+                    $n++;
+                }
+            }
+        }
+        return $fileArray;
     }
     
     public function readFile($filename)

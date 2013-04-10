@@ -108,6 +108,7 @@ class CTModelControl extends CommonControl
     protected function _getImage()
     {
         $upload = new UploadHelper();
+        $upload->inputName = "image";
         $upload->thumb = true;
         $upload->thumbMaxWidth = self::$_Width;
         $upload->thumbMaxHeight = self::$_Height;

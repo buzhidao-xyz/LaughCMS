@@ -4,10 +4,10 @@
  * by buzhidao 2013-02-01
  * 处理逻辑数据 执行具体的功能操作
  */
-class DownloadControl extends CommonControl
+class DownloadControl extends ArchiveControl
 {
 	//控制器名
-    protected $_control = 'download';
+    protected $_control = 'Download';
 
 	public function __construct()
 	{
@@ -17,7 +17,11 @@ class DownloadControl extends CommonControl
 	//主入口
 	public function index()
 	{
-		$this->assign("page", getPage(170,15));
+		list($start,$length) = $this->getPages();
+		$ArchiveList = $this->getAllArchive();
+
+		$this->assign("ArchiveList", $ArchiveList['data']);
+		$this->assign("page", getPage($ArchiveList['total'],$this->_pagesize));
 		$this->display("Download/index.html");
 	}
 }

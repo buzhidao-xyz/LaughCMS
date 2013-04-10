@@ -147,6 +147,7 @@ class ImageControl extends ArchiveControl
 	private function _getScrollImage()
 	{
 		$upload = new UploadHelper();
+		$upload->inputName = "scrollImage";
 		$upload->maxSize  = self::$_ImageSize;
 		$upload->savePath =  C("UPLOAD_PATH")."/ScrollImage/";
 		if(!$upload->upload()) {
@@ -246,6 +247,7 @@ class ImageControl extends ArchiveControl
 		$archiveid = null;
 
 		$upload = new UploadHelper();
+		$upload->inputName = "images";
 		$upload->thumb = true;
 		if ($imageUploadAction = "Album") {
 			$upload->thumbMaxWidth = self::$_Album_Width;
