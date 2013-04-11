@@ -2,7 +2,7 @@
 /**
  * 后台配置文件
  */
-$config_dir = str_replace('/admin/include/config', '', str_replace('\\', '/', dirname(__FILE__))).'/include/config';
+$config_dir = str_replace('/admin/include/Config', '', str_replace('\\', '/', dirname(__FILE__))).'/include/Config';
 
 require_once($config_dir.'/config.php');
 

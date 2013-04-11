@@ -63,7 +63,17 @@ class AttachmentControl extends ArchiveControl
 			$FileInfo = $FileInfo[0];
 			$filepath = str_replace(ROOT_DIR, "", $FileInfo['savepath'].$FileInfo['savename']);
 			$attachmentid = M("Attachment")->saveAttachment($archiveid,$filepath,$FileInfo['name'],$FileInfo['savename'],$FileInfo['size'],$FileInfo['extension'],0,TIMESTAMP);
-			return $attachmentid;
+			return $attachmentid ? $attachmentid : 0;
 		}
+	}
+
+	/**
+	 * 删除文档附件关联
+	 * @param int $archiveid 文档id
+	 */
+	public function deleteArchiveAttachment($archiveid=null)
+	{
+		if (!$archiveid) return false;
+		return M("Attachment")->deleteArchiveAttachment($archiveid);
 	}
 }

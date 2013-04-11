@@ -87,9 +87,33 @@ class DownloadControl extends ArchiveControl
 		$data = $this->dealArchiveSubmit();
 		$return = M("Archive")->upArchive($ArchiveID,$data['title'],$data['tag'],$data['source'],$data['author'],$data['columnid'],$data['status'],$data['seotitle'],$data['keyword'],$data['description'],$data['image'],$data['publishtime']);
 		if ($return) {
-			
+			M("Attachment")->deleteArchiveAttachment($ArchiveID);
+			$return = D('Attachment')->saveAttachment($ArchiveID);
+			if ($return === false) {
+				$this->display("Common/error.html");
+			} else {
+				$NextOperation = array(
+					array('name'=>'查看修改', 'link'=>__APP__.'/index.php?s=Download/edit&archiveid='.$ArchiveID)
+				);
+				$this->assign("NextOperation", $NextOperation);
+				$this->display("Common/success.html");
+			}
 		} else {
 			$this->display("Common/error.html");
 		}
+	}
+
+	//回收站
+	public function recover()
+	{
+		$this->assign("accessStatus", 1);
+
+		list($start,$length) = $this->getPages();
+        $dataList = M("Download")->getDownload(null,$start,$length,0,null,$this->_Control);
+        $this->assign("total", $dataList['total']);
+        $this->assign("dataList", $dataList['data']);
+
+        $this->assign("page", getPage($dataList['total'],$this->_pagesize));
+		$this->display("Download/recover.html");
 	}
 }

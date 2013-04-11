@@ -18,8 +18,8 @@ class DownloadControl extends ArchiveControl
 	public function index()
 	{
 		list($start,$length) = $this->getPages();
-		$ArchiveList = $this->getAllArchive();
-
+		$ArchiveList = $this->getAllDownload();
+dump($ArchiveList);exit;
 		$this->assign("ArchiveList", $ArchiveList['data']);
 		$this->assign("page", getPage($ArchiveList['total'],$this->_pagesize));
 		$this->display("Download/index.html");

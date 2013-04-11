@@ -10,4 +10,12 @@ class Download extends Archive
 	{
 		parent::__construct();
 	}
+
+	/**
+	 * 获取下载文件
+	 */
+	public function getAllDownload()
+	{
+
+	}
 }

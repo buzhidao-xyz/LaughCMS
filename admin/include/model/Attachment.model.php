@@ -60,4 +60,14 @@ class Attachment extends Archive
 		if (!$archiveid) return false;
 		return T("Attachment")->where(array("archiveid"=>$archiveid))->find();
 	}
+
+	/**
+	 * 删除文档附件关联
+	 * @param int $archiveid 文档id
+	 */
+	public function deleteArchiveAttachment($archiveid=null)
+	{
+		if (!$archiveid) return false;
+		return T("Attachment")->where(array("archiveid"=>$archiveid))->update(array("archiveid"=>0));
+	}
 }
