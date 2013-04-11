@@ -86,13 +86,13 @@ var JS_APP = '/laugh';
 		<a href="/laugh/index.php?s=Download/index&columnid=8" class="">下载中心</a>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Public/index&columnid=9" class="">招贤纳士</a>
+		<a href="/laugh/index.php?s=Info/index&columnid=9" class="">招贤纳士</a>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Index/AboutUS&columnid=10" class="">关于我们</a>
+		<a href="/laugh/index.php?s=Public/AboutUS&columnid=10" class="">关于我们</a>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Index/ContactUS&columnid=11" class="">联系我们</a>
+		<a href="/laugh/index.php?s=Public/ContactUS&columnid=11" class="">联系我们</a>
 			</li>
 	</ul>
 <script type="text/javascript" src="public/plugin/superfish/js/hoverIntent.js"></script>

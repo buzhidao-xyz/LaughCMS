@@ -28,7 +28,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 <div class="formContainer" accessStatus=1>
 	<div class="formtitle"><h5>修改文档资料</h5></div>
 	<form name="newform" action="/laugh/admin/index.php?s=Download/saveEdit" enctype="multipart/form-data" method="post" class="newform">
-		<input type="hidden" name="archiveid" value="16" />
+		<input type="hidden" name="archiveid" value="20" />
 		<ul class="formbody">
 			<div class="shtabtitlec">
 				<div class="shtabtitle shtabcurrent"><a href="javascript:;"><span>常规内容</span></a></div>
@@ -39,7 +39,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 			<div class="shtabcontent shtabcontentcurrent">
 				<li class="formblock">
 					<span>文档标题:</span>
-					<input type="text" name="title" value="LaughCMS" class="input w300" />
+					<input type="text" name="title" value="SCWS中文分词软件" class="input w300" />
 				</li>
 				<li class="formblock">
 					<span>文档标签:</span>
@@ -65,7 +65,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 				</li>
 				<li class="formblock">
 					<span>更新时间:</span>
-					<input type="text" id="dpicker0" name="publishtime" value="2013-04-11 10:12:05" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="input w150" />
+					<input type="text" id="dpicker0" name="publishtime" value="2013-04-11 16:41:18" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="input w150" />
 					<img width="16" height="22" align="absmiddle" onclick="WdatePicker({el:'dpicker0',dateFmt:'yyyy-MM-dd HH:mm:ss'})" style="cursor:pointer" src="public/plugin/My97DatePicker/skin/datePicker.gif">
 				</li>
 				<li class="formblock">
@@ -95,11 +95,11 @@ var JS_APPM = 'http://localhost:82/laugh';
 					<div id="fileBox">
 												<div class="fileBoxName">
 							<font color="#4E4E4E">文件名称: </font>
-							<font color="#747474">LaughCMS.zip</font>
+							<font color="#747474">scws-1.2.0.tar.bz2</font>
 						</div>
 						<div class="fileBoxSize">
 							<font color="#4E4E4E">文件大小: </font>
-							<font color="#747474">168B</font>
+							<font color="#747474">364.81KB</font>
 						</div>
 						<div class="fileBoxNum">
 							<font color="#4E4E4E">下载次数: </font>

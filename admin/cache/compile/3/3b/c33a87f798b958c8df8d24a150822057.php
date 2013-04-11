@@ -30,7 +30,7 @@ var JS_APPM = 'http://localhost:82/laugh';
 	<a href="/laugh/admin/index.php?s=Download/add">上传新文件</a>
 	<a href="/laugh/admin/index.php?s=Download/recover">回收站</a>
 </div>
-<div class="captitle"><h5>下载列表 【目前共有1条文档】</h5></div>
+<div class="captitle"><h5>下载列表 【目前共有2条文档】</h5></div>
 <ul class="table_list_title">
 	<li class="table_list_l table_list_l30"></li>
 	<li class="table_list_l table_list_l50">ID</li>
@@ -43,6 +43,23 @@ var JS_APPM = 'http://localhost:82/laugh';
 	</ul>
 <div class="contentTableList">
             <ul class="table_list">
+		<li class="table_list_l table_list_l30">
+			<input type="checkbox" name="archiveid[]" value="17" flag="archiveID" class="checkbox" />
+		</li>
+		<li class="table_list_l table_list_l50">17</li>
+		<li class="table_list_l table_list_l300" title="SCWS中文分词软件">
+			SCWS中文分词软件
+		</li>
+    	<li class="table_list_l table_list_l150">2013-04-11 16:41:18</li>
+    	<li class="table_list_l table_list_l120">下载中心</li>
+		<li class="table_list_l table_list_l100">admin</li>
+		<li class="table_list_l table_list_l80">0</li>
+    	    	<li class="table_list_l table_list_l120" accessStatus=1>
+    		<a href="/laugh/admin/index.php?s=Download/edit&archiveid=17">修改</a>
+    		<a delurl="/laugh/admin/index.php?s=Archive/recoverArchive&archiveid=17" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
+    	    </ul>
+        <ul class="table_list">
 		<li class="table_list_l table_list_l30">
 			<input type="checkbox" name="archiveid[]" value="16" flag="archiveID" class="checkbox" />
 		</li>

@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-11 09:45:53
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-11 16:44:31
          compiled from "C:\xampp\htdocs\laugh\themes\default\Download\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:31253516615d1ab0596-75011266%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:7856516677ef53d213-25769048%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '6ed13491c35e3df74e3c1442205bbe5a9241c629' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\Download\\index.html',
-      1 => 1365562501,
+      1 => 1365663992,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '31253516615d1ab0596-75011266',
+  'nocache_hash' => '7856516677ef53d213-25769048',
   'function' => 
   array (
   ),
@@ -20,12 +20,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'CurrentPosition' => 0,
     'Column' => 0,
     'ArchiveList' => 0,
+    'd' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_516615d1b52904_69297485',
+  'unifunc' => 'content_516677ef619907_73045779',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_516615d1b52904_69297485')) {function content_516615d1b52904_69297485($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_516677ef619907_73045779')) {function content_516677ef619907_73045779($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate ("Common/Top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
@@ -61,15 +62,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 foreach ($_from as $_smarty_tpl->tpl_vars['d']->key => $_smarty_tpl->tpl_vars['d']->value){
 $_smarty_tpl->tpl_vars['d']->_loop = true;
 ?>
+						<ul class="downloadBody">
+							<li class="w50"><?php echo $_smarty_tpl->tpl_vars['d']->value['AutoIndex'];?>
+</li>
+							<li class="w250"><?php echo $_smarty_tpl->tpl_vars['d']->value['filename'];?>
+</li>
+							<li class="w100"><?php echo formatBytes($_smarty_tpl->tpl_vars['d']->value['filesize']);?>
+</li>
+							<li class="w100"><?php echo mkdate($_smarty_tpl->tpl_vars['d']->value['createtime'],'d');?>
+</li>
+							<li class="w50"><a href="__APP__/index.php?s=File/Download&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['attachmentid'];?>
+" target="_blank">下载</a></li>
+						</ul>
 						<?php } ?>
 						<?php }?>
-						<ul class="downloadBody">
-							<li class="w50">1</li>
-							<li class="w250">Laugh CMS正式版</li>
-							<li class="w100">7.56M</li>
-							<li class="w100">2012-02-03</li>
-							<li class="w50"><a href="javascript:;" target="_blank">下载</a></li>
-						</ul>
 					</div>
 					<?php echo $_smarty_tpl->getSubTemplate ("common/Page.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 

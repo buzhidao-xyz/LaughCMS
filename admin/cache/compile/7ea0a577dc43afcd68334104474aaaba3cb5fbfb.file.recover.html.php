@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-11 10:21:04
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-11 16:41:41
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\Download\recover.html" */ ?>
-<?php /*%%SmartyHeaderCode:2349451661e100bcbc9-17306189%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:16026516677458cc268-81461741%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2349451661e100bcbc9-17306189',
+  'nocache_hash' => '16026516677458cc268-81461741',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_51661e101d5342_95588543',
+  'unifunc' => 'content_516677459e7b01_82535172',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51661e101d5342_95588543')) {function content_51661e101d5342_95588543($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_516677459e7b01_82535172')) {function content_516677459e7b01_82535172($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="captitle"><h5>下载文档回收站 【目前共有<?php if ($_smarty_tpl->tpl_vars['total']->value){?><?php echo $_smarty_tpl->tpl_vars['total']->value;?>
 <?php }else{ ?>0<?php }?>条文档】</h5></div>

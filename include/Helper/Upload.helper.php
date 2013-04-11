@@ -670,15 +670,13 @@ class UploadHelper
         if (empty($rule)) {//没有定义命名规则，则保持文件名不变
             $saveName = $filename['name'];
         } else {
-            $imginfo = pathinfo($filename['name']);
             if(function_exists($rule)) {
-
                 //使用函数生成一个唯一文件标识号
-                $saveName = $rule()."_".getRandStrs(6,2)."_".rand(1,10000).'.'.$imginfo['extension'];
+                $saveName = $rule()."_".getRandStrs(6,2)."_".rand(1,10000).'_'.$filename['name'];
             } else {
                 //使用给定的文件名作为标识号
                 //$saveName = $rule."_".$filename['name'];
-                $saveName = $rule."_".getRandStrs(6,2)."_".rand(1,10000).'.'.$imginfo['extension'];
+                $saveName = $rule."_".getRandStrs(6,2)."_".rand(1,10000).'_'.$filename['name'];
             }
         }
         if ($this->autoSub) {

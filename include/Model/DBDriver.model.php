@@ -198,15 +198,20 @@ class DBDriver implements DBDriver_Interface
         global $orm;
         if (!$key) return $orm[self::$_table];
 
+        $strAsArray = array(' as ',' As ',' aS ',' AS ');
+        if (strpos($key, ' as ') || strpos($key, ' As ') || strpos($key, ' aS ') || strpos($key, ' AS ')) {
+            $key = str_replace($strAsArray,' ',$key);
+        }
+
         if (preg_match("/^a\./", $key)) {
             $key = str_replace('a.', '', $key);
             $pos = strpos($key, ' ');
             $alias = $pos !== false ? substr($key, $pos) : '';
             $key = $pos !== false ? substr($key, 0, $pos) : $key;
             if (!is_array($orm) || empty($orm) || !array_key_exists(self::$_table, $orm) || !array_key_exists($key, $orm[self::$_table])) {
-                return 'a.'.$sepflag1.$key.$alias.$sepflag2;
+                return $alias ? 'a.'.$sepflag1.$key.$sepflag2." AS ".$sepflag1.$alias.$sepflag2 : 'a.'.$sepflag1.$key.$sepflag2;
             } else {
-                return 'a.'.$sepflag1.$orm[self::$_table][$key].$alias.$sepflag2;
+                return $alias ? 'a.'.$sepflag1.$orm[self::$_table][$key].$sepflag2." AS ".$sepflag1.$alias.$sepflag2 : 'a.'.$sepflag1.$orm[self::$_table][$key].$sepflag2;
             }
         }
         if (preg_match("/^b\./", $key)) {
@@ -215,16 +220,19 @@ class DBDriver implements DBDriver_Interface
             $alias = $pos !== false ? substr($key, $pos) : '';
             $key = $pos !== false ? substr($key, 0, $pos) : $key;
             if (!is_array($orm) || empty($orm) || !array_key_exists(self::$_join_table, $orm) || !array_key_exists($key, $orm[self::$_join_table])) {
-                return 'b.'.$sepflag1.$key.$alias.$sepflag2;
+                return $alias ? 'b.'.$sepflag1.$key.$sepflag2." AS ".$sepflag1.$alias.$sepflag2 : 'b.'.$sepflag1.$key.$sepflag2;
             } else {
-                return 'b.'.$sepflag1.$orm[self::$_join_table][$key].$alias.$sepflag2;
+                return $alias ? 'b.'.$sepflag1.$orm[self::$_join_table][$key].$sepflag2." AS ".$sepflag1.$alias.$sepflag2 : 'b.'.$sepflag1.$orm[self::$_join_table][$key].$sepflag2;
             }
         }
 
+        $pos = strpos($key, ' ');
+        $alias = $pos !== false ? substr($key, $pos) : '';
+        $key = $pos !== false ? substr($key, 0, $pos) : $key;
         if (!is_array($orm) || empty($orm) || !array_key_exists(self::$_join_table, $orm) || !array_key_exists($key, $orm[self::$_join_table])) {
-            return $sepflag1.$key.$sepflag2;
+            return $alias ? $sepflag1.$key.$sepflag2." AS ".$sepflag1.$alias.$sepflag2 : $sepflag1.$key.$sepflag2;
         } else {
-            return $sepflag1.$orm[self::$_table][$key].$sepflag2;
+            return $alias ? $sepflag1.$orm[self::$_table][$key].$sepflag2." AS ".$sepflag1.$alias.$sepflag2 : $sepflag1.$orm[self::$_table][$key].$sepflag2;
         }
     }
     

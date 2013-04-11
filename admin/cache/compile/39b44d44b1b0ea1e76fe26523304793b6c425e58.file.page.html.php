@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-11 10:21:15
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-11 16:52:30
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\public\page.html" */ ?>
-<?php /*%%SmartyHeaderCode:3062651661e1b3e0632-17676505%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:12651516679ce6d0493-44198405%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3062651661e1b3e0632-17676505',
+  'nocache_hash' => '12651516679ce6d0493-44198405',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_51661e1b4fd3a8_41223211',
+  'unifunc' => 'content_516679ce7e2173_65033622',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51661e1b4fd3a8_41223211')) {function content_51661e1b4fd3a8_41223211($_smarty_tpl) {?><?php if (isset($_smarty_tpl->tpl_vars['page']->value)&&$_smarty_tpl->tpl_vars['page']->value&&count($_smarty_tpl->tpl_vars['page']->value['page'])>1){?>
+<?php if ($_valid && !is_callable('content_516679ce7e2173_65033622')) {function content_516679ce7e2173_65033622($_smarty_tpl) {?><?php if (isset($_smarty_tpl->tpl_vars['page']->value)&&$_smarty_tpl->tpl_vars['page']->value&&count($_smarty_tpl->tpl_vars['page']->value['page'])>1){?>
 <div id="<?php if (isset($_smarty_tpl->tpl_vars['isface']->value)){?>facepage<?php }else{ ?>compage<?php }?>" class="pagination">
 	<?php if ($_smarty_tpl->tpl_vars['page']->value['firstpage']['row']){?>
 	<a class="pageprev graya fleft" href="<?php if ($_smarty_tpl->tpl_vars['page']->value['firstpage']['href']){?><?php echo $_smarty_tpl->tpl_vars['page']->value['firstpage']['href'];?>

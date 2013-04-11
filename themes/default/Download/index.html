@@ -25,15 +25,15 @@
 						</ul>
 						{if isset($ArchiveList)&&!empty($ArchiveList)}
 						{foreach $ArchiveList as $d}
+						<ul class="downloadBody">
+							<li class="w50">{$d.AutoIndex}</li>
+							<li class="w250">{$d.filename}</li>
+							<li class="w100">{$d.filesize|formatBytes}</li>
+							<li class="w100">{$d.createtime|mkdate:d}</li>
+							<li class="w50"><a href="__APP__/index.php?s=File/Download&id={$d.attachmentid}" target="_blank">下载</a></li>
+						</ul>
 						{/foreach}
 						{/if}
-						<ul class="downloadBody">
-							<li class="w50">1</li>
-							<li class="w250">Laugh CMS正式版</li>
-							<li class="w100">7.56M</li>
-							<li class="w100">2012-02-03</li>
-							<li class="w50"><a href="javascript:;" target="_blank">下载</a></li>
-						</ul>
 					</div>
 					{include file="common/Page.html"}
 				</div>

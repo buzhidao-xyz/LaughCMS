@@ -156,4 +156,45 @@ class FileControl extends CommonControl
         }
         return $files;
     }
+
+    //获取下载文件的ID
+    protected function getID()
+    {
+    	$id = q('id');
+    	return FilterHelper::C_int($id) ? $id : false;
+    }
+
+    /**
+     * 新窗口下载文件
+     */
+    public function Download()
+    {
+    	$msg = "文件不存在！";
+
+    	$attachmentid = $this->getID();
+    	if (!$attachmentid) {echo $msg;exit;}
+
+    	$attachmentInfo = M("File")->getAttachment($attachmentid);
+    	if (empty($attachmentInfo)) {echo $msg;exit;}
+
+    	$name = $attachmentInfo['filename'];
+    	$file = ROOT_DIR.$attachmentInfo['filepath'];
+    	$size = $attachmentInfo['filesize'];
+    	if (!file_exists($file)) {
+    		echo $msg;exit;
+    	} else {
+		    $fp = fopen($file, "r");
+
+		    //输入文件标签
+		    Header("Content-type: application/octet-stream");
+		    Header("Accept-Ranges: bytes");
+		    Header("Accept-Length: " . $size);
+		    Header("Content-Disposition: attachment; filename=" . $name);
+		    //输出文件内容
+		    //读取文件内容并直接输出到浏览器
+		    echo fread($fp, $size);
+		    fclose($fp);
+		    exit();
+		}
+    }
 }

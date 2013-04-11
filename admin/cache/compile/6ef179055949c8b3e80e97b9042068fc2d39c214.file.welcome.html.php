@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-11 11:02:16
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-11 16:23:44
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\Public\welcome.html" */ ?>
-<?php /*%%SmartyHeaderCode:2340516627b85ed879-90159699%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2764951667310c0f996-91894334%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2340516627b85ed879-90159699',
+  'nocache_hash' => '2764951667310c0f996-91894334',
   'function' => 
   array (
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_516627b868e191_72503634',
+  'unifunc' => 'content_51667310cb3db1_70004816',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_516627b868e191_72503634')) {function content_516627b868e191_72503634($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_51667310cb3db1_70004816')) {function content_51667310cb3db1_70004816($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="captitle lineOrange">欢迎进入后台管理系统</div>
 <div class="box boxLeft">

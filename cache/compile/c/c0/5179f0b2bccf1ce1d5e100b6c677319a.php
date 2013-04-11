@@ -86,13 +86,13 @@ var JS_APP = '/laugh';
 		<a href="/laugh/index.php?s=Download/index&columnid=8" class="navon">下载中心</a>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Public/index&columnid=9" class="">招贤纳士</a>
+		<a href="/laugh/index.php?s=Plugin/Cooperate&columnid=9" class="">招贤纳士</a>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Index/AboutUS&columnid=10" class="">关于我们</a>
+		<a href="/laugh/index.php?s=Public/AboutUS&columnid=10" class="">关于我们</a>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Index/ContactUS&columnid=11" class="">联系我们</a>
+		<a href="/laugh/index.php?s=Public/ContactUS&columnid=11" class="">联系我们</a>
 			</li>
 	</ul>
 <script type="text/javascript" src="public/plugin/superfish/js/hoverIntent.js"></script>
@@ -166,14 +166,21 @@ $(document).ready(function (){
 							<li class="w100">发布时间</li>
 							<li class="w50">下载</li>
 						</ul>
-																														<ul class="downloadBody">
+																		<ul class="downloadBody">
 							<li class="w50">1</li>
-							<li class="w250">Laugh CMS正式版</li>
-							<li class="w100">7.56M</li>
-							<li class="w100">2012-02-03</li>
-							<li class="w50"><a href="javascript:;" target="_blank">下载</a></li>
+							<li class="w250">scws-1.2.0.tar.bz2</li>
+							<li class="w100">364.81KB</li>
+							<li class="w100">2013-04-11</li>
+							<li class="w50"><a href="/laugh/index.php?s=File/Download&id=2" target="_blank">下载</a></li>
 						</ul>
-					</div>
+												<ul class="downloadBody">
+							<li class="w50">2</li>
+							<li class="w250">LaughCMS.zip</li>
+							<li class="w100">168B</li>
+							<li class="w100">2013-04-11</li>
+							<li class="w50"><a href="/laugh/index.php?s=File/Download&id=1" target="_blank">下载</a></li>
+						</ul>
+																	</div>
 					
 				</div>
 			</div>

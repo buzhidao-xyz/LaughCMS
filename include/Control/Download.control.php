@@ -19,9 +19,21 @@ class DownloadControl extends ArchiveControl
 	{
 		list($start,$length) = $this->getPages();
 		$ArchiveList = $this->getAllDownload();
-dump($ArchiveList);exit;
+
 		$this->assign("ArchiveList", $ArchiveList['data']);
 		$this->assign("page", getPage($ArchiveList['total'],$this->_pagesize));
 		$this->display("Download/index.html");
+	}
+
+	/**
+	 * 获取下载文件
+	 */
+	public function getAllDownload($columnid=null,$num=0)
+	{
+        $columnid = $columnid ? $columnid : $this->_columnid;
+        $columnids = M("Column")->getChildrenColumnID($columnid);
+
+        $where = empty($columnids) ? array() : array("columnid"=>array("in",$columnids));
+        return M("Download")->getDownload(null,0,$num,$where,1);
 	}
 }

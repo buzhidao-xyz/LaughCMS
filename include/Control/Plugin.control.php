@@ -16,6 +16,13 @@ class PluginControl extends CommonControl
 
 	public function index(){}
 
+	//人才招聘插件
+	public function Cooperate()
+	{
+		$this->assign("page", getPage(170,15));
+		$this->display("Plugin/cooperate.html");
+	}
+
 	//帮助(问答)插件
 	public function QA()
 	{
