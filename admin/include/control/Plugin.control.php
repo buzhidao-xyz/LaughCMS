@@ -178,4 +178,30 @@ class PluginControl extends CommonControl
         $this->assign('diskSpace', formatBytes($diskSpace));
         $this->display("FileManage/spaceCheck.html");
     }
+
+    protected function _getColumnID()
+    {
+        $columnid = q("columnid");
+
+        return $columnid;
+    }
+
+    //人才招聘插件
+    public function CooperateIndex()
+    {
+        $columnid = $this->_getColumnID();
+
+        $columnids = array();
+        if ($columnid) $columnids = array_merge(M("Column")->getSubColumnID($columnid),array($columnid));
+
+        list($start,$length) = $this->getPages();
+        $dataList = M("Plugin")->getCooperateList(null,$start,$length,1,$columnids,$this->_Control);
+        
+        $total = count($dataList);
+        $this->assign("total", $total);
+        $this->assign("dataList", $dataList);
+
+        $this->assign("page", getPage($total,$this->_pagesize));
+        $this->display("Plugin/Cooperate.html");
+    }
 }

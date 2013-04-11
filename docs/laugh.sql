@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2013-04-11 16:53:35
+Date: 2013-04-11 17:27:24
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,7 +37,7 @@ CREATE TABLE `la_admin` (
 -- ----------------------------
 -- Records of la_admin
 -- ----------------------------
-INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1365668624', '2130706433', '127', '1');
+INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1365670967', '2130706433', '127', '1');
 INSERT INTO `la_admin` VALUES ('2', 'luochuan', '624879b3fff70462132a21eb1cd8eb75', 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '1355368421', '2130706433', '12', '0');
 
 -- ----------------------------
@@ -269,6 +269,19 @@ CREATE TABLE `la_comment` (
 -- ----------------------------
 
 -- ----------------------------
+-- Table structure for `la_cooperate`
+-- ----------------------------
+DROP TABLE IF EXISTS `la_cooperate`;
+CREATE TABLE `la_cooperate` (
+  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '记录ID',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of la_cooperate
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for `la_group`
 -- ----------------------------
 DROP TABLE IF EXISTS `la_group`;
@@ -402,7 +415,7 @@ INSERT INTO `la_node` VALUES ('28', '一键更新网站', '', 'Cache', 'updateAl
 INSERT INTO `la_node` VALUES ('29', '更新系统缓存', '', 'Cache', 'systemCache', '27', '0', '1358997259', '1358997259', '1');
 INSERT INTO `la_node` VALUES ('30', '常规插件', '', '', '', '0', '5', '1358999125', '1358999125', '1');
 INSERT INTO `la_node` VALUES ('31', '留言板', '', 'Plugin', '', '30', '0', '1358999272', '1358999272', '1');
-INSERT INTO `la_node` VALUES ('32', '人才招聘', '', 'Plugin', 'Cooperate', '30', '0', '1359010748', '1359010748', '1');
+INSERT INTO `la_node` VALUES ('32', '人才招聘', '', 'Plugin', 'CooperateIndex', '30', '0', '1359010748', '1359010748', '1');
 INSERT INTO `la_node` VALUES ('33', '友情链接', '', 'Plugin', 'flinkManage', '30', '0', '1359010791', '1359010791', '1');
 INSERT INTO `la_node` VALUES ('34', '基本设置', '', '', '', '0', '6', '1359011153', '1359011153', '1');
 INSERT INTO `la_node` VALUES ('35', '系统基本参数', '', 'System', 'setInfo', '34', '0', '1359011177', '1359011177', '1');
