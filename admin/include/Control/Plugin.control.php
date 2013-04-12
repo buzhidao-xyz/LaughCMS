@@ -1,6 +1,9 @@
 <?php
 class PluginControl extends CommonControl
 {
+    //控制器名
+    protected $_Control = "Plugin";
+
 	//初始化构造函数
 	public function __construct()
 	{
@@ -8,6 +11,205 @@ class PluginControl extends CommonControl
 	}
 
     public function index(){}
+
+    protected function _getColumnID()
+    {
+        $columnid = q("columnid");
+
+        return $columnid;
+    }
+
+    protected function _getPublishtime()
+    {
+        $publishtime = q("publishtime");
+        if (!$publishtime) return false;
+        $publishtime = explode(" ", $publishtime);
+        $publishtime1 = explode("-", $publishtime[0]);
+        $publishtime2 = explode(":", $publishtime[1]);
+        $publishtime = mktime($publishtime2[0],$publishtime2[1],$publishtime2[2],$publishtime1[1],$publishtime1[2],$publishtime1[0]);
+
+        return $publishtime;
+    }
+
+    protected function _getUpdatetime()
+    {
+        $updatetime = q("updatetime");
+        if (!$updatetime) return false;
+        $updatetime = explode(" ", $updatetime);
+        $updatetime1 = explode("-", $updatetime[0]);
+        $updatetime2 = explode(":", $updatetime[1]);
+        $updatetime = mktime($updatetime2[0],$updatetime2[1],$updatetime2[2],$updatetime1[1],$updatetime1[2],$updatetime1[0]);
+
+        return $updatetime;
+    }
+
+    /********************************人才招聘插件********************************/
+
+    //人才招聘插件
+    public function CooperateIndex()
+    {
+        $columnid = $this->_getColumnID();
+
+        $columnids = array();
+        if ($columnid) $columnids = array_merge(M("Column")->getSubColumnID($columnid),array($columnid));
+
+        list($start,$length) = $this->getPages();
+        $dataList = M("Plugin")->getCooperateList(null,$start,$length,$columnids,$this->_Control);
+        
+        $this->assign("total", $dataList['total']);
+        $this->assign("dataList", $dataList['data']);
+
+        $this->assign("page", getPage($dataList['total'],$this->_pagesize));
+        $this->display("Plugin/CooperateIndex.html");
+    }
+
+    //添加人才招聘信息
+    public function CooperateAdd()
+    {
+        $this->assign("accessStatus",1);
+
+        $this->assign("userInfo",$this->userInfo);
+        $this->assign("columnTree", D("Column")->getColumnTree($this->_Control));
+
+        $this->display("Plugin/CooperateAdd.html");
+    }
+
+    //获取招聘字段
+    private function _dealCooperateFields($filter=array())
+    {
+        $position = q("position");
+        if (!$position) $this->ajaxReturn(1,"请填写招聘职位！");
+        $columnid = q("columnid");
+        if (!$columnid) $this->ajaxReturn(1,"请选择发布栏目！");
+        $quantity = q("quantity");
+        if (!$quantity) $this->ajaxReturn(1,"请输入招聘人数！");
+        $education = q("education");
+        $experience = q("experience");
+        $place = q("place");
+        $nature = q("nature");
+        $salary = q("salary");
+        $author = q("author");
+        $publishtime = $this->_getPublishtime();
+        $updatetime = $this->_getUpdatetime();
+        $description = q("description");
+        $validitytime = q("validitytime");
+
+        $data = array(
+            'position' => $position,
+            'columnid' => $columnid,
+            'quantity' => $quantity,
+            'education'  => $education,
+            'experience' => $experience,
+            'place'  => $place,
+            'nature' => $nature,
+            'salary' => $salary,
+            'author' => $author,
+            'description' => $description,
+            'validitytime'=> $validitytime
+        );
+
+        if (!in_array('publishtime',$filter)) $data['publishtime'] = $publishtime;
+        $data['updatetime'] = $updatetime ? $updatetime : TIMESTAMP;
+
+        return $data;
+    }
+
+    //保存人才招聘信息
+    public function CooperateSave()
+    {
+        $data = $this->_dealCooperateFields();
+        $return = M("Plugin")->CooperateSave($data);
+        if ($return) {
+            $this->ajaxReturn(0,"添加信息成功！");
+        } else {
+            $this->ajaxReturn(1,"添加信息失败！");
+        }
+    }
+
+    //修改人才招聘信息
+    public function CooperateEdit()
+    {
+        $this->assign("accessStatus",1);
+        $id = q("id");
+        if (!$id) $this->ajaxReturn(1,"ID错误！");
+
+        $this->assign("userInfo",$this->userInfo);
+        $this->assign("columnTree", D("Column")->getColumnTree($this->_Control));
+
+        $CooperateInfo = M("Plugin")->getCooperateList($id,0,0,null);
+        $this->assign("CooperateInfo",$CooperateInfo[0]);
+
+        $this->display("Plugin/CooperateEdit.html");
+    }
+
+    //保存修改人才招聘信息
+    public function CooperateEditSave()
+    {
+        $id = q("cooperateid");
+        if (!$id) $this->ajaxReturn(1,"ID错误！");
+
+        $data = $this->_dealCooperateFields(array('publishtime'));
+        $return = M("Plugin")->CooperateUpdate($id,$data);
+        if ($return) {
+            $this->ajaxReturn(0,"信息修改成功！");
+        } else {
+            $this->ajaxReturn(1,"信息修改失败！");
+        }
+    }
+
+    //删除人才招聘信息
+    public function CooperateDelete()
+    {
+        $id = q("id");
+        if (!$id) $this->ajaxReturn(1,"ID错误！");
+
+        $return = M("Plugin")->CooperateDelete($id);
+        if ($return) {
+            $this->ajaxReturn(0,"删除信息成功！");
+        } else {
+            $this->ajaxReturn(1,"删除信息失败！");
+        }
+    }
+
+    /********************************友情链接插件********************************/
+
+    //友情链接管理
+    public function FlinkIndex()
+    {
+        $columnid = $this->_getColumnID();
+
+        $columnids = array();
+        if ($columnid) $columnids = array_merge(M("Column")->getSubColumnID($columnid),array($columnid));
+
+        list($start,$length) = $this->getPages();
+        $dataList = M("Plugin")->getFlinkList(null,$start,$length,$columnids,$this->_Control);
+        
+        $this->assign("total", $dataList['total']);
+        $this->assign("dataList", $dataList['data']);
+
+        $this->assign("page", getPage($dataList['total'],$this->_pagesize));
+        $this->display("Plugin/FlinkIndex.html");
+    }
+
+    //友情链接管理
+    public function FlinkAdd()
+    {
+        $this->display("Plugin/FlinkAdd.html");
+    }
+
+    //友情链接管理
+    public function FlinkEdit()
+    {
+        $this->display("Plugin/FlinkEdit.html");
+    }
+
+    //友情链接管理
+    public function FlinkDelete()
+    {
+        
+    }
+
+    /********************************文件管理器插件********************************/
 
     private function _newFileManage()
     {
@@ -177,31 +379,5 @@ class PluginControl extends CommonControl
         $diskSpace = $fileManage->getDiskSpace($dir);
         $this->assign('diskSpace', formatBytes($diskSpace));
         $this->display("FileManage/spaceCheck.html");
-    }
-
-    protected function _getColumnID()
-    {
-        $columnid = q("columnid");
-
-        return $columnid;
-    }
-
-    //人才招聘插件
-    public function CooperateIndex()
-    {
-        $columnid = $this->_getColumnID();
-
-        $columnids = array();
-        if ($columnid) $columnids = array_merge(M("Column")->getSubColumnID($columnid),array($columnid));
-
-        list($start,$length) = $this->getPages();
-        $dataList = M("Plugin")->getCooperateList(null,$start,$length,1,$columnids,$this->_Control);
-        
-        $total = count($dataList);
-        $this->assign("total", $total);
-        $this->assign("dataList", $dataList);
-
-        $this->assign("page", getPage($total,$this->_pagesize));
-        $this->display("Plugin/Cooperate.html");
     }
 }

@@ -15,7 +15,64 @@
 					<span class="title">招贤纳士</span>
 				</div>
 				<div class="boxBlockBody">
-					{include file="Common/CooperateList.html"}
+					<div class="CooperateList">
+						{if isset($CooperateList)&&!empty($CooperateList)}
+						{foreach $CooperateList as $d}
+						<div class="CooperateListTitle">
+							<a href="javascript:;">{$d.position}</a>
+						</div>
+						<ul>
+							<li>
+								<span class="title">招聘职位:</span>
+								<span class="content">{$d.position}</span>
+							</li>
+							<li>
+								<span class="title">招聘人数:</span>
+								<span class="content">{$d.quantity} 人</span>
+							</li>
+							<li>
+								<span class="title">学历要求:</span>
+								<span class="content">{$d.education}</span>
+							</li>
+							<li>
+								<span class="title">工作经验:</span>
+								<span class="content">{$d.experience}</span>
+							</li>
+							<li>
+								<span class="title">工作地点:</span>
+								<span class="content">{$d.place}</span>
+							</li>
+							<li>
+								<span class="title">工作性质:</span>
+								<span class="content">{$d.nature}</span>
+							</li>
+							<li>
+								<span class="title">发布时间:</span>
+								<span class="content">{$d.publishtime|mkdate:d}</span>
+							</li>
+							<li>
+								<span class="title">更新时间:</span>
+								<span class="content">{$d.updatetime|mkdate:d}</span>
+							</li>
+							<li>
+								<span class="title">工资待遇:</span>
+								<span class="content">{$d.salary}</span>
+							</li>
+							<li>
+								<span class="title">有效期:</span>
+								<span class="content">{$d.salary}</span>
+							</li>
+							<li class="caption">
+								<span class="title">职位描述:</span>
+								<span class="content">
+								{$d.description|html_entity_decode}
+								</span>
+							</li>
+						</ul>
+						{/foreach}
+						{/if}
+					</div>
+					{include file="Common/Page.html"}
 				</div>
 			</div>
 		</div>
@@ -24,4 +81,18 @@
 	</div>
 	{include file="Common/Flink.html"}
 </div>
+<script type="text/javascript">
+$(document).ready(function (){
+var CooperateClass = function (){
+	var CoObj = {
+		CoTitle: $(".CooperateList .CooperateListTitle a")
+	}
+
+	CoObj.CoTitle.click(function (){
+		$(this).parent().next("ul").slideToggle();
+	});
+}
+CooperateClass();
+});
+</script>
 {include file="include/foot.html"}

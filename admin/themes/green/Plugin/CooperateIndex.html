@@ -14,7 +14,7 @@
 	<li class="table_list_l table_list_l150">更新时间</li>
 	<li class="table_list_l table_list_l100">工资待遇</li>
 	{if $accessStatus == 1}
-	<li class="table_list_l table_list_l120" accessStatus={$accessStatus}>操作</li>
+	<li class="table_list_l table_list_l100" accessStatus={$accessStatus}>操作</li>
 	{/if}
 </ul>
 <div class="contentTableList">
@@ -26,11 +26,11 @@
 		<li class="table_list_l table_list_l80">{$d.quantity}</li>
 		<li class="table_list_l table_list_l100">{$d.education}</li>
 		<li class="table_list_l table_list_l100">{$d.nature}</li>
-    	<li class="table_list_l table_list_l150">{$d.createtime|mkdate}</li>
+    	<li class="table_list_l table_list_l150">{$d.publishtime|mkdate}</li>
     	<li class="table_list_l table_list_l150">{$d.updatetime|mkdate}</li>
 		<li class="table_list_l table_list_l100">{$d.salary}</li>
     	{if $accessStatus == 1}
-    	<li class="table_list_l table_list_l120" accessStatus={$accessStatus}>
+    	<li class="table_list_l table_list_l100" accessStatus={$accessStatus}>
     		<a href="__APP__/index.php?s=Plugin/CooperateEdit&id={$d.id}">修改</a>
     		<a delurl="__APP__/index.php?s=Plugin/CooperateDelete&id={$d.id}" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>

@@ -9,6 +9,9 @@ class PluginControl extends CommonControl
 	//控制器名
     protected $_control = 'plugin';
 
+    //分页每页记录数
+    protected $_pagesize = 10;
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -16,10 +19,29 @@ class PluginControl extends CommonControl
 
 	public function index(){}
 
+	/**
+     * 获取某个栏目下的所有招聘信息
+     * @param $columnid int 栏目id
+     * @param $num int 要获取的条数
+     */
+    public function getAllCooperate($columnid=null,$num=0)
+    {
+    	list($start,$length) = $this->getPages();
+        $columnid = $columnid ? $columnid : $this->_columnid;
+        $columnids = M("Column")->getChildrenColumnID($columnid);
+
+        $where = empty($columnids) ? array() : array("columnid"=>array("in",$columnids));
+        return M("Plugin")->getCooperate(null,$start,$length,$where);
+    }
+
 	//人才招聘插件
 	public function Cooperate()
 	{
-		$this->assign("page", getPage(170,15));
+		list($start,$length) = $this->getPages();
+		$CooperateList = $this->getAllCooperate();
+
+		$this->assign("CooperateList", $CooperateList['data']);
+		$this->assign("page", getPage($CooperateList['total'],$this->_pagesize));
 		$this->display("Plugin/cooperate.html");
 	}
 

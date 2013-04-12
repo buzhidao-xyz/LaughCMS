@@ -24,7 +24,6 @@ class ArticleControl extends ArchiveControl
 	//主入口 获取文档
 	public function index()
 	{
-		list($start,$length) = $this->getPages();
 		$ArchiveList = $this->getAllArchive();
 
 		$this->assign("ArchiveList", $ArchiveList['data']);

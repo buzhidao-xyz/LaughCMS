@@ -57,12 +57,13 @@ class Archive extends Base
 			unset($where['control']);
 		}
 
+		$total = T("archive")->join(' '.TBF.'Column as b on a.columnid=b.id ')->field('*')->where($where)->count();
 		$obj = T("archive")->join(' '.TBF.'Column as b on a.columnid=b.id ')->field('a.*,b.columnname,b.columntype')->where($where)->order("a.id","desc");
 		if ($length) $obj = $obj->limit($start,$length);
 		$data = $obj->select();
 
 		return array(
-			'total' => is_array($data)&&!empty($data) ? count($data) : 0,
+			'total' => $total,
 			'data'  => $data
 		);
 	}

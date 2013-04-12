@@ -284,52 +284,58 @@ ul.ImageList li span {
 }
 
 /**********************************招贤纳士样式**********************************/
-.CooperationList {
+.CooperateList {
 	overflow: hidden;
 	padding: 10px 5px;
 }
-.CooperationList .CooperationListTitle {
+.CooperateList .CooperateListTitle {
 	padding: 5px 20px;
 	margin: 5px auto;
 	border-bottom: 1px dashed #333333;
 	background: url("../images/arrow-1.gif") no-repeat 10px;
 }
-.CooperationList .CooperationListTitle a {
+.CooperateList .CooperateListTitle a {
 	color: #333333;
 	font-size: 16px;
 	font-weight: 700;
 	text-decoration: none;
 }
-.CooperationList .CooperationListTitle a:hover {
+.CooperateList .CooperateListTitle a:hover {
 	color: #5F9729;
 }
-.CooperationList ul {
+.CooperateList ul {
 	overflow: hidden;
 	padding: 5px 30px;
 }
-.CooperationList ul li {
+.CooperateList ul li {
 	float: left;
 	width: 330px;
 	padding: 5px 0;
 }
-.CooperationList ul li.caption {
+.CooperateList ul li.caption {
 	width: 100%;
 }
-.CooperationList ul li span.title {
+.CooperateList ul li span.title {
 	color: #333333;
+	float: left;
+	display: block;
+	width: 60px;
+	text-align: right;
 }
-.CooperationList ul li span.content {
+.CooperateList ul li span.content {
 	color: #666666;
-	padding-left: 10px;
-}
-.CooperationList ul li.caption span.title {
+	padding-left: 5px;
 	float: left;
 	display: block;
 }
-.CooperationList ul li.caption span.content {
+.CooperateList ul li.caption span.title {
 	float: left;
 	display: block;
-	width: 600px;
+}
+.CooperateList ul li.caption span.content {
+	float: left;
+	display: block;
+	width: 601px;
 	line-height: 20px;
 }
 

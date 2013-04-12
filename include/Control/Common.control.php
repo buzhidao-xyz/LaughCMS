@@ -45,7 +45,7 @@ class CommonControl extends BaseControl
      * 获取分页开始和条数
      * @param int $pagesize 每页显示记录数
      */
-    protected function getPages($pagesize=10)
+    protected function getPages($pagesize=null)
     {
         $pagesize = $pagesize ? $pagesize : $this->_pagesize;
 
@@ -124,8 +124,10 @@ class CommonControl extends BaseControl
         $columnid = $columnid ? $columnid : $this->_columnid;
         $columnids = M("Column")->getChildrenColumnID($columnid);
 
+        list($start,$length) = $this->getPages();
         $where = empty($columnids) ? array() : array("columnid"=>array("in",$columnids));
-        return M("Archive")->getArchive(null,0,$num,$where,1);
+        $length = $num ? $num : $length;
+        return M("Archive")->getArchive(null,$start,$length,$where,1);
     }
 
     /**
