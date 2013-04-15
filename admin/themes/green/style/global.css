@@ -725,6 +725,12 @@ form ul.formbody li .edui-default span {
   float: left;
   padding: 10px 5px;
 }
+.box .boxFrom ul li div.item_list {
+  height: 35px;
+}
+.box .boxFrom ul li div.item_list label {
+  padding: 8px 0px;
+}
 
 /******************基本CSS****************/
 

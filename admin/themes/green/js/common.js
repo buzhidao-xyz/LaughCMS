@@ -46,6 +46,26 @@ $(document).ready(function() {
     });
     /*添加的FORM ajax提交方法*/
 
+    /*添加的FORM ajax提交方法*/
+    $('#colorBoxAjaxForm').live("submit", function(){
+        // $("#ajaxform input:[type=submit]").attr('disabled','disabled');
+        if($('#colorBoxAjaxForm').length>0){
+            var data = $("#colorBoxAjaxForm").serialize();
+            var url = $('#colorBoxAjaxForm').attr('action');
+            $.post(url,data,function(data){
+                alert(data.info);
+                if (!data.status) {
+                    location.href = location.href;
+                    // $("#colorBoxAjaxForm input:[type=submit]").removeAttr('disabled');
+                }
+            }, 'json');
+            return false;
+        } else {
+            alert('表单为空');
+        }
+    });
+    /*添加的FORM ajax提交方法*/
+
     //修改资料
     if($('#modify_div').length>0){
         var delfunction = true;

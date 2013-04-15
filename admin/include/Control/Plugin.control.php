@@ -137,7 +137,7 @@ class PluginControl extends CommonControl
         $this->assign("columnTree", D("Column")->getColumnTree($this->_Control));
 
         $CooperateInfo = M("Plugin")->getCooperateList($id,0,0,null);
-        $this->assign("CooperateInfo",$CooperateInfo[0]);
+        $this->assign("CooperateInfo",!empty($CooperateInfo['data']) ? $CooperateInfo['data'][0] : array());
 
         $this->display("Plugin/CooperateEdit.html");
     }
@@ -182,7 +182,7 @@ class PluginControl extends CommonControl
         if ($columnid) $columnids = array_merge(M("Column")->getSubColumnID($columnid),array($columnid));
 
         list($start,$length) = $this->getPages();
-        $dataList = M("Plugin")->getFlinkList(null,$start,$length,$columnids,$this->_Control);
+        $dataList = M("Plugin")->getFlink(null,$start,$length,$columnids,$this->_Control);
         
         $this->assign("total", $dataList['total']);
         $this->assign("dataList", $dataList['data']);
@@ -207,6 +207,77 @@ class PluginControl extends CommonControl
     public function FlinkDelete()
     {
         
+    }
+
+    //友情链接分类管理
+    public function FlinkCatalogIndex()
+    {
+        $this->assign("accessStatus",1);
+
+        $dataList = M("Plugin")->getFlinkCatalog();
+        $this->assign("total", count($dataList));
+        $this->assign("dataList", $dataList);
+
+        $this->display("Plugin/FlinkCatalogIndex.html");
+    }
+
+    //保存分类
+    public function FlinkCatalogSave()
+    {
+        $catalogname = q("catalogname");
+        if (!$catalogname) $this->ajaxReturn(1,"请填写分类名称！");
+        $state = q("state");
+
+        $return = M("Plugin")->FlinkCatalogSave($catalogname,$state,TIMESTAMP);
+        if ($return) {
+            $this->ajaxReturn(0,"链接分类添加成功！");
+        } else {
+            $this->ajaxReturn(1,"链接分类添加失败！");
+        }
+    }
+
+    //编辑分类信息
+    public function FlinkCatalogEdit()
+    {
+        $this->assign("accessStatus",1);
+        $id = q("id");
+        if (!$id) $this->ajaxReturn(1,"ID错误！");
+
+        $CatalogInfo = M("Plugin")->getFlinkCatalog($id);
+        $this->assign("CatalogInfo", $CatalogInfo[0]);
+        $this->display("Plugin/FlinkCatalogEdit.html");
+    }
+
+    //保存编辑分类信息
+    public function FlinkCatalogEditSave()
+    {
+        $catalogid = q("catalogid");
+        if (!$catalogid) $this->ajaxReturn(1,"分类ID错误！");
+        $catalogname = q("catalogname");
+        if (!$catalogname) $this->ajaxReturn(1,"请填写分类名称！");
+        $state = q("state");
+        $sort = intval(q("sort"));
+        if (!FilterHelper::C_int($sort)) $this->ajaxReturn(1,"请填写正确的排序序号！");
+
+        $return = M("Plugin")->FlinkCatalogEditSave($catalogname,$state,$sort);
+        if ($return) {
+            $this->ajaxReturn(0,"修改成功！");
+        } else {
+            $this->ajaxReturn(1,"修改失败！");
+        }
+    }
+
+    //友情链接分类删除
+    public function FlinkCatalogDelete()
+    {
+        $id = q("id");
+        if (!$id) $this->ajaxReturn(1,"ID错误！");
+        $return = M("Plugin")->FlinkCatalogDelete($id);
+        if ($return) {
+            $this->ajaxReturn(0,"删除成功！");
+        } else {
+            $this->ajaxReturn(1,"删除失败！");
+        }
     }
 
     /********************************文件管理器插件********************************/

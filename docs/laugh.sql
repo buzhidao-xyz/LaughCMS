@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2013-04-12 17:23:37
+Date: 2013-04-15 17:30:42
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,7 +37,7 @@ CREATE TABLE `la_admin` (
 -- ----------------------------
 -- Records of la_admin
 -- ----------------------------
-INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1365756782', '2130706433', '127', '1');
+INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1365991799', '2130706433', '127', '1');
 INSERT INTO `la_admin` VALUES ('2', 'luochuan', '624879b3fff70462132a21eb1cd8eb75', 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '1355368421', '2130706433', '12', '0');
 
 -- ----------------------------
@@ -318,12 +318,17 @@ DROP TABLE IF EXISTS `la_flink_catalog`;
 CREATE TABLE `la_flink_catalog` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `catalogname` varchar(50) NOT NULL COMMENT '分类名称',
+  `sort` int(10) NOT NULL DEFAULT '0' COMMENT '分类排序位置',
+  `state` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1正常0已删除',
+  `createtime` int(10) NOT NULL COMMENT '分类目录创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_flink_catalog
 -- ----------------------------
+INSERT INTO `la_flink_catalog` VALUES ('1', '分类一', '1', '1', '1366003664');
+INSERT INTO `la_flink_catalog` VALUES ('2', '分类二', '2', '0', '1366003673');
 
 -- ----------------------------
 -- Table structure for `la_group`

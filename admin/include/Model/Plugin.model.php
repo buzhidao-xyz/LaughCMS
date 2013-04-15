@@ -77,8 +77,80 @@ class Plugin extends Base
 	 * @param int $length 分页结束记录号
 	 * @param array $where 条件数组
 	 */
-	public function getFlinkList($id=null,$start=0,$length=0,$columnids=array(),$control=null)
+	public function getFlink($id=null,$start=0,$length=0,$where=array())
 	{
+		if ($id) $where['id'] = is_array($id) ? array('in', $id) : $id;
 
+		$total = T("flink")->join(' '.TBF.'flink_catalog as b on a.catalogid=b.id ')->field('*')->where($where)->count();
+		$obj = T("flink")->join(' '.TBF.'flink_catalog as b on a.catalogid=b.id ')->field('a.*,b.catalogname,b.sort')->where($where)->order("a.id","desc");
+		if ($length) $obj = $obj->limit($start,$length);
+		$data = $obj->select();
+
+		return array('total'=>$total,'data'=>$data);
+	}
+
+	/**
+	 * 获取友情链接分类列表
+	 * @param string/array $id 链接分类ID
+	 * @param array $where 条件数组
+	 * @param string $orderway 排序方式
+	 */
+	public function getFlinkCatalog($id=null,$where=array(),$orderway="asc")
+	{
+		if ($id) $where['id'] = is_array($id) ? array("in",$id) : $id;
+		$data = T("flink_catalog")->where($where)->order("sort",$orderway)->select();
+
+		return $data;
+	}
+
+	/**
+	 * 保存友情链接分类
+	 * @param string $catalogname 链接分类名称
+	 * @param int $state 是否显示
+	 * @param int $createtime 创建时间
+	 */
+	public function FlinkCatalogSave($catalogname=null,$state=1,$createtime=null)
+	{
+		if (empty($catalogname)) return false;
+
+        $sort = 1;
+        $catalogInfo = $this->getFlinkCatalog(null,array(),"desc");
+        if (is_array($catalogInfo)&&!empty($catalogInfo)) $sort = intval($catalogInfo[0]['sort'])+1;
+
+        $data = array(
+            'catalogname' => $catalogname,
+            'sort'        => $sort,
+            'state'       => $state,
+            'createtime'  => $createtime
+        );
+
+        return T("flink_catalog")->add($data);
+	}
+
+	/**
+	 * 保存友情链接分类
+	 * @param int $id 链接分类ID
+	 * @param string $catalogname 链接分类名称
+	 * @param int $state 是否显示
+	 * @param int $sort 排序位置
+	 */
+	public function FlinkCatalogEditSave($id=null,$catalogname=null,$state=1,$sort=null)
+	{
+		if (empty($id)||empty($catalogname)) return false;
+		
+	}
+
+	/**
+	 * 删除链接分类
+	 * @param int $id 链接分类ID
+	 */
+	public function FlinkCatalogDelete($id=null)
+	{
+		if (empty($id)) return false;
+
+		$FlinkList = $this->getFlink(null,0,0,array("catalogid"=>$id));
+		if (!empty($FlinkList['data'])) return false;
+
+		return T("flink_catalog")->where(array("id"=>$id))->delete();
 	}
 }
