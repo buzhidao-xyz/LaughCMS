@@ -27,25 +27,86 @@ var JS_APPM = 'http://localhost:82/laugh';
 	<div id="controlContent">
 <div class="opTop">
 	<a href="/laugh/admin/index.php?s=Plugin/FlinkIndex">友情链接管理</a>
-	<a href="/laugh/admin/index.php?s=Plugin/FlinkAdd">添加新链接</a>
 	<a href="/laugh/admin/index.php?s=Plugin/FlinkCatalogIndex">分类管理</a>
 </div>
-<div class="captitle"><h5>人才招聘信息列表 【链接数0】</h5></div>
+<div class="formContainer" accessStatus=1>
+	<div class="formtitle"><h5>添加友情链接</h5></div>
+	<form name="newform" action="/laugh/admin/index.php?s=Plugin/FlinkSave" method="post" id="ajaxform" class="newform">
+		<ul class="formbody">
+			<li class="formblock">
+				<span>选择分类: </span>
+				<select name="catalogid" style="width:150px;">
+					<option value="">|-分类列表</option>
+										<option value="1">&nbsp;|-分类一</option>
+										<option value="2">&nbsp;|-分类二</option>
+									</select>
+			</li>
+			<li class="formblock">
+				<span>链接名称: </span>
+				<input type="text" name="linkname" value="" class="input w150" />
+			</li>
+			<li class="formblock">
+				<span>链接地址: </span>
+				<input type="text" name="linkurl" value="" class="input w250" />
+			</li>
+			<li class="formblock bordernone">
+				<input type="submit" name="subut" class="button btngreen2" value="添加" />
+			</li>
+		</ul>
+	</form>
+</div>
+<div class="captitle"><h5>友情链接列表 【链接数3】</h5></div>
 <ul class="table_list_title">
 	<li class="table_list_l table_list_l30"></li>
-	<li class="table_list_l table_list_l200">招聘职位</li>
-	<li class="table_list_l table_list_l80">招聘人数</li>
-	<li class="table_list_l table_list_l100">学历要求</li>
-	<li class="table_list_l table_list_l100">工作性质</li>
-	<li class="table_list_l table_list_l150">发布时间</li>
-	<li class="table_list_l table_list_l150">更新时间</li>
-	<li class="table_list_l table_list_l100">工资待遇</li>
+	<li class="table_list_l table_list_l170">链接名称</li>
+	<li class="table_list_l table_list_l400">链接地址</li>
+	<li class="table_list_l table_list_l150">分类</li>
+	<li class="table_list_l table_list_l150">添加时间</li>
 		<li class="table_list_l table_list_l100" accessStatus=1>操作</li>
 	</ul>
 <div class="contentTableList">
-        <ul class="table_list"><li class="table_list_center">空</li></ul>
-    </div>
+            <ul class="table_list">
+		<li class="table_list_l table_list_l30">1</li>
+		<li class="table_list_l table_list_l170">百度</li>
+		<li class="table_list_l table_list_l400"><a href="http://www.baidu.com/" target="_blank">http://www.baidu.com/</a></li>
+		<li class="table_list_l table_list_l150">分类一</li>
+    	<li class="table_list_l table_list_l150">2013-04-16 17:21:04</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a name="FlinkEdit" href="/laugh/admin/index.php?s=Plugin/FlinkEdit&id=1">修改</a>
+    		<a delurl="/laugh/admin/index.php?s=Plugin/FlinkDelete&id=1" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
+    	    </ul>
+        <ul class="table_list">
+		<li class="table_list_l table_list_l30">2</li>
+		<li class="table_list_l table_list_l170">google</li>
+		<li class="table_list_l table_list_l400"><a href="http://www.google.com/" target="_blank">http://www.google.com/</a></li>
+		<li class="table_list_l table_list_l150">分类一</li>
+    	<li class="table_list_l table_list_l150">2013-04-16 17:21:30</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a name="FlinkEdit" href="/laugh/admin/index.php?s=Plugin/FlinkEdit&id=2">修改</a>
+    		<a delurl="/laugh/admin/index.php?s=Plugin/FlinkDelete&id=2" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
+    	    </ul>
+        <ul class="table_list">
+		<li class="table_list_l table_list_l30">3</li>
+		<li class="table_list_l table_list_l170">新浪微博</li>
+		<li class="table_list_l table_list_l400"><a href="http://www.weibo.com/" target="_blank">http://www.weibo.com/</a></li>
+		<li class="table_list_l table_list_l150">分类二</li>
+    	<li class="table_list_l table_list_l150">2013-04-16 17:23:02</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a name="FlinkEdit" href="/laugh/admin/index.php?s=Plugin/FlinkEdit&id=3">修改</a>
+    		<a delurl="/laugh/admin/index.php?s=Plugin/FlinkDelete&id=3" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
+    	    </ul>
+        </div>
 
+<link type="text/css" rel="stylesheet" href="public/plugin/colorbox/colorbox.css" media="screen">
+<script type="text/javascript" src="public/plugin/colorbox/jquery.colorbox.js"></script>
+<script type="text/javascript">
+$(document).ready(function (){
+	$("a[name=FlinkEdit]").colorbox();
+});
+</script>
     </div>
     <ul class="controlBottom">
 		<li class="controlLeftBottom"></li>

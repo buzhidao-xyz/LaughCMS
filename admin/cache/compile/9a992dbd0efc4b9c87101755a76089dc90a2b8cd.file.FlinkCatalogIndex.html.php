@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-15 17:28:53
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-16 17:20:44
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\Plugin\FlinkCatalogIndex.html" */ ?>
-<?php /*%%SmartyHeaderCode:24976516bc855db1304-54104539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:24740516d17ec974db1-07124882%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '9a992dbd0efc4b9c87101755a76089dc90a2b8cd' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\green\\Plugin\\FlinkCatalogIndex.html',
-      1 => 1366005255,
+      1 => 1366103014,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '24976516bc855db1304-54104539',
+  'nocache_hash' => '24740516d17ec974db1-07124882',
   'function' => 
   array (
   ),
@@ -24,13 +24,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_516bc855eca2c3_62491571',
+  'unifunc' => 'content_516d17eca88561_08983497',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_516bc855eca2c3_62491571')) {function content_516bc855eca2c3_62491571($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_516d17eca88561_08983497')) {function content_516d17eca88561_08983497($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-<!-- <div class="control_nav">
-	<h3>添加组</h3>
-</div> -->
+<div class="opTop">
+	<a href="__APP__/index.php?s=Plugin/FlinkIndex">友情链接管理</a>
+	<a href="__APP__/index.php?s=Plugin/FlinkCatalogIndex">分类管理</a>
+</div>
 <?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
 <div class="formContainer" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
 >

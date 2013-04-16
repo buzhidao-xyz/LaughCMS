@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2013-04-15 17:30:42
+Date: 2013-04-16 17:30:58
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -305,11 +305,14 @@ CREATE TABLE `la_flink` (
   `catalogid` int(10) NOT NULL COMMENT '链接所属分类',
   `createtime` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_flink
 -- ----------------------------
+INSERT INTO `la_flink` VALUES ('1', '百度', 'http://www.baidu.com/', '1', '1366104064');
+INSERT INTO `la_flink` VALUES ('2', 'google', 'http://www.google.com/', '1', '1366104090');
+INSERT INTO `la_flink` VALUES ('3', '新浪微博', 'http://www.weibo.com/', '2', '1366104182');
 
 -- ----------------------------
 -- Table structure for `la_flink_catalog`

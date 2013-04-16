@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-15 17:08:00
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-16 17:09:54
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\Plugin\CooperateIndex.html" */ ?>
-<?php /*%%SmartyHeaderCode:28180516bc3700ac199-99612425%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:29580516d15620db0d5-58322421%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '28180516bc3700ac199-99612425',
+  'nocache_hash' => '29580516d15620db0d5-58322421',
   'function' => 
   array (
   ),
@@ -25,9 +25,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_516bc3701b7366_47721380',
+  'unifunc' => 'content_516d15622203e6_54060138',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_516bc3701b7366_47721380')) {function content_516bc3701b7366_47721380($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_516d15622203e6_54060138')) {function content_516d15622203e6_54060138($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="opTop">
 	<a href="__APP__/index.php?s=Plugin/CooperateIndex">人才招聘列表</a>

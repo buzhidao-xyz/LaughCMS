@@ -242,6 +242,7 @@ input.w350 {
 /**form表单样式表*/
 div.formContainer {
     overflow: hidden;
+    margin-top: 5px;
 }
 div.formContainer .formtitle {
     position: relative;
@@ -631,6 +632,9 @@ form ul.formbody li .edui-default span {
   border-width: medium 1px 1px medium;
   cursor: pointer;
   padding: 3px 8px;
+}
+.opTop {
+  border-bottom: 1px dashed #007A77;
 }
 
 /******************文档列表****************/

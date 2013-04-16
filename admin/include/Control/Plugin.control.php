@@ -181,6 +181,9 @@ class PluginControl extends CommonControl
         $columnids = array();
         if ($columnid) $columnids = array_merge(M("Column")->getSubColumnID($columnid),array($columnid));
 
+        $catalogList = M("Plugin")->getFlinkCatalog();
+        $this->assign("catalogList", $catalogList);
+
         list($start,$length) = $this->getPages();
         $dataList = M("Plugin")->getFlink(null,$start,$length,$columnids,$this->_Control);
         
@@ -191,22 +194,43 @@ class PluginControl extends CommonControl
         $this->display("Plugin/FlinkIndex.html");
     }
 
-    //友情链接管理
-    public function FlinkAdd()
+    //友情链接保存
+    public function FlinkSave()
     {
-        $this->display("Plugin/FlinkAdd.html");
+        $catalogid = q("catalogid");
+        if (!$catalogid) $this->ajaxReturn(1,"请选择分类！");
+        $linkname = q("linkname");
+        if (!$linkname) $this->ajaxReturn(1,"请填写链接名称！");
+        $linkurl = q("linkurl");
+        if (!$linkurl) $this->ajaxReturn(1,"请填写链接地址！");
+
+        $return = M("Plugin")->FlinkSave($catalogid,$linkname,$linkurl,TIMESTAMP);
+        if ($return) {
+            $this->ajaxReturn(0,"链接添加成功！");
+        } else {
+            $this->ajaxReturn(1,"链接添加失败！");
+        }
     }
 
     //友情链接管理
     public function FlinkEdit()
     {
+        $linkid = q("linkid");
+
         $this->display("Plugin/FlinkEdit.html");
     }
 
     //友情链接管理
     public function FlinkDelete()
     {
-        
+        $id = q("id");
+        if (!$id) $this->ajaxReturn(1,"ID错误！");
+        $return = M("Plugin")->FlinkDelete($id);
+        if ($return) {
+            $this->ajaxReturn(0,"删除成功！");
+        } else {
+            $this->ajaxReturn(1,"删除失败！");
+        }
     }
 
     //友情链接分类管理
@@ -259,7 +283,7 @@ class PluginControl extends CommonControl
         $sort = intval(q("sort"));
         if (!FilterHelper::C_int($sort)) $this->ajaxReturn(1,"请填写正确的排序序号！");
 
-        $return = M("Plugin")->FlinkCatalogEditSave($catalogname,$state,$sort);
+        $return = M("Plugin")->FlinkCatalogEditSave($catalogid,$catalogname,$state,$sort);
         if ($return) {
             $this->ajaxReturn(0,"修改成功！");
         } else {

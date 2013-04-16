@@ -84,9 +84,34 @@ class Plugin extends Base
 		$total = T("flink")->join(' '.TBF.'flink_catalog as b on a.catalogid=b.id ')->field('*')->where($where)->count();
 		$obj = T("flink")->join(' '.TBF.'flink_catalog as b on a.catalogid=b.id ')->field('a.*,b.catalogname,b.sort')->where($where)->order("a.id","desc");
 		if ($length) $obj = $obj->limit($start,$length);
-		$data = $obj->select();
+		$data = $obj->order("id","asc")->select();
 
 		return array('total'=>$total,'data'=>$data);
+	}
+
+	/**
+	 * 获取友情链接分类列表
+	 * @param string $catalogid 链接分类ID
+	 * @param string $linkname 链接名称
+	 * @param string $orderway 链接地址
+	 */
+	public function FlinkSave($catalogid=null,$linkname=null,$linkurl=null,$createtime=null)
+	{
+		if (!$catalogid || !$linkname || !$linkurl) return false;
+		$data = array(
+			'catalogid' => $catalogid,
+			'linkname'  => $linkname,
+			'linkurl'   => $linkurl,
+			'createtime'=> $createtime
+		);
+		return T("flink")->add($data);
+	}
+
+	//删除链接
+	public function FlinkDelete($id=null)
+	{
+		if (!$id) return false;
+		return T("flink")->where(array("id"=>$id))->delete();
 	}
 
 	/**
@@ -137,7 +162,13 @@ class Plugin extends Base
 	public function FlinkCatalogEditSave($id=null,$catalogname=null,$state=1,$sort=null)
 	{
 		if (empty($id)||empty($catalogname)) return false;
-		
+
+        $data = array(
+            'catalogname' => $catalogname,
+            'sort'        => $sort,
+            'state'       => $state
+        );
+        return T("flink_catalog")->where(array("id"=>$id))->update($data);
 	}
 
 	/**

@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-15 17:28:55
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-16 17:20:41
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\Plugin\FlinkCatalogEdit.html" */ ?>
-<?php /*%%SmartyHeaderCode:24664516bc8571d8798-85151801%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:30299516d17e9e21784-39565949%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '24664516bc8571d8798-85151801',
+  'nocache_hash' => '30299516d17e9e21784-39565949',
   'function' => 
   array (
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_516bc857248076_97411470',
+  'unifunc' => 'content_516d17e9e92de6_99964214',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_516bc857248076_97411470')) {function content_516bc857248076_97411470($_smarty_tpl) {?><div class="box">
+<?php if ($_valid && !is_callable('content_516d17e9e92de6_99964214')) {function content_516d17e9e92de6_99964214($_smarty_tpl) {?><div class="box">
 <div class="boxContent">
 <div class="boxFrom">
 	<div class="boxTitle">

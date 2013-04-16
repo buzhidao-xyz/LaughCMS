@@ -1,50 +1,83 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-15 17:08:01
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-16 17:30:22
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\Plugin\FlinkIndex.html" */ ?>
-<?php /*%%SmartyHeaderCode:446516bc3710de874-33494954%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:22508516d1a2ee425b4-64605033%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '235f2a94dfc8e186f3a1b4cb9d0c2020092bb514' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\green\\Plugin\\FlinkIndex.html',
-      1 => 1365992020,
+      1 => 1366104368,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '446516bc3710de874-33494954',
+  'nocache_hash' => '22508516d1a2ee425b4-64605033',
   'function' => 
   array (
   ),
   'variables' => 
   array (
-    'total' => 0,
     'accessStatus' => 0,
+    'catalogList' => 0,
+    'c' => 0,
+    'total' => 0,
     'dataList' => 0,
-    'start' => 0,
     'd' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_516bc3711e95a0_40322397',
+  'unifunc' => 'content_516d1a2f02e249_41587810',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_516bc3711e95a0_40322397')) {function content_516bc3711e95a0_40322397($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_516d1a2f02e249_41587810')) {function content_516d1a2f02e249_41587810($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="opTop">
 	<a href="__APP__/index.php?s=Plugin/FlinkIndex">友情链接管理</a>
-	<a href="__APP__/index.php?s=Plugin/FlinkAdd">添加新链接</a>
 	<a href="__APP__/index.php?s=Plugin/FlinkCatalogIndex">分类管理</a>
 </div>
-<div class="captitle"><h5>人才招聘信息列表 【链接数<?php if ($_smarty_tpl->tpl_vars['total']->value){?><?php echo $_smarty_tpl->tpl_vars['total']->value;?>
+<?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
+<div class="formContainer" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
+>
+	<div class="formtitle"><h5>添加友情链接</h5></div>
+	<form name="newform" action="__APP__/index.php?s=Plugin/FlinkSave" method="post" id="ajaxform" class="newform">
+		<ul class="formbody">
+			<li class="formblock">
+				<span>选择分类: </span>
+				<select name="catalogid" style="width:150px;">
+					<option value="">|-分类列表</option>
+					<?php  $_smarty_tpl->tpl_vars['c'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['c']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['catalogList']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['c']->key => $_smarty_tpl->tpl_vars['c']->value){
+$_smarty_tpl->tpl_vars['c']->_loop = true;
+?>
+					<option value="<?php echo $_smarty_tpl->tpl_vars['c']->value['id'];?>
+">&nbsp;|-<?php echo $_smarty_tpl->tpl_vars['c']->value['catalogname'];?>
+</option>
+					<?php } ?>
+				</select>
+			</li>
+			<li class="formblock">
+				<span>链接名称: </span>
+				<input type="text" name="linkname" value="" class="input w150" />
+			</li>
+			<li class="formblock">
+				<span>链接地址: </span>
+				<input type="text" name="linkurl" value="" class="input w250" />
+			</li>
+			<li class="formblock bordernone">
+				<input type="submit" name="subut" class="button btngreen2" value="添加" />
+			</li>
+		</ul>
+	</form>
+</div>
+<?php }?>
+<div class="captitle"><h5>友情链接列表 【链接数<?php if ($_smarty_tpl->tpl_vars['total']->value){?><?php echo $_smarty_tpl->tpl_vars['total']->value;?>
 <?php }else{ ?>0<?php }?>】</h5></div>
 <ul class="table_list_title">
 	<li class="table_list_l table_list_l30"></li>
-	<li class="table_list_l table_list_l200">招聘职位</li>
-	<li class="table_list_l table_list_l80">招聘人数</li>
-	<li class="table_list_l table_list_l100">学历要求</li>
-	<li class="table_list_l table_list_l100">工作性质</li>
-	<li class="table_list_l table_list_l150">发布时间</li>
-	<li class="table_list_l table_list_l150">更新时间</li>
-	<li class="table_list_l table_list_l100">工资待遇</li>
+	<li class="table_list_l table_list_l170">链接名称</li>
+	<li class="table_list_l table_list_l400">链接地址</li>
+	<li class="table_list_l table_list_l150">分类</li>
+	<li class="table_list_l table_list_l150">添加时间</li>
 	<?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
 	<li class="table_list_l table_list_l100" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
 >操作</li>
@@ -58,28 +91,23 @@ foreach ($_from as $_smarty_tpl->tpl_vars['d']->key => $_smarty_tpl->tpl_vars['d
 $_smarty_tpl->tpl_vars['d']->_loop = true;
 ?>
     <ul class="table_list">
-		<li class="table_list_l table_list_l30"><?php echo $_smarty_tpl->tpl_vars['start']->value+1;?>
+		<li class="table_list_l table_list_l30"><?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 </li>
-		<li class="table_list_l table_list_l200"><?php echo $_smarty_tpl->tpl_vars['d']->value['position'];?>
+		<li class="table_list_l table_list_l170"><?php echo $_smarty_tpl->tpl_vars['d']->value['linkname'];?>
 </li>
-		<li class="table_list_l table_list_l80"><?php echo $_smarty_tpl->tpl_vars['d']->value['quantity'];?>
+		<li class="table_list_l table_list_l400"><a href="<?php echo $_smarty_tpl->tpl_vars['d']->value['linkurl'];?>
+" target="_blank"><?php echo $_smarty_tpl->tpl_vars['d']->value['linkurl'];?>
+</a></li>
+		<li class="table_list_l table_list_l150"><?php echo $_smarty_tpl->tpl_vars['d']->value['catalogname'];?>
 </li>
-		<li class="table_list_l table_list_l100"><?php echo $_smarty_tpl->tpl_vars['d']->value['education'];?>
-</li>
-		<li class="table_list_l table_list_l100"><?php echo $_smarty_tpl->tpl_vars['d']->value['nature'];?>
-</li>
-    	<li class="table_list_l table_list_l150"><?php echo mkdate($_smarty_tpl->tpl_vars['d']->value['publishtime']);?>
-</li>
-    	<li class="table_list_l table_list_l150"><?php echo mkdate($_smarty_tpl->tpl_vars['d']->value['updatetime']);?>
-</li>
-		<li class="table_list_l table_list_l100"><?php echo $_smarty_tpl->tpl_vars['d']->value['salary'];?>
+    	<li class="table_list_l table_list_l150"><?php echo mkdate($_smarty_tpl->tpl_vars['d']->value['createtime']);?>
 </li>
     	<?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
     	<li class="table_list_l table_list_l100" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
 >
-    		<a href="__APP__/index.php?s=Plugin/CooperateEdit&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+    		<a name="FlinkEdit" href="__APP__/index.php?s=Plugin/FlinkEdit&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 ">修改</a>
-    		<a delurl="__APP__/index.php?s=Plugin/CooperateDelete&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+    		<a delurl="__APP__/index.php?s=Plugin/FlinkDelete&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 " href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>
     	<?php }?>
@@ -91,5 +119,12 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 </div>
 <?php echo $_smarty_tpl->getSubTemplate ("public/page.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
+<link type="text/css" rel="stylesheet" href="public/plugin/colorbox/colorbox.css" media="screen">
+<script type="text/javascript" src="public/plugin/colorbox/jquery.colorbox.js"></script>
+<script type="text/javascript">
+$(document).ready(function (){
+	$("a[name=FlinkEdit]").colorbox();
+});
+</script>
 <?php echo $_smarty_tpl->getSubTemplate ("public/control_bottom.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 <?php }} ?>

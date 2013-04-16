@@ -25,9 +25,10 @@ var JS_APPM = 'http://localhost:82/laugh';
 		<li class="controlRightTop"></li>
 	</ul>
 	<div id="controlContent">
-<!-- <div class="control_nav">
-	<h3>添加组</h3>
-</div> -->
+<div class="opTop">
+	<a href="/laugh/admin/index.php?s=Plugin/FlinkIndex">友情链接管理</a>
+	<a href="/laugh/admin/index.php?s=Plugin/FlinkCatalogIndex">分类管理</a>
+</div>
 <div class="formContainer" accessStatus=1>
 	<div class="formtitle"><h5>新链接分类</h5></div>
 	<form name="newform" action="/laugh/admin/index.php?s=Plugin/FlinkCatalogSave" method="post" id="ajaxform" class="newform">
