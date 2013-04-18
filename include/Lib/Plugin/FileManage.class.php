@@ -389,6 +389,7 @@ class FileManage
 	{
 		if (!$dir) return false;
 		$upload = new UploadHelper();
+		$upload->inputName = "newfile";
         $upload->maxSize  = 5242880; //5M
         $upload->savePath =  $this->_getMDir($dir)."/";
         //同名文件不覆盖

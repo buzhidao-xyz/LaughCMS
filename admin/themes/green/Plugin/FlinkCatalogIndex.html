@@ -57,11 +57,12 @@
 	{/if}
 </div>
 {include file="public/page.html"}
-<link type="text/css" rel="stylesheet" href="public/plugin/colorbox/colorbox.css" media="screen">
-<script type="text/javascript" src="public/plugin/colorbox/jquery.colorbox.js"></script>
 <script type="text/javascript">
 $(document).ready(function (){
-	$("a[name=FlinkCatalogEdit]").colorbox();
+	$("a[name=FlinkCatalogEdit]").click(function (){
+		window.parent.colorboxAjaxHtml($(this).attr("href"));
+		return false;
+	});
 });
 </script>
 {include file="public/control_bottom.html"}

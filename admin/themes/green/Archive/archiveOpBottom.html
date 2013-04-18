@@ -6,8 +6,6 @@
 	<a href="__APP__/index.php?s={$Control}/moveArchive" name="archiveMove">移动</a>
 	<a href="javascript:;" name="archiveDelete">删除</a>
 </div>
-<link type="text/css" rel="stylesheet" href="public/plugin/colorbox/colorbox.css" media="screen">
-<script type="text/javascript" src="public/plugin/colorbox/jquery.colorbox.js"></script>
 <script type="text/javascript">
 $(document).ready(function (){
 var archiveClass = function (){
@@ -36,8 +34,9 @@ var archiveClass = function (){
 	//移动栏目
 	archiveObj.archiveMove.colorbox();
 	archiveObj.archiveMove.click(function (){
-		var archiveid = getArchiveID();
-		$(this).attr("href",$(this).attr("href")+"&archiveid="+archiveid);
+		var href = $(this).attr("href")+"&archiveid="+getArchiveID();
+		window.parent.colorboxAjaxHtml(href);
+		return false;
 	});
 	
 	//删除文档

@@ -54,8 +54,6 @@
 	<ul class="table_list"><li class="table_list_center">空</li></ul>
 	{/if}
 </div>
-<link type="text/css" rel="stylesheet" href="public/plugin/colorbox/colorbox.css" media="screen">
-<script type="text/javascript" src="public/plugin/colorbox/jquery.colorbox.js"></script>
 <script type="text/javascript">
 $(document).ready(function (){
 $("form[name=newform]").submit(function (){
@@ -73,7 +71,10 @@ var ImageClass = function (){
 		imageview: $("a[name=imageview]"),
 		updatestatus: $("a[name=updatestatus]")
 	}
-	Obj.imageview.colorbox();
+	Obj.imageview.click(function (){
+		window.parent.colorboxImage($(this).attr("href"));
+		return false;
+	});
 }
 ImageClass();
 });

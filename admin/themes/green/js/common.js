@@ -46,7 +46,7 @@ $(document).ready(function() {
     });
     /*添加的FORM ajax提交方法*/
 
-    /*添加的FORM ajax提交方法*/
+    /*colorbox的FORM ajax提交方法*/
     $('#colorBoxAjaxForm').live("submit", function(){
         // $("#ajaxform input:[type=submit]").attr('disabled','disabled');
         if($('#colorBoxAjaxForm').length>0){
@@ -55,7 +55,8 @@ $(document).ready(function() {
             $.post(url,data,function(data){
                 alert(data.info);
                 if (!data.status) {
-                    location.href = location.href;
+                    $.colorbox.close();
+                    window.frames["main"].location.reload();
                     // $("#colorBoxAjaxForm input:[type=submit]").removeAttr('disabled');
                 }
             }, 'json');
@@ -64,7 +65,7 @@ $(document).ready(function() {
             alert('表单为空');
         }
     });
-    /*添加的FORM ajax提交方法*/
+    /*colorbox的FORM ajax提交方法*/
 
     //修改资料
     if($('#modify_div').length>0){

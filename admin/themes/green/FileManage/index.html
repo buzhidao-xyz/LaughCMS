@@ -53,8 +53,6 @@
 	<a name="fileupload" href="__APP__/index.php?s=Plugin/fileUpload&dir={$fileArray.cdir|urlencode}">文件上传</a>
 	<a name="spacecheck" href="__APP__/index.php?s=Plugin/spaceCheck&dir={$fileArray.cdir|urlencode}">目录空间</a>
 </div>
-<link type="text/css" rel="stylesheet" href="public/plugin/colorbox/colorbox.css" media="screen">
-<script type="text/javascript" src="public/plugin/colorbox/jquery.colorbox.js"></script>
 <script type="text/javascript">
 $(document).ready(function (){
 var fileClass = function (){
@@ -67,9 +65,9 @@ var fileClass = function (){
 		spacecheck: $("a[name=spacecheck]"),
 		fileupload: $("a[name=fileupload]")
 	}
-	Obj.fileRename.colorbox();
 	Obj.fileRename.click(function (){
-		$(this).attr("href",$(this).attr("href"));
+		window.parent.colorboxAjaxHtml($(this).attr("href"));
+		return false;
 	});
 
 	//文件删除
@@ -86,24 +84,24 @@ var fileClass = function (){
 	});
 
 	//文件移动
-	Obj.fileMove.colorbox();
 	Obj.fileMove.click(function (){
-		$(this).attr("href",$(this).attr("href"));
+		window.parent.colorboxAjaxHtml($(this).attr("href"));
+		return false;
 	});
 	//新建目录
-	Obj.newdir.colorbox();
 	Obj.newdir.click(function (){
-		$(this).attr("href",$(this).attr("href"));
+		window.parent.colorboxAjaxHtml($(this).attr("href"));
+		return false;
 	});
 	//文件上传
-	Obj.fileupload.colorbox();
 	Obj.fileupload.click(function (){
-		$(this).attr("href",$(this).attr("href"));
+		window.parent.colorboxAjaxHtml($(this).attr("href"));
+		return false;
 	});
 	//空间检查
-	Obj.spacecheck.colorbox();
 	Obj.spacecheck.click(function (){
-		$(this).attr("href",$(this).attr("href"));
+		window.parent.colorboxAjaxHtml($(this).attr("href"));
+		return false;
 	});
 }
 fileClass();
