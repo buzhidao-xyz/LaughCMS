@@ -293,26 +293,22 @@ $("#ImgListBlock ul#ImgboxTab").idTabs(function(id,list,set){
 	<div class="FlinkTitle">
 		<span class="title">友情链接</span>
 		<ul id="FlinkboxTab" class="boxTab fleft">
-			<li><a tabid="#flinkboxTab1" href="javascript:;" class="bordernone">分类一</a></li>
-			<li><a tabid="#flinkboxTab2" href="javascript:;">分类二</a></li>
-		</ul>
+									<li><a tabid="#flinkboxTab1" href="javascript:;" class="bordernone">分类一</a></li>
+						<li><a tabid="#flinkboxTab2" href="javascript:;" >分类二</a></li>
+								</ul>
 	</div>
 	<div class="FlinkBody">
-		<div id="flinkboxTab1" class="boxTabContent">
+						<div id="flinkboxTab1" class="boxTabContent">
 			<ul class="flinkList">
-				<li><a href="javascript:;">链接一</a></li>
-				<li><a href="javascript:;">链接二三</a></li>
-				<li><a href="javascript:;">链接四四四四</a></li>
-				<li><a href="javascript:;">链接六六六</a></li>
-				<li><a href="javascript:;">链接五六七八九十</a></li>
-			</ul>
+												<li><a href="http://www.baidu.com/" target="_blank">百度</a></li>
+											</ul>
 		</div>
-		<div id="flinkboxTab2" class="boxTabContent">
+				<div id="flinkboxTab2" class="boxTabContent">
 			<ul class="flinkList">
-				<li><a href="javascript:;">链接二</a></li>
-			</ul>
+												<li><a href="http://www.weibo.com/" target="_blank">新浪微博</a></li>
+											</ul>
 		</div>
-	</div>
+					</div>
 </div>
 <script type="text/javascript">
 $(document).ready(function() {

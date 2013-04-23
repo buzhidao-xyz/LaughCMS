@@ -19,6 +19,8 @@ class PluginControl extends CommonControl
 
 	public function index(){}
 
+	
+
 	/**
      * 获取某个栏目下的所有招聘信息
      * @param $columnid int 栏目id

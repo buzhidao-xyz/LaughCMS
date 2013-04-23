@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-23 11:48:46
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-23 17:14:39
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\FileManage\fileEdit.html" */ ?>
-<?php /*%%SmartyHeaderCode:44925176049e0a4fb7-82843400%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:262517650ffce58f1-92206728%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '44925176049e0a4fb7-82843400',
+  'nocache_hash' => '262517650ffce58f1-92206728',
   'function' => 
   array (
   ),
@@ -23,9 +23,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5176049e13c330_60443888',
+  'unifunc' => 'content_517650ffd71378_36644731',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5176049e13c330_60443888')) {function content_5176049e13c330_60443888($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_517650ffd71378_36644731')) {function content_517650ffd71378_36644731($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="captitle">
 	<h5>文件管理 >> 修改文件</h5>

@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-23 11:05:35
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-23 15:40:41
          compiled from "C:\xampp\htdocs\laugh\admin\themes\green\Plugin\FlinkCatalogIndex.html" */ ?>
-<?php /*%%SmartyHeaderCode:178125175fa7f809bd7-61255916%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:890851763af9cc5578-46946818%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '178125175fa7f809bd7-61255916',
+  'nocache_hash' => '890851763af9cc5578-46946818',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5175fa7f952c38_95075446',
+  'unifunc' => 'content_51763af9de9c21_37429752',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5175fa7f952c38_95075446')) {function content_5175fa7f952c38_95075446($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_51763af9de9c21_37429752')) {function content_51763af9de9c21_37429752($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="opTop">
 	<a href="__APP__/index.php?s=Plugin/FlinkIndex">友情链接管理</a>

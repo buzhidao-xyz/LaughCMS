@@ -32,6 +32,8 @@ class CommonControl extends BaseControl
 
         $this->assign("control", $this->_control);
         $this->assign("action", $this->_action);
+
+        $this->getFlink();
     }
 
     //获取分页页码
@@ -146,5 +148,37 @@ class CommonControl extends BaseControl
         }
 
         return $data;
+    }
+
+    /**
+     * 获取友情链接
+     */
+    public function getFlink()
+    {
+        $FlinkList = array();
+        $dataList = M("Plugin")->getFlink();
+        if (is_array($dataList)&&!empty($dataList)) {
+            $i = 1;
+            foreach ($dataList as $k=>$v) {
+                $linkInfo = array(
+                    'linkname' => $v['linkname'],
+                    'linkurl'  => $v['linkurl'],
+                    'catalogid'=> $v['catalogid'],
+                    'createtime'=>$v['createtime']
+                );
+                if (isset($FlinkList[$v['catalogid']])) {
+                    $FlinkList[$v['catalogid']]['flinklist'][] = $linkInfo;
+                } else {
+                    $FlinkList[$v['catalogid']] = array(
+                        'autoIndex'   => $i,
+                        'catalogname' => $v['catalogname'],
+                        'sort'        => $v['sort'],
+                        'flinklist'   => array($linkInfo)
+                    );
+                }
+                $i++;
+            }
+        }
+        $this->assign("FlinkList",$FlinkList);
     }
 }

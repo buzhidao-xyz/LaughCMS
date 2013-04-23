@@ -13,6 +13,31 @@ class Plugin extends Base
 	}
 
 	/**
+	 * 获取友情链接分类信息
+	 * @param int $id 分类ID
+	 */
+	public function getFlinkCatalog($id=null)
+	{
+		$where = array('state'=>1);
+		if ($id) $where['id'] = is_array($id) ? array("in", $id) : $id;
+
+		return T("flink_catalog")->where($where)->order("sort","asc")->select();
+	}
+
+	/**
+	 * 获取友情链接
+	 * @param int $catalogid 分类ID
+	 */
+	public function getFlink($catalogid=null)
+	{
+		$where = array('b.state'=>1);
+		if ($catalogid) $where['b.catalogid'] = is_array($catalogid) ? array("in", $catalogid) : $catalogid;
+
+		$data = T("flink")->join(' '.TBF.'flink_catalog as b on a.catalogid=b.id ')->field("a.*,b.catalogname,b.sort,b.state")->where($where)->order("b.sort","asc")->select();
+		return $data;
+	}
+
+	/**
 	 * 获取人才招聘信息
 	 * @param int $id 信息ID
 	 * @param $start int 分页开始记录数
