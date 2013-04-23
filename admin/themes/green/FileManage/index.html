@@ -95,7 +95,8 @@ var fileClass = function (){
 	});
 	//文件上传
 	Obj.fileupload.click(function (){
-		window.parent.colorboxAjaxHtml($(this).attr("href"));
+		// window.parent.colorboxAjaxHtml($(this).attr("href"));
+		colorboxAjaxHtml($(this).attr("href"));
 		return false;
 	});
 	//空间检查

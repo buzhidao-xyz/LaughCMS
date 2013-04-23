@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2013-04-18 12:35:58
+Date: 2013-04-23 14:17:27
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,7 +37,7 @@ CREATE TABLE `la_admin` (
 -- ----------------------------
 -- Records of la_admin
 -- ----------------------------
-INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1365991799', '2130706433', '127', '1');
+INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1366617125', '2130706433', '127', '1');
 INSERT INTO `la_admin` VALUES ('2', 'luochuan', '624879b3fff70462132a21eb1cd8eb75', 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '1355368421', '2130706433', '12', '0');
 
 -- ----------------------------
@@ -85,21 +85,21 @@ CREATE TABLE `la_archive` (
 INSERT INTO `la_archive` VALUES ('1', '这是一篇测试文章', 'admin', '2', null, '测试,文章', '', '', '', '', '1', '1', '1352', '0', '1364457012', '1364874377');
 INSERT INTO `la_archive` VALUES ('2', '确认在左，取消在右?', 'admin', '4', null, '文章', '', '', '', '', '1', '1', '233', '0', '1357701202', '1364183357');
 INSERT INTO `la_archive` VALUES ('3', '企业用网站进行网络宣传的优势', 'admin', '4', null, '网站,宣传', '', '', '', '传统媒体是二维的，而网络宣传则是多维的，它能将文字、图像和声音有机的组合在一起，传递多感官的信息，让顾客如身临其境般感受商品或服务', '1', '1', '132', '0', '1363854365', '1363854382');
-INSERT INTO `la_archive` VALUES ('4', 'MongoDB:下一代MySQL？', 'admin', '3', null, '', '', '', '', '', '1', '1', '0', '0', '1363856271', '1363856783');
+INSERT INTO `la_archive` VALUES ('4', 'MongoDB:下一代MySQL？', 'admin', '13', null, '', '', '', '', '', '1', '1', '0', '0', '1363856271', '1363856783');
 INSERT INTO `la_archive` VALUES ('5', '页面(PAGE)标记(TAGS)', 'admin', '5', null, '', '', '', '', '', '1', '1', '0', '0', '1364196108', '1364197889');
 INSERT INTO `la_archive` VALUES ('6', 'PHP基本点知识', 'admin', '4', null, '', '', '', '', '', '1', '1', '0', '0', '1364201027', '1364201480');
 INSERT INTO `la_archive` VALUES ('7', 'PHP实现异步操作', 'admin', '12', null, '', '', '', '', '', '1', '1', '0', '0', '1364262615', '1364262717');
 INSERT INTO `la_archive` VALUES ('8', 'PHP单例模式经典讲解', 'admin', '3', null, 'PHP,单利模式', '', '', '', '', '1', '1', '0', '0', '1364537100', '1364537721');
 INSERT INTO `la_archive` VALUES ('9', 'Web服务攻击反侦查痕迹检测', 'admin', '15', '/Uploads/Image/201304/02/1364884203_zxvkaj_4664.png', '', '', 'Web服务攻击反侦查痕迹检测', '', '', '1', '1', '0', '0', '1364884203', '1364884478');
 INSERT INTO `la_archive` VALUES ('10', 'Web服务攻击反侦查痕迹检测', 'admin', '12', null, '', '', 'Web服务攻击反侦查痕迹检测', '', '', '1', '1', '0', '0', '1364796550', '1364799883');
-INSERT INTO `la_archive` VALUES ('11', '4 款 Linux 下开源的个人日记管理软件', 'admin', '15', '/Uploads/Image/201304/02/1364884636_tpajd4_786.png', '', '', '4 款 Linux 下开源的个人日记管理软件', '', '4 款 Linux 下开源的个人日记管理软件', '1', '1', '0', '0', '1364804934', '1364884636');
+INSERT INTO `la_archive` VALUES ('11', '4 款 Linux 下开源的个人日记管理软件', 'admin', '14', '/Uploads/Image/201304/02/1364884636_tpajd4_786.png', '', '', '4 款 Linux 下开源的个人日记管理软件', '', '4 款 Linux 下开源的个人日记管理软件', '1', '1', '0', '0', '1364804934', '1364884636');
 INSERT INTO `la_archive` VALUES ('12', 'Vim文本编辑器 v7.3 正式版', 'admin', '14', '/Uploads/Image/201304/02/1364884946_37uz4d_4967.png', '', '', 'Vim文本编辑器 v7.3 正式版', '', 'Vim文本编辑器 v7.3 正式版', '1', '1', '0', '0', '1364805949', '1364884946');
 INSERT INTO `la_archive` VALUES ('13', 'DNS污染【备忘】', 'admin', '4', null, '', '', 'DNS污染【备忘】', '', 'DNS污染【备忘】', '1', '1', '0', '0', '1364885413', '1364885467');
 INSERT INTO `la_archive` VALUES ('14', '客户案例一', 'admin', '7', '/Uploads/Image/201304/08/1365413072_9nqiqs_5725.jpeg', '', '', '客户案例一', '客户案例一', '客户案例一', '1', '1', '0', '0', '1365670157', '1365670284');
 INSERT INTO `la_archive` VALUES ('15', '客户案例二', 'admin', '7', '/Uploads/Image/201304/08/1365414070_zo95z4_7377.jpg', '', '', '客户案例二', '客户案例二', '客户案例二', '1', '1', '0', '0', '1365413256', '1365414070');
 INSERT INTO `la_archive` VALUES ('16', 'LaughCMS', 'admin', '8', null, '', '', '', '', '', '1', '1', '0', '0', '1365646227', '1365646325');
 INSERT INTO `la_archive` VALUES ('17', 'SCWS中文分词软件', 'admin', '8', null, '', '', '', '', '', '1', '1', '0', '0', '1365668840', '1365669678');
-INSERT INTO `la_archive` VALUES ('18', 'VI命令大全', 'admin', '4', '/Uploads/Image/201304/12/1365748740_8oo39v_3510_vi_tutorial.png', 'VI', '', '', '', '', '1', '1', '0', '0', '1365748679', '1365748740');
+INSERT INTO `la_archive` VALUES ('18', 'VI命令大全', 'admin', '3', '/Uploads/Image/201304/12/1365748740_8oo39v_3510_vi_tutorial.png', 'VI', '', '', '', '', '1', '1', '0', '0', '1365748679', '1365748740');
 
 -- ----------------------------
 -- Table structure for `la_area`
@@ -3838,14 +3838,13 @@ CREATE TABLE `la_flink` (
   `catalogid` int(10) NOT NULL COMMENT '链接所属分类',
   `createtime` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_flink
 -- ----------------------------
 INSERT INTO `la_flink` VALUES ('1', '百度', 'http://www.baidu.com/', '1', '1366104064');
-INSERT INTO `la_flink` VALUES ('2', 'google', 'http://www.google.com/', '1', '1366104090');
-INSERT INTO `la_flink` VALUES ('3', '新浪微博', 'http://www.weibo.com/', '2', '1366104182');
+INSERT INTO `la_flink` VALUES ('2', '新浪微博', 'http://www.weibo.com/', '2', '1366104182');
 
 -- ----------------------------
 -- Table structure for `la_flink_catalog`

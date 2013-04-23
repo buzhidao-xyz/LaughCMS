@@ -176,16 +176,11 @@ class PluginControl extends CommonControl
     //友情链接管理
     public function FlinkIndex()
     {
-        $columnid = $this->_getColumnID();
-
-        $columnids = array();
-        if ($columnid) $columnids = array_merge(M("Column")->getSubColumnID($columnid),array($columnid));
-
         $catalogList = M("Plugin")->getFlinkCatalog();
         $this->assign("catalogList", $catalogList);
 
         list($start,$length) = $this->getPages();
-        $dataList = M("Plugin")->getFlink(null,$start,$length,$columnids,$this->_Control);
+        $dataList = M("Plugin")->getFlink(null,$start,$length);
         
         $this->assign("total", $dataList['total']);
         $this->assign("dataList", $dataList['data']);
@@ -216,8 +211,33 @@ class PluginControl extends CommonControl
     public function FlinkEdit()
     {
         $linkid = q("linkid");
+        $LinkInfo = M("Plugin")->getFlink($linkid,0,0);
+        $this->assign("LinkInfo",$LinkInfo['data'][0]);
+
+        $catalogList = M("Plugin")->getFlinkCatalog();
+        $this->assign("catalogList", $catalogList);
 
         $this->display("Plugin/FlinkEdit.html");
+    }
+
+    //保存修改友情链接信息
+    public function FlinkEditSave()
+    {
+        $linkid = q("linkid");
+        if (!$linkid) $this->ajaxReturn(1,"ID错误！");
+        $catalogid = q("catalogid");
+        if (!$catalogid) $this->ajaxReturn(1,"请选择分类！");
+        $linkname = q("linkname");
+        if (!$linkname) $this->ajaxReturn(1,"请填写链接名称！");
+        $linkurl = q("linkurl");
+        if (!$linkurl) $this->ajaxReturn(1,"请填写链接地址！");
+
+        $return = M("Plugin")->FlinkUpdate($linkid,$catalogid,$linkname,$linkurl);
+        if ($return) {
+            $this->ajaxReturn(0,"链接信息修改成功！");
+        } else {
+            $this->ajaxReturn(1,"链接信息修改失败！");
+        }
     }
 
     //友情链接管理

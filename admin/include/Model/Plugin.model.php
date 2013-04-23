@@ -90,8 +90,8 @@ class Plugin extends Base
 	}
 
 	/**
-	 * 获取友情链接分类列表
-	 * @param string $catalogid 链接分类ID
+	 * 保存友情链接信息
+	 * @param int $catalogid 链接分类ID
 	 * @param string $linkname 链接名称
 	 * @param string $orderway 链接地址
 	 */
@@ -105,6 +105,24 @@ class Plugin extends Base
 			'createtime'=> $createtime
 		);
 		return T("flink")->add($data);
+	}
+
+	/**
+	 * 修改友情链接信息
+	 * @param int $linkid 链接ID
+	 * @param int $catalogid 链接分类ID
+	 * @param string $linkname 链接名称
+	 * @param string $orderway 链接地址
+	 */
+	public function FlinkUpdate($linkid=null,$catalogid=null,$linkname=null,$linkurl=null)
+	{
+		if (!$catalogid || !$linkname || !$linkurl) return false;
+		$data = array(
+			'catalogid' => $catalogid,
+			'linkname'  => $linkname,
+			'linkurl'   => $linkurl
+		);
+		return T("flink")->where(array("id"=>$linkid))->update($data);
 	}
 
 	//删除链接
