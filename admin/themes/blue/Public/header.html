@@ -1,0 +1,19 @@
+<!-- header -->
+<div class="headerTop">
+    <div class="logo"><a href="__APP__"><img src="themes/green/images/logo.png" width="180" height="60" /></a></div>
+    <div class="headerNav">
+        <div class="uinfo">
+            您好 , {$userInfo.username} [ <a href="__APP__/index.php?s=index/logout">退出</a> ] | <a href="__APP__/index.php?s=index">系统主页</a> | <a href="__APPM__/index.php?s=index" target="_blank">网站主页</a>
+        </div>
+        <div class="nav">
+            <ul class="hmenu">
+                <li class="navon"><a hidefocus="true" href="javascript:;" groupid="0" title="管理中心" class="navHeadMenu">管理中心</a></li>
+                {foreach $userAccess as $value}
+                <li><a hidefocus="true" href="javascript:;" groupid="{$value.id}" title="{$value.title|html_entity_decode}" class="navHeadMenu">{$value.title|html_entity_decode}</a></li>
+                {/foreach}
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="headerFoot"></div>
+<!-- header -->

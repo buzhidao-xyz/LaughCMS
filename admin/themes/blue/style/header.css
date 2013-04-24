@@ -1,0 +1,146 @@
+/* header */
+#header {
+    width: 100%;
+    height: 95px;
+    overflow: hidden;
+    background: none repeat scroll 0 0 #3A6EA5;
+}
+#header .headerTop {
+    width: 100%;
+    height: 80px;
+}
+#header .headerFoot {
+    background: none repeat scroll 0 0 #E2E9EA;
+    display: inline-block;
+    height: 15px;
+    line-height: 15px;
+    overflow: hidden;
+    width: 100%;
+}
+#header .logo {
+    float: left;
+    width:185px;
+    text-align:center;
+    height:60px;
+    margin-top:7px;
+}
+#header .headerNav {
+    float: left;
+    overflow: hidden;
+}
+#header .uinfo {
+    height: 25px;
+    margin-top: 7px;
+    color: #FFF;
+    font-weight: 600;
+    text-align: right;
+    padding-right: 50px;
+}
+#header .uinfo a {
+    color:#FFF;
+}
+#header .nav {
+    width:100%;
+    height: 35px;
+    font-size: 14px;
+    padding-top: 5px;
+    overflow: hidden;
+    /*border-top: 1px solid #02726E;*/
+}
+#header .nav .hmenu {
+    padding-left: 0;
+}
+#header .nav .hmenu li {
+    float: left;
+    height: 35px;
+    margin-right: 2px;
+    background: url("../images/admin_nav_bg.png") repeat scroll 0 0 transparent;
+}
+#header .nav .hmenu li a {
+    color: #FFFFFF;
+    font-weight: 700;
+    padding: 0 17px;
+    display: block;
+    text-decoration: none;
+    line-height: 35px;
+    background: url("../images/admin_nav_bg.png") repeat scroll right 0 transparent;
+}
+#header .nav .hmenu li a:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+#header .nav .hmenu li.navon {
+    background: url("../images/admin_nav_bg.png") repeat scroll 0 -43px transparent;
+}
+#header .nav .hmenu li.navon a {
+    color: #367ABB;
+    background: url("../images/admin_nav_bg.png") repeat scroll right -43px transparent;
+}
+/** menu */
+.menu {
+    position: relative;
+    width: 185px;
+    height:100%;
+    z-index: 20;
+    overflow: hidden;
+    overflow-y: auto;
+}
+.menu ul {
+    width: 182px;
+    height:auto;
+    overflow: visible;
+    margin: 10px 1px 10px 2px;
+}
+.menu ul li.menulist {
+    height: auto;
+    overflow: hidden;
+    background: url("../images/menu_bgs.gif") no-repeat;
+}
+.menu ul li.menulist .menutree1 a {
+    display: block;
+    height:30px;
+    line-height:30px;
+    text-decoration: none;
+    color: #014A47;
+    font-weight: 600;
+    text-indent: 30px;
+}
+.menu .menutree1 .plus {
+    background: url("../images/arrow_plus.png") no-repeat scroll 15px 11px;
+}
+.menu .menutree1 .mius {
+    background: url("../images/arrow_mius.png") no-repeat scroll 15px 12px;
+}
+.menu .menusub {
+	display: none;
+    margin: 0;
+}
+.menu .menusub li.menuTopLine {
+    height: 5px;
+    background: url("../images/menu_topline.gif") no-repeat;
+    font-size: 1px;
+    line-height: 1px;
+}
+.menu .menusub li {
+    
+}
+.menu .menusub li a {
+    color: #333333;
+    display: block;
+    text-indent: 48px;
+    height: 26px;
+    line-height: 26px;
+    background: url("../images/menu_bg1.gif") no-repeat;
+}
+.menu .menusub li a:hover {
+    /*color: #006600;*/
+    color: #007A77;
+    font-weight: 600;
+    text-decoration: none;
+    background: url("../images/menu_bg2.gif") no-repeat;
+}
+.menu .menusub li a.tabon, .menu .menusub li a.tabon:hover {
+    color: #007A77;
+    font-weight: 600;
+    background: url("../images/menu_bg2.gif") no-repeat;
+}

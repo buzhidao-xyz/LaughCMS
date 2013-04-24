@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="">
+<link type="text/css" rel="stylesheet" href="themes/green/style/common.css" media="screen">
+<link type="text/css" rel="stylesheet" href="themes/green/style/global.css" media="screen">
+<script type="text/javascript" src="public/js/jquery.js"></script>
+<script type="text/javascript" src="themes/green/js/div_window.js"></script>
+<!-- <script type="text/javascript" src="themes/blue/js/PIE.js"></script> -->
+<link type="text/css" rel="stylesheet" href="public/plugin/colorbox/colorbox.css" media="screen">
+<script type="text/javascript" src="public/plugin/colorbox/jquery.colorbox.js"></script>
+<title>管理中心</title>
+<script type="text/javascript">
+var JS_APP = '__APP__';
+var JS_APPM = '__APPM__';
+function colorboxAjaxHtml(url) {
+	$.post(url,{},function (data){
+		$.colorbox({ html: data });
+	});
+}
+function colorboxHtml(url) {
+	$.colorbox({ href: url });
+}
+function colorboxImage(url) {
+	$.colorbox({ href: url });
+}
+</script>
+</head>
+
+<body>

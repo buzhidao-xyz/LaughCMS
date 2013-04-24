@@ -7,7 +7,7 @@ $config_dir = str_replace('/admin/include/Config', '', str_replace('\\', '/', di
 require_once($config_dir.'/config.php');
 
 $admin_config = array(
-    'STYLE_DEFAULT'        => ADMIN_DIR.'/themes/green', //模板样式路径
+    'STYLE_DEFAULT'        => ADMIN_DIR.'/themes/blue', //模板样式路径
 
     'INCLUDE_DIR'          => ADMIN_DIR.'/include',
     'CACHE_DIR'            => ADMIN_DIR.'/cache',
@@ -22,7 +22,7 @@ $admin_config = array(
         'debug'            => false,
         'caching'          => false,
         'cache_lifetime'   => 120,
-        'template'         => ADMIN_DIR.'/themes/green', //模板样式路径
+        'template'         => ADMIN_DIR.'/themes/blue', //模板样式路径
         'template_compile' => ADMIN_DIR.'/cache/compile',
         'template_cache'   => ADMIN_DIR.'/cache/cache',
         'plugin_dir'       => ROOT_DIR.'/include/Vendor/Smarty/plugins',
