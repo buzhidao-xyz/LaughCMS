@@ -52,16 +52,17 @@
 }
 #header .nav .hmenu li {
     float: left;
-    height: 35px;
     margin-right: 2px;
+    padding-left: 8px;
     background: url("../images/admin_nav_bg.png") repeat scroll 0 0 transparent;
 }
 #header .nav .hmenu li a {
     color: #FFFFFF;
     font-weight: 700;
-    padding: 0 17px;
     display: block;
+    padding: 0 18px 0 10px;
     text-decoration: none;
+    height: 34px;
     line-height: 35px;
     background: url("../images/admin_nav_bg.png") repeat scroll right 0 transparent;
 }
