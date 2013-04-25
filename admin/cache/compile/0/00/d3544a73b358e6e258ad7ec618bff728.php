@@ -32,7 +32,7 @@ function colorboxImage(url) {
 <link type="text/css" rel="stylesheet" href="themes/blue/style/login.css" media="screen">
 <div id="loginPanel">
     <div class="logTop">LaughCMS网站管理系统</div>
-    <div id="logError">用户名或密码错误!</div>
+    <div id="logError"></div>
     <div class="logForm">
         <div class="Loglogo"><a href="http://localhost:82/laugh" target="_blank"><img src="themes/green/images/logo.png" width="173" height="60" /></a></div>
         <form name="loginform" method="post" action="/laugh/admin/index.php?s=login/loginCheck">

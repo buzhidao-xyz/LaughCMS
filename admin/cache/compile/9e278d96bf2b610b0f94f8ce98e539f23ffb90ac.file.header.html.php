@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-24 20:03:51
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-25 16:32:19
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\public\header.html" */ ?>
-<?php /*%%SmartyHeaderCode:36205177ca2774ccc5-86059230%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:254045178ea135a96c4-07102778%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '9e278d96bf2b610b0f94f8ce98e539f23ffb90ac' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\public\\header.html',
-      1 => 1366804015,
+      1 => 1366855407,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '36205177ca2774ccc5-86059230',
+  'nocache_hash' => '254045178ea135a96c4-07102778',
   'function' => 
   array (
   ),
@@ -23,15 +23,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5177ca27791568_31265363',
+  'unifunc' => 'content_5178ea135ebe59_20413205',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5177ca27791568_31265363')) {function content_5177ca27791568_31265363($_smarty_tpl) {?><!-- header -->
+<?php if ($_valid && !is_callable('content_5178ea135ebe59_20413205')) {function content_5178ea135ebe59_20413205($_smarty_tpl) {?><!-- header -->
 <div class="headerTop">
-    <div class="logo"><a href="__APP__"><img src="themes/green/images/logo.png" width="180" height="60" /></a></div>
+    <div class="logo"><a href="__APP__"><img src="themes/blue/images/logo.png" width="180" height="60" /></a></div>
     <div class="headerNav">
         <div class="uinfo">
-            您好 , <?php echo $_smarty_tpl->tpl_vars['userInfo']->value['username'];?>
- [ <a href="__APP__/index.php?s=index/logout">退出</a> ] | <a href="__APP__/index.php?s=index">系统主页</a> | <a href="__APPM__/index.php?s=index" target="_blank">网站主页</a>
+            <font color="#FFFFFF">欢迎你！<?php echo $_smarty_tpl->tpl_vars['userInfo']->value['username'];?>
+</font> [<a href="__APP__/index.php?s=index/logout">退出</a>] | <a href="__APP__/index.php?s=index">系统主页</a> | <a href="__APPM__/index.php?s=index" target="_blank">网站主页</a>
         </div>
         <div class="nav">
             <ul class="hmenu">
@@ -48,6 +48,9 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
                 <?php } ?>
             </ul>
         </div>
+    </div>
+    <div class="kjdh">
+        <a href="__APP__/index.php?s=index">系统主页</a> | <a href="__APPM__/index.php?s=index" target="_blank">网站主页</a> | <a href="__APP__/index.php?s=index">系统主页</a> | <a href="__APPM__/index.php?s=index" target="_blank">网站主页</a>
     </div>
 </div>
 <div class="headerFoot"></div>

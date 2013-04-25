@@ -3,14 +3,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="keywords" content="">
-<link type="text/css" rel="stylesheet" href="themes/green/style/common.css" media="screen">
-<link type="text/css" rel="stylesheet" href="themes/green/style/global.css" media="screen">
+<link type="text/css" rel="stylesheet" href="themes/blue/style/common.css" media="screen">
+<link type="text/css" rel="stylesheet" href="themes/blue/style/global.css" media="screen">
 <script type="text/javascript" src="public/js/jquery.js"></script>
-<script type="text/javascript" src="themes/green/js/div_window.js"></script>
-<!-- <script type="text/javascript" src="themes/blue/js/PIE.js"></script> -->
+<script type="text/javascript" src="themes/blue/js/div_window.js"></script>
 <link type="text/css" rel="stylesheet" href="public/plugin/colorbox/colorbox.css" media="screen">
 <script type="text/javascript" src="public/plugin/colorbox/jquery.colorbox.js"></script>
-<title>管理中心</title>
+<title>LaughCMS网站管理系统</title>
 <script type="text/javascript">
 var JS_APP = '/laugh/admin';
 var JS_APPM = 'http://localhost:82/laugh';
@@ -33,15 +32,11 @@ function colorboxImage(url) {
 	body { background: none; }
 </style>
 <div id="control">
-	<ul class="controlTop">
-		<li class="controlLeftTop"></li>
-		<li class="controlRightTop"></li>
-	</ul>
 	<div id="controlContent">
-<div class="captitle lineOrange">欢迎进入后台管理系统</div>
+<div class="captitle lineGray">欢迎进入后台管理系统</div>
 <div class="box boxLeft">
 	<div class="boxTitle">
-		<h5>·&nbsp;快捷操作</h5>
+		<h5><b>快捷操作</b><span>Navigation Link</span></h5>
 		<ul class="boxTab">
 			<li><a tabid="#boxTab1" href="javascript:;">管理</a></li>
 			<li><a tabid="#boxTab2" href="javascript:;">新增</a></li>
@@ -76,14 +71,14 @@ function colorboxImage(url) {
 </div>
 <div class="box boxRight">
 	<div class="boxTitle">
-		<h5>·&nbsp;信息统计</h5>
+		<h5><b>统计信息</b><span>Site Stats</span></h5>
 	</div>
 	<div class="boxContent">
 	</div>
 </div>
 <div class="box boxLeft">
 	<div class="boxTitle">
-		<h5>·&nbsp;系统基本信息</h5>
+		<h5><b>系统基本信息</b><span>System Info</span></h5>
 	</div>
 	<div class="boxContent">
 		<ul>
@@ -108,15 +103,11 @@ $(document).ready(function(){
 });
 </script>
     </div>
-    <ul class="controlBottom">
-		<li class="controlLeftBottom"></li>
-		<li class="controlRightBottom"></li>
-	</ul>
 </div>
 </body>
-<script type="text/javascript" src="themes/green/js/jquery.corner.js"></script>
-<script type="text/javascript" src="themes/green/js/public.js"></script>
-<script type="text/javascript" src="themes/green/js/common.js"></script>
-<script type="text/javascript" src="themes/green/js/ajax.js"></script>
+<script type="text/javascript" src="themes/blue/js/jquery.corner.js"></script>
+<script type="text/javascript" src="themes/blue/js/public.js"></script>
+<script type="text/javascript" src="themes/blue/js/common.js"></script>
+<script type="text/javascript" src="themes/blue/js/ajax.js"></script>
 <script type="text/javascript" src="public/js/jquery.idTabs.min.js"></script>
 </html>

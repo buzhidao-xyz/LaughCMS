@@ -19,7 +19,7 @@
 }
 #header .logo {
     float: left;
-    width:185px;
+    width:191px;
     text-align:center;
     height:60px;
     margin-top:7px;
@@ -30,22 +30,20 @@
 }
 #header .uinfo {
     height: 25px;
-    margin-top: 7px;
-    color: #FFF;
-    font-weight: 600;
-    text-align: right;
-    padding-right: 50px;
+    margin-top: 16px;
+    padding-left: 10px;
+    color: #4782B4;
+    color: #93C9FF;
 }
 #header .uinfo a {
     color:#FFF;
 }
 #header .nav {
     width:100%;
-    height: 35px;
     font-size: 14px;
     padding-top: 5px;
     overflow: hidden;
-    /*border-top: 1px solid #02726E;*/
+    clear: both;
 }
 #header .nav .hmenu {
     padding-left: 0;
@@ -67,7 +65,7 @@
     background: url("../images/admin_nav_bg.png") repeat scroll right 0 transparent;
 }
 #header .nav .hmenu li a:hover {
-    color: #FFFFFF;
+    color: #E9FFFF;
     text-decoration: underline;
 }
 #header .nav .hmenu li.navon {
@@ -77,71 +75,91 @@
     color: #367ABB;
     background: url("../images/admin_nav_bg.png") repeat scroll right -43px transparent;
 }
+#header .kjdh {
+    position: absolute;
+    right: 30px;
+    height: 25px;
+    margin-top: 16px;
+    color: #4782B4;
+    color: #93C9FF;
+}
+#header .kjdh a {
+    color: #FFFFFF;
+}
 /** menu */
 .menu {
+    float: left;
     position: relative;
     width: 185px;
     height:100%;
     z-index: 20;
     overflow: hidden;
     overflow-y: auto;
+    background: #F7FBFC;
 }
 .menu ul {
-    width: 182px;
+    width: 175px;
     height:auto;
     overflow: visible;
-    margin: 10px 1px 10px 2px;
+    margin-left: 10px;
 }
 .menu ul li.menulist {
     height: auto;
     overflow: hidden;
-    background: url("../images/menu_bgs.gif") no-repeat;
+}
+.menu ul li.menulist .menutree1 {
+    margin-top: 10px;
 }
 .menu ul li.menulist .menutree1 a {
     display: block;
-    height:30px;
-    line-height:30px;
+    height:27px;
+    line-height:27px;
     text-decoration: none;
-    color: #014A47;
+    color: #000;
     font-weight: 600;
-    text-indent: 30px;
+    text-indent: 35px;
+    border-bottom: 1px solid #E2E9EA;
 }
-.menu .menutree1 .plus {
-    background: url("../images/arrow_plus.png") no-repeat scroll 15px 11px;
+.menu ul li.menulist .menutree1 .plus {
+    background: url("../images/arrow_plus.gif") no-repeat scroll 14px 4px;
 }
-.menu .menutree1 .mius {
-    background: url("../images/arrow_mius.png") no-repeat scroll 15px 12px;
+.menu ul li.menulist .menutree1 .mius {
+    background: url("../images/arrow_mius.gif") no-repeat scroll 12px 6px;
 }
 .menu .menusub {
-	display: none;
+	display: block;
     margin: 0;
 }
-.menu .menusub li.menuTopLine {
-    height: 5px;
-    background: url("../images/menu_topline.gif") no-repeat;
-    font-size: 1px;
-    line-height: 1px;
-}
 .menu .menusub li {
-    
+    padding: 1px 0;
+    border-bottom: 1px solid #EAEFF4;
 }
 .menu .menusub li a {
-    color: #333333;
+    color: #444444;
     display: block;
-    text-indent: 48px;
-    height: 26px;
-    line-height: 26px;
-    background: url("../images/menu_bg1.gif") no-repeat;
+    height: 27px;
+    line-height: 27px;
+    padding-left: 35px;
+    background: url("../images/admin_dot.gif") no-repeat scroll 18px 9px;
 }
 .menu .menusub li a:hover {
-    /*color: #006600;*/
-    color: #007A77;
-    font-weight: 600;
+    color: #333333;
     text-decoration: none;
-    background: url("../images/menu_bg2.gif") no-repeat;
+    background: url("../images/admin_dot.gif") no-repeat scroll 18px 9px #E2E9EA;
 }
 .menu .menusub li a.tabon, .menu .menusub li a.tabon:hover {
-    color: #007A77;
-    font-weight: 600;
-    background: url("../images/menu_bg2.gif") no-repeat;
+    color: #333333;
+    background: url("../images/admin_dot.gif") no-repeat scroll 18px 9px #E2E9EA;
+}
+.menuSlide {
+    float: left;
+    width: 6px;
+    height:100%;
+    display: inline-block;
+    overflow: hidden;
+    background: #E2E9EA;
+}
+.menuSlide img {
+    margin-top: 220px;
+    cursor: pointer;
 }

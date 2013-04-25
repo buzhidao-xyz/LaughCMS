@@ -3,14 +3,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="keywords" content="">
-<link type="text/css" rel="stylesheet" href="themes/green/style/common.css" media="screen">
-<link type="text/css" rel="stylesheet" href="themes/green/style/global.css" media="screen">
+<link type="text/css" rel="stylesheet" href="themes/blue/style/common.css" media="screen">
+<link type="text/css" rel="stylesheet" href="themes/blue/style/global.css" media="screen">
 <script type="text/javascript" src="public/js/jquery.js"></script>
-<script type="text/javascript" src="themes/green/js/div_window.js"></script>
-<!-- <script type="text/javascript" src="themes/blue/js/PIE.js"></script> -->
+<script type="text/javascript" src="themes/blue/js/div_window.js"></script>
 <link type="text/css" rel="stylesheet" href="public/plugin/colorbox/colorbox.css" media="screen">
 <script type="text/javascript" src="public/plugin/colorbox/jquery.colorbox.js"></script>
-<title>管理中心</title>
+<title>LaughCMS网站管理系统</title>
 <script type="text/javascript">
 var JS_APP = '/laugh/admin';
 var JS_APPM = 'http://localhost:82/laugh';
@@ -34,10 +33,10 @@ function colorboxImage(url) {
 <div id="header">
 <!-- header -->
 <div class="headerTop">
-    <div class="logo"><a href="/laugh/admin"><img src="themes/green/images/logo.png" width="180" height="60" /></a></div>
+    <div class="logo"><a href="/laugh/admin"><img src="themes/blue/images/logo.png" width="180" height="60" /></a></div>
     <div class="headerNav">
         <div class="uinfo">
-            您好 , admin [ <a href="/laugh/admin/index.php?s=index/logout">退出</a> ] | <a href="/laugh/admin/index.php?s=index">系统主页</a> | <a href="http://localhost:82/laugh/index.php?s=index" target="_blank">网站主页</a>
+            <font color="#FFFFFF">欢迎你！admin</font> [<a href="/laugh/admin/index.php?s=index/logout">退出</a>] | <a href="/laugh/admin/index.php?s=index">系统主页</a> | <a href="http://localhost:82/laugh/index.php?s=index" target="_blank">网站主页</a>
         </div>
         <div class="nav">
             <ul class="hmenu">
@@ -51,6 +50,9 @@ function colorboxImage(url) {
                             </ul>
         </div>
     </div>
+    <div class="kjdh">
+        <a href="/laugh/admin/index.php?s=index">系统主页</a> | <a href="http://localhost:82/laugh/index.php?s=index" target="_blank">网站主页</a> | <a href="/laugh/admin/index.php?s=index">系统主页</a> | <a href="http://localhost:82/laugh/index.php?s=index" target="_blank">网站主页</a>
+    </div>
 </div>
 <div class="headerFoot"></div>
 <!-- header -->
@@ -60,20 +62,20 @@ function colorboxImage(url) {
 <div class="menu">
     <ul>
         <li class="menulist">
-			<div class="menutree1"><a target="main" hidefocus="true" href="javascript:;" class="plus">基本信息</a></div>
+			<div class="menutree1"><a target="main" hidefocus="true" href="javascript:;" class="mius">基本信息</a></div>
 			<ul class="menusub">
-				<li class="menuTopLine"></li>
 				<li><a hidefocus="true" href="/laugh/admin/index.php?s=Public/welcome" target="main">系统主页</a></li>
 				<li><a hidefocus="true" href="/laugh/admin/index.php?s=Admin/profile" target="main">个人信息</a></li>
 			</ul>
 		</li>
     </ul>
 </div>
+<div class="menuSlide">
+	<img border="0" width="6" height="60" src="themes/blue/images/admin_barclose.gif">
+</div>
 <script type="text/javascript">
 $(document).ready(function (){
-	$("li.menulist:eq(0) > div.menutree1 > a").addClass("mius");
-	$("li.menulist > ul.menusub").css("display","block");
-	// $("li.menulist:eq(0) > ul.menusub > li:eq(1) > a").addClass('tabon');
+	$("li.menulist:eq(0) > ul.menusub > li:eq(0) > a").addClass('tabon');
 });
 </script>
 </div>
@@ -84,9 +86,9 @@ $(document).ready(function (){
 Copyright &copy; xxx. 2012-2015
 </div>
 </body>
-<script type="text/javascript" src="themes/green/js/jquery.corner.js"></script>
-<script type="text/javascript" src="themes/green/js/public.js"></script>
-<script type="text/javascript" src="themes/green/js/common.js"></script>
-<script type="text/javascript" src="themes/green/js/ajax.js"></script>
+<script type="text/javascript" src="themes/blue/js/jquery.corner.js"></script>
+<script type="text/javascript" src="themes/blue/js/public.js"></script>
+<script type="text/javascript" src="themes/blue/js/common.js"></script>
+<script type="text/javascript" src="themes/blue/js/ajax.js"></script>
 <script type="text/javascript" src="public/js/jquery.idTabs.min.js"></script>
 </html>

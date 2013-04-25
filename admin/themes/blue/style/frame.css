@@ -18,14 +18,14 @@ html, body {
 	top:95px;
 	left:0;
 	bottom:20px;
-	width:185px;
+	width:191px;
 	/*overflow-x:hidden;
 	overflow-y:auto;*/
 }
 #main {
 	position:absolute;
 	top:95px;
-	left:185px;
+	left:191px;
 	bottom:20px;
 	right:0;
 	overflow: hidden;
@@ -68,10 +68,10 @@ html {
 }
 #menuTree {
 	*float:left;
-	*width:185px;
+	*width:191px;
 }
 #main {
-	*margin-left:185px;
+	*margin-left:191px;
 }
 #main iframe {
 	*width:100%;

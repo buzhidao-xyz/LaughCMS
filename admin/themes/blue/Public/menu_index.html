@@ -2,19 +2,19 @@
 <div class="menu">
     <ul>
         <li class="menulist">
-			<div class="menutree1"><a target="main" hidefocus="true" href="javascript:;" class="plus">基本信息</a></div>
+			<div class="menutree1"><a target="main" hidefocus="true" href="javascript:;" class="mius">基本信息</a></div>
 			<ul class="menusub">
-				<li class="menuTopLine"></li>
 				<li><a hidefocus="true" href="__APP__/index.php?s=Public/welcome" target="main">系统主页</a></li>
 				<li><a hidefocus="true" href="__APP__/index.php?s=Admin/profile" target="main">个人信息</a></li>
 			</ul>
 		</li>
     </ul>
 </div>
+<div class="menuSlide">
+	<img border="0" width="6" height="60" src="themes/blue/images/admin_barclose.gif">
+</div>
 <script type="text/javascript">
 $(document).ready(function (){
-	$("li.menulist:eq(0) > div.menutree1 > a").addClass("mius");
-	$("li.menulist > ul.menusub").css("display","block");
-	// $("li.menulist:eq(0) > ul.menusub > li:eq(1) > a").addClass('tabon');
+	$("li.menulist:eq(0) > ul.menusub > li:eq(0) > a").addClass('tabon');
 });
 </script>

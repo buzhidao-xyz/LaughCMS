@@ -3,9 +3,7 @@ body {
     margin:0px;
     color:#000000;
     text-align:center;
-    font: 13px Arial,Helvetica,sans-serif;
-    /*background: url("../images/body_bg_x.gif") repeat #EEF2FB;*/
-    background: #ddeef5;
+    font: 13px Tahoma,Verdana,Helvetica,Arial,sans-serif;
 }
 * {
     outline: medium none;
@@ -39,11 +37,11 @@ h5 {
 	display: inline;
 }
 a:link, a:visited{
-    color: #027263;
+    color: #498CD0;
     text-decoration:none;
 }
 a:hover{
-    color: #FF6600;
+    color: #BF0000;
     text-decoration:underline;
 }
 div{

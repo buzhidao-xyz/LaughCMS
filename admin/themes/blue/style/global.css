@@ -1,54 +1,16 @@
 /** control */
 #control {
     clear: both;
-    margin: 10px 4px;
+    margin: 5px 10px;
     margin-bottom: 0;
     overflow: visible;
     padding: 0;
-    background: url('../images/main_right_bg.gif') right repeat-y #F7F8F9;
     position: relative;
     color: #333333;
 }
-#control ul.controlTop {
-  overflow: hidden;
-  height: 23px;
-  background: url('../images/main_top1.gif') left top repeat-x;
-}
-#control ul li.controlLeftTop {
-  float: left;
-  width: 17px;
-  height: 23px;
-  background: url('../images/main_left_top1.gif') left top no-repeat;
-}
-#control ul li.controlRightTop {
-  float: right;
-  width: 17px;
-  height: 23px;
-  background: url('../images/main_right_top1.gif') right top no-repeat;
-}
-#control ul.controlBottom {
-  clear: both;
-  overflow: hidden;
-  height: 17px;
-  background: url('../images/main_bottom.gif') left top repeat-x;
-}
-#control ul li.controlLeftBottom {
-  float: left;
-  width: 17px;
-  height: 17px;
-  background: url('../images/main_left_bottom.gif') left top no-repeat;
-}
-#control ul li.controlRightBottom {
-  float: right;
-  width: 16px;
-  height: 17px;
-  background: url('../images/main_right_bottom.gif') right top no-repeat;
-}
 #control #controlContent {
-  padding: 10px 17px 0 17px;
   overflow: hidden;
   zoom: 1;
-  background: url('../images/main_left_bg.gif') left repeat-y;
 }
 #control .control_nav {
     width: auto;
@@ -96,6 +58,7 @@
     background: url("../images/captitle_icon1.png") no-repeat 0 12px;
     padding: 5px 10px;
     clear: both;
+    color: #000;
 }
 .contentTableList a:link, .contentTableList a:visited {
     text-decoration: underline;
@@ -237,6 +200,9 @@ input.w350 {
 }
 .lineOrange {
   border-bottom: 1px dashed #FF6600;
+}
+.lineGray {
+  border-bottom: 1px dashed #E2E9EA;
 }
 
 /**form表单样式表*/
@@ -642,28 +608,34 @@ form ul.formbody li .edui-default span {
   width: 480px;
   overflow: hidden;
   margin: 0 auto;
-  border: 1px solid #027263;
 }
 .boxLeft {
   float: left;
   clear: both;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .boxRight {
   float: left;
   margin-left: 10px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .box .boxTitle {
-  width: 100%;
+  width: auto;
   height: 30px;
   line-height: 30px;
-  background: #014A47;
+  background: #EEEEEE;
+  border-right: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDDDDD;
 }
 .box .boxTitle h5 {
   float: left;
-  color: #FFFFFF;
-  padding-left: 10px;
+  color: #3865B8;
+  padding-left: 15px;
+}
+.box .boxTitle h5 span {
+  color: #CCCCCC;
+  font-size: 10px;
+  margin-left: 10px;
 }
 .box .boxTitle ul.boxTab {
   float: right;
@@ -671,20 +643,26 @@ form ul.formbody li .edui-default span {
 }
 .box .boxTitle ul.boxTab li {
   float: left;
+  margin-top: 1px;
 }
 .box .boxTitle ul.boxTab li a {
-  background: #DDEEF5;
-  padding: 6px 10px;
+  color: #FFFFFF;
+  background: #498CD0;
   margin-left: 1px;
+  padding: 6px 10px;
   text-decoration: none;
 }
 .box .boxTitle ul.boxTab li a.selected {
-  background: #FFF;
+  color: #498CD0;
+  background: #FFFFFF;
+  border: 1px solid #EAEFF4;
   border-bottom: 1px solid #FFF;
 }
 .box .boxContent {
+  margin-top: 10px;
   padding: 5px 10px;
   background: #FFF;
+  border: 1px solid #DDDDDD;
 }
 .box .boxContent a {
   padding: 5px;

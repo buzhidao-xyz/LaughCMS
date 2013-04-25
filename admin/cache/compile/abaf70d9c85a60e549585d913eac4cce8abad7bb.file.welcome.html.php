@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-24 20:03:51
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-25 16:32:19
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Public\welcome.html" */ ?>
-<?php /*%%SmartyHeaderCode:45325177ca27bd86f2-56297727%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:322955178ea139c3f15-26134490%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'abaf70d9c85a60e549585d913eac4cce8abad7bb' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\Public\\welcome.html',
-      1 => 1366268658,
+      1 => 1366878734,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '45325177ca27bd86f2-56297727',
+  'nocache_hash' => '322955178ea139c3f15-26134490',
   'function' => 
   array (
   ),
@@ -21,14 +21,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5177ca27c73845_11758124',
+  'unifunc' => 'content_5178ea13a617d2_26163264',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5177ca27c73845_11758124')) {function content_5177ca27c73845_11758124($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_5178ea13a617d2_26163264')) {function content_5178ea13a617d2_26163264($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-<div class="captitle lineOrange">欢迎进入后台管理系统</div>
+<div class="captitle lineGray">欢迎进入后台管理系统</div>
 <div class="box boxLeft">
 	<div class="boxTitle">
-		<h5>·&nbsp;快捷操作</h5>
+		<h5><b>快捷操作</b><span>Navigation Link</span></h5>
 		<ul class="boxTab">
 			<li><a tabid="#boxTab1" href="javascript:;">管理</a></li>
 			<li><a tabid="#boxTab2" href="javascript:;">新增</a></li>
@@ -63,14 +63,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </div>
 <div class="box boxRight">
 	<div class="boxTitle">
-		<h5>·&nbsp;信息统计</h5>
+		<h5><b>统计信息</b><span>Site Stats</span></h5>
 	</div>
 	<div class="boxContent">
 	</div>
 </div>
 <div class="box boxLeft">
 	<div class="boxTitle">
-		<h5>·&nbsp;系统基本信息</h5>
+		<h5><b>系统基本信息</b><span>System Info</span></h5>
 	</div>
 	<div class="boxContent">
 		<ul>
