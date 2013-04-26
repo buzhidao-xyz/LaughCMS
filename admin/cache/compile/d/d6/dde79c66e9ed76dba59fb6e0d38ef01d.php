@@ -32,10 +32,6 @@ function colorboxImage(url) {
 	body { background: none; }
 </style>
 <div id="control">
-	<ul class="controlTop">
-		<li class="controlLeftTop"></li>
-		<li class="controlRightTop"></li>
-	</ul>
 	<div id="controlContent">
 <div class="captitle"><h5>角色列表 【目前共有2条数据】</h5></div>
 <ul class="table_list_title">
@@ -73,10 +69,6 @@ function colorboxImage(url) {
         </div>
 
     </div>
-    <ul class="controlBottom">
-		<li class="controlLeftBottom"></li>
-		<li class="controlRightBottom"></li>
-	</ul>
 </div>
 </body>
 <script type="text/javascript" src="themes/blue/js/jquery.corner.js"></script>

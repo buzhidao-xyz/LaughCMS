@@ -4,7 +4,7 @@
     margin: 5px 10px;
     margin-bottom: 0;
     overflow: visible;
-    padding: 0;
+    padding-bottom: 20px;
     position: relative;
     color: #333333;
 }
@@ -605,25 +605,21 @@ form ul.formbody li .edui-default span {
 
 /******************文档列表****************/
 .box {
+  float: left;
   width: 480px;
   overflow: hidden;
   margin: 0 auto;
+  padding: 0 10px 10px 0;
 }
-.boxLeft {
-  float: left;
-  clear: both;
-  margin-top: 20px;
-}
-.boxRight {
-  float: left;
-  margin-left: 10px;
-  margin-top: 20px;
+.box970 {
+  width: 970px;
 }
 .box .boxTitle {
   width: auto;
   height: 30px;
   line-height: 30px;
   background: #EEEEEE;
+  margin: 10px 0;
   border-right: 1px solid #DDDDDD;
   border-bottom: 1px solid #DDDDDD;
 }
@@ -655,36 +651,21 @@ form ul.formbody li .edui-default span {
 .box .boxTitle ul.boxTab li a.selected {
   color: #498CD0;
   background: #FFFFFF;
-  border: 1px solid #EAEFF4;
+  border: 1px solid #DDDDDD;
   border-bottom: 1px solid #FFF;
 }
 .box .boxContent {
-  margin-top: 10px;
-  padding: 5px 10px;
   background: #FFF;
   border: 1px solid #DDDDDD;
+  border-bottom: 0;
 }
 .box .boxContent a {
   padding: 5px;
 }
 .box .boxTabContent {
   background: #FFF;
-}
-.box .boxContent ul li span {
-  float: left;
-  padding: 4px;
-}
-.box .boxContent ul li span.sleft {
-  width: 170px;
-  text-align: left;
-  color: #027263;
-}
-.box .boxContent ul li span.sright {
-  color: #FF6600;
-}
-.box .boxContent ul li.title {
-  color: #014A47;
-  font-weight: 600;
+  padding: 5px 10px;
+  border-bottom: 1px solid #DDDDDD;
 }
 .box .boxContent .boxFrom ul {
   padding:5px 10px;
@@ -712,6 +693,58 @@ form ul.formbody li .edui-default span {
 }
 .box .boxFrom ul li div.item_list label {
   padding: 8px 0px;
+}
+
+/*信息表格*/
+.box .boxContent ul.tableBlock {
+}
+.box .boxContent ul.tableBlock li {
+    border-bottom: 1px solid #DDDDDD;
+    color: #777777;
+    height: 26px;
+    line-height: 26px;
+    overflow: hidden;
+    padding-left: 5px;
+}
+.box .boxContent ul.tableBlock li span {
+    color: #777777;
+    display: block;
+    float: left;
+    width: 150px;
+}
+
+/*并排信息表格*/
+.box .boxContent ul.statsBlock {
+    height: 132px;
+    overflow: hidden;
+    padding: 2px 0 0 2px;
+    border-bottom: 1px solid #DDDDDD;
+}
+.box .boxContent ul.statsBlock li {
+    border-bottom: medium none;
+    border-right: 1px solid #FFFFFF;
+    float: left;
+    height: 44px;
+    text-align: center;
+    width: 78px;
+}
+.box .boxContent ul.statsBlock li b {
+    background: none repeat scroll 0 0 #EFEFEF;
+    color: #777777;
+    float: left;
+    font-weight: normal;
+    height: 21px;
+    line-height: 22px;
+    width: 100%;
+}
+.box .boxContent ul.statsBlock li span {
+    background: none repeat scroll 0 0 #F8F8F8;
+    color: #3865B8;
+    float: left;
+    height: 21px;
+    line-height: 21px;
+    overflow: hidden;
+    width: 100%;
 }
 
 /******************基本CSS****************/

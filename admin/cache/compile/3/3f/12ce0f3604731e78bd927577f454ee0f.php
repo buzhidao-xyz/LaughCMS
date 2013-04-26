@@ -34,13 +34,13 @@ function colorboxImage(url) {
 <div id="control">
 	<div id="controlContent">
 <div class="captitle lineGray">欢迎进入后台管理系统</div>
-<div class="box boxLeft">
+<div class="box box970">
 	<div class="boxTitle">
 		<h5><b>快捷操作</b><span>Navigation Link</span></h5>
-		<ul class="boxTab">
+		<!-- <ul class="boxTab">
 			<li><a tabid="#boxTab1" href="javascript:;">管理</a></li>
 			<li><a tabid="#boxTab2" href="javascript:;">新增</a></li>
-		</ul>
+		</ul> -->
 	</div>
 	<div id="boxTab1" class="boxContent boxTabContent">
 		<a href="/laugh/admin/index.php?s=Column/index">栏目管理</a>
@@ -49,7 +49,7 @@ function colorboxImage(url) {
 		<a href="/laugh/admin/index.php?s=Article/newArticle">内容发布</a>
 		<a href="#">系统设置</a>
 	</div>
-	<div id="boxTab2" class="boxContent boxTabContent">
+	<!-- <div id="boxTab2" class="boxContent boxTabContent">
 		<div class="boxFrom">
 			<form name="boxform" action="/laugh/admin/index.php?s=Public/saveFastOp" method="post" id="ajaxform">
 				<ul>
@@ -67,28 +67,77 @@ function colorboxImage(url) {
 				</ul>
 			</form>
 		</div>
+	</div> -->
+</div>
+<div class="box">
+	<div class="boxTitle">
+		<h5><b>个人信息</b><span>Profile Info</span></h5>
+	</div>
+	<div class="boxContent">
+		<ul class="tableBlock">
+			<li><span>会员名:</span>admin</li>
+			<li><span>所属会员组:</span>超级管理员</li>
+			<li><span>最后登陆时间:</span>2013-04-26 09:44:13</li>
+			<li><span>最后登陆IP:</span>127.0.0.1</li>
+			<li><span>登陆次数:</span>20次</li>
+		</ul>
 	</div>
 </div>
-<div class="box boxRight">
+<div class="box">
 	<div class="boxTitle">
 		<h5><b>统计信息</b><span>Site Stats</span></h5>
 	</div>
 	<div class="boxContent">
+		<ul class="statsBlock">
+			<li><b>单页模型</b><br><span>0</span></li>
+			<li><b>文章模型</b><br><span>0</span></li>
+			<li><b>产品模型</b><br><span>0</span></li>
+			<li><b>图片模型</b><br><span>0</span></li>
+			<li><b>下载模型</b><br><span>0</span></li>
+			<li><b>信息反馈</b><br><span>0</span></li>
+			<li><b>在线留言</b><br><span>0</span></li>
+			<li><b>会员总数</b><br><span>0</span></li>
+			<li><b>栏目总数</b><br><span>0</span></li>
+			<li><b></b><span></span></li>
+			<li><b></b><span></span></li>
+			<li><b></b><span></span></li>
+			<li><b></b><span></span></li>
+			<li><b></b><span></span></li>
+			<li><b></b><span></span></li>
+			<li><b></b><span></span></li>
+			<li><b></b><span></span></li>
+			<li><b></b><span></span></li>
+			<li><b></b><span></span></li>
+			<li><b></b><span></span></li>
+		</ul>
 	</div>
 </div>
-<div class="box boxLeft">
+<div class="box">
 	<div class="boxTitle">
 		<h5><b>系统基本信息</b><span>System Info</span></h5>
 	</div>
 	<div class="boxContent">
-		<ul>
-			<li class="title lineOrange"><span>PHP环境摘要 ------ </span></li>
-			<li><span class="sleft">PHP版本：</span><span class="sright">5.3.8</span></li>
-			<li><span class="sleft">是否安全模式：</span><span class="sright">否</span></li>
-			<li><span class="sleft">Register_Globals：</span><span class="sright">关闭</span></li>
-			<li><span class="sleft">Magic_Quotes_Gpc：</span><span class="sright">关闭</span></li>
-			<li><span class="sleft">支持上传的最大文件：</span><span class="sright">128M</span></li>
-			<li><span class="sleft">是否允许打开远程连接：</span><span class="sright">是</span></li>
+		<ul class="tableBlock">
+			<li><span>PHP版本:</span>5.3.8</li>
+			<li><span>是否安全模式:</span>否</li>
+			<li><span>Register_Globals:</span>关闭</li>
+			<li><span>Magic_Quotes_Gpc:</span>关闭</li>
+			<li><span>支持上传的最大文件:</span>128M</li>
+			<li><span>是否允许打开远程连接:</span>是</li>
+		</ul>
+	</div>
+</div>
+<div class="box">
+	<div class="boxTitle">
+		<h5><b>官方动态</b><span>Official Info</span></h5>
+	</div>
+	<div class="boxContent">
+		<ul class="tableBlock">
+			<li><span>LaughCMS版本:</span>v1.0 Released 20130426</li>
+			<li><span>授权类型:</span>已授权[免费]</li>
+			<li><span>序列号:</span></li>
+			<li><span>程序更新:</span>无</li>
+			<li><span>最后更新时间:</span>2013-04-26</li>
 		</ul>
 	</div>
 </div>

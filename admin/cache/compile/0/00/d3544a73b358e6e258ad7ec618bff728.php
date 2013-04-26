@@ -3,14 +3,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="keywords" content="">
-<link type="text/css" rel="stylesheet" href="themes/green/style/common.css" media="screen">
-<link type="text/css" rel="stylesheet" href="themes/green/style/global.css" media="screen">
+<link type="text/css" rel="stylesheet" href="themes/blue/style/common.css" media="screen">
+<link type="text/css" rel="stylesheet" href="themes/blue/style/global.css" media="screen">
 <script type="text/javascript" src="public/js/jquery.js"></script>
-<script type="text/javascript" src="themes/green/js/div_window.js"></script>
-<!-- <script type="text/javascript" src="themes/blue/js/PIE.js"></script> -->
+<script type="text/javascript" src="themes/blue/js/div_window.js"></script>
 <link type="text/css" rel="stylesheet" href="public/plugin/colorbox/colorbox.css" media="screen">
 <script type="text/javascript" src="public/plugin/colorbox/jquery.colorbox.js"></script>
-<title>管理中心</title>
+<title>LaughCMS网站管理系统</title>
 <script type="text/javascript">
 var JS_APP = '/laugh/admin';
 var JS_APPM = 'http://localhost:82/laugh';
@@ -82,9 +81,9 @@ $(document).ready(function(){
 });
 </script>
 </body>
-<script type="text/javascript" src="themes/green/js/jquery.corner.js"></script>
-<script type="text/javascript" src="themes/green/js/public.js"></script>
-<script type="text/javascript" src="themes/green/js/common.js"></script>
-<script type="text/javascript" src="themes/green/js/ajax.js"></script>
+<script type="text/javascript" src="themes/blue/js/jquery.corner.js"></script>
+<script type="text/javascript" src="themes/blue/js/public.js"></script>
+<script type="text/javascript" src="themes/blue/js/common.js"></script>
+<script type="text/javascript" src="themes/blue/js/ajax.js"></script>
 <script type="text/javascript" src="public/js/jquery.idTabs.min.js"></script>
 </html>

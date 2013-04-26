@@ -32,10 +32,6 @@ function colorboxImage(url) {
 	body { background: none; }
 </style>
 <div id="control">
-	<ul class="controlTop">
-		<li class="controlLeftTop"></li>
-		<li class="controlRightTop"></li>
-	</ul>
 	<div id="controlContent">
 <div class="formContainer" accessStatus=1>
 	<div class="formtitle"><h5>新角色表单</h5></div>
@@ -529,10 +525,6 @@ new nodeTreeClass();
 	</form>
 </div>
     </div>
-    <ul class="controlBottom">
-		<li class="controlLeftBottom"></li>
-		<li class="controlRightBottom"></li>
-	</ul>
 </div>
 </body>
 <script type="text/javascript" src="themes/blue/js/jquery.corner.js"></script>
