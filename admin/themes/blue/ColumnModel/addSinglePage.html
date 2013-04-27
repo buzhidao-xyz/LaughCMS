@@ -1,4 +1,8 @@
 {include file="public/control_top.html"}
+<div class="opTop">
+	<a href="__APP__/index.php?s=CTModel/addSinglePage" class="opTopOn">新增单页模型</a>
+	<a href="__APP__/index.php?s=CTModel/singlePage">单页模型管理</a>
+</div>
 {if $accessStatus == 1}
 <div class="formContainer" accessStatus={$accessStatus}>
 	<div class="formtitle"><h5>增加新页面</h5></div>
@@ -71,8 +75,8 @@
 					</div>
 				</li>
 			</div>
-			<li class="formblock bordernone">
-				<input type="submit" name="subut" class="button btngreen2" value="添加" />
+			<li class="formblock bordernone bgf6">
+				<input type="submit" name="subut" class="button btnblue2" value="添加" />
 			</li>
 		</ul>
 	</form>

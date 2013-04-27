@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-25 15:29:14
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-27 18:55:17
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Download\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:225775178db4ac13222-47331757%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:14880517bae95e3f3e6-02594095%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '12a978dcef0d5661e3dc90747f75f6d04350bd50' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\Download\\index.html',
-      1 => 1366268658,
+      1 => 1367060070,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '225775178db4ac13222-47331757',
+  'nocache_hash' => '14880517bae95e3f3e6-02594095',
   'function' => 
   array (
   ),
@@ -24,12 +24,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5178db4ad265a8_67963983',
+  'unifunc' => 'content_517bae96003489_23058318',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5178db4ad265a8_67963983')) {function content_5178db4ad265a8_67963983($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_517bae96003489_23058318')) {function content_517bae96003489_23058318($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="opTop">
-	<a href="__APP__/index.php?s=Download/index">下载列表</a>
+	<a href="__APP__/index.php?s=Download/index" class="opTopOn">下载列表</a>
 	<a href="__APP__/index.php?s=Download/add">上传新文件</a>
 	<a href="__APP__/index.php?s=Download/recover">回收站</a>
 </div>

@@ -1,4 +1,4 @@
-<?php
+&amp;lt;?php
 /**
  * 路由器 重新定位url路径
  * by wbq 2011-11-09
@@ -12,13 +12,13 @@ class Route
      * 定义查询数组
      */
     static private $_query = array(
-        'control' => 'IndexControl',
-        'action'  => 'index',
-        'string'  => ''
+        &amp;#039;control&amp;#039; =&amp;gt; &amp;#039;IndexControl&amp;#039;,
+        &amp;#039;action&amp;#039;  =&amp;gt; &amp;#039;index&amp;#039;,
+        &amp;#039;string&amp;#039;  =&amp;gt; &amp;#039;&amp;#039;
     );
 
     //控制器后缀
-    static private $_control = 'Control';
+    static private $_control = &amp;#039;Control&amp;#039;;
     
     public function __construct()
     {
@@ -41,7 +41,7 @@ class Route
      */
     static private function _checkUrl()
     {
-        $url = "#^http://[0-9a-z.:-]+/(".__SELF__."/)?(index\.php)?(\?s=.+)?$#i";
+        $url = &amp;quot;#^http://[0-9a-z.:-]+/(&amp;quot;.__SELF__.&amp;quot;/)?(index\.php)?(\?s=.+)?$#i&amp;quot;;
         if (!preg_match($url, self::$_current_url)) {
             self::_host();
         }
@@ -53,22 +53,22 @@ class Route
     private function _analyze()
     {
         $url_array = parse_url(self::$_current_url);
-        if (isset($url_array['query'])) {
-            preg_match_all("/^s=([0-9a-z]+)(\/)?([0-9a-z]+)?(&.+)*/i", $url_array['query'], $url_array);
+        if (isset($url_array[&amp;#039;query&amp;#039;])) {
+            preg_match_all(&amp;quot;/^s=([0-9a-z]+)(\/)?([0-9a-z]+)?(&amp;amp;.+)*/i&amp;quot;, $url_array[&amp;#039;query&amp;#039;], $url_array);
             
-            self::$_query['control'] = ucfirst($url_array[1][0]).self::$_control;
-            if (!class_exists(self::$_query['control'])) $this->_host();
+            self::$_query[&amp;#039;control&amp;#039;] = ucfirst($url_array[1][0]).self::$_control;
+            if (!class_exists(self::$_query[&amp;#039;control&amp;#039;])) $this-&amp;gt;_host();
             
-            self::$_query['action'] = $url_array[3][0]?$url_array[3][0]:'index';
-            if (!method_exists(self::$_query['control'], self::$_query['action'])) self::$_query['action'] = 'index';
+            self::$_query[&amp;#039;action&amp;#039;] = $url_array[3][0]?$url_array[3][0]:&amp;#039;index&amp;#039;;
+            if (!method_exists(self::$_query[&amp;#039;control&amp;#039;], self::$_query[&amp;#039;action&amp;#039;])) self::$_query[&amp;#039;action&amp;#039;] = &amp;#039;index&amp;#039;;
             
             if (!empty($url_array[4])) {
-                $query_string = explode('&', $url_array[4][0]);
+                $query_string = explode(&amp;#039;&amp;amp;&amp;#039;, $url_array[4][0]);
                 
                 foreach ($query_string as $value) {
-                    if ($value && strstr($value, '=')) {
-                        $value = explode('=', $value);
-                        self::$_query['string'][$value[0]] = $value[1];
+                    if ($value &amp;amp;&amp;amp; strstr($value, &amp;#039;=&amp;#039;)) {
+                        $value = explode(&amp;#039;=&amp;#039;, $value);
+                        self::$_query[&amp;#039;string&amp;#039;][$value[0]] = $value[1];
                     }
                 }
             }
@@ -80,7 +80,7 @@ class Route
      */
     static private function _host()
     {
-        header("location:".__APP__);
+        header(&amp;quot;location:&amp;quot;./laugh/admin);
         exit;
     }
     
@@ -89,14 +89,14 @@ class Route
      */
     static private function _call()
     {
-        $_control = self::$_query['control'];
-        $_action = self::$_query['action'];
+        $_control = self::$_query[&amp;#039;control&amp;#039;];
+        $_action = self::$_query[&amp;#039;action&amp;#039;];
 
         //定义CONTROL和ACTION
-        define("CONTROL", str_replace(self::$_control, "", $_control));
-        define("ACTION", $_action);
+        define(&amp;quot;CONTROL&amp;quot;, str_replace(self::$_control, &amp;quot;&amp;quot;, $_control));
+        define(&amp;quot;ACTION&amp;quot;, $_action);
         
         $obj = new $_control(self::$_query);
-        $obj->$_action();
+        $obj-&amp;gt;$_action();
     }
 }

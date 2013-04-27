@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-25 16:04:59
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-27 11:26:46
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Product\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:281415178e3abcd4e22-66158606%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:13548517b4576a14c31-53024902%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '281415178e3abcd4e22-66158606',
+  'nocache_hash' => '13548517b4576a14c31-53024902',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5178e3abe05f98_66749337',
+  'unifunc' => 'content_517b4576b34d41_34410223',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5178e3abe05f98_66749337')) {function content_5178e3abe05f98_66749337($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_517b4576b34d41_34410223')) {function content_517b4576b34d41_34410223($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="opTop">
 	<a href="__APP__/index.php?s=Product/index">产品列表</a>

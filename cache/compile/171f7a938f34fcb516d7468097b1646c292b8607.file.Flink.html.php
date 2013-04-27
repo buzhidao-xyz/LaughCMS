@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-24 19:11:54
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-27 13:30:49
          compiled from "C:\xampp\htdocs\laugh\themes\default\Common\Flink.html" */ ?>
-<?php /*%%SmartyHeaderCode:81515177bdfadaa4b7-70943866%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:32235517b62891a3789-23944442%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '81515177bdfadaa4b7-70943866',
+  'nocache_hash' => '32235517b62891a3789-23944442',
   'function' => 
   array (
   ),
@@ -23,9 +23,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5177bdfae7a5a3_64390652',
+  'unifunc' => 'content_517b62892672e3_30118687',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5177bdfae7a5a3_64390652')) {function content_5177bdfae7a5a3_64390652($_smarty_tpl) {?><div id="Flink" class="boxBlock block">
+<?php if ($_valid && !is_callable('content_517b62892672e3_30118687')) {function content_517b62892672e3_30118687($_smarty_tpl) {?><div id="Flink" class="boxBlock block">
 	<div class="FlinkTitle">
 		<span class="title">友情链接</span>
 		<ul id="FlinkboxTab" class="boxTab fleft">

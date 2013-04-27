@@ -2,13 +2,14 @@
 
 }
 #columnList .columnListTitle, #columnList .columnlistd {
-	background: #014A47;
+	background: #EEF3F7;
+	background: #3A6EA5;
+    color: #000000;
     color: #FFFFFF;
-    font-weight: 700;
     height: 30px;
     line-height: 30px;
     padding: 0 10px;
-    border-bottom: 1px solid #DDDDDD;
+    border-bottom: 1px solid #D5DFE8;
 }
 #columnList div.ul div.li {
 	float: left;
@@ -30,13 +31,14 @@
 	color: #FF0000;
 }
 #columnList div.columnListTable {
-	border-top: 1px solid #336699;
+	border-top: 1px solid #AAAAAA;
 }
 #columnList div.columnListTable .columnlistd {
 	clear: both;
 	font-weight: 500;
 	color: #000000;
-	background: #E2E7ED;
+	background: #EFEFEF;
+	background: #EEF3F7;
 	margin-top: 2px;
 }
 #columnList div.columnListTable .columnlistd .columnplus {

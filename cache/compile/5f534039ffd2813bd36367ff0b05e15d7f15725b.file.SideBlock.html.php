@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-23 17:23:46
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-27 13:30:49
          compiled from "C:\xampp\htdocs\laugh\themes\default\Common\SideBlock.html" */ ?>
-<?php /*%%SmartyHeaderCode:1807951765322590c88-30916914%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:3386517b6289178728-32950308%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,15 +11,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1807951765322590c88-30916914',
+  'nocache_hash' => '3386517b6289178728-32950308',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_51765322594088_36617838',
+  'unifunc' => 'content_517b628919c115_62131987',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51765322594088_36617838')) {function content_51765322594088_36617838($_smarty_tpl) {?><div id="sideBlock" class="fleft w250 mleft10">
+<?php if ($_valid && !is_callable('content_517b628919c115_62131987')) {function content_517b628919c115_62131987($_smarty_tpl) {?><div id="sideBlock" class="fleft w250 mleft10">
 	<div class="boxBlock">
 		<div class="boxBlockTitle">
 			<span class="title">快捷导航</span>

@@ -30,7 +30,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 <div class="box">
 <div class="boxContent">
-<div class="boxFrom">
+<div class="boxPopupForm">
 	<div class="boxTitle">
 		<h5><?php echo $_smarty_tpl->tpl_vars['msgTitle']->value;?>
 </h5>

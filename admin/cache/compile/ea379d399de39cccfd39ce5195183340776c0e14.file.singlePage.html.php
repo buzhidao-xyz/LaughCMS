@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-25 15:14:01
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-27 18:56:39
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\ColumnModel\singlePage.html" */ ?>
-<?php /*%%SmartyHeaderCode:291425178d7b9e12f96-58578160%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2015517baee761ace0-58183843%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'ea379d399de39cccfd39ce5195183340776c0e14' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\ColumnModel\\singlePage.html',
-      1 => 1366268658,
+      1 => 1367059327,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '291425178d7b9e12f96-58578160',
+  'nocache_hash' => '2015517baee761ace0-58183843',
   'function' => 
   array (
   ),
@@ -24,13 +24,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5178d7ba021085_13422292',
+  'unifunc' => 'content_517baee7748878_43453963',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5178d7ba021085_13422292')) {function content_5178d7ba021085_13422292($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_517baee7748878_43453963')) {function content_517baee7748878_43453963($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="opTop">
 	<a href="__APP__/index.php?s=CTModel/addSinglePage">新增单页模型</a>
-	<a href="__APP__/index.php?s=CTModel/singlePage">单页模型管理</a>
+	<a href="__APP__/index.php?s=CTModel/singlePage" class="opTopOn">单页模型管理</a>
 </div>
 <div class="captitle"><h5>单页页面列表 【页面数<?php if ($_smarty_tpl->tpl_vars['total']->value){?><?php echo $_smarty_tpl->tpl_vars['total']->value;?>
 <?php }else{ ?>0<?php }?>】</h5></div>

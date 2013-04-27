@@ -34,8 +34,8 @@ function colorboxImage(url) {
 <div id="control">
 	<div id="controlContent">
 <div class="opTop">
-	<a href="/laugh/admin/index.php?s=Article/index">文章列表</a>
-	<a href="/laugh/admin/index.php?s=Article/add">发布新文章</a>
+	<a href="/laugh/admin/index.php?s=Article/index" class="opTopOn">文章列表</a> |
+	<a href="/laugh/admin/index.php?s=Article/add">发布新文章</a> |
 	<a href="/laugh/admin/index.php?s=Article/recover">回收站</a>
 </div>
 <div class="captitle"><h5>文档列表 【目前共有11条文档】</h5></div>
@@ -59,7 +59,7 @@ function colorboxImage(url) {
 		<li class="table_list_l table_list_l300" title="VI命令大全">
 			VI命令大全
 		</li>
-    	<li class="table_list_l table_list_l150">2013-04-12 14:39:00</li>
+    	<li class="table_list_l table_list_l150">2013-04-27 18:43:15</li>
     	<li class="table_list_l table_list_l120">IT知识</li>
 		<li class="table_list_l table_list_l80">admin</li>
 		<li class="table_list_l table_list_l80">0</li>

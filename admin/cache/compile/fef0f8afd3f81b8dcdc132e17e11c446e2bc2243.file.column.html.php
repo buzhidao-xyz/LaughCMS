@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-26 10:29:03
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-27 19:58:52
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Column\column.html" */ ?>
-<?php /*%%SmartyHeaderCode:26225179e66f7a6fd2-52088137%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:21712517bbd7c338012-96866941%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'fef0f8afd3f81b8dcdc132e17e11c446e2bc2243' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\Column\\column.html',
-      1 => 1366268658,
+      1 => 1366972600,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '26225179e66f7a6fd2-52088137',
+  'nocache_hash' => '21712517bbd7c338012-96866941',
   'function' => 
   array (
   ),
@@ -22,9 +22,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5179e66f87a2b7_46841770',
+  'unifunc' => 'content_517bbd7c404626_82115761',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5179e66f87a2b7_46841770')) {function content_5179e66f87a2b7_46841770($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_517bbd7c404626_82115761')) {function content_517bbd7c404626_82115761($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="captitle"><h5>栏目列表</h5></div>
 <div id="columnList">
@@ -43,7 +43,8 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 			<div class="li columnplusmius columnplus" columnid="<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 "></div>
 			<div class="li columnListd700" flag="columnTableList">
-				<a href="__APP__/index.php?s=Article/index&columnid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+				<a href="__APP__/index.php?s=<?php echo $_smarty_tpl->tpl_vars['d']->value['control'];?>
+/index&columnid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['d']->value['columnname'];?>
 </a>
 				<?php if ($_smarty_tpl->tpl_vars['d']->value['isshow']==1){?><font color="green"></font><?php }else{ ?><font color="red">[隐]</font><?php }?>
@@ -67,7 +68,7 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 	<div class="columnList">
 	</div>
 </div>
-<link rel="stylesheet" type="text/css" href="themes/green/style/column.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="themes/blue/style/column.css" media="screen" />
 <script type="text/javascript">
 $(document).ready(function(){
 	var column = function (){

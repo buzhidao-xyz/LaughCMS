@@ -43,7 +43,7 @@ function colorboxImage(url) {
 						<div class="ul columnlistd">
 			<div class="li columnplusmius columnplus" columnid="1"></div>
 			<div class="li columnListd700" flag="columnTableList">
-				<a href="/laugh/admin/index.php?s=Article/index&columnid=1">网站首页</a>
+				<a href="/laugh/admin/index.php?s=/index&columnid=1">网站首页</a>
 				<font color="green"></font>			</div>
 			<div class="li columnListd300" flag="columnTableList">
 				<a href="javascript:;">预览</a> |
@@ -71,7 +71,7 @@ function colorboxImage(url) {
 				<div class="ul columnlistd">
 			<div class="li columnplusmius columnplus" columnid="6"></div>
 			<div class="li columnListd700" flag="columnTableList">
-				<a href="/laugh/admin/index.php?s=Article/index&columnid=6">产品展示</a>
+				<a href="/laugh/admin/index.php?s=Product/index&columnid=6">产品展示</a>
 				<font color="green"></font>			</div>
 			<div class="li columnListd300" flag="columnTableList">
 				<a href="javascript:;">预览</a> |
@@ -85,7 +85,7 @@ function colorboxImage(url) {
 				<div class="ul columnlistd">
 			<div class="li columnplusmius columnplus" columnid="7"></div>
 			<div class="li columnListd700" flag="columnTableList">
-				<a href="/laugh/admin/index.php?s=Article/index&columnid=7">客户案例</a>
+				<a href="/laugh/admin/index.php?s=Image/index&columnid=7">客户案例</a>
 				<font color="green"></font>			</div>
 			<div class="li columnListd300" flag="columnTableList">
 				<a href="javascript:;">预览</a> |
@@ -99,7 +99,7 @@ function colorboxImage(url) {
 				<div class="ul columnlistd">
 			<div class="li columnplusmius columnplus" columnid="8"></div>
 			<div class="li columnListd700" flag="columnTableList">
-				<a href="/laugh/admin/index.php?s=Article/index&columnid=8">下载中心</a>
+				<a href="/laugh/admin/index.php?s=Download/index&columnid=8">下载中心</a>
 				<font color="green"></font>			</div>
 			<div class="li columnListd300" flag="columnTableList">
 				<a href="javascript:;">预览</a> |
@@ -113,7 +113,7 @@ function colorboxImage(url) {
 				<div class="ul columnlistd">
 			<div class="li columnplusmius columnplus" columnid="9"></div>
 			<div class="li columnListd700" flag="columnTableList">
-				<a href="/laugh/admin/index.php?s=Article/index&columnid=9">招贤纳士</a>
+				<a href="/laugh/admin/index.php?s=Plugin/index&columnid=9">招贤纳士</a>
 				<font color="green"></font>			</div>
 			<div class="li columnListd300" flag="columnTableList">
 				<a href="javascript:;">预览</a> |
@@ -127,7 +127,7 @@ function colorboxImage(url) {
 				<div class="ul columnlistd">
 			<div class="li columnplusmius columnplus" columnid="10"></div>
 			<div class="li columnListd700" flag="columnTableList">
-				<a href="/laugh/admin/index.php?s=Article/index&columnid=10">关于我们</a>
+				<a href="/laugh/admin/index.php?s=Public/index&columnid=10">关于我们</a>
 				<font color="green"></font>			</div>
 			<div class="li columnListd300" flag="columnTableList">
 				<a href="javascript:;">预览</a> |
@@ -141,7 +141,7 @@ function colorboxImage(url) {
 				<div class="ul columnlistd">
 			<div class="li columnplusmius columnplus" columnid="11"></div>
 			<div class="li columnListd700" flag="columnTableList">
-				<a href="/laugh/admin/index.php?s=Article/index&columnid=11">联系我们</a>
+				<a href="/laugh/admin/index.php?s=Public/index&columnid=11">联系我们</a>
 				<font color="green"></font>			</div>
 			<div class="li columnListd300" flag="columnTableList">
 				<a href="javascript:;">预览</a> |
@@ -156,7 +156,7 @@ function colorboxImage(url) {
 	<div class="columnList">
 	</div>
 </div>
-<link rel="stylesheet" type="text/css" href="themes/green/style/column.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="themes/blue/style/column.css" media="screen" />
 <script type="text/javascript">
 $(document).ready(function(){
 	var column = function (){

@@ -110,6 +110,7 @@ class ColumnControl extends CommonControl
 	{
 		$columnList = M("Column")->getTopColumn();
 		$this->assign("dataList",$columnList);
+		
 		$this->display("Column/column.html");
 	}
 

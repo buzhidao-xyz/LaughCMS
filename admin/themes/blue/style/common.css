@@ -16,28 +16,29 @@ form, h1, h2, h3, h4, h5, ul, li, p, pre, em {
     font-style: normal;
 }
 h1 {
-    color: #014A47;
+    color: #004499;
     font-size: 23px;
 }
 h2 {
-    color: #014A47;
+    color: #004499;
     font-size: 18px;
 }
 h3 {
-    color: #014A47;
+    color: #004499;
     font-size: 15px;
 }
 h4 {
-    color: #014A47;
+    color: #004499;
     font-size: 13px;
 }
 h5 {
-    color: #014A47;
+    color: #333333;
+    color: #3A6EA5;
     font-size: 13px;
 	display: inline;
 }
 a:link, a:visited{
-    color: #498CD0;
+    color: #004499;
     text-decoration:none;
 }
 a:hover{
@@ -155,31 +156,6 @@ input.ruler:hover,input.ruler:focus {
 .inputfile {
     height: 22px;
 }
-.btnyellow2 {
-    width:60px;
-    color: #6F590A;
-    background: url("../images/btn_yellow_bg2.gif") repeat-x left top #C39B12;
-}
-.btnyellow3 {
-    width:74px;
-    color: #6F590A;
-    background: url("../images/btn_yellow_bg3.gif") repeat-x left top #C39B12;
-}
-.btnyellow4 {
-    width:88px;
-    color: #6F590A;
-    background: url("../images/btn_yellow_bg4.gif") repeat-x left top #C39B12;
-}
-.btnyellow5 {
-    width:102px;
-    color: #6F590A;
-    background: url("../images/btn_yellow_bg5.gif") repeat-x left top #C39B12;
-}
-.btnyellow6 {
-    width:116px;
-    color: #6F590A;
-    background: url("../images/btn_yellow_bg6.gif") repeat-x left top #C39B12;
-}
 .btnblue2 {
     width:60px;
     color: #FFF;
@@ -229,31 +205,6 @@ input.ruler:hover,input.ruler:focus {
     width:116px;
     color: #FFF;
     background: url("../images/btn_green_bg6.gif") repeat-x left top #63BC48;
-}
-.btnorange2 {
-    width:60px;
-    color: #FFF;
-    background: url("../images/btn_orange_bg2.gif") repeat-x left top #F98C02;
-}
-.btnorange3 {
-    width:74px;
-    color: #FFF;
-    background: url("../images/btn_orange_bg3.gif") repeat-x left top #F98C02;
-}
-.btnorange4 {
-    width:88px;
-    color: #FFF;
-    background: url("../images/btn_orange_bg4.gif") repeat-x left top #F98C02;
-}
-.btnorange5 {
-    width:102px;
-    color: #FFF;
-    background: url("../images/btn_orange_bg5.gif") repeat-x left top #F98C02;
-}
-.btnorange6 {
-    width:116px;
-    color: #FFF;
-    background: url("../images/btn_orange_bg6.gif") repeat-x left top #F98C02;
 }
 .search{
     width:auto;

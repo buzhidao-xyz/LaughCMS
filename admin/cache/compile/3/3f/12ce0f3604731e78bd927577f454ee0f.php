@@ -34,7 +34,7 @@ function colorboxImage(url) {
 <div id="control">
 	<div id="controlContent">
 <div class="captitle lineGray">欢迎进入后台管理系统</div>
-<div class="box box970">
+<div class="box boxWrap box970">
 	<div class="boxTitle">
 		<h5><b>快捷操作</b><span>Navigation Link</span></h5>
 		<!-- <ul class="boxTab">
@@ -50,7 +50,7 @@ function colorboxImage(url) {
 		<a href="#">系统设置</a>
 	</div>
 	<!-- <div id="boxTab2" class="boxContent boxTabContent">
-		<div class="boxFrom">
+		<div class="boxNewFrom">
 			<form name="boxform" action="/laugh/admin/index.php?s=Public/saveFastOp" method="post" id="ajaxform">
 				<ul>
 					<li>
@@ -69,7 +69,7 @@ function colorboxImage(url) {
 		</div>
 	</div> -->
 </div>
-<div class="box">
+<div class="box boxWrap">
 	<div class="boxTitle">
 		<h5><b>个人信息</b><span>Profile Info</span></h5>
 	</div>
@@ -83,7 +83,7 @@ function colorboxImage(url) {
 		</ul>
 	</div>
 </div>
-<div class="box">
+<div class="box boxWrap">
 	<div class="boxTitle">
 		<h5><b>统计信息</b><span>Site Stats</span></h5>
 	</div>
@@ -112,7 +112,7 @@ function colorboxImage(url) {
 		</ul>
 	</div>
 </div>
-<div class="box">
+<div class="box boxWrap">
 	<div class="boxTitle">
 		<h5><b>系统基本信息</b><span>System Info</span></h5>
 	</div>
@@ -127,7 +127,7 @@ function colorboxImage(url) {
 		</ul>
 	</div>
 </div>
-<div class="box">
+<div class="box boxWrap">
 	<div class="boxTitle">
 		<h5><b>官方动态</b><span>Official Info</span></h5>
 	</div>
@@ -141,6 +141,22 @@ function colorboxImage(url) {
 		</ul>
 	</div>
 </div>
+<style type="text/css">
+.boxWrap {
+	width: 480px;
+	padding: 0 10px 10px 0;
+}
+.boxWrap .boxContent {
+	border: 1px solid #DDDDDD;
+  	border-bottom: 0;
+}
+.box970 {
+	width: 970px;
+}
+.box970 .boxContent {
+	border-bottom: 1px solid #DDDDDD;
+}
+</style>
 <script type="text/javascript">
 $(document).ready(function(){
 	$(".boxTitle ul.boxTab").idTabs(function(id,list,set){

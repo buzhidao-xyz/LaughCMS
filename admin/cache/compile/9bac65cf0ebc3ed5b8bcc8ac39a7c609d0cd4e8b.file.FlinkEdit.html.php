@@ -27,7 +27,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_51761f427d80f0_22202131')) {function content_51761f427d80f0_22202131($_smarty_tpl) {?><div class="box">
 <div class="boxContent">
-<div class="boxFrom">
+<div class="boxPopupForm">
 	<div class="boxTitle">
 		<h5>编辑链接信息</h5>
 	</div>

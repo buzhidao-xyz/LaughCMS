@@ -32,13 +32,9 @@ function colorboxImage(url) {
 	body { background: none; }
 </style>
 <div id="control">
-	<ul class="controlTop">
-		<li class="controlLeftTop"></li>
-		<li class="controlRightTop"></li>
-	</ul>
 	<div id="controlContent">
 <div class="opTop">
-	<a href="/laugh/admin/index.php?s=Download/index">下载列表</a>
+	<a href="/laugh/admin/index.php?s=Download/index" class="opTopOn">下载列表</a>
 	<a href="/laugh/admin/index.php?s=Download/add">上传新文件</a>
 	<a href="/laugh/admin/index.php?s=Download/recover">回收站</a>
 </div>
@@ -147,10 +143,6 @@ archiveClass();
 });
 </script>
     </div>
-    <ul class="controlBottom">
-		<li class="controlLeftBottom"></li>
-		<li class="controlRightBottom"></li>
-	</ul>
 </div>
 </body>
 <script type="text/javascript" src="themes/blue/js/jquery.corner.js"></script>

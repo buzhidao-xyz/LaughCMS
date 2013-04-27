@@ -55,7 +55,7 @@ function colorboxImage(url) {
 		<a href="#">系统设置</a>
 	</div>
 	<div id="boxTab2" class="boxContent boxTabContent">
-		<div class="boxFrom">
+		<div class="boxPopupForm">
 			<form name="boxform" action="/laugh/admin/index.php?s=Public/saveFastOp" method="post" id="ajaxform">
 				<ul>
 					<li>

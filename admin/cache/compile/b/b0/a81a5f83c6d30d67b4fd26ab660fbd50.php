@@ -32,10 +32,6 @@ function colorboxImage(url) {
 	body { background: none; }
 </style>
 <div id="control">
-	<ul class="controlTop">
-		<li class="controlLeftTop"></li>
-		<li class="controlRightTop"></li>
-	</ul>
 	<div id="controlContent">
 <!-- <div class="control_nav">
 	<h3>添加组</h3>
@@ -49,8 +45,8 @@ function colorboxImage(url) {
 				<span>名称:</span>
 				<input type="text" name="title" value="" class="input" style="width:150px;" />
 			</li>
-			<li class="formblock bordernone">
-				<input type="submit" name="subut" class="button btngreen2" value="添加" />
+			<li class="formblock bordernone bgf6">
+				<input type="submit" name="subut" class="button btnblue2" value="添加" />
 			</li>
 		</ul>
 	</form>
@@ -147,10 +143,6 @@ function colorboxImage(url) {
 	<div class="modify_div_Bottom"></div>
 </div>
     </div>
-    <ul class="controlBottom">
-		<li class="controlLeftBottom"></li>
-		<li class="controlRightBottom"></li>
-	</ul>
 </div>
 </body>
 <script type="text/javascript" src="themes/blue/js/jquery.corner.js"></script>

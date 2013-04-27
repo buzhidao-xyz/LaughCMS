@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-26 10:33:13
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-27 19:59:23
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Public\welcome.html" */ ?>
-<?php /*%%SmartyHeaderCode:174195179e76973deb3-68472134%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:27754517bbd9b2a6cc4-25208417%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'abaf70d9c85a60e549585d913eac4cce8abad7bb' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\Public\\welcome.html',
-      1 => 1366943562,
+      1 => 1367062297,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '174195179e76973deb3-68472134',
+  'nocache_hash' => '27754517bbd9b2a6cc4-25208417',
   'function' => 
   array (
   ),
@@ -21,12 +21,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5179e7697d6675_27224007',
+  'unifunc' => 'content_517bbd9b3613b6_17614882',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5179e7697d6675_27224007')) {function content_5179e7697d6675_27224007($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_517bbd9b3613b6_17614882')) {function content_517bbd9b3613b6_17614882($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="captitle lineGray">欢迎进入后台管理系统</div>
-<div class="box box970">
+<div class="box boxWrap box970">
 	<div class="boxTitle">
 		<h5><b>快捷操作</b><span>Navigation Link</span></h5>
 		<!-- <ul class="boxTab">
@@ -42,7 +42,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<a href="#">系统设置</a>
 	</div>
 	<!-- <div id="boxTab2" class="boxContent boxTabContent">
-		<div class="boxFrom">
+		<div class="boxNewFrom">
 			<form name="boxform" action="__APP__/index.php?s=Public/saveFastOp" method="post" id="ajaxform">
 				<ul>
 					<li>
@@ -61,7 +61,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		</div>
 	</div> -->
 </div>
-<div class="box">
+<div class="box boxWrap">
 	<div class="boxTitle">
 		<h5><b>个人信息</b><span>Profile Info</span></h5>
 	</div>
@@ -75,7 +75,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		</ul>
 	</div>
 </div>
-<div class="box">
+<div class="box boxWrap">
 	<div class="boxTitle">
 		<h5><b>统计信息</b><span>Site Stats</span></h5>
 	</div>
@@ -104,7 +104,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		</ul>
 	</div>
 </div>
-<div class="box">
+<div class="box boxWrap">
 	<div class="boxTitle">
 		<h5><b>系统基本信息</b><span>System Info</span></h5>
 	</div>
@@ -121,7 +121,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		</ul>
 	</div>
 </div>
-<div class="box">
+<div class="box boxWrap">
 	<div class="boxTitle">
 		<h5><b>官方动态</b><span>Official Info</span></h5>
 	</div>
@@ -135,6 +135,22 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		</ul>
 	</div>
 </div>
+<style type="text/css">
+.boxWrap {
+	width: 480px;
+	padding: 0 10px 10px 0;
+}
+.boxWrap .boxContent {
+	border: 1px solid #DDDDDD;
+  	border-bottom: 0;
+}
+.box970 {
+	width: 970px;
+}
+.box970 .boxContent {
+	border-bottom: 1px solid #DDDDDD;
+}
+</style>
 <script type="text/javascript">
 $(document).ready(function(){
 	$(".boxTitle ul.boxTab").idTabs(function(id,list,set){

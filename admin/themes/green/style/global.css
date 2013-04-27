@@ -708,16 +708,16 @@ form ul.formbody li .edui-default span {
   color: #014A47;
   font-weight: 600;
 }
-.box .boxContent .boxFrom ul {
+.box .boxContent .boxPopupForm ul {
   padding:5px 10px;
 }
-.box .boxContent .boxFrom ul li {
+.box .boxContent .boxPopupForm ul li {
   border-bottom: 1px dashed #CCC;
 }
-.box .boxContent .boxFrom ul li.bordernone {
+.box .boxContent .boxPopupForm ul li.bordernone {
   border-bottom: 0;
 }
-.box .boxContent .boxFrom ul li span {
+.box .boxContent .boxPopupForm ul li span {
   float: left;
   width: 120px;
   display: block;
@@ -725,14 +725,14 @@ form ul.formbody li .edui-default span {
   text-align: right;
   color: #027263;
 }
-.box .boxContent .boxFrom ul li div.caption {
+.box .boxContent .boxPopupForm ul li div.caption {
   float: left;
   padding: 10px 5px;
 }
-.box .boxFrom ul li div.item_list {
+.box .boxPopupForm ul li div.item_list {
   height: 35px;
 }
-.box .boxFrom ul li div.item_list label {
+.box .boxPopupForm ul li div.item_list label {
   padding: 8px 0px;
 }
 

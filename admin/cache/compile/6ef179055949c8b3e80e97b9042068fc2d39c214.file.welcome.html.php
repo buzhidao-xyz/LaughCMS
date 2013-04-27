@@ -42,7 +42,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<a href="#">系统设置</a>
 	</div>
 	<div id="boxTab2" class="boxContent boxTabContent">
-		<div class="boxFrom">
+		<div class="boxPopupForm">
 			<form name="boxform" action="__APP__/index.php?s=Public/saveFastOp" method="post" id="ajaxform">
 				<ul>
 					<li>

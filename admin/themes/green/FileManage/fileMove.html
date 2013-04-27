@@ -1,6 +1,6 @@
 <div class="box">
 <div class="boxContent">
-<div class="boxFrom">
+<div class="boxPopupForm">
 	<div class="boxTitle">
 		<h5>文件移动</h5>
 	</div>

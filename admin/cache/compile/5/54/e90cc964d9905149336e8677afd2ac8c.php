@@ -60,7 +60,7 @@ function colorboxImage(url) {
 				</div>
 			</li>
 			<li style="height:auto;overflow:hidden;">
-				<link rel="stylesheet" type="text/css" href="themes/green/style/nodeTree.css" media="screen" />
+				<link rel="stylesheet" type="text/css" href="themes/blue/style/nodeTree.css" media="screen" />
 <div id="nodeTree">
 	<div id="notice">*注意操作权限包含浏览权限 如果两个都勾选则只赋予操作权限</div>
 	<div class="nodeTreeTitle">

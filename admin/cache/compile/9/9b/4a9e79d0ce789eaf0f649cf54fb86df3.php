@@ -32,14 +32,10 @@ function colorboxImage(url) {
 	body { background: none; }
 </style>
 <div id="control">
-	<ul class="controlTop">
-		<li class="controlLeftTop"></li>
-		<li class="controlRightTop"></li>
-	</ul>
 	<div id="controlContent">
 <div class="opTop">
 	<a href="/laugh/admin/index.php?s=CTModel/addSinglePage">新增单页模型</a>
-	<a href="/laugh/admin/index.php?s=CTModel/singlePage">单页模型管理</a>
+	<a href="/laugh/admin/index.php?s=CTModel/singlePage" class="opTopOn">单页模型管理</a>
 </div>
 <div class="captitle"><h5>单页页面列表 【页面数4】</h5></div>
 <ul class="table_list_title">
@@ -169,10 +165,6 @@ singlepageClass();
 });
 </script>
     </div>
-    <ul class="controlBottom">
-		<li class="controlLeftBottom"></li>
-		<li class="controlRightBottom"></li>
-	</ul>
 </div>
 </body>
 <script type="text/javascript" src="themes/blue/js/jquery.corner.js"></script>

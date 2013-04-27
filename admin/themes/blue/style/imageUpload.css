@@ -7,7 +7,6 @@
 #imageUpload #imageTitle {
 	float: left;
 	width: 150px;
-	font-weight: 700;
 	text-align: right;
 	margin-right: 15px;
 }
@@ -16,7 +15,7 @@
 	width: 715px;
 	padding: 10px;
 	overflow: hidden;
-	border: 1px solid #000;
+	border: 1px solid #3A6EA5;
 }
 #imageUpload #imageBox {
 	clear: both;
@@ -27,7 +26,7 @@
 	float: left;
 	margin: 10px;
 	padding: 3px;
-	border: 1px solid #AAA;
+	border: 1px solid #498CD0;
 }
 #imageUpload #imageBox .imageBlock span.imageBlockimage {
 	width: 150px;
@@ -43,13 +42,13 @@
 	height: 20px;
 	line-height: 20px;
 	display: block;
-	border-top: 1px dashed #AAA;
+	border-top: 1px dashed #E2E9EA;
 }
 #imageUpload #imageUploadBox {
 	clear: both;
 	overflow: hidden;
 	padding: 10px;
-	border-top: 1px dashed #AAA;
+	border-top: 1px dashed #3A6EA5;
 }
 #imageUpload #imageUploadBox span {
 	float: left;

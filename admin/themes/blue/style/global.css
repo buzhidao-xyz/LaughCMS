@@ -68,34 +68,36 @@
 }
 .table_list_title, .table_list {
     position: relative;
-    height: 30px;
+    height: 32px;
     clear: both;
-    border-right: 1px solid #B5D0D9;
-    border-bottom: 1px solid #B5D0D9;
+    /*border-right: 1px solid #B5D0D9;
+    border-bottom: 1px solid #B5D0D9;*/
 }
 .table_list_title {
   color: #FFFFFF;
-  /*color: #000000;*/
   font-weight: 600;
-  border-top: 1px solid #B5D0D9;
-  background: url("../images/table_list_title_bg.gif") repeat-x;
-  background: #014A47;
+  background: #3A6EA5;
+  /*border-top: 1px solid #B5D0D9;*/
+  color: #333333;
+  background: #EEF3F7;
+  border-bottom: 1px solid #D5DFE8;
 }
 .table_list {
   overflow:visible;
-  background: #EBF2F6;
+  /*background: #EBF2F6;*/
+  border-bottom: 1px solid #EEEEEE;
 }
 .table_list:hover {
-    background: #E2E7ED;
+    background: #FBFFE4;
 }
 .table_list_l, .table_list_center {
     float: left;
     width: auto;
-    height: 30px;
-    line-height: 30px;
-    text-indent: 5px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 3px;
     overflow: hidden;
-    border-left: 1px solid #B5D0D9;
+    /*border-left: 1px solid #B5D0D9;*/
 }
 .table_list_l span.icon {
   padding-left: 18px;
@@ -205,58 +207,54 @@ input.w350 {
   border-bottom: 1px dashed #E2E9EA;
 }
 
+.bgf6 {
+  background: #F6F6F6;
+}
+
 /**form表单样式表*/
 div.formContainer {
+    clear: both;
     overflow: hidden;
-    margin-top: 5px;
+    padding: 10px 0;
 }
 div.formContainer .formtitle {
-    position: relative;
-    float: left;
     clear: both;
-    padding: 7px 15px;
-    border: 1px solid #666;
-    margin: 0 20px;
-    z-index: 2;
-    background: url('../images/darkBg.jpg') repeat-x bottom #333;
+    overflow: hidden;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #3A6EA5;
 }
 div.formContainer .formtitle h5 {
+    padding: 7px 15px;
+    margin: 0 50px;
     color: #FFFFFF;
-    /*color: #C5D52B;*/
+    background: #019ddd;
+    background: #3A6EA5;
 }
 form.newform {
-  position: relative;
   overflow: hidden;
   clear: both;
-  top: -15px;
-  z-index: 1;
   background: #FFFFFF;
-  /*background: url('../images/form_bg.gif') repeat-x bottom;*/
 }
 form.editform {
-  position: relative;
   overflow: hidden;
   clear: both;
-  top: -15px;
-  z-index: 1;
   background: #FFFFFF;
-  /*background: url('../images/form_bg.gif') repeat-x bottom;*/
 }
 ul.formbody {
     width: auto;
     height: auto;
     overflow: hidden;
     z-index: 50;
-    border: 1px solid #395A7B;
     clear: both;
     background: #FFFFFF;
-    padding: 25px 5px 10px 5px;
+    padding: 10px 0;
 }
 ul.formbody li.formblock {
     width: auto;
     height: 40px;
     line-height: 40px;
-    border-bottom: 1px dashed #E1E1E1;
+    border-bottom: 1px solid #EEEEEE;
     overflow: hidden;
 }
 ul.formbody li.formautoblock {
@@ -278,14 +276,13 @@ ul li.colorblock:hover {
     background: #E2E7ED;
 }
 ul.formbody li span {
-    float: left;
-    width: 180px;
     display: block;
+    float: left;
     margin-right: 15px;
-    text-align: right;
     overflow: hidden;
-    font-weight: 600;
-    /*background: #*/
+    padding-left: 0;
+    text-indent: 30px;
+    width: 160px;
 }
 ul.formbody li.auto {
     height: auto;
@@ -470,6 +467,7 @@ ul.formbody input.mauto {
   padding:0 10px;
   text-align:center;
   color:#666666;
+  margin: 0 1px;
 }
 .current {
   color:#0078b6;
@@ -518,7 +516,7 @@ ul.formbody input.mauto {
   clear: both;
   overflow: hidden;
   padding: 5px 30px;
-  border-bottom: 1px solid #395A7B;
+  border-bottom: 1px dashed #E2E9EA;
 }
 .shtabtitlec .shtabtitle {
     float: left;
@@ -584,35 +582,55 @@ form ul.formbody li .edui-default span {
 }
 
 /******************文档列表****************/
-.opTop , .opBottom {
+.opTop {
   height: 35px;
   line-height: 35px;
+  color: #DDDDDD;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #EEEEEE;
 }
-.opTop a , .opBottom a {
-  color: #000000;
+.opTop a {
+  margin: 0 5px;
+  padding: 4px 7px;
+  color: #004499;
+  background: #EFEFEF;
   text-decoration: none;
-  background: url("../images/allbtbg.gif") repeat-x left bottom #CCCCCC;
+}
+.opTop a:hover {
+  color: #FFFFFF;
+  background: #498CD0;
+  text-decoration: underline;
+}
+.opTop a.opTopOn {
+  color: #FFFFFF;
+  background: #498CD0;
+}
+.opBottom {
+  height: 35px;
+  line-height: 35px;
+  color: #DDDDDD;
+  margin-top: 10px;
+  border-top: 1px solid #EEEEEE;
+  background: #F6F6F6;
+}
+.opBottom a {
+  text-decoration: none;
   border-color: -moz-use-text-color #ACACAC #ACACAC -moz-use-text-color;
   border-image: none;
   border-style: none solid solid none;
   border-width: medium 1px 1px medium;
-  cursor: pointer;
-  padding: 3px 8px;
-}
-.opTop {
-  border-bottom: 1px dashed #007A77;
+  margin: 0 2px;
+  padding: 4px 10px;
+  color: #000000;
+  background: url("../images/allbtbg.gif") repeat-x left bottom #CCCCCC;
 }
 
 /******************文档列表****************/
 .box {
   float: left;
-  width: 480px;
+  min-width: 480px;
   overflow: hidden;
   margin: 0 auto;
-  padding: 0 10px 10px 0;
-}
-.box970 {
-  width: 970px;
 }
 .box .boxTitle {
   width: auto;
@@ -656,8 +674,6 @@ form ul.formbody li .edui-default span {
 }
 .box .boxContent {
   background: #FFF;
-  border: 1px solid #DDDDDD;
-  border-bottom: 0;
 }
 .box .boxContent a {
   padding: 5px;
@@ -665,18 +681,30 @@ form ul.formbody li .edui-default span {
 .box .boxTabContent {
   background: #FFF;
   padding: 5px 10px;
-  border-bottom: 1px solid #DDDDDD;
 }
-.box .boxContent .boxFrom ul {
+.box .boxContent .boxPopupForm .boxTitle {
+  margin: 1px;
+  border: 0;
+  background: #3A6EA5;
+}
+.box .boxContent .boxPopupForm .boxTitle h5 {
+  float: none;
+  display: block;
+  padding: 0;
+  text-align: center;
+  color: #FFFFFF;
+}
+.box .boxContent .boxPopupForm ul {
   padding:5px 10px;
 }
-.box .boxContent .boxFrom ul li {
+.box .boxContent .boxPopupForm ul li {
+  height: 35px;
   border-bottom: 1px dashed #CCC;
 }
-.box .boxContent .boxFrom ul li.bordernone {
+.box .boxContent .boxPopupForm ul li.bordernone {
   border-bottom: 0;
 }
-.box .boxContent .boxFrom ul li span {
+.box .boxContent .boxPopupForm ul li span {
   float: left;
   width: 120px;
   display: block;
@@ -684,14 +712,14 @@ form ul.formbody li .edui-default span {
   text-align: right;
   color: #027263;
 }
-.box .boxContent .boxFrom ul li div.caption {
+.box .boxContent .boxPopupForm ul li div.caption {
   float: left;
   padding: 10px 5px;
 }
-.box .boxFrom ul li div.item_list {
+.box .boxPopupForm ul li div.item_list {
   height: 35px;
 }
-.box .boxFrom ul li div.item_list label {
+.box .boxPopupForm ul li div.item_list label {
   padding: 8px 0px;
 }
 

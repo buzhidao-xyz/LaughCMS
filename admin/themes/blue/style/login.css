@@ -27,7 +27,7 @@ body {
 .logForm .Loglogo {
     float: left;
     margin-top: 20px;
-    margin-left: 25px;
+    margin-left: 18px;
 }
 .logForm form {
     float: left;
@@ -64,4 +64,7 @@ body {
     line-height:30px;
     color:#FF0000;
     text-align: center;
+}
+.logForm ul li input.btngreen2 {
+    background: url("../images/btn_green_bg2.png") no-repeat scroll 0 0 transparent;
 }

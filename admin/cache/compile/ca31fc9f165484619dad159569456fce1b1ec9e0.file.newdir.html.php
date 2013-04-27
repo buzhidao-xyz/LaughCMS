@@ -25,7 +25,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_517627445930b9_43702509')) {function content_517627445930b9_43702509($_smarty_tpl) {?><div class="box">
 <div class="boxContent">
-<div class="boxFrom">
+<div class="boxPopupForm">
 	<div class="boxTitle">
 		<h5>新建目录</h5>
 	</div>

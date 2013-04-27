@@ -31,7 +31,7 @@ function colorboxImage(url) {
 <body>
 <div class="box">
 <div class="boxContent">
-<div class="boxFrom">
+<div class="boxPopupForm">
 	<div class="boxTitle">
 		<h5>系统提示信息</h5>
 	</div>

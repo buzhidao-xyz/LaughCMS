@@ -32,10 +32,6 @@ function colorboxImage(url) {
 	body { background: none; }
 </style>
 <div id="control">
-	<ul class="controlTop">
-		<li class="controlLeftTop"></li>
-		<li class="controlRightTop"></li>
-	</ul>
 	<div id="controlContent">
 <div class="opTop">
 	<a href="/laugh/admin/index.php?s=Image/index">图集列表</a>
@@ -152,10 +148,6 @@ archiveClass();
 });
 </script>
     </div>
-    <ul class="controlBottom">
-		<li class="controlLeftBottom"></li>
-		<li class="controlRightBottom"></li>
-	</ul>
 </div>
 </body>
 <script type="text/javascript" src="themes/blue/js/jquery.corner.js"></script>

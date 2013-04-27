@@ -51,7 +51,7 @@ function colorboxImage(url) {
         </div>
     </div>
     <div class="kjdh">
-        <a href="/laugh/admin/index.php?s=index">系统主页</a> | <a href="http://localhost:82/laugh/index.php?s=index" target="_blank">网站主页</a> | <a href="/laugh/admin/index.php?s=index">系统主页</a> | <a href="http://localhost:82/laugh/index.php?s=index" target="_blank">网站主页</a>
+        <a href="javascript:;">网站地图</a>
     </div>
 </div>
 <div class="headerFoot"></div>
@@ -70,8 +70,8 @@ function colorboxImage(url) {
 		</li>
     </ul>
 </div>
-<div class="menuSlide">
-	<img border="0" width="6" height="60" src="themes/blue/images/admin_barclose.gif">
+<div id="menuSlide" class="menuSlide">
+	<div class="menuSlidebg menuSlidebg1"></div>
 </div>
 <script type="text/javascript">
 $(document).ready(function (){

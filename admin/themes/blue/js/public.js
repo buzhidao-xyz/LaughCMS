@@ -43,4 +43,42 @@ $(document).ready(function() {
     $("#goback").click(function (){
         window.history.go(-1);
     });
+
+    //左菜单显示隐藏
+    $("#menuSlide").live("click",function (){
+        var display = $("#menuTree .menu").css("display");
+        if (display == "none") {
+            $("#menuTree .menu").css("display","block");
+            $("#menuTree .menu").animate({
+                width: "185px"
+            },300,"swing",function (){
+                $("#menuSlide .menuSlidebg").removeClass("menuSlidebg2").addClass("menuSlidebg1");
+            });
+            $("#menuTree .menu").animate({
+                width: "185px"
+            },300);
+            $("#menuSlide .menu").animate({
+                left: "185px"
+            },300);
+            $("#main").animate({
+                left: "191px"
+            },300);
+        } else {
+            $("#menuTree .menu").animate({
+                width: "0px"
+            },300,"swing",function (){
+                $("#menuTree .menu").css("display","none");
+                $("#menuSlide .menuSlidebg").removeClass("menuSlidebg1").addClass("menuSlidebg2");
+            });
+            $("#menuTree .menu").animate({
+                width: "0px"
+            },300);
+            $("#menuSlide .menu").animate({
+                left: "0px"
+            },300);
+            $("#main").animate({
+                left: "5px"
+            },300);
+        }
+    });
 });
