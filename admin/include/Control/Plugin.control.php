@@ -356,7 +356,7 @@ class PluginControl extends CommonControl
             $newdir = q("newdir");
             $oldfilename = q('oldfilename');
             $newfilename = q('newfilename');
-            $filecontent = q('filecontent');
+            $filecontent = html_entity_decode(q('filecontent'));
 
             $return = $fileManage->fileDelete($dir,$oldfilename);
             $return = $fileManage->fileSave($newdir,$newfilename,$filecontent);
@@ -438,7 +438,7 @@ class PluginControl extends CommonControl
 
         if ($action == "save") {
             $filename = q('filename');
-            $filecontent = q('filecontent');
+            $filecontent = html_entity_decode(q('filecontent'));
 
             $fileManage = $this->_newFileManage();
             $return = $fileManage->fileSave($dir,$filename,$filecontent);

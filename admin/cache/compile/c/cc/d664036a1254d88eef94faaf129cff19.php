@@ -174,8 +174,8 @@ function colorboxImage(url) {
 		<li class="table_list_l table_list_l350">
 						<span class="icon" style="background:url(themes/green/images/fileicon/php.gif) no-repeat;">index.php</span>
 					</li>
-    	<li class="table_list_l table_list_l150">147B</li>
-    	<li class="table_list_l table_list_l150">2013-04-27 19:17:57</li>
+    	<li class="table_list_l table_list_l150">124B</li>
+    	<li class="table_list_l table_list_l150">2013-04-28 15:39:37</li>
     	    	<li class="table_list_l table_list_l200" accessStatus=1>
     		    			<a name="fileEdit" href="/laugh/admin/index.php?s=Plugin/fileEdit&dir=.&filename=index.php">编辑</a>
     		    		<a name="fileRename" href="/laugh/admin/index.php?s=Plugin/fileRename&dir=.&filename=index.php">改名</a>

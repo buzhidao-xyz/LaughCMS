@@ -56,18 +56,6 @@ function colorboxImage(url) {
 .box .boxContent {
 	border: 1px solid #3A6EA5;
 }
-.box .boxTitle {
-	margin: 1px;
-	border: 0;
-	background: #3A6EA5;
-}
-.box .boxTitle h5 {
-	float: none;
-	display: block;
-	padding: 0;
-	text-align: center;
-	color: #FFFFFF;
-}
 .box .boxMessage {
 	height: 150px;
 }

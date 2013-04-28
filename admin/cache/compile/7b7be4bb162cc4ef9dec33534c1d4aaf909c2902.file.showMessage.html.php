@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-27 19:17:57
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-28 15:39:37
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Common\showMessage.html" */ ?>
-<?php /*%%SmartyHeaderCode:27231517bb3e59742c1-49401395%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:27826517cd2399c79e6-79052508%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '7b7be4bb162cc4ef9dec33534c1d4aaf909c2902' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\Common\\showMessage.html',
-      1 => 1367061472,
+      1 => 1367061842,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '27231517bb3e59742c1-49401395',
+  'nocache_hash' => '27826517cd2399c79e6-79052508',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_517bb3e59eb6c6_99863469',
+  'unifunc' => 'content_517cd239a39013_63396422',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_517bb3e59eb6c6_99863469')) {function content_517bb3e59eb6c6_99863469($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_517cd239a39013_63396422')) {function content_517cd239a39013_63396422($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="box">
 <div class="boxContent">
@@ -59,18 +59,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 }
 .box .boxContent {
 	border: 1px solid #3A6EA5;
-}
-.box .boxTitle {
-	margin: 1px;
-	border: 0;
-	background: #3A6EA5;
-}
-.box .boxTitle h5 {
-	float: none;
-	display: block;
-	padding: 0;
-	text-align: center;
-	color: #FFFFFF;
 }
 .box .boxMessage {
 	height: 150px;

@@ -1,7 +1,7 @@
-&lt;?php
+<?php
 //引入配置文件
-require(&#039;include/Config/config.php&#039;);
+require("include/Config/config.php");
 
 //引入路由器
-require(&#039;route.php&#039;);
+require("route.php");
 new Route();

@@ -52,7 +52,13 @@ function colorboxImage(url) {
 			</li>
 			<li class="formautoblock">
 				<span>文件内容:</span>
-				<textarea name="filecontent" rows="35" cols="110">&lt;?php//引入配置文件require('include/Config/config.php');//引入路由器require('route.php');new Route();</textarea>
+				<textarea name="filecontent" rows="35" cols="110">&amp;lt;?php
+//引入配置文件
+require(&amp;#039;include/Config/config.php&amp;#039;);
+
+//引入路由器
+require(&amp;#039;route.php&amp;#039;);
+new Route();</textarea>
 			</li>
 			<li class="formblock bordernone bgf6">
 				<input type="submit" name="subut" class="button btnblue2 fleft" value="保存" />
