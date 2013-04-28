@@ -126,7 +126,7 @@
         ,initialContent:''    //初始化编辑器的内容,也可以通过textarea/script给值，看官网例子
 
         ,initialFrameWidth:900  //初始化编辑器宽度,默认900
-        ,initialFrameHeight:320  //初始化编辑器高度,默认320
+        ,initialFrameHeight:350  //初始化编辑器高度,默认350
 
         //,autoClearinitialContent:true //是否自动清除编辑器初始内容，注意：如果focus属性设置为true,这个也为真，那么编辑器一上来就会触发导致初始化的内容看不到了
 
@@ -252,8 +252,8 @@
 
         //highlightcode
         // 代码高亮时需要加载的第三方插件的路径
-        // ,highlightJsUrl:URL + "third-party/SyntaxHighlighter/shCore.js"
-        // ,highlightCssUrl:URL + "third-party/SyntaxHighlighter/shCoreDefault.css"
+        ,highlightJsUrl:URL + "third-party/SyntaxHighlighter/shCore.js"
+        ,highlightCssUrl:URL + "third-party/SyntaxHighlighter/shCoreDefault.css"
 
         //tab
         //点击tab键时移动的距离,tabSize倍数，tabNode什么字符做为单位
@@ -279,27 +279,27 @@
 
         //autoHeightEnabled
         // 是否自动长高,默认true
-        ,autoHeightEnabled:false
+        ,autoHeightEnabled:true
 
         //scaleEnabled
         //是否可以拉伸长高,默认true(当开启时，自动长高失效)
-        //,scaleEnabled:false
+        ,scaleEnabled:false
         //,minFrameWidth:800    //编辑器拖动时最小宽度,默认800
         //,minFrameHeight:220  //编辑器拖动时最小高度,默认220
 
         //autoFloatEnabled
         //是否保持toolbar的位置不动,默认true
-        //,autoFloatEnabled:true
+        ,autoFloatEnabled:false
         //浮动时工具栏距离浏览器顶部的高度，用于某些具有固定头部的页面
         //,topOffset:30
 
         //indentValue
         //首行缩进距离,默认是2em
-        //,indentValue:'2em'
+        ,indentValue:'2em'
 
         //pageBreakTag
         //分页标识符,默认是_baidu_page_break_tag_
-        //,pageBreakTag:'_baidu_page_break_tag_'
+        ,pageBreakTag:'_baidu_page_break_tag_'
 
         //sourceEditor
         //源码的查看方式,codemirror 是代码高亮，textarea是文本框,默认是codemirror

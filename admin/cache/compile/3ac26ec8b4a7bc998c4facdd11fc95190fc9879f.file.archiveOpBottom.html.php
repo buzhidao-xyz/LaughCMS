@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-27 19:31:48
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-28 11:17:19
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Archive\archiveOpBottom.html" */ ?>
-<?php /*%%SmartyHeaderCode:3751517bb72438f345-02561751%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:23175517c94bf34da27-45806051%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3751517bb72438f345-02561751',
+  'nocache_hash' => '23175517c94bf34da27-45806051',
   'function' => 
   array (
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_517bb7243b0195_19889513',
+  'unifunc' => 'content_517c94bf36f5f6_67579429',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_517bb7243b0195_19889513')) {function content_517bb7243b0195_19889513($_smarty_tpl) {?><div id="opBottom" class="opBottom">
+<?php if ($_valid && !is_callable('content_517c94bf36f5f6_67579429')) {function content_517c94bf36f5f6_67579429($_smarty_tpl) {?><div id="opBottom" class="opBottom">
 	<a href="javascript:;" name="checkAll">全选</a>
 	<a href="javascript:;" name="unCheckAll">取消</a>
 	<a href="javascript:;" name="archiveUpdate">更新</a>

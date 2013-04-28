@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-27 19:17:20
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-28 10:24:32
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Role\manage.html" */ ?>
-<?php /*%%SmartyHeaderCode:9197517bb3c09ae5e2-13361713%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:4909517c8860202cc5-74651402%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '9197517bb3c09ae5e2-13361713',
+  'nocache_hash' => '4909517c8860202cc5-74651402',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_517bb3c0ad61b5_29899220',
+  'unifunc' => 'content_517c88603269b5_48788036',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_517bb3c0ad61b5_29899220')) {function content_517bb3c0ad61b5_29899220($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_517c88603269b5_48788036')) {function content_517c88603269b5_48788036($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="captitle"><h5>角色列表 【目前共有<?php if ($_smarty_tpl->tpl_vars['total']->value){?><?php echo $_smarty_tpl->tpl_vars['total']->value;?>
 <?php }else{ ?>0<?php }?>条数据】</h5></div>

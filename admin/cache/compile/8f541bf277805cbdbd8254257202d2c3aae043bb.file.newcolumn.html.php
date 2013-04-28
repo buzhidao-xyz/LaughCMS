@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-04-27 13:26:03
+<?php /* Smarty version Smarty-3.1.12, created on 2013-04-28 11:06:59
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Column\newcolumn.html" */ ?>
-<?php /*%%SmartyHeaderCode:30606517b616bf17a42-43171026%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:16734517c925331da27-35179587%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '8f541bf277805cbdbd8254257202d2c3aae043bb' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\Column\\newcolumn.html',
-      1 => 1366268658,
+      1 => 1367059210,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '30606517b616bf17a42-43171026',
+  'nocache_hash' => '16734517c925331da27-35179587',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_517b616c04f4c5_49970210',
+  'unifunc' => 'content_517c9253394b42_01401017',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_517b616c04f4c5_49970210')) {function content_517b616c04f4c5_49970210($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_517c9253394b42_01401017')) {function content_517c9253394b42_01401017($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
 <div class="formContainer" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
@@ -105,8 +105,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					</div>
 				</li>
 			</div>
-			<li class="formblock bordernone">
-				<input type="submit" name="subut" class="button btngreen2" value="添加" />
+			<li class="formblock bordernone bgf6">
+				<input type="submit" name="subut" class="button btnblue2" value="添加" />
 			</li>
 		</ul>
 	</form>

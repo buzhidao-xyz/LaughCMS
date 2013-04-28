@@ -106,8 +106,8 @@ function colorboxImage(url) {
 					</div>
 				</li>
 			</div>
-			<li class="formblock bordernone">
-				<input type="submit" name="subut" class="button btngreen2" value="添加" />
+			<li class="formblock bordernone bgf6">
+				<input type="submit" name="subut" class="button btnblue2" value="添加" />
 			</li>
 		</ul>
 	</form>
