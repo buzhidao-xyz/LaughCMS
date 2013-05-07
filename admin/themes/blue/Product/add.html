@@ -1,4 +1,9 @@
 {include file="public/control_top.html"}
+<div class="opTop">
+	<a href="__APP__/index.php?s=Product/index">产品列表</a>
+	<a href="__APP__/index.php?s=Product/add" class="opTopOn">新产品</a>
+	<a href="__APP__/index.php?s=Product/recover">回收站</a>
+</div>
 {if $accessStatus == 1}
 <div class="formContainer" accessStatus={$accessStatus}>
 	<div class="formtitle"><h5>添加新产品</h5></div>

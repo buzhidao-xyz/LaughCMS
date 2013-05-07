@@ -1,4 +1,8 @@
 {include file="public/control_top.html"}
+<div class="opTop">
+	<a href="__APP__/index.php?s=Plugin/CooperateIndex">人才招聘列表</a>
+	<a href="__APP__/index.php?s=Plugin/CooperateAdd" class="opTopOn">发布新招聘信息</a>
+</div>
 {if $accessStatus == 1}
 <div class="formContainer" accessStatus={$accessStatus}>
 	<div class="formtitle"><h5>添加新招聘信息</h5></div>
@@ -119,8 +123,8 @@
 					</div>
 				</li>
 			</div>
-			<li class="formblock bordernone">
-				<input type="submit" name="subut" class="button btngreen2" value="添加" />
+			<li class="formblock bordernone bgf6">
+				<input type="submit" name="subut" class="button btnblue2" value="添加" />
 			</li>
 		</ul>
 	</form>
