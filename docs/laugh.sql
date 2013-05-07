@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2013-04-27 19:35:35
+Date: 2013-05-07 17:59:05
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,7 +37,7 @@ CREATE TABLE `la_admin` (
 -- ----------------------------
 -- Records of la_admin
 -- ----------------------------
-INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1367058495', '2130706433', '127', '1');
+INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1367902809', '2130706433', '127', '1');
 INSERT INTO `la_admin` VALUES ('2', 'luochuan', '624879b3fff70462132a21eb1cd8eb75', 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '1355368421', '2130706433', '12', '0');
 
 -- ----------------------------
@@ -3739,8 +3739,8 @@ INSERT INTO `la_column` VALUES ('6', '产品展示', '0', '6', '1', '6', null, '
 INSERT INTO `la_column` VALUES ('7', '客户案例', '0', '7', '1', '2', null, 'index', '4', '', '', '', '', null, null, null, '1', '1359690270', '1359690270');
 INSERT INTO `la_column` VALUES ('8', '下载中心', '0', '8', '1', '3', null, 'index', '5', '', '', '', '', 'Download/index.html', 'Download/list.html', 'Download/body.html', '1', '1359690280', '1359690280');
 INSERT INTO `la_column` VALUES ('9', '招贤纳士', '0', '9', '1', '9', null, 'Cooperate', '6', '', '', '', '', null, null, null, '1', '1359690294', '1365668528');
-INSERT INTO `la_column` VALUES ('10', '关于我们', '0', '10', '1', '8', null, 'AboutUS', '7', '', '', '', '&lt;p&gt;&lt;span class=&quot;text&quot;&gt; &amp;nbsp; &amp;nbsp;LaughCMS企业网站管理系统，是一款代码完全开源免费的PHP+MYSQL系统。&lt;/span&gt;&lt;span class=&quot;text&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span class=&quot;text&quot;&gt; &amp;nbsp; &amp;nbsp;程序内置SEO优化机制，使企业网站更容易被推广。拥有企业网站常用的模块功能（企业简介模块、新闻模块、产品模块、下载模块、图片模块、招聘模块、在线留言、友情链接、会员与权限管理）。强大灵活的后台管理功能、静态页面生成功能、自定义模型功能、自制插件安装管理功能等可为企业打造出大气漂亮且具有营销力的精品网站&lt;/span&gt;&lt;br /&gt;&lt;/p&gt;', null, null, null, '1', '1359690307', '1364356336');
-INSERT INTO `la_column` VALUES ('11', '联系我们', '0', '11', '1', '8', null, 'ContactUS', '8', '', '', '', '', null, null, null, '1', '1359690316', '1359690316');
+INSERT INTO `la_column` VALUES ('10', '关于我们', '0', '10', '1', '8', null, 'AboutUS', '7', '', '', '', '&lt;p style=&quot;line-height:1.5em;&quot;&gt;&lt;span class=&quot;text&quot;&gt;&lt;span style=&quot;font-size:13px;&quot;&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; LaughCMS企业网站管理系统，是一款代码完全开源免费的PHP+MYSQL系统。&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;span class=&quot;text&quot;&gt;&lt;span style=&quot;font-size:13px;&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;text&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;line-height:1.5em;&quot;&gt;&lt;span style=&quot;font-size:13px;&quot; class=&quot;text&quot;&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; 程序内置SEO优化机制，使企业网站更容易被推广。拥有企业网站常用的模块功能（企业简介模块、新闻模块、产品模块、下载模块、图片模块、招聘模块、在线留言、友情链接、会员与权限管理）。强大灵活的后台管理功能、静态页面生成功能、自定义模型功能、自制插件安装管理功能等可为企业打造出大气漂亮且具有营销力的精品网站&lt;/span&gt;&lt;span style=&quot;font-size:13px;&quot;&gt;。&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;', null, null, null, '1', '1359690307', '1367915449');
+INSERT INTO `la_column` VALUES ('11', '联系我们', '0', '11', '1', '8', null, 'ContactUS', '8', '', '', '', '&lt;p style=&quot;line-height:1.5em;&quot;&gt;电 话: XXXXXXXX&lt;br /&gt;邮 编: XXXXXXXX&lt;br /&gt;网 址: www.xxx.com&lt;br /&gt;Email: admin@admin.com&lt;br /&gt;联系地址: 江苏省苏州市工业园区若水路1号&lt;br /&gt;联系人: XXX&lt;br /&gt;&lt;strong&gt;&lt;span style=&quot;color:#E36C09;&quot;&gt;Laugh CMS 软件科技公司&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;', null, null, null, '1', '1359690316', '1367915430');
 INSERT INTO `la_column` VALUES ('12', 'PHP知识', '3', '2', '1', '1', null, 'index', '1', '', '', '', '', null, null, null, '1', '1364262577', '1364262577');
 INSERT INTO `la_column` VALUES ('13', '数据库知识', '2', '2', '1', '1', null, 'index', '1', '', '', '', '', null, null, null, '1', '1364452588', '1364452588');
 INSERT INTO `la_column` VALUES ('14', '网络产品', '6', '6', '1', '6', null, 'index', '1', '', '', '', '', 'Product/index.html', 'Product/list.html', 'Product/body.html', '1', '1364804231', '1364960571');
@@ -3945,6 +3945,25 @@ INSERT INTO `la_images` VALUES ('30', '/Uploads/Image/201304/11/1365670224_8y1f3
 INSERT INTO `la_images` VALUES ('31', '/Uploads/Image/201304/11/1365670248_wzu5aq_7689_3333qqq1231.JPG', '/Uploads/Image/201304/11/thumb_1365670248_wzu5aq_7689_3333qqq1231.JPG', '案例图片十八', '', '14', '3333qqq1231.JPG', '1365670248_wzu5aq_7689_3333qqq1231.JPG', '91042', '571', '338', '1365670248');
 INSERT INTO `la_images` VALUES ('32', '/Uploads/Image/201304/11/1365670265_69ph52_7034_detail_img2.jpg', '/Uploads/Image/201304/11/thumb_1365670265_69ph52_7034_detail_img2.jpg', '案例图片十九', '', '14', 'detail_img2.jpg', '1365670265_69ph52_7034_detail_img2.jpg', '113916', '700', '438', '1365670265');
 INSERT INTO `la_images` VALUES ('33', '/Uploads/Image/201304/11/1365670282_xnd5ls_4777_detail_img1.jpg', '/Uploads/Image/201304/11/thumb_1365670282_xnd5ls_4777_detail_img1.jpg', '案例图片二十', '', '14', 'detail_img1.jpg', '1365670282_xnd5ls_4777_detail_img1.jpg', '61293', '700', '438', '1365670282');
+
+-- ----------------------------
+-- Table structure for `la_message_board`
+-- ----------------------------
+DROP TABLE IF EXISTS `la_message_board`;
+CREATE TABLE `la_message_board` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) DEFAULT NULL COMMENT '留言者名称',
+  `email` varchar(100) DEFAULT NULL,
+  `content` varchar(600) DEFAULT NULL,
+  `createtime` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of la_message_board
+-- ----------------------------
+INSERT INTO `la_message_board` VALUES ('1', 'luochuan', 'luochuan.wang@gmail.com', '213111', '1367920688');
+INSERT INTO `la_message_board` VALUES ('2', 'luochuan', 'luochuan.wang@gmail.com', '你是谁', '1367920733');
 
 -- ----------------------------
 -- Table structure for `la_node`

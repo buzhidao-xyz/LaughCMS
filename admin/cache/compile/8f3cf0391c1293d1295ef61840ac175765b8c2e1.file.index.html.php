@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-07 16:31:26
-         compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Image\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:100135188bbde646615-63249326%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-07 16:31:04
+         compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Product\index.html" */ ?>
+<?php /*%%SmartyHeaderCode:126025188bbc85a46f9-78598719%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '94587f7474e688481f3e244ee66a6ca82c3f1f9e' => 
+    '8f3cf0391c1293d1295ef61840ac175765b8c2e1' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\Image\\index.html',
+      0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\Product\\index.html',
       1 => 1367142637,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '100135188bbde646615-63249326',
+  'nocache_hash' => '126025188bbc85a46f9-78598719',
   'function' => 
   array (
   ),
@@ -24,17 +24,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5188bbde798572_29671111',
+  'unifunc' => 'content_5188bbc86df7c8_51897788',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5188bbde798572_29671111')) {function content_5188bbde798572_29671111($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_5188bbc86df7c8_51897788')) {function content_5188bbc86df7c8_51897788($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="opTop">
-	<a href="__APP__/index.php?s=Image/index" class="opTopOn">图集列表</a>
-	<a href="__APP__/index.php?s=Image/add">新图集</a>
-	<a href="__APP__/index.php?s=Image/recover">回收站</a>
+	<a href="__APP__/index.php?s=Product/index" class="opTopOn">产品列表</a>
+	<a href="__APP__/index.php?s=Product/add">新产品</a>
+	<a href="__APP__/index.php?s=Product/recover">回收站</a>
 </div>
-<div class="captitle"><h5>图集列表 【目前共有<?php if ($_smarty_tpl->tpl_vars['total']->value){?><?php echo $_smarty_tpl->tpl_vars['total']->value;?>
-<?php }else{ ?>0<?php }?>条图集】</h5></div>
+<div class="captitle"><h5>文档列表 【目前共有<?php if ($_smarty_tpl->tpl_vars['total']->value){?><?php echo $_smarty_tpl->tpl_vars['total']->value;?>
+<?php }else{ ?>0<?php }?>条文档】</h5></div>
 <ul class="table_list_title">
 	<li class="table_list_l table_list_l30"></li>
 	<li class="table_list_l table_list_l50">ID</li>
@@ -81,10 +81,10 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
     	<?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
     	<li class="table_list_l table_list_l120" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
 >
-    		<a href="__APPM__/index.php?s=Image/View&columnid=<?php echo $_smarty_tpl->tpl_vars['d']->value['columnid'];?>
+    		<a href="__APPM__/index.php?s=Product/View&columnid=<?php echo $_smarty_tpl->tpl_vars['d']->value['columnid'];?>
 &archiveid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 " target="_blank">预览</a>
-    		<a href="__APP__/index.php?s=Image/edit&archiveid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+    		<a href="__APP__/index.php?s=Product/edit&archiveid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 ">修改</a>
     		<a delurl="__APP__/index.php?s=Archive/recoverArchive&archiveid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 " href="javascript:;" name="del" msg="确定删除吗？">删除</a>

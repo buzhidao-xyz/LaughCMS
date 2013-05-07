@@ -53,4 +53,38 @@ class PluginControl extends CommonControl
 		$this->assign("page", getPage(170,15));
 		$this->display("QA/index.html");
 	}
+
+	/*****************************留言板插件*****************************/
+
+	/**
+     * 获取验证码
+     */
+    static private function vcodeCheck()
+    {
+        $vcode = q('vcode');
+        if (session('vcode') == md5(strtoupper($vcode))) {
+            return true;
+        } else {
+            session('ecode', 1004);
+            self::LoginIndex();
+        }
+    }
+
+	public function saveMessage()
+	{
+		$username = q("username");
+		if ($username&&strlen($username)>20) $this->ajaxReturn(1,'姓名在1-20个字符之间！');
+		$email = q("email");
+		$content = q("content");
+
+		$vcode = q("vcode");
+		if (md5(strtoupper($vcode)) != session('vcode_MessageBoard')) $this->ajaxReturn(1,'验证码错误！');
+
+		$return = M("Plugin")->saveMessage($username,$email,$content,TIMESTAMP);
+		if ($return) {
+			$this->ajaxReturn(0,'留言成功！');
+		} else {
+			$this->ajaxReturn(0,'留言失败！');
+		}
+	}
 }

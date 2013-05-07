@@ -169,6 +169,10 @@ class ColumnControl extends CommonControl
 		$columnid = M("Column")->addColumn($data);
 		if ($columnid) {
 			if (!$topid) M("Column")->updateColumn($columnid,array("topid"=>$columnid));
+			$NextOperation = array(
+				array('name'=>'查看栏目', 'link'=>__APP__.'/index.php?s=Column/updateColumn&columnid='.$columnid)
+			);
+			$this->assign("NextOperation", $NextOperation);
 			$this->display("Common/success.html");
 		} else {
 			$this->display("Common/error.html");
@@ -318,6 +322,10 @@ class ColumnControl extends CommonControl
 		$return = M("Column")->updateColumn($columnid,$data);
 		if ($return) {
 			if (!$topid) M("Column")->updateColumn($columnid,array("topid"=>$columnid));
+			$NextOperation = array(
+				array('name'=>'查看修改', 'link'=>__APP__.'/index.php?s=Column/updateColumn&columnid='.$columnid)
+			);
+			$this->assign("NextOperation", $NextOperation);
 			$this->display("Common/success.html");
 		} else {
 			$this->display("Common/error.html");

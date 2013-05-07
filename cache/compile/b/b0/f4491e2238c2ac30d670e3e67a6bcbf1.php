@@ -89,10 +89,10 @@ var JS_APP = '/laugh';
 		<a href="/laugh/index.php?s=Plugin/Cooperate&columnid=9" class="">招贤纳士</a>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Public/AboutUS&columnid=10" class="navon">关于我们</a>
+		<a href="/laugh/index.php?s=Public/AboutUS&columnid=10" class="">关于我们</a>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Public/ContactUS&columnid=11" class="">联系我们</a>
+		<a href="/laugh/index.php?s=Public/ContactUS&columnid=11" class="navon">联系我们</a>
 			</li>
 	</ul>
 <script type="text/javascript" src="public/plugin/superfish/js/hoverIntent.js"></script>
@@ -149,53 +149,177 @@ $(document).ready(function (){
 		<a href="javascript:;" target="_blank"><img src="themes/default/images/ad_banner.png" width="1000" height="80" /></a>
 	</div>
 	<div class="CurPosition mtop5">
-		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=article">关于我们</a>
+		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=article">联系我们</a>
 	</div>
 	<div id="CenterShow" class="block mtop5">
 		<div id="mainBlock" class="fleft w740">
 			<div class="boxBlock">
 				<div class="boxBlockTitle">
-					<span class="title">关于我们</span>
+					<span class="title">联系我们</span>
 				</div>
 				<div class="boxBlockBody h576">
 					<div class="contentBlock">
-						<p style="line-height:1.5em;"><span class="text"><span style="font-size:13px;"> &nbsp; &nbsp; &nbsp; LaughCMS企业网站管理系统，是一款代码完全开源免费的PHP+MYSQL系统。</span></span></p><p><br /><span class="text"><span style="font-size:13px;"></span></span><span class="text"></span></p><p style="line-height:1.5em;"><span style="font-size:13px;" class="text"> &nbsp; &nbsp; &nbsp; 程序内置SEO优化机制，使企业网站更容易被推广。拥有企业网站常用的模块功能（企业简介模块、新闻模块、产品模块、下载模块、图片模块、招聘模块、在线留言、友情链接、会员与权限管理）。强大灵活的后台管理功能、静态页面生成功能、自定义模型功能、自制插件安装管理功能等可为企业打造出大气漂亮且具有营销力的精品网站</span><span style="font-size:13px;">。</span></p><p><br /></p><p><br /></p>
+						<div class="contactUS">
+							<!-- <h5>电 话: XXXXXXXX</h5>
+							<h5>邮 编: XXXXXXXX</h5>
+							<h5>网 址: www.xxx.com</h5>
+							<h5>Email: admin@admin.com</h5>
+							<h5>联系地址: 江苏省苏州市工业园区若水路1号</h5>
+							<h5>联系人: XXX</h5>
+							<h4>Laugh CMS 软件科技公司</h4> -->
+							<p style="line-height:1.5em;">电 话: XXXXXXXX<br />邮 编: XXXXXXXX<br />网 址: www.xxx.com<br />Email: admin@admin.com<br />联系地址: 江苏省苏州市工业园区若水路1号<br />联系人: XXX<br /><strong><span style="color:#E36C09;">Laugh CMS 软件科技公司</span></strong></p>
+						</div>
+						<div class="MessageBoard">
+	<div class="title">
+		<a href="javascript:;">留言板</a>
+	</div>
+	<div class="body">
+		<form name="MessageForm" method="post" action="/laugh/index.php?s=Plugin/saveMessage" id="MessageBoard">
+			<ul>
+				<li><span class="title">姓名:</span><span class="content"><input name="username" class="w150" /></span></li>
+				<li><span class="title">邮箱:</span><span class="content"><input name="email" class="w200" /></span></li>
+				<li><span class="title">内容:</span><span class="content"><textarea name="content" rows="7" cols="50"></textarea></span></li>
+				<li><span class="title">验证码:</span><span class="content"><input name="vcode" class="w50" />&nbsp;<img src="/laugh/index.php?s=Org/MessageBoardVcode" class="vcode" /></span></li>
+				<li><input type="submit" name="subut" value="提交" class="button btngreen2" /></li>
+			</ul>
+		</form>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function (){
+	$('#MessageBoard').live("submit", function(){
+        // $("#MessageBoard input[type=submit]").attr('disabled','disabled');
+        if($('#MessageBoard').length>0){
+            var url = $('#MessageBoard').attr('action');
+            var data = $("#MessageBoard").serialize();
+            $.post(url,data,function(data){
+                alert(data.info);
+                if (!data.status) {
+                    location.href = location.href;
+                }
+                // $("#MessageBoard input[type=submit]").removeAttr('disabled');
+            }, 'json');
+            return false;
+        } else {
+            alert('表单为空');
+        }
+    });
+});
+</script>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div id="sideBlock" class="fleft w250 mleft10">
-	<div class="boxBlock">
-		<div class="boxBlockTitle">
-			<span class="title">快捷导航</span>
-		</div>
-		<div class="boxBlockBody h200">
-			<ul class="SideNavList">
-				<li><a href="javascript:;">新闻资讯</a></li>
-				<li><a href="javascript:;">产品展示</a></li>
-				<li><a href="javascript:;">招贤纳士</a></li>
-				<li><a href="javascript:;">关于我们</a></li>
-				<li><a href="javascript:;">联系我们</a></li>
-			</ul>
-		</div>
-	</div>
-	<div class="boxBlock mtop10">
-		<div class="boxBlockTitle">
-			<span class="title">联系我们</span>
-		</div>
-		<div class="boxBlockBody h250">
-			<div class="contactUS">
-				<h5>电 话: XXXXXXXX</h5>
-				<h5>邮 编: XXXXXXXX</h5>
-				<h5>网 址: www.xxx.com</h5>
-				<h5>Email: admin@admin.com</h5>
-				<h5>联系地址: 江苏省苏州市工业园区若水路1号</h5>
-				<h5>联系人: XXX</h5>
-				<h4>Laugh CMS 软件科技公司</h4>
+			<div class="boxBlock">
+				<div class="boxBlockTitle">
+					<span class="title">快捷导航</span>
+				</div>
+				<div class="boxBlockBody h200">
+					<ul class="SideNavList">
+						<li><a href="javascript:;">新闻资讯</a></li>
+						<li><a href="javascript:;">产品展示</a></li>
+						<li><a href="javascript:;">招贤纳士</a></li>
+						<li><a href="javascript:;">关于我们</a></li>
+						<li><a href="javascript:;">联系我们</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="boxBlock mtop10">
+				<div class="boxBlockTitle">
+					<span class="title">网站标签</span>
+				</div>
+				<div class="boxBlockBody">
+					<div id="tagCloud" class="tagCloud">
+	<a href="javascript:;" target="_blank">菜单一</a>
+	<a href="javascript:;" target="_blank">LaughCMS</a>
+	<a href="javascript:;" target="_blank">源代码</a>
+	<a href="javascript:;" target="_blank">剑网三</a>
+	<a href="javascript:;" target="_blank">图片集</a>
+	<a href="javascript:;" target="_blank">风云榜</a>
+	<a href="javascript:;" target="_blank">文字</a>
+	<a href="javascript:;" target="_blank">奖</a>
+	<a href="javascript:;" target="_blank">IE8</a>
+	<a href="javascript:;" target="_blank">火狐</a>
+</div>
+<style type="text/css">
+.tagCloud a {
+	padding: 3px;
+	display: inline-block;
+	white-space: nowrap;
+}
+a.size1 {
+	font-size: 25px;
+	padding: 10px;
+	color: #FF6600;
+}
+a.size1:hover {
+	color: #5F9729;
+}
+a.size2 {
+	padding:7px;
+	font-size:20px;
+	color:#FF0000;
+}
+a.size2:hover {
+	color:#FF6600;
+}
+a.size3 {
+	padding:5px;
+	font-size:16px;
+	color:#0066CC;
+}
+a.size3:hover {
+	color:#5F9729;
+}
+a.size4 {
+	padding:5px;
+	font-size:12px;
+	color:#0099FF;
+}
+a.size4:hover {
+	color:#5F9729;
+}
+a.size5 {
+	padding:5px;
+	font-size:13px;
+	color:#333333;
+}
+a.size5:hover {
+	color:#FF6600;
+}
+a.size6 {
+	padding:0px;
+	font-size:16px;
+	color:#339900;
+}
+a.size6:hover {
+	color:#0066CC;
+}
+a.size7 {
+	padding:0px;
+	font-size:16px;
+	color:#660099;
+}
+a.size7:hover {
+	color:#0066CC;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+/*多彩tag*/
+var tags_a = $("#tagCloud").find("a");
+tags_a.each(function(){
+	var x = 9;
+	var y = 0;
+	var rand = parseInt(Math.random() * (x - y + 1) + y);
+	$(this).addClass("size"+rand);
+});
+});
+</script>
+				</div>
 			</div>
 		</div>
-	</div>
-</div>
 		<div class="clear"></div>
 	</div>
 	<div id="Flink" class="boxBlock block">

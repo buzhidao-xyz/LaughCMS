@@ -168,6 +168,9 @@
 	padding: 0 10px 0 15px;
 	background: url("../images/morebtn.png") no-repeat left 2px;
 }
+.boxBlock .boxBlockBody .contentBlock {
+	padding: 10px;
+}
 
 /**********************************articleList文档列表样式**********************************/
 ul.articleList {

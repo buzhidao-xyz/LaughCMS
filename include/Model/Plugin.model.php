@@ -75,4 +75,24 @@ class Plugin extends Base
 
 		return $data;
 	}
+
+	/**
+	 * 保存留言
+	 * @param $username string 留言者姓名
+	 * @param $email string 留言者邮箱
+	 * @param $content string 留言内容
+	 * @param $createtime int 留言时间
+	 */
+	public function saveMessage($username=null,$email=null,$content=null,$createtime=null)
+	{
+		if (!$content) return false;
+
+		$data = array(
+			'username' => $username,
+			'email'    => $email,
+			'content'  => $content,
+			'createtime' => $createtime
+		);
+		return T("message_board")->add($data);
+	}
 }
