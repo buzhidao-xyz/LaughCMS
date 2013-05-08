@@ -37,7 +37,7 @@ function colorboxImage(url) {
 	<a href="/laugh/admin/index.php?s=Plugin/CooperateIndex" class="opTopOn">人才招聘列表</a>
 	<a href="/laugh/admin/index.php?s=Plugin/CooperateAdd">发布新招聘信息</a>
 </div>
-<div class="captitle"><h5>人才招聘信息列表 【信息数4】</h5></div>
+<div class="captitle"><h5>人才招聘信息列表 【信息数0】</h5></div>
 <ul class="table_list_title">
 	<li class="table_list_l table_list_l30"></li>
 	<li class="table_list_l table_list_l200">招聘职位</li>
@@ -50,63 +50,8 @@ function colorboxImage(url) {
 		<li class="table_list_l table_list_l100" accessStatus=1>操作</li>
 	</ul>
 <div class="contentTableList">
-            <ul class="table_list">
-		<li class="table_list_l table_list_l30">1</li>
-		<li class="table_list_l table_list_l200">UI设计师</li>
-		<li class="table_list_l table_list_l80">2</li>
-		<li class="table_list_l table_list_l100">本科</li>
-		<li class="table_list_l table_list_l100">全职</li>
-    	<li class="table_list_l table_list_l150">2013-04-12 15:29:12</li>
-    	<li class="table_list_l table_list_l150">2013-04-27 18:56:25</li>
-		<li class="table_list_l table_list_l100">6000-7999</li>
-    	    	<li class="table_list_l table_list_l100" accessStatus=1>
-    		<a href="/laugh/admin/index.php?s=Plugin/CooperateEdit&id=4">修改</a>
-    		<a delurl="/laugh/admin/index.php?s=Plugin/CooperateDelete&id=4" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
-    	</li>
-    	    </ul>
-        <ul class="table_list">
-		<li class="table_list_l table_list_l30">1</li>
-		<li class="table_list_l table_list_l200">PHP工程师</li>
-		<li class="table_list_l table_list_l80">10</li>
-		<li class="table_list_l table_list_l100">本科</li>
-		<li class="table_list_l table_list_l100">全职</li>
-    	<li class="table_list_l table_list_l150">2013-04-12 14:58:15</li>
-    	<li class="table_list_l table_list_l150">2013-04-12 15:10:40</li>
-		<li class="table_list_l table_list_l100">6000-7999</li>
-    	    	<li class="table_list_l table_list_l100" accessStatus=1>
-    		<a href="/laugh/admin/index.php?s=Plugin/CooperateEdit&id=3">修改</a>
-    		<a delurl="/laugh/admin/index.php?s=Plugin/CooperateDelete&id=3" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
-    	</li>
-    	    </ul>
-        <ul class="table_list">
-		<li class="table_list_l table_list_l30">1</li>
-		<li class="table_list_l table_list_l200">PHP工程师</li>
-		<li class="table_list_l table_list_l80">10</li>
-		<li class="table_list_l table_list_l100">本科</li>
-		<li class="table_list_l table_list_l100">全职</li>
-    	<li class="table_list_l table_list_l150">2013-04-12 14:58:15</li>
-    	<li class="table_list_l table_list_l150">2013-04-12 15:10:51</li>
-		<li class="table_list_l table_list_l100">6000-7999</li>
-    	    	<li class="table_list_l table_list_l100" accessStatus=1>
-    		<a href="/laugh/admin/index.php?s=Plugin/CooperateEdit&id=2">修改</a>
-    		<a delurl="/laugh/admin/index.php?s=Plugin/CooperateDelete&id=2" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
-    	</li>
-    	    </ul>
-        <ul class="table_list">
-		<li class="table_list_l table_list_l30">1</li>
-		<li class="table_list_l table_list_l200">PHP工程师</li>
-		<li class="table_list_l table_list_l80">10</li>
-		<li class="table_list_l table_list_l100">大专</li>
-		<li class="table_list_l table_list_l100">全职</li>
-    	<li class="table_list_l table_list_l150">2013-04-12 11:53:45</li>
-    	<li class="table_list_l table_list_l150">2013-04-12 15:37:39</li>
-		<li class="table_list_l table_list_l100">8000-9999</li>
-    	    	<li class="table_list_l table_list_l100" accessStatus=1>
-    		<a href="/laugh/admin/index.php?s=Plugin/CooperateEdit&id=1">修改</a>
-    		<a delurl="/laugh/admin/index.php?s=Plugin/CooperateDelete&id=1" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
-    	</li>
-    	    </ul>
-        </div>
+        <ul class="table_list"><li class="table_list_center">空</li></ul>
+    </div>
 
     </div>
 </div>

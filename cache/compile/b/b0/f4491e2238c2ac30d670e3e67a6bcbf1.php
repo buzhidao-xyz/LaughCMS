@@ -188,7 +188,7 @@ $(document).ready(function (){
 <script type="text/javascript">
 $(document).ready(function (){
 	$('#MessageBoard').live("submit", function(){
-        // $("#MessageBoard input[type=submit]").attr('disabled','disabled');
+        $("#MessageBoard input[type=submit]").attr('disabled','disabled');
         if($('#MessageBoard').length>0){
             var url = $('#MessageBoard').attr('action');
             var data = $("#MessageBoard").serialize();
@@ -197,7 +197,7 @@ $(document).ready(function (){
                 if (!data.status) {
                     location.href = location.href;
                 }
-                // $("#MessageBoard input[type=submit]").removeAttr('disabled');
+                $("#MessageBoard input[type=submit]").removeAttr('disabled');
             }, 'json');
             return false;
         } else {

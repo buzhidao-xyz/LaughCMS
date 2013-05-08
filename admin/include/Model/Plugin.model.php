@@ -202,4 +202,13 @@ class Plugin extends Base
 
 		return T("flink_catalog")->where(array("id"=>$id))->delete();
 	}
+
+	/**
+	 * 留言板列表
+	 * @param int $id 留言id
+	 */
+	public function getMessageList()
+	{
+		
+	}
 }

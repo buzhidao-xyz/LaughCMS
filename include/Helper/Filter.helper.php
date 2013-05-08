@@ -3,27 +3,14 @@
  * filter类
  * by laucen 2011-11-16
  */
- class FilterHelper
- {
+class FilterHelper
+{
     //控制器
     protected $_helper = "Filter";
 
     public function __construct()
     {
         
-    }
-
-    /**
-     * 检测是否数字
-     * @param $str int 字符
-     * @param $convert bool 是否转义 true转义 false不转义 默认false
-     */
-    static public function C_Numeric($str,$convert=false)
-    {
-    	$return = null;
-    	$return = is_numeric($str);
-
-    	return $return;
     }
 
     /**
@@ -47,4 +34,28 @@
         if(empty($var) || !preg_match('/^[1-9]+[0-9]*$/', $var)) return false;
         return true;
     }
- }
+
+    /**
+     * 检测是否数字
+     * @param $var int 字符
+     */
+    static public function C_Numeric($var=null)
+    {
+        $return = is_numeric($var);
+
+        return $return;
+    }
+
+    /**
+     * 检查是否正确的邮箱格式
+     * @param string $string 变量
+     */
+    static public function C_email($var=null)
+    {
+        if (empty($var)) return false;
+
+        $regexp = "/^[a-z0-9A-Z](([a-z0-9A-Z_-]*[\.])*[a-z0-9A-Z])*@([a-z0-9A-Z]+([-][a-z0-9A-Z])*[\.])+[a-z]{2,5}$/i";
+        if (preg_match($regexp, $var)) return true;
+        else return false;
+    }
+}

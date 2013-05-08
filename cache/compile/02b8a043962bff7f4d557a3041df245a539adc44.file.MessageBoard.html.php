@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-07 17:58:54
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-08 15:07:33
          compiled from "C:\xampp\htdocs\laugh\themes\default\Common\MessageBoard.html" */ ?>
-<?php /*%%SmartyHeaderCode:297665188d05e8ecb03-14531866%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:117915189f9b5538f97-37081837%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '02b8a043962bff7f4d557a3041df245a539adc44' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\Common\\MessageBoard.html',
-      1 => 1367920596,
+      1 => 1367996807,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '297665188d05e8ecb03-14531866',
+  'nocache_hash' => '117915189f9b5538f97-37081837',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5188d05e8fcdb4_87509729',
+  'unifunc' => 'content_5189f9b55491d9_78706061',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5188d05e8fcdb4_87509729')) {function content_5188d05e8fcdb4_87509729($_smarty_tpl) {?><div class="MessageBoard">
+<?php if ($_valid && !is_callable('content_5189f9b55491d9_78706061')) {function content_5189f9b55491d9_78706061($_smarty_tpl) {?><div class="MessageBoard">
 	<div class="title">
 		<a href="javascript:;">留言板</a>
 	</div>
@@ -38,7 +38,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <script type="text/javascript">
 $(document).ready(function (){
 	$('#MessageBoard').live("submit", function(){
-        // $("#MessageBoard input[type=submit]").attr('disabled','disabled');
+        $("#MessageBoard input[type=submit]").attr('disabled','disabled');
         if($('#MessageBoard').length>0){
             var url = $('#MessageBoard').attr('action');
             var data = $("#MessageBoard").serialize();
@@ -47,7 +47,7 @@ $(document).ready(function (){
                 if (!data.status) {
                     location.href = location.href;
                 }
-                // $("#MessageBoard input[type=submit]").removeAttr('disabled');
+                $("#MessageBoard input[type=submit]").removeAttr('disabled');
             }, 'json');
             return false;
         } else {

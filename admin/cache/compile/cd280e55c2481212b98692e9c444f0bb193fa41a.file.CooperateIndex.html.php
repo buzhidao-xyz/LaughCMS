@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-07 13:04:31
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-08 18:17:34
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Plugin\CooperateIndex.html" */ ?>
-<?php /*%%SmartyHeaderCode:3239851888b5fd8bed5-72735310%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:14449518a263e8449a0-02870983%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3239851888b5fd8bed5-72735310',
+  'nocache_hash' => '14449518a263e8449a0-02870983',
   'function' => 
   array (
   ),
@@ -25,9 +25,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_51888b5fea01e0_31428712',
+  'unifunc' => 'content_518a263e97f1c8_82739689',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51888b5fea01e0_31428712')) {function content_51888b5fea01e0_31428712($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_518a263e97f1c8_82739689')) {function content_518a263e97f1c8_82739689($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="opTop">
 	<a href="__APP__/index.php?s=Plugin/CooperateIndex" class="opTopOn">人才招聘列表</a>

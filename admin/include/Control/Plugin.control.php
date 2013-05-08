@@ -43,6 +43,21 @@ class PluginControl extends CommonControl
         return $updatetime;
     }
 
+    /********************************留言板********************************/
+
+    //留言列表
+    public function messageList()
+    {
+        list($start,$length) = $this->getPages();
+        $dataList = M("Plugin")->getMessageList(null,$start,$length);
+
+        $this->assign("total", $dataList['total']);
+        $this->assign("dataList", $dataList['data']);
+
+        $this->assign("page", getPage($dataList['total'],$this->_pagesize));
+        $this->display("Plugin/MessageList.html");
+    }
+
     /********************************人才招聘插件********************************/
 
     //人才招聘插件

@@ -75,7 +75,9 @@ class PluginControl extends CommonControl
 		$username = q("username");
 		if ($username&&strlen($username)>20) $this->ajaxReturn(1,'姓名在1-20个字符之间！');
 		$email = q("email");
+		if (!FilterHelper::C_email($email)) $this->ajaxReturn(1,'邮箱格式不正确！');
 		$content = q("content");
+		if (empty($content)) $this->ajaxReturn(1,'请填写留言内容！');
 
 		$vcode = q("vcode");
 		if (md5(strtoupper($vcode)) != session('vcode_MessageBoard')) $this->ajaxReturn(1,'验证码错误！');

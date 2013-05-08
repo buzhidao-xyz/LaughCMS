@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2013-05-07 17:59:05
+Date: 2013-05-08 18:21:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,7 +37,7 @@ CREATE TABLE `la_admin` (
 -- ----------------------------
 -- Records of la_admin
 -- ----------------------------
-INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1367902809', '2130706433', '127', '1');
+INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1368006801', '2130706433', '127', '1');
 INSERT INTO `la_admin` VALUES ('2', 'luochuan', '624879b3fff70462132a21eb1cd8eb75', 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '1355368421', '2130706433', '12', '0');
 
 -- ----------------------------
@@ -3957,13 +3957,16 @@ CREATE TABLE `la_message_board` (
   `content` varchar(600) DEFAULT NULL,
   `createtime` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_message_board
 -- ----------------------------
 INSERT INTO `la_message_board` VALUES ('1', 'luochuan', 'luochuan.wang@gmail.com', '213111', '1367920688');
 INSERT INTO `la_message_board` VALUES ('2', 'luochuan', 'luochuan.wang@gmail.com', '你是谁', '1367920733');
+INSERT INTO `la_message_board` VALUES ('3', 'luochuan', 'luochuan.wang@gmail.com', '测试留言板 谢谢', '1367996463');
+INSERT INTO `la_message_board` VALUES ('4', 'wbq', 'wbq0525@163.com', 'bucuobucuo', '1367996492');
+INSERT INTO `la_message_board` VALUES ('5', 'asdsad', 'asdasd@aaa-a.com', 'asda', '1367996526');
 
 -- ----------------------------
 -- Table structure for `la_node`
@@ -4017,7 +4020,7 @@ INSERT INTO `la_node` VALUES ('27', '自动更新', '', '', '', '0', '4', '13565
 INSERT INTO `la_node` VALUES ('28', '一键更新网站', '', 'Cache', 'updateAll', '27', '0', '1357722182', '1357722182', '1');
 INSERT INTO `la_node` VALUES ('29', '更新系统缓存', '', 'Cache', 'systemCache', '27', '0', '1358997259', '1358997259', '1');
 INSERT INTO `la_node` VALUES ('30', '常规插件', '', '', '', '0', '5', '1358999125', '1358999125', '1');
-INSERT INTO `la_node` VALUES ('31', '留言板', '', 'Plugin', '', '30', '0', '1358999272', '1358999272', '1');
+INSERT INTO `la_node` VALUES ('31', '留言板', '', 'Plugin', 'messageList', '30', '0', '1358999272', '1358999272', '1');
 INSERT INTO `la_node` VALUES ('32', '人才招聘', '', 'Plugin', 'CooperateIndex', '30', '0', '1359010748', '1359010748', '1');
 INSERT INTO `la_node` VALUES ('33', '友情链接', '', 'Plugin', 'FlinkIndex', '30', '0', '1359010791', '1359010791', '1');
 INSERT INTO `la_node` VALUES ('34', '基本设置', '', '', '', '0', '6', '1359011153', '1359011153', '1');
