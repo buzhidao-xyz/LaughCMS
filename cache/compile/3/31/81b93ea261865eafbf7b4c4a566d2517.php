@@ -216,9 +216,8 @@ $("#SImageContainer").Xslider({
 					<img src="themes/default/images/aboutus_img.png" width="130" height="150" />
 				</div>
 				<div class="boxBlockText fleft w450">
-					<span class="text">LaughCMS企业网站管理系统，是一款代码完全开源免费的PHP+MYSQL系统。</span>
-					<span class="text">程序内置SEO优化机制，使企业网站更容易被推广。拥有企业网站常用的模块功能（企业简介模块、新闻模块、产品模块、下载模块、图片模块、招聘模块、在线留言、友情链接、会员与权限管理）。强大灵活的后台管理功能、静态页面生成功能、自定义模型功能、自制插件安装管理功能等可为企业打造出大气漂亮且具有营销力的精品网站...</span>
-					<a href="javascript:;" class="viewbtn">阅读全文</a>
+					<p style="line-height:1.5em;"><span class="text"><span style="font-size:13px;"> &nbsp; &nbsp; &nbsp; LaughCMS企业网站管理系统，是一款代码完全开源免费的PHP+MYSQL系统。</span></span></p><p><br /></p><p style="line-height:1.5em;"><span style="font-size:13px;" class="text"> &nbsp; &nbsp; &nbsp; 程序内置SEO优化机制，使企业网站更容易被推广。拥有企业网站常用的模块功能（企业简介模块、新闻模块、产品模块、下载模块、图片模块、招聘模块、在线留言、友情链接、会员与权限管理）。强大灵活的后台管理功能、静态页面生成功能、自定义模型功能、自制插件安装管...</span></p>
+					<a href="/laugh/index.php?s=Public/AboutUS&columnid=10" class="viewbtn">阅读全文</a>
 				</div>
 			</div>
 		</div>

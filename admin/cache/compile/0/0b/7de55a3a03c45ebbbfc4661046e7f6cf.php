@@ -52,8 +52,8 @@ function colorboxImage(url) {
 					<label><input type="radio" name="state" value="0" class="radio" />隐藏</label>
 				</div>
 			</li>
-			<li class="formblock bordernone">
-				<input type="submit" name="subut" class="button btngreen2" value="确定" />
+			<li class="formblock bordernone bgf6">
+				<input type="submit" name="subut" class="button btnblue2" value="确定" />
 			</li>
 		</ul>
 	</form>

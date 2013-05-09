@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-08 15:07:33
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-09 16:15:11
          compiled from "C:\xampp\htdocs\laugh\themes\default\Common\TagCloud.html" */ ?>
-<?php /*%%SmartyHeaderCode:242205189f9b5550407-81484081%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:29912518b5b0f419451-44344879%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,15 +11,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '242205189f9b5550407-81484081',
+  'nocache_hash' => '29912518b5b0f419451-44344879',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5189f9b5574e71_30394736',
+  'unifunc' => 'content_518b5b0f43ecb4_01684657',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5189f9b5574e71_30394736')) {function content_5189f9b5574e71_30394736($_smarty_tpl) {?><div id="tagCloud" class="tagCloud">
+<?php if ($_valid && !is_callable('content_518b5b0f43ecb4_01684657')) {function content_518b5b0f43ecb4_01684657($_smarty_tpl) {?><div id="tagCloud" class="tagCloud">
 	<a href="javascript:;" target="_blank">菜单一</a>
 	<a href="javascript:;" target="_blank">LaughCMS</a>
 	<a href="javascript:;" target="_blank">源代码</a>

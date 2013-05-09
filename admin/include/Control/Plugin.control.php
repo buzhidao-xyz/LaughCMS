@@ -58,6 +58,19 @@ class PluginControl extends CommonControl
         $this->display("Plugin/MessageList.html");
     }
 
+    //删除留言
+    public function messageDelete()
+    {
+        $messageid = q("messageid");
+        $messageid = explode(",", $messageid);
+        $return = M("Plugin")->messageDelete($messageid);
+        if ($return) {
+            $this->ajaxReturn(0,"留言信息删除成功！");
+        } else {
+            $this->ajaxReturn(1,"留言信息删除失败！");
+        }
+    }
+
     /********************************人才招聘插件********************************/
 
     //人才招聘插件

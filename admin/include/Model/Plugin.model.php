@@ -206,9 +206,31 @@ class Plugin extends Base
 	/**
 	 * 留言板列表
 	 * @param int $id 留言id
+	 * @param int $start 分页开始记录数
+	 * @param int $length 分页结束记录数
+	 * @param array $where 条件数组
 	 */
-	public function getMessageList()
+	public function getMessageList($id=null,$start=0,$length=0,$where=array())
 	{
-		
+		if (!empty($id)) $where['id'] = is_array($id) ? array("in",$id) : $id;
+
+		$total = T("message_board")->where($where)->count();
+		$obj = T("message_board")->where($where);
+		if ($length) $obj = $obj->limit($start,$length);
+		$data = $obj->order("createtime","desc")->select();
+
+		return array("total"=>$total,"data"=>$data);
+	}
+
+	/**
+	 * 删除留言信息
+	 * @param int/array $id 留言id
+	 */
+	public function messageDelete($id=null)
+	{
+		if (empty($id)) return false;
+		$where['id'] = is_array($id) ? array("in",$id) : $id;
+
+		return T("message_board")->where($where)->delete();
 	}
 }

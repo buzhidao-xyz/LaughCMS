@@ -128,7 +128,7 @@ function colorboxImage(url) {
 				</li>
 				<li class="formblock">
 					<span>发布时间:</span>
-					<input type="text" id="dpicker0" name="publishtime" value="2013-05-07 13:04:16" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="input w150" />
+					<input type="text" id="dpicker0" name="publishtime" value="2013-05-09 16:18:08" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="input w150" />
 					<img width="16" height="22" align="absmiddle" onclick="WdatePicker({el:'dpicker0',dateFmt:'yyyy-MM-dd HH:mm:ss'})" style="cursor:pointer" src="public/plugin/My97DatePicker/skin/datePicker.gif">
 				</li>
 				<li class="formblock">

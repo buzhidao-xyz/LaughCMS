@@ -46,11 +46,11 @@ function colorboxImage(url) {
 	</ul>
 <div class="contentTableList">
 	<ul class="table_list">
-		<li class="table_list_l table_list_l350"><a class="nonetextdecoration" href="/laugh/admin/index.php?s=Plugin/fileManage&dir=."><span class="icon" style="background:url(themes/green/images/fileicon/dir1.gif) no-repeat;">上级目录</span></a></li>
+		<li class="table_list_l table_list_l350"><a class="nonetextdecoration" href="/laugh/admin/index.php?s=Plugin/fileManage&dir=."><span class="icon" style="background:url(themes/blue/images/fileicon/dir1.gif) no-repeat;">上级目录</span></a></li>
     </ul>
             <ul class="table_list">
 		<li class="table_list_l table_list_l350">
-						<a class="nonetextdecoration" href="/laugh/admin/index.php?s=Plugin/fileManage&dir=./.git"><span class="icon" style="background:url(themes/green/images/fileicon/dir.gif) no-repeat;">.git</span></a>
+						<a class="nonetextdecoration" href="/laugh/admin/index.php?s=Plugin/fileManage&dir=./.git"><span class="icon" style="background:url(themes/blue/images/fileicon/dir.gif) no-repeat;">.git</span></a>
 					</li>
     	<li class="table_list_l table_list_l150"></li>
     	<li class="table_list_l table_list_l150"></li>
@@ -61,7 +61,7 @@ function colorboxImage(url) {
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l350">
-						<a class="nonetextdecoration" href="/laugh/admin/index.php?s=Plugin/fileManage&dir=./a"><span class="icon" style="background:url(themes/green/images/fileicon/dir.gif) no-repeat;">a</span></a>
+						<a class="nonetextdecoration" href="/laugh/admin/index.php?s=Plugin/fileManage&dir=./a"><span class="icon" style="background:url(themes/blue/images/fileicon/dir.gif) no-repeat;">a</span></a>
 					</li>
     	<li class="table_list_l table_list_l150"></li>
     	<li class="table_list_l table_list_l150"></li>
@@ -72,7 +72,7 @@ function colorboxImage(url) {
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l350">
-						<a class="nonetextdecoration" href="/laugh/admin/index.php?s=Plugin/fileManage&dir=./admin"><span class="icon" style="background:url(themes/green/images/fileicon/dir.gif) no-repeat;">admin</span></a>
+						<a class="nonetextdecoration" href="/laugh/admin/index.php?s=Plugin/fileManage&dir=./admin"><span class="icon" style="background:url(themes/blue/images/fileicon/dir.gif) no-repeat;">admin</span></a>
 					</li>
     	<li class="table_list_l table_list_l150"></li>
     	<li class="table_list_l table_list_l150"></li>
@@ -83,7 +83,7 @@ function colorboxImage(url) {
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l350">
-						<a class="nonetextdecoration" href="/laugh/admin/index.php?s=Plugin/fileManage&dir=./cache"><span class="icon" style="background:url(themes/green/images/fileicon/dir.gif) no-repeat;">cache</span></a>
+						<a class="nonetextdecoration" href="/laugh/admin/index.php?s=Plugin/fileManage&dir=./cache"><span class="icon" style="background:url(themes/blue/images/fileicon/dir.gif) no-repeat;">cache</span></a>
 					</li>
     	<li class="table_list_l table_list_l150"></li>
     	<li class="table_list_l table_list_l150"></li>
@@ -94,7 +94,7 @@ function colorboxImage(url) {
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l350">
-						<a class="nonetextdecoration" href="/laugh/admin/index.php?s=Plugin/fileManage&dir=./data"><span class="icon" style="background:url(themes/green/images/fileicon/dir.gif) no-repeat;">data</span></a>
+						<a class="nonetextdecoration" href="/laugh/admin/index.php?s=Plugin/fileManage&dir=./data"><span class="icon" style="background:url(themes/blue/images/fileicon/dir.gif) no-repeat;">data</span></a>
 					</li>
     	<li class="table_list_l table_list_l150"></li>
     	<li class="table_list_l table_list_l150"></li>
@@ -105,7 +105,7 @@ function colorboxImage(url) {
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l350">
-						<a class="nonetextdecoration" href="/laugh/admin/index.php?s=Plugin/fileManage&dir=./docs"><span class="icon" style="background:url(themes/green/images/fileicon/dir.gif) no-repeat;">docs</span></a>
+						<a class="nonetextdecoration" href="/laugh/admin/index.php?s=Plugin/fileManage&dir=./docs"><span class="icon" style="background:url(themes/blue/images/fileicon/dir.gif) no-repeat;">docs</span></a>
 					</li>
     	<li class="table_list_l table_list_l150"></li>
     	<li class="table_list_l table_list_l150"></li>
@@ -116,7 +116,7 @@ function colorboxImage(url) {
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l350">
-						<a class="nonetextdecoration" href="/laugh/admin/index.php?s=Plugin/fileManage&dir=./include"><span class="icon" style="background:url(themes/green/images/fileicon/dir.gif) no-repeat;">include</span></a>
+						<a class="nonetextdecoration" href="/laugh/admin/index.php?s=Plugin/fileManage&dir=./include"><span class="icon" style="background:url(themes/blue/images/fileicon/dir.gif) no-repeat;">include</span></a>
 					</li>
     	<li class="table_list_l table_list_l150"></li>
     	<li class="table_list_l table_list_l150"></li>
@@ -127,7 +127,7 @@ function colorboxImage(url) {
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l350">
-						<a class="nonetextdecoration" href="/laugh/admin/index.php?s=Plugin/fileManage&dir=./public"><span class="icon" style="background:url(themes/green/images/fileicon/dir.gif) no-repeat;">public</span></a>
+						<a class="nonetextdecoration" href="/laugh/admin/index.php?s=Plugin/fileManage&dir=./public"><span class="icon" style="background:url(themes/blue/images/fileicon/dir.gif) no-repeat;">public</span></a>
 					</li>
     	<li class="table_list_l table_list_l150"></li>
     	<li class="table_list_l table_list_l150"></li>
@@ -138,7 +138,7 @@ function colorboxImage(url) {
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l350">
-						<a class="nonetextdecoration" href="/laugh/admin/index.php?s=Plugin/fileManage&dir=./themes"><span class="icon" style="background:url(themes/green/images/fileicon/dir.gif) no-repeat;">themes</span></a>
+						<a class="nonetextdecoration" href="/laugh/admin/index.php?s=Plugin/fileManage&dir=./themes"><span class="icon" style="background:url(themes/blue/images/fileicon/dir.gif) no-repeat;">themes</span></a>
 					</li>
     	<li class="table_list_l table_list_l150"></li>
     	<li class="table_list_l table_list_l150"></li>
@@ -149,7 +149,7 @@ function colorboxImage(url) {
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l350">
-						<a class="nonetextdecoration" href="/laugh/admin/index.php?s=Plugin/fileManage&dir=./Uploads"><span class="icon" style="background:url(themes/green/images/fileicon/dir.gif) no-repeat;">Uploads</span></a>
+						<a class="nonetextdecoration" href="/laugh/admin/index.php?s=Plugin/fileManage&dir=./Uploads"><span class="icon" style="background:url(themes/blue/images/fileicon/dir.gif) no-repeat;">Uploads</span></a>
 					</li>
     	<li class="table_list_l table_list_l150"></li>
     	<li class="table_list_l table_list_l150"></li>
@@ -160,7 +160,7 @@ function colorboxImage(url) {
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l350">
-						<span class="icon" style="background:url(themes/green/images/fileicon/DS_Store.gif) no-repeat;">.DS_Store</span>
+						<span class="icon" style="background:url(themes/blue/images/fileicon/DS_Store.gif) no-repeat;">.DS_Store</span>
 					</li>
     	<li class="table_list_l table_list_l150">15KB</li>
     	<li class="table_list_l table_list_l150">2013-04-28 17:50:37</li>
@@ -172,7 +172,7 @@ function colorboxImage(url) {
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l350">
-						<span class="icon" style="background:url(themes/green/images/fileicon/php.gif) no-repeat;">index.php</span>
+						<span class="icon" style="background:url(themes/blue/images/fileicon/php.gif) no-repeat;">index.php</span>
 					</li>
     	<li class="table_list_l table_list_l150">124B</li>
     	<li class="table_list_l table_list_l150">2013-04-28 17:50:38</li>
@@ -185,7 +185,7 @@ function colorboxImage(url) {
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l350">
-						<span class="icon" style="background:url(themes/green/images/fileicon/unknow.gif) no-repeat;">README</span>
+						<span class="icon" style="background:url(themes/blue/images/fileicon/unknow.gif) no-repeat;">README</span>
 					</li>
     	<li class="table_list_l table_list_l150">60B</li>
     	<li class="table_list_l table_list_l150">2013-04-28 17:50:37</li>
@@ -197,7 +197,7 @@ function colorboxImage(url) {
     	    </ul>
         <ul class="table_list">
 		<li class="table_list_l table_list_l350">
-						<span class="icon" style="background:url(themes/green/images/fileicon/php.gif) no-repeat;">route.php</span>
+						<span class="icon" style="background:url(themes/blue/images/fileicon/php.gif) no-repeat;">route.php</span>
 					</li>
     	<li class="table_list_l table_list_l150">2.66KB</li>
     	<li class="table_list_l table_list_l150">2013-04-28 17:57:48</li>

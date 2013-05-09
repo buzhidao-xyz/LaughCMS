@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2013-05-08 18:21:07
+Date: 2013-05-09 17:42:08
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -3962,11 +3962,11 @@ CREATE TABLE `la_message_board` (
 -- ----------------------------
 -- Records of la_message_board
 -- ----------------------------
-INSERT INTO `la_message_board` VALUES ('1', 'luochuan', 'luochuan.wang@gmail.com', '213111', '1367920688');
-INSERT INTO `la_message_board` VALUES ('2', 'luochuan', 'luochuan.wang@gmail.com', '你是谁', '1367920733');
-INSERT INTO `la_message_board` VALUES ('3', 'luochuan', 'luochuan.wang@gmail.com', '测试留言板 谢谢', '1367996463');
-INSERT INTO `la_message_board` VALUES ('4', 'wbq', 'wbq0525@163.com', 'bucuobucuo', '1367996492');
-INSERT INTO `la_message_board` VALUES ('5', 'asdsad', 'asdasd@aaa-a.com', 'asda', '1367996526');
+INSERT INTO `la_message_board` VALUES ('1', 'luochuan', 'luochuan.wang@gmail.com', '安史之乱爆发后，藏剑山庄远在江南，并未被战争波及。但是身为大唐子民，藏剑山庄也不能身免。藏剑家学渊源，以儒立身。虽身在江湖，亦不忘忠君之念，誓与狼牙军不两立。叶英同时发布门主令，命藏剑山庄弟子襄助唐军，敢有投靠叛军者，藏剑山庄定不能容。', '1368087130');
+INSERT INTO `la_message_board` VALUES ('2', 'wbq', 'wbq0525@163.com', '续上条，坊主叶芷青带领外坊精锐弟子同扬州太守镇守扬州城，组织百姓避难，不善武功的秀坊弟子则留在坊中裁剪布料，缝制新衣。楚秀萧白胭率领内坊精英弟子携带姑娘们做的衣服和食物前去北方，支援唐军，内外坊空前团结，不分彼此。叶芷青发下门主令，让天下的七秀坊弟子互助互爱，拯救百姓，对抗狼牙军', '1368087204');
+INSERT INTO `la_message_board` VALUES ('3', 'wangbq', 'wangbq@www.com', '【人民日报：名人微博也只是个人观点】 有些名人微博自认为最能代表民意，实际名人微博与任何微博一样，都是个人观点而已。但名人微博中间的娱乐明星微博最有观众，也最具号召力，可明星的微博尽管不乏理性观点，但多是感性表达。于是，影迷、视迷、舞台迷的数量决定了道理的取舍', '1368087244');
+INSERT INTO `la_message_board` VALUES ('4', 'maomao', 'maomao@mao.com', '【php浮点数计算问题】如果用php的+-*/计算浮点数的时候，可能会遇到一些计算结果错误的问题，比如echo intval( 0.58*100 );会打印57，而不是58，这个其实是计算机底层二进制无法精确表示浮点数的一个bug', '1368087269');
+INSERT INTO `la_message_board` VALUES ('5', 'luochuan', 'luochuan.wang@gmail.com', '续上条，#剑网3#安史之乱中，大庄主叶英亲自开炉，率领庄中弟子，取西湖血铁和湖边寒泉冶铸兵刃千柄；并且开藏剑武库，清点庄中所藏兵器，共计千余把；又命三庄主叶炜带这些兵器前去朔方军营中助阵。二庄主叶晖同剩下两位庄主出尽庄中钱财，购买粮食衣物，前去战乱地区赈济灾民。', '1368087310');
 
 -- ----------------------------
 -- Table structure for `la_node`

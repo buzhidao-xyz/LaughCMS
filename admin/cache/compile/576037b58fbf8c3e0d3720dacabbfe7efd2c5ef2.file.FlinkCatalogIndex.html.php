@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-07 13:27:32
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-09 16:17:18
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Plugin\FlinkCatalogIndex.html" */ ?>
-<?php /*%%SmartyHeaderCode:11171518890c4a302e6-68116658%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:26763518b5b8e067a46-21622870%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '576037b58fbf8c3e0d3720dacabbfe7efd2c5ef2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\Plugin\\FlinkCatalogIndex.html',
-      1 => 1367903092,
+      1 => 1368087436,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '11171518890c4a302e6-68116658',
+  'nocache_hash' => '26763518b5b8e067a46-21622870',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_518890c4b5af48_52842712',
+  'unifunc' => 'content_518b5b8e18ba20_24539405',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_518890c4b5af48_52842712')) {function content_518890c4b5af48_52842712($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_518b5b8e18ba20_24539405')) {function content_518b5b8e18ba20_24539405($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="opTop">
 	<a href="__APP__/index.php?s=Plugin/FlinkIndex">友情链接管理</a>
@@ -49,8 +49,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<label><input type="radio" name="state" value="0" class="radio" />隐藏</label>
 				</div>
 			</li>
-			<li class="formblock bordernone">
-				<input type="submit" name="subut" class="button btngreen2" value="确定" />
+			<li class="formblock bordernone bgf6">
+				<input type="submit" name="subut" class="button btnblue2" value="确定" />
 			</li>
 		</ul>
 	</form>

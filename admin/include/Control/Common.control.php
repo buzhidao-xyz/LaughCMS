@@ -120,11 +120,12 @@ class CommonControl extends BaseControl
     }
 
     //获取分页开始和条数
-    protected function getPages()
+    protected function getPages($pagesize=null)
     {
+        $pagesize = $pagesize ? $pagesize : $this->_pagesize;
         $page = $this->getPage();
-        $start = ($page-1)*$this->_pagesize;
-        $length = $this->_pagesize;
+        $start = ($page-1)*$pagesize;
+        $length = $pagesize;
 
         $this->assign('start',$start);
         $this->assign('length',$length);

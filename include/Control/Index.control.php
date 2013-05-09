@@ -30,6 +30,8 @@ class IndexControl extends CommonControl
 
         $this->getHomeScrollImage();
 
+        $this->getAboutUs();
+
         $this->display('index.html');
     }
 
@@ -65,5 +67,13 @@ class IndexControl extends CommonControl
         }
         $this->assign("HomeScrollIMageListCount", $HomeScrollIMageListCount);
         $this->assign("HomeScrollIMageList", $HomeScrollIMageList);
+    }
+
+    //获取关于我们信息
+    public function getAboutUs()
+    {
+        $columnid = 10;
+        $columnInfo = M("Column")->getColumn($columnid);
+        $this->assign("AboutUs",$columnInfo);
     }
 }

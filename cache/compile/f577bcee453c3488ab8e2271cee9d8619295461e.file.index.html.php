@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-08 15:02:52
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-09 17:40:50
          compiled from "C:\xampp\htdocs\laugh\themes\default\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:155905189f89c05f111-89628435%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:14319518b6f2276f5f7-81534159%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'f577bcee453c3488ab8e2271cee9d8619295461e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\index.html',
-      1 => 1367142638,
+      1 => 1368092424,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '155905189f89c05f111-89628435',
+  'nocache_hash' => '14319518b6f2276f5f7-81534159',
   'function' => 
   array (
   ),
@@ -20,12 +20,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ArticleColumnID' => 0,
     'ArticleList' => 0,
     'd' => 0,
+    'AboutUs' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5189f89c1120f6_57777751',
+  'unifunc' => 'content_518b6f22839e47_06654109',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5189f89c1120f6_57777751')) {function content_5189f89c1120f6_57777751($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_518b6f22839e47_06654109')) {function content_518b6f22839e47_06654109($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate ("Common/Top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
@@ -72,16 +73,20 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 		</div>
 		<div class="boxBlock fleft w640 mleft10">
 			<div class="boxBlockTitle">
-				<span class="title">关于我们</span>
+				<span class="title"><?php echo $_smarty_tpl->tpl_vars['AboutUs']->value['columnname'];?>
+</span>
 			</div>
 			<div class="boxBlockBody h170">
 				<div class="boxBlockImg fleft">
 					<img src="themes/default/images/aboutus_img.png" width="130" height="150" />
 				</div>
 				<div class="boxBlockText fleft w450">
-					<span class="text">LaughCMS企业网站管理系统，是一款代码完全开源免费的PHP+MYSQL系统。</span>
-					<span class="text">程序内置SEO优化机制，使企业网站更容易被推广。拥有企业网站常用的模块功能（企业简介模块、新闻模块、产品模块、下载模块、图片模块、招聘模块、在线留言、友情链接、会员与权限管理）。强大灵活的后台管理功能、静态页面生成功能、自定义模型功能、自制插件安装管理功能等可为企业打造出大气漂亮且具有营销力的精品网站...</span>
-					<a href="javascript:;" class="viewbtn">阅读全文</a>
+					<?php echo htmlSubString(html_entity_decode($_smarty_tpl->tpl_vars['AboutUs']->value['content']),210);?>
+
+					<a href="__APP__/index.php?s=<?php echo $_smarty_tpl->tpl_vars['AboutUs']->value['control'];?>
+/<?php echo $_smarty_tpl->tpl_vars['AboutUs']->value['action'];?>
+&columnid=<?php echo $_smarty_tpl->tpl_vars['AboutUs']->value['id'];?>
+" class="viewbtn">阅读全文</a>
 				</div>
 			</div>
 		</div>

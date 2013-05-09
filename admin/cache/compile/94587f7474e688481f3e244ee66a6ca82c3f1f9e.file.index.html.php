@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-07 16:31:26
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-09 16:22:15
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Image\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:100135188bbde646615-63249326%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:10952518b5cb73bf040-56442980%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '100135188bbde646615-63249326',
+  'nocache_hash' => '10952518b5cb73bf040-56442980',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5188bbde798572_29671111',
+  'unifunc' => 'content_518b5cb74f3e09_95653052',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5188bbde798572_29671111')) {function content_5188bbde798572_29671111($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_518b5cb74f3e09_95653052')) {function content_518b5cb74f3e09_95653052($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="opTop">
 	<a href="__APP__/index.php?s=Image/index" class="opTopOn">图集列表</a>

@@ -84,9 +84,9 @@ class CommonControl extends BaseControl
     }
 
     //获取栏目详细信息
-    protected function getColumn()
+    protected function getColumn($columnid=null)
     {
-        $columnid = $this->_getColumnID();
+        $columnid = $columnid ? $columnid : $this->_getColumnID();
         $Column = M("Column")->getColumn($columnid);
         $this->_Column = $Column;
         $this->assign("Column", $Column);

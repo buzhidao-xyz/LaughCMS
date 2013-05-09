@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-07 16:31:25
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-09 16:22:15
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Download\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:137405188bbdda7e5f9-08323982%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:4323518b5cb7d835a8-66828441%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '137405188bbdda7e5f9-08323982',
+  'nocache_hash' => '4323518b5cb7d835a8-66828441',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5188bbddbc3883_15491177',
+  'unifunc' => 'content_518b5cb7ec0158_25358607',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5188bbddbc3883_15491177')) {function content_5188bbddbc3883_15491177($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_518b5cb7ec0158_25358607')) {function content_518b5cb7ec0158_25358607($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="opTop">
 	<a href="__APP__/index.php?s=Download/index" class="opTopOn">下载列表</a>

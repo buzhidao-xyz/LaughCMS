@@ -14,16 +14,16 @@
 </ul>
 <div class="contentTableList">
 	<ul class="table_list">
-		<li class="table_list_l table_list_l350"><a class="nonetextdecoration" href="__APP__/index.php?s=Plugin/fileManage&dir={$fileArray.pdir}"><span class="icon" style="background:url(themes/green/images/fileicon/dir1.gif) no-repeat;">上级目录</span></a></li>
+		<li class="table_list_l table_list_l350"><a class="nonetextdecoration" href="__APP__/index.php?s=Plugin/fileManage&dir={$fileArray.pdir}"><span class="icon" style="background:url(themes/blue/images/fileicon/dir1.gif) no-repeat;">上级目录</span></a></li>
     </ul>
     {if $fileArray.filelist}
     {foreach $fileArray.filelist as $d}
     <ul class="table_list">
 		<li class="table_list_l table_list_l350">
 			{if $d.filetype=="dir"}
-			<a class="nonetextdecoration" href="__APP__/index.php?s=Plugin/fileManage&dir={$fileArray.cdir|urlencode}/{$d.filename|urlencode}"><span class="icon" style="background:url(themes/green/images/fileicon/{$d.filetype}.gif) no-repeat;">{$d.filename}</span></a>
+			<a class="nonetextdecoration" href="__APP__/index.php?s=Plugin/fileManage&dir={$fileArray.cdir|urlencode}/{$d.filename|urlencode}"><span class="icon" style="background:url(themes/blue/images/fileicon/{$d.filetype}.gif) no-repeat;">{$d.filename}</span></a>
 			{else}
-			<span class="icon" style="background:url(themes/green/images/fileicon/{$d.filetype}.gif) no-repeat;">{$d.filename}</span>
+			<span class="icon" style="background:url(themes/blue/images/fileicon/{$d.filetype}.gif) no-repeat;">{$d.filename}</span>
 			{/if}
 		</li>
     	<li class="table_list_l table_list_l150">{$d.filesize}</li>
