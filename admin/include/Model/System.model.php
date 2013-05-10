@@ -64,4 +64,12 @@ class System extends Base
 
         return $return;
     }
+
+    /********************************系统参数********************************/
+
+    //获取系统参数
+    public function getSystemInfo()
+    {
+        
+    }
 }

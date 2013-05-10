@@ -1,11 +1,41 @@
-{include file="public/control_top.html"}
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-10 16:05:23
+         compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Article\add.html" */ ?>
+<?php /*%%SmartyHeaderCode:29721518caa434aef79-99891697%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '0cb81c4a6cc9934eb62c72a78fdaad4879771055' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\Article\\add.html',
+      1 => 1368173090,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '29721518caa434aef79-99891697',
+  'function' => 
+  array (
+  ),
+  'variables' => 
+  array (
+    'accessStatus' => 0,
+    'columnTree' => 0,
+    'userInfo' => 0,
+    'timestamp' => 0,
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.12',
+  'unifunc' => 'content_518caa4353e1e9_53534089',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_518caa4353e1e9_53534089')) {function content_518caa4353e1e9_53534089($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 <div class="opTop">
 	<a href="__APP__/index.php?s=Article/index">文章列表</a> |
 	<a href="__APP__/index.php?s=Article/add" class="opTopOn">发布新文章</a> |
 	<a href="__APP__/index.php?s=Article/recover">回收站</a>
 </div>
-{if $accessStatus == 1}
-<div class="formContainer" accessStatus={$accessStatus}>
+<?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
+<div class="formContainer" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
+>
 	<div class="formtitle"><h5>创建新文档</h5></div>
 	<form name="newform" action="__APP__/index.php?s=Article/save" enctype="multipart/form-data" method="post" class="newform">
 		<ul class="formbody">
@@ -27,7 +57,8 @@
 				<li class="formblock">
 					<span>文档主栏目: </span>
 					<select id="select" name="columnid" style="width:230px;">
-						{$columnTree}
+						<?php echo $_smarty_tpl->tpl_vars['columnTree']->value;?>
+
 					</select>
 				</li>
 				<li class="formblock">
@@ -40,12 +71,14 @@
 				</li>
 				<li class="formblock">
 					<span>作者:</span>
-					<input type="text" name="author" value="{$userInfo.username}" class="input w150" />
+					<input type="text" name="author" value="<?php echo $_smarty_tpl->tpl_vars['userInfo']->value['username'];?>
+" class="input w150" />
 				</li>
 				<li class="formblock">
 					<span>发布时间:</span>
-					<input type="text" id="dpicker0" name="publishtime" value="{$timestamp|mkdate}" onClick="WdatePicker({literal}{dateFmt:'yyyy-MM-dd HH:mm:ss'}{/literal})" class="input w150" />
-					<img width="16" height="22" align="absmiddle" onclick="WdatePicker({literal}{el:'dpicker0',dateFmt:'yyyy-MM-dd HH:mm:ss'}{/literal})" style="cursor:pointer" src="public/plugin/My97DatePicker/skin/datePicker.gif">
+					<input type="text" id="dpicker0" name="publishtime" value="<?php echo mkdate($_smarty_tpl->tpl_vars['timestamp']->value);?>
+" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="input w150" />
+					<img width="16" height="22" align="absmiddle" onclick="WdatePicker({el:'dpicker0',dateFmt:'yyyy-MM-dd HH:mm:ss'})" style="cursor:pointer" src="public/plugin/My97DatePicker/skin/datePicker.gif">
 				</li>
 				<li class="formblock">
 					<span>是否允许评论: </span>
@@ -84,7 +117,7 @@
 		</ul>
 	</form>
 </div>
-{/if}
+<?php }?>
 <script src="public/plugin/UEditor/editor_config.js" type="text/javascript"></script>
 <script src="public/plugin/UEditor/editor_all_min.js" type="text/javascript"></script>
 <script src="public/plugin/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
@@ -104,4 +137,5 @@
     	}
     });
 </script>
-{include file="public/control_bottom.html"}
+<?php echo $_smarty_tpl->getSubTemplate ("public/control_bottom.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php }} ?>

@@ -31,4 +31,38 @@ class SystemControl extends CommonControl
     {
         
     }
+
+    /********************************系统参数********************************/
+
+    //系统参数
+    public function systemInfo()
+    {
+        $systemInfo = M("System")->getSystemInfo();
+        $this->display("System/SystemInfo.html");
+    }
+
+    //保存系统信息
+    public function saveSystemInfo()
+    {
+        
+    }
+
+    //添加新变量
+    public function addSystemcfg()
+    {
+        $this->assign("accessStatus",1);
+        $this->display("System/addSystemcfg.html");
+    }
+
+    //保存新变量
+    public function saveSystemcfg()
+    {
+        $cfgname = q("cfgname");
+        $cfgvalue = q("cfgvalue");
+        $cfginfo = q("cfginfo");
+        $cfgtype = q("cfgtype");
+        $cfggroupid = q("cfggroupid");
+
+
+    }
 }

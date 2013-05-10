@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2013-05-10 15:17:47
+Date: 2013-05-10 17:30:43
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,7 +37,7 @@ CREATE TABLE `la_admin` (
 -- ----------------------------
 -- Records of la_admin
 -- ----------------------------
-INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1368149413', '2130706433', '127', '1');
+INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1368170575', '2130706433', '127', '1');
 INSERT INTO `la_admin` VALUES ('2', 'luochuan', '624879b3fff70462132a21eb1cd8eb75', 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '1355368421', '2130706433', '12', '0');
 
 -- ----------------------------
@@ -4049,7 +4049,7 @@ INSERT INTO `la_node` VALUES ('31', '留言板', '', 'Plugin', 'messageList', '3
 INSERT INTO `la_node` VALUES ('32', '人才招聘', '', 'Plugin', 'CooperateIndex', '30', '0', '1359010748', '1359010748', '1');
 INSERT INTO `la_node` VALUES ('33', '友情链接', '', 'Plugin', 'FlinkIndex', '30', '0', '1359010791', '1359010791', '1');
 INSERT INTO `la_node` VALUES ('34', '基本设置', '', '', '', '0', '6', '1359011153', '1359011153', '1');
-INSERT INTO `la_node` VALUES ('35', '系统基本参数', '', 'System', 'setInfo', '34', '0', '1359011177', '1359011177', '1');
+INSERT INTO `la_node` VALUES ('35', '系统基本参数', '', 'System', 'systemInfo', '34', '0', '1359011177', '1359011177', '1');
 INSERT INTO `la_node` VALUES ('36', '系统日志管理', '', 'System', 'sysLog', '34', '0', '1359011220', '1359011220', '1');
 INSERT INTO `la_node` VALUES ('37', '图片水印设置', '', 'System', 'imageMark', '34', '0', '1359011294', '1359011294', '1');
 INSERT INTO `la_node` VALUES ('38', '数据库管理', '', '', '', '0', '6', '1359011349', '1359011349', '1');
@@ -4290,24 +4290,22 @@ CREATE TABLE `la_soft` (
 DROP TABLE IF EXISTS `la_system`;
 CREATE TABLE `la_system` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'primarykey',
-  `cfgname` varchar(30) NOT NULL,
-  `cfginfo` varchar(50) NOT NULL,
-  `cfggroupid` int(1) DEFAULT NULL,
-  `cfgtype` varchar(20) DEFAULT NULL,
-  `cfgvalue` varchar(500) NOT NULL,
-  `cfgtime` int(10) NOT NULL,
+  `cfgname` varchar(30) NOT NULL COMMENT '参数名称',
+  `cfginfo` varchar(50) NOT NULL COMMENT '参数描述',
+  `cfgtype` varchar(20) DEFAULT NULL COMMENT '参数类型',
+  `cfggroupid` int(1) DEFAULT NULL COMMENT '参数所属分组',
+  `cfgvalue` varchar(500) NOT NULL COMMENT '参数值',
+  `cfgtime` int(10) NOT NULL COMMENT '添加时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_system
 -- ----------------------------
-INSERT INTO `la_system` VALUES ('1', 'host', '网站地址', '1', 'string', 'http://localhost/laugh', '0');
-INSERT INTO `la_system` VALUES ('2', 'name', '网站名称', '1', 'string', 'laugh', '0');
-INSERT INTO `la_system` VALUES ('3', 'keywords', '网站关键字', '1', 'string', '步知道', '0');
-INSERT INTO `la_system` VALUES ('4', 'style', '网站theme', '1', 'string', 'default', '0');
-INSERT INTO `la_system` VALUES ('5', 'admin_style', '管理中心theme', '2', 'string', 'default', '0');
-INSERT INTO `la_system` VALUES ('6', 'admin_path', '管理中心路径', '1', 'string', 'admin', '0');
+INSERT INTO `la_system` VALUES ('1', 'host', '网站地址', 'string', '1', 'http://localhost:82/laugh', '0');
+INSERT INTO `la_system` VALUES ('2', 'sitename', '网站名称', 'string', '1', 'laugh', '0');
+INSERT INTO `la_system` VALUES ('3', 'keywords', '网站关键字', 'string', '1', 'Laugh,CMS,LaughCMS', '0');
+INSERT INTO `la_system` VALUES ('4', 'admin_path', '管理中心目录', 'string', '2', 'admin', '0');
 
 -- ----------------------------
 -- Table structure for `la_tag`

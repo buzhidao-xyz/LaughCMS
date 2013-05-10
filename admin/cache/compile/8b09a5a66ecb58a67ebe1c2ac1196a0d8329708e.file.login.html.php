@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-10 09:30:08
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-10 15:22:48
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\login.html" */ ?>
-<?php /*%%SmartyHeaderCode:24379518c4da050a051-89751794%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:19148518ca048f19e80-41339563%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '24379518c4da050a051-89751794',
+  'nocache_hash' => '19148518ca048f19e80-41339563',
   'function' => 
   array (
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_518c4da0566a82_93458131',
+  'unifunc' => 'content_518ca049077664_35007272',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_518c4da0566a82_93458131')) {function content_518c4da0566a82_93458131($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_518ca049077664_35007272')) {function content_518ca049077664_35007272($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <link type="text/css" rel="stylesheet" href="themes/blue/style/login.css" media="screen">
 <div id="loginPanel">
