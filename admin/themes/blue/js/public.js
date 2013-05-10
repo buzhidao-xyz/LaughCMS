@@ -81,4 +81,12 @@ $(document).ready(function() {
             },300);
         }
     });
+
+    //数据列表序号
+    var tablenolength = $(".contentTableList ul.table_list li.table_list_no").length;
+    if (tablenolength) {
+        for (i=0; i<tablenolength; i++) {
+            $(".contentTableList ul.table_list li.table_list_no:eq("+i+")").text(parseInt($(".contentTableList ul.table_list li.table_list_no:eq(0)").text())+i);
+        }
+    }
 });

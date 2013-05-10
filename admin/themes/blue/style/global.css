@@ -682,6 +682,9 @@ form ul.formbody li .edui-default span {
   background: #FFF;
   padding: 5px 10px;
 }
+.box .boxContent .boxPopupForm {
+  
+}
 .box .boxContent .boxPopupForm .boxTitle {
   margin: 1px;
   border: 0;

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2013-05-09 17:42:08
+Date: 2013-05-10 15:17:47
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,7 +37,7 @@ CREATE TABLE `la_admin` (
 -- ----------------------------
 -- Records of la_admin
 -- ----------------------------
-INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1368006801', '2130706433', '127', '1');
+INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1368149413', '2130706433', '127', '1');
 INSERT INTO `la_admin` VALUES ('2', 'luochuan', '624879b3fff70462132a21eb1cd8eb75', 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '1355368421', '2130706433', '12', '0');
 
 -- ----------------------------
@@ -53,6 +53,31 @@ CREATE TABLE `la_admin_access` (
 -- ----------------------------
 -- Records of la_admin_access
 -- ----------------------------
+
+-- ----------------------------
+-- Table structure for `la_advertise`
+-- ----------------------------
+DROP TABLE IF EXISTS `la_advertise`;
+CREATE TABLE `la_advertise` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) DEFAULT NULL,
+  `link` varchar(300) DEFAULT NULL,
+  `path` varchar(100) DEFAULT NULL COMMENT '图片路径',
+  `flag` tinyint(1) DEFAULT NULL COMMENT '1:首页中部banner 2:栏目顶部广告',
+  `status` tinyint(1) DEFAULT NULL COMMENT '0:禁用1:启用',
+  `createtime` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of la_advertise
+-- ----------------------------
+INSERT INTO `la_advertise` VALUES ('1', '首页Banner', 'http://www.baidu.com/', '/Uploads/AdImage/1368168489_ru3un2_8465_ad_banner.png', '1', '1', '1368168489');
+INSERT INTO `la_advertise` VALUES ('2', '首页Banner', 'http://www.baidu.com/', '/Uploads/AdImage/1368168531_sqifub_4518_ad_banner0.png', '1', '1', '1368168531');
+INSERT INTO `la_advertise` VALUES ('3', '首页Banner', '', '/Uploads/AdImage/1368168608_9f5u5y_7755_ad_banner1.png', '1', '1', '1368168608');
+INSERT INTO `la_advertise` VALUES ('4', '首页Banner', '', '/Uploads/AdImage/1368168836_w2hsg2_8994_ad_banner2.png', '1', '1', '1368168836');
+INSERT INTO `la_advertise` VALUES ('5', '栏目顶部广告', 'http://www.baidu.com/', '/Uploads/AdImage/1368170151_s68hvp_191_1368168489_ru3un2_8465_ad_banner.png', '2', '1', '1368170151');
+INSERT INTO `la_advertise` VALUES ('6', '栏目顶部广告', 'http://www.163.com/', '/Uploads/AdImage/1368170176_qzdzxd_6220_1368168531_sqifub_4518_ad_banner0.png', '2', '1', '1368170176');
 
 -- ----------------------------
 -- Table structure for `la_archive`
@@ -4032,8 +4057,8 @@ INSERT INTO `la_node` VALUES ('39', '数据库备份', '', 'DataBase', 'backUp',
 INSERT INTO `la_node` VALUES ('40', '数据库还原', '', 'DataBase', 'restore', '38', '0', '1359015999', '1359015999', '1');
 INSERT INTO `la_node` VALUES ('41', 'SQL命令行工具', '', 'DataBase', 'SQLClient', '38', '0', '1359016018', '1359016018', '1');
 INSERT INTO `la_node` VALUES ('42', '广告管理', '', '', '', '0', '5', '1364263938', '1364263938', '1');
-INSERT INTO `la_node` VALUES ('43', '顶部广告', '', 'Advertise', 'TopAd', '42', '0', '1364263985', '1364263985', '1');
-INSERT INTO `la_node` VALUES ('44', '首页中部banner', '', 'Advertise', 'HomeCenterAd', '42', '0', '1364264199', '1364264199', '1');
+INSERT INTO `la_node` VALUES ('43', '首页中部banner', '', 'Advertise', 'HomeCenterAd', '42', '0', '1364263985', '1364263985', '1');
+INSERT INTO `la_node` VALUES ('44', '栏目顶部广告', '', 'Advertise', 'TopAd', '42', '0', '1364264199', '1364264199', '1');
 INSERT INTO `la_node` VALUES ('45', '图片管理', '', '', '', '0', '3', '1364265992', '1364265992', '1');
 INSERT INTO `la_node` VALUES ('46', '首页轮播图片', '', 'Image', 'HomeScrollImage', '45', '0', '1364266173', '1364266173', '1');
 INSERT INTO `la_node` VALUES ('47', '下载管理', '', 'Download', 'index', '20', '0', '1365562641', '1365562641', '1');

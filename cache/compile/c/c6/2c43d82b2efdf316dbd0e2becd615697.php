@@ -149,21 +149,33 @@ $(document).ready(function (){
 		<a href="javascript:;" target="_blank"><img src="themes/default/images/ad_banner.png" width="1000" height="80" /></a>
 	</div>
 	<div class="CurPosition mtop5">
-		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=Product/index&columnid=6">产品展示</a> > <a href="/laugh/index.php?s=Product/index&columnid=15">电子产品</a>
+		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=Product/index&columnid=6">产品展示</a>
 	</div>
 	<div id="CenterShow" class="block mtop5">
 		<div id="mainBlock" class="fleft w740">
 			<div id="ImgListBlock" class="boxBlock">
 				<div class="boxBlockTitle">
-					<span class="title">电子产品</span>
+					<span class="title">产品展示</span>
 				</div>
 				<div class="boxBlockBody">
 					<ul class="ProductList">
 																		<li>
-							<a href="/laugh/index.php?s=Product/view&columnid=15&archiveid=9">
+							<a href="/laugh/index.php?s=Product/view&columnid=6&archiveid=9">
 								<img src="/laugh/Uploads/Image/201304/02/1364884203_zxvkaj_4664.png" />
 							</a>
-							<a href="/laugh/index.php?s=Product/view&columnid=15&archiveid=9" class="title">Web服务攻击反侦查痕迹检测</a>
+							<a href="/laugh/index.php?s=Product/view&columnid=6&archiveid=9" class="title">Web服务攻击反侦查痕迹检测</a>
+						</li>
+												<li>
+							<a href="/laugh/index.php?s=Product/view&columnid=6&archiveid=12">
+								<img src="/laugh/Uploads/Image/201304/02/1364884946_37uz4d_4967.png" />
+							</a>
+							<a href="/laugh/index.php?s=Product/view&columnid=6&archiveid=12" class="title">Vim文本编辑器 v7.3 正式版</a>
+						</li>
+												<li>
+							<a href="/laugh/index.php?s=Product/view&columnid=6&archiveid=11">
+								<img src="/laugh/Uploads/Image/201304/02/1364884636_tpajd4_786.png" />
+							</a>
+							<a href="/laugh/index.php?s=Product/view&columnid=6&archiveid=11" class="title">4 款 Linux 下开源的个人日记管理软件</a>
 						</li>
 																	</ul>
 					
