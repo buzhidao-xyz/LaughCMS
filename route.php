@@ -41,7 +41,7 @@ class Route
      */
     static private function _checkUrl()
     {
-        $url = '#^http://[0-9a-z.:-]+/('.__SELF__.'/)?(index\.php)?(\?s=.+)?$#i';
+        $url = '#^http://[0-9a-z.:-]+/('.__SELF__.'/)?(index\.php)?(\?(s=.+)?)?$#i';
         if (!preg_match($url, self::$_current_url)) {
             self::_host();
         }
