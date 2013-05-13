@@ -46,33 +46,53 @@ function colorboxImage(url) {
 				<div class="shtabtitle"><a href="javascript:;"><span>核心设置</span></a></div>
 			</div>
 			<div class="shtabcontentc">
-			<div class="shtabcontent shtabcontentcurrent">
-				<li class="formblock">
-					<span>网站地址:</span>
-					<input type="text" name="host" value="" class="input w300" />
-				</li>
-				<li class="formblock">
-					<span>网站名称:</span>
-					<input type="text" name="sitename" value="" class="input w300" />
-				</li>
-				<li class="formautoblock">
-					<span>网站关键字:</span>
-					<textarea name="keywords" rows="2" cols="47"></textarea>
-				</li>
-			</div>
-			<div class="shtabcontent">
-				<li class="formblock">
-					<span>管理中心目录:</span>
-					<input type="text" name="admin_path" value="" class="input w300" />
-				</li>
-			</div>
-			</div>
+									<div class="shtabcontent shtabcontentcurrent">
+														<li class="formblockauto">
+						<span>网站地址:</span>
+						<input type="text" name="host" value="" class="input w350" />
+					</li>
+																			<li class="formblockauto">
+						<span>网站名称:</span>
+						<input type="text" name="sitename" value="" class="input w350" />
+					</li>
+																			<li class="formblockauto">
+						<span>网站关键字:</span>
+						<textarea name="keywords" rows="3" cols="47"></textarea>
+					</li>
+												</div>
+						<div class="shtabcontent ">
+														<li class="formblockauto">
+						<span>管理中心目录:</span>
+						<input type="text" name="admin_path" value="" class="input w350" />
+					</li>
+																			<li class="formblockauto">
+						<span>文章回收站(是/否)开启:</span>
+						<div class="item_list fleft">
+							<label><input type="radio" name="archive_recover" value="1" class="radio" checked="checked" />是</label>
+							<label><input type="radio" name="archive_recover" value="0" class="radio" />否</label>
+						</div>
+					</li>
+												</div>
+									</div>
 			<li class="formblock bordernone bgf6">
 				<input type="submit" name="subut" class="button btnblue2" value="确定" />
 			</li>
 		</ul>
 	</form>
 </div>
+<style type="text/css">
+ul.formbody li.formblockauto {
+    border-bottom: 1px dashed #E1E1E1;
+    height: auto;
+    overflow: hidden;
+    padding: 5px 0;
+    width: auto;
+}
+ul.formbody li.formblockauto span {
+	width: 300px;
+    padding-top: 10px;
+}
+</style>
 <script type="text/javascript">
 $(document).ready(function (){
 });

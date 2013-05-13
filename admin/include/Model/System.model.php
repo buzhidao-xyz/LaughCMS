@@ -67,9 +67,29 @@ class System extends Base
 
     /********************************系统参数********************************/
 
-    //获取系统参数
-    public function getSystemInfo()
+    /**
+     * 获取系统参数
+     * @param string $cfgname 参数名称
+     */
+    public function getSystemInfo($cfgname=null)
     {
-        
+        $where = array();
+        if (!empty($cfgname)) $where['cfgname'] = $cfgname;
+        return T("system")->where($where)->select();
+    }
+
+    //添加新系统变量参数
+    public function saveSystemcfg($cfgname=null,$cfgvalue=null,$cfginfo=null,$cfgtype=null,$cfggroupid=null)
+    {
+        if (empty($cfgname)||empty($cfginfo)||empty($cfgtype)||empty($cfggroupid)) return false;
+        $data = array(
+            'cfgname' => $cfgname,
+            'cfgvalue'=> $cfgvalue,
+            'cfginfo' => $cfginfo,
+            'cfgtype' => $cfgtype,
+            'cfggroupid' => $cfggroupid,
+            'cfgtime' => TIMESTAMP
+        );
+        return T("system")->add($data);
     }
 }

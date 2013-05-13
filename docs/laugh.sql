@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2013-05-13 10:00:52
+Date: 2013-05-13 17:47:44
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -38,7 +38,7 @@ CREATE TABLE `la_admin` (
 -- ----------------------------
 -- Records of la_admin
 -- ----------------------------
-INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1368408818', '2130706433', '127', '1');
+INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1368436785', '2130706433', '127', '1');
 INSERT INTO `la_admin` VALUES ('2', 'luochuan', '624879b3fff70462132a21eb1cd8eb75', 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '1355368421', '2130706433', '12', '0');
 
 -- ----------------------------
@@ -4291,22 +4291,23 @@ CREATE TABLE `la_soft` (
 DROP TABLE IF EXISTS `la_system`;
 CREATE TABLE `la_system` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'primarykey',
-  `cfgname` varchar(30) NOT NULL COMMENT '参数名称',
-  `cfginfo` varchar(50) NOT NULL COMMENT '参数描述',
+  `cfgname` varchar(50) NOT NULL COMMENT '参数名称',
+  `cfginfo` varchar(100) NOT NULL COMMENT '参数描述',
   `cfgtype` varchar(20) DEFAULT NULL COMMENT '参数类型',
   `cfggroupid` int(1) DEFAULT NULL COMMENT '参数所属分组',
-  `cfgvalue` varchar(500) NOT NULL COMMENT '参数值',
+  `cfgvalue` varchar(500) DEFAULT NULL COMMENT '参数值',
   `cfgtime` int(10) NOT NULL COMMENT '添加时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_system
 -- ----------------------------
 INSERT INTO `la_system` VALUES ('1', 'host', '网站地址', 'string', '1', 'http://localhost:82/laugh', '0');
 INSERT INTO `la_system` VALUES ('2', 'sitename', '网站名称', 'string', '1', 'laugh', '0');
-INSERT INTO `la_system` VALUES ('3', 'keywords', '网站关键字', 'string', '1', 'Laugh,CMS,LaughCMS', '0');
+INSERT INTO `la_system` VALUES ('3', 'keywords', '网站关键字', 'text', '1', 'Laugh,CMS,LaughCMS', '0');
 INSERT INTO `la_system` VALUES ('4', 'admin_path', '管理中心目录', 'string', '2', 'admin', '0');
+INSERT INTO `la_system` VALUES ('5', 'archive_recover', '文章回收站(是/否)开启', 'boolean', '2', '1', '1368437340');
 
 -- ----------------------------
 -- Table structure for `la_tag`

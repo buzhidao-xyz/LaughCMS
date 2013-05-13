@@ -37,14 +37,22 @@ class SystemControl extends CommonControl
     //系统参数
     public function systemInfo()
     {
-        $systemInfo = M("System")->getSystemInfo();
+        $systemInfo = array();
+        $systemdata = M("System")->getSystemInfo();
+        if (is_array($systemdata)&&!empty($systemdata)) {
+            foreach ($systemdata as $d) {
+                $systemInfo[$d['cfggroupid']][] = $d;
+            }
+        }
+        $this->assign("SystemInfo",$systemInfo);
         $this->display("System/SystemInfo.html");
     }
 
     //保存系统信息
     public function saveSystemInfo()
     {
-        
+        dump($_REQUEST);exit;
+        $return = M("System")->saveSystemInfo();
     }
 
     //添加新变量
@@ -58,11 +66,20 @@ class SystemControl extends CommonControl
     public function saveSystemcfg()
     {
         $cfgname = q("cfgname");
+        if (empty($cfgname)) $this->ajaxReturn(1,"请填写变量名！");
         $cfgvalue = q("cfgvalue");
         $cfginfo = q("cfginfo");
+        if (empty($cfginfo)) $this->ajaxReturn(1,"请填写变量说明！");
         $cfgtype = q("cfgtype");
+        if (empty($cfgtype)) $this->ajaxReturn(1,"请选择变量类型！");
         $cfggroupid = q("cfggroupid");
+        if (empty($cfggroupid)) $this->ajaxReturn(1,"请选择所在分组！");
 
-
+        $return = M("System")->saveSystemcfg($cfgname,$cfgvalue,$cfginfo,$cfgtype,$cfggroupid);
+        if ($return) {
+            $this->ajaxReturn(0,"变量添加成功！");
+        } else {
+            $this->ajaxReturn(1,"变量添加失败！");
+        }
     }
 }

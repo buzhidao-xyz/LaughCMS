@@ -1,29 +1,33 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-10 17:30:09
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-13 17:46:29
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\System\SystemInfo.html" */ ?>
-<?php /*%%SmartyHeaderCode:27214518cbe212fe387-92726252%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:137925190b67546b888-04620971%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '6bb3fe2f7dbe9f2b79c0ae05b650195d6ecb445c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\System\\SystemInfo.html',
-      1 => 1368177974,
+      1 => 1368438385,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '27214518cbe212fe387-92726252',
+  'nocache_hash' => '137925190b67546b888-04620971',
   'function' => 
   array (
   ),
   'variables' => 
   array (
     'accessStatus' => 0,
+    'SystemInfo' => 0,
+    'k' => 0,
+    'd' => 0,
+    'sinfo' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_518cbe2135e026_91528239',
+  'unifunc' => 'content_5190b67558cb69_99520703',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_518cbe2135e026_91528239')) {function content_518cbe2135e026_91528239($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_5190b67558cb69_99520703')) {function content_5190b67558cb69_99520703($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="opTop">
 	<a href="__APP__/index.php?s=System/systemInfo" class="opTopOn">系统参数设置</a> |
@@ -40,26 +44,56 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				<div class="shtabtitle"><a href="javascript:;"><span>核心设置</span></a></div>
 			</div>
 			<div class="shtabcontentc">
-			<div class="shtabcontent shtabcontentcurrent">
-				<li class="formblock">
-					<span>网站地址:</span>
-					<input type="text" name="host" value="" class="input w300" />
-				</li>
-				<li class="formblock">
-					<span>网站名称:</span>
-					<input type="text" name="sitename" value="" class="input w300" />
-				</li>
-				<li class="formautoblock">
-					<span>网站关键字:</span>
-					<textarea name="keywords" rows="2" cols="47"></textarea>
-				</li>
+			<?php if (isset($_smarty_tpl->tpl_vars['SystemInfo']->value)&&is_array($_smarty_tpl->tpl_vars['SystemInfo']->value)&&!empty($_smarty_tpl->tpl_vars['SystemInfo']->value)){?>
+			<?php  $_smarty_tpl->tpl_vars['d'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['d']->_loop = false;
+ $_smarty_tpl->tpl_vars['k'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['SystemInfo']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['d']->key => $_smarty_tpl->tpl_vars['d']->value){
+$_smarty_tpl->tpl_vars['d']->_loop = true;
+ $_smarty_tpl->tpl_vars['k']->value = $_smarty_tpl->tpl_vars['d']->key;
+?>
+			<div class="shtabcontent <?php if ($_smarty_tpl->tpl_vars['k']->value==1){?>shtabcontentcurrent<?php }?>">
+				<?php  $_smarty_tpl->tpl_vars['sinfo'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['sinfo']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['d']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['sinfo']->key => $_smarty_tpl->tpl_vars['sinfo']->value){
+$_smarty_tpl->tpl_vars['sinfo']->_loop = true;
+?>
+					<?php if ($_smarty_tpl->tpl_vars['sinfo']->value['cfgtype']=='string'){?>
+					<li class="formblockauto">
+						<span><?php echo $_smarty_tpl->tpl_vars['sinfo']->value['cfginfo'];?>
+:</span>
+						<input type="text" name="<?php echo $_smarty_tpl->tpl_vars['sinfo']->value['cfgname'];?>
+" value="" class="input w350" />
+					</li>
+					<?php }elseif($_smarty_tpl->tpl_vars['sinfo']->value['cfgtype']=='number'){?>
+					<li class="formblockauto">
+						<span><?php echo $_smarty_tpl->tpl_vars['sinfo']->value['cfginfo'];?>
+:</span>
+						<input type="text" name="<?php echo $_smarty_tpl->tpl_vars['sinfo']->value['cfgname'];?>
+" value="" class="input w350" />
+					</li>
+					<?php }elseif($_smarty_tpl->tpl_vars['sinfo']->value['cfgtype']=='boolean'){?>
+					<li class="formblockauto">
+						<span><?php echo $_smarty_tpl->tpl_vars['sinfo']->value['cfginfo'];?>
+:</span>
+						<div class="item_list fleft">
+							<label><input type="radio" name="<?php echo $_smarty_tpl->tpl_vars['sinfo']->value['cfgname'];?>
+" value="1" class="radio" checked="checked" />是</label>
+							<label><input type="radio" name="<?php echo $_smarty_tpl->tpl_vars['sinfo']->value['cfgname'];?>
+" value="0" class="radio" />否</label>
+						</div>
+					</li>
+					<?php }elseif($_smarty_tpl->tpl_vars['sinfo']->value['cfgtype']=='text'){?>
+					<li class="formblockauto">
+						<span><?php echo $_smarty_tpl->tpl_vars['sinfo']->value['cfginfo'];?>
+:</span>
+						<textarea name="keywords" rows="3" cols="47"></textarea>
+					</li>
+					<?php }?>
+				<?php } ?>
 			</div>
-			<div class="shtabcontent">
-				<li class="formblock">
-					<span>管理中心目录:</span>
-					<input type="text" name="admin_path" value="" class="input w300" />
-				</li>
-			</div>
+			<?php } ?>
+			<?php }?>
 			</div>
 			<li class="formblock bordernone bgf6">
 				<input type="submit" name="subut" class="button btnblue2" value="确定" />
@@ -68,6 +102,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	</form>
 </div>
 <?php }?>
+<style type="text/css">
+ul.formbody li.formblockauto {
+    border-bottom: 1px dashed #E1E1E1;
+    height: auto;
+    overflow: hidden;
+    padding: 5px 0;
+    width: auto;
+}
+ul.formbody li.formblockauto span {
+	width: 300px;
+    padding-top: 10px;
+}
+</style>
 <script type="text/javascript">
 $(document).ready(function (){
 });
