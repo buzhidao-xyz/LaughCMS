@@ -19,6 +19,9 @@ require('orm.config.php');
 //载入错误码映射文件
 require('ecode.config.php');
 
+//数据库配置参数缓存
+$config['CACHE'] = $cache;
+
 //读取c.config.php文件内容
 function C($key)
 {

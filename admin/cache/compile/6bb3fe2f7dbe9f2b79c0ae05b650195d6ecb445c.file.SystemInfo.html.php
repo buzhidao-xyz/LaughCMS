@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-13 17:46:29
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-14 18:48:18
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\System\SystemInfo.html" */ ?>
-<?php /*%%SmartyHeaderCode:137925190b67546b888-04620971%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:23779519216723fa8f3-61325282%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '6bb3fe2f7dbe9f2b79c0ae05b650195d6ecb445c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\System\\SystemInfo.html',
-      1 => 1368438385,
+      1 => 1368528491,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '137925190b67546b888-04620971',
+  'nocache_hash' => '23779519216723fa8f3-61325282',
   'function' => 
   array (
   ),
@@ -25,13 +25,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5190b67558cb69_99520703',
+  'unifunc' => 'content_519216725718c7_45925074',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5190b67558cb69_99520703')) {function content_5190b67558cb69_99520703($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_519216725718c7_45925074')) {function content_519216725718c7_45925074($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="opTop">
 	<a href="__APP__/index.php?s=System/systemInfo" class="opTopOn">系统参数设置</a> |
 	<a href="__APP__/index.php?s=System/addSystemcfg">添加新变量</a>
+	<a href="__APP__/index.php?s=System/makeCacheConfig">生成配置缓存文件</a>
 </div>
 <?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
 <div class="formContainer" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
@@ -63,14 +64,16 @@ $_smarty_tpl->tpl_vars['sinfo']->_loop = true;
 						<span><?php echo $_smarty_tpl->tpl_vars['sinfo']->value['cfginfo'];?>
 :</span>
 						<input type="text" name="<?php echo $_smarty_tpl->tpl_vars['sinfo']->value['cfgname'];?>
-" value="" class="input w350" />
+" value="<?php echo $_smarty_tpl->tpl_vars['sinfo']->value['cfgvalue'];?>
+" class="input w350" />
 					</li>
 					<?php }elseif($_smarty_tpl->tpl_vars['sinfo']->value['cfgtype']=='number'){?>
 					<li class="formblockauto">
 						<span><?php echo $_smarty_tpl->tpl_vars['sinfo']->value['cfginfo'];?>
 :</span>
 						<input type="text" name="<?php echo $_smarty_tpl->tpl_vars['sinfo']->value['cfgname'];?>
-" value="" class="input w350" />
+" value="<?php echo $_smarty_tpl->tpl_vars['sinfo']->value['cfgvalue'];?>
+" class="input w350" />
 					</li>
 					<?php }elseif($_smarty_tpl->tpl_vars['sinfo']->value['cfgtype']=='boolean'){?>
 					<li class="formblockauto">
@@ -78,16 +81,18 @@ $_smarty_tpl->tpl_vars['sinfo']->_loop = true;
 :</span>
 						<div class="item_list fleft">
 							<label><input type="radio" name="<?php echo $_smarty_tpl->tpl_vars['sinfo']->value['cfgname'];?>
-" value="1" class="radio" checked="checked" />是</label>
+" value="1" class="radio" <?php if ($_smarty_tpl->tpl_vars['sinfo']->value['cfgvalue']==1){?>checked="checked"<?php }?> />是</label>
 							<label><input type="radio" name="<?php echo $_smarty_tpl->tpl_vars['sinfo']->value['cfgname'];?>
-" value="0" class="radio" />否</label>
+" value="0" class="radio" <?php if ($_smarty_tpl->tpl_vars['sinfo']->value['cfgvalue']==0){?>checked="checked"<?php }?> />否</label>
 						</div>
 					</li>
 					<?php }elseif($_smarty_tpl->tpl_vars['sinfo']->value['cfgtype']=='text'){?>
 					<li class="formblockauto">
 						<span><?php echo $_smarty_tpl->tpl_vars['sinfo']->value['cfginfo'];?>
 :</span>
-						<textarea name="keywords" rows="3" cols="47"></textarea>
+						<textarea name="<?php echo $_smarty_tpl->tpl_vars['sinfo']->value['cfgname'];?>
+" rows="4" cols="47"><?php echo $_smarty_tpl->tpl_vars['sinfo']->value['cfgvalue'];?>
+</textarea>
 					</li>
 					<?php }?>
 				<?php } ?>
@@ -113,6 +118,9 @@ ul.formbody li.formblockauto {
 ul.formbody li.formblockauto span {
 	width: 300px;
     padding-top: 10px;
+    text-indent: 0;
+    padding-left: 30px;
+    text-align: center;
 }
 </style>
 <script type="text/javascript">

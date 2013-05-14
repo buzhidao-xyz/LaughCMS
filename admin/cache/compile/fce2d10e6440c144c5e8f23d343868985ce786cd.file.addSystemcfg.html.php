@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-13 17:29:01
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-14 18:45:56
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\System\addSystemcfg.html" */ ?>
-<?php /*%%SmartyHeaderCode:154435190b25dbc7b49-20308354%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:4995519215e4468726-35263016%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'fce2d10e6440c144c5e8f23d343868985ce786cd' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\System\\addSystemcfg.html',
-      1 => 1368416421,
+      1 => 1368519214,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '154435190b25dbc7b49-20308354',
+  'nocache_hash' => '4995519215e4468726-35263016',
   'function' => 
   array (
   ),
@@ -21,13 +21,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5190b25dc214f4_73652609',
+  'unifunc' => 'content_519215e44c22e9_46193547',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5190b25dc214f4_73652609')) {function content_5190b25dc214f4_73652609($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_519215e44c22e9_46193547')) {function content_519215e44c22e9_46193547($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="opTop">
 	<a href="__APP__/index.php?s=System/systemInfo">系统参数设置</a> |
 	<a href="__APP__/index.php?s=System/addSystemcfg" class="opTopOn">添加新变量</a>
+	<a href="__APP__/index.php?s=System/makeCacheConfig">生成配置缓存文件</a>
 </div>
 <?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
 <div class="formContainer" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>

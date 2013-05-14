@@ -78,6 +78,13 @@ class System extends Base
         return T("system")->where($where)->select();
     }
 
+    //查询系统参数名称是否已存在
+    public function cfgExists($cfgname=null)
+    {
+        if (empty($cfgname)) return false;
+        return T("system")->where(array("cfgname"=>$cfgname))->count();
+    }
+
     //添加新系统变量参数
     public function saveSystemcfg($cfgname=null,$cfgvalue=null,$cfginfo=null,$cfgtype=null,$cfggroupid=null)
     {
@@ -91,5 +98,15 @@ class System extends Base
             'cfgtime' => TIMESTAMP
         );
         return T("system")->add($data);
+    }
+
+    //保存系统参数信息
+    public function saveSystemInfo($data=array())
+    {
+        if (!is_array($data)||empty($data)) return false;
+        foreach ($data as $k=>$v) {
+            T('system')->where(array("cfgname"=>$k))->update(array("cfgvalue"=>$v));
+        }
+        return true;
     }
 }

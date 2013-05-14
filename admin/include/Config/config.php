@@ -2,8 +2,15 @@
 /**
  * 后台配置文件
  */
-$config_dir = str_replace('/admin/include/Config', '', str_replace('\\', '/', dirname(__FILE__))).'/include/Config';
 
+//加载系统配置缓存文件
+require("cache.config.php");
+
+//定义管理中心配置文件目录
+define('ADMIN_CONFIG_DIR',str_replace('\\', '/', dirname(__FILE__)));
+
+//加载前台配置文件
+$config_dir = str_replace('/'.$cache['admin_path'].'/include/Config', '', ADMIN_CONFIG_DIR).'/include/Config';
 require_once($config_dir.'/config.php');
 
 $admin_config = array(

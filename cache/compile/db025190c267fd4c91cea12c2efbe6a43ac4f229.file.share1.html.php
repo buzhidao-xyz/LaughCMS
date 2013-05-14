@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-13 09:57:43
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-14 18:48:27
          compiled from "C:\xampp\htdocs\laugh\themes\default\include\share1.html" */ ?>
-<?php /*%%SmartyHeaderCode:1176451904897b22518-91067288%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:17235192167bdeaca9-05423721%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,15 +11,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1176451904897b22518-91067288',
+  'nocache_hash' => '17235192167bdeaca9-05423721',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_51904897b273f2_70101808',
+  'unifunc' => 'content_5192167bdef9b2_11234905',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51904897b273f2_70101808')) {function content_51904897b273f2_70101808($_smarty_tpl) {?><!-- Baidu Button BEGIN -->
+<?php if ($_valid && !is_callable('content_5192167bdef9b2_11234905')) {function content_5192167bdef9b2_11234905($_smarty_tpl) {?><!-- Baidu Button BEGIN -->
 <script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=1&amp;pos=left&amp;uid=6599680" ></script>
 <script type="text/javascript" id="bdshell_js"></script>
 <script type="text/javascript">

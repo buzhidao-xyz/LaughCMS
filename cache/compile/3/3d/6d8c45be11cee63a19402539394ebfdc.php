@@ -2,7 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="keywords" content="">
+<meta name="keywords" content="Laugh,CMS,LaughCMS,内容,管理系统,内容管理系统,网站">
+<meta name="description" content="LaughCMS网站内容管理系统,网站建设,网站制作,企业站一体化建设" />
 <link type="text/css" rel="stylesheet" href="themes/default/style/common.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/default/style/frame.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/default/style/global.css" media="screen">
@@ -11,7 +12,7 @@
 <script type="text/javascript" src="public/js/jquery.idTabs.min.js"></script>
 <script type="text/javascript" src="themes/default/js/common.js"></script>
 <script type="text/javascript" src="themes/default/js/frame.js"></script>
-<title>Laugh CMS - 内容管理系统</title>
+<title>Laugh CMS - 网站内容管理系统</title>
 <script type="text/javascript">
 var JS_APP = '/laugh';
 </script>

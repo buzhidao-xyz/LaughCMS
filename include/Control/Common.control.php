@@ -34,6 +34,9 @@ class CommonControl extends BaseControl
         $this->assign("action", $this->_action);
 
         $this->getFlink();
+
+        //输出配置信息
+        $this->getConfig();
     }
 
     //获取分页页码
@@ -180,5 +183,18 @@ class CommonControl extends BaseControl
             }
         }
         $this->assign("FlinkList",$FlinkList);
+    }
+
+    //获取配置信息并打印输出 - SEO优化
+    public function getConfig()
+    {
+        $Config = array(
+            'host' => C('CACHE.host'),
+            'sitename' => C('CACHE.sitename'),
+            'keywords' => C('CACHE.keywords'),
+            'description' => C('CACHE.description'),
+        );
+        // dump($Config);exit;
+        $this->assign('Config', $Config);
     }
 }

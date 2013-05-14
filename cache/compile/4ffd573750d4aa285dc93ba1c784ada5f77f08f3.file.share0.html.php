@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-13 09:57:40
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-14 18:30:25
          compiled from "C:\xampp\htdocs\laugh\themes\default\include\share0.html" */ ?>
-<?php /*%%SmartyHeaderCode:2102051904893f146f5-11648370%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:18420519212415ac320-65880592%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,15 +11,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2102051904893f146f5-11648370',
+  'nocache_hash' => '18420519212415ac320-65880592',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_51904893f17a31_95766079',
+  'unifunc' => 'content_519212415aeff4_23030046',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51904893f17a31_95766079')) {function content_51904893f17a31_95766079($_smarty_tpl) {?><!-- Baidu Button BEGIN -->
+<?php if ($_valid && !is_callable('content_519212415aeff4_23030046')) {function content_519212415aeff4_23030046($_smarty_tpl) {?><!-- Baidu Button BEGIN -->
 <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
 <span class="bds_more">分享到：</span>
 <a class="bds_tsina"></a>

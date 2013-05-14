@@ -281,7 +281,7 @@ ul.formbody li span {
     margin-right: 15px;
     overflow: hidden;
     padding-left: 0;
-    text-indent: 30px;
+    padding-left: 30px;
     width: 160px;
 }
 ul.formbody li.auto {

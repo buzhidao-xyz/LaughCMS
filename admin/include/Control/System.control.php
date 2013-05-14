@@ -51,8 +51,15 @@ class SystemControl extends CommonControl
     //保存系统信息
     public function saveSystemInfo()
     {
-        dump($_REQUEST);exit;
-        $return = M("System")->saveSystemInfo();
+        $data = $_POST;
+        unset($data['subut']);
+
+        M("System")->saveSystemInfo($data);
+
+        //生成缓存配置文件
+        $this->makeCacheConfig(0);
+
+        $this->showMessage('系统参数修改成功！',1);
     }
 
     //添加新变量
@@ -67,6 +74,7 @@ class SystemControl extends CommonControl
     {
         $cfgname = q("cfgname");
         if (empty($cfgname)) $this->ajaxReturn(1,"请填写变量名！");
+        if (M("system")->cfgExists($cfgname)) $this->ajaxReturn(1,"变量名已存在！");
         $cfgvalue = q("cfgvalue");
         $cfginfo = q("cfginfo");
         if (empty($cfginfo)) $this->ajaxReturn(1,"请填写变量说明！");
@@ -80,6 +88,34 @@ class SystemControl extends CommonControl
             $this->ajaxReturn(0,"变量添加成功！");
         } else {
             $this->ajaxReturn(1,"变量添加失败！");
+        }
+    }
+
+    /**
+     * 生成前台缓存配置文件cache.config.php
+     * @param int $flag 是否打印跳转页面
+     */
+    public function makeCacheConfig($flag=1)
+    {
+        $cacheConfig = array();
+        $systemInfo = M("system")->getSystemInfo();
+        if (is_array($systemInfo)&&!empty($systemInfo)) {
+            foreach ($systemInfo as $d) {
+                $cacheConfig[$d['cfgname']] = $d['cfgvalue'];
+            }
+        }
+        
+        $cache = '<?php $cache = '.var_export($cacheConfig,TRUE).';';
+
+        $return = file_put_contents(ADMIN_CONFIG_DIR."/cache.config.php", $cache);
+        $return = file_put_contents(CONFIG_DIR."/cache.config.php", $cache);
+
+        if ($flag) {
+            if ($return) {
+                $this->showMessage('配置缓存文件生成成功！',1);
+            } else {
+                $this->showMessage('配置缓存文件生成失败！',0);
+            }
         }
     }
 }

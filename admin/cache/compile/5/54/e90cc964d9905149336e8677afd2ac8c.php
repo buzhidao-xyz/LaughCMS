@@ -54,7 +54,7 @@ function colorboxImage(url) {
 				</div>
 			</li>
 			<li class="formblock">
-				<span>是否配置该角色的功能节点:</span>
+				<span>配置角色的权限节点:</span>
 				<div class="item_list fleft">
 					<label><input type="radio" name="nodeAccess" isSetNode=1 class="radio" />是</label>
 				</div>
@@ -355,12 +355,12 @@ function colorboxImage(url) {
 			</div>
 			<div class="ul childNode" ul=1>
 										<div flag=1 title="" li=1 class="li">
-					<span class="w656">顶部广告</span>
+					<span class="w656">首页中部banner</span>
 					<span class="w120"><input type="checkbox" name="node[]" value="43,0"  node="cNode" flag="cNode1" class="checkbox" /></span>
 					<span class="w120"><input type="checkbox" name="node[]" value="43,1"  node="cNode" flag="cNode2" class="checkbox" /></span>
 				</div>
 							<div flag=1 title="" li=1 class="li">
-					<span class="w656">首页中部banner</span>
+					<span class="w656">栏目顶部广告</span>
 					<span class="w120"><input type="checkbox" name="node[]" value="44,0"  node="cNode" flag="cNode1" class="checkbox" /></span>
 					<span class="w120"><input type="checkbox" name="node[]" value="44,1"  node="cNode" flag="cNode2" class="checkbox" /></span>
 				</div>

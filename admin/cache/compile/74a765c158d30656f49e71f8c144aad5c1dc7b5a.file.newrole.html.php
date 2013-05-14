@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-10 09:16:02
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-14 10:04:35
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Role\newrole.html" */ ?>
-<?php /*%%SmartyHeaderCode:20032518c4a52e522b1-67633652%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2708951919bb35c43c0-44622778%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '74a765c158d30656f49e71f8c144aad5c1dc7b5a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\Role\\newrole.html',
-      1 => 1367905687,
+      1 => 1368494929,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '20032518c4a52e522b1-67633652',
+  'nocache_hash' => '2708951919bb35c43c0-44622778',
   'function' => 
   array (
   ),
@@ -22,9 +22,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_518c4a52ee91e3_31002769',
+  'unifunc' => 'content_51919bb365bd50_27152698',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_518c4a52ee91e3_31002769')) {function content_518c4a52ee91e3_31002769($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_51919bb365bd50_27152698')) {function content_51919bb365bd50_27152698($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
 <div class="formContainer" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
@@ -52,7 +52,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</div>
 			</li>
 			<li class="formblock">
-				<span>是否配置该角色的功能节点:</span>
+				<span>配置角色的权限节点:</span>
 				<div class="item_list fleft">
 					<label><input type="radio" name="nodeAccess" isSetNode=1 class="radio" />是</label>
 				</div>

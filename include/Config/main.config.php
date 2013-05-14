@@ -35,6 +35,6 @@ $config = array(
             'database' => 'laugh',
             'prefix'   => 'la_'
         )
-    ),
+    )
 );
 

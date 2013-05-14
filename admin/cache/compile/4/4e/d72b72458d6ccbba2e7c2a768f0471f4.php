@@ -36,6 +36,7 @@ function colorboxImage(url) {
 <div class="opTop">
 	<a href="/laugh/admin/index.php?s=System/systemInfo">系统参数设置</a> |
 	<a href="/laugh/admin/index.php?s=System/addSystemcfg" class="opTopOn">添加新变量</a>
+	<a href="/laugh/admin/index.php?s=System/makeCacheConfig">生成配置缓存文件</a>
 </div>
 <div class="formContainer" accessStatus=1>
 	<div class="formtitle"><h5>添加新系统变量参数</h5></div>

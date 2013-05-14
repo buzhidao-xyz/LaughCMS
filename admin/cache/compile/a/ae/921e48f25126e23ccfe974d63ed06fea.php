@@ -36,6 +36,7 @@ function colorboxImage(url) {
 <div class="opTop">
 	<a href="/laugh/admin/index.php?s=System/systemInfo" class="opTopOn">系统参数设置</a> |
 	<a href="/laugh/admin/index.php?s=System/addSystemcfg">添加新变量</a>
+	<a href="/laugh/admin/index.php?s=System/makeCacheConfig">生成配置缓存文件</a>
 </div>
 <div class="formContainer" accessStatus=1>
 	<div class="formtitle"><h5>系统参数设置</h5></div>
@@ -49,27 +50,31 @@ function colorboxImage(url) {
 									<div class="shtabcontent shtabcontentcurrent">
 														<li class="formblockauto">
 						<span>网站地址:</span>
-						<input type="text" name="host" value="" class="input w350" />
+						<input type="text" name="host" value="http://localhost:82/laugh" class="input w350" />
 					</li>
 																			<li class="formblockauto">
 						<span>网站名称:</span>
-						<input type="text" name="sitename" value="" class="input w350" />
+						<input type="text" name="sitename" value="Laugh CMS - 网站内容管理系统" class="input w350" />
 					</li>
 																			<li class="formblockauto">
 						<span>网站关键字:</span>
-						<textarea name="keywords" rows="3" cols="47"></textarea>
+						<textarea name="keywords" rows="4" cols="47">Laugh,CMS,LaughCMS,内容,管理系统,内容管理系统,网站</textarea>
+					</li>
+																			<li class="formblockauto">
+						<span>网站描述:</span>
+						<textarea name="description" rows="4" cols="47">LaughCMS网站内容管理系统,网站建设,网站制作,企业站一体化建设</textarea>
 					</li>
 												</div>
 						<div class="shtabcontent ">
 														<li class="formblockauto">
 						<span>管理中心目录:</span>
-						<input type="text" name="admin_path" value="" class="input w350" />
+						<input type="text" name="admin_path" value="admin" class="input w350" />
 					</li>
 																			<li class="formblockauto">
 						<span>文章回收站(是/否)开启:</span>
 						<div class="item_list fleft">
 							<label><input type="radio" name="archive_recover" value="1" class="radio" checked="checked" />是</label>
-							<label><input type="radio" name="archive_recover" value="0" class="radio" />否</label>
+							<label><input type="radio" name="archive_recover" value="0" class="radio"  />否</label>
 						</div>
 					</li>
 												</div>
@@ -91,6 +96,9 @@ ul.formbody li.formblockauto {
 ul.formbody li.formblockauto span {
 	width: 300px;
     padding-top: 10px;
+    text-indent: 0;
+    padding-left: 30px;
+    text-align: center;
 }
 </style>
 <script type="text/javascript">
