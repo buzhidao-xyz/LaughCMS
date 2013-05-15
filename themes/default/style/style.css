@@ -92,7 +92,7 @@
 	line-height: 20px;
 }
 .productTpl .body .ImageShow {
-	padding: 7px;
+	padding: 7px 5px;
 	clear: both;
 	overflow: hidden;
 	border: 1px solid #DEDEDE;

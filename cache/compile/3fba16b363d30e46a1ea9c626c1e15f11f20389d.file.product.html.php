@@ -1,22 +1,60 @@
-<div class="productTpl">
-	<h2 class="title">{$archiveInfo.title}</h2>
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-15 16:46:43
+         compiled from "C:\xampp\htdocs\laugh\themes\default\Product\product.html" */ ?>
+<?php /*%%SmartyHeaderCode:2139351934b737336c0-30794445%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '3fba16b363d30e46a1ea9c626c1e15f11f20389d' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\Product\\product.html',
+      1 => 1368607589,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '2139351934b737336c0-30794445',
+  'function' => 
+  array (
+  ),
+  'variables' => 
+  array (
+    'archiveInfo' => 0,
+    'image' => 0,
+    'columnid' => 0,
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.12',
+  'unifunc' => 'content_51934b73868900_23914410',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_51934b73868900_23914410')) {function content_51934b73868900_23914410($_smarty_tpl) {?><div class="productTpl">
+	<h2 class="title"><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['title'];?>
+</h2>
 	<div class="status">
 		<span class="title">点击次数:</span>
-		<span class="content">{$archiveInfo.clicknum} 次</span>
+		<span class="content"><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['clicknum'];?>
+ 次</span>
 		<span class="title">发布时间:</span>
-		<span class="content">{$archiveInfo.publishtime|mkdate}</span>
+		<span class="content"><?php echo mkdate($_smarty_tpl->tpl_vars['archiveInfo']->value['publishtime']);?>
+</span>
 		<span class="title">作者:</span>
-		<span class="content">{$archiveInfo.author}</span>
+		<span class="content"><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['author'];?>
+</span>
 	</div>
 	<div class="body">
 		<div class="ImageShow">
 			<div id="mainImage"></div>
 			<ul class="galleryFlash galleryImage">
-				{foreach $archiveInfo.archiveImage as $image}
+				<?php  $_smarty_tpl->tpl_vars['image'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['image']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['archiveInfo']->value['archiveImage']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['image']->key => $_smarty_tpl->tpl_vars['image']->value){
+$_smarty_tpl->tpl_vars['image']->_loop = true;
+?>
 			    <li class="active">
-			    	<img src="__APP__{$image.thumbpath}" alt="{$image.imagetitle}" title="{$image.imagetitle}">
+			    	<img src="__APP__<?php echo $_smarty_tpl->tpl_vars['image']->value['thumbpath'];?>
+" alt="<?php echo $_smarty_tpl->tpl_vars['image']->value['imagetitle'];?>
+" title="<?php echo $_smarty_tpl->tpl_vars['image']->value['imagetitle'];?>
+">
 			    </li>
-			    {/foreach}
+			    <?php } ?>
 			</ul>
 		</div>
 		<div class="productInfo">
@@ -30,62 +68,79 @@
 				<div id="productInfoboxTab1" class="boxTabContent productInfoContent">
 					<dl>
 						<dt>型号:</dt>
-						<dd>{$archiveInfo.model}</dd>
+						<dd><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['model'];?>
+</dd>
 					</dl>
 					<dl>
 						<dt>品牌:</dt>
-						<dd>{$archiveInfo.brand}</dd>
+						<dd><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['brand'];?>
+</dd>
 					</dl>
 					<dl>
 						<dt>颜色:</dt>
-						<dd>{$archiveInfo.color}</dd>
+						<dd><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['color'];?>
+</dd>
 					</dl>
 					<dl>
 						<dt>材质:</dt>
-						<dd>{$archiveInfo.material}</dd>
+						<dd><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['material'];?>
+</dd>
 					</dl>
 					<dl>
 						<dt>尺寸:</dt>
-						<dd>{$archiveInfo.size}</dd>
+						<dd><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['size'];?>
+</dd>
 					</dl>
 					<dl>
 						<dt>价格:</dt>
-						<dd>{$archiveInfo.price}</dd>
+						<dd><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['price'];?>
+</dd>
 					</dl>
 					<dl>
 						<dt>数量:</dt>
-						<dd>{$archiveInfo.total}</dd>
+						<dd><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['total'];?>
+</dd>
 					</dl>
 				</div>
 				<div id="productInfoboxTab2" class="boxTabContent productInfoContent">
-					{$archiveInfo.instruction|html_entity_decode}
+					<?php echo html_entity_decode($_smarty_tpl->tpl_vars['archiveInfo']->value['instruction']);?>
+
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="operate">
-		{include file="include/share0.html"}
+		<?php echo $_smarty_tpl->getSubTemplate ("include/share0.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 		<div class="operateLink"><a href="javascript:;">[打印此页]</a>&nbsp;&nbsp;&nbsp;<a href="javascript:self.close();">[关闭]</a></div>
 	</div>
 	<div class="about">
 		<dl>
 			<dt>上一篇:</dt>
 			<dd>
-				{if !empty($archiveInfo.prev)}
-				<a href="__APP__/index.php?s=Product/view&columnid={$columnid}&archiveid={$archiveInfo.prev.id}" title="{$archiveInfo.prev.title}">{$archiveInfo.prev.title}</a>
-				{else}
+				<?php if (!empty($_smarty_tpl->tpl_vars['archiveInfo']->value['prev'])){?>
+				<a href="__APP__/index.php?s=Product/view&columnid=<?php echo $_smarty_tpl->tpl_vars['columnid']->value;?>
+&archiveid=<?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['prev']['id'];?>
+" title="<?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['prev']['title'];?>
+"><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['prev']['title'];?>
+</a>
+				<?php }else{ ?>
 				<font color="grey">没有了！</font>
-				{/if}
+				<?php }?>
 			</dd>
 		</dl>
 		<dl>
 			<dt>下一篇:</dt>
 			<dd>
-				{if !empty($archiveInfo.next)}
-				<a href="__APP__/index.php?s=Product/view&columnid={$columnid}&archiveid={$archiveInfo.next.id}" title="{$archiveInfo.next.title}">{$archiveInfo.next.title}</a>
-				{else}
+				<?php if (!empty($_smarty_tpl->tpl_vars['archiveInfo']->value['next'])){?>
+				<a href="__APP__/index.php?s=Product/view&columnid=<?php echo $_smarty_tpl->tpl_vars['columnid']->value;?>
+&archiveid=<?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['next']['id'];?>
+" title="<?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['next']['title'];?>
+"><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['next']['title'];?>
+</a>
+				<?php }else{ ?>
 				<font color="grey">没有了！</font>
-				{/if}
+				<?php }?>
 			</dd>
 		</dl>
 	</div>
@@ -198,4 +253,4 @@ for(var i=0,di;di=SyntaxHighlighter.highlightContainers[i++];){
         ri.style.height = li.style.height = ri.offsetHeight + 'px';
     }
 }
-</script>
+</script><?php }} ?>

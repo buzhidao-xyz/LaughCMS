@@ -147,7 +147,7 @@ $(document).ready(function (){
 </script>
 <div id="WrapContainer" class="wrap">
 	<div class="adBanner block">
-		<a href="javascript:;" target="_blank"><img src="themes/default/images/ad_banner.png" width="1000" height="80" /></a>
+		<a href="http://www.163.com/" target="_blank"><img src="/laugh/Uploads/AdImage/1368170176_qzdzxd_6220_1368168531_sqifub_4518_ad_banner0.png" width="1000" height="80" /></a>
 	</div>
 	<div class="CurPosition mtop5">
 		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=Article/index&columnid=2">新闻资讯</a>

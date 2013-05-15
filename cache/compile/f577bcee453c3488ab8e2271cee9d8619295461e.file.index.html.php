@@ -1,32 +1,29 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-14 18:10:13
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-15 17:01:59
          compiled from "C:\xampp\htdocs\laugh\themes\default\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:2704051920d85382077-72885392%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2366651934f0790aea5-53129805%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'f577bcee453c3488ab8e2271cee9d8619295461e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\index.html',
-      1 => 1368092424,
+      1 => 1368608163,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2704051920d85382077-72885392',
+  'nocache_hash' => '2366651934f0790aea5-53129805',
   'function' => 
   array (
   ),
   'variables' => 
   array (
-    'ArticleColumnID' => 0,
-    'ArticleList' => 0,
-    'd' => 0,
     'AboutUs' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_51920d8546dfb8_99722665',
+  'unifunc' => 'content_51934f079c2022_75628186',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51920d8546dfb8_99722665')) {function content_51920d8546dfb8_99722665($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_51934f079c2022_75628186')) {function content_51934f079c2022_75628186($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate ("Common/Top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
@@ -53,21 +50,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<div class="boxBlock fleft w350">
 			<div class="boxBlockTitle">
 				<span class="title">新闻资讯</span>
-				<span class="link"><a href="__APP__/index.php?s=Article/index&columnid=<?php echo $_smarty_tpl->tpl_vars['ArticleColumnID']->value;?>
-">更多>></a></span>
+				<span class="link"><a href="__APP__/index.php?s=Article/index&columnid=2">更多>></a></span>
 			</div>
 			<div class="boxBlockBody h170">
 				<ul class="articleList">
-					<?php  $_smarty_tpl->tpl_vars['d'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['d']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['ArticleList']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['d']->key => $_smarty_tpl->tpl_vars['d']->value){
-$_smarty_tpl->tpl_vars['d']->_loop = true;
-?>
-					<li><a href="__APP__/index.php?s=Article/view&columnid=<?php echo $_smarty_tpl->tpl_vars['d']->value['columnid'];?>
-&archiveid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
-"><?php echo $_smarty_tpl->tpl_vars['d']->value['title'];?>
-</a></li>
-					<?php } ?>
+					<?php $_smarty_tpl->smarty->_tag_stack[] = array('cmstag_archive', array('columnid'=>2,'orderby'=>'createtime','orderway'=>'desc')); $_block_repeat=true; echo CMSTagArchive(array('columnid'=>2,'orderby'=>'createtime','orderway'=>'desc'), null, $_smarty_tpl, $_block_repeat);while ($_block_repeat) { ob_start();?>
+
+					<li><a href="__APP__/index.php?s=Article/view&columnid=[field.columnid]&archiveid=[field.id]">[field.title]</a></li>
+					<?php $_block_content = ob_get_clean(); $_block_repeat=false; echo CMSTagArchive(array('columnid'=>2,'orderby'=>'createtime','orderway'=>'desc'), $_block_content, $_smarty_tpl, $_block_repeat); } array_pop($_smarty_tpl->smarty->_tag_stack);?>
+
 				</ul>
 			</div>
 		</div>
@@ -93,7 +84,8 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 		<div class="clear"></div>
 	</div>
 	<div class="adBanner block">
-		<a href="javascript:;" target="_blank"><img src="themes/default/images/ad_banner.png" width="1000" height="80" /></a>
+		<?php echo CMSTagAdvertise(array('flag'=>1,'html'=>'<a href="[field.link]" target="_blank"><img src="[field.path]" width="1000" height="80" /></a>'),$_smarty_tpl);?>
+
 	</div>
 	<div id="BottomShow" class="block">
 		<?php echo $_smarty_tpl->getSubTemplate ("Common/ProductList.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>

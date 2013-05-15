@@ -21,13 +21,13 @@
 		<div class="boxBlock fleft w350">
 			<div class="boxBlockTitle">
 				<span class="title">新闻资讯</span>
-				<span class="link"><a href="__APP__/index.php?s=Article/index&columnid={$ArticleColumnID}">更多>></a></span>
+				<span class="link"><a href="__APP__/index.php?s=Article/index&columnid=2">更多>></a></span>
 			</div>
 			<div class="boxBlockBody h170">
 				<ul class="articleList">
-					{foreach $ArticleList as $d}
-					<li><a href="__APP__/index.php?s=Article/view&columnid={$d.columnid}&archiveid={$d.id}">{$d.title}</a></li>
-					{/foreach}
+					{cmstag_archive columnid=2 orderby='createtime' orderway='desc'}
+					<li><a href="__APP__/index.php?s=Article/view&columnid=[field.columnid]&archiveid=[field.id]">[field.title]</a></li>
+					{/cmstag_archive}
 				</ul>
 			</div>
 		</div>
@@ -48,7 +48,7 @@
 		<div class="clear"></div>
 	</div>
 	<div class="adBanner block">
-		<a href="javascript:;" target="_blank"><img src="themes/default/images/ad_banner.png" width="1000" height="80" /></a>
+		{cmstag_advertise flag=1 html='<a href="[field.link]" target="_blank"><img src="[field.path]" width="1000" height="80" /></a>'}
 	</div>
 	<div id="BottomShow" class="block">
 		{include file="Common/ProductList.html"}

@@ -70,7 +70,7 @@ var JS_APP = '/laugh';
 					</ul>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Product/index&columnid=6" class="">产品展示</a>
+		<a href="/laugh/index.php?s=Product/index&columnid=6" class="navon">产品展示</a>
 				<ul class="SubNavigation">
 						<li>
 				<a href="/laugh/index.php?s=Product/index&columnid=14">网络产品</a>
@@ -81,7 +81,7 @@ var JS_APP = '/laugh';
 					</ul>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Image/index&columnid=7" class="navon">客户案例</a>
+		<a href="/laugh/index.php?s=Image/index&columnid=7" class="">客户案例</a>
 			</li>
 		<li>
 		<a href="/laugh/index.php?s=Download/index&columnid=8" class="">下载中心</a>
@@ -150,28 +150,225 @@ $(document).ready(function (){
 		<a href="javascript:;" target="_blank"><img src="themes/default/images/ad_banner.png" width="1000" height="80" /></a>
 	</div>
 	<div class="CurPosition mtop5">
-		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=Image/index&columnid=7">客户案例</a>
+		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=Product/index&columnid=6">产品展示</a> > <a href="/laugh/index.php?s=Product/index&columnid=15">电子产品</a>
 	</div>
 	<div id="CenterShow" class="block mtop5">
 		<div id="mainBlock" class="fleft w740">
-			<div id="ImgListBlock" class="boxBlock">
+			<div class="boxBlock">
 				<div class="boxBlockTitle">
-					<span class="title">客户案例</span>
+					<span class="title">Web服务攻击反侦查痕迹检测</span>
 				</div>
 				<div class="boxBlockBody">
-					<ul class="ImageList">
-																		<li>
-							<a href="/laugh/index.php?s=Image/View&columnid=7&archiveid=14" class="ImageBG"><img src="/laugh/Uploads/Image/201304/08/1365413072_9nqiqs_5725.jpeg" /></a>
-							<a href="/laugh/index.php?s=Image/View&columnid=7&archiveid=14">客户案例一</a>
-							<span>最后更新: <font color="#999999">2013-04-11</font></span>
-						</li>
-												<li>
-							<a href="/laugh/index.php?s=Image/View&columnid=7&archiveid=15" class="ImageBG"><img src="/laugh/Uploads/Image/201304/08/1365414070_zo95z4_7377.jpg" /></a>
-							<a href="/laugh/index.php?s=Image/View&columnid=7&archiveid=15">客户案例二</a>
-							<span>最后更新: <font color="#999999">2013-04-08</font></span>
-						</li>
-																	</ul>
-					
+					<div class="contentBlock">
+						<div class="productTpl">
+	<h2 class="title">Web服务攻击反侦查痕迹检测</h2>
+	<div class="status">
+		<span class="title">点击次数:</span>
+		<span class="content">0 次</span>
+		<span class="title">发布时间:</span>
+		<span class="content">2013-04-02 14:30:03</span>
+		<span class="title">作者:</span>
+		<span class="content">admin</span>
+	</div>
+	<div class="body">
+		<div class="ImageShow">
+			<div id="mainImage"></div>
+			<ul class="galleryFlash galleryImage">
+							    <li class="active">
+			    	<img src="/laugh/Uploads/Image/201304/02/thumb_1364882233_qub9zq_7492.png" alt="产品图片1" title="产品图片1">
+			    </li>
+			    			    <li class="active">
+			    	<img src="/laugh/Uploads/Image/201304/02/thumb_1364884393_6la56e_1669.png" alt="产品图片2" title="产品图片2">
+			    </li>
+			    			    <li class="active">
+			    	<img src="/laugh/Uploads/Image/201304/02/thumb_1364884421_fzpdzx_9668.JPG" alt="图3" title="图3">
+			    </li>
+			    			</ul>
+		</div>
+		<div class="productInfo">
+			<div class="infoTitle">
+				<ul id="productInfoboxTab" class="infoboxTab fleft">
+					<li><a tabid="#productInfoboxTab1" href="javascript:;">规格参数</a></li>
+					<li><a tabid="#productInfoboxTab2" href="javascript:;">详细描述</a></li>
+				</ul>
+			</div>
+			<div class="infoBody">
+				<div id="productInfoboxTab1" class="boxTabContent productInfoContent">
+					<dl>
+						<dt>型号:</dt>
+						<dd>ASDWCVDFG</dd>
+					</dl>
+					<dl>
+						<dt>品牌:</dt>
+						<dd>PHP</dd>
+					</dl>
+					<dl>
+						<dt>颜色:</dt>
+						<dd>黑色</dd>
+					</dl>
+					<dl>
+						<dt>材质:</dt>
+						<dd>123</dd>
+					</dl>
+					<dl>
+						<dt>尺寸:</dt>
+						<dd>1</dd>
+					</dl>
+					<dl>
+						<dt>价格:</dt>
+						<dd>2</dd>
+					</dl>
+					<dl>
+						<dt>数量:</dt>
+						<dd>3</dd>
+					</dl>
+				</div>
+				<div id="productInfoboxTab2" class="boxTabContent productInfoContent">
+					<p style="margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;">web站点默认80为服务端口，关于它的各种安全问题不断的发布出来，这些漏洞中一些甚至允许攻击者获得系统管理员的权限进入站点内部，以下是Zenomorph对一些80端口攻击方式的痕迹的研究，和告诉你怎样从日志记录中发现问题。</p><p style="margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;"><strong style="text-align:center;">详细描述</strong></p><p style="margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;">下面部分通过一些列子，展示对web服务器和其上的应用程序普遍的攻击，和其留下的痕迹，这些列子仅仅是代表了主要的攻击方式，并没有列出所有的攻击形式，这部分将详细描述每种攻击的作用，和其怎样利用这些漏洞进行攻击。</p><p style="margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;">（1）&rdquo;.&rdquo; &ldquo;..&rdquo; 和 &ldquo;&hellip;&rdquo; 请求</p><p style="margin:10px 0px;padding:0px;color:#333333;background-color:#f8f8f8;text-indent:28px;font-family:宋体;font-size:14px;line-height:28px;">这些攻击痕迹是非常普遍的用于web应用程序和web服务器，它用于允许攻击者或者蠕虫病毒程序改变web服务器的路径，获得访问非公开的区域。大多数的CGI程序漏洞含有这些&rdquo;..&rdquo;请求。</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="operate">
+		<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+<span class="bds_more">分享到：</span>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_t163"></a>
+<a class="bds_renren"></a>
+<a class="bds_qzone"></a>
+<a class="bds_douban"></a>
+<a class="shareCount"></a>
+</div>
+<!-- Baidu Button END -->
+		<div class="operateLink"><a href="javascript:;">[打印此页]</a>&nbsp;&nbsp;&nbsp;<a href="javascript:self.close();">[关闭]</a></div>
+	</div>
+	<div class="about">
+		<dl>
+			<dt>上一篇:</dt>
+			<dd>
+								<font color="grey">没有了！</font>
+							</dd>
+		</dl>
+		<dl>
+			<dt>下一篇:</dt>
+			<dd>
+								<font color="grey">没有了！</font>
+							</dd>
+		</dl>
+	</div>
+</div>
+<link type="text/css" rel="stylesheet" href="public/plugin/galleria/galleria.css" media="screen">
+<script type="text/javascript" src="public/plugin/galleria/jquery.galleria.js"></script>
+<style type="text/css">
+#mainImage {
+	float: left;
+	width:550px;
+	height:375px;
+	margin:0 auto;
+	padding-right: 3px;
+	overflow: hidden;
+	text-align: center;
+	border-right: 1px dashed #CCC;
+}
+#mainImage img {
+	width: auto;
+	height:auto;
+	max-width: 550px;
+	max-height: 350px;
+}
+#mainImage span.caption {
+	font: 13px;
+	display: block;
+}
+.galleryImage {
+	float: left;
+	width: 108px;
+	height: 350px;
+	padding-left: 2px;
+	margin:0 auto;
+	overflow: hidden;
+	text-align: center;
+}
+.galleryImage li{
+	width:48px;
+	height:55px;
+	margin: 1px 2px;
+	border:1px solid #999;
+}
+.galleryImage li div {
+	text-align: center;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+$('ul.galleryImage').galleria({
+	history   : false, // activates the history object for bookmarking, back-button etc.
+	clickNext : true, // helper for making the image clickable
+	insert    : '#mainImage', // the containing selector for our main image
+	// let's add some image effects for demonstration purposes
+	onImage   : function(image,caption,thumb) {
+		image.css('display','none').toggle();//fadeIn(1);
+		caption.css('display','none').toggle();//fadeIn(1);
+		
+		// fetch the thumbnail container
+		var _li = thumb.parents('li');
+		
+		// fade out inactive thumbnail
+		_li.siblings().fadeTo('fast',0.5);
+		
+		// fade in active thumbnail
+		_li.fadeTo('fast',1).addClass('selected');
+	},
+	onThumb : function(thumb) { // thumbnail effects goes here
+		// fetch the thumbnail container
+		var _li = thumb.parents('li');
+		
+		// if thumbnail is active, fade all the way.
+		var _fadeTo = _li.is('.active') ? '1' : '0.5';
+		
+		// fade in the thumbnail when finnished loading
+		_li.css({
+			display: 'none',
+			opacity: _fadeTo
+		}).fadeIn(1000);
+		
+		// hover effects
+		_li.hover(
+			function() {
+				_li.fadeTo('fast',1);
+			}, function() {
+				_li.not('.active').fadeTo('fast',0.5);
+			}
+		)
+	}
+});
+
+//产品信息展示
+$(".productInfo ul#productInfoboxTab").idTabs(function(id,list,set){
+	$("a",set).removeClass("selected").filter("[tabid='"+id+"']",set).addClass("selected"); 
+	for(i in list) $(list[i]).hide();
+	$(id).fadeIn();
+	return false;
+});
+});
+</script>
+<link type="text/css" rel="stylesheet" href="themes/default/style/shCoreDefault.css" media="screen">
+<script type="text/javascript" src="themes/default/js/shCore.js"></script>
+<script type="text/javascript">
+//为了在编辑器之外能展示高亮代码
+SyntaxHighlighter.highlight();
+//调整左右对齐
+for(var i=0,di;di=SyntaxHighlighter.highlightContainers[i++];){
+    var tds = di.getElementsByTagName('td');
+    for(var j=0,li,ri;li=tds[0].childNodes[j];j++){
+        ri = tds[1].firstChild.childNodes[j];
+        ri.style.height = li.style.height = ri.offsetHeight + 'px';
+    }
+}
+</script>
+					</div>
 				</div>
 			</div>
 		</div>

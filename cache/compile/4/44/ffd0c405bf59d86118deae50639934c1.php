@@ -47,7 +47,7 @@ var JS_APP = '/laugh';
 <link type="text/css" rel="stylesheet" href="themes/default/style/navigation.css" media="screen">
 <ul class="headerNavigation">
 		<li>
-		<a href="/laugh/index.php?s=Index/index&columnid=1" class="navon">网站首页</a>
+		<a href="/laugh/index.php?s=Index/index&columnid=1" class="">网站首页</a>
 			</li>
 		<li>
 		<a href="/laugh/index.php?s=Article/index&columnid=2" class="">新闻资讯</a>
@@ -81,7 +81,7 @@ var JS_APP = '/laugh';
 					</ul>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Image/index&columnid=7" class="">客户案例</a>
+		<a href="/laugh/index.php?s=Image/index&columnid=7" class="navon">客户案例</a>
 			</li>
 		<li>
 		<a href="/laugh/index.php?s=Download/index&columnid=8" class="">下载中心</a>
@@ -146,153 +146,201 @@ $(document).ready(function (){
 });
 </script>
 <div id="WrapContainer" class="wrap">
-	<div id="ImageFlash" class="block">
-		<link media="screen" href="public/plugin/xslider/xslider.css" rel="stylesheet" type="text/css">
-<div id="SImageContainer" class="slider">
-	<div class="conbox">
-				<div><a href="#" title="剑侠情缘叁明教"><img src="/laugh/Uploads/ScrollImage/1364279943_qg83i3_3808.jpg" alt="剑侠情缘叁明教" width="730" height="300"></a></div>
-				<div><a href="#" title="绿色屏保"><img src="/laugh/Uploads/ScrollImage/1364280038_2l6n4e_8019.jpg" alt="绿色屏保" width="730" height="300"></a></div>
-				<div><a href="#" title="豪车"><img src="/laugh/Uploads/ScrollImage/1364280067_duvmp8_5013.jpg" alt="豪车" width="730" height="300"></a></div>
-			</div>
-	<div class="switcher">
-				<a href="javascript:;" class="cur">1</a>
-				<a href="javascript:;" >2</a>
-				<a href="javascript:;" >3</a>
-			</div>
-</div><!--slider end-->
-<script type="text/javascript" src="public/plugin/xslider/jquery.Xslider.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-// 焦点图片淡隐淡现
-$("#SImageContainer").Xslider({
-	affect: 'fade', //效果  有scrollx|scrolly|fade|none
-	speed: 800, //动画速度
-	space: 6000, //时间间隔
-	auto: true, //自动滚动
-	trigger: 'mouseover', //触发事件 注意用mouseover代替hover
-	conbox: '.conbox', //内容容器id或class
-	ctag: 'div', //内容标签 默认为<a>
-	switcher: '.switcher', //切换触发器id或class
-	stag: 'a', //切换器标签 默认为a
-	current:'cur', //当前切换器样式名称
-	rand:false //是否随机指定默认幻灯图片
-});
-});
-</script>
-		<div id="SImageCaption">
-			<h1>Laugh CMS 正式版</h1>
-			<h2 class="mtop5">LaughCMS企业网站管理系统,是一款代码完全开源免费PHP+MYSQL系统.系统安全,效率,易用并且可扩展性非常好。
-			</h2>
-			<h3 class="mtop10">系统版本: Laugh CMS 正式版</h3>
-			<h4>软件语言: 简体中文UTF-8</h4>
-			<h4>环境要求: IIS/Apache/Nginx + PHP5 + MySQL5</h4>
-			<h4>用户手册: <a href="javascript:;" target="_blank">在线手册</a></h4>
-			<h4>在线演示: <a href="javascript:;" target="_blank">演示地址</a></h4>
-			<a id="downloadbtn" href="javascript:;" target="_blank"></a>
-		</div>
-		<div class="clear"></div>
-	</div>
-	<div id="CenterShow" class="block">
-		<div class="boxBlock fleft w350">
-			<div class="boxBlockTitle">
-				<span class="title">新闻资讯</span>
-				<span class="link"><a href="/laugh/index.php?s=Article/index&columnid=2">更多>></a></span>
-			</div>
-			<div class="boxBlockBody h170">
-				<ul class="articleList">
-					
-					<li><a href="/laugh/index.php?s=Article/view&columnid=3&archiveid=18">VI命令大全</a></li>
-					
-					<li><a href="/laugh/index.php?s=Article/view&columnid=4&archiveid=13">DNS污染【备忘】</a></li>
-					
-					<li><a href="/laugh/index.php?s=Article/view&columnid=12&archiveid=10">Web服务攻击反侦查痕迹检测</a></li>
-					
-					<li><a href="/laugh/index.php?s=Article/view&columnid=3&archiveid=8">PHP单例模式经典讲解</a></li>
-					
-					<li><a href="/laugh/index.php?s=Article/view&columnid=2&archiveid=1">这是一篇测试文章</a></li>
-					
-				</ul>
-			</div>
-		</div>
-		<div class="boxBlock fleft w640 mleft10">
-			<div class="boxBlockTitle">
-				<span class="title">关于我们</span>
-			</div>
-			<div class="boxBlockBody h170">
-				<div class="boxBlockImg fleft">
-					<img src="themes/default/images/aboutus_img.png" width="130" height="150" />
-				</div>
-				<div class="boxBlockText fleft w450">
-					<p style="line-height:1.5em;"><span class="text"><span style="font-size:13px;"> &nbsp; &nbsp; &nbsp; LaughCMS企业网站管理系统，是一款代码完全开源免费的PHP+MYSQL系统。</span></span></p><p><br /></p><p style="line-height:1.5em;"><span style="font-size:13px;" class="text"> &nbsp; &nbsp; &nbsp; 程序内置SEO优化机制，使企业网站更容易被推广。拥有企业网站常用的模块功能（企业简介模块、新闻模块、产品模块、下载模块、图片模块、招聘模块、在线留言、友情链接、会员与权限管理）。强大灵活的后台管理功能、静态页面生成功能、自定义模型功能、自制插件安装管...</span></p>
-					<a href="/laugh/index.php?s=Public/AboutUS&columnid=10" class="viewbtn">阅读全文</a>
-				</div>
-			</div>
-		</div>
-		<div class="clear"></div>
-	</div>
 	<div class="adBanner block">
-		<a href="" target="_blank"><img src="/laugh/Uploads/AdImage/1368168608_9f5u5y_7755_ad_banner1.png" width="1000" height="80" /></a>
+		<a href="javascript:;" target="_blank"><img src="themes/default/images/ad_banner.png" width="1000" height="80" /></a>
 	</div>
-	<div id="BottomShow" class="block">
-		<div id="ImgListBlock" class="boxBlock fleft w740">
-	<div class="boxBlockTitle">
-		<span class="title">产品展示</span>
-		<span class="link"><a href="/laugh/index.php?s=Product/index&columnid=6">更多>></a></span>
-		<ul id="ImgboxTab" class="boxTab fleft">
-									<li><a tabid="#boxTab1" href="javascript:;">网络产品</a></li>
-						<li><a tabid="#boxTab2" href="javascript:;">电子产品</a></li>
-								</ul>
+	<div class="CurPosition mtop5">
+		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=Image/index&columnid=7">客户案例</a>
 	</div>
-	<div class="boxBlockBody h350">
-						<div id="boxTab1" class="boxTabContent">
-			<ul class="ProductList h335">
-												<li>
-					<a class="img" href="/laugh/index.php?s=Product/view&columnid=14&archiveid=12"><img src="/laugh/Uploads/Image/201304/02/1364884946_37uz4d_4967.png" /></a>
-					<a class="title" href="/laugh/index.php?s=Product/view&columnid=14&archiveid=12">Vim文本编辑器 v7.3 正式版</a>
-				</li>
-								<li>
-					<a class="img" href="/laugh/index.php?s=Product/view&columnid=14&archiveid=11"><img src="/laugh/Uploads/Image/201304/02/1364884636_tpajd4_786.png" /></a>
-					<a class="title" href="/laugh/index.php?s=Product/view&columnid=14&archiveid=11">4 款 Linux 下开源的个人日记管理软件</a>
-				</li>
-											</ul>
-		</div>
-				<div id="boxTab2" class="boxTabContent">
-			<ul class="ProductList h335">
-												<li>
-					<a class="img" href="/laugh/index.php?s=Product/view&columnid=15&archiveid=9"><img src="/laugh/Uploads/Image/201304/02/1364884203_zxvkaj_4664.png" /></a>
-					<a class="title" href="/laugh/index.php?s=Product/view&columnid=15&archiveid=9">Web服务攻击反侦查痕迹检测</a>
-				</li>
-											</ul>
-		</div>
-					</div>
+	<div id="CenterShow" class="block mtop5">
+		<div id="mainBlock" class="fleft w740">
+			<div class="boxBlock">
+				<div class="boxBlockTitle">
+					<span class="title">客户案例一</span>
+				</div>
+				<div class="boxBlockBody">
+					<div class="contentBlock">
+						<div class="articleTpl imageTpl">
+	<h2 class="title">客户案例一</h2>
+	<div class="status">
+		<span class="title">点击次数:</span>
+		<span class="content">0 次</span>
+		<span class="title">发布时间:</span>
+		<span class="content">2013-04-11 16:49:17</span>
+		<span class="title">作者:</span>
+		<span class="content">admin</span>
+	</div>
+	<div class="body">
+		<div id="container" class="transitions-enabled infinite-scroll clearfix">
+								  	<div class="box col2">
+		    	<p>
+		      		<a rel="group" href="/laugh/Uploads/Image/201304/08/1365413641_bydp7p_7088.jpg" title="案例图片一"><img src="/laugh/Uploads/Image/201304/08/thumb_1365413641_bydp7p_7088.jpg" alt="案例图片一" /></a>
+		    	</p>
+		  	</div>
+		  			  	<div class="box col2">
+		    	<p>
+		      		<a rel="group" href="/laugh/Uploads/Image/201304/09/1365474374_4s7jxa_5777.jpg" title="案例图片二"><img src="/laugh/Uploads/Image/201304/09/thumb_1365474374_4s7jxa_5777.jpg" alt="案例图片二" /></a>
+		    	</p>
+		  	</div>
+		  			  	<div class="box col2">
+		    	<p>
+		      		<a rel="group" href="/laugh/Uploads/Image/201304/09/1365474384_lld6f7_2865.jpg" title="案例图片三"><img src="/laugh/Uploads/Image/201304/09/thumb_1365474384_lld6f7_2865.jpg" alt="案例图片三" /></a>
+		    	</p>
+		  	</div>
+		  			  	<div class="box col2">
+		    	<p>
+		      		<a rel="group" href="/laugh/Uploads/Image/201304/09/1365474406_tzcrus_885.jpg" title="案例图片四"><img src="/laugh/Uploads/Image/201304/09/thumb_1365474406_tzcrus_885.jpg" alt="案例图片四" /></a>
+		    	</p>
+		  	</div>
+		  			  	<div class="box col2">
+		    	<p>
+		      		<a rel="group" href="/laugh/Uploads/Image/201304/09/1365474438_z5r3pz_3874.jpg" title="案例图片五"><img src="/laugh/Uploads/Image/201304/09/thumb_1365474438_z5r3pz_3874.jpg" alt="案例图片五" /></a>
+		    	</p>
+		  	</div>
+		  			  	<div class="box col2">
+		    	<p>
+		      		<a rel="group" href="/laugh/Uploads/Image/201304/09/1365474465_e4anmy_3273.jpg" title="案例图片六"><img src="/laugh/Uploads/Image/201304/09/thumb_1365474465_e4anmy_3273.jpg" alt="案例图片六" /></a>
+		    	</p>
+		  	</div>
+		  			  	<div class="box col2">
+		    	<p>
+		      		<a rel="group" href="/laugh/Uploads/Image/201304/09/1365474477_zuf1eo_2534.JPG" title="案例图片七"><img src="/laugh/Uploads/Image/201304/09/thumb_1365474477_zuf1eo_2534.JPG" alt="案例图片七" /></a>
+		    	</p>
+		  	</div>
+		  			  	<div class="box col2">
+		    	<p>
+		      		<a rel="group" href="/laugh/Uploads/Image/201304/09/1365474490_nc8o3r_168.jpg" title="案例图片八"><img src="/laugh/Uploads/Image/201304/09/thumb_1365474490_nc8o3r_168.jpg" alt="案例图片八" /></a>
+		    	</p>
+		  	</div>
+		  			  			</div>
+		<nav id="page-nav"><a href="/laugh/index.php?s=Image/Msonary&columnid=7&archiveid=14&page=2"></a></nav>
+	</div>
+	<div class="operate">
+		<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+<span class="bds_more">分享到：</span>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_t163"></a>
+<a class="bds_renren"></a>
+<a class="bds_qzone"></a>
+<a class="bds_douban"></a>
+<a class="shareCount"></a>
 </div>
+<!-- Baidu Button END -->
+		<div class="operateLink"><a href="javascript:;">[打印此页]</a>&nbsp;&nbsp;&nbsp;<a href="javascript:self.close();">[关闭]</a></div>
+	</div>
+	<div class="about">
+		<dl>
+			<dt>上一篇:</dt>
+			<dd>
+								<font color="grey">没有了！</font>
+							</dd>
+		</dl>
+		<dl>
+			<dt>下一篇:</dt>
+			<dd>
+								<a href="/laugh/index.php?s=Image/view&columnid=7&archiveid=15" title="客户案例二">客户案例二</a>
+							</dd>
+		</dl>
+	</div>
+</div>
+<link type="text/css" rel="stylesheet" href="public/plugin/masonry/style.css" media="screen">
+<script type="text/javascript" src="public/plugin/masonry/jquery.masonry.js"></script>
+<script type="text/javascript" src="public/plugin/masonry/jquery.infinitescroll.min.js"></script>
+<script type="text/javascript" src="public/plugin/masonry/modernizr-transitions.js"></script>
+<link type="text/css" rel="stylesheet" href="public/plugin/colorbox/colorbox.css" media="screen">
+<script type="text/javascript" src="public/plugin/colorbox/jquery.colorbox.js"></script>
 <script type="text/javascript">
-$(document).ready(function() {
-//图片切换tab
-$("#ImgListBlock ul#ImgboxTab").idTabs(function(id,list,set){ 
-	$("a",set).removeClass("selected").filter("[tabid='"+id+"']",set).addClass("selected"); 
-	for(i in list) $(list[i]).hide(); 
-	$(id).fadeIn(); 
-	return false; 
-});
+$(function(){
+    var $container = $('#container');
+
+    $container.imagesLoaded(function(){
+		$container.masonry({
+			itemSelector: '.box',
+			columnWidth: 1,
+        	isAnimated: !Modernizr.csstransitions
+		});
+    });
+    
+    $container.infinitescroll({
+		navSelector  : '#page-nav',    // selector for the paged navigation 
+		nextSelector : '#page-nav a',  // selector for the NEXT link (to page 2)
+		itemSelector : '.box',     // selector for all items you'll retrieve
+			loading: {
+				finishedMsg: '没有了',
+				img: JS_APP+'/public/plugin/masonry/loading.gif'
+			}
+		},
+		// trigger Masonry as a callback
+		function( newElements ) {
+			// hide new items while they are loading
+			var $newElems = $( newElements ).css({ opacity: 0 });
+			// ensure that images load before adding to masonry layout
+			$newElems.imagesLoaded(function(){
+				// show elems now they're ready
+				$newElems.animate({ opacity: 1 });
+				$container.masonry( 'appended', $newElems, true );
+
+				colorBoxImageShow();
+			});
+		}
+    );
+
+	//colorbox展示大图
+	var colorBoxImageShow = function (){
+	    $("#container .box a").colorbox({
+	    	//图集标记
+	    	rel: "group",
+	    	//图集图片自动切换
+	    	slideshow: true,
+	    	//图片切换时间间隔
+	    	slideshowSpeed : 30000,
+	    	//图片标题
+	    	title: function (){
+	    		return $(this).attr("title");
+	    	}
+	    });
+	}
+    colorBoxImageShow();
 });
 </script>
-		<div class="boxBlock fleft w250 mleft10">
-			<div class="boxBlockTitle">
-				<span class="title">联系我们</span>
-			</div>
-			<div class="boxBlockBody h350">
-				<div class="contactUS">
-					<h5>电 话: XXXXXXXX</h5>
-					<h5>邮 编: XXXXXXXX</h5>
-					<h5>网 址: www.xxx.com</h5>
-					<h5>Email: admin@admin.com</h5>
-					<h5>联系地址: 江苏省苏州市工业园区若水路1号</h5>
-					<h5>联系人: XXX</h5>
-					<h4>Laugh CMS 软件科技公司</h4>
+					</div>
 				</div>
 			</div>
 		</div>
+		<div id="sideBlock" class="fleft w250 mleft10">
+	<div class="boxBlock">
+		<div class="boxBlockTitle">
+			<span class="title">快捷导航</span>
+		</div>
+		<div class="boxBlockBody h200">
+			<ul class="SideNavList">
+				<li><a href="javascript:;">新闻资讯</a></li>
+				<li><a href="javascript:;">产品展示</a></li>
+				<li><a href="javascript:;">招贤纳士</a></li>
+				<li><a href="javascript:;">关于我们</a></li>
+				<li><a href="javascript:;">联系我们</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="boxBlock mtop10">
+		<div class="boxBlockTitle">
+			<span class="title">联系我们</span>
+		</div>
+		<div class="boxBlockBody h250">
+			<div class="contactUS">
+				<h5>电 话: XXXXXXXX</h5>
+				<h5>邮 编: XXXXXXXX</h5>
+				<h5>网 址: www.xxx.com</h5>
+				<h5>Email: admin@admin.com</h5>
+				<h5>联系地址: 江苏省苏州市工业园区若水路1号</h5>
+				<h5>联系人: XXX</h5>
+				<h4>Laugh CMS 软件科技公司</h4>
+			</div>
+		</div>
+	</div>
+</div>
 		<div class="clear"></div>
 	</div>
 	<div id="Flink" class="boxBlock block">

@@ -1,29 +1,30 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-15 16:48:52
-         compiled from "C:\xampp\htdocs\laugh\themes\default\Public\aboutus.html" */ ?>
-<?php /*%%SmartyHeaderCode:1115551934bf4e00b00-94221230%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-15 16:49:03
+         compiled from "C:\xampp\htdocs\laugh\themes\default\Image\body.html" */ ?>
+<?php /*%%SmartyHeaderCode:2038351934bffd8ae73-15858819%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'bc586650093ec164aee5be2dfa69855f8c891f46' => 
+    '7b63a2aeab951dd108be6004115c02130c34fa3d' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\Public\\aboutus.html',
-      1 => 1367911518,
+      0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\Image\\body.html',
+      1 => 1367142638,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1115551934bf4e00b00-94221230',
+  'nocache_hash' => '2038351934bffd8ae73-15858819',
   'function' => 
   array (
   ),
   'variables' => 
   array (
-    'Column' => 0,
+    'CurrentPosition' => 0,
+    'archiveInfo' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_51934bf4e8e619_82427855',
+  'unifunc' => 'content_51934bffe2ba30_60537482',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51934bf4e8e619_82427855')) {function content_51934bf4e8e619_82427855($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_51934bffe2ba30_60537482')) {function content_51934bffe2ba30_60537482($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate ("Common/Top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
@@ -34,17 +35,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<a href="javascript:;" target="_blank"><img src="themes/default/images/ad_banner.png" width="1000" height="80" /></a>
 	</div>
 	<div class="CurPosition mtop5">
-		当前位置: <a href="__APP__">首页</a> > <a href="__APP__/index.php?s=article">关于我们</a>
+		当前位置: <?php echo $_smarty_tpl->tpl_vars['CurrentPosition']->value;?>
+
 	</div>
 	<div id="CenterShow" class="block mtop5">
 		<div id="mainBlock" class="fleft w740">
 			<div class="boxBlock">
 				<div class="boxBlockTitle">
-					<span class="title">关于我们</span>
+					<span class="title"><?php echo $_smarty_tpl->tpl_vars['archiveInfo']->value['title'];?>
+</span>
 				</div>
-				<div class="boxBlockBody h576">
+				<div class="boxBlockBody">
 					<div class="contentBlock">
-						<?php echo html_entity_decode($_smarty_tpl->tpl_vars['Column']->value['content']);?>
+						<?php echo $_smarty_tpl->getSubTemplate ("Image/image.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 					</div>
 				</div>

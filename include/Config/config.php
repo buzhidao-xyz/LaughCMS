@@ -90,6 +90,9 @@ function __autoload($class)
 require(C('INCLUDE_DIR').'/function.php');
 require(C('INCLUDE_DIR').'/common.php');
 
+//加载cmstag解析函数库
+require(C('INCLUDE_DIR').'/cmstag.php');
+
 function Error_Handler($errno,$errstr,$errorfile,$errline,$errcontext)
 {
 	if ($errno) {

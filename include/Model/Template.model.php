@@ -103,6 +103,8 @@ class Template extends SmartyBC
             $this->setTemplateDir(C('TEMPLATE_OPTIONS.template'));
             $this->setCompileDir(C('TEMPLATE_OPTIONS.template_compile'));
             $this->addPluginsDir(C('TEMPLATE_OPTIONS.plugin_dir'));
+
+            $this->CMSTagParse();
         }
     }
 
@@ -239,6 +241,22 @@ class Template extends SmartyBC
         $view = $this->fetchd($template,$cache_id,$compile_id,$parent);
         self::_compile($view);
 
-        include_once(self::$_path);
+        include(self::$_path);
 	}
+
+    //cmstag触发解析标签
+    public function CMSTagParse()
+    {
+        //注册CMSTag标签
+        $cmstag = array(
+            array('type'=>'block','tag'=>'cmstag_archive','function'=>'CMSTagArchive'),
+            array('type'=>'function','tag'=>'cmstag_advertise','function'=>'CMSTagAdvertise'),
+        );
+        foreach ($cmstag as $d) {
+            if ($d['type'] == 'function')
+                $this->register_function($d['tag'],$d['function']);
+            else if ($d['type'] == 'block')
+                $this->register_block($d['tag'],$d['function']);
+        }
+    }
 }

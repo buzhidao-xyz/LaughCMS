@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-14 18:48:27
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-15 17:07:27
          compiled from "C:\xampp\htdocs\laugh\themes\default\include\foot.html" */ ?>
-<?php /*%%SmartyHeaderCode:305385192167bdda304-65787022%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:323935193504f0fac56-77779083%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,15 +11,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '305385192167bdda304-65787022',
+  'nocache_hash' => '323935193504f0fac56-77779083',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5192167bde43f8_24959785',
+  'unifunc' => 'content_5193504f1051f7_27904738',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5192167bde43f8_24959785')) {function content_5192167bde43f8_24959785($_smarty_tpl) {?><div id="Footer">
+<?php if ($_valid && !is_callable('content_5193504f1051f7_27904738')) {function content_5193504f1051f7_27904738($_smarty_tpl) {?><div id="Footer">
 	<ul id="Link">
 		<li class="bordernone"><a href="__APP__/index.php?s=Cooperate">招贤纳士</a></li>
 		<li><a href="__APP__/index.php?s=Public/AboutUS">关于我们</a></li>

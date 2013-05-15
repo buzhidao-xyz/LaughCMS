@@ -2,7 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="keywords" content="">
+<meta name="keywords" content="Laugh,CMS,LaughCMS,内容,管理系统,内容管理系统,网站">
+<meta name="description" content="LaughCMS网站内容管理系统,网站建设,网站制作,企业站一体化建设" />
 <link type="text/css" rel="stylesheet" href="themes/default/style/common.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/default/style/frame.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/default/style/global.css" media="screen">
@@ -11,7 +12,7 @@
 <script type="text/javascript" src="public/js/jquery.idTabs.min.js"></script>
 <script type="text/javascript" src="themes/default/js/common.js"></script>
 <script type="text/javascript" src="themes/default/js/frame.js"></script>
-<title>Laugh CMS - 内容管理系统</title>
+<title>Laugh CMS - 网站内容管理系统</title>
 <script type="text/javascript">
 var JS_APP = '/laugh';
 </script>
@@ -149,7 +150,7 @@ $(document).ready(function (){
 		<a href="javascript:;" target="_blank"><img src="themes/default/images/ad_banner.png" width="1000" height="80" /></a>
 	</div>
 	<div class="CurPosition mtop5">
-		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=Article/index&columnid=2">新闻资讯</a>
+		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=Article/index&columnid=2">新闻资讯</a> > <a href="/laugh/index.php?s=Article/index&columnid=3">IT知识</a>
 	</div>
 	<div id="CenterShow" class="block mtop5">
 		<div id="mainBlock" class="fleft w740">
@@ -248,13 +249,13 @@ $test_clone = clone $test;</pre><p><br /></p>
 		<dl>
 			<dt>上一篇:</dt>
 			<dd>
-								<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=7" title="PHP实现异步操作">PHP实现异步操作</a>
+								<a href="/laugh/index.php?s=article/view&columnid=3&archiveid=7" title="PHP实现异步操作">PHP实现异步操作</a>
 							</dd>
 		</dl>
 		<dl>
 			<dt>下一篇:</dt>
 			<dd>
-								<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=10" title="Web服务攻击反侦查痕迹检测">Web服务攻击反侦查痕迹检测</a>
+								<a href="/laugh/index.php?s=article/view&columnid=3&archiveid=10" title="Web服务攻击反侦查痕迹检测">Web服务攻击反侦查痕迹检测</a>
 							</dd>
 		</dl>
 	</div>

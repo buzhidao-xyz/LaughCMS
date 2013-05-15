@@ -20,12 +20,6 @@ class IndexControl extends CommonControl
     //主页
     public function index()
     {
-        //新闻资讯栏目id=2
-        $columnid = 2;
-        $ArticleList = $this->getAllArchive($columnid,5);
-        $this->assign("ArticleList", $ArticleList['data']);
-        $this->assign("ArticleColumnID",$columnid);
-
         $this->getIndexProductList();
 
         $this->getHomeScrollImage();
