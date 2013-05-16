@@ -523,4 +523,101 @@ class PluginControl extends CommonControl
         $this->assign('diskSpace', formatBytes($diskSpace));
         $this->display("FileManage/spaceCheck.html");
     }
+
+    /********************************导航管理********************************/
+
+    //底部导航
+    public function footNavigation()
+    {
+        $dataList = M("Plugin")->getNavigation(null,1);
+        $this->assign("total", count($dataList));
+        $this->assign("dataList", $dataList);
+
+        $this->display("Plugin/footNavigation.html");
+    }
+
+    //保存底部导航
+    public function footNavigationSave()
+    {
+        $this->NavigationSave(1);
+    }
+
+    //快捷导航
+    public function sideNavigation()
+    {
+        $dataList = M("Plugin")->getNavigation(null,2);
+        $this->assign("total", count($dataList));
+        $this->assign("dataList", $dataList);
+
+        $this->display("Plugin/sideNavigation.html");
+    }
+
+    //保存快捷导航
+    public function sideNavigationSave()
+    {
+        $this->NavigationSave(2);
+    }
+
+    //保存导航
+    public function NavigationSave($flag=1)
+    {
+        $title = q('title');
+        if (empty($title)) $this->ajaxReturn(1,'请填写导航标题！');
+        $link = q('link');
+        if (empty($link)) $this->ajaxReturn(1,'请填写导航地址！');
+
+        $return = M("Plugin")->NavigationSave($title,$link,0,$flag);
+        if ($return) {
+            $this->ajaxReturn(0,'添加成功！');
+        } else {
+            $this->ajaxReturn(1,'添加失败！');
+        }
+    }
+
+    //修改导航信息
+    public function NavigationEdit()
+    {
+        $this->assign("accessStatus", 1);
+
+        $id = q('id');
+        if (empty($id)) $this->ajaxReturn(1,'导航不存在！');
+
+        $navigationInfo = M("Plugin")->getNavigation($id);
+        $this->assign("navigationInfo", $navigationInfo[0]);
+
+        $this->display("Plugin/NavigationEdit.html");
+    }
+
+    //保存修改过的导航信息
+    public function NavigationEditSave()
+    {
+        $id = q('navigationid');
+        if (empty($id)) $this->ajaxReturn(1,'导航不存在！');
+
+        $title = q('title');
+        if (empty($title)) $this->ajaxReturn(1,'请填写导航标题！');
+        $link = q('link');
+        if (empty($link)) $this->ajaxReturn(1,'请填写导航地址！');
+
+        $return = M("Plugin")->NavigationEditSave($id,$title,$link);
+        if ($return) {
+            $this->ajaxReturn(0,'修改成功！');
+        } else {
+            $this->ajaxReturn(1,'修改失败！');
+        }
+    }
+
+    //删除导航
+    public function NavigationDelete()
+    {
+        $id = q('id');
+        if (empty($id)) $this->ajaxReturn(1,'导航不存在！');
+
+        $return = M("Plugin")->NavigationDelete($id);
+        if ($return) {
+            $this->ajaxReturn(0,'删除成功！');
+        } else {
+            $this->ajaxReturn(1,'删除失败！');
+        }
+    }
 }

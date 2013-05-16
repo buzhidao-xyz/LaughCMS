@@ -50,7 +50,7 @@ var JS_APP = '/laugh';
 		<a href="/laugh/index.php?s=Index/index&columnid=1" class="">网站首页</a>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Article/index&columnid=2" class="navon">新闻资讯</a>
+		<a href="/laugh/index.php?s=Article/index&columnid=2" class="">新闻资讯</a>
 				<ul class="SubNavigation">
 						<li>
 				<a href="/laugh/index.php?s=Article/index&columnid=3">IT知识</a>
@@ -87,7 +87,7 @@ var JS_APP = '/laugh';
 		<a href="/laugh/index.php?s=Download/index&columnid=8" class="">下载中心</a>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Plugin/Cooperate&columnid=9" class="">招贤纳士</a>
+		<a href="/laugh/index.php?s=Plugin/Cooperate&columnid=9" class="navon">招贤纳士</a>
 			</li>
 		<li>
 		<a href="/laugh/index.php?s=Public/AboutUS&columnid=10" class="">关于我们</a>
@@ -147,64 +147,224 @@ $(document).ready(function (){
 </script>
 <div id="WrapContainer" class="wrap">
 	<div class="adBanner block">
-		<a href="http://www.baidu.com/" target="_blank"><img src="/laugh/Uploads/AdImage/1368170151_s68hvp_191_1368168489_ru3un2_8465_ad_banner.png" width="1000" height="80" /></a>
+		<a href="javascript:;" target="_blank"><img src="themes/default/images/ad_banner.png" width="1000" height="80" /></a>
 	</div>
 	<div class="CurPosition mtop5">
-		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=Article/index&columnid=2">新闻资讯</a>
+		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=article">招贤纳士</a>
 	</div>
 	<div id="CenterShow" class="block mtop5">
 		<div id="mainBlock" class="fleft w740">
-			<div class="boxBlock">
+			<div id="ImgListBlock" class="boxBlock">
 				<div class="boxBlockTitle">
-					<span class="title">新闻资讯</span>
+					<span class="title">招贤纳士</span>
 				</div>
 				<div class="boxBlockBody">
-					<ul class="articleList">
-																		<li>
-							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=18">VI命令大全</a>
-							<span class="pubdate">[2013-04-27]</span>
-						</li>
-												<li>
-							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=13">DNS污染【备忘】</a>
-							<span class="pubdate">[2013-04-02]</span>
-						</li>
-												<li>
-							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=10">Web服务攻击反侦查痕迹检测</a>
-							<span class="pubdate">[2013-04-01]</span>
-						</li>
-												<li>
-							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=8">PHP单例模式经典讲解</a>
-							<span class="pubdate">[2013-03-29]</span>
-						</li>
-												<li>
-							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=1">这是一篇测试文章</a>
-							<span class="pubdate">[2013-03-28]</span>
-						</li>
-												<li>
-							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=7">PHP实现异步操作</a>
-							<span class="pubdate">[2013-03-26]</span>
-						</li>
-												<li>
-							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=6">PHP基本点知识</a>
-							<span class="pubdate">[2013-03-25]</span>
-						</li>
-												<li>
-							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=5">页面(PAGE)标记(TAGS)</a>
-							<span class="pubdate">[2013-03-25]</span>
-						</li>
-												<li>
-							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=4">MongoDB:下一代MySQL？</a>
-							<span class="pubdate">[2013-03-21]</span>
-						</li>
-												<li>
-							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=3">企业用网站进行网络宣传的优势</a>
-							<span class="pubdate">[2013-03-21]</span>
-						</li>
-												<li>
-							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=2">确认在左，取消在右?</a>
-							<span class="pubdate">[2013-01-09]</span>
-						</li>
-																	</ul>
+					<div class="CooperateList">
+																		<div class="CooperateListTitle">
+							<a href="javascript:;">UI设计师</a>
+						</div>
+						<ul>
+							<li>
+								<span class="title">招聘职位:</span>
+								<span class="content">UI设计师</span>
+							</li>
+							<li>
+								<span class="title">招聘人数:</span>
+								<span class="content">2 人</span>
+							</li>
+							<li>
+								<span class="title">学历要求:</span>
+								<span class="content">本科</span>
+							</li>
+							<li>
+								<span class="title">工作经验:</span>
+								<span class="content">三年以上</span>
+							</li>
+							<li>
+								<span class="title">工作地点:</span>
+								<span class="content">苏州</span>
+							</li>
+							<li>
+								<span class="title">工作性质:</span>
+								<span class="content">全职</span>
+							</li>
+							<li>
+								<span class="title">发布时间:</span>
+								<span class="content">2013-04-12</span>
+							</li>
+							<li>
+								<span class="title">更新时间:</span>
+								<span class="content">2013-04-27</span>
+							</li>
+							<li>
+								<span class="title">工资待遇:</span>
+								<span class="content">6000-7999</span>
+							</li>
+							<li>
+								<span class="title">有效期:</span>
+								<span class="content">6000-7999</span>
+							</li>
+							<li class="caption">
+								<span class="title">职位描述:</span>
+								<span class="content">
+								<p><span class="content">1.熟练掌握 PHP、MySQL，对 Web 性能、安全有了解和实践经验，了解 HTML、CSS 等前端开发语言<br />2.熟悉面向对象编程，至少掌握一种 PHP 框架的使用<br />3.在一年内具有项目经验，开发代码在 3 万行以上 <br />4.熟悉 Kohana、CodeIgniter 等 MVC 框架优先<br />5.有 Linux 服务器运维经验优先<br />6.有 Python、Ruby、Java 编程经验优先</span></p>
+								</span>
+							</li>
+						</ul>
+												<div class="CooperateListTitle">
+							<a href="javascript:;">PHP工程师</a>
+						</div>
+						<ul>
+							<li>
+								<span class="title">招聘职位:</span>
+								<span class="content">PHP工程师</span>
+							</li>
+							<li>
+								<span class="title">招聘人数:</span>
+								<span class="content">10 人</span>
+							</li>
+							<li>
+								<span class="title">学历要求:</span>
+								<span class="content">本科</span>
+							</li>
+							<li>
+								<span class="title">工作经验:</span>
+								<span class="content">三年以上</span>
+							</li>
+							<li>
+								<span class="title">工作地点:</span>
+								<span class="content">苏州</span>
+							</li>
+							<li>
+								<span class="title">工作性质:</span>
+								<span class="content">全职</span>
+							</li>
+							<li>
+								<span class="title">发布时间:</span>
+								<span class="content">2013-04-12</span>
+							</li>
+							<li>
+								<span class="title">更新时间:</span>
+								<span class="content">2013-04-12</span>
+							</li>
+							<li>
+								<span class="title">工资待遇:</span>
+								<span class="content">6000-7999</span>
+							</li>
+							<li>
+								<span class="title">有效期:</span>
+								<span class="content">6000-7999</span>
+							</li>
+							<li class="caption">
+								<span class="title">职位描述:</span>
+								<span class="content">
+								<p>1.熟练掌握 PHP、MySQL，对 Web 性能、安全有了解和实践经验，了解 HTML、CSS 等前端开发语言<br />2.熟悉面向对象编程，至少掌握一种 PHP 框架的使用<br />3.在一年内具有项目经验，开发代码在 3 万行以上<br />4.熟悉 Kohana、CodeIgniter 等 MVC 框架优先<br />5.有 Linux 服务器运维经验优先<br />6.有 Python、Ruby、Java 编程经验优先</p>
+								</span>
+							</li>
+						</ul>
+												<div class="CooperateListTitle">
+							<a href="javascript:;">PHP工程师</a>
+						</div>
+						<ul>
+							<li>
+								<span class="title">招聘职位:</span>
+								<span class="content">PHP工程师</span>
+							</li>
+							<li>
+								<span class="title">招聘人数:</span>
+								<span class="content">10 人</span>
+							</li>
+							<li>
+								<span class="title">学历要求:</span>
+								<span class="content">本科</span>
+							</li>
+							<li>
+								<span class="title">工作经验:</span>
+								<span class="content">三年以上</span>
+							</li>
+							<li>
+								<span class="title">工作地点:</span>
+								<span class="content">苏州</span>
+							</li>
+							<li>
+								<span class="title">工作性质:</span>
+								<span class="content">全职</span>
+							</li>
+							<li>
+								<span class="title">发布时间:</span>
+								<span class="content">2013-04-12</span>
+							</li>
+							<li>
+								<span class="title">更新时间:</span>
+								<span class="content">2013-04-12</span>
+							</li>
+							<li>
+								<span class="title">工资待遇:</span>
+								<span class="content">6000-7999</span>
+							</li>
+							<li>
+								<span class="title">有效期:</span>
+								<span class="content">6000-7999</span>
+							</li>
+							<li class="caption">
+								<span class="title">职位描述:</span>
+								<span class="content">
+								<p>1.熟练掌握 PHP、MySQL，对 Web 性能、安全有了解和实践经验，了解 HTML、CSS 等前端开发语言<br />2.熟悉面向对象编程，至少掌握一种 PHP 框架的使用<br />3.在一年内具有项目经验，开发代码在 3 万行以上<br />4.熟悉 Kohana、CodeIgniter 等 MVC 框架优先<br />5.有 Linux 服务器运维经验优先<br />6.有 Python、Ruby、Java 编程经验优先</p>
+								</span>
+							</li>
+						</ul>
+												<div class="CooperateListTitle">
+							<a href="javascript:;">PHP工程师</a>
+						</div>
+						<ul>
+							<li>
+								<span class="title">招聘职位:</span>
+								<span class="content">PHP工程师</span>
+							</li>
+							<li>
+								<span class="title">招聘人数:</span>
+								<span class="content">10 人</span>
+							</li>
+							<li>
+								<span class="title">学历要求:</span>
+								<span class="content">大专</span>
+							</li>
+							<li>
+								<span class="title">工作经验:</span>
+								<span class="content">三年以上</span>
+							</li>
+							<li>
+								<span class="title">工作地点:</span>
+								<span class="content">苏州</span>
+							</li>
+							<li>
+								<span class="title">工作性质:</span>
+								<span class="content">全职</span>
+							</li>
+							<li>
+								<span class="title">发布时间:</span>
+								<span class="content">2013-04-12</span>
+							</li>
+							<li>
+								<span class="title">更新时间:</span>
+								<span class="content">2013-04-12</span>
+							</li>
+							<li>
+								<span class="title">工资待遇:</span>
+								<span class="content">8000-9999</span>
+							</li>
+							<li>
+								<span class="title">有效期:</span>
+								<span class="content">8000-9999</span>
+							</li>
+							<li class="caption">
+								<span class="title">职位描述:</span>
+								<span class="content">
+								<p>1.熟练掌握 PHP、MySQL，对 Web 性能、安全有了解和实践经验，了解 HTML、CSS 等前端开发语言<br />2.熟悉面向对象编程，至少掌握一种 PHP 框架的使用<br />3.在一年内具有项目经验，开发代码在 3 万行以上<br />4.熟悉 Kohana、CodeIgniter 等 MVC 框架优先<br />5.有 Linux 服务器运维经验优先<br />6.有 Python、Ruby、Java 编程经验优先</p>
+								</span>
+							</li>
+						</ul>
+																	</div>
 					
 				</div>
 			</div>
@@ -276,6 +436,20 @@ $("#Flink ul#FlinkboxTab").idTabs(function(id,list,set){
 });
 </script>
 </div>
+<script type="text/javascript">
+$(document).ready(function (){
+var CooperateClass = function (){
+	var CoObj = {
+		CoTitle: $(".CooperateList .CooperateListTitle a")
+	}
+
+	CoObj.CoTitle.click(function (){
+		$(this).parent().next("ul").slideToggle();
+	});
+}
+CooperateClass();
+});
+</script>
 <div id="Footer">
 	<ul id="Link">
 		<li class="bordernone"><a href="/laugh/index.php?s=Cooperate">招贤纳士</a></li>

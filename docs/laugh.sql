@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2013-05-15 17:08:35
+Date: 2013-05-16 17:31:13
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -38,7 +38,7 @@ CREATE TABLE `la_admin` (
 -- ----------------------------
 -- Records of la_admin
 -- ----------------------------
-INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1368581671', '2130706433', '127', '1');
+INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1368670098', '2130706433', '127', '1');
 INSERT INTO `la_admin` VALUES ('2', 'luochuan', '624879b3fff70462132a21eb1cd8eb75', 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '1355368421', '2130706433', '12', '0');
 
 -- ----------------------------
@@ -3995,6 +3995,26 @@ INSERT INTO `la_message_board` VALUES ('4', 'maomao', 'maomao@mao.com', '【php�
 INSERT INTO `la_message_board` VALUES ('5', 'luochuan', 'luochuan.wang@gmail.com', '续上条，#剑网3#安史之乱中，大庄主叶英亲自开炉，率领庄中弟子，取西湖血铁和湖边寒泉冶铸兵刃千柄；并且开藏剑武库，清点庄中所藏兵器，共计千余把；又命三庄主叶炜带这些兵器前去朔方军营中助阵。二庄主叶晖同剩下两位庄主出尽庄中钱财，购买粮食衣物，前去战乱地区赈济灾民。', '1368087310');
 
 -- ----------------------------
+-- Table structure for `la_navigation`
+-- ----------------------------
+DROP TABLE IF EXISTS `la_navigation`;
+CREATE TABLE `la_navigation` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) NOT NULL,
+  `link` varchar(100) NOT NULL,
+  `sort` int(10) DEFAULT '0',
+  `flag` tinyint(1) DEFAULT NULL COMMENT '导航位置 1:底部 2:快捷导航',
+  `createtime` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of la_navigation
+-- ----------------------------
+INSERT INTO `la_navigation` VALUES ('1', '招贤纳士', 'http://localhost:82/laugh/index.php?s=Plugin/Cooperate&amp;columnid=9', '0', '1', '1368675893');
+INSERT INTO `la_navigation` VALUES ('2', '新闻资讯', 'http://localhost:82/laugh/index.php?s=Article/index&amp;columnid=2', '0', '2', '1368676692');
+
+-- ----------------------------
 -- Table structure for `la_node`
 -- ----------------------------
 DROP TABLE IF EXISTS `la_node`;
@@ -4011,7 +4031,7 @@ CREATE TABLE `la_node` (
   `isshow` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `pid` (`pid`)
-) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_node
@@ -4066,6 +4086,9 @@ INSERT INTO `la_node` VALUES ('47', '下载管理', '', 'Download', 'index', '20
 INSERT INTO `la_node` VALUES ('48', '文件管理器', '', 'Plugin', 'fileManage', '30', '0', '1365562785', '1365562785', '1');
 INSERT INTO `la_node` VALUES ('49', '专题管理', '', 'Topic', 'index', '20', '0', '1365562964', '1365562964', '1');
 INSERT INTO `la_node` VALUES ('50', '软件管理', '', 'Soft', 'index', '20', '0', '1365563043', '1365563043', '1');
+INSERT INTO `la_node` VALUES ('51', '导航管理', '', 'Plugin', '', '0', '5', '1368669985', '1368669985', '1');
+INSERT INTO `la_node` VALUES ('52', '底部导航', '', 'Plugin', 'footNavigation', '51', '0', '1368670035', '1368670035', '1');
+INSERT INTO `la_node` VALUES ('53', '快捷导航', '', 'Plugin', 'sideNavigation', '51', '0', '1368670088', '1368670088', '1');
 
 -- ----------------------------
 -- Table structure for `la_product`

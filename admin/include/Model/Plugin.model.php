@@ -233,4 +233,51 @@ class Plugin extends Base
 
 		return T("message_board")->where($where)->delete();
 	}
+
+	/**
+	 * 获取导航列表
+	 * @param int $id 导航id
+	 * @param int $flag 导航位置 1:底部导航 2:快捷导航
+	 */
+	public function getNavigation($id=null,$flag=null)
+	{
+		$where = $flag ? array('flag'=>$flag) : array();
+		if (!empty($id)) $where['id'] = is_array($id) ? array("in", $id) : $id;
+
+		return T('navigation')->where($where)->select();
+	}
+
+	//保存导航
+	public function NavigationSave($title=null,$link=null,$sort=0,$flag=1)
+	{
+		$data = array(
+			'title' => $title,
+			'link'  => $link,
+			'sort'  => $sort,
+			'flag'  => $flag,
+			'createtime' => TIMESTAMP
+		);
+
+		return T("navigation")->add($data);
+	}
+
+	//保存修改后的导航信息
+	public function NavigationEditSave($id=null,$title=null,$link=null,$sort=0)
+	{
+		if (empty($id)) return false;
+		$data = array(
+			'title' => $title,
+			'link'  => $link,
+			'sort'  => $sort
+		);
+		return T("navigation")->where(array('id'=>$id))->update($data);
+	}
+
+	//删除导航
+	public function NavigationDelete($id=null)
+	{
+		if (empty($id)) return false;
+
+		return T("navigation")->where(array('id'=>$id))->delete();
+	}
 }

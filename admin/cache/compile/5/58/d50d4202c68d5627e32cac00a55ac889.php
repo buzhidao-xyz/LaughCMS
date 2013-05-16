@@ -28,68 +28,32 @@ function colorboxImage(url) {
 </head>
 
 <body>
-<div class="box">
-<div class="boxContent">
-<div class="boxPopupForm">
-	<div class="boxTitle">
-		<h5>系统提示信息</h5>
-	</div>
-	<div class="boxMessage">
-		<div class="message"><font color="green">配置缓存文件生成成功！</font></div>
-		<div class="jump">
-			页面即将自动跳转 
-			等待时间 <b id="wait">3</b> 秒
-		</div>
-		<div class="jumpUrl">
-			<a id="href" href="http://localhost:82/laugh/admin/index.php?s=System/addSystemcfg">如果你的浏览器没反应，请点击这里...</a>
-		</div>
-	</div>
-</div>
-</div>
-</div>
 <style type="text/css">
-.box {
-	float: none;
-	margin-top: 30px;
-	margin: 30px auto;
-}
-.box .boxContent {
-	width: 470px;
-	margin: 0 auto;
-	border: 1px solid #3A6EA5;
-}
-.box .boxMessage {
-	height: 150px;
-}
-.box .boxMessage .message {
-	padding-top: 30px;
-	text-align: center;
-	color: #FF6600;
-}
-.box .boxMessage .jump {
-	padding-top: 5px;
-	text-align: center;
-}
-.box .boxMessage .jumpUrl {
-	padding-top: 5px;
-	text-align: center;
-}
-.box .boxMessage .jumpUrl a {
-	text-decoration: underline;
-}
+	body { background: none; }
 </style>
-<script type="text/javascript">
-(function(){
-var interval = setInterval(function(){
-	var time = parseInt($("#wait").text())-1;
-	$("#wait").text(time);
-	if(time == 0) {
-		location.href = $("#href").attr("href");
-		clearInterval(interval);
-	};
-}, 1000);
-})();
-</script>
+<div id="control">
+	<div id="controlContent">
+<div class="formContainer" accessStatus=1>
+	<div class="formtitle"><h5>编辑导航信息</h5></div>
+	<form name="newform" action="/laugh/admin/index.php?s=Plugin/NavigationEditSave" method="post" id="colorBoxAjaxForm" class="newform">
+		<input type="hidden" name="navigationid" value="新闻资讯" />
+		<ul class="formbody">
+			<li class="formblock">
+				<span>导航名称: </span>
+				<input type="text" name="title" value="新闻资讯" class="input w200" />
+			</li>
+			<li class="formblock">
+				<span>导航地址: </span>
+				<input type="text" name="link" value="http://localhost:82/laugh/index.php?s=Article/index&amp;columnid=2" class="input w350" />
+			</li>
+			<li class="formblock bordernone bgf6">
+				<input type="submit" name="subut" class="button btnblue2" value="编辑" />
+			</li>
+		</ul>
+	</form>
+</div>
+    </div>
+</div>
 </body>
 <script type="text/javascript" src="themes/blue/js/jquery.corner.js"></script>
 <script type="text/javascript" src="themes/blue/js/public.js"></script>
