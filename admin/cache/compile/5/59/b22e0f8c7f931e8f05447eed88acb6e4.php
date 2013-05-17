@@ -66,7 +66,7 @@ function colorboxImage(url) {
 		<li class="table_list_l table_list_l500"><a href="http://localhost:82/laugh/index.php?s=Plugin/Cooperate&amp;columnid=9" target="_blank">http://localhost:82/laugh/index.php?s=Plugin/Cooperate&amp;columnid=9</a></li>
     	<li class="table_list_l table_list_l150">2013-05-16 11:44:53</li>
     	    	<li class="table_list_l table_list_l100" accessStatus=1>
-    		<a name="edit" href="/laugh/admin/index.php?s=Plugin/NavigationEdit&id=1">修改</a>
+    		<a name="NavigationEdit" href="/laugh/admin/index.php?s=Plugin/NavigationEdit&id=1">修改</a>
     		<a delurl="/laugh/admin/index.php?s=Plugin/NavigationDelete&id=1" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>
     	    </ul>
@@ -74,7 +74,7 @@ function colorboxImage(url) {
 
 <script type="text/javascript">
 $(document).ready(function (){
-	$("a[name=edit]").click(function (){
+	$("a[name=NavigationEdit]").click(function (){
 		window.parent.colorboxAjaxHtml($(this).attr("href"));
 		return false;
 	});

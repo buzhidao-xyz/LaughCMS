@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-16 10:04:27
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-17 10:29:58
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Advertise\HomeCenterAd.html" */ ?>
-<?php /*%%SmartyHeaderCode:2862251943eabc8e582-24873623%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:107851959626cc1940-86627421%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '2ccb7f77d1b6ed3e8f9eb899d8b7c7bd92356875' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\Advertise\\HomeCenterAd.html',
-      1 => 1368168819,
+      1 => 1368757789,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2862251943eabc8e582-24873623',
+  'nocache_hash' => '107851959626cc1940-86627421',
   'function' => 
   array (
   ),
@@ -25,9 +25,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_51943eabdf44c0_54254935',
+  'unifunc' => 'content_51959626e08bf2_62458935',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51943eabdf44c0_54254935')) {function content_51943eabdf44c0_54254935($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_51959626e08bf2_62458935')) {function content_51959626e08bf2_62458935($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
 <div class="formContainer" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
@@ -96,8 +96,10 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 >
 			<a name="imageview" href="__APPM__<?php echo $_smarty_tpl->tpl_vars['d']->value['path'];?>
 ">查看图片</a>
-			<a name="ajax" href="__APP__/index.php?s=Advertise/UpdateHomeCenterAdStatus&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
-&status=<?php if ($_smarty_tpl->tpl_vars['d']->value['status']){?>0<?php }else{ ?>1<?php }?>">启用/禁用</a>
+			<!-- <a name="ajax" href="__APP__/index.php?s=Advertise/UpdateHomeCenterAdStatus&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+&status=<?php if ($_smarty_tpl->tpl_vars['d']->value['status']){?>0<?php }else{ ?>1<?php }?>">启用/禁用</a> -->
+			<a name="AdvertiseEdit" href="__APP__/index.php?s=Advertise/AdvertiseEdit&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+">编辑</a>
 			<a name="ajax" msg="确定删除吗？" href="__APP__/index.php?s=Advertise/DeleteAdvertise&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 ">删除</a>
 		</li>

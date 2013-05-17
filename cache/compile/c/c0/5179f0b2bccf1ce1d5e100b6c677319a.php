@@ -2,7 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="keywords" content="">
+<meta name="keywords" content="Laugh,CMS,LaughCMS,内容,管理系统,内容管理系统,网站">
+<meta name="description" content="LaughCMS网站内容管理系统,网站建设,网站制作,企业站一体化建设" />
 <link type="text/css" rel="stylesheet" href="themes/default/style/common.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/default/style/frame.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/default/style/global.css" media="screen">
@@ -11,7 +12,7 @@
 <script type="text/javascript" src="public/js/jquery.idTabs.min.js"></script>
 <script type="text/javascript" src="themes/default/js/common.js"></script>
 <script type="text/javascript" src="themes/default/js/frame.js"></script>
-<title>Laugh CMS - 内容管理系统</title>
+<title>Laugh CMS - 网站内容管理系统</title>
 <script type="text/javascript">
 var JS_APP = '/laugh';
 </script>
@@ -146,7 +147,7 @@ $(document).ready(function (){
 </script>
 <div id="WrapContainer" class="wrap">
 	<div class="adBanner block">
-		<a href="javascript:;" target="_blank"><img src="themes/default/images/ad_banner.png" width="1000" height="80" /></a>
+		<a href="http://www.163.com/" target="_blank"><img src="/laugh/Uploads/AdImage/1368170176_qzdzxd_6220_1368168531_sqifub_4518_ad_banner0.png" width="1000" height="80" /></a>
 	</div>
 	<div class="CurPosition mtop5">
 		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=Download/index&columnid=8">下载中心</a>

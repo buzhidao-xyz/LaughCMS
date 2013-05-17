@@ -17,7 +17,7 @@
 		</li>
 		<li class="formblock">
 			<span>链接名称：</span>
-			<input type="text" name="linkname" value="百度" class="input w150" />
+			<input type="text" name="linkname" value="百度1" class="input w150" />
 		</li>
 		<li class="formblock">
 			<span>链接地址：</span>

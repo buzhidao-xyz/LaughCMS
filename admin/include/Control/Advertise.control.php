@@ -90,6 +90,18 @@ class AdvertiseControl extends CommonControl
 		}
 	}
 
+	//修改广告信息
+	public function AdvertiseEdit()
+	{
+		$id = q("id");
+		if (empty($id)) $this->ajaxReturn(1,"广告不存在！");
+
+		$AdvertiseInfo = M("Advertise")->getAdvertise($id);
+		$this->assign("AdvertiseInfo", $AdvertiseInfo);
+
+		$this->display("Advertise/AdvertiseEdit.html");
+	}
+
 	//修改广告状态
 	public function UpdateHomeCenterAdStatus()
 	{

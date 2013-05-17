@@ -79,7 +79,8 @@ function colorboxImage(url) {
 		<li class="table_list_l table_list_l50"><font color="green">启用</font></li>
 				<li class="table_list_l table_list_l200" accessStatus=1>
 			<a name="imageview" href="http://localhost:82/laugh/Uploads/AdImage/1368168489_ru3un2_8465_ad_banner.png">查看图片</a>
-			<a name="ajax" href="/laugh/admin/index.php?s=Advertise/UpdateHomeCenterAdStatus&id=1&status=0">启用/禁用</a>
+			<!-- <a name="ajax" href="/laugh/admin/index.php?s=Advertise/UpdateHomeCenterAdStatus&id=1&status=0">启用/禁用</a> -->
+			<a name="AdvertiseEdit" href="/laugh/admin/index.php?s=Advertise/AdvertiseEdit&id=1">编辑</a>
 			<a name="ajax" msg="确定删除吗？" href="/laugh/admin/index.php?s=Advertise/DeleteAdvertise&id=1">删除</a>
 		</li>
 			</ul>
@@ -90,7 +91,8 @@ function colorboxImage(url) {
 		<li class="table_list_l table_list_l50"><font color="green">启用</font></li>
 				<li class="table_list_l table_list_l200" accessStatus=1>
 			<a name="imageview" href="http://localhost:82/laugh/Uploads/AdImage/1368168531_sqifub_4518_ad_banner0.png">查看图片</a>
-			<a name="ajax" href="/laugh/admin/index.php?s=Advertise/UpdateHomeCenterAdStatus&id=2&status=0">启用/禁用</a>
+			<!-- <a name="ajax" href="/laugh/admin/index.php?s=Advertise/UpdateHomeCenterAdStatus&id=2&status=0">启用/禁用</a> -->
+			<a name="AdvertiseEdit" href="/laugh/admin/index.php?s=Advertise/AdvertiseEdit&id=2">编辑</a>
 			<a name="ajax" msg="确定删除吗？" href="/laugh/admin/index.php?s=Advertise/DeleteAdvertise&id=2">删除</a>
 		</li>
 			</ul>
@@ -101,7 +103,8 @@ function colorboxImage(url) {
 		<li class="table_list_l table_list_l50"><font color="green">启用</font></li>
 				<li class="table_list_l table_list_l200" accessStatus=1>
 			<a name="imageview" href="http://localhost:82/laugh/Uploads/AdImage/1368168608_9f5u5y_7755_ad_banner1.png">查看图片</a>
-			<a name="ajax" href="/laugh/admin/index.php?s=Advertise/UpdateHomeCenterAdStatus&id=3&status=0">启用/禁用</a>
+			<!-- <a name="ajax" href="/laugh/admin/index.php?s=Advertise/UpdateHomeCenterAdStatus&id=3&status=0">启用/禁用</a> -->
+			<a name="AdvertiseEdit" href="/laugh/admin/index.php?s=Advertise/AdvertiseEdit&id=3">编辑</a>
 			<a name="ajax" msg="确定删除吗？" href="/laugh/admin/index.php?s=Advertise/DeleteAdvertise&id=3">删除</a>
 		</li>
 			</ul>
@@ -112,7 +115,8 @@ function colorboxImage(url) {
 		<li class="table_list_l table_list_l50"><font color="green">启用</font></li>
 				<li class="table_list_l table_list_l200" accessStatus=1>
 			<a name="imageview" href="http://localhost:82/laugh/Uploads/AdImage/1368168836_w2hsg2_8994_ad_banner2.png">查看图片</a>
-			<a name="ajax" href="/laugh/admin/index.php?s=Advertise/UpdateHomeCenterAdStatus&id=4&status=0">启用/禁用</a>
+			<!-- <a name="ajax" href="/laugh/admin/index.php?s=Advertise/UpdateHomeCenterAdStatus&id=4&status=0">启用/禁用</a> -->
+			<a name="AdvertiseEdit" href="/laugh/admin/index.php?s=Advertise/AdvertiseEdit&id=4">编辑</a>
 			<a name="ajax" msg="确定删除吗？" href="/laugh/admin/index.php?s=Advertise/DeleteAdvertise&id=4">删除</a>
 		</li>
 			</ul>

@@ -52,7 +52,8 @@
 		{if $accessStatus == 1}
 		<li class="table_list_l table_list_l200" accessStatus={$accessStatus}>
 			<a name="imageview" href="__APPM__{$d.path}">查看图片</a>
-			<a name="ajax" href="__APP__/index.php?s=Advertise/UpdateHomeCenterAdStatus&id={$d.id}&status={if $d.status}0{else}1{/if}">启用/禁用</a>
+			<!-- <a name="ajax" href="__APP__/index.php?s=Advertise/UpdateHomeCenterAdStatus&id={$d.id}&status={if $d.status}0{else}1{/if}">启用/禁用</a> -->
+			<a name="AdvertiseEdit" href="__APP__/index.php?s=Advertise/AdvertiseEdit&id={$d.id}">编辑</a>
 			<a name="ajax" msg="确定删除吗？" href="__APP__/index.php?s=Advertise/DeleteAdvertise&id={$d.id}">删除</a>
 		</li>
 		{/if}

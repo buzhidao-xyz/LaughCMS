@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-10 09:28:54
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-17 09:47:10
          compiled from "C:\xampp\htdocs\laugh\themes\default\Download\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:30036518c4d56ad0231-21802112%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1159951958c1ebda8a8-91216068%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '6ed13491c35e3df74e3c1442205bbe5a9241c629' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\themes\\default\\Download\\index.html',
-      1 => 1367142638,
+      1 => 1368669462,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '30036518c4d56ad0231-21802112',
+  'nocache_hash' => '1159951958c1ebda8a8-91216068',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_518c4d56bce107_13621125',
+  'unifunc' => 'content_51958c1ecb7512_34705631',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_518c4d56bce107_13621125')) {function content_518c4d56bce107_13621125($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_51958c1ecb7512_34705631')) {function content_51958c1ecb7512_34705631($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate ("Common/Top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
@@ -34,7 +34,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 <div id="WrapContainer" class="wrap">
 	<div class="adBanner block">
-		<a href="javascript:;" target="_blank"><img src="themes/default/images/ad_banner.png" width="1000" height="80" /></a>
+		<?php echo CMSTagAdvertise(array('flag'=>2,'html'=>'<a href="[field.link]" target="_blank"><img src="[field.path]" width="1000" height="80" /></a>'),$_smarty_tpl);?>
+
 	</div>
 	<div class="CurPosition mtop5">
 		当前位置: <?php echo $_smarty_tpl->tpl_vars['CurrentPosition']->value;?>

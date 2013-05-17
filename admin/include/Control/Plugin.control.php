@@ -577,8 +577,6 @@ class PluginControl extends CommonControl
     //修改导航信息
     public function NavigationEdit()
     {
-        $this->assign("accessStatus", 1);
-
         $id = q('id');
         if (empty($id)) $this->ajaxReturn(1,'导航不存在！');
 

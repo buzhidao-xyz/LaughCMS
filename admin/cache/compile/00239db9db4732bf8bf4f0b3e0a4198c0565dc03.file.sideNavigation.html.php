@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-16 17:30:27
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-17 09:34:07
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Plugin\sideNavigation.html" */ ?>
-<?php /*%%SmartyHeaderCode:123925194a73379e326-12516670%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:29255195890f4aa7b6-18859492%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '00239db9db4732bf8bf4f0b3e0a4198c0565dc03' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\Plugin\\sideNavigation.html',
-      1 => 1368676579,
+      1 => 1368753282,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '123925194a73379e326-12516670',
+  'nocache_hash' => '29255195890f4aa7b6-18859492',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5194a733896f84_59878850',
+  'unifunc' => 'content_5195890f5ad089_63499733',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5194a733896f84_59878850')) {function content_5194a733896f84_59878850($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_5195890f5ad089_63499733')) {function content_5195890f5ad089_63499733($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
 <div class="formContainer" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
@@ -80,7 +80,7 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
     	<?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
     	<li class="table_list_l table_list_l100" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
 >
-    		<a name="edit" href="__APP__/index.php?s=Plugin/NavigationEdit&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+    		<a name="NavigationEdit" href="__APP__/index.php?s=Plugin/NavigationEdit&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 ">修改</a>
     		<a delurl="__APP__/index.php?s=Plugin/NavigationDelete&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 " href="javascript:;" name="del" msg="确定删除吗？">删除</a>
@@ -96,7 +96,7 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 
 <script type="text/javascript">
 $(document).ready(function (){
-	$("a[name=edit]").click(function (){
+	$("a[name=NavigationEdit]").click(function (){
 		window.parent.colorboxAjaxHtml($(this).attr("href"));
 		return false;
 	});

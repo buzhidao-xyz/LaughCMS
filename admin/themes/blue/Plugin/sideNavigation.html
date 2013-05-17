@@ -39,7 +39,7 @@
     	<li class="table_list_l table_list_l150">{$d.createtime|mkdate}</li>
     	{if $accessStatus == 1}
     	<li class="table_list_l table_list_l100" accessStatus={$accessStatus}>
-    		<a name="edit" href="__APP__/index.php?s=Plugin/NavigationEdit&id={$d.id}">修改</a>
+    		<a name="NavigationEdit" href="__APP__/index.php?s=Plugin/NavigationEdit&id={$d.id}">修改</a>
     		<a delurl="__APP__/index.php?s=Plugin/NavigationDelete&id={$d.id}" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>
     	{/if}
@@ -52,7 +52,7 @@
 {include file="public/page.html"}
 <script type="text/javascript">
 $(document).ready(function (){
-	$("a[name=edit]").click(function (){
+	$("a[name=NavigationEdit]").click(function (){
 		window.parent.colorboxAjaxHtml($(this).attr("href"));
 		return false;
 	});
