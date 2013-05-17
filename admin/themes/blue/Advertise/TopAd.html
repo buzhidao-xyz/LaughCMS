@@ -77,9 +77,14 @@ $("form[name=newform]").submit(function (){
 });
 var AdvertiseClass = function (){
 	var Obj = {
-		imageview: $("a[name=imageview]")
+		imageview: $("a[name=imageview]"),
+		AdvertiseEdit: $("a[name=AdvertiseEdit]")
 	}
 	Obj.imageview.click(function (){
+		window.parent.colorboxImage($(this).attr("href"));
+		return false;
+	});
+	Obj.AdvertiseEdit.click(function (){
 		window.parent.colorboxImage($(this).attr("href"));
 		return false;
 	});

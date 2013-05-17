@@ -18,10 +18,10 @@ class Advertise extends Base
 	 * @param int $flag 广告分类标记 默认为1
 	 * @param array $where 条件数组
 	 */
-	public function getAdvertise($id=null,$start=0,$length=0,$flag=1,$where=array())
+	public function getAdvertise($id=null,$start=0,$length=0,$flag=null,$where=array())
 	{
 		if (!empty($id)) $where['id'] = is_array($id) ? array("in",$id) : $id;
-		$where['flag'] = $flag;
+		if ($flag) $where['flag'] = $flag;
 
 		$total = T("advertise")->where($where)->count();
 		$obj = T("advertise")->where($where);
@@ -45,6 +45,18 @@ class Advertise extends Base
 			'createtime' => $createtime
 		);
 		return T("advertise")->add($data);
+	}
+
+	//修改广告信息
+	public function AdvertiseEditSave($id=null,$title=null,$link=null,$status=null)
+	{
+		if (empty($id)) return false;
+		$data = array(
+			'title' => $title,
+			'link'  => $link,
+			'status'=> $status
+		);
+		return T("advertise")->where(array("id"=>$id))->update($data);
 	}
 
 	//更新状态

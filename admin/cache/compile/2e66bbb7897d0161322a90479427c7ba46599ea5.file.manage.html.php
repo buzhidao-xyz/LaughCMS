@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-16 10:08:32
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-17 15:20:11
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\node\manage.html" */ ?>
-<?php /*%%SmartyHeaderCode:1844051943fa04418b3-71979248%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:21695195da2b41b774-87822448%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1844051943fa04418b3-71979248',
+  'nocache_hash' => '21695195da2b41b774-87822448',
   'function' => 
   array (
   ),
@@ -26,9 +26,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_51943fa05b5f52_30795800',
+  'unifunc' => 'content_5195da2b58fb16_45291889',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51943fa05b5f52_30795800')) {function content_51943fa05b5f52_30795800($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_5195da2b58fb16_45291889')) {function content_5195da2b58fb16_45291889($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="captitle"><h5>节点列表 【目前共有<?php if ($_smarty_tpl->tpl_vars['total']->value){?><?php echo $_smarty_tpl->tpl_vars['total']->value;?>
 <?php }else{ ?>0<?php }?>条数据】</h5></div>

@@ -79,18 +79,20 @@ function colorboxImage(url) {
 		<li class="table_list_l table_list_l50"><font color="green">启用</font></li>
 				<li class="table_list_l table_list_l200" accessStatus=1>
 			<a name="imageview" href="http://localhost:82/laugh/Uploads/AdImage/1368170151_s68hvp_191_1368168489_ru3un2_8465_ad_banner.png">查看图片</a>
-			<a name="ajax" href="/laugh/admin/index.php?s=Advertise/UpdateHomeCenterAdStatus&id=5&status=0">启用/禁用</a>
+			<!-- <a name="ajax" href="/laugh/admin/index.php?s=Advertise/UpdateHomeCenterAdStatus&id=5&status=0">启用/禁用</a> -->
+			<a name="AdvertiseEdit" href="/laugh/admin/index.php?s=Advertise/AdvertiseEdit&id=5">编辑</a>
 			<a name="ajax" msg="确定删除吗？" href="/laugh/admin/index.php?s=Advertise/DeleteAdvertise&id=5">删除</a>
 		</li>
 			</ul>
 		<ul class="table_list">
 		<li class="table_list_l table_list_l30 table_list_no">1</li>
 		<li class="table_list_l table_list_l250" title="栏目顶部广告">栏目顶部广告</li>
-		<li class="table_list_l table_list_l350" title="http://www.163.com/">http://www.163.com/</li>
+		<li class="table_list_l table_list_l350" title="javascript:;">javascript:;</li>
 		<li class="table_list_l table_list_l50"><font color="green">启用</font></li>
 				<li class="table_list_l table_list_l200" accessStatus=1>
 			<a name="imageview" href="http://localhost:82/laugh/Uploads/AdImage/1368170176_qzdzxd_6220_1368168531_sqifub_4518_ad_banner0.png">查看图片</a>
-			<a name="ajax" href="/laugh/admin/index.php?s=Advertise/UpdateHomeCenterAdStatus&id=6&status=0">启用/禁用</a>
+			<!-- <a name="ajax" href="/laugh/admin/index.php?s=Advertise/UpdateHomeCenterAdStatus&id=6&status=0">启用/禁用</a> -->
+			<a name="AdvertiseEdit" href="/laugh/admin/index.php?s=Advertise/AdvertiseEdit&id=6">编辑</a>
 			<a name="ajax" msg="确定删除吗？" href="/laugh/admin/index.php?s=Advertise/DeleteAdvertise&id=6">删除</a>
 		</li>
 			</ul>
@@ -109,9 +111,14 @@ $("form[name=newform]").submit(function (){
 });
 var AdvertiseClass = function (){
 	var Obj = {
-		imageview: $("a[name=imageview]")
+		imageview: $("a[name=imageview]"),
+		AdvertiseEdit: $("a[name=AdvertiseEdit]")
 	}
 	Obj.imageview.click(function (){
+		window.parent.colorboxImage($(this).attr("href"));
+		return false;
+	});
+	Obj.AdvertiseEdit.click(function (){
 		window.parent.colorboxImage($(this).attr("href"));
 		return false;
 	});

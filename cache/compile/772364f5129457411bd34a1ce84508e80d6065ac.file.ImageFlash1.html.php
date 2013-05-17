@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-17 09:47:08
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-17 16:56:37
          compiled from "C:\xampp\htdocs\laugh\themes\default\Common\ImageFlash1.html" */ ?>
-<?php /*%%SmartyHeaderCode:2367251958c1cd83cf2-65097412%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:144185195f0c55dcc75-24839660%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2367251958c1cd83cf2-65097412',
+  'nocache_hash' => '144185195f0c55dcc75-24839660',
   'function' => 
   array (
   ),
@@ -23,9 +23,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_51958c1cddf539_69260568',
+  'unifunc' => 'content_5195f0c56684e4_16968213',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51958c1cddf539_69260568')) {function content_51958c1cddf539_69260568($_smarty_tpl) {?><link media="screen" href="public/plugin/xslider/xslider.css" rel="stylesheet" type="text/css">
+<?php if ($_valid && !is_callable('content_5195f0c56684e4_16968213')) {function content_5195f0c56684e4_16968213($_smarty_tpl) {?><link media="screen" href="public/plugin/xslider/xslider.css" rel="stylesheet" type="text/css">
 <div id="SImageContainer" class="slider">
 	<div class="conbox">
 		<?php  $_smarty_tpl->tpl_vars['d'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['d']->_loop = false;

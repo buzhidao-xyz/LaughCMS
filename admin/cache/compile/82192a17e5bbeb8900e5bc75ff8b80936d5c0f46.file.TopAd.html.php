@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-15 17:02:35
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-17 16:56:28
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Advertise\TopAd.html" */ ?>
-<?php /*%%SmartyHeaderCode:1759051934f2b08e919-42111816%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:282225195f0bcecd619-50380097%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '82192a17e5bbeb8900e5bc75ff8b80936d5c0f46' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\Advertise\\TopAd.html',
-      1 => 1368169225,
+      1 => 1368780553,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1759051934f2b08e919-42111816',
+  'nocache_hash' => '282225195f0bcecd619-50380097',
   'function' => 
   array (
   ),
@@ -25,9 +25,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_51934f2b1f3b37_75138679',
+  'unifunc' => 'content_5195f0bd0dd433_35054516',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51934f2b1f3b37_75138679')) {function content_51934f2b1f3b37_75138679($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_5195f0bd0dd433_35054516')) {function content_5195f0bd0dd433_35054516($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
 <div class="formContainer" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
@@ -96,8 +96,10 @@ $_smarty_tpl->tpl_vars['d']->_loop = true;
 >
 			<a name="imageview" href="__APPM__<?php echo $_smarty_tpl->tpl_vars['d']->value['path'];?>
 ">查看图片</a>
-			<a name="ajax" href="__APP__/index.php?s=Advertise/UpdateHomeCenterAdStatus&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
-&status=<?php if ($_smarty_tpl->tpl_vars['d']->value['status']){?>0<?php }else{ ?>1<?php }?>">启用/禁用</a>
+			<!-- <a name="ajax" href="__APP__/index.php?s=Advertise/UpdateHomeCenterAdStatus&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+&status=<?php if ($_smarty_tpl->tpl_vars['d']->value['status']){?>0<?php }else{ ?>1<?php }?>">启用/禁用</a> -->
+			<a name="AdvertiseEdit" href="__APP__/index.php?s=Advertise/AdvertiseEdit&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+">编辑</a>
 			<a name="ajax" msg="确定删除吗？" href="__APP__/index.php?s=Advertise/DeleteAdvertise&id=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
 ">删除</a>
 		</li>
@@ -122,9 +124,14 @@ $("form[name=newform]").submit(function (){
 });
 var AdvertiseClass = function (){
 	var Obj = {
-		imageview: $("a[name=imageview]")
+		imageview: $("a[name=imageview]"),
+		AdvertiseEdit: $("a[name=AdvertiseEdit]")
 	}
 	Obj.imageview.click(function (){
+		window.parent.colorboxImage($(this).attr("href"));
+		return false;
+	});
+	Obj.AdvertiseEdit.click(function (){
 		window.parent.colorboxImage($(this).attr("href"));
 		return false;
 	});

@@ -32,8 +32,10 @@ class CommonControl extends BaseControl
 
         $this->assign("control", $this->_control);
         $this->assign("action", $this->_action);
-
+        //获取友情链接
         $this->getFlink();
+        //获取导航列表
+        $this->getNavigation();
 
         //输出配置信息
         $this->getConfig();
@@ -183,6 +185,13 @@ class CommonControl extends BaseControl
             }
         }
         $this->assign("FlinkList",$FlinkList);
+    }
+
+    //获取底部导航信息
+    public function getNavigation()
+    {
+        $NavigationList = array();
+        $NavigationList = T("navigation")->where(array("flag"=>1))->select();
     }
 
     //获取配置信息并打印输出 - SEO优化

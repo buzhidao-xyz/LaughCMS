@@ -365,6 +365,24 @@ function colorboxImage(url) {
 					<span class="w120"><input type="checkbox" name="node[]" value="44,1"  node="cNode" flag="cNode2" class="checkbox" /></span>
 				</div>
 									</div>
+					<div title="" li=1 class="li">
+				<span class="expand"></span>
+				<span class="w670">导航管理</span>
+				<span class="w120"><input type="checkbox" name="node[]" value="51,0"  node="pNode" flag="pNode1" class="checkbox" /></span>
+				<span class="w120"><input type="checkbox" name="node[]" value="51,1"  node="pNode" flag="pNode2" class="checkbox" /></span>
+			</div>
+			<div class="ul childNode" ul=1>
+										<div flag=1 title="" li=1 class="li">
+					<span class="w656">底部导航</span>
+					<span class="w120"><input type="checkbox" name="node[]" value="52,0"  node="cNode" flag="cNode1" class="checkbox" /></span>
+					<span class="w120"><input type="checkbox" name="node[]" value="52,1"  node="cNode" flag="cNode2" class="checkbox" /></span>
+				</div>
+							<div flag=1 title="" li=1 class="li">
+					<span class="w656">快捷导航</span>
+					<span class="w120"><input type="checkbox" name="node[]" value="53,0"  node="cNode" flag="cNode1" class="checkbox" /></span>
+					<span class="w120"><input type="checkbox" name="node[]" value="53,1"  node="cNode" flag="cNode2" class="checkbox" /></span>
+				</div>
+									</div>
 						</div>
 	</div>
 		<div ul=1 class="ul groupTree">

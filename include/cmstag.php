@@ -4,6 +4,8 @@
  * by wbq 2013-05-15
  */
 
+/*********************************block标签*********************************/
+
 /**
  * 获取某个栏目下的文档列表
  * @param int $columnid 栏目id
@@ -11,9 +13,9 @@
 function CMSTagArchive($params=array(),$content=null,&$smarty,&$repeat)
 {
 	if (!isset($params['columnid'])) return false;
-	$html = null;
-
 	extract($params);
+
+	$html = null;
 	$columnid = isset($columnid) ? $columnid : null;
 	$ArticleList = D("Archive")->getAllArchive($columnid,5);
 	if (!empty($ArticleList['data'])) {
@@ -31,6 +33,8 @@ function CMSTagArchive($params=array(),$content=null,&$smarty,&$repeat)
 	if(!$repeat) return $html;
 }
 
+/*********************************block标签*********************************/
+
 /**
  * 广告标签解析
  * @param string $flag 广告位置 1:首页中部 2:栏目页顶部
@@ -39,7 +43,6 @@ function CMSTagArchive($params=array(),$content=null,&$smarty,&$repeat)
 function CMSTagAdvertise($params=array())
 {
 	if (!isset($params['flag'])) return false;
-
 	extract($params);
 
     $where = array(
@@ -58,4 +61,13 @@ function CMSTagAdvertise($params=array())
     $html = str_replace($search, $replace, $html);
     
     return $html;
+}
+
+/**
+ * 获取导航
+ * @param int $flag 导航位置 1:底部导航 2:右侧导航
+ */
+function CMSTagNavigation($params=array())
+{
+	if (!isset($params['flag'])) return false;
 }

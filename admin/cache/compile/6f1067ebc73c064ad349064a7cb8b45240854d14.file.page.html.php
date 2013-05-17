@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-17 10:29:51
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-17 16:58:08
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\public\page.html" */ ?>
-<?php /*%%SmartyHeaderCode:167935195961f9383e2-25116894%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:288745195f120db3276-53235788%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '167935195961f9383e2-25116894',
+  'nocache_hash' => '288745195f120db3276-53235788',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5195961fa3fbf2_40351636',
+  'unifunc' => 'content_5195f120eba614_64158178',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5195961fa3fbf2_40351636')) {function content_5195961fa3fbf2_40351636($_smarty_tpl) {?><?php if (isset($_smarty_tpl->tpl_vars['page']->value)&&$_smarty_tpl->tpl_vars['page']->value&&count($_smarty_tpl->tpl_vars['page']->value['page'])>1){?>
+<?php if ($_valid && !is_callable('content_5195f120eba614_64158178')) {function content_5195f120eba614_64158178($_smarty_tpl) {?><?php if (isset($_smarty_tpl->tpl_vars['page']->value)&&$_smarty_tpl->tpl_vars['page']->value&&count($_smarty_tpl->tpl_vars['page']->value['page'])>1){?>
 <div id="<?php if (isset($_smarty_tpl->tpl_vars['isface']->value)){?>facepage<?php }else{ ?>compage<?php }?>" class="pagination">
 	<?php if ($_smarty_tpl->tpl_vars['page']->value['firstpage']['row']){?>
 	<a class="pageprev graya fleft" href="<?php if ($_smarty_tpl->tpl_vars['page']->value['firstpage']['href']){?><?php echo $_smarty_tpl->tpl_vars['page']->value['firstpage']['href'];?>

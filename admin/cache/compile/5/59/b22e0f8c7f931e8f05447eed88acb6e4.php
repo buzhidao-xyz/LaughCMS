@@ -51,7 +51,7 @@ function colorboxImage(url) {
 		</ul>
 	</form>
 </div>
-<div class="captitle"><h5>底部导航列表【总计1】</h5></div>
+<div class="captitle"><h5>底部导航列表【总计5】</h5></div>
 <ul class="table_list_title">
 	<li class="table_list_l table_list_l30"></li>
 	<li class="table_list_l table_list_l120">导航标题</li>
@@ -68,6 +68,46 @@ function colorboxImage(url) {
     	    	<li class="table_list_l table_list_l100" accessStatus=1>
     		<a name="NavigationEdit" href="/laugh/admin/index.php?s=Plugin/NavigationEdit&id=1">修改</a>
     		<a delurl="/laugh/admin/index.php?s=Plugin/NavigationDelete&id=1" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
+    	    </ul>
+        <ul class="table_list">
+		<li class="table_list_l table_list_l30 table_list_no">1</li>
+		<li class="table_list_l table_list_l120">关于我们</li>
+		<li class="table_list_l table_list_l500"><a href="http://localhost:82/laugh/index.php?s=Public/AboutUS&amp;columnid=10" target="_blank">http://localhost:82/laugh/index.php?s=Public/AboutUS&amp;columnid=10</a></li>
+    	<li class="table_list_l table_list_l150">2013-05-17 16:57:00</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a name="NavigationEdit" href="/laugh/admin/index.php?s=Plugin/NavigationEdit&id=3">修改</a>
+    		<a delurl="/laugh/admin/index.php?s=Plugin/NavigationDelete&id=3" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
+    	    </ul>
+        <ul class="table_list">
+		<li class="table_list_l table_list_l30 table_list_no">1</li>
+		<li class="table_list_l table_list_l120">联系我们</li>
+		<li class="table_list_l table_list_l500"><a href="http://localhost:82/laugh/index.php?s=Public/ContactUS&amp;columnid=11" target="_blank">http://localhost:82/laugh/index.php?s=Public/ContactUS&amp;columnid=11</a></li>
+    	<li class="table_list_l table_list_l150">2013-05-17 16:57:17</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a name="NavigationEdit" href="/laugh/admin/index.php?s=Plugin/NavigationEdit&id=4">修改</a>
+    		<a delurl="/laugh/admin/index.php?s=Plugin/NavigationDelete&id=4" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
+    	    </ul>
+        <ul class="table_list">
+		<li class="table_list_l table_list_l30 table_list_no">1</li>
+		<li class="table_list_l table_list_l120">在线手册</li>
+		<li class="table_list_l table_list_l500"><a href="javascript:;" target="_blank">javascript:;</a></li>
+    	<li class="table_list_l table_list_l150">2013-05-17 16:57:52</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a name="NavigationEdit" href="/laugh/admin/index.php?s=Plugin/NavigationEdit&id=5">修改</a>
+    		<a delurl="/laugh/admin/index.php?s=Plugin/NavigationDelete&id=5" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li>
+    	    </ul>
+        <ul class="table_list">
+		<li class="table_list_l table_list_l30 table_list_no">1</li>
+		<li class="table_list_l table_list_l120">帮助中心</li>
+		<li class="table_list_l table_list_l500"><a href="javascript:;" target="_blank">javascript:;</a></li>
+    	<li class="table_list_l table_list_l150">2013-05-17 16:58:08</li>
+    	    	<li class="table_list_l table_list_l100" accessStatus=1>
+    		<a name="NavigationEdit" href="/laugh/admin/index.php?s=Plugin/NavigationEdit&id=6">修改</a>
+    		<a delurl="/laugh/admin/index.php?s=Plugin/NavigationDelete&id=6" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
     	</li>
     	    </ul>
         </div>

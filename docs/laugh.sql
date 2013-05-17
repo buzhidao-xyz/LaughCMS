@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2013-05-16 17:31:13
+Date: 2013-05-17 17:26:35
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -38,7 +38,7 @@ CREATE TABLE `la_admin` (
 -- ----------------------------
 -- Records of la_admin
 -- ----------------------------
-INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1368670098', '2130706433', '127', '1');
+INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1368775182', '2130706433', '127', '1');
 INSERT INTO `la_admin` VALUES ('2', 'luochuan', '624879b3fff70462132a21eb1cd8eb75', 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '1355368421', '2130706433', '12', '0');
 
 -- ----------------------------
@@ -78,7 +78,7 @@ INSERT INTO `la_advertise` VALUES ('2', '首页Banner', 'http://www.baidu.com/',
 INSERT INTO `la_advertise` VALUES ('3', '首页Banner', '', '/Uploads/AdImage/1368168608_9f5u5y_7755_ad_banner1.png', '1', '1', '1368168608');
 INSERT INTO `la_advertise` VALUES ('4', '首页Banner', '', '/Uploads/AdImage/1368168836_w2hsg2_8994_ad_banner2.png', '1', '1', '1368168836');
 INSERT INTO `la_advertise` VALUES ('5', '栏目顶部广告', 'http://www.baidu.com/', '/Uploads/AdImage/1368170151_s68hvp_191_1368168489_ru3un2_8465_ad_banner.png', '2', '1', '1368170151');
-INSERT INTO `la_advertise` VALUES ('6', '栏目顶部广告', 'http://www.163.com/', '/Uploads/AdImage/1368170176_qzdzxd_6220_1368168531_sqifub_4518_ad_banner0.png', '2', '1', '1368170176');
+INSERT INTO `la_advertise` VALUES ('6', '栏目顶部广告', 'javascript:;', '/Uploads/AdImage/1368170176_qzdzxd_6220_1368168531_sqifub_4518_ad_banner0.png', '2', '1', '1368170176');
 
 -- ----------------------------
 -- Table structure for `la_archive`
@@ -4006,13 +4006,17 @@ CREATE TABLE `la_navigation` (
   `flag` tinyint(1) DEFAULT NULL COMMENT '导航位置 1:底部 2:快捷导航',
   `createtime` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_navigation
 -- ----------------------------
 INSERT INTO `la_navigation` VALUES ('1', '招贤纳士', 'http://localhost:82/laugh/index.php?s=Plugin/Cooperate&amp;columnid=9', '0', '1', '1368675893');
 INSERT INTO `la_navigation` VALUES ('2', '新闻资讯', 'http://localhost:82/laugh/index.php?s=Article/index&amp;columnid=2', '0', '2', '1368676692');
+INSERT INTO `la_navigation` VALUES ('3', '关于我们', 'http://localhost:82/laugh/index.php?s=Public/AboutUS&amp;columnid=10', '0', '1', '1368781020');
+INSERT INTO `la_navigation` VALUES ('4', '联系我们', 'http://localhost:82/laugh/index.php?s=Public/ContactUS&amp;columnid=11', '0', '1', '1368781037');
+INSERT INTO `la_navigation` VALUES ('5', '在线手册', 'javascript:;', '0', '1', '1368781072');
+INSERT INTO `la_navigation` VALUES ('6', '帮助中心', 'javascript:;', '0', '1', '1368781088');
 
 -- ----------------------------
 -- Table structure for `la_node`

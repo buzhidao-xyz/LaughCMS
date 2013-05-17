@@ -97,9 +97,28 @@ class AdvertiseControl extends CommonControl
 		if (empty($id)) $this->ajaxReturn(1,"广告不存在！");
 
 		$AdvertiseInfo = M("Advertise")->getAdvertise($id);
-		$this->assign("AdvertiseInfo", $AdvertiseInfo);
+		$this->assign("AdvertiseInfo", $AdvertiseInfo['data'][0]);
 
 		$this->display("Advertise/AdvertiseEdit.html");
+	}
+
+	//保存修改后的广告信息
+	public function AdvertiseEditSave()
+	{
+		$id = q("advertiseid");
+		if (empty($id)) $this->ajaxReturn(1,"广告不存在！");
+
+		$title = q("title");
+		if (empty($title)) $this->showMessage('请填写标题！',0);
+		$link = q("link");
+		$status = q("status");
+
+		$return = M("Advertise")->AdvertiseEditSave($id,$title,$link,$status);
+		if ($return) {
+			$this->ajaxReturn(0,"修改成功！");
+		} else {
+			$this->ajaxReturn(1,"修改失败！");
+		}
 	}
 
 	//修改广告状态

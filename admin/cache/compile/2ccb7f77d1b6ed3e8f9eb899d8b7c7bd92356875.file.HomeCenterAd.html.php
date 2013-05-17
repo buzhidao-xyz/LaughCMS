@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-17 10:29:58
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-17 16:56:27
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Advertise\HomeCenterAd.html" */ ?>
-<?php /*%%SmartyHeaderCode:107851959626cc1940-86627421%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:252505195f0bbbc24d3-18947201%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '2ccb7f77d1b6ed3e8f9eb899d8b7c7bd92356875' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\Advertise\\HomeCenterAd.html',
-      1 => 1368757789,
+      1 => 1368758720,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '107851959626cc1940-86627421',
+  'nocache_hash' => '252505195f0bbbc24d3-18947201',
   'function' => 
   array (
   ),
@@ -25,9 +25,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_51959626e08bf2_62458935',
+  'unifunc' => 'content_5195f0bbd05d39_97999870',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51959626e08bf2_62458935')) {function content_51959626e08bf2_62458935($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_5195f0bbd05d39_97999870')) {function content_5195f0bbd05d39_97999870($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
 <div class="formContainer" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
@@ -124,9 +124,14 @@ $("form[name=newform]").submit(function (){
 });
 var AdvertiseClass = function (){
 	var Obj = {
-		imageview: $("a[name=imageview]")
+		imageview: $("a[name=imageview]"),
+		AdvertiseEdit: $("a[name=AdvertiseEdit]")
 	}
 	Obj.imageview.click(function (){
+		window.parent.colorboxImage($(this).attr("href"));
+		return false;
+	});
+	Obj.AdvertiseEdit.click(function (){
 		window.parent.colorboxImage($(this).attr("href"));
 		return false;
 	});
