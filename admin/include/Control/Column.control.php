@@ -21,7 +21,7 @@ class ColumnControl extends CommonControl
 	private function _getparentid()
 	{
 		$parentid = q("parentid");
-		return $parentid;
+		return $parentid ? $parentid : 0;
 	}
 
 	private function _getColumnModel()
