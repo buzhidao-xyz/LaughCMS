@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-17 09:11:54
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-20 14:04:51
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\System\SystemInfo.html" */ ?>
-<?php /*%%SmartyHeaderCode:18094519583da82ac80-77300666%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:35025199bd03529707-32812289%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '18094519583da82ac80-77300666',
+  'nocache_hash' => '35025199bd03529707-32812289',
   'function' => 
   array (
   ),
@@ -25,9 +25,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_519583da9a9c36_47860729',
+  'unifunc' => 'content_5199bd036b1a95_63276772',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_519583da9a9c36_47860729')) {function content_519583da9a9c36_47860729($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_5199bd036b1a95_63276772')) {function content_5199bd036b1a95_63276772($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="opTop">
 	<a href="__APP__/index.php?s=System/systemInfo" class="opTopOn">系统参数设置</a> |

@@ -161,3 +161,16 @@ function getPage($total, $pagesize=20, $flag=0, $parameter='')
     if ($flag === 0) return $pageObj->getAdminPageArray();
     if ($flag === 1) return $pageObj->getFrontPageArray();
 }
+
+//格式化二维数组加入AutoIndex
+function DataListAutoIndex($dataList=array())
+{
+    if (empty($dataList)) return false;
+    $n = 1;
+    foreach ($dataList as $k=>$d) {
+        $dataList[$k]['AutoIndex'] = $n;
+        $n++;
+    }
+
+    return $dataList;
+}

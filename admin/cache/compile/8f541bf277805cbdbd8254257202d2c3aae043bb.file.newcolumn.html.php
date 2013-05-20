@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-10 15:29:24
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-20 14:05:05
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Column\newcolumn.html" */ ?>
-<?php /*%%SmartyHeaderCode:2974518ca1d42adad0-26290958%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:176765199bd11447e58-29880886%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '8f541bf277805cbdbd8254257202d2c3aae043bb' => 
     array (
       0 => 'C:\\xampp\\htdocs\\laugh\\admin\\themes\\blue\\Column\\newcolumn.html',
-      1 => 1367142637,
+      1 => 1368173193,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2974518ca1d42adad0-26290958',
+  'nocache_hash' => '176765199bd11447e58-29880886',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_518ca1d43436a3_46047604',
+  'unifunc' => 'content_5199bd115057a1_07015847',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_518ca1d43436a3_46047604')) {function content_518ca1d43436a3_46047604($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_5199bd115057a1_07015847')) {function content_5199bd115057a1_07015847($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php if ($_smarty_tpl->tpl_vars['accessStatus']->value==1){?>
 <div class="formContainer" accessStatus=<?php echo $_smarty_tpl->tpl_vars['accessStatus']->value;?>
@@ -104,6 +104,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						<textarea name="content" id="myEditor" rows="3" cols="50"></textarea>
 					</div>
 				</li>
+			</div>
 			</div>
 			<li class="formblock bordernone bgf6">
 				<input type="submit" name="subut" class="button btnblue2" value="添加" />

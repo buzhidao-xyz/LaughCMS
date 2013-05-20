@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-17 16:57:13
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-20 14:38:33
          compiled from "C:\xampp\htdocs\laugh\themes\default\Common\MessageBoard.html" */ ?>
-<?php /*%%SmartyHeaderCode:174185195f0e9acf416-92067045%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:10245199c4e933ebe6-53512515%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,15 +11,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '174185195f0e9acf416-92067045',
+  'nocache_hash' => '10245199c4e933ebe6-53512515',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5195f0e9b06bf6_13202831',
+  'unifunc' => 'content_5199c4e9369237_95995293',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5195f0e9b06bf6_13202831')) {function content_5195f0e9b06bf6_13202831($_smarty_tpl) {?><div class="MessageBoard">
+<?php if ($_valid && !is_callable('content_5199c4e9369237_95995293')) {function content_5199c4e9369237_95995293($_smarty_tpl) {?><div class="MessageBoard">
 	<div class="title">
 		<a href="javascript:;">留言板</a>
 	</div>

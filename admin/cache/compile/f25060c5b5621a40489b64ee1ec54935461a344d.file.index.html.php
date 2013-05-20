@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-10 16:05:19
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-20 14:05:16
          compiled from "C:\xampp\htdocs\laugh\admin\themes\blue\Article\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:4824518caa3f7dd428-27187006%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:211865199bd1c503924-01058595%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '4824518caa3f7dd428-27187006',
+  'nocache_hash' => '211865199bd1c503924-01058595',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_518caa3f9045d9_37071039',
+  'unifunc' => 'content_5199bd1c61f414_80933348',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_518caa3f9045d9_37071039')) {function content_518caa3f9045d9_37071039($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_5199bd1c61f414_80933348')) {function content_5199bd1c61f414_80933348($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="opTop">
 	<a href="__APP__/index.php?s=Article/index" class="opTopOn">文章列表</a> |

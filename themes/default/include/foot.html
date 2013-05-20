@@ -1,13 +1,13 @@
 <div id="Footer">
 	<ul id="Link">
-		<li class="bordernone"><a href="__APP__/index.php?s=Cooperate">招贤纳士</a></li>
-		<li><a href="__APP__/index.php?s=Public/AboutUS">关于我们</a></li>
-		<li><a href="__APP__/index.php?s=Cooperate">联系我们</a></li>
-		<li><a href="javascript:;">在线手册</a></li>
-		<li><a href="__APP__/index.php?s=Plugin/QA">帮助中心</a></li>
+		{if isset($FootNavigationList)&&!empty($FootNavigationList)}
+		{foreach $FootNavigationList as $d}
+		<li {if $d.AutoIndex==1}class="bordernone"{/if}><a href="{$d.link}">{$d.title}</a></li>
+		{/foreach}
+		{/if}
 	</ul>
 	<div id="copyright">
-		Laugh CMS 软件科技公司
+		{$Config.sitename}
 		<br/>
 		Powered by <a target="_blank" href="javascript:;">LaughCMS v1.0 Released</a> 版权所有 © 2012-2013, All right reserved. 
 	</div>

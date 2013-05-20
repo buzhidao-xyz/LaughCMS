@@ -231,7 +231,7 @@ $("#SImageContainer").Xslider({
 		<div class="clear"></div>
 	</div>
 	<div class="adBanner block">
-		<a href="" target="_blank"><img src="/laugh/Uploads/AdImage/1368168608_9f5u5y_7755_ad_banner1.png" width="1000" height="80" /></a>
+		<a href="http://www.baidu.com/" target="_blank"><img src="/laugh/Uploads/AdImage/1368168489_ru3un2_8465_ad_banner.png" width="1000" height="80" /></a>
 	</div>
 	<div id="BottomShow" class="block">
 		<div id="ImgListBlock" class="boxBlock fleft w740">
@@ -330,14 +330,14 @@ $("#Flink ul#FlinkboxTab").idTabs(function(id,list,set){
 </div>
 <div id="Footer">
 	<ul id="Link">
-		<li class="bordernone"><a href="/laugh/index.php?s=Cooperate">招贤纳士</a></li>
-		<li><a href="/laugh/index.php?s=Public/AboutUS">关于我们</a></li>
-		<li><a href="/laugh/index.php?s=Cooperate">联系我们</a></li>
-		<li><a href="javascript:;">在线手册</a></li>
-		<li><a href="/laugh/index.php?s=Plugin/QA">帮助中心</a></li>
-	</ul>
+						<li class="bordernone"><a href="http://localhost:82/laugh/index.php?s=Plugin/Cooperate&amp;columnid=9">招贤纳士</a></li>
+				<li ><a href="http://localhost:82/laugh/index.php?s=Public/AboutUS&amp;columnid=10">关于我们</a></li>
+				<li ><a href="http://localhost:82/laugh/index.php?s=Public/ContactUS&amp;columnid=11">联系我们</a></li>
+				<li ><a href="javascript:;">在线手册</a></li>
+				<li ><a href="javascript:;">帮助中心</a></li>
+					</ul>
 	<div id="copyright">
-		Laugh CMS 软件科技公司
+		Laugh CMS - 网站内容管理系统
 		<br/>
 		Powered by <a target="_blank" href="javascript:;">LaughCMS v1.0 Released</a> 版权所有 © 2012-2013, All right reserved. 
 	</div>
