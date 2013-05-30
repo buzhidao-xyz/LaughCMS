@@ -1,0 +1,93 @@
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-30 13:56:24
+         compiled from "F:\website\laugh\themes\sindgood\Common\ProductList.html" */ ?>
+<?php /*%%SmartyHeaderCode:2220751a6ea08078121-42405701%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'd192f555ae72ac7537bc014cbc77667556fb6da8' => 
+    array (
+      0 => 'F:\\website\\laugh\\themes\\sindgood\\Common\\ProductList.html',
+      1 => 1369889605,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '2220751a6ea08078121-42405701',
+  'function' => 
+  array (
+  ),
+  'variables' => 
+  array (
+    'ProductColumnID' => 0,
+    'SubColumnList' => 0,
+    'd' => 0,
+    'v' => 0,
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.12',
+  'unifunc' => 'content_51a6ea08157640_18925030',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_51a6ea08157640_18925030')) {function content_51a6ea08157640_18925030($_smarty_tpl) {?><div id="ImgListBlock" class="boxBlock fleft w740 boxBlock740BG">
+	<div class="boxBlockTitle boxBlockTitle740BG">
+		<span class="title">产品展示</span>
+		<span class="link"><a href="__APP__/index.php?s=Product/index&columnid=<?php echo $_smarty_tpl->tpl_vars['ProductColumnID']->value;?>
+"></a></span>
+		<ul id="ImgboxTab" class="boxTab fleft">
+			<?php if (is_array($_smarty_tpl->tpl_vars['SubColumnList']->value)&&!empty($_smarty_tpl->tpl_vars['SubColumnList']->value)){?>
+			<?php  $_smarty_tpl->tpl_vars['d'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['d']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['SubColumnList']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['d']->key => $_smarty_tpl->tpl_vars['d']->value){
+$_smarty_tpl->tpl_vars['d']->_loop = true;
+?>
+			<li><a tabid="#boxTab<?php echo $_smarty_tpl->tpl_vars['d']->value['AutoIndex'];?>
+" href="javascript:;"><?php echo $_smarty_tpl->tpl_vars['d']->value['columnname'];?>
+</a></li>
+			<?php } ?>
+			<?php }?>
+		</ul>
+	</div>
+	<div class="boxBlockBody h200 boxBlockBody740BG">
+		<?php if (is_array($_smarty_tpl->tpl_vars['SubColumnList']->value)&&!empty($_smarty_tpl->tpl_vars['SubColumnList']->value)){?>
+		<?php  $_smarty_tpl->tpl_vars['d'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['d']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['SubColumnList']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['d']->key => $_smarty_tpl->tpl_vars['d']->value){
+$_smarty_tpl->tpl_vars['d']->_loop = true;
+?>
+		<div id="boxTab<?php echo $_smarty_tpl->tpl_vars['d']->value['AutoIndex'];?>
+" class="boxTabContent">
+			<ul class="ProductList h180">
+				<?php if (isset($_smarty_tpl->tpl_vars['d']->value['ProductList'])&&is_array($_smarty_tpl->tpl_vars['d']->value['ProductList'])&&!empty($_smarty_tpl->tpl_vars['d']->value['ProductList'])){?>
+				<?php  $_smarty_tpl->tpl_vars['v'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['v']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['d']->value['ProductList']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['v']->key => $_smarty_tpl->tpl_vars['v']->value){
+$_smarty_tpl->tpl_vars['v']->_loop = true;
+?>
+				<li>
+					<a class="img" href="__APP__/index.php?s=Product/view&columnid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+&archiveid=<?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
+"><img src="__APP__<?php echo $_smarty_tpl->tpl_vars['v']->value['thumbimage'];?>
+" /></a>
+					<a class="title" href="__APP__/index.php?s=Product/view&columnid=<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+&archiveid=<?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
+" title="<?php echo $_smarty_tpl->tpl_vars['v']->value['title'];?>
+"><?php echo $_smarty_tpl->tpl_vars['v']->value['title'];?>
+</a>
+				</li>
+				<?php } ?>
+				<?php }?>
+			</ul>
+		</div>
+		<?php } ?>
+		<?php }?>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+//图片切换tab
+$("#ImgListBlock ul#ImgboxTab").idTabs(function(id,list,set){ 
+	$("a",set).removeClass("selected").filter("[tabid='"+id+"']",set).addClass("selected"); 
+	for(i in list) $(list[i]).hide(); 
+	$(id).fadeIn(); 
+	return false; 
+});
+});
+</script><?php }} ?>

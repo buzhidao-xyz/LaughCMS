@@ -328,10 +328,11 @@ function runtime($begin_time, $end_time)
 function session($sessionname,$sessionvalue='')
 {
 	$return = true;
+  $sessionname = C("SESSION_ENCRYPT")."_".$sessionname;
 
-    if ($sessionvalue === null) {
-        unset($_SESSION[$sessionname]);
-    } else if (!$sessionvalue) {
+  if ($sessionvalue === null) {
+    unset($_SESSION[$sessionname]);
+  } else if (!$sessionvalue) {
 		$return = isset($_SESSION[$sessionname]) ? $_SESSION[$sessionname] : '';
 	} else {
 		$_SESSION[$sessionname] = $sessionvalue;

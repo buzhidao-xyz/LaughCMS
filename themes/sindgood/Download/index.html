@@ -1,0 +1,47 @@
+{include file="include/head.html"}
+{include file="Common/Top.html"}
+{include file="Common/Header.html"}
+<div id="WrapContainer" class="wrap">
+	<div class="adBanner block">
+		{cmstag_advertise flag=2 html='<a href="[field.link]" target="_blank"><img src="[field.path]" width="1000" height="80" /></a>'}
+	</div>
+	<div class="CurPosition mtop5">
+		当前位置: {$CurrentPosition}
+	</div>
+	<div id="CenterShow" class="block mtop5">
+		<div id="mainBlock" class="fleft w740">
+			<div id="ImgListBlock" class="boxBlock">
+				<div class="boxBlockTitle">
+					<span class="title">{$Column.columnname}</span>
+				</div>
+				<div class="boxBlockBody">
+					<div class="downloadList">
+						<ul class="downloadTitle">
+							<li class="w50">序号</li>
+							<li class="w250">文件名称</li>
+							<li class="w100">大小</li>
+							<li class="w100">发布时间</li>
+							<li class="w50">下载</li>
+						</ul>
+						{if isset($ArchiveList)&&!empty($ArchiveList)}
+						{foreach $ArchiveList as $d}
+						<ul class="downloadBody">
+							<li class="w50">{$d.AutoIndex}</li>
+							<li class="w250">{$d.filename}</li>
+							<li class="w100">{$d.filesize|formatBytes}</li>
+							<li class="w100">{$d.createtime|mkdate:d}</li>
+							<li class="w50"><a href="__APP__/index.php?s=File/Download&id={$d.attachmentid}" target="_blank">下载</a></li>
+						</ul>
+						{/foreach}
+						{/if}
+					</div>
+					{include file="common/Page.html"}
+				</div>
+			</div>
+		</div>
+		{include file="Common/SideBlock.html"}
+		<div class="clear"></div>
+	</div>
+	{include file="Common/Flink.html"}
+</div>
+{include file="include/foot.html"}

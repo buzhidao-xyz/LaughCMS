@@ -367,6 +367,7 @@ ul.ImageList li span {
 ul.SideNavList {
 	overflow: hidden;
 	padding: 3px 5px;
+	padding-bottom: 20px;
 }
 ul.SideNavList li {
 	padding: 2px 0;
@@ -458,7 +459,6 @@ ul.infoboxTab li a.selected {
 	color: #525252;
 	font-weight: 500;
 }
->>>>>>> a0d912a2c775b0b69bd74bc6ffeacd8f841ff3ec
 
 /**********************************其他样式 联系我们、关于我们等**********************************/
 .contentBlock {
@@ -466,6 +466,7 @@ ul.infoboxTab li a.selected {
 }
 .contactUS {
 	padding: 20px;
+	padding-bottom: 30px;
 }
 .contactUS h5 {
 	font-weight: 500;

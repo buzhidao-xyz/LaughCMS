@@ -341,7 +341,7 @@ class ColumnControl extends CommonControl
 		if (T("Column")->where(array("parentid"=>$columnid))->count())
 			$this->ajaxReturn(1,"删除失败！该栏目非空！");
 
-		$return = M("Column")->delete($columnid);
+		$return = M("Column")->deleteColumn($columnid);
 		if ($return) {
 			$this->ajaxReturn(0,"删除成功！");
 		} else {

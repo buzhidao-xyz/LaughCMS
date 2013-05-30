@@ -206,6 +206,8 @@ class CommonControl extends BaseControl
             'sitename' => C('CACHE.sitename'),
             'keywords' => C('CACHE.keywords'),
             'description' => C('CACHE.description'),
+            'HomeSiteTitle' => C('CACHE.HomeSiteTitle'),
+            'AboutUs' => C('CACHE.AboutUs'),
         );
         // dump($Config);exit;
         $this->assign('Config', $Config);

@@ -1,0 +1,42 @@
+<div id="ImgListBlock" class="boxBlock fleft w740 boxBlock740BG">
+	<div class="boxBlockTitle boxBlockTitle740BG">
+		<span class="title">产品展示</span>
+		<span class="link"><a href="__APP__/index.php?s=Product/index&columnid={$ProductColumnID}"></a></span>
+		<ul id="ImgboxTab" class="boxTab fleft">
+			{if is_array($SubColumnList) && !empty($SubColumnList)}
+			{foreach $SubColumnList as $d}
+			<li><a tabid="#boxTab{$d.AutoIndex}" href="javascript:;">{$d.columnname}</a></li>
+			{/foreach}
+			{/if}
+		</ul>
+	</div>
+	<div class="boxBlockBody h200 boxBlockBody740BG">
+		{if is_array($SubColumnList) && !empty($SubColumnList)}
+		{foreach $SubColumnList as $d}
+		<div id="boxTab{$d.AutoIndex}" class="boxTabContent">
+			<ul class="ProductList h180">
+				{if isset($d.ProductList) && is_array($d.ProductList) && !empty($d.ProductList)}
+				{foreach $d.ProductList as $v}
+				<li>
+					<a class="img" href="__APP__/index.php?s=Product/view&columnid={$d.id}&archiveid={$v.id}"><img src="__APP__{$v.thumbimage}" /></a>
+					<a class="title" href="__APP__/index.php?s=Product/view&columnid={$d.id}&archiveid={$v.id}" title="{$v.title}">{$v.title}</a>
+				</li>
+				{/foreach}
+				{/if}
+			</ul>
+		</div>
+		{/foreach}
+		{/if}
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+//图片切换tab
+$("#ImgListBlock ul#ImgboxTab").idTabs(function(id,list,set){ 
+	$("a",set).removeClass("selected").filter("[tabid='"+id+"']",set).addClass("selected"); 
+	for(i in list) $(list[i]).hide(); 
+	$(id).fadeIn(); 
+	return false; 
+});
+});
+</script>

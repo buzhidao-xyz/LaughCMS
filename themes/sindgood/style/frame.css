@@ -1,0 +1,137 @@
+#Top {
+    position: fixed;
+	width: 100%;
+	height: 35px;
+    height: 35px;
+    left: 0;
+    right: 0;
+    top: 0;
+    opacity: 1;
+    z-index: 9999;
+    box-shadow: 0 1px 1px #DDDDDD;
+    background: url("../images/top_bg.png") repeat #FFFFFF;
+    background: #2B2B2B;
+}
+#Header {
+	width: 100%;
+	height: auto;
+	/*margin-top: 35px;*/
+    background: url("../images/header_bg.png") repeat-x #EDF8FF;
+}
+#Header #HeaderMain {
+	width: auto;
+	margin: 0 auto;
+}
+#Header #HeaderStatus {
+    width: 1000px;
+	height: 80px;
+	padding: 10px 0;
+    margin: 0 auto;
+}
+#Header #HeaderStatus .Logo {
+	float: left;
+	width: 200px;
+    margin-top: 5px;
+}
+#Header #HeaderStatus .Center {
+	float: left;
+    font-size: 30px;
+    font-weight: 700;
+    height: 50px;
+    line-height: 40px;
+    margin-top: 20px;
+    width: 530px;
+    text-indent: 20px;
+}
+#Header #HeaderStatus .Operate {
+	float: left;
+	width: 250px;
+}
+#Header #HeaderStatus .Operate .OpTop {
+	height: 20px;
+	text-align: right;
+}
+#Header #HeaderStatus .Operate .Search {
+	float: right;
+	clear: both;
+	overflow: hidden;
+	margin-top: 15px;
+}
+.Search .sinput {
+	-moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: url("../images/icon-search.png") no-repeat scroll 3px center #FFFFFF;
+    border-color: #CACCCD -moz-use-text-color #CACCCD #CACCCD;
+    border-image: none;
+    border-style: solid none solid solid;
+    border-width: 1px 0 1px 1px;
+    color: #666666;
+    float: left;
+    height: 24px;
+    line-height: 24px;
+    margin: 0;
+    padding-left: 20px;
+    width: 150px;
+}
+.Search .sbutton {
+    background: #40661C;
+    border: 1px solid #828282;
+    color: #FFFFFF;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 3px;
+    margin: 0;
+    width: auto;
+}
+#WrapContainer {
+	margin: 0 auto;
+	height: auto;
+	min-height: 500px;
+}
+#ImageFlash {
+    /*padding: 10px;*/
+    overflow: hidden;
+    margin-top: -8px;
+}
+#ImageFlash #SImageContainer {
+	float: left;
+	width: 1000px;
+	height: 300px;
+	background: #FFFFFF;
+}
+#ImageFlash #SImageCaption {
+	float: left;
+	width: 230px;
+	height: 295px;
+	margin: 0 0 0 7px;
+	background: #E5E5E5;
+    padding: 5px 0 0 10px;
+    font: 12px/1.5 '宋体',Tahoma,Srial,helvetica,Geneva,sans-serif;
+}
+#ImageFlash #SImageCaption a#downloadbtn {
+    width: 205px;
+    height: 62px;
+    display: block;
+    background: url("../images/downico.png") no-repeat;
+}
+#CenterShow {
+	
+}
+#BottomShow {
+	
+}
+#Flink {
+    background: #FFFFFF;
+    padding: 5px;
+    border: 1px solid #DDDDDD;
+    display: none;
+}
+#Footer {
+	width: 100%;
+	height: 100px;
+	margin-top: 10px;
+    background: url("../images/footer_bg.png") repeat-x #FFFFFF;
+}

@@ -10,6 +10,9 @@ $config = array(
 
     'UPLOAD_PATH'   => ROOT_DIR.'/Uploads',
 
+    //session变量名混淆字符串
+    'SESSION_ENCRYPT'   => 'LaughCMS',
+
     'COMPILE_LIFE_TIME' => 10, //编译文件有效时间 N秒
 
     'TEMPLATE_TYPE'    => 'Smarty',   //模版引擎类型 Laugh/Smarty

@@ -1,0 +1,38 @@
+<div id="Flink" class="boxBlock block">
+	<div class="FlinkTitle">
+		<span class="title">友情链接</span>
+		<ul id="FlinkboxTab" class="boxTab fleft">
+			{if isset($FlinkList)&&!empty($FlinkList)}
+			{foreach $FlinkList as $d}
+			<li><a tabid="#flinkboxTab{$d.autoIndex}" href="javascript:;" {if $d.autoIndex==1}class="bordernone"{/if}>{$d.catalogname}</a></li>
+			{/foreach}
+			{/if}
+		</ul>
+	</div>
+	<div class="FlinkBody">
+		{if isset($FlinkList)&&!empty($FlinkList)}
+		{foreach $FlinkList as $d}
+		<div id="flinkboxTab{$d.autoIndex}" class="boxTabContent">
+			<ul class="flinkList">
+				{if isset($d['flinklist'])&&!empty($d['flinklist'])}
+				{foreach $d['flinklist'] as $d1}
+				<li><a href="{$d1.linkurl}" target="_blank">{$d1.linkname}</a></li>
+				{/foreach}
+				{/if}
+			</ul>
+		</div>
+		{/foreach}
+		{/if}
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+//友情链接切换tab
+$("#Flink ul#FlinkboxTab").idTabs(function(id,list,set){
+	$("a",set).removeClass("selected").filter("[tabid='"+id+"']",set).addClass("selected"); 
+	for(i in list) $(list[i]).hide();
+	$(id).fadeIn();
+	return false;
+});
+});
+</script>

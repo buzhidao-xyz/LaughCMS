@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-19 15:13:46
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-29 20:23:14
          compiled from "F:\website\laugh\admin\themes\blue\Column\column.html" */ ?>
-<?php /*%%SmartyHeaderCode:692451987baa4e51c5-09272220%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2577951a5f3322ea670-66102317%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '692451987baa4e51c5-09272220',
+  'nocache_hash' => '2577951a5f3322ea670-66102317',
   'function' => 
   array (
   ),
@@ -22,9 +22,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_51987baa5b1868_48343902',
+  'unifunc' => 'content_51a5f3323ad3b8_33373147',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51987baa5b1868_48343902')) {function content_51987baa5b1868_48343902($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_51a5f3323ad3b8_33373147')) {function content_51a5f3323ad3b8_33373147($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="captitle"><h5>栏目列表</h5></div>
 <div id="columnList">

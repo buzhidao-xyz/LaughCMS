@@ -1,0 +1,64 @@
+{include file="include/head.html"}
+<!-- {include file="Common/Top.html"} -->
+{include file="Common/Header.html"}
+<div id="WrapContainer" class="wrap">
+	<div id="ImageFlash" class="block">
+		{include file="Common/ImageFlash1.html"}
+		<!-- <div id="SImageCaption">
+			<h1>Laugh CMS 正式版</h1>
+			<h2 class="mtop5"></h2>
+			<h3 class="mtop10">系统版本: Laugh CMS 正式版</h3>
+			<h4>软件语言: 简体中文UTF-8</h4>
+		</div> -->
+		<div class="clear"></div>
+	</div>
+	<div id="CenterShow" class="block">
+		<div class="boxBlock fleft w350 boxBlock350BG">
+			<div class="boxBlockTitle boxBlockTitle350BG">
+				<span class="title">新闻动态</span>
+				<span class="link"><a href="__APP__/index.php?s=Article/index&columnid=2"></a></span>
+			</div>
+			<div class="boxBlockBody h170 boxBlockBody350BG">
+				<ul class="articleList">
+					{cmstag_archive columnid=2 orderby='createtime' orderway='desc'}
+					<li><a href="__APP__/index.php?s=Article/view&columnid=[field.columnid]&archiveid=[field.id]" title="[field.title]">[field.title]</a></li>
+					{/cmstag_archive}
+				</ul>
+			</div>
+		</div>
+		<div class="boxBlock fleft w640 mleft10 boxBlock640BG">
+			<div class="boxBlockTitle boxBlockTitle640BG">
+				<span class="title">{$AboutUs.columnname}</span>
+			</div>
+			<div class="boxBlockBody h170 boxBlockBody640BG">
+				<div class="boxBlockImg fleft">
+					<img src="themes/sindgood/images/aboutus_img.jpg" width="130" height="150" />
+				</div>
+				<div class="boxBlockText fleft w450">
+					{$AboutUs.content|html_entity_decode|htmlSubString:210}
+					<a href="__APP__/index.php?s={$AboutUs.control}/{$AboutUs.action}&columnid={$AboutUs.id}" class="viewbtn">阅读全文</a>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="adBanner block">
+		{cmstag_advertise flag=1 html='<a href="[field.link]" target="_blank"><img src="[field.path]" width="1000" height="80" /></a>'}
+	</div>
+	<div id="BottomShow" class="block">
+		{include file="Common/ProductList.html"}
+		<div class="boxBlock fleft w250 mleft10 boxBlock250BG">
+			<div class="boxBlockTitle boxBlockTitle250BG">
+				<span class="title">联系我们</span>
+			</div>
+			<div class="boxBlockBody boxBlockBody250BG">
+				<div class="contactUS">
+					{$Config.AboutUs|html_entity_decode}
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	{include file="Common/Flink.html"}
+</div>
+{include file="include/foot.html"}

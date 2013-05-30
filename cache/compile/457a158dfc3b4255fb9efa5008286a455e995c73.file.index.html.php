@@ -1,29 +1,30 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-19 14:59:43
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-30 14:08:00
          compiled from "F:\website\laugh\themes\default\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:134285198785f5aec84-39518062%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2385551a6ecc0d15d44-95320550%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '457a158dfc3b4255fb9efa5008286a455e995c73' => 
     array (
       0 => 'F:\\website\\laugh\\themes\\default\\index.html',
-      1 => 1368621476,
+      1 => 1369830658,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '134285198785f5aec84-39518062',
+  'nocache_hash' => '2385551a6ecc0d15d44-95320550',
   'function' => 
   array (
   ),
   'variables' => 
   array (
     'AboutUs' => 0,
+    'Config' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5198785f89d437_12152350',
+  'unifunc' => 'content_51a6ecc0dfb115_69857010',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5198785f89d437_12152350')) {function content_5198785f89d437_12152350($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_51a6ecc0dfb115_69857010')) {function content_51a6ecc0dfb115_69857010($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("include/head.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate ("Common/Top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
@@ -94,15 +95,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<div class="boxBlockTitle">
 				<span class="title">联系我们</span>
 			</div>
-			<div class="boxBlockBody h350">
+			<div class="boxBlockBody">
 				<div class="contactUS">
-					<h5>电 话: XXXXXXXX</h5>
-					<h5>邮 编: XXXXXXXX</h5>
-					<h5>网 址: www.xxx.com</h5>
-					<h5>Email: admin@admin.com</h5>
-					<h5>联系地址: 江苏省苏州市工业园区若水路1号</h5>
-					<h5>联系人: XXX</h5>
-					<h4>Laugh CMS 软件科技公司</h4>
+					<?php echo $_smarty_tpl->tpl_vars['Config']->value['AboutUs'];?>
+
 				</div>
 			</div>
 		</div>

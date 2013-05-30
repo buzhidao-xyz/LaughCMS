@@ -29,7 +29,7 @@ var JS_APP = '/laugh';
 				<a href="/laugh"><img src="/laugh/themes/default/images/logo.png" /></a>
 			</div>
 			<div class="Center">
-				内容管理系统
+				昆山信德佳电气科技有限公司
 			</div>
 			<div class="Operate">
 				<div class="OpTop">
@@ -231,7 +231,7 @@ $("#SImageContainer").Xslider({
 		<div class="clear"></div>
 	</div>
 	<div class="adBanner block">
-		<a href="" target="_blank"><img src="/laugh/Uploads/AdImage/1368168608_9f5u5y_7755_ad_banner1.png" width="1000" height="80" /></a>
+		<a href="http://www.baidu.com/" target="_blank"><img src="/laugh/Uploads/AdImage/1368168489_ru3un2_8465_ad_banner.png" width="1000" height="80" /></a>
 	</div>
 	<div id="BottomShow" class="block">
 		<div id="ImgListBlock" class="boxBlock fleft w740">
@@ -281,15 +281,14 @@ $("#ImgListBlock ul#ImgboxTab").idTabs(function(id,list,set){
 			<div class="boxBlockTitle">
 				<span class="title">联系我们</span>
 			</div>
-			<div class="boxBlockBody h350">
+			<div class="boxBlockBody">
 				<div class="contactUS">
 					<h5>电 话: XXXXXXXX</h5>
-					<h5>邮 编: XXXXXXXX</h5>
-					<h5>网 址: www.xxx.com</h5>
-					<h5>Email: admin@admin.com</h5>
-					<h5>联系地址: 江苏省苏州市工业园区若水路1号</h5>
-					<h5>联系人: XXX</h5>
-					<h4>Laugh CMS 软件科技公司</h4>
+<h5>邮 编: XXXXXXXX</h5>
+<h5>网 址: www.xxx.com</h5>
+<h5>Email: admin@admin.com</h5>
+<h5>联系地址: 江苏省苏州市工业园区若水路1号</h5>
+<h5>联系人: XXX</h5>
 				</div>
 			</div>
 		</div>
@@ -330,14 +329,14 @@ $("#Flink ul#FlinkboxTab").idTabs(function(id,list,set){
 </div>
 <div id="Footer">
 	<ul id="Link">
-		<li class="bordernone"><a href="/laugh/index.php?s=Cooperate">招贤纳士</a></li>
-		<li><a href="/laugh/index.php?s=Public/AboutUS">关于我们</a></li>
-		<li><a href="/laugh/index.php?s=Cooperate">联系我们</a></li>
-		<li><a href="javascript:;">在线手册</a></li>
-		<li><a href="/laugh/index.php?s=Plugin/QA">帮助中心</a></li>
-	</ul>
+						<li class="bordernone"><a href="http://localhost:82/laugh/index.php?s=Plugin/Cooperate&amp;columnid=9">招贤纳士</a></li>
+				<li ><a href="http://localhost:82/laugh/index.php?s=Public/AboutUS&amp;columnid=10">关于我们</a></li>
+				<li ><a href="http://localhost:82/laugh/index.php?s=Public/ContactUS&amp;columnid=11">联系我们</a></li>
+				<li ><a href="javascript:;">在线手册</a></li>
+				<li ><a href="javascript:;">帮助中心</a></li>
+					</ul>
 	<div id="copyright">
-		Laugh CMS 软件科技公司
+		Laugh CMS - 网站内容管理系统
 		<br/>
 		Powered by <a target="_blank" href="javascript:;">LaughCMS v1.0 Released</a> 版权所有 © 2012-2013, All right reserved. 
 	</div>

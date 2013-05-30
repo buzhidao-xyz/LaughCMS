@@ -1,0 +1,71 @@
+/* ---------------------- 
+ * 顶部导航菜单样式表
+ * by buzhidao 2012-01-16
+ ---------------------- */
+div.NavigationBlock {
+	display:block;
+	width: 100%;
+	height:48px;
+	font-size:13px;
+	font-weight: 700;
+	/*background:transparent url(../images/blueslate_background.gif) repeat-x top left;*/
+	/*background: #007A77;*/
+	background:transparent url("../images/navigation_bg.png") repeat-x top left;
+	text-transform:uppercase;
+	margin: 0 auto;
+}
+ul.headerNavigation {
+	display:block;
+	margin: 0 auto;
+	height: 40px;
+}
+ul.headerNavigation li {
+	display:block;
+	float:left;
+	background: none;
+	background: url("../images/navigation_sep.png") repeat-y scroll right 0;
+}
+ul.headerNavigation li:hover, ul.headerNavigation li.sfHover {
+	/*background: url(../images/blueslate_backgroundOVER.gif) no-repeat top center;*/
+	background: #5196DD;
+}
+ul.headerNavigation li a {
+	display:block;
+	padding:13px 20px;
+	height:auto;
+	color: #DDF1FF;
+	text-decoration:none;
+}
+ul.headerNavigation li a.navon {
+	color: #FFFFFF;
+	background: url("../images/navigation_bg_on.png") no-repeat center 0;
+}
+ul.headerNavigation li a.navon:hover, ul.headerNavigation li.sfHover a.navon {
+	background: #5196DD;
+}
+ul.headerNavigation li a:hover, ul.headerNavigation li.sfHover a {
+	color: #FFFFFF;
+}
+ul.headerNavigation ul.SubNavigation {
+	padding-top: 1px;
+	font-weight: 500;
+}
+ul.headerNavigation ul.SubNavigation li {
+	background: #5196DD;
+	border-bottom: 1px solid #DDF1FF;
+}
+ul.headerNavigation ul.SubNavigation li:hover, ul.headerNavigation ul.SubNavigation li.sfHover {
+	background: #1969b9;
+}
+ul.headerNavigation ul.SubNavigation li a {
+	color:#EFEFEF;
+	padding: 8px 10px;
+	padding-left: 20px;
+}
+ul.headerNavigation ul.SubNavigation li a:hover, ul.headerNavigation ul.SubNavigation li.sfHover a {
+	color: #FFFFFF;
+}
+ul.headerNavigation ul.SubNavigation li a > .sf-sub-indicator {
+	top: 9px;
+	background-position: -10px 0px;
+}

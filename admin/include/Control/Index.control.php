@@ -55,8 +55,8 @@ class IndexControl extends CommonControl
             session('userInfo',null);
             session('sstate',null);
             session('ustate',null);
-            session('useraccess',null);
-            session_destroy();
+            session('userAccess',null);
+            // session_destroy();
         }
 
         header("location:".__APP__);

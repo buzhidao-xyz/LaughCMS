@@ -1,34 +1,47 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-19 14:59:44
+<?php /* Smarty version Smarty-3.1.12, created on 2013-05-30 14:08:01
          compiled from "F:\website\laugh\themes\default\include\foot.html" */ ?>
-<?php /*%%SmartyHeaderCode:1720051987860270065-83289071%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:259951a6ecc131b6a0-02900573%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '28a0e019233b9070f0b0fb71f449b813559a1035' => 
     array (
       0 => 'F:\\website\\laugh\\themes\\default\\include\\foot.html',
-      1 => 1366899156,
+      1 => 1369103280,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1720051987860270065-83289071',
+  'nocache_hash' => '259951a6ecc131b6a0-02900573',
   'function' => 
   array (
   ),
+  'variables' => 
+  array (
+    'FootNavigationList' => 0,
+    'd' => 0,
+    'Config' => 0,
+  ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_519878602e80a8_69048214',
+  'unifunc' => 'content_51a6ecc136ba62_02439143',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_519878602e80a8_69048214')) {function content_519878602e80a8_69048214($_smarty_tpl) {?><div id="Footer">
+<?php if ($_valid && !is_callable('content_51a6ecc136ba62_02439143')) {function content_51a6ecc136ba62_02439143($_smarty_tpl) {?><div id="Footer">
 	<ul id="Link">
-		<li class="bordernone"><a href="__APP__/index.php?s=Cooperate">招贤纳士</a></li>
-		<li><a href="__APP__/index.php?s=Public/AboutUS">关于我们</a></li>
-		<li><a href="__APP__/index.php?s=Cooperate">联系我们</a></li>
-		<li><a href="javascript:;">在线手册</a></li>
-		<li><a href="__APP__/index.php?s=Plugin/QA">帮助中心</a></li>
+		<?php if (isset($_smarty_tpl->tpl_vars['FootNavigationList']->value)&&!empty($_smarty_tpl->tpl_vars['FootNavigationList']->value)){?>
+		<?php  $_smarty_tpl->tpl_vars['d'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['d']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['FootNavigationList']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['d']->key => $_smarty_tpl->tpl_vars['d']->value){
+$_smarty_tpl->tpl_vars['d']->_loop = true;
+?>
+		<li <?php if ($_smarty_tpl->tpl_vars['d']->value['AutoIndex']==1){?>class="bordernone"<?php }?>><a href="<?php echo $_smarty_tpl->tpl_vars['d']->value['link'];?>
+"><?php echo $_smarty_tpl->tpl_vars['d']->value['title'];?>
+</a></li>
+		<?php } ?>
+		<?php }?>
 	</ul>
 	<div id="copyright">
-		Laugh CMS 软件科技公司
+		<?php echo $_smarty_tpl->tpl_vars['Config']->value['sitename'];?>
+
 		<br/>
 		Powered by <a target="_blank" href="javascript:;">LaughCMS v1.0 Released</a> 版权所有 © 2012-2013, All right reserved. 
 	</div>

@@ -33,6 +33,35 @@ function CMSTagArchive($params=array(),$content=null,&$smarty,&$repeat)
 	if(!$repeat) return $html;
 }
 
+/**
+ * 获取导航
+ * @param int $flag 导航位置 1:底部导航 2:右侧导航
+ */
+function CMSTagNavigation($params=array(),$content=null,&$smarty,&$repeat)
+{
+	if (!isset($params['flag'])) return false;
+	extract($params);
+
+	$html = null;
+	$where = array(
+		'flag' => $flag
+	);
+    $result = T("navigation")->where($where)->order('createtime','desc')->select();
+    if (is_array($result)&&!empty($result)) {
+    	foreach ($result as $d) {
+			$search = array(
+		    	'[field.title]','[field.link]'
+		    );
+		    $replace = array(
+		    	$d['title'],$d['title']
+		    );
+		    $html .= str_replace($search, $replace, $content);
+		}
+    }
+
+	if(!$repeat) return $html;
+}
+
 /*********************************block标签*********************************/
 
 /**
@@ -61,13 +90,4 @@ function CMSTagAdvertise($params=array())
     $html = str_replace($search, $replace, $html);
     
     return $html;
-}
-
-/**
- * 获取导航
- * @param int $flag 导航位置 1:底部导航 2:右侧导航
- */
-function CMSTagNavigation($params=array())
-{
-	if (!isset($params['flag'])) return false;
 }

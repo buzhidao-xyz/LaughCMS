@@ -1,0 +1,166 @@
+/**********************************文档模板CSS**********************************/
+.articleTpl {
+	padding: 5px 10px;
+}
+.articleTpl h2.title {
+    color: #333333;
+    font-size: 150%;
+    padding: 15px 5px;
+    text-align: center;
+	border-bottom: 1px solid #999999;
+}
+.articleTpl .status {
+	color: #999999;
+	padding: 5px 10px;
+	text-align: center;
+}
+.articleTpl .status span.title {
+	padding-left: 15px;
+}
+.articleTpl .status span.content {
+	color: #999999;
+	padding-left: 3px;
+}
+.articleTpl .body {
+	padding: 20px 10px;
+	text-align: center;
+	line-height: 20px;
+}
+.articleTpl .operate {
+	color: #333333;
+	padding: 5px;
+	text-align: right;
+	clear: both;
+	overflow: hidden;
+	border-bottom: 1px solid #999999;
+}
+.articleTpl .operate .operateLink {
+	float: right;
+	padding: 7px 0 0 0;
+}
+.articleTpl .about {
+	padding: 10px;
+}
+.articleTpl .about dl {
+	padding: 5px 12px;
+	clear: both;
+	overflow: hidden;
+	background: url("../images/arrow-2.png") no-repeat left 10px;
+}
+.articleTpl .about dl dt {
+	float: left;
+}
+.articleTpl .about dl dd {
+	float: left;
+	padding-left: 5px;
+}
+
+.articleTpl .articleContent h1, .articleTpl .articleContent h2, .articleTpl .articleContent h3,.articleTpl .articleContent h4,.articleTpl .articleContent h5 {
+	color: #000000;
+}
+.articleTpl a {
+	
+}
+
+/**********************************产品模板CSS**********************************/
+
+.productTpl {
+	padding: 5px 10px;
+}
+.productTpl h2.title {
+    color: #333333;
+    font-size: 150%;
+    padding: 15px 5px;
+    text-align: center;
+	border-bottom: 1px solid #999999;
+}
+.productTpl .status {
+	color: #999999;
+	padding: 5px 10px;
+	text-align: center;
+}
+.productTpl .status span.title {
+	padding-left: 15px;
+}
+.productTpl .status span.content {
+	color: #999999;
+	padding-left: 3px;
+}
+.productTpl .body {
+	padding: 20px 10px;
+	text-align: center;
+	line-height: 20px;
+}
+.productTpl .body .ImageShow {
+	padding: 7px 5px;
+	clear: both;
+	overflow: hidden;
+	border: 1px solid #DEDEDE;
+}
+.productTpl .operate {
+	color: #333333;
+	padding: 5px;
+	text-align: right;
+	clear: both;
+	overflow: hidden;
+	border-bottom: 1px solid #999999;
+}
+.productTpl .operate .operateLink {
+	float: right;
+	padding: 7px 0 0 0;
+}
+.productTpl .about {
+	padding: 10px;
+}
+.productTpl .about dl {
+	padding: 5px 12px;
+	clear: both;
+	overflow: hidden;
+	background: url("../images/arrow-2.png") no-repeat left 10px;
+}
+.productTpl .about dl dt {
+	float: left;
+}
+.productTpl .about dl dd {
+	float: left;
+	padding-left: 5px;
+}
+
+.productTpl .body .productInfo {
+	padding: 10px 0;
+	clear: both;
+	overflow: hidden;
+}
+.productTpl .body .productInfo .infoTitle {
+	clear: both;
+	overflow: hidden;
+	border-bottom: 3px solid #747474;
+}
+.productTpl .body .productInfo .infoTitle ul {
+	float: left;
+}
+.productInfoContent {
+	padding: 10px 25px;
+}
+.productInfoContent dl {
+	padding: 3px 0;
+	overflow: hidden;
+	clear: both;
+}
+.productInfoContent dl dt {
+	float: left;
+	width: 55px;
+	text-align: right;
+	color: #333;
+	font-weight: 700;
+}
+.productInfoContent dl dd {
+	float: left;
+	padding-left: 7px;
+	color: #525252;
+	font-weight: 500;
+}
+/**********************************图集模板CSS**********************************/
+.imageTpl {
+	padding: 0;
+}
