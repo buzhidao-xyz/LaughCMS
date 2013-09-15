@@ -192,16 +192,20 @@ class DBDriver implements DBDriver_Interface
     /**
      * 获取orm映射字段值 如果ORM里面配置的key获取该配置的key 没有配置直接返回key
      * @param $key 字段值
+     * @param $sepflag1 字段名左符号
+     * @param $sepflag2 字段名右符号
      */
     protected function orm($key,$sepflag1="`",$sepflag2="`")
     {
         global $orm;
         if (!$key) return $orm[self::$_table];
 
+
         $strAsArray = array(' as ',' As ',' aS ',' AS ');
         if (strpos($key, ' as ') || strpos($key, ' As ') || strpos($key, ' aS ') || strpos($key, ' AS ')) {
             $key = str_replace($strAsArray,' ',$key);
         }
+
 
         if (preg_match("/^a\./", $key)) {
             $key = str_replace('a.', '', $key);
@@ -226,6 +230,7 @@ class DBDriver implements DBDriver_Interface
             }
         }
 
+
         $pos = strpos($key, ' ');
         $alias = $pos !== false ? substr($key, $pos) : '';
         $key = $pos !== false ? substr($key, 0, $pos) : $key;
@@ -235,6 +240,7 @@ class DBDriver implements DBDriver_Interface
             return $alias ? $sepflag1.$orm[self::$_table][$key].$sepflag2." AS ".$sepflag1.$alias.$sepflag2 : $sepflag1.$orm[self::$_table][$key].$sepflag2;
         }
     }
+
     
     /**
      * 字段解析
@@ -273,41 +279,67 @@ class DBDriver implements DBDriver_Interface
 
         if (is_array($where) && !empty($where)) {
             $whereArray = array();
+            $whereArray0 = array();
             foreach ($where as $k=>$v) {
                 if (is_array($v) && !empty($v)) {
                     switch (strtolower($v[0])) {
-                        case 'in':
-                            $whereArray[] = " ".$this->orm($k)." IN(".implode(',',$v[1]).") ";
-                            break;
-                        case 'like':
-                            $whereArray[] = " ".$this->orm($k)." LIKE '".$v[1]."' ";
-                            break;
-                        case 'between':
-                            $whereArray[] = " ".$this->orm($k)." BETWEEN '".$v[1]."' AND '".$v[2]."' ";
+                        case 'neq':
+                            $w = " ".$this->orm($k)." != '".$v[1]."' ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
                             break;
                         case 'lt':
-                            $whereArray[] = " ".$this->orm($k)." < '".$v[1]."' ";
+                            $w = " ".$this->orm($k)." < '".$v[1]."' ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
                             break;
                         case 'gt':
-                            $whereArray[] = " ".$this->orm($k)." > '".$v[1]."' ";
+                            $w = " ".$this->orm($k)." > '".$v[1]."' ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
                             break;
                         case 'elt':
-                            $whereArray[] = " ".$this->orm($k)." <= '".$v[1]."' ";
+                            $w = " ".$this->orm($k)." <= '".$v[1]."' ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
                             break;
                         case 'egt':
-                            $whereArray[] = " ".$this->orm($k)." >= '".$v[1]."' ";
+                            $w = " ".$this->orm($k)." >= '".$v[1]."' ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
+                            break;
+                        case 'in':
+                            $w = " ".$this->orm($k)." IN(".implode(',',$v[1]).") ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
+                            break;
+                        case 'like':
+                            $w = " ".$this->orm($k)." LIKE '%".$v[1]."%' ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
+                            break;
+                        case 'between':
+                            $w = " ".$this->orm($k)." BETWEEN '".$v[1]."' AND '".$v[2]."' ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
                             break;
                         default:
-                            $whereArray[] = " ".$this->orm($k)."='".$v."' ";
+                            $w = " ".$this->orm($k)."='".$v."' ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
                             break;
                     }
                 } else {
-                    $whereArray[] = " ".$this->orm($k)."='".$v."' ";
+                    $w = " ".$this->orm($k)."='".$v."' ";
+                    $whereArray[] = $w;
+                    if (strpos($k, "a.")!==false) $whereArray0[] = $w;
                 }
             }
             $where = implode(" AND ",$whereArray);
+            $where0 = implode(" AND ",$whereArray0);
         }
-        $this->_where = " WHERE ".$where;
+        $this->_where = empty($where) ? "" : " WHERE ".$where;
+        $this->_where0 = empty($where0) ? "" : " WHERE ".$where0;
 
         return $this;
     }
@@ -346,6 +378,7 @@ class DBDriver implements DBDriver_Interface
         $this->_field = '*';
         $this->_join = '';
         $this->_where = '';
+        $this->_where0 = '';
         $this->_order = '';
         $this->_limit = '';
         //$this->sql = null;
@@ -409,10 +442,18 @@ class DBDriver implements DBDriver_Interface
         foreach ($data as $k=>$v) {
             if (isset($keys)) {
                 $keys .= ",".$this->orm($k);
-                $values .= ",'".$v."'";
+                if (is_array($v) && $v[0]=="image") {
+                    $values .= ",".$v[1];
+                } else {
+                    $values .= ",'".$v."'";
+                }
             } else {
                 $keys = $this->orm($k);
-                $values = "'".$v."'";
+                if (is_array($v) && $v[0]=="image") {
+                    $values = $v[1];
+                } else {
+                    $values = "'".$v."'";
+                }
             }
         }
         
@@ -434,10 +475,18 @@ class DBDriver implements DBDriver_Interface
             foreach ($d as $k=>$v) {
                 if (isset($keys)) {
                     $keys .= ','.$this->orm($k);
-                    $values .= ",'".$v."'";
+                    if (is_array($v) && $v[0]=="image") {
+                        $values .= ",".$v[1];
+                    } else {
+                        $values .= ",'".$v."'";
+                    }
                 } else {
                     $keys = $this->orm($k);
-                    $values = "'".$v."'";
+                    if (is_array($v) && $v[0]=="image") {
+                        $values = $v[1];
+                    } else {
+                        $values = "'".$v."'";
+                    }
                 }
             }
             
@@ -586,4 +635,3 @@ class DBDriver implements DBDriver_Interface
         return $this->sql;
     }
 }
-?>

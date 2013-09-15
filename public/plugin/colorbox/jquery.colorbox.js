@@ -903,7 +903,8 @@
 			
 			$overlay.fadeTo(200, 0);
 			
-			$box.stop().fadeTo(300, 0, function () {
+			//去掉$box后面.stop()方法 兼容IE8 9 10
+			$box.fadeTo(300, 0, function () {
 			
 				$box.add($overlay).css({'opacity': 1, cursor: 'auto'}).hide();
 				

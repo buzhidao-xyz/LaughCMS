@@ -48,6 +48,7 @@ class FileControl extends CommonControl
 	public function upImage()
 	{
 		$upload = new UploadHelper();
+		$upload->inputName = "upfile";
 		$upload->maxSize  = 2097152; //2M
 		$upload->savePath =  $this->makeSavePath("Image");
 		if(!$upload->upload()) {

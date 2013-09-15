@@ -147,7 +147,7 @@ $(document).ready(function (){
 </script>
 <div id="WrapContainer" class="wrap">
 	<div class="adBanner block">
-		<a href="javascript:;" target="_blank"><img src="/laugh/Uploads/AdImage/1368170176_qzdzxd_6220_1368168531_sqifub_4518_ad_banner0.png" width="1000" height="80" /></a>
+		<a href="http://www.baidu.com/" target="_blank"><img src="/laugh/Uploads/AdImage/1368170151_s68hvp_191_1368168489_ru3un2_8465_ad_banner.png" width="1000" height="80" /></a>
 	</div>
 	<div class="CurPosition mtop5">
 		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=Image/index&columnid=7">客户案例</a>
@@ -180,13 +180,11 @@ $(document).ready(function (){
 		<div class="boxBlockTitle">
 			<span class="title">快捷导航</span>
 		</div>
-		<div class="boxBlockBody h200">
+		<div class="boxBlockBody">
 			<ul class="SideNavList">
+				
 				<li><a href="javascript:;">新闻资讯</a></li>
-				<li><a href="javascript:;">产品展示</a></li>
-				<li><a href="javascript:;">招贤纳士</a></li>
-				<li><a href="javascript:;">关于我们</a></li>
-				<li><a href="javascript:;">联系我们</a></li>
+				
 			</ul>
 		</div>
 	</div>
@@ -194,15 +192,14 @@ $(document).ready(function (){
 		<div class="boxBlockTitle">
 			<span class="title">联系我们</span>
 		</div>
-		<div class="boxBlockBody h250">
+		<div class="boxBlockBody">
 			<div class="contactUS">
 				<h5>电 话: XXXXXXXX</h5>
-				<h5>邮 编: XXXXXXXX</h5>
-				<h5>网 址: www.xxx.com</h5>
-				<h5>Email: admin@admin.com</h5>
-				<h5>联系地址: 江苏省苏州市工业园区若水路1号</h5>
-				<h5>联系人: XXX</h5>
-				<h4>Laugh CMS 软件科技公司</h4>
+<h5>邮 编: XXXXXXXX</h5>
+<h5>网 址: www.xxx.com</h5>
+<h5>Email: admin@admin.com</h5>
+<h5>联系地址: 江苏省苏州市工业园区若水路1号</h5>
+<h5>联系人: XXX</h5>
 			</div>
 		</div>
 	</div>

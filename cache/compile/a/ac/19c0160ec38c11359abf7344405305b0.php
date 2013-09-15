@@ -50,7 +50,7 @@ var JS_APP = '/laugh';
 		<a href="/laugh/index.php?s=Index/index&columnid=1" class="">网站首页</a>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Article/index&columnid=2" class="navon">新闻资讯</a>
+		<a href="/laugh/index.php?s=Article/index&columnid=2" class="">新闻资讯</a>
 				<ul class="SubNavigation">
 						<li>
 				<a href="/laugh/index.php?s=Article/index&columnid=3">IT知识</a>
@@ -81,7 +81,7 @@ var JS_APP = '/laugh';
 					</ul>
 			</li>
 		<li>
-		<a href="/laugh/index.php?s=Image/index&columnid=7" class="">客户案例</a>
+		<a href="/laugh/index.php?s=Image/index&columnid=7" class="navon">客户案例</a>
 			</li>
 		<li>
 		<a href="/laugh/index.php?s=Download/index&columnid=8" class="">下载中心</a>
@@ -147,65 +147,165 @@ $(document).ready(function (){
 </script>
 <div id="WrapContainer" class="wrap">
 	<div class="adBanner block">
-		<a href="javascript:;" target="_blank"><img src="/laugh/Uploads/AdImage/1368170176_qzdzxd_6220_1368168531_sqifub_4518_ad_banner0.png" width="1000" height="80" /></a>
+		<a href="http://www.baidu.com/" target="_blank"><img src="/laugh/Uploads/AdImage/1368170151_s68hvp_191_1368168489_ru3un2_8465_ad_banner.png" width="1000" height="80" /></a>
 	</div>
 	<div class="CurPosition mtop5">
-		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=Article/index&columnid=2">新闻资讯</a>
+		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=Image/index&columnid=7">客户案例</a>
 	</div>
 	<div id="CenterShow" class="block mtop5">
 		<div id="mainBlock" class="fleft w740">
 			<div class="boxBlock">
 				<div class="boxBlockTitle">
-					<span class="title">新闻资讯</span>
+					<span class="title">客户案例一</span>
 				</div>
 				<div class="boxBlockBody">
-					<ul class="articleList">
-																		<li>
-							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=18">VI命令大全</a>
-							<span class="pubdate">[2013-04-27]</span>
-						</li>
-												<li>
-							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=13">DNS污染【备忘】</a>
-							<span class="pubdate">[2013-04-02]</span>
-						</li>
-												<li>
-							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=10">Web服务攻击反侦查痕迹检测</a>
-							<span class="pubdate">[2013-04-01]</span>
-						</li>
-												<li>
-							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=8">PHP单例模式经典讲解</a>
-							<span class="pubdate">[2013-03-29]</span>
-						</li>
-												<li>
-							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=1">这是一篇测试文章</a>
-							<span class="pubdate">[2013-03-28]</span>
-						</li>
-												<li>
-							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=7">PHP实现异步操作</a>
-							<span class="pubdate">[2013-03-26]</span>
-						</li>
-												<li>
-							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=6">PHP基本点知识</a>
-							<span class="pubdate">[2013-03-25]</span>
-						</li>
-												<li>
-							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=5">页面(PAGE)标记(TAGS)</a>
-							<span class="pubdate">[2013-03-25]</span>
-						</li>
-												<li>
-							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=4">MongoDB:下一代MySQL？</a>
-							<span class="pubdate">[2013-03-21]</span>
-						</li>
-												<li>
-							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=3">企业用网站进行网络宣传的优势</a>
-							<span class="pubdate">[2013-03-21]</span>
-						</li>
-												<li>
-							<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=2">确认在左，取消在右?</a>
-							<span class="pubdate">[2013-01-09]</span>
-						</li>
-																	</ul>
-					
+					<div class="contentBlock">
+						<div class="articleTpl imageTpl">
+	<h2 class="title">客户案例一</h2>
+	<div class="status">
+		<span class="title">点击次数:</span>
+		<span class="content">0 次</span>
+		<span class="title">发布时间:</span>
+		<span class="content">2013-04-11 16:49:17</span>
+		<span class="title">作者:</span>
+		<span class="content">admin</span>
+	</div>
+	<div class="body">
+		<div id="container" class="transitions-enabled infinite-scroll clearfix">
+								  	<div class="box col2">
+		    	<p>
+		      		<a rel="group" href="/laugh/Uploads/Image/201304/08/1365413641_bydp7p_7088.jpg" title="案例图片一"><img src="/laugh/Uploads/Image/201304/08/thumb_1365413641_bydp7p_7088.jpg" alt="案例图片一" /></a>
+		    	</p>
+		  	</div>
+		  			  	<div class="box col2">
+		    	<p>
+		      		<a rel="group" href="/laugh/Uploads/Image/201304/09/1365474374_4s7jxa_5777.jpg" title="案例图片二"><img src="/laugh/Uploads/Image/201304/09/thumb_1365474374_4s7jxa_5777.jpg" alt="案例图片二" /></a>
+		    	</p>
+		  	</div>
+		  			  	<div class="box col2">
+		    	<p>
+		      		<a rel="group" href="/laugh/Uploads/Image/201304/09/1365474384_lld6f7_2865.jpg" title="案例图片三"><img src="/laugh/Uploads/Image/201304/09/thumb_1365474384_lld6f7_2865.jpg" alt="案例图片三" /></a>
+		    	</p>
+		  	</div>
+		  			  	<div class="box col2">
+		    	<p>
+		      		<a rel="group" href="/laugh/Uploads/Image/201304/09/1365474406_tzcrus_885.jpg" title="案例图片四"><img src="/laugh/Uploads/Image/201304/09/thumb_1365474406_tzcrus_885.jpg" alt="案例图片四" /></a>
+		    	</p>
+		  	</div>
+		  			  	<div class="box col2">
+		    	<p>
+		      		<a rel="group" href="/laugh/Uploads/Image/201304/09/1365474438_z5r3pz_3874.jpg" title="案例图片五"><img src="/laugh/Uploads/Image/201304/09/thumb_1365474438_z5r3pz_3874.jpg" alt="案例图片五" /></a>
+		    	</p>
+		  	</div>
+		  			  	<div class="box col2">
+		    	<p>
+		      		<a rel="group" href="/laugh/Uploads/Image/201304/09/1365474465_e4anmy_3273.jpg" title="案例图片六"><img src="/laugh/Uploads/Image/201304/09/thumb_1365474465_e4anmy_3273.jpg" alt="案例图片六" /></a>
+		    	</p>
+		  	</div>
+		  			  	<div class="box col2">
+		    	<p>
+		      		<a rel="group" href="/laugh/Uploads/Image/201304/09/1365474477_zuf1eo_2534.JPG" title="案例图片七"><img src="/laugh/Uploads/Image/201304/09/thumb_1365474477_zuf1eo_2534.JPG" alt="案例图片七" /></a>
+		    	</p>
+		  	</div>
+		  			  	<div class="box col2">
+		    	<p>
+		      		<a rel="group" href="/laugh/Uploads/Image/201304/09/1365474490_nc8o3r_168.jpg" title="案例图片八"><img src="/laugh/Uploads/Image/201304/09/thumb_1365474490_nc8o3r_168.jpg" alt="案例图片八" /></a>
+		    	</p>
+		  	</div>
+		  			  			</div>
+		<nav id="page-nav"><a href="/laugh/index.php?s=Image/Msonary&columnid=7&archiveid=14&page=2"></a></nav>
+	</div>
+	<div class="operate">
+		<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+<span class="bds_more">分享到：</span>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_t163"></a>
+<a class="bds_renren"></a>
+<a class="bds_qzone"></a>
+<a class="bds_douban"></a>
+<a class="shareCount"></a>
+</div>
+<!-- Baidu Button END -->
+		<div class="operateLink"><a href="javascript:;">[打印此页]</a>&nbsp;&nbsp;&nbsp;<a href="javascript:self.close();">[关闭]</a></div>
+	</div>
+	<div class="about">
+		<dl>
+			<dt>上一篇:</dt>
+			<dd>
+								<font color="grey">没有了！</font>
+							</dd>
+		</dl>
+		<dl>
+			<dt>下一篇:</dt>
+			<dd>
+								<a href="/laugh/index.php?s=Image/view&columnid=7&archiveid=15" title="客户案例二">客户案例二</a>
+							</dd>
+		</dl>
+	</div>
+</div>
+<link type="text/css" rel="stylesheet" href="public/plugin/masonry/style.css" media="screen">
+<script type="text/javascript" src="public/plugin/masonry/jquery.masonry.js"></script>
+<script type="text/javascript" src="public/plugin/masonry/jquery.infinitescroll.min.js"></script>
+<script type="text/javascript" src="public/plugin/masonry/modernizr-transitions.js"></script>
+<link type="text/css" rel="stylesheet" href="public/plugin/colorbox/colorbox.css" media="screen">
+<script type="text/javascript" src="public/plugin/colorbox/jquery.colorbox.js"></script>
+<script type="text/javascript">
+$(function(){
+    var $container = $('#container');
+
+    $container.imagesLoaded(function(){
+		$container.masonry({
+			itemSelector: '.box',
+			columnWidth: 1,
+        	isAnimated: !Modernizr.csstransitions
+		});
+    });
+    
+    $container.infinitescroll({
+		navSelector  : '#page-nav',    // selector for the paged navigation 
+		nextSelector : '#page-nav a',  // selector for the NEXT link (to page 2)
+		itemSelector : '.box',     // selector for all items you'll retrieve
+			loading: {
+				finishedMsg: '没有了',
+				img: JS_APP+'/public/plugin/masonry/loading.gif'
+			}
+		},
+		// trigger Masonry as a callback
+		function( newElements ) {
+			// hide new items while they are loading
+			var $newElems = $( newElements ).css({ opacity: 0 });
+			// ensure that images load before adding to masonry layout
+			$newElems.imagesLoaded(function(){
+				// show elems now they're ready
+				$newElems.animate({ opacity: 1 });
+				$container.masonry( 'appended', $newElems, true );
+
+				colorBoxImageShow();
+			});
+		}
+    );
+
+	//colorbox展示大图
+	var colorBoxImageShow = function (){
+	    $("#container .box a").colorbox({
+	    	//图集标记
+	    	rel: "group",
+	    	//图集图片自动切换
+	    	slideshow: true,
+	    	//图片切换时间间隔
+	    	slideshowSpeed : 30000,
+	    	//图片标题
+	    	title: function (){
+	    		return $(this).attr("title");
+	    	}
+	    });
+	}
+    colorBoxImageShow();
+});
+</script>
+					</div>
 				</div>
 			</div>
 		</div>

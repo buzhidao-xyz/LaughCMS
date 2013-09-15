@@ -26,6 +26,8 @@ class BaseControl
         $this->isLoged();
 
         $this->assign('userInfo', $this->userInfo);
+
+        $this->assign('uniquecode',md5(TIMESTAMP));
     }
     
     /**

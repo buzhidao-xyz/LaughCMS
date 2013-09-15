@@ -231,7 +231,7 @@ $("#SImageContainer").Xslider({
 		<div class="clear"></div>
 	</div>
 	<div class="adBanner block">
-		<a href="http://www.baidu.com/" target="_blank"><img src="/laugh/Uploads/AdImage/1368168489_ru3un2_8465_ad_banner.png" width="1000" height="80" /></a>
+		<a href="" target="_blank"><img src="/laugh/Uploads/AdImage/1368168836_w2hsg2_8994_ad_banner2.png" width="1000" height="80" /></a>
 	</div>
 	<div id="BottomShow" class="block">
 		<div id="ImgListBlock" class="boxBlock fleft w740">

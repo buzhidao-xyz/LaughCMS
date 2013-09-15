@@ -14,13 +14,30 @@ class SearchControl extends CommonControl
 
 	public function __construct()
 	{
-        self::$_sphinx = new Sphinx();
+        parent::__construct();
+        // self::$_sphinx = new Sphinx();
+
+        $this->_getKeyword();
+    }
+
+    //获取搜索关键字
+    private function _getKeyword()
+    {
+        $keyword = q("keyword");
+        $this->assign("keyword", $keyword);
+        return $keyword;
+    }
+
+    //主入口
+    public function index()
+    {
+        $this->display("Search/index.html");
     }
 
     /**
      * 主搜索程序 调用sphinx模型里_getFT方法
      */
-    static public function index()
+    static public function sphinxSearch()
     {
         $search = isset($_GET['search']) ? $_GET['search'] : '';
         $search = iconv('GB2312', 'UTF-8', $search);

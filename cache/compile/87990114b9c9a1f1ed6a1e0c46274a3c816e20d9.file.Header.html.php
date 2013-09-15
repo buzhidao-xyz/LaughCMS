@@ -1,29 +1,30 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-05-30 14:08:00
+<?php /* Smarty version Smarty-3.1.12, created on 2013-09-15 16:55:41
          compiled from "F:\website\laugh\themes\default\Common\Header.html" */ ?>
-<?php /*%%SmartyHeaderCode:2292051a6ecc0e7f6b0-97341853%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:37225235760ded53f9-24128118%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '87990114b9c9a1f1ed6a1e0c46274a3c816e20d9' => 
     array (
       0 => 'F:\\website\\laugh\\themes\\default\\Common\\Header.html',
-      1 => 1369804256,
+      1 => 1370074334,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2292051a6ecc0e7f6b0-97341853',
+  'nocache_hash' => '37225235760ded53f9-24128118',
   'function' => 
   array (
   ),
   'variables' => 
   array (
     'Config' => 0,
+    'keyword' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_51a6ecc0eb0960_95261361',
+  'unifunc' => 'content_5235760df125c2_20398067',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51a6ecc0eb0960_95261361')) {function content_51a6ecc0eb0960_95261361($_smarty_tpl) {?><div id="Header">
+<?php if ($_valid && !is_callable('content_5235760df125c2_20398067')) {function content_5235760df125c2_20398067($_smarty_tpl) {?><div id="Header">
 	<div id="HeaderMain">
 		<div id="HeaderStatus">
 			<div class="Logo">
@@ -39,7 +40,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</div>
 				<div class="Search">
 					<form method="POST" action="__APP__/index.php?s=Search">
-						<input type="text" onfocus="if (this.value=='搜索...') this.value='';" onblur="if (this.value=='') this.value='搜索...';" value="搜索..." size="20" class="sinput" name="keyword">
+						<input type="text" onfocus="if (this.value=='搜索...') this.value='';" onblur="if (this.value=='') this.value='搜索...';" value="<?php if (isset($_smarty_tpl->tpl_vars['keyword']->value)){?><?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
+<?php }else{ ?>搜索...<?php }?>" size="20" class="sinput" name="keyword">
 						<input type="submit" class="sbutton" value="GO">
 					</form>
 				</div>

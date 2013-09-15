@@ -1,0 +1,8 @@
+第一步：源码复制
+1.需要环境IIS/Apache/Nginx + PHP5 + MySQL5。
+2.直接拷贝源文件文件夹laugh到服务器根目录即可。
+第二步：数据库还原
+1.用Phpmyadmin或者其他管理器访问Mysql,新建数据库名laugh
+2.数据库备份文件在/laugh/docs/laugh.sql，将其导入laugh数据库
+3.修改数据库配置信息，配置文件地址:/laugh/include/Config/main.config.php
+至此系统安装完成

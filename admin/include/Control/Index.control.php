@@ -44,21 +44,4 @@ class IndexControl extends CommonControl
         $this->assign('data', $data);
         $this->display('index.html');
     }
- 
-    /**
-     * 退出登录
-     */
-    public function logout()
-    {
-        if (session_id()) {
-            session('vcode',null);
-            session('userInfo',null);
-            session('sstate',null);
-            session('ustate',null);
-            session('userAccess',null);
-            // session_destroy();
-        }
-
-        header("location:".__APP__);
-    }
 }

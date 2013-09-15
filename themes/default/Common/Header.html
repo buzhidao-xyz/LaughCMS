@@ -13,7 +13,7 @@
 				</div>
 				<div class="Search">
 					<form method="POST" action="__APP__/index.php?s=Search">
-						<input type="text" onfocus="if (this.value=='搜索...') this.value='';" onblur="if (this.value=='') this.value='搜索...';" value="搜索..." size="20" class="sinput" name="keyword">
+						<input type="text" onfocus="if (this.value=='搜索...') this.value='';" onblur="if (this.value=='') this.value='搜索...';" value="{if isset($keyword)}{$keyword}{else}搜索...{/if}" size="20" class="sinput" name="keyword">
 						<input type="submit" class="sbutton" value="GO">
 					</form>
 				</div>

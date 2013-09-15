@@ -7,9 +7,13 @@ class DBpdosqlserver extends DBDriver
 {
     protected $_field = '*';
     protected $_join = '';
+    protected $_union = '';
     protected $_where = '';
     protected $_order = '';
     protected $_limit = '';
+    protected $_group = '';
+
+    protected $_where0 = '';
     
     //sql语句
     protected $sql = null;
@@ -138,17 +142,18 @@ class DBpdosqlserver extends DBDriver
     public function select($options=array())
     {
         $this->_before_sql($options);
-
+        
+        $main_table = $this->_union ? $this->_union : self::$_tbf.self::$_table;
         if ($this->_limit) {
-            if (!$this->_order) return array();
+            if (!$this->_order) exit('*#SqlServer Limit need Order!!!');
 
             $this->_limit = $this->_where ? " AND ".$this->_limit : " WHERE ".$this->_limit;
-            $_temp_table = "SELECT *,ROW_NUMBER() OVER(".$this->_order.") AS ROW_NUMBER FROM ".self::$_tbf.self::$_table;
+            $_temp_table = " (SELECT *,ROW_NUMBER() OVER(".$this->_order.") AS ROW_NUMBER FROM ".$main_table." as a ".$this->_where0.") ";
         } else {
-            $_temp_table = self::$_tbf.self::$_table;
+            $_temp_table = $main_table;
         }
-        $this->sql = "SELECT ".$this->_field." FROM ".$_temp_table." as a ".$this->_join.$this->_where.$this->_limit;
-        
+        $this->sql = "SELECT ".$this->_field." FROM ".$_temp_table." as a ".$this->_join.$this->_where.$this->_limit.$this->_group.$this->_order;
+
         $this->_after_sql();
 
         $return = $this->GetAll($this->sql);
@@ -178,9 +183,17 @@ class DBpdosqlserver extends DBDriver
         
         foreach ($data as $k=>$v) {
             if (isset($ups)) {
-                $ups .= " , ".$this->orm($k)."='".$v."' ";
+                if (is_array($v) && $v[0]=="image") {
+                    $ups .= " , ".$this->orm($k)."=".$v[1]." ";
+                } else {
+                    $ups .= " , ".$this->orm($k)."='".$v."' ";
+                }
             } else {
-                $ups = $this->orm($k)."='".$v."' ";
+                if (is_array($v) && $v[0]=="image") {
+                    $ups = $this->orm($k)."=".$v[1]." ";
+                } else {
+                    $ups = $this->orm($k)."='".$v."' ";
+                }
             }
         }
         
@@ -204,7 +217,7 @@ class DBpdosqlserver extends DBDriver
     /**
      * join字句
      * @param $join 联合查询字符串 
-     * @param $flag 联合方式 0左连接 1右连接 默认0
+     * @param $flag 联合方式 0左连接 1右连接 2内连接 3外连接 默认0
      */
     public function join($join=null,$flag=0)
     {
@@ -215,11 +228,29 @@ class DBpdosqlserver extends DBDriver
 
         if (!$flag) {
             $join = ' LEFT JOIN '.$join.' ';
-        } else {
+        } else if ($flag === 1) {
             $join = ' RIGHT JOIN '.$join.' ';
+        } else if ($flag === 2) {
+            $join = ' INNER JOIN '.$join.' ';
+        } else if ($flag === 3) {
+            $join = ' OUTER JOIN '.$join.' ';
         }
 
         $this->_join = $join;
+
+        return $this;
+    }
+
+    /**
+     * union联表
+     * @param $table 表名
+     */
+    public function union($table=null)
+    {
+        if (!$table) return $this;
+        $_union_table = self::$_tbf.$table;
+
+        $this->_union = ' (SELECT * FROM '.self::$_tbf.self::$_table.' UNION ALL SELECT * FROM '.$_union_table.') ';
 
         return $this;
     }
@@ -234,9 +265,19 @@ class DBpdosqlserver extends DBDriver
         if ($flag == "top") {
             $this->_limit = " TOP ".(int)$length." ";
         } else {
-            $this->_limit = " (a.ROW_NUMBER BETWEEN ".((int)$start+1)." AND ".(int)$start+(int)$length.") ";
+            $this->_limit = " (a.ROW_NUMBER BETWEEN ".($start+1)." AND ".($start+$length).") ";
         }
         
+        return $this;
+    }
+
+    //分组
+    public function group($field=null)
+    {
+        if ($field) {
+            $this->_group = " GROUP BY ".$this->orm($field)." ";
+        }
+
         return $this;
     }
 
@@ -263,5 +304,18 @@ class DBpdosqlserver extends DBDriver
         $this->sql = "SELECT ".$field.", MATCH(".$match.") AGAINST('".$value."' IN BOOLEAN MODE) AS score FROM ".self::$_tbf.self::$_table." WHERE MATCH(".$match.") AGAINST('".$value."' IN BOOLEAN MODE) ORDER BY score DESC ";
 
         return $this;
+    }
+
+    //结束sql语句处理之后要进行的操作
+    protected function _after_sql()
+    {
+        $this->_field = '*';
+        $this->_join = '';
+        $this->_union = '';
+        $this->_where = '';
+        $this->_where0 = '';
+        $this->_order = '';
+        $this->_limit = '';
+        //$this->sql = null;
     }
 }
