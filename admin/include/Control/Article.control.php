@@ -42,7 +42,7 @@ class ArticleControl extends ArchiveControl
 	{
 		$this->assign("accessStatus",1);
 
-		$this->assign("userInfo",$this->userInfo);
+		$this->assign("adminInfo",$this->adminInfo);
 		$this->assign("columnTree", D("Column")->getColumnTree($this->_Control));
 
 		$this->display("Article/add.html");

@@ -21,7 +21,7 @@ class AccessControl extends BaseControl
 
         $this->_super_admin = $this->_getSuperAdmin();
 
-		$this->_getUserAccess();
+		$this->_getAdminAccess();
 	}
 
     //获取超级管理员账户
@@ -42,23 +42,23 @@ class AccessControl extends BaseControl
 	/**
 	 * 获取用户的控制访问权限
 	 */
-	private function _getUserAccess()
+	private function _getAdminAccess()
 	{
-        if (session('userAccess')) return true;
+        if (session('AdminAccess')) return true;
         session('super_admin', $this->_super_admin);
 
-        $user = $this->userInfo;
-        if (in_array($user['id'], $this->_super_admin)) {
+        $admin = $this->adminInfo;
+        if (in_array($admin['id'], $this->_super_admin)) {
             $node = $this->_NODE->getNode();
             $node = $this->dealNode($node['data']);
         } else {
-            $roleids = $this->_ROLE->getAdminRole($user['id']);
+            $roleids = $this->_ROLE->getAdminRole($admin['id']);
             if (empty($roleids)) return true;
 
             $roleNode = $this->_NODE->getRoleNode($roleids);
             if (empty($roleNode)) return true;
 
-            // $userNode = $this->_NODE->getUserNode($user['id']);
+            // $userNode = $this->_NODE->getUserNode($admin['id']);
             $node = $this->dealNode($roleNode);
         }
 
@@ -69,8 +69,8 @@ class AccessControl extends BaseControl
         $group = $this->_GROUP->getGroup($groupids);
         if (empty($group)) return true;
 
-        $userAccess = $this->dealGroupNode($group, $node);
-        if (is_array($userAccess)) session('userAccess',$userAccess);
+        $AdminAccess = $this->dealGroupNode($group, $node);
+        if (is_array($AdminAccess)) session('AdminAccess',$AdminAccess);
 
         return true;
 	}
@@ -136,18 +136,18 @@ class AccessControl extends BaseControl
      */
     protected function dealGroupNode($group,$node)
     {
-        $userAccess = array();
+        $AdminAccess = array();
 
         foreach ($node as $k=>$v) {
             foreach ($group as $k1=>$v1) {
                 if ($v['groupid'] == $v1['id']) {
-                    if (!array_key_exists($v['groupid'], $userAccess)) $userAccess[$v['groupid']] = $v1;
-                    $userAccess[$v['groupid']]['cnode'][] = $v;
+                    if (!array_key_exists($v['groupid'], $AdminAccess)) $AdminAccess[$v['groupid']] = $v1;
+                    $AdminAccess[$v['groupid']]['cnode'][] = $v;
                     break;
                 }
             }
         }
 
-        return $userAccess;
+        return $AdminAccess;
     }
 }

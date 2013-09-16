@@ -30,7 +30,7 @@ val 为插入的value值，或是于之匹配的value值，当type为checkbox时
 type 为插入数据的样式，可能值为：text,radio,checkbox,selected,textarea
 callback 回调函数,第一个参数为更具targetname成功选择的 jquery对象
 参数示例：[
-{targetname:'username',val:'codyy',type:'text',callback:function(that){alert(that)}},
+{targetname:'adminname',val:'codyy',type:'text',callback:function(that){alert(that)}},
 {targetname:'userintrest',val:'football,game,girl',type:'checkbox',callback:function(){}}
 ]
 */

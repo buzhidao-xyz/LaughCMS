@@ -7,7 +7,7 @@
         <div class="Loglogo"><a href="__APPM__" target="_blank"><img src="themes/blue/images/logo_white.png" width="180" height="60" /></a></div>
         <form name="loginform" method="post" action="__APP__/index.php?s=login/loginCheck">
             <ul>
-                <li><span>用户名:</span><input type="text" name="username" value="" class="input" /></li>
+                <li><span>用户名:</span><input type="text" name="adminname" value="" class="input" /></li>
                 <li><span>密&nbsp;&nbsp;&nbsp;码:</span><input type="password" name="password" value="" class="input" /></li>
                 <li><span>验证码:</span><input type="text" name="vcode" value="" class="input" style="width:80px;" />&nbsp;<img src="__APP__/index.php?s=Org/Vcode" class="vcode" /></li>
                 <li><input type="submit" name="subut" class="button btngreen2" value="登录" /></li>
@@ -18,17 +18,17 @@
 <script language="javascript">
 $(document).ready(function(){
     $("form[name=loginform]").submit(function() {
-        var username = $(this).find("input[name=username]").val();
+        var adminname = $(this).find("input[name=adminname]").val();
         var password = $(this).find("input[name=password]").val();
         var vcode = $(this).find("input[name=vcode]").val();
         
-        if (!username || !password || !vcode) {
+        if (!adminname || !password || !vcode) {
             alert('请填写完整登录信息!');
             return false;
         }
 
         var d = {
-            username: username,
+            adminname: adminname,
             password: password,
             vcode: vcode
         }

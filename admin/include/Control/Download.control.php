@@ -35,7 +35,6 @@ class DownloadControl extends ArchiveControl
 	{
 		$this->assign("accessStatus",1);
 
-		$this->assign("userInfo",$this->userInfo);
 		$this->assign("columnTree", D("Column")->getColumnTree($this->_Control));
 
 		$this->display("Download/add.html");

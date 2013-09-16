@@ -67,7 +67,7 @@ class PublicControl extends CommonControl
     //获取组信息
     private function getGroup($groupid=null)
     {
-        foreach ($this->userAccess as $v) {
+        foreach ($this->AdminAccess as $v) {
             if ($v['id'] == $groupid) return $v;
         }
     }

@@ -26,9 +26,9 @@ class LoginControl extends BaseControl
         if (!self::$_enable) return false;
 
         $this->assign('ecode', eCode(session('ecode')));
-        $this->display('login.html');
-        
+
         if (session_id()) session_destroy();
+        $this->display('login.html');
     }
     
     /**
@@ -45,13 +45,13 @@ class LoginControl extends BaseControl
     
     /**
      * 获取用户名
-     * @return username 登录用户名
+     * @return adminname 登录用户名
      */
-    static private function getUsername()
+    static private function getadminname()
     {
-        $username = q('username');
-        if (Check::__Check('adminName',$username)) {
-            return $username;
+        $adminname = q('adminname');
+        if (Check::__Check('adminName',$adminname)) {
+            return $adminname;
         } else {
             session('ecode', 1003);
             self::LoginIndex();
@@ -95,30 +95,37 @@ class LoginControl extends BaseControl
     static public function loginCheck()
     {
         self::vcodeCheck();
-        $username = self::getUsername();
+        $adminname = self::getadminname();
         $password = self::getPassword();
         
-        $res = T('admin')->field('id,username,password,ukey,ustate,logincount')->where(array('username'=>$username))->find();
+        $res = T('admin')->field('id,adminname,password,ukey,ustate,lastlogintime,lastloginip,logincount')->where(array('adminname'=>$adminname))->find();
         
-        if (empty($res) || $username != $res['username'] || M('Admin')->password_encrypt($password,$res['ukey']) != $res['password']) {
+        if (empty($res) || $adminname != $res['adminname'] || M('Admin')->password_encrypt($password,$res['ukey']) != $res['password']) {
             session('ecode', 1003);
             self::LoginIndex();
         }
 
+        $time = TIMESTAMP;
+        $ip = ip2longs(getIp());
+        $count = $res['logincount'] + 1;
+        //更新登录时间和次数
         M('Admin')->upAdmin($res['id'],array(
-            'lastlogintime' => TIMESTAMP,
-            'lastloginip'   => ip2longs(getIp()),
-            'logincount'    => $res['logincount']+1
+            'lastlogintime' => $time,
+            'lastloginip'   => $ip,
+            'logincount'    => $count
         ));
         
-        $userInfo = array(
-            'id'       => $res['id'],
-            'username' => $res['username'],
-            'ukey'     => $res['ukey']
+        $adminInfo = array(
+            'id'        => $res['id'],
+            'adminname' => $res['adminname'],
+            'lastlogintime' => $time,
+            'lastloginip' => $ip,
+            'logincount' => $count,
+            'ukey'      => $res['ukey']
         );
         
-		session('userInfo', $userInfo);
-		session('sstate', md5(md5($username).$res['ukey']));
+		session('adminInfo', $adminInfo);
+		session('sstate', md5(md5($adminname).$res['ukey']));
 		session('ustate', $res['ustate']);
 
         if (self::isAjax()) {
@@ -135,11 +142,12 @@ class LoginControl extends BaseControl
     public function logout()
     {
         if (session_id()) {
+            session('ecode',null);
             session('vcode',null);
-            session('userInfo',null);
+            session('adminInfo',null);
             session('sstate',null);
             session('ustate',null);
-            session('userAccess',null);
+            session('AdminAccess',null);
             // session_destroy();
         }
 

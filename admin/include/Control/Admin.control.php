@@ -27,11 +27,11 @@ class AdminControl extends CommonControl
 	}
 
 	//获取管理员用户名
-	private function _getUsername()
+	private function _getAdminname()
 	{
-		$username = q('username');
-		if (!$username) $this->ajaxReturn(1,'请输入账户名！');
-		return $username;
+		$adminname = q('adminname');
+		if (!$adminname) $this->ajaxReturn(1,'请输入账户名！');
+		return $adminname;
 	}
 
 	//获取状态
@@ -51,8 +51,8 @@ class AdminControl extends CommonControl
 	//修改密码
 	public function upPassword()
 	{
-		$id = $this->userInfo['id'];
-		$ukey = $this->userInfo['ukey'];
+		$id = $this->adminInfo['id'];
+		$ukey = $this->adminInfo['ukey'];
 		$password0 = isset($_REQUEST['password0']) ? $_REQUEST['password0'] : '';
 		if (!Check::__Check('adminPwd',$password0)) $this->ajaxReturn(1,'原始密码错误！');
 		$password = isset($_REQUEST['password']) ? $_REQUEST['password'] : '';
@@ -84,7 +84,7 @@ class AdminControl extends CommonControl
 	//保存管理员信息
 	public function saveAdmin()
 	{
-		$username = $this->_getUsername();
+		$adminname = $this->_getAdminname();
 		$password = isset($_REQUEST['password']) ? $_REQUEST['password'] : '';
 		if (!Check::__Check('adminPwd',$password)) $this->ajaxReturn(1,'密码错误！');
 		$password1 = isset($_REQUEST['password1']) ? $_REQUEST['password1'] : '';
@@ -93,12 +93,12 @@ class AdminControl extends CommonControl
 
 		$ukey = getRandStrs();
 		$data = array(
-			'username' => $username,
+			'adminname' => $adminname,
 			'password' => M('Admin')->password_encrypt($password,$ukey),
 			'ukey'     => $ukey,
 			'createtime' => TIMESTAMP,
 			'status'   => $status,
-			'ustate'   => md5(md5($username).$ukey),
+			'ustate'   => md5(md5($adminname).$ukey),
 			'lastlogintime' => TIMESTAMP,
 			'lastloginip'   => ip2longs(getIp()),
 			'logincount'    => 0

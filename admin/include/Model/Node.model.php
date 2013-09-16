@@ -56,14 +56,14 @@ class Node extends Base
 
     /**
      * 获取用户的node权限
-     * @param $userid int 用户id
+     * @param $adminid int 管理员id
      */
-    public function getUserNode($userid)
+    public function getUserNode($adminid=null)
     {
-        if (!$userid) return false;
+        if (!$adminid) return false;
 
         $where = array(
-        	'a.userid' => $userid,
+        	'a.adminid' => $adminid,
 			'b.isshow'  => 1
         );
         $res = T('admin_access')->join(' '.TBF.'node as b on a.nodeid=b.id ')->field('a.nodeid,b.id,b.title,b.control,b.action,b.pid,b.groupid')->where($where)->select();
@@ -212,19 +212,19 @@ class Node extends Base
      */
     private function dealGroupNode($group,$node)
     {
-        $userAccess = array();
+        $AdminAccess = array();
 
         foreach ($node as $k=>$v) {
             foreach ($group as $k1=>$v1) {
                 if ($v['groupid'] == $v1['id']) {
-                    if (!array_key_exists($v['groupid'], $userAccess)) $userAccess[$v['groupid']] = $v1;
-                    $userAccess[$v['groupid']]['cnode'][] = $v;
+                    if (!array_key_exists($v['groupid'], $AdminAccess)) $AdminAccess[$v['groupid']] = $v1;
+                    $AdminAccess[$v['groupid']]['cnode'][] = $v;
                     break;
                 }
             }
         }
 
-        return $userAccess;
+        return $AdminAccess;
     }
 
     //更新角色节点

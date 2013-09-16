@@ -16,7 +16,7 @@
 	{if $adminList}
 	{foreach $adminList as $d}
 	<ul class="table_list role_send_table">
-		<li class="table_list_l table_list_l120">{$d.username}</li>
+		<li class="table_list_l table_list_l120">{$d.adminname}</li>
 		<li class="table_list_l table_list_l150" name="role" roleid="{$d.roleid}" title="{$d.rolename}">{$d.rolename}</li>
 		<li class="table_list_l table_list_l150">{$d.createtime|mkdate}</li>
 		<li class="table_list_l table_list_l150">{$d.lastlogintime|mkdate}</li>
@@ -32,7 +32,7 @@
 		</li>
 		<li class="table_list_l table_list_l150" accessStatus={$accessStatus}>
 			{if !in_array($d.id,$super_admin)}
-			<a href="javascript:;" name="modify" id="{$d.id}" username="{$d.username}">角色权限</a>
+			<a href="javascript:;" name="modify" id="{$d.id}" adminname="{$d.adminname}">角色权限</a>
 			<a delurl="__APP__/index.php?s=Admin/resetPassword&id={$d.id}" href="javascript:;" name="del" msg="确定重置密码吗？">重置密码</a>
 			<a delurl="__APP__/index.php?s=Admin/delteAdmin&id={$d.id}" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 			{/if}

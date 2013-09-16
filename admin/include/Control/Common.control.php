@@ -8,7 +8,7 @@ class CommonControl extends BaseControl
     protected $_Control = 'Common';
 
     //用户权限
-    protected $userAccess;
+    protected $AdminAccess;
 
     //分页 每页显示数据数
     protected $_pagesize = 30;
@@ -28,23 +28,23 @@ class CommonControl extends BaseControl
 
         new AccessControl();
 
-        $this->getUserAccess();
-        $this->setUserAccess();
+        $this->getAdminAccess();
+        $this->setAdminAccess();
 
         $this->assign("timestamp",TIMESTAMP);
         $this->assign("Control", $this->_Control);
     }
 
     //获取用户权限信息
-    public function getUserAccess()
+    public function getAdminAccess()
     {
-         $this->userAccess = session('userAccess');
+         $this->AdminAccess = session('AdminAccess');
     }
 
     //设置用户权限信息
-    public function setUserAccess()
+    public function setAdminAccess()
     {
-        $this->assign('userAccess', $this->userAccess);
+        $this->assign('AdminAccess', $this->AdminAccess);
     }
 
     /**
@@ -69,7 +69,7 @@ class CommonControl extends BaseControl
      * @param $control string 要访问的类/控制器
      * @param $action string 要访问的节点/方法
      */
-    public function checkUserAccess($control,$action,$flag=0)
+    public function checkAdminAccess($control,$action,$flag=0)
     {
         $accessStatus = 0;
         $return = false;
@@ -78,7 +78,7 @@ class CommonControl extends BaseControl
         $status = $this->_isDBNode($control,$action);
 
         if ($status) {
-            foreach ($this->userAccess as $v) {
+            foreach ($this->AdminAccess as $v) {
                 if (isset($v['cnode']) && is_array($v['cnode']) && !empty($v['cnode'])) {
                     foreach ($v['cnode'] as $v1) {
                         if (isset($v1['cnode']) && is_array($v1['cnode']) && !empty($v1['cnode'])) {
@@ -107,7 +107,7 @@ class CommonControl extends BaseControl
      */
     protected function _checkNodeAccess($control,$action)
     {
-        if (!$this->checkUserAccess($control,$action,1)) {
+        if (!$this->checkAdminAccess($control,$action,1)) {
             return false;exit;
         }
     }

@@ -9,7 +9,7 @@ class BaseControl
     static protected $_control_suffix = 'Control';
 
     protected $_template;   //模板解析类对象
-    protected $_userInfo;   //用户信息
+    protected $_adminInfo;   //用户信息
 
     protected $_system_model = null;
 
@@ -20,12 +20,12 @@ class BaseControl
         if (!$this->_template) $this->_template = new Template();
         if (!$this->_system_model) $this->_system_model = new System();
 
-        $this->userInfo = session('userInfo');
+        $this->adminInfo = session('adminInfo');
 
         $this->getSys();
         $this->isLoged();
 
-        $this->assign('userInfo', $this->userInfo);
+        $this->assign('adminInfo', $this->adminInfo);
 
         $this->assign('uniquecode',md5(TIMESTAMP));
     }
@@ -50,7 +50,7 @@ class BaseControl
         $url = parse_url(request_uri());
 		if (isset($url['query'])) $res = preg_match("/^s=(Login|Org)(\/index)?/i",$url['query']);
 
-        if (!$res && (empty($this->userInfo) || $sstate != $ustate)) {
+        if (!$res && (empty($this->adminInfo) || $sstate != $ustate)) {
             header("location:".__APP__.'/index.php?s=Login');
             exit;
         }

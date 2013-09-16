@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost
-Source Server Version : 50530
+Source Server Version : 50528
 Source Host           : localhost:3306
 Source Database       : laugh
 
 Target Server Type    : MYSQL
-Target Server Version : 50530
+Target Server Version : 50528
 File Encoding         : 65001
 
-Date: 2013-09-15 21:30:48
+Date: 2013-09-16 11:03:33
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -21,7 +21,7 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `la_admin`;
 CREATE TABLE `la_admin` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(50) NOT NULL,
+  `adminname` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `ukey` char(6) NOT NULL,
   `createtime` int(11) NOT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE `la_admin` (
   `logincount` tinyint(6) NOT NULL,
   `super` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`)
+  UNIQUE KEY `username` (`adminname`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -46,9 +46,9 @@ INSERT INTO `la_admin` VALUES ('2', 'luochuan', '624879b3fff70462132a21eb1cd8eb7
 -- ----------------------------
 DROP TABLE IF EXISTS `la_admin_access`;
 CREATE TABLE `la_admin_access` (
-  `userid` int(10) NOT NULL,
+  `adminid` int(10) NOT NULL,
   `nodeid` mediumint(6) NOT NULL,
-  KEY `userid` (`userid`)
+  KEY `userid` (`adminid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------

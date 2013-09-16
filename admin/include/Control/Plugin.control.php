@@ -96,7 +96,7 @@ class PluginControl extends CommonControl
     {
         $this->assign("accessStatus",1);
 
-        $this->assign("userInfo",$this->userInfo);
+        $this->assign("adminInfo",$this->adminInfo);
         $this->assign("columnTree", D("Column")->getColumnTree($this->_Control));
 
         $this->display("Plugin/CooperateAdd.html");
@@ -161,7 +161,7 @@ class PluginControl extends CommonControl
         $id = q("id");
         if (!$id) $this->ajaxReturn(1,"ID错误！");
 
-        $this->assign("userInfo",$this->userInfo);
+        $this->assign("adminInfo",$this->adminInfo);
         $this->assign("columnTree", D("Column")->getColumnTree($this->_Control));
 
         $CooperateInfo = M("Plugin")->getCooperateList($id,0,0,null);
