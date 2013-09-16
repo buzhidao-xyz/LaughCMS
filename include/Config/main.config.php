@@ -27,6 +27,9 @@ $config = array(
         'plugin_dir'       => ROOT_DIR.'/include/Vendor/Smarty/plugins',
     ),
 
+    //安装完成锁定 0未锁定 1已锁定
+    'ISLOCK' => 1,
+
     //Laugh数据模型数据库配置信息
     'DB' => array(
         'db0' => array (

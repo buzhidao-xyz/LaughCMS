@@ -1,0 +1,18 @@
+<div id="Footer">
+	<ul id="Link">
+		{if isset($FootNavigationList)&&!empty($FootNavigationList)}
+		{foreach $FootNavigationList as $d}
+		<li {if $d.AutoIndex==1}class="bordernone"{/if}><a href="{$d.link}">{$d.title}</a></li>
+		{/foreach}
+		{/if}
+	</ul>
+	<div id="copyright">
+		{$Config.sitename}
+		<br/>
+		Powered by <a target="_blank" href="javascript:;">LaughCMS v1.0 Released</a> 版权所有 © 2012-2013, All right reserved. 
+	</div>
+</div>
+<script type="text/javascript" src="public/js/scrollToTop.js"></script>
+{include file="include/share1.html"}
+</body>
+</html>
