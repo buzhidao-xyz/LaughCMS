@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="keywords" content="Laugh,CMS,LaughCMS,内容,管理系统,内容管理系统,网站">
-<meta name="description" content="LaughCMS网站内容管理系统,网站建设,网站制作,企业站一体化建设" />
+<meta name="keywords" content="Laugh,CMS,LaughCMS,内容,管理,系统">
+<meta name="description" content="Laugh CMS内容管理系统" />
 <link type="text/css" rel="stylesheet" href="themes/default/style/common.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/default/style/frame.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/default/style/global.css" media="screen">
@@ -12,7 +12,7 @@
 <script type="text/javascript" src="public/js/jquery.idTabs.min.js"></script>
 <script type="text/javascript" src="themes/default/js/common.js"></script>
 <script type="text/javascript" src="themes/default/js/frame.js"></script>
-<title>Laugh CMS - 网站内容管理系统</title>
+<title>Laugh CMS内容管理系统</title>
 <script type="text/javascript">
 var JS_APP = '/laugh';
 </script>
@@ -29,7 +29,7 @@ var JS_APP = '/laugh';
 				<a href="/laugh"><img src="/laugh/themes/default/images/logo.png" /></a>
 			</div>
 			<div class="Center">
-				昆山信德佳电气科技有限公司
+				Laugh CMS内容管理系统
 			</div>
 			<div class="Operate">
 				<div class="OpTop">
@@ -231,7 +231,7 @@ $("#SImageContainer").Xslider({
 		<div class="clear"></div>
 	</div>
 	<div class="adBanner block">
-		<a href="" target="_blank"><img src="/laugh/Uploads/AdImage/1368168836_w2hsg2_8994_ad_banner2.png" width="1000" height="80" /></a>
+		<a href="http://www.baidu.com/" target="_blank"><img src="/laugh/Uploads/AdImage/1368168489_ru3un2_8465_ad_banner.png" width="1000" height="80" /></a>
 	</div>
 	<div id="BottomShow" class="block">
 		<div id="ImgListBlock" class="boxBlock fleft w740">
@@ -283,12 +283,12 @@ $("#ImgListBlock ul#ImgboxTab").idTabs(function(id,list,set){
 			</div>
 			<div class="boxBlockBody">
 				<div class="contactUS">
-					<h5>电 话: XXXXXXXX</h5>
-<h5>邮 编: XXXXXXXX</h5>
-<h5>网 址: www.xxx.com</h5>
-<h5>Email: admin@admin.com</h5>
-<h5>联系地址: 江苏省苏州市工业园区若水路1号</h5>
-<h5>联系人: XXX</h5>
+					<h5><font color="#FF6600"><b>Laugh CMS内容管理系统</b></font></h5>
+<h5><font color="#FF6600">Laugh CMS</font></h5>
+<h5>电 话: 0512-36607986 15962257765</h5>
+<h5>传 真: 0512-36607986</h5>
+<h5>网 址: www.laughcms.net</h5>
+<h5>地 址: 江苏省苏州市</h5>
 				</div>
 			</div>
 		</div>
@@ -336,7 +336,7 @@ $("#Flink ul#FlinkboxTab").idTabs(function(id,list,set){
 				<li ><a href="javascript:;">帮助中心</a></li>
 					</ul>
 	<div id="copyright">
-		Laugh CMS - 网站内容管理系统
+		Laugh CMS内容管理系统
 		<br/>
 		Powered by <a target="_blank" href="javascript:;">LaughCMS v1.0 Released</a> 版权所有 © 2012-2013, All right reserved. 
 	</div>

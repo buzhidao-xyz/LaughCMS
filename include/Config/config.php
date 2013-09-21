@@ -20,7 +20,7 @@ require('orm.config.php');
 require('ecode.config.php');
 
 //数据库配置参数缓存
-$config['CACHE'] = $cache;
+$config['CACHE'] = isset($cache) ? $cache : array();
 
 //读取c.config.php文件内容
 function C($key)

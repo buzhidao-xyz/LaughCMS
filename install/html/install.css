@@ -1,0 +1,244 @@
+/*基础样式表*/
+body {
+	color: #333333;
+	padding: 5px 0;
+	background: url("images/body_bg.jpg") repeat scroll 0 0 #E8E8EA;
+}
+ul, li {
+    list-style: decimal outside none;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 12px;
+}
+table {
+	color: #333333;
+    border-collapse: collapse;
+}
+th {
+    text-align: left;
+}
+
+.red {
+    color: #FF0000;
+}
+
+/*框架*/
+.container {
+    border: 1px solid #000000;
+    height: auto !important;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: left;
+    width: 700px;
+}
+.footer {
+    font-size: 12px;
+    line-height: 40px;
+    text-align: center;
+    border-top: 1px solid #CACCCD;
+}
+
+/*头部*/
+.header {
+    background: url("images/header_bg.gif") repeat-x scroll 0 0 #FFFFFF;
+    height: 192px;
+}
+.header h1 {
+    width: 270px;
+    height: 28px;
+    padding: 20px 10px 0 10px;
+    font-size: 23px;
+}
+.header span {
+    float: right;
+    color: #F1F1F1;
+    padding-right: 10px;
+}
+
+/*主体*/
+.main {
+    background: #EFEFEF;
+    padding: 20px 20px 0;
+    border: 1px solid #CCC;
+    /*background: url("images/bg_repx.gif") repeat-x scroll 0 -194px #F7FBFE;*/
+}
+
+/*许可协议样式*/
+.licenseblock {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CACCCD;
+    height: 350px;
+    margin-bottom: 15px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 8px;
+}
+.license {
+	color: #333333;
+}
+.license h1 {
+	color: #333333;
+    font-size: 14px;
+    padding: 20px 0 10px 0;
+    text-align: center;
+}
+.license p {
+    line-height: 150%;
+    margin: 10px 0;
+    text-indent: 25px;
+}
+.license h3 {
+    color: #333333;
+    font-size: 12px;
+    margin: 0;
+}
+.license li {
+    line-height: 150%;
+    margin: 5px 0;
+}
+.marginbot {
+    margin-bottom: 10px;
+}
+.btnbox {
+    text-align: center;
+}
+
+/*许可协议表单*/
+.installform input,.installinput {
+	width: auto;
+	height: auto;
+	margin: 0 3px;
+	padding: 3px;
+	color: #666666;
+	background: #FEFEFE;
+	border: 1px solid #666666;
+}
+.installform input:hover,.installinput:hover {
+	background: #E3FAC1;
+	border: 1px solid #5F9729;
+}
+
+/*安装过程 step */
+.setup {
+    margin: 46px 0 0 200px;
+    padding-left: 70px;
+}
+.step1 {
+    background: url("images/stepnum.gif") no-repeat scroll 0 8px transparent;
+}
+.step2 {
+    background: url("images/stepnum.gif") no-repeat scroll 0 -92px transparent;
+}
+.step3 {
+    background: url("images/stepnum.gif") no-repeat scroll 0 -192px transparent;
+}
+.setup h2 {
+    color: #6CA1B4;
+    font-size: 36px;
+    line-height: 1.2;
+    padding-top: 0;
+}
+.setup p {
+    color: #999999;
+    margin: 1px 0 10px 6px;
+}
+.stepstat {
+    bottom: -5px;
+    height: 30px;
+    left: 80px;
+    position: relative;
+}
+.stepstat ul {
+    left: -2px;
+    list-style: none outside none;
+    overflow: hidden;
+    position: absolute;
+    top: 3px;
+    white-space: nowrap;
+    width: 600px;
+    z-index: 100;
+    list-style: none outside none;
+}
+
+.stepstat li {
+    background: url("images/bg_repno.gif") no-repeat scroll 0 -38px transparent;
+    float: left;
+    font-size: 12px;
+    height: 30px;
+    line-height: 14px;
+    text-indent: 20px;
+    width: 175px;
+    list-style: none outside none;
+}
+.stepstat .current {
+    background: url("images/bg_repno.gif") no-repeat scroll 0 -71px transparent;
+    font-weight: 700;
+}
+.stepstat .unactivated {
+    background: url("images/bg_repno.gif") no-repeat scroll 0 -103px transparent;
+}
+.stepstat .last {
+    width: 50px;
+}
+
+.stepstatbg {
+    background: url("images/bg_stepstatus.gif") no-repeat scroll 0 0 #81C6F0;
+    height: 9px;
+    overflow: hidden;
+    position: absolute;
+    top: 18px;
+    width: 535px;
+    z-index: 90;
+}
+.stepstat1{ background-position:-750px 0; }
+.stepstat2{ background-position:-570px 0; }
+.stepstat3{ background-position:-390px 0; }
+.stepstat4{ background-position:-210px 0; }
+
+.title {
+    margin: 5px 0 -15px 60px;
+    padding-top: 5px;
+    border-top: 2px solid #FFFFFF;
+}
+
+/*环境检查表格样式*/
+.tb th {
+    color: #6CA1B4;
+    font-weight: 700;
+    padding: 5px;
+}
+.tb td {
+    padding: 3px 5px;
+}
+.tb .w, .tb .nw, .tb .padleft {
+    padding-left: 45px;
+}
+.tb .pdleft1 {
+    padding-left: 67px;
+}
+.w {
+    background: url("images/bg_repno.gif") no-repeat scroll 45px -148px transparent;
+}
+
+.tb2 {
+}
+.tb, .tb2 {
+    margin: 15px 0 15px 67px;
+}
+.tb2 th, .tb2 td {
+    padding: 3px 5px;
+}
+.tbopt {
+    width: 130px;
+}
+.tb2 th, .tb2 td {
+    padding: 3px 5px;
+}
+
+/*描述*/
+.desc {
+    clear: both;
+    line-height: 180%;
+    margin: 0 auto;
+    width: 537px;
+}

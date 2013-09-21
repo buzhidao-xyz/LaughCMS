@@ -1,14 +1,56 @@
 <?php
-
 /**
- *      [Discuz!] (C)2001-2099 Comsenz Inc.
- *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: install_function.php 32753 2013-03-06 05:59:05Z chenmengshu $
+ * LaughCMS安装向导
+ * 2013-09-16 baoqing wang
  */
 
-if(!defined('IN_COMSENZ')) {
-	exit('Access Denied');
+if(!defined('IN_LAUGH')) exit('Access Denied');
+
+//获取定义的变量
+function lang($lang_key, $force = true) {
+	return isset($GLOBALS['lang'][$lang_key]) ? $GLOBALS['lang'][$lang_key] : ($force ? $lang_key : '');
+}
+
+function getgpc($k, $t='GP') {
+	$t = strtoupper($t);
+	switch($t) {
+		case 'GP' : isset($_POST[$k]) ? $var = &$_POST : $var = &$_GET; break;
+		case 'G': $var = &$_GET; break;
+		case 'P': $var = &$_POST; break;
+		case 'C': $var = &$_COOKIE; break;
+		case 'R': $var = &$_REQUEST; break;
+	}
+	return isset($var[$k]) ? $var[$k] : null;
+}
+
+//显示许可协议
+function show_license() {
+	global $self, $uchidden, $step;
+	$next = $step + 1;
+	if(VIEW_OFF) {
+		show_msg('license_contents', lang('license'), 1);
+	} else {
+		show_header();
+
+		$license = str_replace('  ', '&nbsp; ', lang('license'));
+		$lang_agreement_yes = lang('agreement_yes');
+		$lang_agreement_no = lang('agreement_no');
+		echo <<<EOT
+</div>
+<div class="main" style="margin-top:-123px;">
+	<div class="licenseblock">$license</div>
+	<div class="btnbox marginbot">
+		<form name="installform" class="installform" method="get" autocomplete="off" action="index.php">
+		<input type="hidden" name="step" value="$next">
+		<input type="hidden" name="uchidden" value="$uchidden">
+		<input type="submit" name="submit" value="{$lang_agreement_yes}">&nbsp;
+		<input type="button" name="exit" value="{$lang_agreement_no}" onclick="javascript: window.close(); return false;">
+		</form>
+	</div>
+EOT;
+
+		show_footer();
+	}
 }
 
 function show_msg($error_no, $error_msg = 'ok', $success = 1, $quit = TRUE) {
@@ -49,7 +91,7 @@ function show_msg($error_no, $error_msg = 'ok', $success = 1, $quit = TRUE) {
 			echo '<br /><span class="red">'.lang('error_quit_msg').'</span><br /><br /><br />';
 		}
 
-		echo '<input type="button" onclick="history.back()" value="'.lang('click_to_back').'" /><br /><br /><br />';
+		echo '<input type="button" onclick="history.back()" value="'.lang('click_to_back').'" class="installinput" /><br /><br /><br />';
 
 		echo '</div>';
 
@@ -57,67 +99,61 @@ function show_msg($error_no, $error_msg = 'ok', $success = 1, $quit = TRUE) {
 	}
 }
 
-function check_db($dbhost, $dbuser, $dbpw, $dbname, $tablepre) {
-	if(!function_exists('mysql_connect')) {
-		show_msg('undefine_func', 'mysql_connect', 0);
-	}
-	if(!@mysql_connect($dbhost, $dbuser, $dbpw)) {
-		$errno = mysql_errno();
-		$error = mysql_error();
-		if($errno == 1045) {
-			show_msg('database_errno_1045', $error, 0);
-		} elseif($errno == 2003) {
-			show_msg('database_errno_2003', $error, 0);
-		} else {
-			show_msg('database_connect_error', $error, 0);
-		}
-	} else {
-		if($query = @mysql_query("SHOW TABLES FROM $dbname")) {
-			while($row = mysql_fetch_row($query)) {
-				if(preg_match("/^$tablepre/", $row[0])) {
-					return false;
-				}
-			}
-		}
-	}
-	return true;
+function show_header() {
+	define('SHOW_HEADER', TRUE);
+	global $step;
+
+	$soft_name = SOFT_NAME;
+	$soft_version = SOFT_VERSION;
+	$soft_release = SOFT_RELEASE;
+
+	$install_lang = lang(INSTALL_LANG);
+	$title = lang('title_install');
+	$charset = CHARSET;
+	echo <<<EOT
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="LaughCMS Inc." name="Copyright" />
+<meta http-equiv="Content-Type" content="text/html; charset=$charset">
+<link type="text/css" rel="stylesheet" href="html/common.css" media="screen">
+<link type="text/css" rel="stylesheet" href="html/install.css" media="screen">
+<title>$title</title>
+<script type="text/javascript">
+function $(id) {
+	return document.getElementById(id);
+}
+function showmessage(message) {
+	document.getElementById('notice').innerHTML += message + '<br />';
+}
+</script>
+</head>
+
+<body>
+<div class="container">
+	<div class="header">
+		<h1>$title</h1>
+		<span>$soft_name$soft_version $install_lang $soft_release</span>
+EOT;
+
+	$step > 0 && show_step($step);
 }
 
-function dirfile_check(&$dirfile_items) {
-	foreach($dirfile_items as $key => $item) {
-		$item_path = $item['path'];
-		if($item['type'] == 'dir') {
-			if(!dir_writeable(ROOT_PATH.$item_path)) {
-				if(is_dir(ROOT_PATH.$item_path)) {
-					$dirfile_items[$key]['status'] = 0;
-					$dirfile_items[$key]['current'] = '+r';
-				} else {
-					$dirfile_items[$key]['status'] = -1;
-					$dirfile_items[$key]['current'] = 'nodir';
-				}
-			} else {
-				$dirfile_items[$key]['status'] = 1;
-				$dirfile_items[$key]['current'] = '+r+w';
-			}
-		} else {
-			if(file_exists(ROOT_PATH.$item_path)) {
-				if(is_writable(ROOT_PATH.$item_path)) {
-					$dirfile_items[$key]['status'] = 1;
-					$dirfile_items[$key]['current'] = '+r+w';
-				} else {
-					$dirfile_items[$key]['status'] = 0;
-					$dirfile_items[$key]['current'] = '+r';
-				}
-			} else {
-				if(dir_writeable(dirname(ROOT_PATH.$item_path))) {
-					$dirfile_items[$key]['status'] = 1;
-					$dirfile_items[$key]['current'] = '+r+w';
-				} else {
-					$dirfile_items[$key]['status'] = -1;
-					$dirfile_items[$key]['current'] = 'nofile';
-				}
-			}
-		}
+function show_footer($quit = true) {
+	$official_site = OFFICIAL_SITE;
+	echo <<<EOT
+		<div class="footer">&copy;2013 - 2015 <a href="$official_site" target="_blank">Laugh CMS</a> Inc.</div>
+	</div>
+</div>
+</body>
+</html>
+EOT;
+	$quit && exit();
+}
+
+function function_check(&$func_items) {
+	foreach($func_items as $item) {
+		function_exists($item) or show_msg('undefine_func', $item, 0);
 	}
 }
 
@@ -147,13 +183,6 @@ function env_check(&$env_items) {
 		}
 	}
 }
-
-function function_check(&$func_items) {
-	foreach($func_items as $item) {
-		function_exists($item) or show_msg('undefine_func', $item, 0);
-	}
-}
-
 function show_env_result(&$env_items, &$dirfile_items, &$func_items, &$filesock_items) {
 
 	$env_str = $file_str = $dir_str = $func_str = '';
@@ -241,9 +270,9 @@ function show_env_result(&$env_items, &$dirfile_items, &$func_items, &$filesock_
 		echo "<table class=\"tb\" style=\"margin:20px 0 20px 55px;\">\n";
 		echo "<tr>\n";
 		echo "\t<th>".lang('project')."</th>\n";
-		echo "\t<th class=\"padleft\">".lang('ucenter_required')."</th>\n";
-		echo "\t<th class=\"padleft\">".lang('ucenter_best')."</th>\n";
-		echo "\t<th class=\"padleft\">".lang('curr_server')."</th>\n";
+		echo "\t<th class=\"padleft\">".lang('server_required')."</th>\n";
+		echo "\t<th class=\"padleft\">".lang('server_best')."</th>\n";
+		echo "\t<th class=\"padleft\">".lang('server_curr')."</th>\n";
 		echo "</tr>\n";
 		echo $env_str;
 		echo "</table>\n";
@@ -304,14 +333,50 @@ function show_env_result(&$env_items, &$dirfile_items, &$func_items, &$filesock_
 		show_next_step(2, $error_code);
 
 		show_footer();
-
 	}
+}
 
+function dirfile_check(&$dirfile_items) {
+	foreach($dirfile_items as $key => $item) {
+		$item_path = $item['path'];
+		if($item['type'] == 'dir') {
+			if(!dir_writeable(ROOT_PATH.$item_path)) {
+				if(is_dir(ROOT_PATH.$item_path)) {
+					$dirfile_items[$key]['status'] = 0;
+					$dirfile_items[$key]['current'] = '+r';
+				} else {
+					$dirfile_items[$key]['status'] = -1;
+					$dirfile_items[$key]['current'] = 'nodir';
+				}
+			} else {
+				$dirfile_items[$key]['status'] = 1;
+				$dirfile_items[$key]['current'] = '+r+w';
+			}
+		} else {
+			if(file_exists(ROOT_PATH.$item_path)) {
+				if(is_writable(ROOT_PATH.$item_path)) {
+					$dirfile_items[$key]['status'] = 1;
+					$dirfile_items[$key]['current'] = '+r+w';
+				} else {
+					$dirfile_items[$key]['status'] = 0;
+					$dirfile_items[$key]['current'] = '+r';
+				}
+			} else {
+				if(dir_writeable(dirname(ROOT_PATH.$item_path))) {
+					$dirfile_items[$key]['status'] = 1;
+					$dirfile_items[$key]['current'] = '+r+w';
+				} else {
+					$dirfile_items[$key]['status'] = -1;
+					$dirfile_items[$key]['current'] = 'nofile';
+				}
+			}
+		}
+	}
 }
 
 function show_next_step($step, $error_code) {
 	global $uchidden;
-	echo "<form action=\"index.php\" method=\"post\">\n";
+	echo "<form name=\"installform\" class=\"installform\" action=\"index.php\" method=\"post\">\n";
 	echo "<input type=\"hidden\" name=\"step\" value=\"$step\" />";
 	if(isset($GLOBALS['hidden'])) {
 		echo $GLOBALS['hidden'];
@@ -336,12 +401,14 @@ function show_form(&$form_items, $error_msg) {
 
 	show_header();
 	show_setting('start');
-	show_setting('hidden', 'step', $step);
-	show_setting('hidden', 'install_ucenter', getgpc('install_ucenter'));
 	if($step == 2) {
-		show_tips('install_dzfull');
-		show_tips('install_dzonly');
+		show_setting('hidden', 'step', $step+1);
+		show_tips('install_cmsonly');
+	} else {
+		show_setting('hidden', 'step', $step);
 	}
+	// show_setting('hidden', 'install_ucenter', getgpc('install_ucenter'));
+
 	$is_first = 1;
 	if(!empty($uchidden)) {
 		$uc_info_transfer = unserialize(urldecode($uchidden));
@@ -400,37 +467,30 @@ function show_form(&$form_items, $error_msg) {
 	show_footer();
 }
 
-function show_license() {
-	global $self, $uchidden, $step;
-	$next = $step + 1;
-	if(VIEW_OFF) {
-
-		show_msg('license_contents', lang('license'), 1);
-
-	} else {
-
-		show_header();
-
-		$license = str_replace('  ', '&nbsp; ', lang('license'));
-		$lang_agreement_yes = lang('agreement_yes');
-		$lang_agreement_no = lang('agreement_no');
-		echo <<<EOT
-</div>
-<div class="main" style="margin-top:-123px;">
-	<div class="licenseblock">$license</div>
-	<div class="btnbox marginbot">
-		<form method="get" autocomplete="off" action="index.php">
-		<input type="hidden" name="step" value="$next">
-		<input type="hidden" name="uchidden" value="$uchidden">
-		<input type="submit" name="submit" value="{$lang_agreement_yes}" style="padding: 2px">&nbsp;
-		<input type="button" name="exit" value="{$lang_agreement_no}" style="padding: 2px" onclick="javascript: window.close(); return false;">
-		</form>
-	</div>
-EOT;
-
-		show_footer();
-
+function check_db($dbhost, $dbuser, $dbpw, $dbname, $tablepre) {
+	if(!function_exists('mysql_connect')) {
+		show_msg('undefine_func', 'mysql_connect', 0);
 	}
+	if(!@mysql_connect($dbhost, $dbuser, $dbpw)) {
+		$errno = mysql_errno();
+		$error = mysql_error();
+		if($errno == 1045) {
+			show_msg('database_errno_1045', $error, 0);
+		} elseif($errno == 2003) {
+			show_msg('database_errno_2003', $error, 0);
+		} else {
+			show_msg('database_connect_error', $error, 0);
+		}
+	} else {
+		if($query = @mysql_query("SHOW TABLES FROM $dbname")) {
+			while($row = mysql_fetch_row($query)) {
+				if(preg_match("/^$tablepre/", $row[0])) {
+					return false;
+				}
+			}
+		}
+	}
+	return true;
 }
 
 function transfer_ucinfo(&$post) {
@@ -495,52 +555,6 @@ function dir_clear($dir) {
 	}
 }
 
-function show_header() {
-	define('SHOW_HEADER', TRUE);
-	global $step;
-	$version = DISCUZ_VERSION;
-	$release = DISCUZ_RELEASE;
-	$install_lang = lang(INSTALL_LANG);
-	$title = lang('title_install');
-	$charset = CHARSET;
-	echo <<<EOT
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=$charset" />
-<title>$title</title>
-<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
-<script type="text/javascript">
-	function $(id) {
-		return document.getElementById(id);
-	}
-
-	function showmessage(message) {
-		document.getElementById('notice').innerHTML += message + '<br />';
-	}
-</script>
-<meta content="Comsenz Inc." name="Copyright" />
-</head>
-<div class="container">
-	<div class="header">
-		<h1>$title</h1>
-		<span>Discuz!$version $install_lang $release</span>
-EOT;
-
-	$step > 0 && show_step($step);
-}
-
-function show_footer($quit = true) {
-
-	echo <<<EOT
-		<div class="footer">&copy;2001 - 2013 <a href="http://www.comsenz.com/">Comsenz</a> Inc.</div>
-	</div>
-</div>
-</body>
-</html>
-EOT;
-	$quit && exit();
-}
 
 function loginit($logfile) {
 	global $lang;
@@ -601,16 +615,22 @@ function timezone_set($timeoffset = 8) {
 
 function save_config_file($filename, $config, $default) {
 	$config = setdefault($config, $default);
+	echo "<pre>";print_r($config);
+	$dbhost = $config['db'][1]['dbhost'];
 	$date = gmdate("Y-m-d H:i:s", time() + 3600 * 8);
 	$content = <<<EOT
 <?php
-
-
-\$_config = array();
-
+\$db_config = array(
+	'db0' => array(
+		'dbtype'   => 'pdomysql',
+		'dbhost'   => '$dbhost',
+	)
+)
 EOT;
+/*
 	$content .= getvars(array('_config' => $config));
 	$content .= "\r\n// ".str_pad('  THE END  ', 50, '-', STR_PAD_BOTH)." //\r\n\r\n?>";
+*/
 	file_put_contents($filename, $content);
 }
 
@@ -794,18 +814,6 @@ function insertconfig($s, $find, $replace) {
 		$s .= "\r\n".$replace;
 	}
 	return $s;
-}
-
-function getgpc($k, $t='GP') {
-	$t = strtoupper($t);
-	switch($t) {
-		case 'GP' : isset($_POST[$k]) ? $var = &$_POST : $var = &$_GET; break;
-		case 'G': $var = &$_GET; break;
-		case 'P': $var = &$_POST; break;
-		case 'C': $var = &$_COOKIE; break;
-		case 'R': $var = &$_REQUEST; break;
-	}
-	return isset($var[$k]) ? $var[$k] : null;
 }
 
 function var_to_hidden($k, $v) {
@@ -1026,7 +1034,7 @@ function show_tips($tip, $title = '', $comment = '', $style = 1) {
 
 function show_setting($setname, $varname = '', $value = '', $type = 'text|password|checkbox', $error = '') {
 	if($setname == 'start') {
-		echo "<form method=\"post\" action=\"index.php\">\n";
+		echo "<form name=\"installform\" class=\"installform\" method=\"post\" action=\"index.php\">\n";
 		return;
 	} elseif($setname == 'end') {
 		echo "\n</table>\n</form>\n";
@@ -1039,7 +1047,7 @@ function show_setting($setname, $varname = '', $value = '', $type = 'text|passwo
 	echo "\n".'<tr><th class="tbopt'.($error ? ' red' : '').'" align="left">&nbsp;'.(empty($setname) ? '' : lang($setname).':')."</th>\n<td>";
 	if($type == 'text' || $type == 'password') {
 		$value = dhtmlspecialchars($value);
-		echo "<input type=\"$type\" name=\"$varname\" value=\"$value\" size=\"35\" class=\"txt\">";
+		echo "<input type=\"$type\" name=\"$varname\" value=\"$value\" size=\"35\" class=\"txt\" autocomplete=\"off\">";
 	} elseif(strpos($type, 'submit') !== FALSE) {
 		if(strpos($type, 'oldbtn') !== FALSE) {
 			echo "<input type=\"button\" name=\"oldbtn\" value=\"".lang('old_step')."\" class=\"btn\" onclick=\"history.back();\">\n";
@@ -1094,7 +1102,7 @@ function show_step($step) {
 			<li class="$stepclass[3]">$step_title_3</li>
 			<li class="$stepclass[4]">$step_title_4</li>
 		</ul>
-		<div class="stepstatbg stepstat1"></div>
+		<div class="stepstatbg stepstat$step"></div>
 	</div>
 </div>
 <div class="main">
@@ -1102,9 +1110,6 @@ EOT;
 
 }
 
-function lang($lang_key, $force = true) {
-	return isset($GLOBALS['lang'][$lang_key]) ? $GLOBALS['lang'][$lang_key] : ($force ? $lang_key : '');
-}
 
 function check_adminuser($username, $password, $email) {
 

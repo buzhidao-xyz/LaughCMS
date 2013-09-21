@@ -1,15 +1,10 @@
 <?php
-
 /**
- *      [Discuz!] (C)2001-2099 Comsenz Inc.
- *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: install_mysql.php 6758 2010-03-25 09:05:10Z cnteacher $
+ * LaughCMS安装向导
+ * 2013-09-16 baoqing wang
  */
 
-if(!defined('IN_COMSENZ')) {
-	exit('Access Denied');
-}
+if(!defined('IN_LAUGH')) exit('Access Denied');
 
 class dbstuff {
 	var $querynum = 0;

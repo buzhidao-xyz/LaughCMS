@@ -1,4 +1,5 @@
 <?php
+include("db.config.php");
 $config = array(
     'STYLE_DEFAULT' => ROOT_DIR.'/themes/default',
     'STYLE_PUBLIC'  => ROOT_DIR.'/themes/public',
@@ -27,19 +28,6 @@ $config = array(
         'plugin_dir'       => ROOT_DIR.'/include/Vendor/Smarty/plugins',
     ),
 
-    //安装完成锁定 0未锁定 1已锁定
-    'ISLOCK' => 1,
-
     //Laugh数据模型数据库配置信息
-    'DB' => array(
-        'db0' => array (
-            'dbtype'   => 'pdomysql',
-            'host'     => '127.0.0.1',
-            'port'     => '3306',
-            'username' => 'root',
-            'password' => '123456',
-            'database' => 'laugh',
-            'prefix'   => 'la_'
-        )
-    )
+    'DB' => $db_config
 );

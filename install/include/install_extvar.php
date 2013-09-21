@@ -1,15 +1,11 @@
 <?php
-
 /**
- *      [Discuz!] (C)2001-2099 Comsenz Inc.
- *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: install_extvar.php 31245 2012-07-31 02:54:24Z liulanbo $
+ * LaughCMS安装向导
+ * 2013-09-16 baoqing wang
  */
 
-if(!defined('IN_COMSENZ')) {
-	exit('Access Denied');
-}
+if(!defined('IN_LAUGH')) exit('Access Denied');
+
 $settings = array(
 	'extcredits' => array(
 		1 => array('title' => $lang['init_credits_money'], 'ratio' => 0, 'available' => 1),
