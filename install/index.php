@@ -20,7 +20,7 @@ $view_off = getgpc('view_off');
 
 define('VIEW_OFF', $view_off ? TRUE : FALSE);
 
-$allow_method = array('show_license', 'env_check', 'app_reg', 'db_init', 'ext_info', 'install_check', 'tablepre_check');
+$allow_method = array('show_license', 'env_check', 'app_reg', 'db_init', 'install_ok', 'install_check', 'tablepre_check');
 
 $step = intval(getgpc('step', 'R')) ? intval(getgpc('step', 'R')) : 0;
 $method = getgpc('method');
@@ -33,13 +33,13 @@ if(empty($method)) {
 	show_msg('method_undefined', $method, 0);
 }
 
-if(file_exists($lockfile) && $method != 'ext_info') {
+if(file_exists($lockfile) && $method != 'install_ok') {
 	show_msg('install_locked', '', 0);
 } elseif(!class_exists('dbstuff')) {
 	show_msg('database_nonexistence', '', 0);
 }
 
-if(in_array($method, array('app_reg', 'ext_info'))) {
+if(in_array($method, array('app_reg', 'install_ok'))) {
 	$isHTTPS = ($_SERVER['HTTPS'] && strtolower($_SERVER['HTTPS']) != 'off') ? true : false;
 	$PHP_SELF = $_SERVER['PHP_SELF'] ? $_SERVER['PHP_SELF'] : $_SERVER['SCRIPT_NAME'];
 	$bbserver = 'http'.($isHTTPS ? 's' : '').'://'.preg_replace("/\:\d+/", '', $_SERVER['HTTP_HOST']).($_SERVER['SERVER_PORT'] && $_SERVER['SERVER_PORT'] != 80 && $_SERVER['SERVER_PORT'] != 443 ? ':'.$_SERVER['SERVER_PORT'] : '');
@@ -84,19 +84,17 @@ if($method == 'show_license') {
 	$default_configfile = './data/config_default.php';
 
 	if(!file_exists(ROOT_PATH.$default_configfile)) {
-		exit('config_global_default.php was lost, please reupload this  file.');
+		exit('config_default.php was lost, please reupload this  file.');
 	} else {
 		include ROOT_PATH.$default_configfile;
 		$default_config = $_config;
 	}
-	$_config = $default_config;
-
 
 	$dbhost = $_config['db'][1]['dbhost'];
 	$dbport = $_config['db'][1]['dbport'];
-	$dbname = $_config['db'][1]['dbname'];
-	$dbpw = $_config['db'][1]['dbpw'];
 	$dbuser = $_config['db'][1]['dbuser'];
+	$dbpw   = $_config['db'][1]['dbpw'];
+	$dbname = $_config['db'][1]['dbname'];
 	$tablepre = $_config['db'][1]['tablepre'];
 
 	$adminemail = 'admin@admin.com';
@@ -198,19 +196,14 @@ if($method == 'show_license') {
 		$authkey = substr(md5($_SERVER['SERVER_ADDR'].$_SERVER['HTTP_USER_AGENT'].$dbhost.$dbuser.$dbpw.$dbname.$username.$password.$pconnect.substr($timestamp, 0, 6)), 8, 6).random(10);
 		$_config['db'][1]['dbhost'] = $dbhost;
 		$_config['db'][1]['dbport'] = $dbport;
-		$_config['db'][1]['dbname'] = $dbname;
-		$_config['db'][1]['dbpw'] = $dbpw;
 		$_config['db'][1]['dbuser'] = $dbuser;
+		$_config['db'][1]['dbpw']   = $dbpw;
+		$_config['db'][1]['dbname'] = $dbname;
 		$_config['db'][1]['tablepre'] = $tablepre;
-		$_config['admincp']['founder'] = (string)$uid;
-		$_config['security']['authkey'] = $authkey;
-		$_config['cookie']['cookiepre'] = random(4).'_';
-		$_config['memory']['prefix'] = random(6).'_';
 
 		save_config_file(ROOT_PATH.DBCONFIG, $_config, $default_config);
-echo 1;exit;
-		$db = new dbstuff;
 
+		$db = new dbstuff;
 		$db->connect($dbhost, $dbuser, $dbpw, $dbname, DBCHARSET);
 
 		if(!VIEW_OFF) {
@@ -218,104 +211,27 @@ echo 1;exit;
 			show_install();
 		}
 
-		// if(DZUCFULL) {
-		// 	install_uc_server();
-		// }
-
 		$sql = file_get_contents($sqlfile);
 		$sql = str_replace("\r\n", "\n", $sql);
 
-		runquery($sql);
-		runquery($extrasql);
-
-		$sql = file_get_contents(ROOT_PATH.'./install/data/install_data.sql');
-		$sql = str_replace("\r\n", "\n", $sql);
+		//执行安装sql
 		runquery($sql);
 
-		$onlineip = $_SERVER['REMOTE_ADDR'];
-		$timestamp = time();
-		$backupdir = substr(md5($_SERVER['SERVER_ADDR'].$_SERVER['HTTP_USER_AGENT'].substr($timestamp, 0, 4)), 8, 6);
-		$ret = false;
-		if(is_dir(ROOT_PATH.'data/backup')) {
-			$ret = @rename(ROOT_PATH.'data/backup', ROOT_PATH.'data/backup_'.$backupdir);
-		}
-		if(!$ret) {
-			@mkdir(ROOT_PATH.'data/backup_'.$backupdir, 0777);
-		}
-		if(is_dir(ROOT_PATH.'data/backup_'.$backupdir)) {
-			$db->query("REPLACE INTO {$tablepre}common_setting (skey, svalue) VALUES ('backupdir', '$backupdir')");
-		}
-		$chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz';
-		$siteuniqueid = 'DX'.$chars[date('y')%60].$chars[date('n')].$chars[date('j')].$chars[date('G')].$chars[date('i')].$chars[date('s')].substr(md5($onlineip.$timestamp), 0, 4).random(4);
-
-		$db->query("REPLACE INTO {$tablepre}common_setting (skey, svalue) VALUES ('authkey', '$authkey')");
-		$db->query("REPLACE INTO {$tablepre}common_setting (skey, svalue) VALUES ('siteuniqueid', '$siteuniqueid')");
-		$db->query("REPLACE INTO {$tablepre}common_setting (skey, svalue) VALUES ('adminemail', '$email')");
-
-		install_extra_setting();
-
-		$db->query("REPLACE INTO {$tablepre}common_setting (skey, svalue) VALUES ('backupdir', '".$backupdir."')");
-
-		$password = md5(random(10));
-
-		$db->query("REPLACE INTO {$tablepre}common_member (uid, username, password, adminid, groupid, email, regdate) VALUES ('$uid', '$username', '$password', '1', '1', '$email', '".time()."');");
-
-		$db->query("UPDATE {$tablepre}common_cron SET lastrun='0', nextrun='".($timestamp + 3600)."'");
-
-		install_data($username, $uid);
-
-		$testdata = $portalstatus = 1;
-		$groupstatus = $homestatus = 0;
-
-		if($testdata) {
-			install_testdata($username, $uid);
-		}
-
-		if(!$portalstatus) {
-			$db->query("REPLACE INTO {$tablepre}common_setting (skey, svalue) VALUES ('portalstatus', '0')");
-		}
-
-		if(!$groupstatus) {
-			$db->query("REPLACE INTO {$tablepre}common_setting (skey, svalue) VALUES ('groupstatus', '0')");
-		}
-
-		if(!$homestatus) {
-			$db->query("REPLACE INTO {$tablepre}common_setting (skey, svalue) VALUES ('homestatus', '0')");
-		}
 		$yearmonth = date('Ym_', time());
-		loginit($yearmonth.'ratelog');
-		loginit($yearmonth.'illegallog');
-		loginit($yearmonth.'modslog');
-		loginit($yearmonth.'cplog');
-		loginit($yearmonth.'errorlog');
-		loginit($yearmonth.'banlog');
+		// loginit($yearmonth.'errorlog');
 
-		dir_clear(ROOT_PATH.'./data/template');
-		dir_clear(ROOT_PATH.'./data/cache');
-		dir_clear(ROOT_PATH.'./data/threadcache');
-		dir_clear(ROOT_PATH.'./uc_client/data');
-		dir_clear(ROOT_PATH.'./uc_client/data/cache');
-
-		foreach($serialize_sql_setting as $k => $v) {
-			$v = addslashes(serialize($v));
-			$db->query("REPLACE INTO {$tablepre}common_setting VALUES ('$k', '$v')");
-		}
-
-		$query = $db->query("SELECT COUNT(*) FROM {$tablepre}common_member");
-		$totalmembers = $db->result($query, 0);
-		$userstats = array('totalmembers' => $totalmembers, 'newsetuser' => $username);
-		$ctype = 1;
-		$data = addslashes(serialize($userstats));
-		$db->query("REPLACE INTO {$tablepre}common_syscache (cname, ctype, dateline, data) VALUES ('userstats', '$ctype', '".time()."', '$data')");
+		dir_clear(ROOT_PATH.'./cache/compile');
+		dir_clear(ROOT_PATH.'./data/log');
+		dir_clear(ROOT_PATH.'./admin/data/compile');
+		dir_clear(ROOT_PATH.'./admin/data/log');
 
 		touch($lockfile);
 		VIEW_OFF && show_msg('initdbresult_succ');
 
 		if(!VIEW_OFF) {
-			echo '<script type="text/javascript">function setlaststep() {document.getElementById("laststep").disabled=false;window.location=\'index.php?method=ext_info\';}</script><script type="text/javascript">setTimeout(function(){window.location=\'index.php?method=ext_info\'}, 30000);</script><iframe src="../misc.php?mod=initsys" style="display:none;" onload="setlaststep()"></iframe>'."\r\n";
+			echo '<script type="text/javascript">function setlaststep() {document.getElementById("laststep").disabled=false;window.location=\'index.php?method=install_ok\';}</script><script type="text/javascript">setTimeout(function(){window.location=\'index.php?method=install_ok\'}, 10000);</script>'."\r\n";
 			show_footer();
 		}
-
 	}
 
 	if(VIEW_OFF) {
@@ -323,20 +239,20 @@ echo 1;exit;
 	} else {
 		show_form($form_db_init_items, $error_msg);
 	}
-} elseif($method == 'ext_info') {
+} else if ($method == 'install_ok') {
 	@touch($lockfile);
 	if(VIEW_OFF) {
-		show_msg('ext_info_succ');
+		show_msg('install_ok_succ');
 	} else {
 		show_header();
-		echo '</div><div class="main" style="margin-top: -123px;padding-left:30px"><span id="platformIntro"></span>';
-		echo '<script type="text/javascript" src="http://cp.discuz.qq.com/cloud/platformIntroJS?siteurl='.urlencode($default_appurl).'&version='.DISCUZ_VERSION.'" charset="utf-8"></script>';
-		echo '<iframe frameborder="0" width="700" height="550" allowTransparency="true" src="http://addon.discuz.com/api/outer.php?id=installed&siteurl='.urlencode($default_appurl).'&version='.DISCUZ_VERSION.'"></iframe>';
-		echo '</div>';
+		show_step(4);
+		echo '<div class="installoklink"><a href="../index.php" target="_blank">点击进入前台首页>></a></div>';
+		echo '<div class="installoklink"><a href="../admin/index.php" target="_blank">点击进入后台首页>></a></div>';
+		echo '<div class="blankblock"></div>';
 		show_footer();
 	}
 
-} elseif($method == 'install_check') {
+} else if ($method == 'install_check') {
 
 	if(file_exists($lockfile)) {
 		show_msg('installstate_succ');
@@ -344,7 +260,7 @@ echo 1;exit;
 		show_msg('lock_file_not_touch', $lockfile, 0);
 	}
 
-} elseif($method == 'tablepre_check') {
+} else if ($method == 'tablepre_check') {
 
 	$dbinfo = getgpc('dbinfo');
 	extract($dbinfo);

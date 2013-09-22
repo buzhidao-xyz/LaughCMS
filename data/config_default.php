@@ -23,11 +23,11 @@ $_config = array();
 $_config['db'][1]['dbhost']  		= 'localhost';
 $_config['db'][1]['dbport']  		= '3306';
 $_config['db'][1]['dbuser']  		= 'root';
-$_config['db'][1]['dbpw'] 	 	    = 'root';
+$_config['db'][1]['dbpw'] 	 	    = '123456';
+$_config['db'][1]['dbname']  		= 'laugh123';
+$_config['db'][1]['tablepre'] 		= 'pre_';
 $_config['db'][1]['dbcharset'] 		= 'utf8';
 $_config['db'][1]['pconnect'] 		= 0;
-$_config['db'][1]['dbname']  		= 'laugh';
-$_config['db'][1]['tablepre'] 		= 'pre_';
 
 /**
  * 数据库从服务器设置( slave, 只读 ), 支持多组服务器设置, 当设置多组服务器时, 系统根据每次随机使用

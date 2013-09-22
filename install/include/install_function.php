@@ -493,19 +493,6 @@ function check_db($dbhost, $dbuser, $dbpw, $dbname, $tablepre) {
 	return true;
 }
 
-function transfer_ucinfo(&$post) {
-	global $uchidden;
-	if(isset($post['ucapi']) && isset($post['ucfounderpw'])) {
-		$arr = array(
-			'ucapi' => $post['ucapi'],
-			'ucfounderpw' => $post['ucfounderpw']
-			);
-		$uchidden = urlencode(serialize($arr));
-	} else {
-		$uchidden = '';
-	}
-}
-
 if(!function_exists('file_put_contents')) {
 	function file_put_contents($filename, $s) {
 		$fp = @fopen($filename, 'w');
@@ -516,7 +503,6 @@ if(!function_exists('file_put_contents')) {
 }
 
 function createtable($sql) {
-
 	$type = strtoupper(preg_replace("/^\s*CREATE TABLE\s+.+\s+\(.+?\).*(ENGINE|TYPE)\s*=\s*([a-z]+?).*$/isU", "\\2", $sql));
 	$type = in_array($type, array('MYISAM', 'HEAP', 'MEMORY')) ? $type : 'MYISAM';
 	return preg_replace("/^\s*(CREATE TABLE\s+.+\s+\(.+?\)).*$/isU", "\\1", $sql).
@@ -559,7 +545,7 @@ function dir_clear($dir) {
 function loginit($logfile) {
 	global $lang;
 	showjsmessage($lang['init_log'].' '.$logfile);
-	if($fp = @fopen('./forumdata/logs/'.$logfile.'.php', 'w')) {
+	if($fp = @fopen('./data/log/'.$logfile.'.php', 'w')) {
 		fwrite($fp, '<'.'?PHP exit(); ?'.">\n");
 		fclose($fp);
 	}
@@ -615,18 +601,47 @@ function timezone_set($timeoffset = 8) {
 
 function save_config_file($filename, $config, $default) {
 	$config = setdefault($config, $default);
-	echo "<pre>";print_r($config);
-	$dbhost = $config['db'][1]['dbhost'];
 	$date = gmdate("Y-m-d H:i:s", time() + 3600 * 8);
-	$content = <<<EOT
+
+	//数据库配置文件内容 头
+	$content .= <<<EOT
 <?php
 \$db_config = array(
-	'db0' => array(
-		'dbtype'   => 'pdomysql',
-		'dbhost'   => '$dbhost',
-	)
-)
 EOT;
+
+	//具体数据库配置文件
+	$i = 0;
+	foreach ($config['db'] as $db) {
+		if (isset($db['dbhost'])&&isset($db['dbname'])) {
+			$dbhost = $db['dbhost'];
+			$port   = $db['dbport'];
+			$username = $db['dbuser'];
+			$password = $db['dbpw'];
+			$database = $db['dbname'];
+			$prefix   = $db['tablepre'];
+
+	$content .= <<<EOT
+	
+	'db$i' => array(
+		'dbtype'   => 'pdomysql',
+		'host'     => '$dbhost',
+		'port'     => '$port',
+        'username' => '$username',
+        'password' => '$password',
+        'database' => '$database',
+        'prefix'   => '$prefix'
+	),
+EOT;
+			$i++;
+		}
+	}
+
+	//尾
+	$content .= <<<EOT
+
+);
+EOT;
+		
 /*
 	$content .= getvars(array('_config' => $config));
 	$content .= "\r\n// ".str_pad('  THE END  ', 50, '-', STR_PAD_BOTH)." //\r\n\r\n?>";
@@ -721,7 +736,7 @@ function initinput() {
 </script>
 		<div id="notice"></div>
 		<div class="btnbox margintop marginbot">
-			<input type="button" name="submit" value="<?php echo lang('install_in_processed');?>" disabled="disabled" id="laststep" onclick="initinput()">
+			<input type="button" name="submit" value="<?php echo lang('install_in_processed');?>" disabled="disabled" id="laststep" onclick="initinput()" class="installinput">
 		</div>
 <?php
 }
@@ -750,7 +765,7 @@ function runquery($sql) {
 		if($query) {
 
 			if(substr($query, 0, 12) == 'CREATE TABLE') {
-				$name = preg_replace("/CREATE TABLE ([a-z0-9_]+) .*/is", "\\1", $query);
+				$name = preg_replace("/CREATE TABLE \`([a-z0-9_]+)\` .*/is", "\\1", $query);
 				showjsmessage(lang('create_table').' '.$name.' ... '.lang('succeed'));
 				$db->query(createtable($query));
 			} else {
@@ -761,42 +776,6 @@ function runquery($sql) {
 	}
 
 }
-
-function runucquery($sql, $tablepre) {
-	global $lang, $db;
-
-	if(!isset($sql) || empty($sql)) return;
-
-	$sql = str_replace("\r", "\n", str_replace(' uc_', ' '.$tablepre, $sql));
-	$ret = array();
-	$num = 0;
-	foreach(explode(";\n", trim($sql)) as $query) {
-		$ret[$num] = '';
-		$queries = explode("\n", trim($query));
-		foreach($queries as $query) {
-			$ret[$num] .= (isset($query[0]) && $query[0] == '#') || (isset($query[1]) && isset($query[1]) && $query[0].$query[1] == '--') ? '' : $query;
-		}
-		$num++;
-	}
-	unset($sql);
-
-	foreach($ret as $query) {
-		$query = trim($query);
-		if($query) {
-
-			if(substr($query, 0, 12) == 'CREATE TABLE') {
-				$name = preg_replace("/CREATE TABLE ([a-z0-9_]+) .*/is", "\\1", $query);
-				showjsmessage(lang('create_table').' '.$name.' ... '.lang('succeed'));
-				$db->query(createtable($query));
-			} else {
-				$db->query($query);
-			}
-
-		}
-	}
-
-}
-
 
 function charcovert($string) {
 	if(!get_magic_quotes_gpc()) {

@@ -61,6 +61,8 @@ $lang = array(
 	'step_env_check_desc' => '环境以及文件目录权限检查',
 	'step_db_init_title' => '安装数据库',
 	'step_db_init_desc' => '正在执行数据库安装',
+	'step_install_ok_title' => '安装完成',
+	'step_install_ok_desc' => '请点击进入系统',
 
 	'step1_file' => '目录文件',
 	'step1_need_status' => '所需状态',
@@ -73,7 +75,7 @@ $lang = array(
 	'step_ext_info_title' => '安装成功。',
 	'step_ext_info_comment' => '点击进入登录',
 
-	'ext_info_succ' => '安装成功。',
+	'install_ok_succ'=> '安装成功。',
 	'install_submit' => '提交',
 	'install_locked' => '安装锁定，已经安装过了，如果您确定要重新安装，请到服务器上删除<br /> '.str_replace(ROOT_PATH, '', $lockfile),
 	'error_quit_msg' => '您必须解决以上问题，安装才可以继续',
@@ -125,6 +127,9 @@ $lang = array(
 	'password_comment' => '管理员密码不能为空',
 	'password2' => '重复密码',
 
+	'install_in_processed' => '正在安装...',
+	'install_succeed' => '安装成功，点击进入',
+	
 	'admininfo_invalid' => '管理员信息不完整，请检查管理员账号，密码，邮箱',
 	'dbname_invalid' => '数据库名为空，请填写数据库名称',
 	'tablepre_invalid' => '数据表前缀为空，或者格式错误，请检查',

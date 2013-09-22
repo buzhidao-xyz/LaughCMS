@@ -132,6 +132,9 @@ th {
 .step3 {
     background: url("images/stepnum.gif") no-repeat scroll 0 -192px transparent;
 }
+.step4 {
+    background: url("images/stepnum.gif") no-repeat scroll 0 -292px transparent;
+}
 .setup h2 {
     color: #6CA1B4;
     font-size: 36px;
@@ -241,4 +244,40 @@ th {
     line-height: 180%;
     margin: 0 auto;
     width: 537px;
+}
+
+#notice {
+    border: 1px solid #B5CFD9;
+    height: 300px;
+    margin: 20px;
+    overflow: hidden;
+    padding: 5px;
+    text-align: left;
+    background: #FFFFFF;
+    overflow-y: scroll;
+}
+.margintop {
+    margin-top: 20px;
+}
+.marginbot {
+    margin-bottom: 20px;
+}
+.btnbox {
+    text-align: center;
+}
+
+.main .installoklink {
+    padding: 15px 70px 15px 70px;
+    text-align: center;
+}
+.main .installoklink a {
+    color: #333333;
+    font-weight: 700;
+}
+.main .installoklink a:hover {
+    color: #5F9729;
+    text-decoration: underline;
+}
+.main .blankblock {
+    height: 50px;
 }
