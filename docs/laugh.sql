@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost
-Source Server Version : 50528
+Source Server Version : 50530
 Source Host           : localhost:3306
 Source Database       : laugh
 
 Target Server Type    : MYSQL
-Target Server Version : 50528
+Target Server Version : 50530
 File Encoding         : 65001
 
-Date: 2013-09-16 11:03:33
+Date: 2013-10-03 00:15:50
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -23,14 +23,14 @@ CREATE TABLE `la_admin` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `adminname` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
-  `ukey` char(6) NOT NULL,
-  `createtime` int(11) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT '1',
-  `ustate` varchar(32) NOT NULL DEFAULT '',
-  `lastlogintime` int(10) DEFAULT NULL,
-  `lastloginip` int(11) DEFAULT NULL,
-  `logincount` tinyint(6) NOT NULL,
-  `super` tinyint(1) DEFAULT '0',
+  `ukey` char(6) NOT NULL COMMENT '混淆加密字符串6位',
+  `createtime` int(11) NOT NULL DEFAULT '0',
+  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否启用',
+  `ustate` varchar(32) NOT NULL DEFAULT '' COMMENT '登录状态码',
+  `lastlogintime` int(10) DEFAULT '0',
+  `lastloginip` int(11) DEFAULT '0',
+  `logincount` tinyint(6) NOT NULL DEFAULT '0',
+  `super` tinyint(1) DEFAULT '0' COMMENT '是否超级管理员0否1是',
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`adminname`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
@@ -46,8 +46,8 @@ INSERT INTO `la_admin` VALUES ('2', 'luochuan', '624879b3fff70462132a21eb1cd8eb7
 -- ----------------------------
 DROP TABLE IF EXISTS `la_admin_access`;
 CREATE TABLE `la_admin_access` (
-  `adminid` int(10) NOT NULL,
-  `nodeid` mediumint(6) NOT NULL,
+  `adminid` int(10) NOT NULL DEFAULT '0',
+  `nodeid` mediumint(6) NOT NULL DEFAULT '0',
   KEY `userid` (`adminid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -64,9 +64,9 @@ CREATE TABLE `la_advertise` (
   `title` varchar(100) DEFAULT NULL,
   `link` varchar(300) DEFAULT NULL,
   `path` varchar(100) DEFAULT NULL COMMENT '图片路径',
-  `flag` tinyint(1) DEFAULT NULL COMMENT '1:首页中部banner 2:栏目顶部广告',
-  `status` tinyint(1) DEFAULT NULL COMMENT '0:禁用1:启用',
-  `createtime` int(10) DEFAULT NULL,
+  `flag` tinyint(1) DEFAULT '0' COMMENT '1:首页中部banner 2:栏目顶部广告',
+  `status` tinyint(1) DEFAULT '1' COMMENT '0:禁用1:启用',
+  `createtime` int(10) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
@@ -88,7 +88,7 @@ CREATE TABLE `la_archive` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `title` varchar(100) CHARACTER SET utf8 NOT NULL COMMENT '文档标题',
   `author` varchar(50) CHARACTER SET utf8 NOT NULL COMMENT '文档作者',
-  `columnid` int(10) NOT NULL COMMENT '栏目ID',
+  `columnid` int(10) NOT NULL DEFAULT '0' COMMENT '栏目ID',
   `thumbimage` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '文章缩略图',
   `tag` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `source` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -97,10 +97,10 @@ CREATE TABLE `la_archive` (
   `description` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `state` tinyint(1) NOT NULL DEFAULT '1' COMMENT '文章状态 0:回收站 1:正常发布 2:草稿箱',
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '评论状态 0:禁止评论 1:允许评论',
-  `clicknum` int(6) DEFAULT '0',
-  `commentnum` int(6) DEFAULT '0',
-  `publishtime` int(10) DEFAULT NULL COMMENT '发布时间',
-  `updatetime` int(10) DEFAULT NULL COMMENT '修改时间',
+  `clicknum` int(6) DEFAULT '0' COMMENT '点击数',
+  `commentnum` int(6) DEFAULT '0' COMMENT '评论数',
+  `publishtime` int(10) DEFAULT '0' COMMENT '发布时间',
+  `updatetime` int(10) DEFAULT '0' COMMENT '修改时间',
   PRIMARY KEY (`id`),
   KEY `catalog` (`author`) USING BTREE
 ) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -133,9 +133,9 @@ INSERT INTO `la_archive` VALUES ('18', 'VI命令大全', 'admin', '3', '/Uploads
 DROP TABLE IF EXISTS `la_article`;
 CREATE TABLE `la_article` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-  `archiveid` int(10) NOT NULL COMMENT '文档ID',
+  `archiveid` int(10) NOT NULL DEFAULT '0' COMMENT '文档ID',
   `content` longtext COMMENT '文档内容',
-  `updatetime` int(10) DEFAULT NULL,
+  `updatetime` int(10) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
@@ -160,14 +160,14 @@ INSERT INTO `la_article` VALUES ('11', '18', '&lt;p&gt; &amp;nbsp; &amp;nbsp;进
 DROP TABLE IF EXISTS `la_attachment`;
 CREATE TABLE `la_attachment` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-  `archiveid` int(10) NOT NULL DEFAULT '0',
+  `archiveid` int(10) NOT NULL DEFAULT '0' COMMENT '文档ID',
   `filepath` varchar(100) NOT NULL COMMENT '文件路径',
   `filename` varchar(100) NOT NULL COMMENT '原文件名',
   `savename` varchar(100) DEFAULT NULL COMMENT '文件保存名称',
-  `filesize` int(10) NOT NULL DEFAULT '0',
+  `filesize` int(10) NOT NULL DEFAULT '0' COMMENT '附件大小',
   `filetype` varchar(20) DEFAULT NULL COMMENT '文件类型(后缀名)',
   `downloadnum` int(10) NOT NULL DEFAULT '0' COMMENT '下载次数',
-  `createtime` int(10) NOT NULL,
+  `createtime` int(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
@@ -183,10 +183,10 @@ INSERT INTO `la_attachment` VALUES ('2', '17', '/Uploads/Attachment/201304/11/13
 DROP TABLE IF EXISTS `la_class`;
 CREATE TABLE `la_class` (
   `id` int(10) NOT NULL,
-  `class` varchar(15) NOT NULL,
-  `create_time` int(20) NOT NULL,
+  `classname` varchar(15) NOT NULL,
+  `createtime` int(20) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
-  KEY `class` (`class`)
+  KEY `class` (`classname`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -201,9 +201,9 @@ CREATE TABLE `la_column` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `columnname` varchar(50) NOT NULL,
   `parentid` int(11) DEFAULT '0',
-  `topid` int(11) NOT NULL,
+  `topid` int(11) NOT NULL DEFAULT '0',
   `columntype` tinyint(1) DEFAULT '1' COMMENT '栏目类型123',
-  `columnmodel` int(3) DEFAULT NULL COMMENT '栏目内容模型',
+  `columnmodel` int(3) DEFAULT '1' COMMENT '栏目内容模型',
   `columnpath` varchar(100) DEFAULT NULL,
   `action` varchar(50) DEFAULT NULL,
   `sortrank` int(4) DEFAULT '0' COMMENT '排序位置',
@@ -215,8 +215,8 @@ CREATE TABLE `la_column` (
   `template_list` varchar(50) DEFAULT NULL,
   `template_body` varchar(50) DEFAULT NULL,
   `isshow` tinyint(1) NOT NULL DEFAULT '1' COMMENT '0隐藏1显示',
-  `createtime` int(10) NOT NULL,
-  `updatetime` int(10) NOT NULL,
+  `createtime` int(10) NOT NULL DEFAULT '0',
+  `updatetime` int(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
@@ -247,8 +247,8 @@ CREATE TABLE `la_column_model` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `description` varchar(200) DEFAULT NULL,
-  `type` tinyint(1) DEFAULT '0',
-  `issystem` tinyint(1) DEFAULT '0',
+  `type` tinyint(1) DEFAULT '0' COMMENT '模型类型',
+  `issystem` tinyint(1) DEFAULT '0' COMMENT '是否系统模型',
   `table` varchar(50) DEFAULT NULL,
   `usefields` varchar(300) DEFAULT '*' COMMENT '前台调用字段',
   `control` varchar(50) DEFAULT NULL,
@@ -256,7 +256,7 @@ CREATE TABLE `la_column_model` (
   `template_add` varchar(50) DEFAULT NULL COMMENT '型模列表页模板',
   `template_edit` varchar(50) DEFAULT NULL COMMENT '模型内容页模板',
   `status` tinyint(1) DEFAULT '1' COMMENT '0禁用1启用',
-  `createtime` int(10) DEFAULT NULL,
+  `createtime` int(10) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
@@ -278,10 +278,10 @@ INSERT INTO `la_column_model` VALUES ('9', '插件模型', '所有使用插件�
 -- ----------------------------
 DROP TABLE IF EXISTS `la_comment`;
 CREATE TABLE `la_comment` (
-  `id` int(10) NOT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) DEFAULT NULL,
   `content` varchar(200) NOT NULL,
-  `createtime` int(20) NOT NULL,
+  `createtime` int(20) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -303,11 +303,11 @@ CREATE TABLE `la_cooperate` (
   `nature` varchar(50) DEFAULT NULL COMMENT '工作性质',
   `salary` varchar(50) DEFAULT NULL COMMENT '工资待遇',
   `description` text COMMENT '职位描述',
-  `columnid` int(10) DEFAULT NULL COMMENT '栏目ID',
+  `columnid` int(10) DEFAULT '0' COMMENT '栏目ID',
   `author` varchar(50) DEFAULT NULL COMMENT '作者',
   `validitytime` varchar(50) DEFAULT NULL COMMENT '有效期',
-  `publishtime` int(10) NOT NULL COMMENT '发布时间',
-  `updatetime` int(10) NOT NULL COMMENT '更新时间',
+  `publishtime` int(10) NOT NULL DEFAULT '0' COMMENT '发布时间',
+  `updatetime` int(10) NOT NULL DEFAULT '0' COMMENT '更新时间',
   `state` tinyint(1) NOT NULL DEFAULT '1' COMMENT '文章状态 0:删除 1:正常',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
@@ -328,8 +328,8 @@ CREATE TABLE `la_flink` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `linkname` varchar(50) NOT NULL COMMENT '链接名称',
   `linkurl` varchar(300) NOT NULL COMMENT '链接地址',
-  `catalogid` int(10) NOT NULL COMMENT '链接所属分类',
-  `createtime` int(10) NOT NULL,
+  `catalogid` int(10) NOT NULL DEFAULT '0' COMMENT '链接所属分类',
+  `createtime` int(10) NOT NULL DEFAULT '0' COMMENT '创建时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
@@ -348,7 +348,7 @@ CREATE TABLE `la_flink_catalog` (
   `catalogname` varchar(50) NOT NULL COMMENT '分类名称',
   `sort` int(10) NOT NULL DEFAULT '0' COMMENT '分类排序位置',
   `state` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1正常0已删除',
-  `createtime` int(10) NOT NULL COMMENT '分类目录创建时间',
+  `createtime` int(10) NOT NULL DEFAULT '0' COMMENT '分类目录创建时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
@@ -365,22 +365,22 @@ DROP TABLE IF EXISTS `la_group`;
 CREATE TABLE `la_group` (
   `id` smallint(3) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(50) NOT NULL,
-  `createtime` int(11) unsigned NOT NULL,
-  `updatetime` int(11) unsigned NOT NULL DEFAULT '0',
-  `sort` smallint(3) NOT NULL,
-  `isshow` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `sort` smallint(3) DEFAULT '0',
+  `isshow` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '是否显示0否1是',
+  `createtime` int(11) unsigned DEFAULT '0',
+  `updatetime` int(11) unsigned DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_group
 -- ----------------------------
-INSERT INTO `la_group` VALUES ('1', '系统管理', '1332390538', '1332390538', '1', '1');
-INSERT INTO `la_group` VALUES ('2', '会员中心', '1332390538', '1332390538', '2', '1');
-INSERT INTO `la_group` VALUES ('3', '核心内容', '1332390538', '1332390538', '3', '1');
-INSERT INTO `la_group` VALUES ('4', '网站更新', '1332390538', '1332390538', '4', '1');
-INSERT INTO `la_group` VALUES ('5', '系统插件', '1332390538', '1332390538', '5', '1');
-INSERT INTO `la_group` VALUES ('6', '系统设置', '1353316335', '0', '0', '1');
+INSERT INTO `la_group` VALUES ('1', '系统管理', '1', '1', '1332390538', '1332390538');
+INSERT INTO `la_group` VALUES ('2', '会员中心', '2', '1', '1332390538', '1332390538');
+INSERT INTO `la_group` VALUES ('3', '核心内容', '3', '1', '1332390538', '1332390538');
+INSERT INTO `la_group` VALUES ('4', '网站更新', '4', '1', '1332390538', '1332390538');
+INSERT INTO `la_group` VALUES ('5', '系统插件', '5', '1', '1332390538', '1332390538');
+INSERT INTO `la_group` VALUES ('6', '系统设置', '0', '1', '1353316335', '0');
 
 -- ----------------------------
 -- Table structure for `la_images`
@@ -398,7 +398,7 @@ CREATE TABLE `la_images` (
   `imagesize` int(10) DEFAULT '0' COMMENT '图片大小',
   `width` int(10) NOT NULL DEFAULT '0' COMMENT '图片宽度',
   `height` int(10) NOT NULL DEFAULT '0' COMMENT '图片高度',
-  `createtime` int(10) NOT NULL,
+  `createtime` int(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
@@ -448,7 +448,7 @@ CREATE TABLE `la_message_board` (
   `username` varchar(50) DEFAULT NULL COMMENT '留言者名称',
   `email` varchar(100) DEFAULT NULL,
   `content` varchar(600) DEFAULT NULL,
-  `createtime` int(10) DEFAULT NULL,
+  `createtime` int(10) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
@@ -470,8 +470,8 @@ CREATE TABLE `la_navigation` (
   `title` varchar(50) NOT NULL,
   `link` varchar(100) NOT NULL,
   `sort` int(10) DEFAULT '0',
-  `flag` tinyint(1) DEFAULT NULL COMMENT '导航位置 1:底部 2:快捷导航',
-  `createtime` int(10) DEFAULT NULL,
+  `flag` tinyint(1) DEFAULT '0' COMMENT '导航位置 1:底部 2:快捷导航',
+  `createtime` int(10) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
@@ -490,16 +490,16 @@ INSERT INTO `la_navigation` VALUES ('6', '帮助中心', 'javascript:;', '0', '1
 -- ----------------------------
 DROP TABLE IF EXISTS `la_node`;
 CREATE TABLE `la_node` (
-  `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
+  `id` smallint(6) NOT NULL AUTO_INCREMENT,
   `title` varchar(50) DEFAULT NULL,
   `remark` varchar(255) DEFAULT NULL,
   `control` varchar(50) NOT NULL,
   `action` varchar(50) NOT NULL,
-  `pid` smallint(6) unsigned NOT NULL,
-  `groupid` tinyint(3) unsigned DEFAULT '0',
-  `createtime` int(10) NOT NULL,
-  `updatetime` int(10) NOT NULL,
-  `isshow` tinyint(1) NOT NULL DEFAULT '1',
+  `pid` smallint(6) unsigned NOT NULL DEFAULT '0' COMMENT '父节点ID',
+  `groupid` tinyint(3) unsigned DEFAULT '0' COMMENT '分组id',
+  `createtime` int(10) NOT NULL DEFAULT '0' COMMENT '创建日期',
+  `updatetime` int(10) NOT NULL DEFAULT '0' COMMENT '更新日期',
+  `isshow` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否显示0否1是',
   PRIMARY KEY (`id`),
   KEY `pid` (`pid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
@@ -567,7 +567,7 @@ INSERT INTO `la_node` VALUES ('53', '快捷导航', '', 'Plugin', 'sideNavigatio
 DROP TABLE IF EXISTS `la_product`;
 CREATE TABLE `la_product` (
   `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '产品id',
-  `archiveid` int(10) DEFAULT NULL,
+  `archiveid` int(10) DEFAULT '0',
   `model` varchar(100) DEFAULT NULL,
   `brand` varchar(100) DEFAULT NULL,
   `color` varchar(100) DEFAULT NULL,
@@ -576,7 +576,7 @@ CREATE TABLE `la_product` (
   `price` varchar(100) DEFAULT NULL,
   `total` varchar(50) DEFAULT NULL,
   `instruction` mediumtext,
-  `updatetime` int(10) DEFAULT NULL,
+  `updatetime` int(10) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
@@ -594,7 +594,7 @@ DROP TABLE IF EXISTS `la_role`;
 CREATE TABLE `la_role` (
   `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
-  `status` tinyint(1) unsigned DEFAULT NULL,
+  `status` tinyint(1) unsigned DEFAULT '1' COMMENT '是否启用0否1是',
   `remark` varchar(255) DEFAULT NULL,
   `createtime` int(11) unsigned NOT NULL DEFAULT '0',
   `updatetime` int(11) unsigned NOT NULL DEFAULT '0',
@@ -615,8 +615,8 @@ INSERT INTO `la_role` VALUES ('2', '管理员', '1', '普通管理员 管理某�
 -- ----------------------------
 DROP TABLE IF EXISTS `la_role_admin`;
 CREATE TABLE `la_role_admin` (
-  `roleid` smallint(6) NOT NULL,
-  `adminid` int(11) NOT NULL,
+  `roleid` smallint(6) NOT NULL DEFAULT '0',
+  `adminid` int(11) NOT NULL DEFAULT '0',
   KEY `userid` (`adminid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -633,9 +633,9 @@ INSERT INTO `la_role_admin` VALUES ('2', '2');
 -- ----------------------------
 DROP TABLE IF EXISTS `la_role_node`;
 CREATE TABLE `la_role_node` (
-  `roleid` smallint(6) unsigned NOT NULL,
-  `nodeid` smallint(6) unsigned NOT NULL,
-  `access` tinyint(4) DEFAULT '0',
+  `roleid` smallint(6) NOT NULL DEFAULT '0',
+  `nodeid` smallint(6) unsigned NOT NULL DEFAULT '0',
+  `access` tinyint(4) DEFAULT '0' COMMENT '是否具有操作权限 0只读 1操作',
   KEY `groupId` (`roleid`),
   KEY `nodeId` (`nodeid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -695,8 +695,8 @@ CREATE TABLE `la_singlepage` (
   `content` longtext COMMENT '页面内容',
   `state` tinyint(1) NOT NULL DEFAULT '1' COMMENT '文章状态 0:回收站 1:正常发布 2:草稿箱',
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '评论状态 0:禁止评论 1:允许评论',
-  `clicknum` int(10) NOT NULL DEFAULT '0',
-  `commentnum` int(10) NOT NULL DEFAULT '0',
+  `clicknum` int(10) NOT NULL DEFAULT '0' COMMENT '点击数',
+  `commentnum` int(10) NOT NULL DEFAULT '0' COMMENT '评论数',
   `publishtime` int(10) NOT NULL DEFAULT '0',
   `updatetime` int(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
@@ -716,15 +716,15 @@ INSERT INTO `la_singlepage` VALUES ('4', '关于我们页面', '', 'admin', null
 DROP TABLE IF EXISTS `la_soft`;
 CREATE TABLE `la_soft` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-  `archiveid` int(10) NOT NULL,
+  `archiveid` int(10) NOT NULL DEFAULT '0' COMMENT '文档ID',
   `filetype` varchar(50) DEFAULT NULL COMMENT '软件类型',
   `authorization` varchar(50) DEFAULT NULL COMMENT '授权方式',
   `language` varchar(50) DEFAULT NULL COMMENT '界面语言',
-  `filesize` int(10) DEFAULT '0',
+  `filesize` int(10) DEFAULT '0' COMMENT '软件大小',
   `fileext` varchar(50) DEFAULT NULL COMMENT '文件类型',
   `environment` varchar(50) DEFAULT NULL COMMENT '运行环境',
   `officialsite` varchar(50) DEFAULT NULL COMMENT '官方网站',
-  `createtime` int(10) DEFAULT NULL,
+  `createtime` int(10) DEFAULT '0' COMMENT '添加日期',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -741,9 +741,9 @@ CREATE TABLE `la_system` (
   `cfgname` varchar(50) NOT NULL COMMENT '参数名称',
   `cfginfo` varchar(100) NOT NULL COMMENT '参数描述',
   `cfgtype` varchar(20) DEFAULT NULL COMMENT '参数类型',
-  `cfggroupid` int(1) DEFAULT NULL COMMENT '参数所属分组',
+  `cfggroupid` int(1) DEFAULT '0' COMMENT '参数所属分组',
   `cfgvalue` varchar(500) DEFAULT NULL COMMENT '参数值',
-  `cfgtime` int(10) NOT NULL COMMENT '添加时间',
+  `cfgtime` int(10) NOT NULL DEFAULT '0' COMMENT '添加时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
@@ -766,7 +766,7 @@ DROP TABLE IF EXISTS `la_tag`;
 CREATE TABLE `la_tag` (
   `id` int(10) NOT NULL,
   `tagname` varchar(10) NOT NULL,
-  `createtime` int(20) NOT NULL,
+  `usecount` int(20) DEFAULT '0' COMMENT '使用次数',
   PRIMARY KEY (`id`),
   KEY `tag` (`tagname`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -787,13 +787,13 @@ CREATE TABLE `la_user` (
   `email` varchar(50) DEFAULT NULL,
   `remark` varchar(255) DEFAULT NULL,
   `ukey` char(6) NOT NULL,
-  `createtime` int(11) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否正常用户 0已删除 1正常',
   `ustate` varchar(32) NOT NULL DEFAULT '',
   `urank` varchar(50) NOT NULL DEFAULT '0',
-  `lastlogintime` int(11) DEFAULT NULL,
-  `lastloginip` int(40) DEFAULT NULL,
-  `logincount` tinyint(5) NOT NULL,
+  `lastlogintime` int(10) DEFAULT '0' COMMENT '上次登录日期',
+  `lastloginip` int(10) DEFAULT '0' COMMENT '上次登录IP',
+  `logincount` int(10) DEFAULT '0' COMMENT '登录次数',
+  `createtime` int(10) NOT NULL DEFAULT '0' COMMENT '创建日期',
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
@@ -801,6 +801,6 @@ CREATE TABLE `la_user` (
 -- ----------------------------
 -- Records of la_user
 -- ----------------------------
-INSERT INTO `la_user` VALUES ('1', 'admin', 'db03e4cae5bb7ae5046b97c9b1eaa2d3', null, null, null, 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1', '0', null, '0');
-INSERT INTO `la_user` VALUES ('2', 'luochuan', 'dfd154b410395ccac8cede2eb850667a', null, null, null, 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '1', '0', null, '0');
-INSERT INTO `la_user` VALUES ('3', 'test', 'a2907812388492fdf0f488bd5a3dc26d', null, null, null, '2fcy4o', '1325211617', '1', '', '0', '0', null, '0');
+INSERT INTO `la_user` VALUES ('1', 'admin', 'db03e4cae5bb7ae5046b97c9b1eaa2d3', null, null, null, 'gmk4r2', '1', '206423eb45af33c046db62575e2522b2', '1', '0', null, '0', '1323910052');
+INSERT INTO `la_user` VALUES ('2', 'luochuan', 'dfd154b410395ccac8cede2eb850667a', null, null, null, 'u1itx6', '1', 'a1cb0b77413638a2974af70f948e16d8', '1', '0', null, '0', '1324265773');
+INSERT INTO `la_user` VALUES ('3', 'test', 'a2907812388492fdf0f488bd5a3dc26d', null, null, null, '2fcy4o', '1', '', '0', '0', null, '0', '1325211617');

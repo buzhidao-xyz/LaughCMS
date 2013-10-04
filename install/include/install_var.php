@@ -49,6 +49,7 @@ $dirfile_items = array
 	'cache'        => array('type' => 'dir', 'path' => './cache'),
 	'compile'      => array('type' => 'dir', 'path' => './cache/compile'),
 	'data'         => array('type' => 'dir', 'path' => './data'),
+	'dbbackup'     => array('type' => 'dir', 'path' => './data/database'),
 	'log'          => array('type' => 'dir', 'path' => './data/log'),
 	'upload_dir'   => array('type' => 'dir', 'path' => './Uploads'),
 	'advertise_dir'=> array('type' => 'dir', 'path' => './Uploads/AdImage'),
@@ -57,7 +58,12 @@ $dirfile_items = array
 	'simage_dir'   => array('type' => 'dir', 'path' => './Uploads/ScrollImage'),
 	'config_dir'   => array('type' => 'dir', 'path' => './include/Config'),
 	'config_file'  => array('type' => 'file', 'path' => './include/Config/config.php'),
-	'config_cache' => array('type' => 'file', 'path' => './include/Config/cache.config.php')
+	'config_cache' => array('type' => 'file', 'path' => './include/Config/cache.config.php'),
+	'admin_cache'  => array('type' => 'dir', 'path' => './admin/cache'),
+	'admin_compile'=> array('type' => 'dir', 'path' => './admin/cache/compile'),
+	'admin_data'   => array('type' => 'dir', 'path' => './admin/data'),
+	'admin_log'    => array('type' => 'dir', 'path' => './admin/data/log')
+
 );
 
 $form_app_reg_items = array

@@ -6,7 +6,7 @@ $db_config = array(
 		'port'     => '3306',
         'username' => 'root',
         'password' => '123456',
-        'database' => 'laugh123',
-        'prefix'   => 'pre_'
+        'database' => 'laugh',
+        'prefix'   => 'la_'
 	),
 );

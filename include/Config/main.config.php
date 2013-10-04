@@ -1,22 +1,23 @@
 <?php
 include("db.config.php");
 $config = array(
-    'STYLE_DEFAULT' => ROOT_DIR.'/themes/default',
-    'STYLE_PUBLIC'  => ROOT_DIR.'/themes/public',
+    'STYLE_DEFAULT'        => ROOT_DIR.'/themes/default',
+    'STYLE_PUBLIC'         => ROOT_DIR.'/themes/public',
 
-    'INCLUDE_DIR'   => ROOT_DIR.'/include',
-    'CACHE_DIR'     => ROOT_DIR.'/cache',
-    'LOG_DIR'       => ROOT_DIR.'/data/log',
-    'VENDOR'        => ROOT_DIR.'/include/Vendor',
+    'INCLUDE_DIR'          => ROOT_DIR.'/include',
+    'CACHE_DIR'            => ROOT_DIR.'/cache',
+    'LOG_DIR'              => ROOT_DIR.'/data/log',
+    'DATABASE_BACKUP_DIR'  => ROOT_DIR.'/data/database',
+    'VENDOR'               => ROOT_DIR.'/include/Vendor',
 
-    'UPLOAD_PATH'   => ROOT_DIR.'/Uploads',
+    'UPLOAD_PATH'          => ROOT_DIR.'/Uploads',
 
     //session变量名混淆字符串
-    'SESSION_ENCRYPT'   => 'LaughCMS',
+    'SESSION_ENCRYPT'      => 'LaughCMS',
 
-    'COMPILE_LIFE_TIME' => 10, //编译文件有效时间 N秒
+    'COMPILE_LIFE_TIME'    => 10, //编译文件有效时间 N秒
 
-    'TEMPLATE_TYPE'    => 'Smarty',   //模版引擎类型 Laugh/Smarty
+    'TEMPLATE_TYPE'        => 'Smarty',   //模版引擎类型 Laugh/Smarty
     //模版选项 Smarty模版起作用
     'TEMPLATE_OPTIONS' => array(
         'debug'            => false,
