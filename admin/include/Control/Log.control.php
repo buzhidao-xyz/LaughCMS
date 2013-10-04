@@ -15,4 +15,10 @@ class LogControl extends CommonControl
 	{
 
 	}
+
+	//管理员登录日志
+	public function AdminLoginLog()
+	{
+		
+	}
 }

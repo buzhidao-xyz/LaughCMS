@@ -36,7 +36,7 @@ function colorboxImage(url) {
     <div class="logo"><a href="/laugh/admin"><img src="themes/blue/images/logo_white.png" width="180" height="60" /></a></div>
     <div class="headerNav">
         <div class="uinfo">
-            <font color="#FFFFFF">欢迎你！admin</font> [<a href="/laugh/admin/index.php?s=login/logout&86d36cbf17878741896c476fe20199fa">退出</a>] | <a href="/laugh/admin/index.php?s=index">系统主页</a> | <a href="http://localhost/laugh/index.php?s=index" target="_blank">网站主页</a>
+            <font color="#FFFFFF">欢迎你！admin</font> [<a href="/laugh/admin/index.php?s=login/logout&4591bcc13cbe0e0d6afb6ca168b0c45e">退出</a>] | <a href="/laugh/admin/index.php?s=index">系统主页</a> | <a href="http://localhost/laugh/index.php?s=index" target="_blank">网站主页</a>
         </div>
         <div class="nav">
             <ul class="hmenu">

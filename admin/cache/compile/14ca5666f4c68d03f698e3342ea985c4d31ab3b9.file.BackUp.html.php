@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-10-04 23:14:57
+<?php /* Smarty version Smarty-3.1.12, created on 2013-10-04 23:23:16
          compiled from "F:\website\laugh\admin\themes\blue\DataBase\BackUp.html" */ ?>
-<?php /*%%SmartyHeaderCode:18448524edb71e96309-54650411%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:23236524edd647dca19-09236102%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '18448524edb71e96309-54650411',
+  'nocache_hash' => '23236524edd647dca19-09236102',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_524edb7202ac36_20432894',
+  'unifunc' => 'content_524edd648f4cd6_68542184',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_524edb7202ac36_20432894')) {function content_524edb7202ac36_20432894($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("Public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_524edd648f4cd6_68542184')) {function content_524edd648f4cd6_68542184($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("Public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="formContainer">
 	<div class="formtitle"><h5>备份数据库</h5></div>

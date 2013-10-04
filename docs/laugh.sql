@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50530
 File Encoding         : 65001
 
-Date: 2013-10-03 00:15:50
+Date: 2013-10-05 01:05:37
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -40,6 +40,23 @@ CREATE TABLE `la_admin` (
 -- ----------------------------
 INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1368775182', '2130706433', '127', '1');
 INSERT INTO `la_admin` VALUES ('2', 'luochuan', '624879b3fff70462132a21eb1cd8eb75', 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '1355368421', '2130706433', '12', '0');
+
+-- ----------------------------
+-- Table structure for `la_adminloginlog`
+-- ----------------------------
+DROP TABLE IF EXISTS `la_adminloginlog`;
+CREATE TABLE `la_adminloginlog` (
+  `logid` int(10) NOT NULL AUTO_INCREMENT,
+  `adminname` varchar(20) NOT NULL,
+  `loginip` bigint(15) DEFAULT NULL,
+  `logintime` int(10) DEFAULT NULL,
+  PRIMARY KEY (`logid`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of la_adminloginlog
+-- ----------------------------
+INSERT INTO `la_adminloginlog` VALUES ('1', 'admin', '0', '1380906208');
 
 -- ----------------------------
 -- Table structure for `la_admin_access`
@@ -511,7 +528,7 @@ INSERT INTO `la_node` VALUES ('1', '角色管理', '管理角色信息 可编辑
 INSERT INTO `la_node` VALUES ('2', '添加角色', '', 'Role', 'newRole', '1', '0', '0', '0', '1');
 INSERT INTO `la_node` VALUES ('3', '管理角色', '', 'Role', 'manageRole', '1', '0', '0', '0', '1');
 INSERT INTO `la_node` VALUES ('4', '日志管理', '', '', '', '0', '1', '0', '0', '1');
-INSERT INTO `la_node` VALUES ('5', '日志列表', '', 'Log', 'Index', '4', '0', '0', '0', '1');
+INSERT INTO `la_node` VALUES ('5', '管理员登录日志', '', 'Log', 'AdminLoginLog', '4', '0', '0', '0', '1');
 INSERT INTO `la_node` VALUES ('6', '组管理', '', '', '', '0', '1', '0', '0', '1');
 INSERT INTO `la_node` VALUES ('7', '管理组', '', 'Group', 'manageGroup', '6', '0', '0', '0', '1');
 INSERT INTO `la_node` VALUES ('8', '节点管理', null, '', '', '0', '1', '0', '0', '1');
@@ -545,8 +562,8 @@ INSERT INTO `la_node` VALUES ('35', '系统基本参数', '', 'System', 'systemI
 INSERT INTO `la_node` VALUES ('36', '系统日志管理', '', 'System', 'sysLog', '34', '0', '1359011220', '1359011220', '1');
 INSERT INTO `la_node` VALUES ('37', '图片水印设置', '', 'System', 'imageMark', '34', '0', '1359011294', '1359011294', '1');
 INSERT INTO `la_node` VALUES ('38', '数据库管理', '', '', '', '0', '6', '1359011349', '1359011349', '1');
-INSERT INTO `la_node` VALUES ('39', '数据库备份', '', 'DataBase', 'backUp', '38', '0', '1359011410', '1359011410', '1');
-INSERT INTO `la_node` VALUES ('40', '数据库还原', '', 'DataBase', 'restore', '38', '0', '1359015999', '1359015999', '1');
+INSERT INTO `la_node` VALUES ('39', '数据库备份', '', 'DataBase', 'BackUp', '38', '0', '1359011410', '1359011410', '1');
+INSERT INTO `la_node` VALUES ('40', '数据库', '', 'DataBase', '', '38', '0', '1359015999', '1359015999', '0');
 INSERT INTO `la_node` VALUES ('41', 'SQL命令行工具', '', 'DataBase', 'SQLClient', '38', '0', '1359016018', '1359016018', '1');
 INSERT INTO `la_node` VALUES ('42', '广告管理', '', '', '', '0', '5', '1364263938', '1364263938', '1');
 INSERT INTO `la_node` VALUES ('43', '首页中部banner', '', 'Advertise', 'HomeCenterAd', '42', '0', '1364263985', '1364263985', '1');
@@ -745,19 +762,20 @@ CREATE TABLE `la_system` (
   `cfgvalue` varchar(500) DEFAULT NULL COMMENT '参数值',
   `cfgtime` int(10) NOT NULL DEFAULT '0' COMMENT '添加时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_system
 -- ----------------------------
-INSERT INTO `la_system` VALUES ('1', 'host', '网站地址', 'string', '1', 'http://localhost:82/laugh', '0');
-INSERT INTO `la_system` VALUES ('2', 'sitename', '网站名称', 'string', '1', '昆山信德佳电气科技有限公司', '0');
-INSERT INTO `la_system` VALUES ('3', 'keywords', '网站关键字', 'text', '1', '昆山,信德佳,昆山信德佳,电气,设备,电力,电网,监控', '0');
-INSERT INTO `la_system` VALUES ('4', 'admin_path', '管理中心目录', 'string', '2', 'admin', '0');
+INSERT INTO `la_system` VALUES ('1', 'host', '网站地址', 'string', '1', 'http://localhost:82/laugh', '1368437340');
+INSERT INTO `la_system` VALUES ('2', 'sitename', '网站名称', 'string', '1', '昆山信德佳电气科技有限公司', '1368437340');
+INSERT INTO `la_system` VALUES ('3', 'keywords', '网站关键字', 'text', '1', '昆山,信德佳,昆山信德佳,电气,设备,电力,电网,监控', '1368437340');
+INSERT INTO `la_system` VALUES ('4', 'admin_path', '管理中心目录', 'string', '2', 'admin', '1368437340');
 INSERT INTO `la_system` VALUES ('5', 'archive_recover', '文章回收站(是/否)开启', 'boolean', '2', '1', '1368437340');
 INSERT INTO `la_system` VALUES ('6', 'description', '网站描述', 'text', '1', '昆山信德佳电气科技有限公司', '1368528355');
 INSERT INTO `la_system` VALUES ('7', 'HomeSiteTitle', '首页网站标题', 'string', '1', '昆山信德佳电气科技有限公司', '1369803326');
 INSERT INTO `la_system` VALUES ('8', 'AboutUs', '联系我们基本信息', 'text', '2', '<h5><font color=\"#FF6600\"><b>昆山信德佳电气科技有限公司</b></font></h5>\r\n<h5><font color=\"#FF6600\">Kunshan Sindgood Electrical Technology Co., LTD</font></h5>\r\n<h5>电 话: 0512-36607986 15962257765</h5>\r\n<h5>传 真: 0512-36607986</h5>\r\n<h5>网 址: www.sindgood.com</h5>\r\n<h5>地 址: 江苏省昆山市苇城南路1699号工业技术研究院</h5>', '1369830358');
+INSERT INTO `la_system` VALUES ('9', 'Version', '系统版本', 'string', '1', '1.1', '1369830358');
 
 -- ----------------------------
 -- Table structure for `la_tag`
@@ -773,6 +791,59 @@ CREATE TABLE `la_tag` (
 
 -- ----------------------------
 -- Records of la_tag
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `la_topic`
+-- ----------------------------
+DROP TABLE IF EXISTS `la_topic`;
+CREATE TABLE `la_topic` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `archiveid` int(10) NOT NULL,
+  `content` longtext,
+  `updatetime` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of la_topic
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `la_topic_article`
+-- ----------------------------
+DROP TABLE IF EXISTS `la_topic_article`;
+CREATE TABLE `la_topic_article` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `archiveid` int(10) NOT NULL,
+  `topicid` int(10) DEFAULT NULL COMMENT '专题ID',
+  `topiccardid` int(10) DEFAULT NULL COMMENT '专题项ID',
+  `content` longtext,
+  `updatetime` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of la_topic_article
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `la_topic_card`
+-- ----------------------------
+DROP TABLE IF EXISTS `la_topic_card`;
+CREATE TABLE `la_topic_card` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `archiveid` int(10) NOT NULL COMMENT '专题ID',
+  `title` varchar(50) NOT NULL COMMENT '专题项名称',
+  `thumbimage` varchar(100) DEFAULT NULL,
+  `description` longtext COMMENT '描述',
+  `createtime` int(10) DEFAULT NULL,
+  `updatetime` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of la_topic_card
 -- ----------------------------
 
 -- ----------------------------

@@ -10,7 +10,7 @@ $config = array(
     'DATABASE_BACKUP_DIR'  => ROOT_DIR.'/data/database',
     'VENDOR'               => ROOT_DIR.'/include/Vendor',
 
-    'UPLOAD_PATH'          => ROOT_DIR.'/Uploads',
+    'UPLOAD_PATH'          => ROOT_DIR.'/uploads',
 
     //session变量名混淆字符串
     'SESSION_ENCRYPT'      => 'LaughCMS',

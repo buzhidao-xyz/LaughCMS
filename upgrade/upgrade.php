@@ -16,8 +16,10 @@ define('ROOT_PATH', dirname(__FILE__).'/../');
 //载入方法列表
 @include "function.php";
 
+showHead();
+
 //升级版本号
-$version = 1.1;
+$version = 1.0;
 
 //当前系统版本号
 $cfgInfo = T("system")->where(array("cfgname"=>"Version"))->find();
@@ -26,7 +28,7 @@ $cversion = floatval($cfgInfo['cfgvalue']);
 //如果当前系统版本大于等于版本号 退出更新
 if ($cversion >= $version) {
 	$msg = "当前系统已经是最新版本! 版本号:".$cversion;
-	showmessage($msg);exit;
+	showmessage($msg,1);
 }
 
 //计算相差版本数
@@ -72,8 +74,8 @@ for ($i=1; $i<=$vnumber; $i++) {
 		showmessage($msg);
 	} else {
 		$msg = '<font color="red">系统升级失败! 版本号:'.$uversion.' *['.$sqlfile.'文件不存在!]</font>';
-		showmessage($msg);exit;
+		showmessage($msg,1);
 	}
 }
 
-exit;
+showFoot();

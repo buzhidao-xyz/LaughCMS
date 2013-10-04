@@ -58,4 +58,11 @@ class Admin extends Base
 		if (!$id) return false;
 		return T('admin')->where(array('id'=>$id))->delete();
 	}
+
+	//记录管理员登录日志
+	public function saveAdminLoginLog($data=array())
+	{
+		if (!is_array($data) || empty($data)) return false;
+		return T("adminloginlog")->add($data);
+	}
 }

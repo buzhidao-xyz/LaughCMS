@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-10-04 12:10:13
+<?php /* Smarty version Smarty-3.1.12, created on 2013-10-04 23:40:14
          compiled from "F:\website\laugh\themes\default\Common\ProductList.html" */ ?>
-<?php /*%%SmartyHeaderCode:22197524e3fa50b0509-70602070%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2137524ee15e35c5f2-31901124%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '22197524e3fa50b0509-70602070',
+  'nocache_hash' => '2137524ee15e35c5f2-31901124',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_524e3fa51599a8_60578964',
+  'unifunc' => 'content_524ee15e49f8e8_62638637',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_524e3fa51599a8_60578964')) {function content_524e3fa51599a8_60578964($_smarty_tpl) {?><div id="ImgListBlock" class="boxBlock fleft w740">
+<?php if ($_valid && !is_callable('content_524ee15e49f8e8_62638637')) {function content_524ee15e49f8e8_62638637($_smarty_tpl) {?><div id="ImgListBlock" class="boxBlock fleft w740">
 	<div class="boxBlockTitle">
 		<span class="title">产品展示</span>
 		<span class="link"><a href="__APP__/index.php?s=Product/index&columnid=<?php echo $_smarty_tpl->tpl_vars['ProductColumnID']->value;?>

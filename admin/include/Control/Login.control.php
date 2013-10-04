@@ -114,7 +114,16 @@ class LoginControl extends BaseControl
             'lastloginip'   => $ip,
             'logincount'    => $count
         ));
+
+        //记录管理员登录日志
+        $logdata = array(
+            'adminname' => $res['adminname'],
+            'loginip'   => $ip,
+            'logintime' => $time
+        );
+        M("Admin")->saveAdminLoginLog($logdata);
         
+        //session缓存管理员信息
         $adminInfo = array(
             'id'        => $res['id'],
             'adminname' => $res['adminname'],
@@ -123,7 +132,6 @@ class LoginControl extends BaseControl
             'logincount' => $count,
             'ukey'      => $res['ukey']
         );
-        
 		session('adminInfo', $adminInfo);
 		session('sstate', md5(md5($adminname).$res['ukey']));
 		session('ustate', $res['ustate']);

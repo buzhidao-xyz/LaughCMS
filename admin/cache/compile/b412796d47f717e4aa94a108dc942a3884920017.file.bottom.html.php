@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-10-04 23:09:35
+<?php /* Smarty version Smarty-3.1.12, created on 2013-10-05 01:03:30
          compiled from "F:\website\laugh\admin\themes\blue\public\bottom.html" */ ?>
-<?php /*%%SmartyHeaderCode:29119524eda2fbff562-31919866%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:13015524ef4e26c75c5-55444796%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,12 +11,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '29119524eda2fbff562-31919866',
+  'nocache_hash' => '13015524ef4e26c75c5-55444796',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_524eda2fc04d89_76889677',
+  'unifunc' => 'content_524ef4e26cbb24_96618134',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_524eda2fc04d89_76889677')) {function content_524eda2fc04d89_76889677($_smarty_tpl) {?>Copyright &copy; xxx. 2012-2015<?php }} ?>
+<?php if ($_valid && !is_callable('content_524ef4e26cbb24_96618134')) {function content_524ef4e26cbb24_96618134($_smarty_tpl) {?>Copyright &copy; xxx. 2012-2015<?php }} ?>

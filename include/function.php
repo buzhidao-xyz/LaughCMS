@@ -369,7 +369,7 @@ function ob_gzip($content=null)
  * @param $table string 表名
  * @param $id int 连接id
  */
-function T($table,$id=0)
+function T($table=null,$id=0)
 {
     global $DBOBJECTIVE;
     
