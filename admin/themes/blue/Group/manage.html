@@ -1,15 +1,12 @@
 {include file="public/control_top.html"}
-<!-- <div class="control_nav">
-	<h3>添加组</h3>
-</div> -->
 {if $accessStatus == 1}
 <div class="formContainer" accessStatus={$accessStatus}>
-	<div class="formtitle"><h5>新组节点表单</h5></div>
+	<div class="formtitle"><h5>新增组菜单</h5></div>
 	<form name="newform" action="__APP__/index.php?s=Group/saveGroup" method="post" id="ajaxform" class="newform">
 		<input type="hidden" name="" />
 		<ul class="formbody">
 			<li class="formblock">
-				<span>名称:</span>
+				<span>菜单名称:</span>
 				<input type="text" name="title" value="" class="input" style="width:150px;" />
 			</li>
 			<li class="formblock bordernone bgf6">
@@ -19,9 +16,9 @@
 	</form>
 </div>
 {/if}
-<div class="captitle"><h5>组节点列表【目前共有{if $total}{$total}{else}0{/if}条数据】</h5></div>
+<div class="captitle"><h5>组菜单列表【菜单数{if $total}{$total}{else}0{/if}】</h5></div>
 <ul class="table_list_title">
-	<li class="table_list_l table_list_l150">组节点名称</li>
+	<li class="table_list_l table_list_l150">组菜单名称</li>
 	<li class="table_list_l table_list_l170">创建时间</li>
 	<li class="table_list_l table_list_l100">是/否显示</li>
 	{if $accessStatus == 1}
@@ -37,8 +34,8 @@
 		<li class="table_list_l table_list_l100">{if $d.isshow}显{else}隐{/if}</li>
 		{if $accessStatus == 1}
 		<li class="table_list_l table_list_l150" accessStatus={$accessStatus}>
-			<a href="javascript:;" name="modify" id="{$d.id}" title="{$d.title}" isshow="{$d.isshow}">修改</a>&nbsp;&nbsp;
-			<a delurl="__APP__/Group/deleteGroup" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    		<a name="colorboxEdit" href="__APP__/index.php?s=Group/GroupEdit&id={$d.id}">修改</a>
+			<a delurl="__APP__/index.php?s=Group/GroupDelete" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
 		</li>
 		{/if}
 	</ul>
@@ -47,34 +44,4 @@
 	<ul class="table_list"><li class="table_list_center">空</li></ul>
 	{/if}
 </div>
-{include file="public/page.html"}
-<!--弹出层-->
-{if $accessStatus == 1}
-<div id="modify_div" class="modify_div" style="display:none;" accessStatus={$accessStatus}>
-	<div class="modify_div_Top">
-		<h5>编辑组节点信息</h5>
-		<a href="javascript:;" id="modify_div_close" class="close">×</a>
-	</div>
-	<form id="modify_div_form" action="__APP__/?s=Group/upGroup">
-		<input name="id" value="" type="hidden" />
-		<ul class="formbody modify_div_box">
-			<li class="formblock">
-				<span>组节点名称: </span>
-				<input type="text" name="title" value="" class="input" style="width:150px;" />
-			</li>
-			<li class="formblock">
-				<span>是否显示: </span>
-				<div class="item_list fleft">
-					<label><input type="radio" name="isshow" value="1" class="radio" />是</label>
-					<label><input type="radio" name="isshow" value="0" class="radio" />否</label>
-				</div>
-			</li>
-			<li class="formblock bordernone">
-				<input type="submit" name="subut" class="button btngreen2" value="修改" />
-			</li>
-		</ul>
-	</form>
-	<div class="modify_div_Bottom"></div>
-</div>
-{/if}
 {include file="public/control_bottom.html"}

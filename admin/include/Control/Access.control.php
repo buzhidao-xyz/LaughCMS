@@ -9,7 +9,7 @@ class AccessControl extends BaseControl
 	protected $_control = 'Access';
 
     //超级管理员账户id数组
-    private $_super_admin;
+    private $_superAdmin;
 
 	public function __construct()
 	{
@@ -19,7 +19,7 @@ class AccessControl extends BaseControl
         $this->_GROUP = M('Group');
         $this->_ROLE = M('Role');
 
-        $this->_super_admin = $this->_getSuperAdmin();
+        $this->_superAdmin = $this->_getSuperAdmin();
 
 		$this->_getAdminAccess();
 	}
@@ -45,10 +45,10 @@ class AccessControl extends BaseControl
 	private function _getAdminAccess()
 	{
         if (session('AdminAccess')) return true;
-        session('super_admin', $this->_super_admin);
+        session('superAdmin', $this->_superAdmin);
 
         $admin = $this->adminInfo;
-        if (in_array($admin['id'], $this->_super_admin)) {
+        if (in_array($admin['id'], $this->_superAdmin)) {
             $node = $this->_NODE->getNode();
             $node = $this->dealNode($node['data']);
         } else {

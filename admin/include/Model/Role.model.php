@@ -35,13 +35,12 @@ class Role extends Base
      * 获取用户的角色信息
      * @param $adminid int 用户id
 	 */
-	public function getAdminRole($adminid)
+	public function getAdminRole($adminid=null)
 	{
         $return = array();
-
-		$res = T('role_admin')->field('roleid')->where(array('adminid'=>$adminid))->select();
-        if (!empty($res) && is_array($res)) {
-            foreach ($res as $v) {
+		$result = T('role_admin')->field('roleid')->where(array('adminid'=>$adminid))->select();
+        if (!empty($result) && is_array($result)) {
+            foreach ($result as $v) {
                 $return[] = $v['roleid'];
             }
         }
@@ -49,7 +48,7 @@ class Role extends Base
 	}
 
 	//为管理员分配角色
-	public function upAdminRole($adminid=null,$roleid=array())
+	public function AdminRoleEditSave($adminid=null,$roleid=array())
 	{
 		if (!$adminid) return false;
 

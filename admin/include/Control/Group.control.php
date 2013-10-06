@@ -1,6 +1,6 @@
 <?php
 /**
- * 组管理模块
+ * 组菜单管理模块
  * by wbq 2012-9-6
  */
 class GroupControl extends CommonControl
@@ -26,6 +26,15 @@ class GroupControl extends CommonControl
         return $id;
     }
 
+    //获取组节点id
+    public function _getGroupID()
+    {
+        $groupid = q('groupid');
+        if (!FilterHelper::C_int($groupid)) $this->ajaxReturn(1,'ID错误');
+
+        return $groupid;
+    }
+
     /**
      * 获取节点名称
      */
@@ -48,12 +57,10 @@ class GroupControl extends CommonControl
 
     public function manageGroup()
     {
-        list($start,$length) = $this->getPages();
-        $groupList = $this->_GROUP->getGroupTree($start,$length);
+        $groupList = $this->_GROUP->getGroupTree();
 
-        $this->assign("total", $groupList['total']);
-        $this->assign("groupList", $groupList['data']);
-        $this->assign("page", getPage($groupList['total'],$this->_pagesize));
+        $this->assign("total", count($groupList));
+        $this->assign("groupList", $groupList);
         $this->display("Group/manage.html");
     }
 
@@ -67,40 +74,60 @@ class GroupControl extends CommonControl
 
         $data = array(
             'title' => $title,
+            'sort'  => 0,
+            'isshow'=> 1,
             'createtime' => TIMESTAMP,
-            'isshow'=> 1
+            'updatetime' => TIMESTAMP
         );
         $return = $this->_GROUP->addGroup($data);
 
         $this->ajaxReturn(0, '添加成功', $return);
     }
 
+    //编辑组菜单信息
+    public function GroupEdit()
+    {
+        if (!$this->isAjax()) return false;
+        $id = $this->_getID();
+        $this->assign("groupid",$id);
+
+        $GroupInfo = $this->_GROUP->getGroupTree($id);
+        $this->assign("GroupInfo", $GroupInfo[0]);
+
+        $this->display("Group/GroupEdit.html");
+    }
+
     //更新组信息
-    public function upGroup()
+    public function GroupEditSave()
     {
         if (!$this->isAjax()) return false;
 
-        $id = $this->_getID();
+        $id = $this->_getGroupID();
         $title = $this->_getTitle();
         $isshow = $this->_getIsShow();
 
-        $res = $this->_GROUP->getGroupByTitle($title);
-        if ($res && $res['id'] != $id) $this->ajaxReturn(1, '组名称已存在');
+        if ($this->_GROUP->getGroupByIDTitle($id,$title)) {
+            $this->ajaxReturn(1,"组菜单名称已存在!");
+        }
 
         $data = array(
             'title' => $title,
-            'isshow'=> $isshow
+            'isshow'=> $isshow,
+            'updatetime' => TIMESTAMP
         );
-        $return = $this->_GROUP->upGroup($id, $data);
-        if ($return) $this->ajaxReturn(0, '更新成功');
-        else $this->ajaxReturn(1, '更新失败');
+        $return = $this->_GROUP->GroupEditSave($id,$data);
+        if ($return) {
+            $this->ajaxReturn(0, '更新成功!');
+        } else {
+            $this->ajaxReturn(1, '更新失败!');
+        }
     }
 
     //删除组信息
-    public function deleteGroup()
+    public function GroupDelete()
     {
         $id = $this->_getID();
-        $return = $this->_NODE->delGroup($id);
+        $return = $this->_NODE->GroupDelete($id);
         if ($return) {
             $this->ajaxReturn(0,'组删除成功！',$return);
         } else {

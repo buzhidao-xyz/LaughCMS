@@ -100,7 +100,7 @@ class LoginControl extends BaseControl
         
         $res = T('admin')->field('id,adminname,password,ukey,ustate,lastlogintime,lastloginip,logincount')->where(array('adminname'=>$adminname))->find();
         
-        if (empty($res) || $adminname != $res['adminname'] || M('Admin')->password_encrypt($password,$res['ukey']) != $res['password']) {
+        if (empty($res) || $adminname != $res['adminname'] || M('Admin')->passwdEncrypt($password,$res['ukey']) != $res['password']) {
             session('ecode', 1003);
             self::LoginIndex();
         }
@@ -109,7 +109,7 @@ class LoginControl extends BaseControl
         $ip = ip2longs(getIp());
         $count = $res['logincount'] + 1;
         //更新登录时间和次数
-        M('Admin')->upAdmin($res['id'],array(
+        M('Admin')->AdminEditSave($res['id'],array(
             'lastlogintime' => $time,
             'lastloginip'   => $ip,
             'logincount'    => $count
@@ -156,6 +156,7 @@ class LoginControl extends BaseControl
             session('sstate',null);
             session('ustate',null);
             session('AdminAccess',null);
+            session('superAdmin',null);
             // session_destroy();
         }
 

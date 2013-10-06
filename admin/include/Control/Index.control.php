@@ -29,19 +29,19 @@ class IndexControl extends CommonControl
      */
     public function index()
     {
-        $cache_id = self::$_query['control'].'_'.self::$_query['action'];
-        $data = FileCache::get($cache_id);
+        // $cache_id = self::$_query['control'].'_'.self::$_query['action'];
+        // $data = FileCache::get($cache_id);
         
-        if (!$data) {
-            $data = array(
-                'id' => $cache_id,
-                'content' => array('admin','index')
-            );
+        // if (!$data) {
+        //     $data = array(
+        //         'id' => $cache_id,
+        //         'content' => array('admin','index')
+        //     );
             
-            FileCache::set($cache_id, $data, array('life_time'=>self::$_life_time));
-        }
+        //     FileCache::set($cache_id, $data, array('life_time'=>self::$_life_time));
+        // }
         
-        $this->assign('data', $data);
+        // $this->assign('data', $data);
         $this->display('index.html');
     }
 }

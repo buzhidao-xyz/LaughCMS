@@ -23,20 +23,16 @@ class Group extends Base
 	 * @param $start int 开始位置
 	 * @param $length int 获取数据长度
 	 */
-	public function getGroupTree($start=0,$length=0)
+	public function getGroupTree($id=null)
 	{
-		$obj = T('group');
+		$where = array();
+		if ($id) $where['id'] = is_array($id) ? array("in",$id) : $id;
 
-		$total = $obj->count();
-
-		if ($length > 0) $obj = $obj->limit($start,$length);
-
-		$data = $obj->select();
-		return array('total'=>$total, 'data'=>$data);
+		return T('group')->where($where)->select();
 	}
 
     /**
-     * 根据组id获取节点组信息
+     * 根据组id获取组菜单信息
      * @param $groupid int/array 组id或者id数组
      */
     public function getGroup($groupid=null)
@@ -52,15 +48,16 @@ class Group extends Base
 
 	/**
 	 * 根据组名称获取组信息
+	 * @param $id int 组ID
 	 * @param $title string 组名称
 	 */
-	public function getGroupByTitle($title=null)
+	public function getGroupByIDTitle($id=null,$title=null)
 	{
-		if (!$title) return false;
+		if (!$id || !$title) return false;
 
-		$return = T('group')->where(array("title"=>$title))->find();
+		$count = T('group')->where(array("id"=>array("neq",$id),"title"=>$title))->count();
 
-		return !empty($return) ? $return : false;
+		return $count;
 	}
 
 	/**
@@ -68,7 +65,7 @@ class Group extends Base
 	 * @param $id int 组id
 	 * @param $data array() 组信息
 	 */
-	public function upGroup($id,$data=array())
+	public function GroupEditSave($id=null,$data=array())
 	{
 		if (!$id || empty($data)) return false;
 
@@ -76,7 +73,7 @@ class Group extends Base
 	}
 
 	//删除组信息
-	public function delGroup($id=null)
+	public function GroupDelete($id=null)
 	{
 		if (!$id) return false;
 

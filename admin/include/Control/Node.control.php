@@ -17,6 +17,9 @@ class NodeControl extends CommonControl
 
         if (!$this->_GROUP) $this->_GROUP = N('Group');
         if (!$this->_NODE) $this->_NODE = N('Node');
+
+        $groupTree = $this->_GROUP->getGroupTree();
+        $this->assign("groupTree",$groupTree);
     }
 
     /**
@@ -34,6 +37,13 @@ class NodeControl extends CommonControl
         if (!FilterHelper::C_int($id)) $this->ajaxReturn(1,'ID错误！');
 
         return $id;
+    }
+    private function _getNodeID()
+    {
+        $nodeid = q('nodeid') ? q('nodeid') : 0;
+        if (!FilterHelper::C_int($nodeid)) $this->ajaxReturn(1,'ID错误！');
+
+        return $nodeid;
     }
 
     /**
@@ -105,7 +115,8 @@ class NodeControl extends CommonControl
     public function newNode()
     {
         $groupTree = $this->_GROUP->getGroupTree();
-        $this->assign("groupTree",$groupTree['data']);
+        $this->assign("groupTree",$groupTree);
+
         $this->assign("nodeTree",array());
         $this->display('node/newnode.html');
     }
@@ -161,38 +172,57 @@ class NodeControl extends CommonControl
     //管理节点
     public function manageNode()
     {
-        list($start,$length) = $this->getPages();
-        $nodeList = $this->_NODE->getNode(null,$start,$length);
-        if ($nodeList['total']) {
-            foreach ($nodeList['data'] as $k => $v) {
-                if ($v['pid']) $res = $this->_NODE->getNodeInfo($v['pid']);
-                $nodeList['data'][$k]['pnode'] = $v['pid']&&isset($res) ? $res['title'] : '';
-                $nodeList['data'][$k]['groupid'] = $v['pid']&&isset($res) ? $res['groupid'] : $v['groupid'];
-                if ($v['groupid']) $res = $this->_GROUP->getGroup($v['groupid']);
-                $nodeList['data'][$k]['group'] = $v['groupid']&&isset($res) ? $res[0]['title'] : '';
+        $dataList = $this->_NODE->getNode(null,null,true);
+        $total = $dataList['total'];
+        $nodeList = array();
+        if (is_array($dataList['data']) && !empty($dataList['data'])) {
+            foreach ($dataList['data'] as $d) {
+                if ($d['pid'] == 0) {
+                    $d['cnode'] = array();
+                    $nodeList[] = $d;
+                } else {
+                    foreach ($nodeList as $k=>$v) {
+                        if ($v['id'] == $d['pid']) {
+                            $nodeList[$k]['cnode'][] = $d;
+                        }
+                    }
+                }
             }
         }
 
-        $this->assign("total", $nodeList['total']);
-        $this->assign("nodeList", $nodeList['data']);
+        $this->assign("total", $total);
+        $this->assign("nodeList", $nodeList);
+        $this->display("Node/manage.html");
+    }
 
-        $groupTree = $this->_GROUP->getGroupTree();
-        $this->assign("groupTree",$groupTree['data']);
+    //编辑节点信息
+    public function NodeEdit()
+    {
+        if (!$this->isAjax()) return false;
 
-        $this->assign("page", getPage($nodeList['total'],$this->_pagesize));
-        $this->display("node/manage.html");
+        $id = $this->_getID();
+        $this->assign("nodeid",$id);
+
+        $NodeInfo = $this->_NODE->getNodeInfo($id);
+        $this->assign("NodeInfo",$NodeInfo);
+
+        $nodeTree = $this->_NODE->getNodeTree($NodeInfo['groupid']);
+        $this->assign("nodeTree",$nodeTree);
+
+        $this->display("Node/NodeEdit.html");
     }
 
     //修改节点信息
-    public function upNode()
+    public function NodeEditSave()
     {
-        $id = $this->_getID();
+        $id = $this->_getNodeID();
         $groupid = $this->_getGroupID();
         $pid = $this->_getPID();
         $title = $this->_getTitle();
         $control = $this->_getControl();
         $remark = $this->_getRemark();
         $action = $this->_getAction();
+        $isshow = q("isshow");
 
         $data = array(
             'groupid' => $pid ? 0 : $groupid,
@@ -200,13 +230,15 @@ class NodeControl extends CommonControl
             'title'   => $title,
             'remark'  => $remark,
             'control' => $control,
-            'action'  => $action
+            'action'  => $action,
+            'isshow'  => $isshow,
+            'updatetime' => TIMESTAMP
         );
-        $return = $this->_NODE->upNode($id,$data);
+        $return = $this->_NODE->NodeEditSave($id,$data);
         if ($return) {
-            $this->ajaxReturn(0,'节点修改成功！',$return);
+            $this->ajaxReturn(0,'修改成功！');
         } else {
-            $this->ajaxReturn(1,'节点修改失败！',$return);
+            $this->ajaxReturn(1,'修改失败！');
         }
     }
 

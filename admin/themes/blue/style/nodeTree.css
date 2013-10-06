@@ -23,6 +23,10 @@
 	display: block;
 	text-align: left;
 	margin: 0;
+	padding: 0;
+}
+#nodeTree .w100 {
+	width: 100px;
 }
 #nodeTree .w120 {
 	width: 120px;
@@ -45,12 +49,12 @@
 	padding: 6px;
 	margin: 0;
 	cursor: pointer;
-	background: url("../images/arrow_mius.png") no-repeat left 12px;
+	background: url("../images/arrow_mius.png") no-repeat left 13px;
 }
 #nodeTree div.li span.back {
 	padding: 6px;
 	cursor: pointer;
-	background: url("../images/arrow_plus.png") no-repeat left 10px;
+	background: url("../images/arrow_plus.png") no-repeat left 12px;
 }
 #nodeTree .nodeTreeTitle {
 	padding: 7px 5px 7px 5px;

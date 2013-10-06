@@ -26,6 +26,12 @@ $(document).ready(function() {
         $(this).addClass('tabon');
     });
 
+    //colorbox edit触发方法
+    $("a[name=colorboxEdit]").click(function (){
+        window.parent.colorboxAjaxHtml($(this).attr("href"));
+        return false;
+    });
+
     /*添加的FORM ajax提交方法*/
     $('#ajaxform').live("submit", function(){
         // $("#ajaxform input:[type=submit]").attr('disabled','disabled');
@@ -66,92 +72,6 @@ $(document).ready(function() {
         }
     });
     /*colorbox的FORM ajax提交方法*/
-
-    //修改资料
-    if($('#modify_div').length>0){
-        var delfunction = true;
-        var m_d = new Div_window('modify_div');
-        if ($(".upblock1").length > 0) {
-            classhtml1 = $(".upblock1").html();
-        }
-        if ($(".upblock2").length > 0) {
-            classhtml2 = $(".upblock2").html();
-        }
-        
-        $('a[name="modify"]').click(function(event){
-            var e = event;
-            var that = $(this);
-            var thattd = $(this).parent().parent().find('li');
-            var param_array = [
-            {targetname:'id', val:that.attr('id'), type:'text'},
-            {targetname:'title', val:that.attr('title'), type:'text'},
-            {targetname:'remark', val:that.attr('remark'), type:'text'},
-            {targetname:'control', val:that.attr('control'), type:'text'},
-            {targetname:'action', val:that.attr('action'), type:'text'},
-            {targetname:'groupid', val:that.attr('groupid'), type:'select'},
-            {targetname:'pid', val:that.attr('pid'), type:'select'},
-            {targetname:'isshow', val:that.attr('isshow'), type:'radio'}
-            ];
-            if (that.attr('type')) {
-                var upblockval = that.attr('upblock');
-                $("input[name=upblock]").each(function (){
-                    if ($(this).val() == upblockval) $(this).attr("checked","checked");
-                });
-                if (upblockval == 1 && $(".upblock2").length > 0) {
-                    $(".upblock1").html(classhtml1).css('display','block');
-                    $(".upblock2").html('').css('display','none');
-                }
-                if (upblockval == 2 && $(".upblock1").length > 0) {
-                    $(".upblock2").html(classhtml2).css('display','block');
-                    $(".upblock1").html('').css('display','none');
-                }
-            }
-            if ($("select[flag=nodepid]").length && that.attr('groupid')) {
-                var d = {
-                    c: 'Node',
-                    f: 'nodeTree',
-                    groupid: that.attr('groupid')
-                }
-                $.post(JS_APP+'/?s=AJAX', d, function(data){
-                    $("select[flag=nodepid]").html(data.data);
-                    m_d.insertvalue(param_array).open(e);
-                },'json')
-            } else {
-                m_d.insertvalue(param_array).open(e);
-            }
-        });
-        
-        $('#modify_div_close').click(function(){
-            m_d.close();
-        });
-        
-        $('a[name="del"]').click(function(){
-            m_d.close();
-            ullilist.delajax($(this));
-        });
-        
-        $('#modify_div_form').submit(function(){
-            m_d.formsubmit($(this).attr('action'), function(data){
-                //var data = $.parseJSON(data);
-                alert(data.info);
-                if (!data.status) {
-                    m_d.close();
-                    var locat = $("a[name=modify]").attr('location');
-                    if (locat) location.href = locat;
-                    else location.href = location.href;
-                    
-                };
-            });
-            return false;
-        });
-
-        $('a[name=reset]').click(function (){
-            $.post($(this).attr('reseturl'), {userid:$(this).attr('mcid'),action:'reset'},function (data){
-                alert(data.errormsg);
-            },'json');
-        });
-    }
-    //修改资料
 
     ullilist={};
     //数据表格操作

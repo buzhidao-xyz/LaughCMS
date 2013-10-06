@@ -166,7 +166,10 @@ class DBpdosqlserver extends DBDriver
     public function count($options=array())
     {
         $this->_before_sql($options);
-        $this->sql = "SELECT COUNT(".$this->_field.") as la_num FROM ".self::$_tbf.self::$_table." as a ".$this->_join.$this->_where;
+
+        $main_table = $this->_union ? $this->_union : self::$_tbf.self::$_table;
+        $this->sql = "SELECT COUNT(".$this->_field.") as la_num FROM ".$main_table." as a ".$this->_join.$this->_where;
+        
         $this->_after_sql();
         $data = $this->GetOne($this->sql);
 

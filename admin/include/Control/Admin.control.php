@@ -25,6 +25,12 @@ class AdminControl extends CommonControl
 		if (!FilterHelper::C_int($id)) $this->ajaxReturn(1,'ID错误！');
 		return $id;
 	}
+	private function _getAdminID()
+	{
+		$adminid = q('adminid');
+		if (!FilterHelper::C_int($adminid)) $this->ajaxReturn(1,'ID错误！');
+		return $adminid;
+	}
 
 	//获取管理员用户名
 	private function _getAdminname()
@@ -48,8 +54,8 @@ class AdminControl extends CommonControl
 		$this->display('Admin/profile.html');
 	}
 
-	//修改密码
-	public function upPassword()
+	//个人信息修改保存
+	public function profileSave()
 	{
 		$id = $this->adminInfo['id'];
 		$ukey = $this->adminInfo['ukey'];
@@ -61,16 +67,17 @@ class AdminControl extends CommonControl
 		if ($password != $password1) $this->ajaxReturn(1,'两次新密码不一样！');
 
 		$adminInfo = M('Admin')->getAdmin($id);
-		if (M('Admin')->password_encrypt($password0,$ukey) != $adminInfo['data'][0]['password']) $this->ajaxReturn(1,'原始密码错误！');
+		if (M('Admin')->passwdEncrypt($password0,$ukey) != $adminInfo['data'][0]['password']) $this->ajaxReturn(1,'原始密码错误！');
 
 		$data = array(
-			'password' => M('Admin')->password_encrypt($password,$ukey)
+			'password' => M('Admin')->passwdEncrypt($password,$ukey),
+			'updatetime' => TIMESTAMP
 		);
-		$return = M('Admin')->upAdmin($id,$data);
+		$return = M('Admin')->profileSave($id,$data);
 		if ($return) {
-			$this->ajaxReturn(0,'密码修改成功！');
+			$this->ajaxReturn(0,'修改成功!');
 		} else {
-			$this->ajaxReturn(1,'密码修改失败！');
+			$this->ajaxReturn(1,'修改失败!');
 		}
 	}
 
@@ -94,14 +101,15 @@ class AdminControl extends CommonControl
 		$ukey = getRandStrs();
 		$data = array(
 			'adminname' => $adminname,
-			'password' => M('Admin')->password_encrypt($password,$ukey),
+			'password' => M('Admin')->passwdEncrypt($password,$ukey),
 			'ukey'     => $ukey,
-			'createtime' => TIMESTAMP,
 			'status'   => $status,
 			'ustate'   => md5(md5($adminname).$ukey),
 			'lastlogintime' => TIMESTAMP,
 			'lastloginip'   => ip2longs(getIp()),
-			'logincount'    => 0
+			'logincount'    => 0,
+			'createtime'    => TIMESTAMP,
+			'updatetime'    => TIMESTAMP
 		);
 		$return = M('Admin')->saveAdmin($data);
 		if ($return) {
@@ -136,19 +144,16 @@ class AdminControl extends CommonControl
 		$this->assign('adminList',$adminList['data']);
 		$this->assign("page", getPage($adminList['total'],$this->_pagesize));
 
-		$roleList = M('Role')->getRole();
-		$this->assign('roleList', $roleList['data']);
-
-		$this->assign('super_admin',session('super_admin'));
+		$this->assign('superAdmin',session('superAdmin'));
 		$this->display('Admin/adminList.html');
 	}
 
 	//更改状态
-	public function upAdminStatus()
+	public function AdminStatusEdit()
 	{
 		$id = $this->_getID();
 		$status = $this->_getStatus();
-		if (in_array($id, session('super_admin'))) $this->ajaxReturn(1,'禁止操作！');
+		if (in_array($id, session('superAdmin'))) $this->ajaxReturn(1,'禁止操作！');
 
 		$return = M('Admin')->upAdmin($id,array('status'=>$status));
 		if ($return) {
@@ -159,7 +164,7 @@ class AdminControl extends CommonControl
 	}
 
 	//重置密码
-	public function resetPassword()
+	public function AdminPasswdReset()
 	{
 		$id = $this->_getID();
 		$randString = getRandStrs(6,0);
@@ -167,25 +172,58 @@ class AdminControl extends CommonControl
 		$adminInfo = M('Admin')->getAdmin($id);
 		if (!$adminInfo['total']) $this->ajaxReturn(1,'非法管理员！');
 
-		$return = M('Admin')->upAdmin($id,array('password'=>M('Admin')->password_encrypt($randString,$adminInfo['data'][0]['ukey'])));
+		$return = M('Admin')->upAdmin($id,array('password'=>M('Admin')->passwdEncrypt($randString,$adminInfo['data'][0]['ukey'])));
 		if ($return) {
-			$this->ajaxReturn(0,'重置成功 新密码: '.$randString);
+			$this->ajaxReturn(0,'重置成功!新密码: '.$randString);
 		} else {
-			$this->ajaxReturn(1,'重置失败');
+			$this->ajaxReturn(1,'重置失败!');
+		}
+	}
+
+	//编辑管理员信息
+	public function AdminEdit()
+	{
+		$id = $this->_getID();
+		$this->assign("adminid",$id);
+		$adminInfo = M('Admin')->getAdmin($id);
+		$adminInfo = $adminInfo['data'][0];
+
+		$roleid = M('Role')->getAdminRole($id);
+		$adminInfo['roleid'] = $roleid;
+
+		$roleList = M('Role')->getRole();
+		$this->assign('roleList', $roleList['data']);
+
+		$this->assign("adminInfo", $adminInfo);
+		$this->display('Admin/AdminEdit.html');
+	}
+
+	//保存编辑后的管理员信息
+	public function AdminEditSave()
+	{
+		$id = $this->_getAdminID();
+
+		//修改管理员的角色信息
+		$roleid = q("roleid");
+		$return = M("Role")->AdminRoleEditSave($id,$roleid);
+		if ($return) {
+			$this->ajaxReturn(0,'修改成功!');
+		} else {
+			$this->ajaxReturn(1,'修改失败!');
 		}
 	}
 
 	//删除管理员
-	public function delteAdmin()
+	public function AdminDelete()
 	{
 		$id = $this->_getID();
-		if (in_array($id, session('super_admin'))) $this->ajaxReturn(1,'禁止操作！');
+		if (in_array($id, session('superAdmin'))) $this->ajaxReturn(1,'禁止操作！');
 
-		$return = M('Admin')->deleteAdmin($id);
+		$return = M('Admin')->AdminDelete($id);
 		if ($return) {
-			$this->ajaxReturn(0,'管理员删除成功！');
+			$this->ajaxReturn(0,'删除成功!');
 		} else {
-			$this->ajaxReturn(1,'管理员删除失败！');
+			$this->ajaxReturn(1,'删除失败!');
 		}
 	}
 }

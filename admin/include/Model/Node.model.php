@@ -10,31 +10,48 @@ class Node extends Base
 		parent::__construct();
 	}
 
-	/**
-	 * 保存新节点
-	 */
-	public function saveNode($data)
-	{
-		if (!is_array($data) || empty($data)) return false;
-		
-		return T('node')->add($data);
-	}
-
     /**
      * 获取某个节点的子节点
      * @param $nodeid 节点id 默认为0 取全部
+     * @param $pid 父节点id 默认为0
+     * @param $isshow 获取节点类型(显/隐) 默认true 取全部
      */
-    public function getNode($nodeid=0,$start=0,$length=0)
+    public function getNode($nodeid=0,$pid=0,$isshow=true)
     {
-        $where = array('isshow' => 1);
-        if ($nodeid) $where['pid'] = $nodeid;
+        $where = array();
+        if ($nodeid) $where["id"] = is_array($nodeid) ? array("in", $nodeid) : $nodeid;
+        if ($pid) $where['pid'] = $pid;
+        if ($isshow !== true) $where['isshow'] = $isshow;
 
-        $total = T('node')->where($where)->count();
-        $obj = T('node')->where($where)->order('id');
-        if ($length > 0) $obj = $obj->limit($start,$length);
-        $data = $obj->select();
+        $data = T('node')->where($where)->order('id')->select();
+        return array("total"=>count($data),"data"=>$data);
+    }
 
-        return array('total'=>$total, 'data'=>$data);
+    /**
+     * 获取某个节点的信息
+     * @param $nodeid 节点id
+     */
+    public function getNodeInfo($nodeid=null)
+    {
+        if (!$nodeid) return array();
+
+        $data = T('node')->where(array('id'=>$nodeid))->find();
+        if (!$data['groupid']) {
+            $data1 = T('node')->where(array('id'=>$data['pid']))->find();
+            $data['groupid'] = $data1['groupid'];
+        }
+
+        return $data;
+    }
+
+    /**
+     * 保存节点信息
+     */
+    public function saveNode($data)
+    {
+        if (!is_array($data) || empty($data)) return false;
+        
+        return T('node')->add($data);
     }
 
 	/**
@@ -101,26 +118,11 @@ class Node extends Base
     }
 
     /**
-     * 获取某个节点的信息
-     * @param $nodeid 节点id
-     */
-    public function getNodeInfo($nodeid=null)
-    {
-        if (!$nodeid) return array();
-
-        $where = array(
-            'id'     => $nodeid,
-            'isshow' => 1
-        );
-        return T('node')->where($where)->find();
-    }
-
-    /**
      * 更新节点信息
      * @param $id int 节点id
      * @param $data array() 数据数组
      */
-    public function upNode($id=null,$data=array())
+    public function NodeEditSave($id=null,$data=array())
     {
         if (!$id) return false;
 
@@ -128,7 +130,7 @@ class Node extends Base
     }
 
     //删除节点
-    public function delNode($id=null)
+    public function NodeDelete($id=null)
     {
         if (!$id) return false;
 

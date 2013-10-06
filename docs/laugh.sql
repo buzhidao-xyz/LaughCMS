@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50530
 File Encoding         : 65001
 
-Date: 2013-10-05 01:05:37
+Date: 2013-10-06 22:45:40
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,13 +24,14 @@ CREATE TABLE `la_admin` (
   `adminname` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `ukey` char(6) NOT NULL COMMENT '混淆加密字符串6位',
-  `createtime` int(11) NOT NULL DEFAULT '0',
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否启用',
   `ustate` varchar(32) NOT NULL DEFAULT '' COMMENT '登录状态码',
   `lastlogintime` int(10) DEFAULT '0',
   `lastloginip` int(11) DEFAULT '0',
   `logincount` tinyint(6) NOT NULL DEFAULT '0',
   `super` tinyint(1) DEFAULT '0' COMMENT '是否超级管理员0否1是',
+  `createtime` int(10) NOT NULL DEFAULT '0',
+  `updatetime` int(10) DEFAULT '0' COMMENT '更新时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`adminname`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
@@ -38,8 +39,8 @@ CREATE TABLE `la_admin` (
 -- ----------------------------
 -- Records of la_admin
 -- ----------------------------
-INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1323910052', '1', '206423eb45af33c046db62575e2522b2', '1368775182', '2130706433', '127', '1');
-INSERT INTO `la_admin` VALUES ('2', 'luochuan', '624879b3fff70462132a21eb1cd8eb75', 'u1itx6', '1324265773', '1', 'a1cb0b77413638a2974af70f948e16d8', '1355368421', '2130706433', '12', '0');
+INSERT INTO `la_admin` VALUES ('1', 'admin', '206423eb45af33c046db62575e2522b2', 'gmk4r2', '1', '206423eb45af33c046db62575e2522b2', '1368775182', '2130706433', '127', '1', '1323910052', '1381052443');
+INSERT INTO `la_admin` VALUES ('2', 'luochuan', 'dccc3f29d3598adb031ec46bd6c55929', 'u1itx6', '1', 'a1cb0b77413638a2974af70f948e16d8', '1355368421', '2130706433', '12', '0', '1324265773', '1324265773');
 
 -- ----------------------------
 -- Table structure for `la_adminloginlog`
@@ -51,12 +52,16 @@ CREATE TABLE `la_adminloginlog` (
   `loginip` bigint(15) DEFAULT NULL,
   `logintime` int(10) DEFAULT NULL,
   PRIMARY KEY (`logid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_adminloginlog
 -- ----------------------------
 INSERT INTO `la_adminloginlog` VALUES ('1', 'admin', '0', '1380906208');
+INSERT INTO `la_adminloginlog` VALUES ('2', 'admin', '0', '1380974196');
+INSERT INTO `la_adminloginlog` VALUES ('3', 'admin', '0', '1380981983');
+INSERT INTO `la_adminloginlog` VALUES ('4', 'admin', '0', '1381028737');
+INSERT INTO `la_adminloginlog` VALUES ('5', 'admin', '0', '1381054753');
 
 -- ----------------------------
 -- Table structure for `la_admin_access`
@@ -392,7 +397,7 @@ CREATE TABLE `la_group` (
 -- ----------------------------
 -- Records of la_group
 -- ----------------------------
-INSERT INTO `la_group` VALUES ('1', '系统管理', '1', '1', '1332390538', '1332390538');
+INSERT INTO `la_group` VALUES ('1', '系统管理', '1', '1', '1332390538', '1381051070');
 INSERT INTO `la_group` VALUES ('2', '会员中心', '2', '1', '1332390538', '1332390538');
 INSERT INTO `la_group` VALUES ('3', '核心内容', '3', '1', '1332390538', '1332390538');
 INSERT INTO `la_group` VALUES ('4', '网站更新', '4', '1', '1332390538', '1332390538');
@@ -519,7 +524,7 @@ CREATE TABLE `la_node` (
   `isshow` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否显示0否1是',
   PRIMARY KEY (`id`),
   KEY `pid` (`pid`)
-) ENGINE=MyISAM AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_node
@@ -532,7 +537,7 @@ INSERT INTO `la_node` VALUES ('5', '管理员登录日志', '', 'Log', 'AdminLog
 INSERT INTO `la_node` VALUES ('6', '组管理', '', '', '', '0', '1', '0', '0', '1');
 INSERT INTO `la_node` VALUES ('7', '管理组', '', 'Group', 'manageGroup', '6', '0', '0', '0', '1');
 INSERT INTO `la_node` VALUES ('8', '节点管理', null, '', '', '0', '1', '0', '0', '1');
-INSERT INTO `la_node` VALUES ('9', '添加节点', '', 'Node', 'newNode', '8', '0', '1352711650', '0', '1');
+INSERT INTO `la_node` VALUES ('9', '添加节点', '', 'Node', 'newNode', '8', '0', '1352711650', '1381051169', '1');
 INSERT INTO `la_node` VALUES ('10', '管理节点', '', 'Node', 'manageNode', '8', '0', '1352856214', '0', '1');
 INSERT INTO `la_node` VALUES ('11', '管理员用户管理', '管理员账号管理中心', '', '', '0', '1', '1352856238', '0', '1');
 INSERT INTO `la_node` VALUES ('12', '新管理员', '', 'Admin', 'newAdmin', '11', '0', '1352857554', '0', '1');
@@ -640,10 +645,7 @@ CREATE TABLE `la_role_admin` (
 -- ----------------------------
 -- Records of la_role_admin
 -- ----------------------------
-INSERT INTO `la_role_admin` VALUES ('1', '3');
-INSERT INTO `la_role_admin` VALUES ('2', '3');
 INSERT INTO `la_role_admin` VALUES ('1', '2');
-INSERT INTO `la_role_admin` VALUES ('2', '2');
 
 -- ----------------------------
 -- Table structure for `la_role_node`

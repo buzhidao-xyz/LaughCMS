@@ -11,7 +11,7 @@ class Admin extends Base
 	}
 
 	//生成密码
-	public function password_encrypt($password=null, $ukey=null)
+	public function passwdEncrypt($password=null, $ukey=null)
 	{
 		if (!$password || !$ukey) return false;
 		return md5(md5($password).$ukey);
@@ -45,7 +45,7 @@ class Admin extends Base
 	 * @param $id int 管理员id
 	 * @param $data array() 管理员新信息
 	 */
-	public function upAdmin($id=null,$data=array())
+	public function profileSave($id=null,$data=array())
 	{
 		if (!$id || !is_array($data) || empty($data)) return false;
 
@@ -53,7 +53,7 @@ class Admin extends Base
 	}
 
 	//删除管理员
-	public function deleteAdmin($id)
+	public function AdminDelete($id)
 	{
 		if (!$id) return false;
 		return T('admin')->where(array('id'=>$id))->delete();
@@ -64,5 +64,13 @@ class Admin extends Base
 	{
 		if (!is_array($data) || empty($data)) return false;
 		return T("adminloginlog")->add($data);
+	}
+
+	//修改管理员信息
+	public function AdminEditSave($id=null,$data=array())
+	{
+		if (!$id || !is_array($data) || empty($data)) return false;
+
+		return T('admin')->where(array('id'=>$id))->update($data);
 	}
 }

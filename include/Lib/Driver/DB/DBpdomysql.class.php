@@ -155,11 +155,20 @@ class DBpdomysql extends DBDriver
     {
         if (!is_array($data)) return false;
         
+        $ups = null; $sep = null;
         foreach ($data as $k=>$v) {
-            if (isset($ups)) {
-                $ups .= " , ".$this->orm($k)."='".$v."' ";
+            if ($ups) $sep = ", ";
+            if (is_array($v) && !empty($v)) {
+                switch (strtolower($v[0])) {
+                    case 'aeq':
+                        $ups .= $sep.$this->orm($k)."=".$this->orm($k)."+".$v[1]." ";
+                        break;
+                    case 'req':
+                        $ups .= $sep.$this->orm($k)."=".$this->orm($k)."-".$v[1]." ";
+                        break;
+                }
             } else {
-                $ups = $this->orm($k)."='".$v."' ";
+                $ups .= $sep.$this->orm($k)."='".$v."' ";
             }
         }
         
