@@ -150,7 +150,7 @@ $(document).ready(function (){
 		<a href="javascript:;" target="_blank"><img src="themes/default/images/ad_banner.png" width="1000" height="80" /></a>
 	</div>
 	<div class="CurPosition mtop5">
-		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=Article/index&columnid=2">新闻资讯</a>
+		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=Article/index&columnid=2">新闻资讯</a> > <a href="/laugh/index.php?s=Article/index&columnid=3">IT知识</a>
 	</div>
 	<div id="CenterShow" class="block mtop5">
 		<div id="mainBlock" class="fleft w740">
@@ -194,7 +194,7 @@ $(document).ready(function (){
 		<dl>
 			<dt>上一篇:</dt>
 			<dd>
-								<a href="/laugh/index.php?s=article/view&columnid=2&archiveid=13" title="DNS污染【备忘】">DNS污染【备忘】</a>
+								<a href="/laugh/index.php?s=article/view&columnid=3&archiveid=10" title="Web服务攻击反侦查痕迹检测">Web服务攻击反侦查痕迹检测</a>
 							</dd>
 		</dl>
 		<dl>
