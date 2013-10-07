@@ -1,4 +1,4 @@
-{include file="public/control_top.html"}
+{include file="Public/control_top.html"}
 <div class="opTop">
 	<a href="__APP__/index.php?s=Topic/index&columnid={$columnid}">专题列表</a> |
 	<a href="__APP__/index.php?s=Topic/add&columnid={$columnid}">发布新专题</a> |
@@ -106,4 +106,4 @@ $("select[name=columnid]").find("option").each(function (){
 	if ($(this).val()=="{$ArchiveInfo.columnid}") $(this).attr("selected",true);
 });
 </script>
-{include file="public/control_bottom.html"}
+{include file="Public/control_bottom.html"}

@@ -76,36 +76,7 @@ $(document).ready(function() {
     ullilist={};
     //数据表格操作
     /*删除按钮绑定*/
-    ullilist.alertres = function(data){
-        alert(data.info);
-        if(!data.status){
-            location.href = location.href;
-        }
-    }
-
     ullilist.delajax = function(that){
-        if (that.attr('channel_use')){
-            var d = {
-                delid: that.attr('delid')
-            };
-            $.post(that.attr('delurl'), d, function(data){
-                if (data.status){
-                    alert(data.info);
-                    return false;
-                } else {
-                    ullilist.opertefunction(that);
-                };
-            }, 'json');
-        } else {
-            ullilist.opertefunction(that);
-        }
-        
-                    
-    }
-    /*删除按钮绑定*/
-    
-    /*删除按钮方法*/
-    ullilist.opertefunction = function(that){
         if (that.attr('isdel')){
             var msg = "确定恢复吗？";
         } else if (that.attr('ischeck')){
@@ -123,15 +94,19 @@ $(document).ready(function() {
                     that.parent().parent().hide();
                 };          
             }, 'json');
-        };      
+        };         
     }
-    /*删除按钮方法*/
+    ullilist.alertres = function(data){
+        alert(data.info);
+        if(!data.status){
+            location.href = location.href;
+        }
+    }
+    /*删除按钮绑定*/
     
-    if (!delfunction) {
-        $('a[name="del"]').live("click", function(){
-            ullilist.delajax($(this));
-        });
-    }
+    $('a[name=del]').live("click", function(){
+        ullilist.delajax($(this));
+    });
 
     //监控ajax请求链接
     $("a[name=ajax]").click(function (){

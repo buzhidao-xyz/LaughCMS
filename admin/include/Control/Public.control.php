@@ -46,7 +46,7 @@ class PublicControl extends CommonControl
         $menu = $this->getGroup($groupid);
         if (is_array($menu) && !empty($menu)) {
             $this->assign('menu',$menu['cnode']);
-            $html = $this->fetch('public/menu.html');
+            $html = $this->fetch('Public/menu.html');
         } else {
             $html = $this->fetch('Public/menu_index.html');
         }

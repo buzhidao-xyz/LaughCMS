@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50530
 File Encoding         : 65001
 
-Date: 2013-10-06 22:45:40
+Date: 2013-10-07 21:34:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -52,7 +52,7 @@ CREATE TABLE `la_adminloginlog` (
   `loginip` bigint(15) DEFAULT NULL,
   `logintime` int(10) DEFAULT NULL,
   PRIMARY KEY (`logid`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_adminloginlog
@@ -62,6 +62,9 @@ INSERT INTO `la_adminloginlog` VALUES ('2', 'admin', '0', '1380974196');
 INSERT INTO `la_adminloginlog` VALUES ('3', 'admin', '0', '1380981983');
 INSERT INTO `la_adminloginlog` VALUES ('4', 'admin', '0', '1381028737');
 INSERT INTO `la_adminloginlog` VALUES ('5', 'admin', '0', '1381054753');
+INSERT INTO `la_adminloginlog` VALUES ('6', 'admin', '0', '1381124821');
+INSERT INTO `la_adminloginlog` VALUES ('7', 'admin', '0', '1381141015');
+INSERT INTO `la_adminloginlog` VALUES ('8', 'admin', '0', '1381152349');
 
 -- ----------------------------
 -- Table structure for `la_admin_access`

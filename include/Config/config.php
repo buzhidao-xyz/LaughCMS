@@ -38,7 +38,7 @@ function C($key)
 function __autoload($class)
 {
     $include_dir = C('INCLUDE_DIR');
-    $classpath = $include_dir.'/Model/'.strtolower($class).".model.php";
+    $classpath = $include_dir.'/Model/'.$class.".model.php";
 
 	if (file_exists($classpath)) {
 	   include_once($classpath);
@@ -48,11 +48,11 @@ function __autoload($class)
         switch ($type) {
             case 'Control':
                 $classname = str_replace('Control', '', $class);
-                $classpath = $include_dir.'/Control/'.strtolower($classname).".control.php";
+                $classpath = $include_dir.'/Control/'.$classname.".control.php";
                 break;
             case 'Helper':
                 $classname = str_replace('Helper', '', $class);
-                $classpath = $include_dir.'/Helper/'.strtolower($classname).".helper.php";
+                $classpath = $include_dir.'/Helper/'.$classname.".helper.php";
                 break;
             default:
                 return true;
@@ -61,7 +61,7 @@ function __autoload($class)
         if (file_exists($classpath)) include_once($classpath);
         else {
             $include_path = ROOT_DIR.'/include';
-            $classpath = $include_path.'/Model/'.strtolower($class).".model.php";
+            $classpath = $include_path.'/Model/'.$class.".model.php";
 
             if (file_exists($classpath)) {
                include_once($classpath);
@@ -71,7 +71,7 @@ function __autoload($class)
                 switch ($type) {
                     case 'Helper':
                         $classname = str_replace('Helper', '', $class);
-                        $classpath = $include_path.'/Helper/'.strtolower($classname).".helper.php";
+                        $classpath = $include_path.'/Helper/'.$classname.".helper.php";
                         break;
                     case 'Smarty':
                         $classpath = $include_path.'/Vendor/Smarty/sysplugins/'.strtolower($classname).".php";

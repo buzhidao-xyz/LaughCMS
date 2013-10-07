@@ -1,4 +1,4 @@
-{include file="public/control_top.html"}
+{include file="Public/control_top.html"}
 {if $accessStatus == 1}
 <div class="formContainer" accessStatus={$accessStatus}>
 	<div class="formtitle"><h5>修改图集信息</h5></div>
@@ -66,7 +66,7 @@
 				</li>
 			</div>
 			<div class="shtabcontent">
-				{include file="public/imageUpload.html"}
+				{include file="Public/imageUpload.html"}
 			</div>
 			</div>
 			<li class="formblock bordernone bgf6">
@@ -94,4 +94,4 @@
     	if ($(this).val()=="{$ArchiveInfo.columnid}") $(this).attr("selected",true);
     });
 </script>
-{include file="public/control_bottom.html"}
+{include file="Public/control_bottom.html"}

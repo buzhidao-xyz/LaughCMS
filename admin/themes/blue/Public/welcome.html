@@ -1,4 +1,4 @@
-{include file="public/control_top.html"}
+{include file="Public/control_top.html"}
 <div class="captitle lineGray">欢迎进入后台管理系统</div>
 <div class="box boxWrap box970">
 	<div class="boxTitle">
@@ -41,11 +41,11 @@
 	</div>
 	<div class="boxContent">
 		<ul class="tableBlock">
-			<li><span>会员名:</span>admin</li>
-			<li><span>所属会员组:</span>超级管理员</li>
-			<li><span>最后登陆时间:</span>2013-04-26 09:44:13</li>
-			<li><span>最后登陆IP:</span>127.0.0.1</li>
-			<li><span>登陆次数:</span>20次</li>
+			<li><span>会员名:</span>{$adminInfo.adminname}</li>
+			<li><span>所属会员组:</span>管理员</li>
+			<li><span>最后登陆时间:</span>{$adminInfo.lastlogintime|mkdate}</li>
+			<li><span>最后登陆IP:</span>{$adminInfo.lastloginip|longs2ip}</li>
+			<li><span>登陆次数:</span>{$adminInfo.logincount}次</li>
 		</ul>
 	</div>
 </div>
@@ -133,4 +133,4 @@ $(document).ready(function(){
 	});
 });
 </script>
-{include file="public/control_bottom.html"}
+{include file="Public/control_bottom.html"}
