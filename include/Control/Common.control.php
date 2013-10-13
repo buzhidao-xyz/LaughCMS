@@ -82,19 +82,22 @@ class CommonControl extends BaseControl
     }
 
     //获取顶部导航栏目列表
-    protected function ColumnList()
+    protected function ColumnList($columnid=null)
     {
-    	$ColumnList = M("Column")->getColumnList();
-    	$this->assign("ColumnList", $ColumnList);
+        $ColumnList = M("Column")->getColumnList($columnid);
+        if ($columnid) {
+            return $ColumnList;
+        } else {
+            $this->assign("ColumnList", $ColumnList);
+        }
     }
 
     //获取栏目详细信息
     protected function getColumn($columnid=null)
     {
         $columnid = $columnid ? $columnid : $this->_getColumnID();
-        $Column = M("Column")->getColumn($columnid);
-        $this->_Column = $Column;
-        $this->assign("Column", $Column);
+        $this->_Column = M("Column")->getColumn($columnid);
+        $this->assign("Column", $this->_Column);
     }
 
     //计算当前目录
@@ -126,7 +129,7 @@ class CommonControl extends BaseControl
      * @param $columnid int 栏目id
      * @param $num int 要获取的条数
      */
-    public function getAllArchive($columnid=null,$num=0)
+    public function getAllArchive($columnid=null,$num=0,$orderby="publishtime",$orderway="desc")
     {
         $columnid = $columnid ? $columnid : $this->_columnid;
         $columnids = M("Column")->getChildrenColumnID($columnid);
@@ -134,7 +137,7 @@ class CommonControl extends BaseControl
         list($start,$length) = $this->getPages();
         $where = empty($columnids) ? array() : array("columnid"=>array("in",$columnids));
         $length = $num ? $num : $length;
-        return M("Archive")->getArchive(null,$start,$length,$where,1);
+        return M("Archive")->getArchive(null,$start,$length,$where,1,$orderby,$orderway);
     }
 
     /**

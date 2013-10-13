@@ -24,11 +24,17 @@ class ArticleControl extends ArchiveControl
 	//主入口 获取文档
 	public function index()
 	{
+		$this->display($this->_Column['template_index']);
+	}
+
+	//模型列表控制器
+	public function lists()
+	{
 		$ArchiveList = $this->getAllArchive();
 
 		$this->assign("ArchiveList", $ArchiveList['data']);
 		$this->assign("page", getPage($ArchiveList['total'],$this->_pagesize));
-		$this->display("Article/list.html");
+		$this->display($this->_Column['template_list']);
 	}
 
 	//获取文档内容
@@ -38,6 +44,6 @@ class ArticleControl extends ArchiveControl
 		$archiveInfo = M("Article")->getArticleInfo($this->_columnid,$archiveid);
 		$this->assign("archiveInfo",$archiveInfo);
 		
-		$this->display("Article/body.html");
+		$this->display($this->_Column['template_body']);
 	}
 }

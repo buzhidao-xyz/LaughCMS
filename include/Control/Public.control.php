@@ -14,7 +14,10 @@ class PublicControl extends CommonControl
 		parent::__construct();
 	}
 
-	public function index(){}
+	public function index()
+	{
+		$this->display($this->_Column['template_index']);
+	}
 
 	//关于我们
 	public function AboutUS()

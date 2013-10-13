@@ -250,6 +250,7 @@ class Template extends SmartyBC
         //注册CMSTag标签
         $cmstag = array(
             array('type'=>'block','tag'=>'cmstag_archive','function'=>'CMSTagArchive'),
+            array('type'=>'block','tag'=>'cmstag_topic','function'=>'CMSTagTopic'),
             array('type'=>'block','tag'=>'cmstag_navigation','function'=>'CMSTagNavigation'),
             array('type'=>'function','tag'=>'cmstag_advertise','function'=>'CMSTagAdvertise'),
         );

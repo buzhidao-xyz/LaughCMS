@@ -13,11 +13,16 @@
 function CMSTagArchive($params=array(),$content=null,&$smarty,&$repeat)
 {
 	if (!isset($params['columnid'])) return false;
+
+	//释放数组变量
 	extract($params);
+
+	//设置要获取的文档数目 默认5
+	$number = isset($number) ? $number : 5;
 
 	$html = null;
 	$columnid = isset($columnid) ? $columnid : null;
-	$ArticleList = D("Archive")->getAllArchive($columnid,5);
+	$ArticleList = D("Archive")->getAllArchive($columnid,$number);
 	if (!empty($ArticleList['data'])) {
 		foreach ($ArticleList['data'] as $d) {
 			$search = array(
@@ -25,6 +30,49 @@ function CMSTagArchive($params=array(),$content=null,&$smarty,&$repeat)
 		    );
 		    $replace = array(
 		    	$d['columnid'],$d['id'],$d['title']
+		    );
+		    $html .= str_replace($search, $replace, $content);
+		}
+	}
+
+	if(!$repeat) return $html;
+}
+
+/**
+ * 获取专题列表
+ * @param int $columnid 栏目id
+ * @param string orderby 排序字段
+ * @param string orderway 排序方式
+ * @param string number 数量
+ */
+function CMSTagTopic($params=array(),$content=null,&$smarty,&$repeat)
+{
+	if (!isset($params['columnid'])) return false;
+
+	//释放数组变量
+	extract($params);
+
+	$html = null;
+	//设置要获取的文档数目 默认3
+	$number = isset($number) ? $number : 3;
+
+	//构造where条件数组
+	$where = array();
+	$columnid = isset($columnid) ? $columnid : null;
+	$orderby = isset($orderby) ? $orderby : "publishtime";
+	$orderway = isset($orderway) ? $orderway : "asc";
+	$ArchiveList = D("Archive")->getAllArchive($columnid,$number,$orderby,$orderway);
+	if (!empty($ArchiveList['data'])) {
+		foreach ($ArchiveList['data'] as $d) {
+			//获取专题内容
+			$TopicInfo = M("Topic")->getTopicContent($d['id']);
+			$TopicInfo = $TopicInfo[0];
+
+			$search = array(
+		    	'[field.columnid]','[field.id]','[field.title]','[field.thumbimage]','[field.content]'
+		    );
+		    $replace = array(
+		    	$d['columnid'],$d['id'],$d['title'],$d['thumbimage'],html_entity_decode($TopicInfo['content'])
 		    );
 		    $html .= str_replace($search, $replace, $content);
 		}
@@ -62,7 +110,7 @@ function CMSTagNavigation($params=array(),$content=null,&$smarty,&$repeat)
 	if(!$repeat) return $html;
 }
 
-/*********************************block标签*********************************/
+/*********************************function标签*********************************/
 
 /**
  * 广告标签解析

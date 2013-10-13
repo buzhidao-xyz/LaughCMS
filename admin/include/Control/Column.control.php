@@ -5,6 +5,13 @@
  */
 class ColumnControl extends CommonControl
 {
+	//栏目属性ID与访问Action对应
+	protected $_Action = array(
+		1 => 'index',
+		2 => 'lists',
+		3 => 'link'
+	);
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -37,13 +44,6 @@ class ColumnControl extends CommonControl
 		return $columnname;
 	}
 
-	private function _getAction()
-	{
-		$action = q("action");
-		if (!$action) return false;
-		return $action;
-	}
-
 	private function _getsortrank()
 	{
 		$sortrank = q("sortrank");
@@ -55,6 +55,11 @@ class ColumnControl extends CommonControl
 	{
 		$columntype = q("columntype");
 		return $columntype;
+	}
+
+	private function _getAction($columntype=null)
+	{
+		return $columntype ? $this->_Action[$columntype] : $this->_Action[1];
 	}
 
 	private function _getisshow()
@@ -138,19 +143,26 @@ class ColumnControl extends CommonControl
 		$columnname  = $this->_getColumnName();
 		$parentid    = $this->_getparentid();
 		$columnmodel = $this->_getColumnModel();
-		$action      = $this->_getAction();
 		$sortrank    = $this->_getsortrank();
 		$columntype  = $this->_getcolumntype();
+		$action      = $this->_getAction($columntype);
 		$isshow      = $this->_getisshow();
 		$title       = $this->_gettitle();
 		$keyword     = $this->_getkeyword();
 		$description = $this->_getdescription();
 		$content     = $this->_getcontent();
 
+		$columnpy = Pinyin($columnname,'UTF-8');
+		//栏目模板
+		$template_index = q('template_index'); //栏目页
+		$template_list = q('template_list');  //列表页
+		$template_body = q('template_body');  //详细页
+
 		$topid = $this->getTopID($parentid);
 
 		$data = array(
 			'columnname'  => $columnname,
+			'columnpy'    => $columnpy,
 			'parentid'    => $parentid,
 			'columnmodel' => $columnmodel,
 			'action'      => $action,
@@ -162,6 +174,9 @@ class ColumnControl extends CommonControl
 			'keyword'     => $keyword,
 			'description' => $description,
 			'content'     => $content,
+			'template_index' => $template_index,
+			'template_list'  => $template_list,
+			'template_body'  => $template_body,
 			'createtime'  => TIMESTAMP,
 			'updatetime'  => TIMESTAMP
 		);
@@ -292,19 +307,26 @@ class ColumnControl extends CommonControl
 		$columnname  = $this->_getColumnName();
 		$parentid    = $this->_getparentid();
 		$columnmodel = $this->_getColumnModel();
-		$action      = $this->_getAction();
 		$sortrank    = $this->_getsortrank();
 		$columntype  = $this->_getcolumntype();
+		$action      = $this->_getAction($columntype);
 		$isshow      = $this->_getisshow();
 		$title       = $this->_gettitle();
 		$keyword     = $this->_getkeyword();
 		$description = $this->_getdescription();
 		$content     = $this->_getcontent();
 
+		$columnpy = q('columnpy');
+		//栏目模板
+		$template_index = q('template_index'); //栏目页
+		$template_list = q('template_list');  //列表页
+		$template_body = q('template_body');  //详细页
+
 		$topid = $this->getTopID($parentid);
 
 		$data = array(
 			'columnname'  => $columnname,
+			'columnpy'    => $columnpy,
 			'parentid'    => $parentid,
 			'columnmodel' => $columnmodel,
 			'action'      => $action,
@@ -316,6 +338,9 @@ class ColumnControl extends CommonControl
 			'keyword'     => $keyword,
 			'description' => $description,
 			'content'     => $content,
+			'template_index' => $template_index,
+			'template_list'  => $template_list,
+			'template_body'  => $template_body,
 			'updatetime'  => TIMESTAMP
 		);
 
