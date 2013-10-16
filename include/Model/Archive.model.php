@@ -25,8 +25,8 @@ class Archive extends Base
 		$where['state'] = $state;
 		if ($archiveid) $where['a.id'] = is_array($archiveid) ? array("in", $archiveid) : $archiveid;
 
-		$total = T("Archive")->where($where)->count();
-		$obj = T("Archive")->where($where);
+		$total = T("archive")->where($where)->count();
+		$obj = T("archive")->where($where);
 		if ($length) $obj = $obj->limit($start,$length);
 		$data = $obj->order("publishtime","desc")->select();
 		$data = $this->dealArchive($data);

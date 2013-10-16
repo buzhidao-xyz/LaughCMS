@@ -14,7 +14,7 @@ class Column extends Base
 	public function addColumn($data=array())
 	{
 		if (!is_array($data) || empty($data)) return false;
-		return T("Column")->add($data);
+		return T("column")->add($data);
 	}
 
 	/**
@@ -26,7 +26,7 @@ class Column extends Base
 		$where = array();
 		if ($columnid) $where['id'] = is_array($columnid) ? array("in", $columnid) : $columnid;
 
-		$data = T("Column")->where($where)->select();
+		$data = T("column")->where($where)->select();
 
 		return $data;
 	}
@@ -49,7 +49,7 @@ class Column extends Base
 		if ($columnid) $where['a.parentid'] = is_array($columnid) ? array("in", $columnid) : $columnid;
 		if ($control) $where['b.control'] = $control;
 
-		$data = T("Column")->join(" ".TBF."column_model as b on a.columnmodel=b.id")->field("a.*,b.control")->where($where)->select();
+		$data = T("column")->join(" ".TBF."column_model as b on a.columnmodel=b.id")->field("a.*,b.control")->where($where)->select();
 
 		return $data;
 	}
@@ -72,13 +72,13 @@ class Column extends Base
 	public function updateColumn($columnid=null,$data=array())
 	{
 		if (!$columnid) return false;
-		return T("Column")->where(array("id"=>$columnid))->update($data);
+		return T("column")->where(array("id"=>$columnid))->update($data);
 	}
 
 	//删除栏目
 	public function deleteColumn($columnid = null)
 	{
 		if (!$columnid) return false;
-		return T("Column")->where(array("id"=>$columnid))->delete();
+		return T("column")->where(array("id"=>$columnid))->delete();
 	}
 }

@@ -21,7 +21,7 @@ class Column extends Base
 		$where['isshow'] = $isshow;
 		if ($parentid) $where['a.parentid'] = is_array($parentid) ? array("in", $parentid) : $parentid;
 
-		$data = T("Column")->join(' '.TBF.'column_model as b on a.columnmodel=b.id ')->field("a.*,b.table,b.usefields,b.control")->where($where)->order("a.id")->select();
+		$data = T("column")->join(' '.TBF.'column_model as b on a.columnmodel=b.id ')->field("a.*,b.table,b.usefields,b.control")->where($where)->order("a.id")->select();
 		$data = $this->makeColumnList($data);
 
 		return $data;
@@ -97,7 +97,7 @@ class Column extends Base
 			'parentid' => $columnid,
 			'isshow' => $isshow
 		);
-		$data = T("Column")->join(' '.TBF.'column_model as b on a.columnmodel=b.id ')->field("a.*,b.table,b.usefields,b.control")->where($where)->limit(0,$num)->order("a.id")->select();
+		$data = T("column")->join(' '.TBF.'column_model as b on a.columnmodel=b.id ')->field("a.*,b.table,b.usefields,b.control")->where($where)->limit(0,$num)->order("a.id")->select();
 		return $data;
 	}
 
@@ -109,7 +109,7 @@ class Column extends Base
 	{
 		if (!$columnid) return false;
 		$where['a.id'] = $columnid;
-		$column = T("Column")->join(' '.TBF.'column_model as b on a.columnmodel=b.id ')->field("a.*,b.table,b.usefields,b.control")->where($where)->find();
+		$column = T("column")->join(' '.TBF.'column_model as b on a.columnmodel=b.id ')->field("a.*,b.table,b.usefields,b.control")->where($where)->find();
 
 		return $column;
 	}
@@ -126,7 +126,7 @@ class Column extends Base
 		$where = is_array($columnid) ? array("parentid"=>array("in",$columnid)) : array("parentid"=>$columnid);
 
 		$columnids = array(); $return = array();
-		$columnList = T("Column")->where($where)->select();
+		$columnList = T("column")->where($where)->select();
 		if (is_array($columnList) && !empty($columnList)) {
 			foreach ($columnList as $d) {
 				$columnids[] = $d['id'];

@@ -58,7 +58,7 @@ class Attachment extends Archive
 	public function getAttachmentByArchiveID($archiveid=null)
 	{
 		if (!$archiveid) return false;
-		return T("Attachment")->where(array("archiveid"=>$archiveid))->find();
+		return T("attachment")->where(array("archiveid"=>$archiveid))->find();
 	}
 
 	/**
@@ -68,6 +68,6 @@ class Attachment extends Archive
 	public function deleteArchiveAttachment($archiveid=null)
 	{
 		if (!$archiveid) return false;
-		return T("Attachment")->where(array("archiveid"=>$archiveid))->update(array("archiveid"=>0));
+		return T("attachment")->where(array("archiveid"=>$archiveid))->update(array("archiveid"=>0));
 	}
 }

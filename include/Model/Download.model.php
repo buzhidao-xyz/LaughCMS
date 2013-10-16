@@ -20,7 +20,7 @@ class Download extends Archive
 		$where['state'] = $state;
 		if ($archiveid) $where['a.id'] = is_array($archiveid) ? array("in", $archiveid) : $archiveid;
 
-		$obj = T("Archive")->join(' '.TBF.'Attachment as b on a.id=b.archiveid ')->field("a.*,b.id as attachmentid,b.filepath,b.filename,b.savename,b.filesize,b.filetype,b.downloadnum,b.createtime")->where($where);
+		$obj = T("archive")->join(' '.TBF.'attachment as b on a.id=b.archiveid ')->field("a.*,b.id as attachmentid,b.filepath,b.filename,b.savename,b.filesize,b.filetype,b.downloadnum,b.createtime")->where($where);
 		if ($length) $obj = $obj->limit($start,$length);
 		$data = $obj->order("publishtime","desc")->select();
 		$data = $this->dealArchive($data);
