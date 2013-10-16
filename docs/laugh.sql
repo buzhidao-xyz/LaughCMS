@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50528
 File Encoding         : 65001
 
-Date: 2013-10-16 15:20:34
+Date: 2013-10-16 15:30:11
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -206,20 +206,20 @@ CREATE TABLE `la_column` (
 -- Records of la_column
 -- ----------------------------
 INSERT INTO `la_column` VALUES ('1', '网站首页', '0', '1', '1', '0', null, 'index', '1', 'Laugh CMS 内容管理系统', '', '', '', null, null, null, '1', '1356402068', '1367060209');
-INSERT INTO `la_column` VALUES ('2', '新闻资讯', '0', '2', '1', '1', null, 'lists', '2', '', '', '', '', 'Article/index.html', 'Article/list.html', 'Article/body.html', '1', '1356405490', '1368947565');
-INSERT INTO `la_column` VALUES ('3', 'IT知识', '2', '2', '1', '1', null, 'lists', '1', '', '', '', '', 'Article/index.html', 'Article/list.html', 'Article/body.html', '1', '1356406231', '1363856604');
-INSERT INTO `la_column` VALUES ('4', '网络知识', '2', '2', '1', '1', null, 'lists', '2', '', '', '', '', 'Article/index.html', 'Article/list.html', 'Article/body.html', '1', '1356414942', '1363856617');
-INSERT INTO `la_column` VALUES ('5', '前端知识', '4', '2', '1', '1', null, 'lists', '1', '', '', '', '', 'Article/index.html', 'Article/list.html', 'Article/body.html', '1', '1359689764', '1363856760');
-INSERT INTO `la_column` VALUES ('6', '产品展示', '0', '6', '1', '6', null, 'lists', '3', '', '', '', '', 'Product/index.html', 'Product/list.html', 'Product/body.html', '1', '1359690256', '1359690256');
-INSERT INTO `la_column` VALUES ('7', '客户案例', '0', '7', '1', '2', null, 'lists', '4', '', '', '', '', 'Image/index.html', 'Image/list.html', 'Image/body.html', '1', '1359690270', '1359690270');
-INSERT INTO `la_column` VALUES ('8', '下载中心', '0', '8', '1', '3', null, 'lists', '5', '', '', '', '', 'Download/index.html', 'Download/list.html', 'Download/body.html', '1', '1359690280', '1359690280');
+INSERT INTO `la_column` VALUES ('2', '新闻资讯', '0', '2', '2', '1', null, 'lists', '2', '', '', '', '', 'Article/index.html', 'Article/list.html', 'Article/body.html', '1', '1356405490', '1368947565');
+INSERT INTO `la_column` VALUES ('3', 'IT知识', '2', '2', '2', '1', null, 'lists', '1', '', '', '', '', 'Article/index.html', 'Article/list.html', 'Article/body.html', '1', '1356406231', '1363856604');
+INSERT INTO `la_column` VALUES ('4', '网络知识', '2', '2', '2', '1', null, 'lists', '2', '', '', '', '', 'Article/index.html', 'Article/list.html', 'Article/body.html', '1', '1356414942', '1363856617');
+INSERT INTO `la_column` VALUES ('5', '前端知识', '4', '2', '2', '1', null, 'lists', '1', '', '', '', '', 'Article/index.html', 'Article/list.html', 'Article/body.html', '1', '1359689764', '1363856760');
+INSERT INTO `la_column` VALUES ('6', '产品展示', '0', '6', '2', '6', null, 'lists', '3', '', '', '', '', 'Product/index.html', 'Product/list.html', 'Product/body.html', '1', '1359690256', '1359690256');
+INSERT INTO `la_column` VALUES ('7', '客户案例', '0', '7', '2', '2', null, 'lists', '4', '', '', '', '', 'Image/index.html', 'Image/list.html', 'Image/body.html', '1', '1359690270', '1359690270');
+INSERT INTO `la_column` VALUES ('8', '下载中心', '0', '8', '2', '3', null, 'lists', '5', '', '', '', '', 'Download/index.html', 'Download/list.html', 'Download/body.html', '1', '1359690280', '1359690280');
 INSERT INTO `la_column` VALUES ('9', '招贤纳士', '0', '9', '1', '9', null, 'Cooperate', '6', '', '', '', '', null, null, null, '1', '1359690294', '1365668528');
 INSERT INTO `la_column` VALUES ('10', '关于我们', '0', '10', '1', '8', null, 'index', '7', '', '', '', '&lt;p style=&quot;line-height:1.5em;&quot;&gt;&lt;span class=&quot;text&quot;&gt;&lt;span style=&quot;font-size:13px;&quot;&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; LaughCMS企业网站管理系统，是一款代码完全开源免费的PHP+MYSQL系统。&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;span class=&quot;text&quot;&gt;&lt;span style=&quot;font-size:13px;&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;text&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;line-height:1.5em;&quot;&gt;&lt;span style=&quot;font-size:13px;&quot; class=&quot;text&quot;&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; 程序内置SEO优化机制，使企业网站更容易被推广。拥有企业网站常用的模块功能（企业简介模块、新闻模块、产品模块、下载模块、图片模块、招聘模块、在线留言、友情链接、会员与权限管理）。强大灵活的后台管理功能、静态页面生成功能、自定义模型功能、自制插件安装管理功能等可为企业打造出大气漂亮且具有营销力的精品网站&lt;/span&gt;&lt;span style=&quot;font-size:13px;&quot;&gt;。&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;', 'Public/aboutus.html', 'Public/list.html', 'Public/body.html', '1', '1359690307', '1367915449');
 INSERT INTO `la_column` VALUES ('11', '联系我们', '0', '11', '1', '8', null, 'index', '8', '', '', '', '&lt;p style=&quot;line-height:1.5em;&quot;&gt;电 话: XXXXXXXX&lt;br /&gt;邮 编: XXXXXXXX&lt;br /&gt;网 址: www.xxx.com&lt;br /&gt;Email: admin@admin.com&lt;br /&gt;联系地址: 江苏省苏州市工业园区若水路1号&lt;br /&gt;联系人: XXX&lt;br /&gt;&lt;strong&gt;&lt;span style=&quot;color:#E36C09;&quot;&gt;Laugh CMS 软件科技公司&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;', 'Public/contactus.html', 'Public/list.html', 'Public/body.html', '1', '1359690316', '1367915430');
-INSERT INTO `la_column` VALUES ('12', 'PHP知识', '3', '2', '1', '1', null, 'lists', '1', '', '', '', '', 'Article/index.html', 'Article/list.html', 'Article/body.html', '1', '1364262577', '1364262577');
-INSERT INTO `la_column` VALUES ('13', '数据库知识', '2', '2', '1', '1', null, 'lists', '1', '', '', '', '', 'Article/index.html', 'Article/list.html', 'Article/body.html', '1', '1364452588', '1364452588');
-INSERT INTO `la_column` VALUES ('14', '网络产品', '6', '6', '1', '6', null, 'lists', '1', '', '', '', '', 'Product/index.html', 'Product/list.html', 'Product/body.html', '1', '1364804231', '1364960571');
-INSERT INTO `la_column` VALUES ('15', '电子产品', '6', '6', '1', '6', null, 'lists', '1', '', '', '', '', 'Product/index.html', 'Product/list.html', 'Product/body.html', '1', '1364894217', '1364960612');
+INSERT INTO `la_column` VALUES ('12', 'PHP知识', '3', '2', '2', '1', null, 'lists', '1', '', '', '', '', 'Article/index.html', 'Article/list.html', 'Article/body.html', '1', '1364262577', '1364262577');
+INSERT INTO `la_column` VALUES ('13', '数据库知识', '2', '2', '2', '1', null, 'lists', '1', '', '', '', '', 'Article/index.html', 'Article/list.html', 'Article/body.html', '1', '1364452588', '1364452588');
+INSERT INTO `la_column` VALUES ('14', '网络产品', '6', '6', '2', '6', null, 'lists', '1', '', '', '', '', 'Product/index.html', 'Product/list.html', 'Product/body.html', '1', '1364804231', '1364960571');
+INSERT INTO `la_column` VALUES ('15', '电子产品', '6', '6', '2', '6', null, 'lists', '1', '', '', '', '', 'Product/index.html', 'Product/list.html', 'Product/body.html', '1', '1364894217', '1364960612');
 
 -- ----------------------------
 -- Table structure for `la_column_model`
