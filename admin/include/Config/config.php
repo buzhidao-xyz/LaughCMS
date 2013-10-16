@@ -35,5 +35,5 @@ $admin_config = array(
         'plugin_dir'       => ROOT_DIR.'/include/Vendor/Smarty/plugins',
     ),
 );
-
+dump(1);exit;
 $config = array_merge($config,$admin_config);
