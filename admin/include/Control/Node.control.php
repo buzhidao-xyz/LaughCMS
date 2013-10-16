@@ -118,7 +118,7 @@ class NodeControl extends CommonControl
         $this->assign("groupTree",$groupTree);
 
         $this->assign("nodeTree",array());
-        $this->display('node/newnode.html');
+        $this->display('Node/newnode.html');
     }
 
     /**

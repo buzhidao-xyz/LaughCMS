@@ -62,8 +62,8 @@ class Plugin extends Base
 			unset($where['control']);
 		}
 
-		$total = T("cooperate")->join(' '.TBF.'Column as b on a.columnid=b.id ')->field('*')->where($where)->count();
-		$obj = T("cooperate")->join(' '.TBF.'Column as b on a.columnid=b.id ')->field('a.*,b.columnname,b.columntype')->where($where)->order("a.id","desc");
+		$total = T("cooperate")->join(' '.TBF.'column as b on a.columnid=b.id ')->field('*')->where($where)->count();
+		$obj = T("cooperate")->join(' '.TBF.'column as b on a.columnid=b.id ')->field('a.*,b.columnname,b.columntype')->where($where)->order("a.id","desc");
 		if ($length) $obj = $obj->limit($start,$length);
 		$data = $obj->select();
 
