@@ -91,7 +91,7 @@ class Route
     {
         $_control  = self::$_query['control'];
         $_action = self::$_query['action'];
-
+dump($_control.$_action);exit;
         $obj = new $_control(self::$_query);
         
         if (method_exists($_control, 'checkAdminAccess') && !$obj->checkAdminAccess($_control, $_action)) self::_host();
