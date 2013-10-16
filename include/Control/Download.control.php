@@ -14,14 +14,20 @@ class DownloadControl extends ArchiveControl
 		parent::__construct();
 	}
 
-	//主入口
+	//栏目封面页
 	public function index()
 	{
-		$ArchiveList = $this->getAllDownload();
+		$this->display($this->_Column['template_index']);
+	}
+
+	//栏目列表页
+	public function lists()
+	{
+		$ArchiveList = $this->getAllArchive();
 
 		$this->assign("ArchiveList", $ArchiveList['data']);
 		$this->assign("page", getPage($ArchiveList['total'],$this->_pagesize));
-		$this->display("Download/index.html");
+		$this->display($this->_Column['template_list']);
 	}
 
 	/**

@@ -14,14 +14,20 @@ class ProductControl extends ArchiveControl
 		parent::__construct();
 	}
 
-	//主入口
+	//栏目封面页
 	public function index()
+	{
+		$this->display($this->_Column['template_index']);
+	}
+
+	//栏目列表页
+	public function lists()
 	{
 		$ArchiveList = $this->getAllArchive();
 
 		$this->assign("ArchiveList", $ArchiveList['data']);
 		$this->assign("page", getPage($ArchiveList['total'],$this->_pagesize));
-		$this->display("Product/list.html");
+		$this->display($this->_Column['template_list']);
 	}
 
 	//显示产品详情
@@ -31,6 +37,6 @@ class ProductControl extends ArchiveControl
 		$archiveInfo = M("Product")->getProductInfo($this->_columnid,$archiveid);
 		$this->assign("archiveInfo",$archiveInfo);
 
-		$this->display("Product/body.html");
+		$this->display($this->_Column['template_body']);
 	}
 }

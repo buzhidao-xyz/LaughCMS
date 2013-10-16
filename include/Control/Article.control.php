@@ -21,13 +21,13 @@ class ArticleControl extends ArchiveControl
 		return $articleid;
 	}
 
-	//主入口 获取文档
+	//栏目封面页
 	public function index()
 	{
 		$this->display($this->_Column['template_index']);
 	}
 
-	//模型列表控制器
+	//栏目列表页
 	public function lists()
 	{
 		$ArchiveList = $this->getAllArchive();

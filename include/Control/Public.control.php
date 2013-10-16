@@ -18,16 +18,4 @@ class PublicControl extends CommonControl
 	{
 		$this->display($this->_Column['template_index']);
 	}
-
-	//关于我们
-	public function AboutUS()
-	{
-		$this->display("Public/aboutus.html");
-	}
-
-	//联系我们
-	public function ContactUS()
-	{
-		$this->display("Public/contactus.html");
-	}
 }

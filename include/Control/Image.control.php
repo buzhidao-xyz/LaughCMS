@@ -17,14 +17,20 @@ class ImageControl extends ArchiveControl
 		parent::__construct();
 	}
 
-	//主入口
+	//栏目封面页
 	public function index()
+	{
+		$this->display($this->_Column['template_index']);
+	}
+
+	//栏目列表页
+	public function lists()
 	{
 		$ArchiveList = $this->getAllArchive();
 
 		$this->assign("ArchiveList", $ArchiveList['data']);
 		$this->assign("page", getPage($ArchiveList['total'],$this->_pagesize));
-		$this->display("Image/list.html");
+		$this->display($this->_Column['template_list']);
 	}
 
 	//获取文档内容
