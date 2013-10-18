@@ -7,9 +7,13 @@ class DBmysqli extends DBDriver
 {
     protected $_field = '*';
     protected $_join = '';
+    protected $_union = '';
     protected $_where = '';
+    protected $_group = '';
     protected $_order = '';
     protected $_limit = '';
+
+    protected $_where0 = '';
     
     //sql语句
     protected $sql = null;
@@ -106,24 +110,6 @@ class DBmysqli extends DBDriver
 
     /************************************以上方法必须实现************************************/
     
-    //开始事务
-    static public function beginTransaction()
-    {
-        self::$db->autocommit(FALSE);
-    }
-
-    //提交事务
-    static public function commitTransaction()
-    {
-        self::$db->commit();
-    }
-
-    //回滚事务
-    static public function rollBackTransaction()
-    {
-        self::$db->rollback();
-    }
-    
     /**
      * 查询一条数据
      * @param $options array 参数数组
@@ -131,8 +117,12 @@ class DBmysqli extends DBDriver
     public function find($options=array())
     {
         $this->_before_sql($options);
-        $this->sql = "SELECT ".$this->_field." FROM ".self::$_tbf.self::$_table." as a ".$this->_join.$this->_where.$this->_order.$this->_limit;
+
+        $main_table = $this->_union ? $this->_union : self::$_tbf.self::$_table;
+        $this->sql = "SELECT ".$this->_field." FROM ".$main_table." as a ".$this->_join.$this->_where.$this->_group.$this->_order.$this->_limit;
+        
         $this->_after_sql();
+        
         $return = $this->GetOne($this->sql);
         return $return;
     }
@@ -144,8 +134,12 @@ class DBmysqli extends DBDriver
     public function select($options=array())
     {
         $this->_before_sql($options);
-        $this->sql = "SELECT ".$this->_field." FROM ".self::$_tbf.self::$_table." as a ".$this->_join.$this->_where.$this->_order.$this->_limit;
+
+        $main_table = $this->_union ? $this->_union : self::$_tbf.self::$_table;
+        $this->sql = "SELECT ".$this->_field." FROM ".$main_table." as a ".$this->_join.$this->_where.$this->_group.$this->_order.$this->_limit;
+        
         $this->_after_sql();
+        
         $return = $this->GetAll($this->sql);
         return $return;
     }
@@ -156,11 +150,14 @@ class DBmysqli extends DBDriver
     public function count($options=array())
     {
         $this->_before_sql($options);
-        $this->sql = "SELECT COUNT(".$this->_field.") as la_num FROM ".self::$_tbf.self::$_table." as a ".$this->_join.$this->_where;
-        $this->_after_sql();
-        $data = $this->GetOne($this->sql);
 
-        return $data['la_num'];
+        $main_table = $this->_union ? $this->_union : self::$_tbf.self::$_table;
+        $this->sql = "SELECT COUNT(".$this->_field.") as ResultRowCount FROM ".$main_table." as a ".$this->_join.$this->_where.$this->_group;
+       
+        $this->_after_sql();
+        
+        $data = $this->GetOne($this->sql);
+        return $data['ResultRowCount'];
     }
 
     /**
@@ -171,11 +168,20 @@ class DBmysqli extends DBDriver
     {
         if (!is_array($data)) return false;
         
+        $ups = null; $sep = null;
         foreach ($data as $k=>$v) {
-            if (isset($ups)) {
-                $ups .= " , ".$this->orm($k)."='".$v."' ";
+            if ($ups) $sep = ", ";
+            if (is_array($v) && !empty($v)) {
+                switch (strtolower($v[0])) {
+                    case 'aeq':
+                        $ups .= $sep.$this->orm($k)."=".$this->orm($k)."+".$v[1]." ";
+                        break;
+                    case 'req':
+                        $ups .= $sep.$this->orm($k)."=".$this->orm($k)."-".$v[1]." ";
+                        break;
+                }
             } else {
-                $ups = $this->orm($k)."='".$v."' ";
+                $ups .= $sep.$this->orm($k)."='".$v."' ";
             }
         }
         
@@ -195,7 +201,7 @@ class DBmysqli extends DBDriver
         $this->_after_sql();
         return $this->exec($this->sql);
     }
-        
+    
     /**
      * join字句
      * @param $join 联合查询字符串 
@@ -215,6 +221,129 @@ class DBmysqli extends DBDriver
         }
 
         $this->_join = $join;
+
+        return $this;
+    }
+
+    /**
+     * union联表
+     * @param $table 表名
+     */
+    public function union($table=null)
+    {
+        if (!$table) return $this;
+        $_union_table = self::$_tbf.$table;
+
+        $this->_union = ' (SELECT * FROM '.self::$_tbf.self::$_table.' UNION ALL SELECT * FROM '.$_union_table.') ';
+
+        return $this;
+    }
+
+    /**
+     * where子句构造
+     * @param $where = array('field1'=>value1,'field2'=>valuw2,...,'or'=>array('field3'=>value3,'field4'=>value4,...))
+     *        between操作 array('field'=>array('between',array(value1,value2)))
+     * @param $op 操作符 AND/OR/BETWEEN
+     */
+    public function where($where=array(),$op='')
+    {
+        if (empty($where)) return $this;
+
+        if (is_array($where) && !empty($where)) {
+            $whereArray = array();
+            $whereArray0 = array();
+            foreach ($where as $k=>$v) {
+                if (is_array($v) && !empty($v)) {
+                    switch (strtolower($v[0])) {
+                        case 'neq':
+                            $w = " ".$this->orm($k)." != '".$v[1]."' ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
+                            break;
+                        case 'lt':
+                            $w = " ".$this->orm($k)." < '".$v[1]."' ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
+                            break;
+                        case 'gt':
+                            $w = " ".$this->orm($k)." > '".$v[1]."' ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
+                            break;
+                        case 'elt':
+                            $w = " ".$this->orm($k)." <= '".$v[1]."' ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
+                            break;
+                        case 'egt':
+                            $w = " ".$this->orm($k)." >= '".$v[1]."' ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
+                            break;
+                        case 'in':
+                            $w = " ".$this->orm($k)." IN(".implode(',',$v[1]).") ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
+                            break;
+                        case 'like':
+                            $w = " ".$this->orm($k)." LIKE '%".$v[1]."%' ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
+                            break;
+                        case 'between':
+                            $w = " ".$this->orm($k)." BETWEEN '".$v[1]."' AND '".$v[2]."' ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
+                            break;
+                        default:
+                            $w = " ".$this->orm($k)."='".$v."' ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
+                            break;
+                    }
+                } else {
+                    $w = " ".$this->orm($k)."='".$v."' ";
+                    $whereArray[] = $w;
+                    if (strpos($k, "a.")!==false) $whereArray0[] = $w;
+                }
+            }
+            $where = implode(" AND ",$whereArray);
+            $where0 = implode(" AND ",$whereArray0);
+        }
+        $this->_where = empty($where) ? "" : " WHERE ".$where;
+        $this->_where0 = empty($where0) ? "" : " WHERE ".$where0;
+
+        return $this;
+    }
+
+    //分组
+    public function group($field=null)
+    {
+        if ($field) {
+            $this->_group = " GROUP BY ".$this->orm($field)." ";
+        }
+
+        return $this;
+    }
+
+    /**
+     * 排序语句 如果是数组array('key'=>sortway,'key1'=>sortway1...)
+     * @param $field string/array 排序字段 
+     * @param $orderway string ASC/DESC ASC 升序排列
+     */
+    public function order($field=null,$way='ASC')
+    {
+        if (!$field || empty($field) || !$way) return $this;
+
+        if (is_array($field)) {
+            foreach ($field as $k=>$v) {
+                $sep = $this->_order ? ' , ' : ' ';
+                $this->_order .= $sep.' '.$this->orm($k).' '.strtoupper($v).' ';
+            }
+        } else {
+            $this->_order = ' '.$this->orm($field).' '.strtoupper($way).' ';
+        }
+        $this->_order = ' ORDER BY '.$this->_order.' ';
 
         return $this;
     }
@@ -254,5 +383,25 @@ class DBmysqli extends DBDriver
         $this->sql = "SELECT ".$field.", MATCH(".$match.") AGAINST('".$value."' IN BOOLEAN MODE) AS score FROM ".self::$_tbf.self::$_table." WHERE MATCH(".$match.") AGAINST('".$value."' IN BOOLEAN MODE) ORDER BY score DESC ";
 
         return $this;
+    }
+
+    /************************************mysqli事务处理************************************/
+
+    //开始事务
+    static public function beginTransaction()
+    {
+        self::$db->autocommit(FALSE);
+    }
+
+    //提交事务
+    static public function commitTransaction()
+    {
+        self::$db->commit();
+    }
+
+    //回滚事务
+    static public function rollBackTransaction()
+    {
+        self::$db->rollback();
     }
 }

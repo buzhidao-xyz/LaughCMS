@@ -9,9 +9,9 @@ class DBpdosqlserver extends DBDriver
     protected $_join = '';
     protected $_union = '';
     protected $_where = '';
+    protected $_group = '';
     protected $_order = '';
     protected $_limit = '';
-    protected $_group = '';
 
     protected $_where0 = '';
     
@@ -23,7 +23,6 @@ class DBpdosqlserver extends DBDriver
     //调用父类初始化数据库连接
     public function __construct()
     {
-        //select *,ROW_NUMBER() over (order by field) as ROW_NUMBER from table as t where t.row_number between m and n
         parent::__construct();
     }
 
@@ -129,8 +128,12 @@ class DBpdosqlserver extends DBDriver
     public function find($options=array())
     {
         $this->_before_sql($options);
-        $this->sql = "SELECT TOP 1 ".$this->_field." FROM ".self::$_tbf.self::$_table." as a ".$this->_join.$this->_where.$this->_order;
+
+        $main_table = $this->_union ? $this->_union : self::$_tbf.self::$_table;
+        $this->sql = "SELECT TOP 1 ".$this->_field." FROM ".$main_table." as a ".$this->_join.$this->_where.$this->_group.$this->_order;
+        
         $this->_after_sql();
+        
         $return = $this->GetOne($this->sql);
         return $return;
     }
@@ -168,12 +171,12 @@ class DBpdosqlserver extends DBDriver
         $this->_before_sql($options);
 
         $main_table = $this->_union ? $this->_union : self::$_tbf.self::$_table;
-        $this->sql = "SELECT COUNT(".$this->_field.") as la_num FROM ".$main_table." as a ".$this->_join.$this->_where;
+        $this->sql = "SELECT COUNT(".$this->_field.") as ResultRowCount FROM ".$main_table." as a ".$this->_join.$this->_where;
         
         $this->_after_sql();
         $data = $this->GetOne($this->sql);
 
-        return $data['la_num'];
+        return $data['ResultRowCount'];
     }
 
     /**
@@ -257,6 +260,115 @@ class DBpdosqlserver extends DBDriver
 
         return $this;
     }
+
+    /**
+     * where子句构造
+     * @param $where = array('field1'=>value1,'field2'=>valuw2,...,'or'=>array('field3'=>value3,'field4'=>value4,...))
+     *        between操作 array('field'=>array('between',array(value1,value2)))
+     * @param $op 操作符 AND/OR/BETWEEN
+     */
+    public function where($where=array(),$op='')
+    {
+        if (empty($where)) return $this;
+
+        if (is_array($where) && !empty($where)) {
+            $whereArray = array();
+            $whereArray0 = array();
+            foreach ($where as $k=>$v) {
+                if (is_array($v) && !empty($v)) {
+                    switch (strtolower($v[0])) {
+                        case 'neq':
+                            $w = " ".$this->orm($k)." != '".$v[1]."' ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
+                            break;
+                        case 'lt':
+                            $w = " ".$this->orm($k)." < '".$v[1]."' ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
+                            break;
+                        case 'gt':
+                            $w = " ".$this->orm($k)." > '".$v[1]."' ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
+                            break;
+                        case 'elt':
+                            $w = " ".$this->orm($k)." <= '".$v[1]."' ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
+                            break;
+                        case 'egt':
+                            $w = " ".$this->orm($k)." >= '".$v[1]."' ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
+                            break;
+                        case 'in':
+                            $w = " ".$this->orm($k)." IN(".implode(',',$v[1]).") ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
+                            break;
+                        case 'like':
+                            $w = " ".$this->orm($k)." LIKE '%".$v[1]."%' ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
+                            break;
+                        case 'between':
+                            $w = " ".$this->orm($k)." BETWEEN '".$v[1]."' AND '".$v[2]."' ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
+                            break;
+                        default:
+                            $w = " ".$this->orm($k)."='".$v."' ";
+                            $whereArray[] = $w;
+                            if (strpos($k, "a.")!==false) $whereArray0[] = $w;
+                            break;
+                    }
+                } else {
+                    $w = " ".$this->orm($k)."='".$v."' ";
+                    $whereArray[] = $w;
+                    if (strpos($k, "a.")!==false) $whereArray0[] = $w;
+                }
+            }
+            $where = implode(" AND ",$whereArray);
+            $where0 = implode(" AND ",$whereArray0);
+        }
+        $this->_where = empty($where) ? "" : " WHERE ".$where;
+        $this->_where0 = empty($where0) ? "" : " WHERE ".$where0;
+
+        return $this;
+    }
+
+    //分组
+    public function group($field=null)
+    {
+        if ($field) {
+            $this->_group = " GROUP BY ".$this->orm($field)." ";
+        }
+
+        return $this;
+    }
+
+    /**
+     * 排序语句 如果是数组array('key'=>sortway,'key1'=>sortway1...)
+     * @param $field string/array 排序字段 
+     * @param $orderway string ASC/DESC ASC 升序排列
+     */
+    public function order($field=null,$way='ASC')
+    {
+        if (!$field || empty($field) || !$way) return $this;
+
+        if (is_array($field)) {
+            foreach ($field as $k=>$v) {
+                $sep = $this->_order ? ' , ' : ' ';
+                $this->_order .= $sep.' '.$this->orm($k).' '.strtoupper($v).' ';
+            }
+        } else {
+            $this->_order = ' '.$this->orm($field).' '.strtoupper($way).' ';
+        }
+        $this->_order = ' ORDER BY '.$this->_order.' ';
+
+        return $this;
+    }
     
     /**
      * 查找数据
@@ -272,53 +384,5 @@ class DBpdosqlserver extends DBDriver
         }
         
         return $this;
-    }
-
-    //分组
-    public function group($field=null)
-    {
-        if ($field) {
-            $this->_group = " GROUP BY ".$this->orm($field)." ";
-        }
-
-        return $this;
-    }
-
-    /**
-     * 全文检索
-     * @param $fields mixed 需要被检索出的字段
-     * @param $match string 全文索引字段
-     * @param $value 要检索的内容
-     */
-    public function fulltext($fields='*',$match,$value)
-    {
-        if (!is_array($fields)) {
-            $fields = explode(',', $fields);
-        }
-        
-        foreach ($fields as $k=>$v) {
-            if (isset($field)) {
-                $field .= ','.$this->orm($v);
-            } else {
-                $field = ($v=='*')?$v:$this->orm($v);
-            }
-        }
-
-        $this->sql = "SELECT ".$field.", MATCH(".$match.") AGAINST('".$value."' IN BOOLEAN MODE) AS score FROM ".self::$_tbf.self::$_table." WHERE MATCH(".$match.") AGAINST('".$value."' IN BOOLEAN MODE) ORDER BY score DESC ";
-
-        return $this;
-    }
-
-    //结束sql语句处理之后要进行的操作
-    protected function _after_sql()
-    {
-        $this->_field = '*';
-        $this->_join = '';
-        $this->_union = '';
-        $this->_where = '';
-        $this->_where0 = '';
-        $this->_order = '';
-        $this->_limit = '';
-        //$this->sql = null;
     }
 }
