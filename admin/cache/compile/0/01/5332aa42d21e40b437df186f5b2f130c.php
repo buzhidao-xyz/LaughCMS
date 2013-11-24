@@ -1,11 +1,43 @@
-{include file="Public/control_top.html"}
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="">
+<link type="text/css" rel="stylesheet" href="themes/blue/style/common.css" media="screen">
+<link type="text/css" rel="stylesheet" href="themes/blue/style/global.css" media="screen">
+<script type="text/javascript" src="public/js/jquery.js"></script>
+<link type="text/css" rel="stylesheet" href="public/plugin/colorbox/colorbox.css" media="screen">
+<script type="text/javascript" src="public/plugin/colorbox/jquery.colorbox.js"></script>
+<title>LaughCMS网站管理系统</title>
+<script type="text/javascript">
+var JS_APP = '/laugh/admin';
+var JS_APPM = 'http://localhost/laugh';
+function colorboxAjaxHtml(url) {
+	$.post(url,{},function (data){
+		$.colorbox({ html: data });
+	});
+}
+function colorboxHtml(url) {
+	$.colorbox({ href: url });
+}
+function colorboxImage(url) {
+	$.colorbox({ href: url });
+}
+</script>
+</head>
+
+<body>
+<style type="text/css">
+	body { background: none; }
+</style>
+<div id="control">
+	<div id="controlContent">
 <!-- <div class="control_nav">
 	<h3>添加组</h3>
 </div> -->
-{if $accessStatus == 1}
-<div class="formContainer" accessStatus={$accessStatus}>
+<div class="formContainer" accessStatus=1>
 	<div class="formtitle"><h5>新管理员表单</h5></div>
-	<form name="newform" action="__APP__/index.php?s=Admin/saveAdmin" method="post" id="ajaxform" class="newform">
+	<form name="newform" action="/laugh/admin/index.php?s=Admin/saveAdmin" method="post" id="ajaxform" class="newform">
 		<ul class="formbody">
 			<li class="formblock">
 				<span>账户:</span>
@@ -73,7 +105,6 @@
 		</ul>
 	</form>
 </div>
-{/if}
 <style type="text/css">
 #ColumnList {
 	float: left;
@@ -82,12 +113,12 @@
 	padding: 0 25px;
 }
 </style>
-<script type="text/javascript">
-$(document).ready(function (){
-var ColumnObject = function (){
-
-}
-ColumnObject();
-});
-</script>
-{include file="Public/control_bottom.html"}
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="themes/blue/js/jquery.corner.js"></script>
+<script type="text/javascript" src="themes/blue/js/public.js"></script>
+<script type="text/javascript" src="themes/blue/js/common.js"></script>
+<script type="text/javascript" src="themes/blue/js/ajax.js"></script>
+<script type="text/javascript" src="public/js/jquery.idTabs.min.js"></script>
+</html>
