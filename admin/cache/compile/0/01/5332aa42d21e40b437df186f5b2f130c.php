@@ -113,6 +113,14 @@ function colorboxImage(url) {
 	padding: 0 25px;
 }
 </style>
+<script type="text/javascript">
+$(document).ready(function (){
+var ColumnObject = function (){
+
+}
+ColumnObject();
+});
+</script>
     </div>
 </div>
 </body>

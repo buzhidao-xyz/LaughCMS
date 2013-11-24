@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-10-20 20:46:42
+<?php /* Smarty version Smarty-3.1.12, created on 2013-11-24 17:45:04
          compiled from "F:\website\laugh\admin\themes\blue\Admin\add.html" */ ?>
-<?php /*%%SmartyHeaderCode:50975263d0b221b2e7-86228024%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:313265291caa030c065-42421592%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '11df56bed4e523e1ba1a96ca9766e65d5fa8cd4d' => 
     array (
       0 => 'F:\\website\\laugh\\admin\\themes\\blue\\Admin\\add.html',
-      1 => 1382273200,
+      1 => 1382452964,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '50975263d0b221b2e7-86228024',
+  'nocache_hash' => '313265291caa030c065-42421592',
   'function' => 
   array (
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5263d0b2286921_15844700',
+  'unifunc' => 'content_5291caa037b7c4_37932388',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5263d0b2286921_15844700')) {function content_5263d0b2286921_15844700($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("Public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_5291caa037b7c4_37932388')) {function content_5291caa037b7c4_37932388($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("Public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <!-- <div class="control_nav">
 	<h3>添加组</h3>
@@ -109,5 +109,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	padding: 0 25px;
 }
 </style>
+<script type="text/javascript">
+$(document).ready(function (){
+var ColumnObject = function (){
+
+}
+ColumnObject();
+});
+</script>
 <?php echo $_smarty_tpl->getSubTemplate ("Public/control_bottom.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 <?php }} ?>

@@ -321,9 +321,17 @@ class DBpdomysql extends DBDriver
     //分组
     public function group($field=null)
     {
-        if ($field) {
-            $this->_group = " GROUP BY ".$this->orm($field)." ";
+        if (!$field || empty($field)) return $this;
+
+        if (is_array($field)&&!empty($field)) {
+            foreach ($field as $k=>$v) {
+                $sep = $this->_group ? ' , ' : ' ';
+                $this->_group .= $sep.' '.$this->orm($v).' ';
+            }
+        } else {
+            $this->_group = ' '.$this->orm($field).' ';
         }
+        $this->_group = " GROUP BY ".$this->_group;
 
         return $this;
     }

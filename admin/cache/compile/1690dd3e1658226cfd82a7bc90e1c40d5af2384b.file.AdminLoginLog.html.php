@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-10-20 09:51:51
+<?php /* Smarty version Smarty-3.1.12, created on 2013-11-24 17:44:33
          compiled from "F:\website\laugh\admin\themes\blue\Log\AdminLoginLog.html" */ ?>
-<?php /*%%SmartyHeaderCode:26364526337377c49a5-38928729%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:51625291ca81766982-47167100%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '26364526337377c49a5-38928729',
+  'nocache_hash' => '51625291ca81766982-47167100',
   'function' => 
   array (
   ),
@@ -28,9 +28,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_526337378c8c98_14321137',
+  'unifunc' => 'content_5291ca8188a2a2_72000342',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_526337378c8c98_14321137')) {function content_526337378c8c98_14321137($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("Public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_5291ca8188a2a2_72000342')) {function content_5291ca8188a2a2_72000342($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("Public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <div class="formContainer">
     <div class="formtitle"><h5>管理员登录日志查询</h5></div>

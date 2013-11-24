@@ -48,7 +48,7 @@ class BaseControl
         $sstate = session('sstate'); $ustate = session('ustate');
         
         $url = parse_url(request_uri());
-		if (isset($url['query'])) $res = preg_match("/^s=(Login|Org)(\/index)?/i",$url['query']);
+		if (isset($url['query'])) $res = preg_match("/^s=(Login|Org|Weixin|Mobile)(\/index)?/i",$url['query']);
 
         if (!$res && (empty($this->adminInfo) || $sstate != $ustate)) {
             header("location:".__APP__.'/index.php?s=Login');

@@ -52,7 +52,7 @@ function colorboxImage(url) {
         </ul>
     </form>
 </div>
-<div class="captitle"><h5>管理后台登陆日志 【目前共有2条日志】</h5></div>
+<div class="captitle"><h5>管理后台登陆日志 【目前共有4条日志】</h5></div>
 <ul class="table_list_title">
 	<li class="table_list_l table_list_l30"></li>
 	<li class="table_list_l table_list_l120">管理员名称</li>
@@ -62,6 +62,24 @@ function colorboxImage(url) {
 	</ul>
 <div class="contentTableList">
             <ul class="table_list">
+		<li class="table_list_l table_list_l30 table_list_no">1</li>
+		<li class="table_list_l table_list_l120">admin</li>
+		<li class="table_list_l table_list_l150"></li>
+    	<li class="table_list_l table_list_l150">2013-11-24 17:44:19</li>
+    	    	<!-- <li class="table_list_l table_list_l200" accessStatus=1>
+    		<a delurl="/laugh/admin/index.php?s=Log/AdminLoginLogDelete&logid=4" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li> -->
+    	    </ul>
+        <ul class="table_list">
+		<li class="table_list_l table_list_l30 table_list_no">1</li>
+		<li class="table_list_l table_list_l120">admin</li>
+		<li class="table_list_l table_list_l150"></li>
+    	<li class="table_list_l table_list_l150">2013-10-20 20:20:02</li>
+    	    	<!-- <li class="table_list_l table_list_l200" accessStatus=1>
+    		<a delurl="/laugh/admin/index.php?s=Log/AdminLoginLogDelete&logid=3" href="javascript:;" name="del" msg="确定删除吗？">删除</a>
+    	</li> -->
+    	    </ul>
+        <ul class="table_list">
 		<li class="table_list_l table_list_l30 table_list_no">1</li>
 		<li class="table_list_l table_list_l120">admin</li>
 		<li class="table_list_l table_list_l150"></li>
