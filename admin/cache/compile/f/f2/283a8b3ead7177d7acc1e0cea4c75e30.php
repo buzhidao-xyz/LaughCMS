@@ -76,7 +76,7 @@ function colorboxImage(url) {
 		<ul class="tableBlock">
 			<li><span>会员名:</span>admin</li>
 			<li><span>所属会员组:</span>管理员</li>
-			<li><span>最后登陆时间:</span>2013-11-24 17:44:19</li>
+			<li><span>最后登陆时间:</span>2013-11-25 23:46:01</li>
 			<li><span>最后登陆IP:</span></li>
 			<li><span>登陆次数:</span>128次</li>
 		</ul>

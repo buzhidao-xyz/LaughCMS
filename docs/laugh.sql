@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost
-Source Server Version : 50528
+Source Server Version : 50530
 Source Host           : localhost:3306
 Source Database       : laugh
 
 Target Server Type    : MYSQL
-Target Server Version : 50528
+Target Server Version : 50530
 File Encoding         : 65001
 
-Date: 2013-10-16 15:30:11
+Date: 2013-11-25 23:47:16
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -51,12 +51,16 @@ CREATE TABLE `la_adminloginlog` (
   `loginip` bigint(15) DEFAULT NULL,
   `logintime` int(10) DEFAULT NULL,
   PRIMARY KEY (`logid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_adminloginlog
 -- ----------------------------
 INSERT INTO `la_adminloginlog` VALUES ('1', 'admin', '0', '1381906598');
+INSERT INTO `la_adminloginlog` VALUES ('2', 'admin', '0', '1382233905');
+INSERT INTO `la_adminloginlog` VALUES ('3', 'admin', '0', '1382271602');
+INSERT INTO `la_adminloginlog` VALUES ('4', 'admin', '0', '1385286259');
+INSERT INTO `la_adminloginlog` VALUES ('5', 'admin', '0', '1385394361');
 
 -- ----------------------------
 -- Table structure for `la_admin_access`
@@ -229,31 +233,34 @@ CREATE TABLE `la_column_model` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `description` varchar(200) DEFAULT NULL,
-  `type` tinyint(1) DEFAULT '0' COMMENT '模型类型',
-  `issystem` tinyint(1) DEFAULT '0' COMMENT '是否系统模型',
+  `type` tinyint(1) DEFAULT '0',
+  `issystem` tinyint(1) DEFAULT '0',
   `table` varchar(50) DEFAULT NULL,
   `usefields` varchar(300) DEFAULT '*' COMMENT '前台调用字段',
   `control` varchar(50) DEFAULT NULL,
-  `template_index` varchar(50) DEFAULT NULL COMMENT '模型主页模板',
-  `template_add` varchar(50) DEFAULT NULL COMMENT '型模列表页模板',
-  `template_edit` varchar(50) DEFAULT NULL COMMENT '模型内容页模板',
+  `column_index` varchar(100) DEFAULT NULL COMMENT '后台-栏目文档列表模板',
+  `column_add` varchar(100) DEFAULT NULL COMMENT '后台-添加栏目模板',
+  `column_edit` varchar(100) DEFAULT NULL COMMENT '后台-编辑栏目模板',
+  `template_index` varchar(100) DEFAULT NULL COMMENT '前台-栏目封面页模板',
+  `template_list` varchar(100) DEFAULT NULL COMMENT '前台-栏目文档列表模板',
+  `template_body` varchar(100) DEFAULT NULL COMMENT '前台-栏目文档详细页模板',
   `status` tinyint(1) DEFAULT '1' COMMENT '0禁用1启用',
-  `createtime` int(10) DEFAULT '0',
+  `createtime` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of la_column_model
 -- ----------------------------
-INSERT INTO `la_column_model` VALUES ('1', '文章模型', '文章模型', '0', '0', 'article', '', 'Article', 'Article/index.html', 'Article/add.html', 'Article/edit.html', '1', null);
-INSERT INTO `la_column_model` VALUES ('2', '图片模型', '图集模型', '0', '0', 'image', '', 'Image', 'Image/index.html', 'Image/add.html', 'Image/edit.html', '1', null);
-INSERT INTO `la_column_model` VALUES ('3', '下载模型', '下载模型', '0', '0', 'download', '', 'Download', 'Download/index.html', 'Download/add.html', 'Download/edit.html', '1', null);
-INSERT INTO `la_column_model` VALUES ('4', '专题模型', '专题模型', '0', '0', 'topic', '', 'Topic', 'Topic/index.html', 'Topic/add.html', 'Topic/edit.html', '1', '1363315175');
-INSERT INTO `la_column_model` VALUES ('5', '软件模型', '', '0', '0', 'soft', '', 'Soft', null, null, null, '1', '1363315203');
-INSERT INTO `la_column_model` VALUES ('6', '产品模型', '', '0', '0', 'product', '', 'Product', 'Product/index.html', 'Product/add.html', 'Product/edit.html', '1', '1363315247');
-INSERT INTO `la_column_model` VALUES ('7', '分类信息模型', '', '0', '0', 'info', '', 'Info', null, null, null, '1', '1363315306');
-INSERT INTO `la_column_model` VALUES ('8', '公共模型', '公共模型 关于我们、联系我们等', '0', '0', 'public', '', 'Public', null, null, null, '1', '1364969716');
-INSERT INTO `la_column_model` VALUES ('9', '插件模型', '所有使用插件的栏目的模型控制器入口', '0', '0', 'plugin', '', 'Plugin', null, null, null, '1', '1365668493');
+INSERT INTO `la_column_model` VALUES ('1', '文章模型', '文章模型', '0', '0', 'article', '', 'Article', 'Article/index.html', 'Article/add.html', 'Article/edit.html', 'Article/index.html', 'Article/list.html', 'Article/body.html', '1', '1363315175');
+INSERT INTO `la_column_model` VALUES ('2', '图片模型', '图集模型', '0', '0', 'image', '', 'Image', 'Image/index.html', 'Image/add.html', 'Image/edit.html', 'Image/index.html', 'Image/list.html', 'Image/body.html', '1', '1363315175');
+INSERT INTO `la_column_model` VALUES ('3', '下载模型', '下载模型', '0', '0', 'download', '', 'Download', 'Download/index.html', 'Download/add.html', 'Download/edit.html', 'Download/index.html', 'Download/list.html', 'Download/body.html', '1', '1363315175');
+INSERT INTO `la_column_model` VALUES ('4', '专题模型', '专题模型', '0', '0', 'topic', '', 'Topic', 'Topic/index.html', 'Topic/add.html', 'Topic/edit.html', 'Topic/index.html', 'Topic/list.html', 'Topic/body.html', '1', '1363315175');
+INSERT INTO `la_column_model` VALUES ('5', '软件模型', '软件模型', '0', '0', 'soft', '', 'Soft', 'Soft/index.html', 'Soft/add.html', 'Soft/edit.html', 'Soft/index.html', 'Soft/list.html', 'Soft/body.html', '1', '1363315203');
+INSERT INTO `la_column_model` VALUES ('6', '产品模型', '产品模型', '0', '0', 'product', '', 'Product', 'Product/index.html', 'Product/add.html', 'Product/edit.html', 'Product/index.html', 'Product/list.html', 'Product/body.html', '1', '1363315247');
+INSERT INTO `la_column_model` VALUES ('7', '分类信息模型', '分类信息模型', '0', '0', 'info', '', 'Info', null, null, null, null, null, null, '1', '1363315306');
+INSERT INTO `la_column_model` VALUES ('8', '公共模型', '公共模型 关于我们、联系我们等', '0', '0', 'public', '', 'Public', null, null, null, null, null, null, '1', '1364969716');
+INSERT INTO `la_column_model` VALUES ('9', '插件模型', '所有使用插件的栏目的模型控制器入口', '0', '0', 'plugin', '', 'Plugin', null, null, null, null, null, null, '1', '1365668493');
 
 -- ----------------------------
 -- Table structure for `la_comment`

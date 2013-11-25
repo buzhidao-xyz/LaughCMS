@@ -12,11 +12,11 @@ class WeixinControl extends BaseControl
 	private $_ClassName = "WeixinControl";
 
 	//随机字符串TOKEN
-	private $_token = "soehitec2013";
+	private $_token = "szsoehiincwxsystem";
 	//AppID
-	private $_AppID = "wx3c225cb480709e30";
+	private $_AppID = "wx8606a7d419a58d03";
 	//AppSecret
-	private $_AppSecret = "700e43db6fa1534ea307151fa3e1f3b5";
+	private $_AppSecret = "7df2a27401ca7510bcccdd47551af819";
 
 	//session前缀
 	private $_session_prefix = "wx_";
@@ -89,6 +89,7 @@ class WeixinControl extends BaseControl
 	public function __construct()
 	{
 		parent::__construct();
+		// $this->wxValid();
 	}
 
 	//微信响应主URL接口
@@ -358,7 +359,7 @@ class WeixinControl extends BaseControl
     		"button" => array(
     			array(
     				"type" => "view",
-    				"name" => "HOME",
+    				"name" => urlencode("官方网站"),
     				"url"  => "http://www.soehi.com/"
     			),
     			array(
@@ -403,13 +404,14 @@ class WeixinControl extends BaseControl
 		$HttpClient = new HttpClient();
 		$HttpClient->_url = $url;
 		$HttpClient->_https = true;
-		$HttpClient->_postdata = json_encode($menuArray);
+		$HttpClient->_postdata = urldecode(json_encode($menuArray));
 		$output = $HttpClient->HttpPost();
 
 		$weixinArray = json_decode($output,true);
 		if (!empty($weixinArray)&&$weixinArray['errcode']==0) {
 			echo "OK";
 		} else {
+			dump($weixinArray);exit;
 			//接口返回错误 记录日志
 			$this->_logerror($weixinArray['errcode'],$weixinArray['errmsg']);
 			return false;

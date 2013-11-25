@@ -331,4 +331,17 @@ class CTModelControl extends CommonControl
     {
         $this->display("ColumnModel/ModelField.html");
     }
+
+    //获取模型的模板
+    public function getCTModelTemplate()
+    {
+        $columnmodel = q("columnmodel");
+        $columnModelInfo = M("CTModel")->ColumnModelList($columnmodel);
+
+        $this->ajaxReturn(0,'',array(
+            'template_index' => $columnModelInfo['data'][0]['template_index'],
+            'template_list' => $columnModelInfo['data'][0]['template_list'],
+            'template_body' => $columnModelInfo['data'][0]['template_body']
+        ));
+    }
 }
