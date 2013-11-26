@@ -174,6 +174,9 @@ class WeixinControl extends BaseControl
 			//解析XML数据为XML数据对象
 			$this->_xmlDataObject = new SimpleXMLElement($xmlData, LIBXML_NOCDATA);
 
+			//接收消息入库
+			$this->storeMessage($this->_xmlDataObject->FromUserName,$this->_xmlDataObject->ToUserName,1,$this->_xmlDataObject->Content,$this->_xmlDataObject->CreateTime);
+
 			//判断消息或事件 处理
 			switch ($this->_xmlDataObject->MsgType) {
 				case "text":
@@ -222,6 +225,8 @@ class WeixinControl extends BaseControl
 		} else if ($msgContent == "3") {
 			$imageid = array();
 			$this->imageMsgResponse($imageid);
+		} else {
+			$this->textMsgResponse();
 		}
 	}
 
@@ -328,6 +333,10 @@ class WeixinControl extends BaseControl
 		$msgTpl = $this->_xmlTpl[$msgType];
 		
 		$content = $content ? $content : $this->_content[rand(0,7)];
+
+		//回复消息入库
+		$this->storeMessage($toUsername,$fromUsername,1,$content);
+
 		$xmlResult = sprintf($msgTpl, $fromUsername, $toUsername, TIMESTAMP, $msgType, $content);
 		echo $xmlResult;
     }
@@ -349,6 +358,22 @@ class WeixinControl extends BaseControl
 		echo $xmlResult;
     }
 
+    //存储消息
+    private function storeMessage($fromuser=null,$touser=null,$type=null,$content=null,$createtime=null)
+    {
+    	if (!$content) return false;
+    	$data = array(
+    		'fromuser' => $fromuser,
+    		'touser'   => $touser,
+    		'type'     => $type,
+    		'content'  => $content,
+    		'createtime' => $createtime ? $createtime : TIMESTAMP
+    	);
+    	$sql = "insert into wx_message(fromuser,touser,type,content,createtime) values('".$fromuser."','".$touser."',".$type.",'".$content."',".$data["createtime"].")";
+    	$return = T()->exec($sql);
+    	return $return;
+    }
+
     //创建菜单
     public function MenuCreate()
     {
@@ -364,35 +389,35 @@ class WeixinControl extends BaseControl
     			),
     			array(
     				"type" => "click",
-    				"name" => "ERP",
+    				"name" => urlencode("ERP平台"),
     				"key"  => "WEIXIN_MENU_ERP"
     			),
     			array(
-    				"name" => "SERVICE",
+    				"name" => urlencode("软件服务"),
     				"sub_button" => array(
     					array(
     						"type" => "click",
-		    				"name" => "IOS",
+		    				"name" => urlencode("IOS平台"),
 		    				"key"  => "WEIXIN_MENU_SFS_IOS"
     					),
     					array(
     						"type" => "click",
-		    				"name" => "ANDROID",
+		    				"name" => urlencode("ANDROID平台"),
 		    				"key"  => "WEIXIN_MENU_SFS_ANDROID"
     					),
     					array(
     						"type" => "click",
-		    				"name" => "JAVA",
+		    				"name" => urlencode("JAVA平台"),
 		    				"key"  => "WEIXIN_MENU_SFS_JAVA"
     					),
     					array(
     						"type" => "click",
-		    				"name" => ".NET",
+		    				"name" => urlencode(".NET平台"),
 		    				"key"  => "WEIXIN_MENU_SFS_NET"
     					),
     					array(
     						"type" => "view",
-		    				"name" => "Mobile",
+		    				"name" => urlencode("Mobile平台"),
     						"url"  => "http://www.soehi.com/soehi/admin/index.php?s=Mobile/index"
     					)
     				)

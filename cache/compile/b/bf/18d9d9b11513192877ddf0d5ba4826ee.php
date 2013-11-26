@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="keywords" content="Laugh,CMS,LaughCMS,内容,管理,系统">
 <meta name="description" content="Laugh CMS内容管理系统" />
+<link type="image/ico" rel="shortcut icon" href="favicon.ico">
 <link type="text/css" rel="stylesheet" href="themes/default/style/common.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/default/style/frame.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/default/style/global.css" media="screen">

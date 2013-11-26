@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-11-25 23:47:32
+<?php /* Smarty version Smarty-3.1.12, created on 2013-11-26 22:59:07
          compiled from "F:\website\laugh\themes\default\include\head.html" */ ?>
-<?php /*%%SmartyHeaderCode:990552937114b8b318-36207482%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:189565294b73bc367f7-28960005%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'b37ba3684d98667406498de3cba39a2de7a62984' => 
     array (
       0 => 'F:\\website\\laugh\\themes\\default\\include\\head.html',
-      1 => 1368621476,
+      1 => 1385477714,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '990552937114b8b318-36207482',
+  'nocache_hash' => '189565294b73bc367f7-28960005',
   'function' => 
   array (
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_52937114baf7f7_57874543',
+  'unifunc' => 'content_5294b73bc4e155_72241420',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_52937114baf7f7_57874543')) {function content_52937114baf7f7_57874543($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_5294b73bc4e155_72241420')) {function content_5294b73bc4e155_72241420($_smarty_tpl) {?><!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -31,6 +31,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 ">
 <meta name="description" content="<?php echo $_smarty_tpl->tpl_vars['Config']->value['description'];?>
 " />
+<link type="image/ico" rel="shortcut icon" href="favicon.ico">
 <link type="text/css" rel="stylesheet" href="themes/default/style/common.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/default/style/frame.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/default/style/global.css" media="screen">

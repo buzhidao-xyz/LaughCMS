@@ -1,0 +1,29 @@
+{include file="Mobile/head.html"}
+<div class="signBlock">
+	<form name="signform" action="__APP__/index.php" method="post">
+		<ul>
+			<li>
+				<span class="t">账户: </span>
+				<span class="c"><input type="text" name="username" value="" /></span>
+			</li>
+			<li>
+				<span class="t">密码: </span>
+				<span class="c"><input type="text" name="passwd" value="" /></span>
+			</li>
+			<li>
+				<input type="button" name="subtn" value="Sign" />
+			</li>
+		</ul>
+	</form>
+</div>
+<style type="text/css">
+.signBlock {
+	width: 100%;
+	font-size: 1.6em;
+}
+.signBlock form ul li span input {
+	width: 80px;
+	height: 25px;
+}
+</style>
+{include file="Mobile/foot.html"}
