@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="keywords" content="Laugh,CMS,LaughCMS,内容,管理,系统">
 <meta name="description" content="Laugh CMS内容管理系统" />
+<link type="image/ico" rel="shortcut icon" href="favicon.ico">
 <link type="text/css" rel="stylesheet" href="themes/default/style/common.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/default/style/frame.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/default/style/global.css" media="screen">
@@ -150,13 +151,13 @@ $(document).ready(function (){
 		<a href="#" target="_blank"><img src="/laugh/uploads/AdImage/1381906690_dgrwc8_9888_1368168836_w2hsg2_8994_ad_banner2.png" width="1000" height="80" /></a>
 	</div>
 	<div class="CurPosition mtop5">
-		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=Article/lists&columnid=2">新闻资讯</a>
+		当前位置: <a href="/laugh">首页</a> > <a href="/laugh/index.php?s=Article/lists&columnid=2">新闻资讯</a> > <a href="/laugh/index.php?s=Article/lists&columnid=4">网络知识</a> > <a href="/laugh/index.php?s=Article/lists&columnid=5">前端知识</a>
 	</div>
 	<div id="CenterShow" class="block mtop5">
 		<div id="mainBlock" class="fleft w740">
 			<div class="boxBlock">
 				<div class="boxBlockTitle">
-					<span class="title">新闻资讯</span>
+					<span class="title">前端知识</span>
 				</div>
 				<div class="boxBlockBody">
 					<ul class="articleList">

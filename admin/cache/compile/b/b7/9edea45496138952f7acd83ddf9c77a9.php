@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="keywords" content="">
+<link type="image/ico" rel="shortcut icon" href="../favicon.ico">
 <link type="text/css" rel="stylesheet" href="themes/blue/style/common.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/blue/style/global.css" media="screen">
 <script type="text/javascript" src="public/js/jquery.js"></script>

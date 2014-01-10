@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="keywords" content="">
+<link type="image/ico" rel="shortcut icon" href="../favicon.ico">
 <link type="text/css" rel="stylesheet" href="themes/blue/style/common.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/blue/style/global.css" media="screen">
 <script type="text/javascript" src="public/js/jquery.js"></script>
@@ -35,7 +36,7 @@ function colorboxImage(url) {
     <div class="logo"><a href="/laugh/admin"><img src="themes/blue/images/logo_white.png" width="180" height="60" /></a></div>
     <div class="headerNav">
         <div class="uinfo">
-            <font color="#FFFFFF">欢迎你！admin</font> [<a href="/laugh/admin/index.php?s=login/logout&0c82e3e90bad85160bed024763ac6bec">退出</a>] | <a href="/laugh/admin/index.php?s=index">系统主页</a> | <a href="http://localhost/laugh/index.php?s=index" target="_blank">网站主页</a>
+            <font color="#FFFFFF">欢迎你！admin</font> [<a href="/laugh/admin/index.php?s=login/logout&3465620e0fa1919fb74ee562f9cd0ea1">退出</a>] | <a href="/laugh/admin/index.php?s=index">系统主页</a> | <a href="http://localhost/laugh/index.php?s=index" target="_blank">网站主页</a>
         </div>
         <div class="nav">
             <ul class="hmenu">

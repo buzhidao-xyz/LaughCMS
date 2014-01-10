@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="keywords" content="">
+<link type="image/ico" rel="shortcut icon" href="../favicon.ico">
 <link type="text/css" rel="stylesheet" href="themes/blue/style/common.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/blue/style/global.css" media="screen">
 <script type="text/javascript" src="public/js/jquery.js"></script>
@@ -76,7 +77,7 @@ function colorboxImage(url) {
 		<ul class="tableBlock">
 			<li><span>会员名:</span>admin</li>
 			<li><span>所属会员组:</span>管理员</li>
-			<li><span>最后登陆时间:</span>2013-11-25 23:46:01</li>
+			<li><span>最后登陆时间:</span>2013-12-29 21:37:59</li>
 			<li><span>最后登陆IP:</span></li>
 			<li><span>登陆次数:</span>128次</li>
 		</ul>

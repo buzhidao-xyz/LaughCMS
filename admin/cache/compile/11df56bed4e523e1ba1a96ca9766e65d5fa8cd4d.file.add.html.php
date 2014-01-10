@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.12, created on 2013-11-24 17:45:04
+<?php /* Smarty version Smarty-3.1.12, created on 2013-12-29 23:26:34
          compiled from "F:\website\laugh\admin\themes\blue\Admin\add.html" */ ?>
-<?php /*%%SmartyHeaderCode:313265291caa030c065-42421592%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:52652c03f2abae8b8-38325141%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '11df56bed4e523e1ba1a96ca9766e65d5fa8cd4d' => 
     array (
       0 => 'F:\\website\\laugh\\admin\\themes\\blue\\Admin\\add.html',
-      1 => 1382452964,
+      1 => 1388326944,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '313265291caa030c065-42421592',
+  'nocache_hash' => '52652c03f2abae8b8-38325141',
   'function' => 
   array (
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.12',
-  'unifunc' => 'content_5291caa037b7c4_37932388',
+  'unifunc' => 'content_52c03f2ac19504_66576005',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5291caa037b7c4_37932388')) {function content_5291caa037b7c4_37932388($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("Public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_52c03f2ac19504_66576005')) {function content_52c03f2ac19504_66576005($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("Public/control_top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 <!-- <div class="control_nav">
 	<h3>添加组</h3>
@@ -55,67 +55,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			</li>
 			<li class="formautoblock">
 				<span>选择管理栏目:</span>
-				<div id="ColumnList" class="ColumnList">
-					<div class="ColumnBlock">
-						<div class="ColumnBox">
-							<input type="checkbox" name="ColumnID[]" value="1" />栏目1
-						</div>
-						<div class="ColumnList">
-							<div class="ColumnBlock">
-								<div class="ColumnBox">
-									<input type="checkbox" name="ColumnID[]" value="1" />栏目11
-								</div>
-								<div class="ColumnList">
-									<div class="ColumnBlock">
-										<div class="ColumnBox">
-											<input type="checkbox" name="ColumnID[]" value="1" />栏目111
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="ColumnBlock">
-								<div class="ColumnBox">
-									<input type="checkbox" name="ColumnID[]" value="1" />栏目12
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="ColumnBlock">
-						<div class="ColumnBox">
-							<input type="checkbox" name="ColumnID[]" value="1" />栏目2
-						</div>
-						<div class="ColumnList">
-							<div class="ColumnBlock">
-								<div class="ColumnBox">
-									<input type="checkbox" name="ColumnID[]" value="1" />栏目21
-								</div>
-							</div>
-						</div>
-					</div>
+				<div id="ColumnTree" style="float:left;">
+					<?php echo $_smarty_tpl->getSubTemplate ("Admin/ColumnTree.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 				</div>
 			</li>
 			<li class="formblock bordernone bgf6">
-				<input type="submit" name="subut" class="button btnblue2" value="添加" />
+				<input type="submit" name="subut" class="button btnblue2" value="确定" />
 			</li>
 		</ul>
 	</form>
 </div>
 <?php }?>
-<style type="text/css">
-#ColumnList {
-	float: left;
-}
-.ColumnBlock .ColumnList {
-	padding: 0 25px;
-}
-</style>
-<script type="text/javascript">
-$(document).ready(function (){
-var ColumnObject = function (){
-
-}
-ColumnObject();
-});
-</script>
 <?php echo $_smarty_tpl->getSubTemplate ("Public/control_bottom.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 <?php }} ?>

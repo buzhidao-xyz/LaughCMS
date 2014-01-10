@@ -28,66 +28,15 @@
 			</li>
 			<li class="formautoblock">
 				<span>选择管理栏目:</span>
-				<div id="ColumnList" class="ColumnList">
-					<div class="ColumnBlock">
-						<div class="ColumnBox">
-							<input type="checkbox" name="ColumnID[]" value="1" />栏目1
-						</div>
-						<div class="ColumnList">
-							<div class="ColumnBlock">
-								<div class="ColumnBox">
-									<input type="checkbox" name="ColumnID[]" value="1" />栏目11
-								</div>
-								<div class="ColumnList">
-									<div class="ColumnBlock">
-										<div class="ColumnBox">
-											<input type="checkbox" name="ColumnID[]" value="1" />栏目111
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="ColumnBlock">
-								<div class="ColumnBox">
-									<input type="checkbox" name="ColumnID[]" value="1" />栏目12
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="ColumnBlock">
-						<div class="ColumnBox">
-							<input type="checkbox" name="ColumnID[]" value="1" />栏目2
-						</div>
-						<div class="ColumnList">
-							<div class="ColumnBlock">
-								<div class="ColumnBox">
-									<input type="checkbox" name="ColumnID[]" value="1" />栏目21
-								</div>
-							</div>
-						</div>
-					</div>
+				<div id="ColumnTree" style="float:left;">
+					{include file="Admin/ColumnTree.html"}
 				</div>
 			</li>
 			<li class="formblock bordernone bgf6">
-				<input type="submit" name="subut" class="button btnblue2" value="添加" />
+				<input type="submit" name="subut" class="button btnblue2" value="确定" />
 			</li>
 		</ul>
 	</form>
 </div>
 {/if}
-<style type="text/css">
-#ColumnList {
-	float: left;
-}
-.ColumnBlock .ColumnList {
-	padding: 0 25px;
-}
-</style>
-<script type="text/javascript">
-$(document).ready(function (){
-var ColumnObject = function (){
-
-}
-ColumnObject();
-});
-</script>
 {include file="Public/control_bottom.html"}

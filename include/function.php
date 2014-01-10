@@ -330,19 +330,24 @@ function session($sessionname,$sessionvalue='',$expiretime=1800)
     $return = true;
     $expiretime = $expiretime ? $expiretime : C("SESSION_EXTIME");
     $sessionname = C("SESSION_ENCRYPT")."_".$sessionname;
+    $session = &$_SESSION;
 
+    //清除session
     if ($sessionvalue === null) {
-        if (isset($_SESSION[$sessionname])) {
-            unset($_SESSION[$sessionname]);
+        if (isset($session[$sessionname])) {
+            unset($session[$sessionname]);
         }
     } else if (!$sessionvalue) {
-      $sessionObj = isset($_SESSION[$sessionname]) ? $_SESSION[$sessionname] : array();
+        //获取session
+        $sessionObj = isset($session[$sessionname]) ? $session[$sessionname] : array();
         if (!empty($sessionObj)) {
             if (TIMESTAMP <= ($sessionObj['createtime']+$sessionObj['expiretime'])) {
                 $return = $sessionObj['value'];
+                //更新session值创建时间
+                $session[$sessionname]['createtime'] = TIMESTAMP;
             } else {
-                if (isset($_SESSION[$sessionname])) {
-                    unset($_SESSION[$sessionname]);
+                if (isset($session[$sessionname])) {
+                    unset($session[$sessionname]);
                 }
                 $return = null;
             }
@@ -350,7 +355,8 @@ function session($sessionname,$sessionvalue='',$expiretime=1800)
             $return = null;
         }
     } else {
-      $_SESSION[$sessionname] = array(
+        //设置session值
+        $session[$sessionname] = array(
             'value' => $sessionvalue,
             'createtime' => TIMESTAMP,
             'expiretime' => $expiretime
@@ -367,9 +373,10 @@ function cookie($cookiename,$cookievalue='',$time=0)
 {
     $return = true;
     $cookiename = C("COOKIE_ENCRYPT")."_".$cookiename;
+    $time = TIMESTAMP + $time;
 
     if ($cookievalue === null) {
-        setcookie($cookiename,$cookievalue,$time);
+        setcookie($cookiename,$cookievalue,-1);
         unset($_COOKIE[$cookiename]);
     } else if (!$cookievalue) {
         $return = isset($_COOKIE[$cookiename]) ? $_COOKIE[$cookiename] : '';

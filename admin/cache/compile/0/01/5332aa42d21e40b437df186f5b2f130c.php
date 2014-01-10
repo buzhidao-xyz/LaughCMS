@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="keywords" content="">
+<link type="image/ico" rel="shortcut icon" href="../favicon.ico">
 <link type="text/css" rel="stylesheet" href="themes/blue/style/common.css" media="screen">
 <link type="text/css" rel="stylesheet" href="themes/blue/style/global.css" media="screen">
 <script type="text/javascript" src="public/js/jquery.js"></script>
@@ -60,67 +61,194 @@ function colorboxImage(url) {
 			</li>
 			<li class="formautoblock">
 				<span>选择管理栏目:</span>
-				<div id="ColumnList" class="ColumnList">
-					<div class="ColumnBlock">
-						<div class="ColumnBox">
-							<input type="checkbox" name="ColumnID[]" value="1" />栏目1
-						</div>
-						<div class="ColumnList">
-							<div class="ColumnBlock">
-								<div class="ColumnBox">
-									<input type="checkbox" name="ColumnID[]" value="1" />栏目11
-								</div>
-								<div class="ColumnList">
-									<div class="ColumnBlock">
-										<div class="ColumnBox">
-											<input type="checkbox" name="ColumnID[]" value="1" />栏目111
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="ColumnBlock">
-								<div class="ColumnBox">
-									<input type="checkbox" name="ColumnID[]" value="1" />栏目12
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="ColumnBlock">
-						<div class="ColumnBox">
-							<input type="checkbox" name="ColumnID[]" value="1" />栏目2
-						</div>
-						<div class="ColumnList">
-							<div class="ColumnBlock">
-								<div class="ColumnBox">
-									<input type="checkbox" name="ColumnID[]" value="1" />栏目21
-								</div>
-							</div>
-						</div>
+				<div id="ColumnTree" style="float:left;">
+					<div id="ColumnListObject" class="ColumnList">
+	<div class="ColumnBlock ColumnBlock1 ColumnBLine">
+		<span class="ColumnBox ColumnBoxT">
+			<input type="checkbox" name="ColumnID[]" value="1" />栏目1
+		</span>
+		<div class="ColumnList">
+			<div class="ColumnBlock ColumnBlock2">
+				<span class="ColumnBox ColumnBoxT">
+					<p class="hl">&nbsp;</p><input type="checkbox" name="ColumnID[]" value="1" />栏目11
+				</span>
+				<div class="ColumnList">
+					<div class="ColumnBlock ColumnBlock3">
+						<span class="ColumnBox">
+							<input type="checkbox" name="ColumnID[]" value="1" />栏目111
+						</span>
+						<span class="ColumnBox">
+							<input type="checkbox" name="ColumnID[]" value="1" />栏目112
+						</span>
+						<span class="ColumnBox">
+							<input type="checkbox" name="ColumnID[]" value="1" />栏目113
+						</span>
+						<span class="ColumnBox">
+							<input type="checkbox" name="ColumnID[]" value="1" />栏目114
+						</span>
+						<span class="ColumnBox">
+							<input type="checkbox" name="ColumnID[]" value="1" />栏目115
+						</span>
+						<span class="ColumnBox">
+							<input type="checkbox" name="ColumnID[]" value="1" />栏目115
+						</span>
+						<span class="ColumnBox">
+							<input type="checkbox" name="ColumnID[]" value="1" />栏目115
+						</span>
+						<span class="ColumnBox">
+							<input type="checkbox" name="ColumnID[]" value="1" />栏目115
+						</span>
+						<span class="ColumnBox">
+							<input type="checkbox" name="ColumnID[]" value="1" />栏目115
+						</span>
+						<span class="ColumnBox">
+							<input type="checkbox" name="ColumnID[]" value="1" />栏目115
+						</span>
+						<span class="ColumnBox">
+							<input type="checkbox" name="ColumnID[]" value="1" />栏目115
+						</span>
+						<span class="ColumnBox">
+							<input type="checkbox" name="ColumnID[]" value="1" />栏目115
+						</span>
 					</div>
 				</div>
-			</li>
-			<li class="formblock bordernone bgf6">
-				<input type="submit" name="subut" class="button btnblue2" value="添加" />
-			</li>
-		</ul>
-	</form>
+			</div>
+			<div class="ColumnBlock ColumnBlock2">
+				<span class="ColumnBox ColumnBoxT">
+					<p class="hl">&nbsp;</p><input type="checkbox" name="ColumnID[]" value="1" />栏目12
+				</span>
+			</div>
+			<div class="ColumnBlock ColumnBlock2">
+				<span class="ColumnBox ColumnBoxT">
+					<p class="hl">&nbsp;</p><input type="checkbox" name="ColumnID[]" value="1" />栏目13
+				</span>
+				<div class="ColumnList">
+					<div class="ColumnBlock ColumnBlock3">
+						<span class="ColumnBox">
+							<input type="checkbox" name="ColumnID[]" value="1" />栏目111
+						</span>
+						<span class="ColumnBox">
+							<input type="checkbox" name="ColumnID[]" value="1" />栏目112
+						</span>
+						<span class="ColumnBox">
+							<input type="checkbox" name="ColumnID[]" value="1" />栏目113
+						</span>
+						<span class="ColumnBox">
+							<input type="checkbox" name="ColumnID[]" value="1" />栏目114
+						</span>
+						<span class="ColumnBox">
+							<input type="checkbox" name="ColumnID[]" value="1" />栏目115
+						</span>
+						<span class="ColumnBox">
+							<input type="checkbox" name="ColumnID[]" value="1" />栏目115
+						</span>
+						<span class="ColumnBox">
+							<input type="checkbox" name="ColumnID[]" value="1" />栏目115
+						</span>
+						<span class="ColumnBox">
+							<input type="checkbox" name="ColumnID[]" value="1" />栏目115
+						</span>
+						<span class="ColumnBox">
+							<input type="checkbox" name="ColumnID[]" value="1" />栏目115
+						</span>
+						<span class="ColumnBox">
+							<input type="checkbox" name="ColumnID[]" value="1" />栏目115
+						</span>
+						<span class="ColumnBox">
+							<input type="checkbox" name="ColumnID[]" value="1" />栏目115
+						</span>
+						<span class="ColumnBox">
+							<input type="checkbox" name="ColumnID[]" value="1" />栏目115
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="ColumnBlock ColumnBlock1 ColumnBLine">
+		<span class="ColumnBox ColumnBoxT">
+			<input type="checkbox" name="ColumnID[]" value="1" />栏目2
+		</span>
+		<div class="ColumnList">
+			<div class="ColumnBlock ColumnBlock2">
+				<span class="ColumnBox ColumnBoxT">
+					<p class="hl">&nbsp;</p><input type="checkbox" name="ColumnID[]" value="1" />栏目21
+				</span>
+			</div>
+		</div>
+	</div>
 </div>
 <style type="text/css">
-#ColumnList {
+#ColumnListObject {
 	float: left;
+	min-width: 850px;
+	max-width: 900px;
+	padding-bottom: 20px;
 }
-.ColumnBlock .ColumnList {
-	padding: 0 25px;
+#ColumnListObject .ColumnBlock {
+	clear: both;
+	overflow: hidden;
+}
+#ColumnListObject .ColumnBLine {
+	padding: 10px 0;
+	border-bottom: 1px dashed #CCCCCC;
+}
+#ColumnListObject .ColumnBlock span.ColumnBox {
+	padding: 0;
+	width: auto;
+	height: auto;
+	line-height: 24px;
+	display: inline-block;
+}
+#ColumnListObject .ColumnBlock span.ColumnBoxT {
+	display: block;
+	clear: both;
+}
+#ColumnListObject .ColumnBlock .ColumnList {
+	margin: 0 6px;
+	clear: both;
+	overflow: hidden;
+	background: url(themes/blue/images/line_v1.png) repeat-y;
+}
+#ColumnListObject .ColumnBlock1 {
+	
+}
+#ColumnListObject .ColumnBlock2 {
+	
+}
+#ColumnListObject .ColumnBlock2 span.ColumnBoxT {
+	
+}
+#ColumnListObject .ColumnBlock2 span.ColumnBoxT p.hl {
+	margin-left: 5px;
+	width: 20px;
+	display: inline-block;
+	background: url(themes/blue/images/line_h1.png) repeat-x 0 11px;
+}
+#ColumnListObject .ColumnBlock2 .ColumnList {
+	margin-left: 32px;
+}
+#ColumnListObject .ColumnBlock3 {
+	padding-left: 20px;
 }
 </style>
 <script type="text/javascript">
 $(document).ready(function (){
-var ColumnObject = function (){
+var ColumnClass = function (){
+	var ColumnListObject = $("#ColumnListObject");
 
-}
-ColumnObject();
+
+}();
 });
 </script>
+				</div>
+			</li>
+			<li class="formblock bordernone bgf6">
+				<input type="submit" name="subut" class="button btnblue2" value="确定" />
+			</li>
+		</ul>
+	</form>
+</div>
     </div>
 </div>
 </body>
